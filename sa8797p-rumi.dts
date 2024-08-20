@@ -11,7 +11,9 @@
 	compatible = "qcom,sa8797p-rumi", "qcom,sa8797p";
 	qcom,board-id = <0xf 0>;
 
-	aliases { };
+	aliases {
+		serial0 = &qupv3_se1_2uart;
+	};
 
 	chosen { };
 };
@@ -26,6 +28,60 @@
 
 &sleep_clk {
 	clock-frequency = <32768>;
+};
+
+&qupv3_id_4 {
+	status = "okay";
+};
+
+&qupv3_se1_2uart {
+	pinctrl-names = "default", "sleep";
+	pinctrl-0 = <&qupv3_se1_2uart_tx_active>, <&qupv3_se1_2uart_rx_active>;
+	pinctrl-1 = <&qupv3_se1_2uart_sleep>;
+	status = "okay";
+};
+
+&tlmm {
+	qupv3_se1_2uart_pins: qupv3_se1_2uart_pins {
+		qupv3_se1_2uart_tx_active: qupv3_se1_2uart_tx_active {
+			mux {
+				pins = "gpio143";
+				function = "qup2_se1_l2";
+			};
+
+			config {
+				pins = "gpio143";
+				drive-strength = <2>;
+				bias-disable;
+			};
+		};
+
+		qupv3_se1_2uart_rx_active: qupv3_se1_2uart_rx_active {
+			mux {
+				pins = "gpio144";
+				function = "qup2_se1_l3";
+			};
+
+			config {
+				pins = "gpio144";
+				drive-strength = <2>;
+				bias-disable;
+			};
+		};
+
+		qupv3_se1_2uart_sleep: qupv3_se1_2uart_sleep {
+			mux {
+				pins = "gpio143", "gpio144";
+				function = "gpio";
+			};
+
+			config {
+				pins = "gpio143", "gpio144";
+				drive-strength = <2>;
+				bias-pull-down;
+			};
+		};
+	};
 };
 
 &xo_board_clk {
