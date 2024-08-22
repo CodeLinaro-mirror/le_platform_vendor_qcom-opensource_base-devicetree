@@ -762,5 +762,26 @@
 			#interrupt-cells = <3>;
 			#mbox-cells = <2>;
 		};
+
+		apps_smmu_0: iommu@15a00000 {
+			compatible = "qcom,sa8797p-smmu-500", "qcom,smmu-500", "arm,mmu-500";
+			reg = <0x0 0x15A00000 0x0 0x100000>;
+			#iommu-cells = <2>;
+			#global-interrupts = <2>;
+		};
+
+		apps_smmu_1: iommu@15c00000 {
+			compatible = "qcom,sa8797p-smmu-500", "qcom,smmu-500", "arm,mmu-500";
+			reg = <0x0 0x15C00000 0x0 0x100000>;
+			#iommu-cells = <2>;
+			#global-interrupts = <2>;
+		};
+
+		apps_smmu_2: iommu@15e00000 {
+			compatible = "qcom,sa8797p-smmu-500", "qcom,smmu-500", "arm,mmu-500";
+			reg = <0x0 0x15E00000 0x0 0x100000>;
+			#iommu-cells = <2>;
+			#global-interrupts = <2>;
+		};
 	};
 };
