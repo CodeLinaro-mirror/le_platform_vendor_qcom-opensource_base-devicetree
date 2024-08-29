@@ -314,29 +314,19 @@
 			reg = <0x0 0x81ff0000 0x0 0x10000>;
 		};
 
-		sail_ota_mem: sail_ota_region@82300000 {
+		sail_minidump_mem: sail_minidump_region@82000000 {
 			no-map;
-			reg = <0x0 0x82300000 0x0 0x300000>;
+			reg = <0x0 0x82000000 0x0 0x100000>;
 		};
 
-		gunyah_hyp_mem: gunyah_hyp_region@82800000 {
+		sail_ota_mem: sail_ota_region@82100000 {
 			no-map;
-			reg = <0x0 0x82800000 0x0 0xe00000>;
+			reg = <0x0 0x82100000 0x0 0x500000>;
 		};
 
-		cpucp_mem: cpucp_region@83600000 {
+		dare_hyp_mem: dare_hyp_region@82800000 {
 			no-map;
-			reg = <0x0 0x83600000 0x0 0x800000>;
-		};
-
-		pdp_mem: pdp_region@83e00000 {
-			no-map;
-			reg = <0x0 0x83e00000 0x0 0x200000>;
-		};
-
-		tags_mem: tags_region@84000000 {
-			no-map;
-			reg = <0x0 0x84000000 0x0 0x700000>;
+			reg = <0x0 0x82800000 0x0 0x1f00000>;
 		};
 
 		deepsleep_backup_mem: deepsleep_backup_region@84700000 {
@@ -344,7 +334,7 @@
 			reg = <0x0 0x84700000 0x0 0x200000>;
 		};
 
-		tme_crashdump_mem: tme_crashdump_region@87000000 {
+		tme_crash_dump_mem: tme_crash_dump_region@87000000 {
 			no-map;
 			reg = <0x0 0x87000000 0x0 0xa0000>;
 		};
@@ -404,7 +394,7 @@
 
 		pdp_ns_mem: pdp_ns_mem_region@87600000 {
 			no-map;
-			reg = <0x0 0x87600000 0x0 0x400000>;
+			reg = <0x0 0x87600000 0x0 0x200000>;
 		};
 
 		tz_stat_mem: tz_stat_region@87a00000 {
@@ -424,7 +414,17 @@
 
 		global_sync_mem: global_sync_region@89f00000 {
 			no-map;
-			reg = <0x0 0x89f00000 0x0 0x200000>;
+			reg = <0x0 0x89f00000 0x0 0x400000>;
+		};
+
+		tzffi_mem: tzffi_region@8a300000 {
+			no-map;
+			reg = <0x0 0x8a300000 0x0 0x1400000>;
+		};
+
+		gunyah_md_mem: gunyah_md_region@8b700000 {
+			no-map;
+			reg = <0x0 0x8b700000 0x0 0x80000>;
 		};
 
 		ipa_fw_mem: ipa_fw_region@8bb00000 {
@@ -452,14 +452,9 @@
 			reg = <0x0 0x8bc00000 0x0 0x300000>;
 		};
 
-		camera_mem: camera_region@8bf00000 {
+		audio_cfg_mem: audio_cfg_region@8bf00000 {
 			no-map;
-			reg = <0x0 0x8bf00000 0x0 0x800000>;
-		};
-
-		camera_2_mem: camera_2_region@8c700000 {
-			no-map;
-			reg = <0x0 0x8c700000 0x0 0x200000>;
+			reg = <0x0 0x8bf00000 0x0 0xa00000>;
 		};
 
 		video_mem: video_region@8c900000 {
@@ -539,27 +534,32 @@
 
 		hpass_dsp2_dtb_mem: hpass_dsp2_dtb_region@9e000000 {
 			no-map;
-			reg = <0x0 0x9e000000 0x0 0x1e000000>;
+			reg = <0x0 0x9e000000 0x0 0x100000>;
 		};
 
-		xbl_sc_mem: xbl_sc_region@bc000000 {
+		camera_icp_1_mem: camera_icp_1_region@9e100000 {
 			no-map;
-			reg = <0x0 0xbc000000 0x0 0x100000>;
+			reg = <0x0 0x9e100000 0x0 0x800000>;
 		};
 
-		qtee_mem: qtee_region@bc100000 {
+		camera_icp_2_mem: camera_icp_2_region@9e900000 {
 			no-map;
-			reg = <0x0 0xbc100000 0x0 0x600000>;
+			reg = <0x0 0x9e900000 0x0 0x800000>;
 		};
 
-		ta_mem: ta_region@bc700000 {
+		camera_qup_1_mem: camera_qup_1_region@9f100000 {
 			no-map;
-			reg = <0x0 0xbc700000 0x0 0x7900000>;
+			reg = <0x0 0x9f100000 0x0 0x200000>;
 		};
 
-		dare_tags_mem: dare_tags_region@c4000000 {
+		camera_qup_2_mem: camera_qup_2_region@9f300000 {
 			no-map;
-			reg = <0x0 0xc4000000 0x0 0x2300000>;
+			reg = <0x0 0x9f300000 0x0 0x2e00000>;
+		};
+
+		dare_tz_mem: dare_tz_region@bc000000 {
+			no-map;
+			reg = <0x0 0xbc000000 0x0 0xa300000>;
 		};
 
 		hpass_rpc_remote_heap_mem: hpass_rpc_remote_heap_region@d4600000 {
@@ -577,20 +577,20 @@
 			reg = <0x0 0xd6e00000 0x0 0x800000>;
 		};
 
-		gearvm_shared_mem: gearvm_shared_region@d7600000 {
+		scmi_mem: scmi_region@d7600000 {
 			no-map;
-			reg = <0x0 0xd7600000 0x0 0x200000>;
+			reg = <0x0 0xd7600000 0x0 0x40000>;
 		};
 
-		hyp_minidump_mem: hyp_minidump_region@d7800000 {
-			no-map;
-			reg = <0x0 0xd7800000 0x0 0x100000>;
-		};
+                gearvm_logs_mem: gearvm_logs_region@d7640000 {
+        		no-map;
+        		reg = <0x0 0xd7640000 0x0 0x10000>;
+        	};
 
-		tzffi_mem: tzffi_region@d7900000 {
-			no-map;
-			reg = <0x0 0xd7900000 0x0 0x1400000>;
-		};
+        	gearvm_reserved_mem: gearvm_reserved_region@d7654000 {
+        		no-map;
+        		reg = <0x0 0xd7654000 0x0 0x1b0000>;
+        	};
 
 		/* UEFI region at 0xd8d00000 is reclaimed by Linux */
 
