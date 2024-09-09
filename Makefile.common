@@ -23,22 +23,11 @@ TECHPACK_INCLUDE += $(TECHPACK_BINDING_DIR)/oot-dt-bindings
 
 SUB_TECH_BUILD:=$(wildcard techpacks/*/build.sh)
 
-all: fail-if-no-kdir dtbos merge_dtbs.sh
-	./merge_dtbs.sh $(KDIR) oot $(DTB_MERGE_OUT)
+all: dtbos
 
-fail-if-no-kdir:
-	@if [ ! -d ${KDIR} ]; then echo "Unable to find ${KDIR}, exiting!"; exit 1; fi
-
-defconfig:
-	$(MAKE) -C $(KDIR) ARCH=$(ARCH) defconfig
-
-dtbs : defconfig
-	$(MAKE) -C $(KDIR) ARCH=$(ARCH) DTC_FLAGS="-@" dtbs
-
-dtbos: dtbs
+dtbos:
 	$(MAKE) -C $(KDIR) ARCH=$(ARCH) dtstree=$(TECHPACK_DTSTREE) \
 		DTC_INCLUDE="$(TECHPACK_INCLUDE)" DTC_FLAGS="-@" dtbs
-	@for sub_build in $(SUB_TECH_BUILD); do ./"$${sub_build}"; done
 
 .PHONY: clean
 clean:
