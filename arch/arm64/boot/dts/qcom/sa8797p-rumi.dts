@@ -30,14 +30,17 @@
 	clock-frequency = <32768>;
 };
 
+&scmi11 {
+	status = "okay";
+};
+
 &qupv3_id_2 {
 	status = "okay";
 };
 
 &qupv3_se1_2uart {
-	pinctrl-names = "default", "sleep";
-	pinctrl-0 = <&qupv3_se1_2uart_tx_active>, <&qupv3_se1_2uart_rx_active>;
-	pinctrl-1 = <&qupv3_se1_2uart_sleep>;
+	power-domains = <&scmi11_pd 10>, <&scmi11_dvfs 10>;
+	power-domain-names = "power", "perf";
 	status = "okay";
 };
 
