@@ -49,3 +49,9 @@
 	};
 
 };
+
+scm_user_intf_device {
+	compatible = "qcom,scm-user-intf";
+	scm_dev = "scm";
+	status = "ok";
+};
