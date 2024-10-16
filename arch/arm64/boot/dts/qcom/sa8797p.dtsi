@@ -306,7 +306,7 @@
 
 		hlos_sail_mailbox_p_mem: hlos_sail_mailbox_p_region@81e00000 {
 			no-map;
-			reg = <0x0 0x81e00000 0x0 0x100000>;
+			reg = <0x0 0x81e00000 0x0 0x1f0000>;
 		};
 
 		tme_sail_p_mem: tme_sail_p_region@81ff0000 {
@@ -326,7 +326,7 @@
 
 		cpucp_mem: cpucp_region@83600000 {
 			no-map;
-			reg = <0x0 0x83600000 0x0 0x400000>;
+			reg = <0x0 0x83600000 0x0 0x800000>;
 		};
 
 		pdp_mem: pdp_region@83e00000 {
@@ -336,7 +336,7 @@
 
 		tags_mem: tags_region@84000000 {
 			no-map;
-			reg = <0x0 0x84000000 0x0 0x680000>;
+			reg = <0x0 0x84000000 0x0 0x700000>;
 		};
 
 		deepsleep_backup_mem: deepsleep_backup_region@84700000 {
@@ -402,9 +402,9 @@
 			reg = <0x0 0x874f4000 0x0 0x80000>;
 		};
 
-		adsp_mhi_mem: adsp_mhi_region@87700000 {
+		pdp_ns_mem: pdp_ns_mem_region@87600000 {
 			no-map;
-			reg = <0x0 0x87700000 0x0 0x20000>;
+			reg = <0x0 0x87600000 0x0 0x400000>;
 		};
 
 		tz_stat_mem: tz_stat_region@87a00000 {
@@ -444,7 +444,7 @@
 
 		gpu_microcode_2_mem: gpu_microcode_2_region@8bb1c000 {
 			no-map;
-			reg = <0x0 0x8bb1c000 0x0 0x2000>;
+			reg = <0x0 0x8bb1c000 0x0 0xe4000>;
 		};
 
 		soccp_mem: soccp_region@8bc00000 {
@@ -539,17 +539,12 @@
 
 		hpass_dsp2_dtb_mem: hpass_dsp2_dtb_region@9e000000 {
 			no-map;
-			reg = <0x0 0x9e000000 0x0 0x80000>;
+			reg = <0x0 0x9e000000 0x0 0x1e000000>;
 		};
 
 		xbl_sc_mem: xbl_sc_region@bc000000 {
 			no-map;
-			reg = <0x0 0xbc000000 0x0 0x40000>;
-		};
-
-		reserved_mem: reserved_region@bc040000 {
-			no-map;
-			reg = <0x0 0xbc040000 0x0 0xc0000>;
+			reg = <0x0 0xbc000000 0x0 0x100000>;
 		};
 
 		qtee_mem: qtee_region@bc100000 {
@@ -564,12 +559,7 @@
 
 		dare_tags_mem: dare_tags_region@c4000000 {
 			no-map;
-			reg = <0x0 0xc4000000 0x0 0x2280000>;
-		};
-
-		reserved_mem1: reserved_region@c6280000 {
-			no-map;
-			reg = <0x0 0xc6280000 0x0 0x80000>;
+			reg = <0x0 0xc4000000 0x0 0x2300000>;
 		};
 
 		hpass_rpc_remote_heap_mem: hpass_rpc_remote_heap_region@d4600000 {
