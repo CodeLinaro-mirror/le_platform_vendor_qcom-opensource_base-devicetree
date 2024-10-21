@@ -10,6 +10,7 @@
 #include "oot-dt-bindings/qcom-ipcc-sa8797p.h"
 #include "sa8797p-vfio.dtsi"
 #include "sa8797p-vms.dtsi"
+#include "sa8797p-dma-heaps.dtsi"
 
 &{/reserved-memory} {
 	cma: linux,cma {
@@ -19,6 +20,21 @@
 		alignment = <0x0 0x400000>;
 		size = <0x0 0x2000000>;
 		linux,cma-default;
+	};
+	qseecom_mem: qcom,qseecom {
+		compatible = "shared-dma-pool";
+		alloc-ranges = <0x0 0x00000000 0x0 0xffffffff>;
+		reusable;
+		alignment = <0x0 0x400000>;
+		size = <0x0 0x1400000>; /* 20M */
+	};
+
+	qseecom_ta_mem: qcom,qseecom-ta {
+		compatible = "shared-dma-pool";
+		alloc-ranges = <0x0 0x00000000 0x0 0xffffffff>;
+		reusable;
+		alignment = <0x0 0x400000>;
+		size = <0x0 0x1000000>; /* 16M */
 	};
 };
 
@@ -68,12 +84,14 @@
 		tmecrashdump-address-offset = <0x87000000>;
 	};
 
-	qcom,dma-heaps {
-		compatible = "qcom,dma-heaps";
-	};
-
 	qcom,secure-buffer {
 		compatible = "qcom,secure-buffer";
+	};
+
+	qcom,mem-buf {
+		compatible = "qcom,mem-buf";
+		qcom,mem-buf-capabilities = "supplier";
+		qcom,vmid = <3>;
 	};
 
 	scmi_nsp0 {
