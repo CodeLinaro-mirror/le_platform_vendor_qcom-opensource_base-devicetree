@@ -25,6 +25,11 @@
 			qcom,support-hypervisor;
 			memory-region = <&cma>;
 		};
+
+		qcom_smcinvoke {
+			compatible = "qcom,smcinvoke";
+			qcom,support-hypervisor;
+		};
 	};
 };
 
