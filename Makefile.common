@@ -6,7 +6,7 @@ LRH_ARCH?=aarch64
 TECHPACK_BINDING_DIR=$(PWD)
 TECHPACK_DTSTREE=$(TECHPACK_BINDING_DIR)
 
-KDIR ?= $(SRC_DIR_ROOT)/kernel/kernel_platform/kernel
+KDIR ?= $(SRC_DIR_ROOT)/sources/kernel/kernel_platform/kernel
 
 BASE_DTB_IN ?= $(KDIR)/arch/arm64/boot/dts/qcom
 DTB_MERGE_OUT ?= $(KDIR)/arch/arm64/boot/dts/qcom
