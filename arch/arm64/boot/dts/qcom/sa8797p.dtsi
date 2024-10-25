@@ -418,8 +418,10 @@
 		};
 
 		smem_mem: smem_region@89b00000 {
+			compatible = "qcom,smem";
 			no-map;
 			reg = <0x0 0x89b00000 0x0 0x400000>;
+			hwlocks = <&tcsr_mutex 3>;
 		};
 
 		global_sync_mem: global_sync_region@89f00000 {
@@ -1491,6 +1493,12 @@
 					status = "disabled";
 				};
 			};
+		};
+
+		tcsr_mutex: hwlock@1f40000 {
+			compatible = "qcom,tcsr-mutex";
+			reg = <0x0 0x01f40000 0x0 0x20000>;
+			#hwlock-cells = <1>;
 		};
 
 		tsens0: thermal-sensor@c22c000 {
