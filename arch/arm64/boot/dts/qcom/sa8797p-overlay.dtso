@@ -18,6 +18,14 @@
 	model = "Qualcomm SA8797";
 	compatible = "qcom,sa8797p-rumi", "qcom,sa8797p";
 	qcom,board-id = <0xf 0>;
+
+	firmware {
+		qtee_shmbridge {
+			compatible = "qcom,tee-shared-memory-bridge";
+			qcom,support-hypervisor;
+			memory-region = <&cma>;
+		};
+	};
 };
 
 
