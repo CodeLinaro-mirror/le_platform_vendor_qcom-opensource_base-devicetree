@@ -660,7 +660,7 @@
 			status = "ok";
 
 			i2c14: i2c@880000 {
-				compatible = "qcom,sa8797p-i2c-geni";
+				compatible = "qcom,sa8797p-geni-i2c";
 				reg = <0x0 0x880000 0x0 0x4000>;
 				interrupts = <GIC_SPI 373 IRQ_TYPE_LEVEL_HIGH>;
 				dmas = <&gpi_dma2 0 0 QCOM_GPI_I2C>,
@@ -672,7 +672,7 @@
 			};
 
 			spi14: spi@880000 {
-				compatible = "qcom,sa8797p-spi-geni";
+				compatible = "qcom,sa8797p-geni-spi";
 				reg = <0x0 0x880000 0x0 0x4000>;
 				interrupts = <GIC_SPI 373 IRQ_TYPE_LEVEL_HIGH>;
 				dmas = <&gpi_dma2 0 0 QCOM_GPI_SPI>,
@@ -694,7 +694,7 @@
 			};
 
 			i2c16: i2c@888000 {
-				compatible = "qcom,sa8797p-i2c-geni";
+				compatible = "qcom,sa8797p-geni-i2c";
 				reg = <0x0 0x888000 0x0 0x4000>;
 				interrupts = <GIC_SPI 584 IRQ_TYPE_LEVEL_HIGH>;
 				dmas = <&gpi_dma2 0 2 QCOM_GPI_I2C>,
@@ -706,7 +706,7 @@
 			};
 
 			spi16: spi@888000 {
-				compatible = "qcom,sa8797p-spi-geni";
+				compatible = "qcom,sa8797p-geni-spi";
 				reg = <0x0 0x888000 0x0 0x4000>;
 				interrupts = <GIC_SPI 584 IRQ_TYPE_LEVEL_HIGH>;
 				dmas = <&gpi_dma2 0 2 QCOM_GPI_SPI>,
@@ -719,7 +719,7 @@
 			};
 
 			i2c17: i2c@88c000 {
-				compatible = "qcom,sa8797p-i2c-geni";
+				compatible = "qcom,sa8797p-geni-i2c";
 				reg = <0x0 0x88c000 0x0 0x4000>;
 				interrupts = <GIC_SPI 585 IRQ_TYPE_LEVEL_HIGH>;
 				dmas = <&gpi_dma2 0 3 QCOM_GPI_I2C>,
@@ -731,7 +731,7 @@
 			};
 
 			spi17: spi@88c000 {
-				compatible = "qcom,sa8797p-spi-geni";
+				compatible = "qcom,sa8797p-geni-spi";
 				reg = <0x0 0x88c000 0x0 0x4000>;
 				interrupts = <GIC_SPI 585 IRQ_TYPE_LEVEL_HIGH>;
 				dmas = <&gpi_dma2 0 3 QCOM_GPI_SPI>,
@@ -744,7 +744,7 @@
 			};
 
 			uart17: serial@88c000 {
-				compatible = "qcom,sa8797p-msm-geni-serial-hs";
+				compatible = "qcom,sa8797p-geni-uart";
 				reg = <0x0 0x88c000 0x0 0x4000>;
 				interrupts = <GIC_SPI 585 IRQ_TYPE_LEVEL_HIGH>;
 				power-domains = <&scmi11_pd 17>, <&scmi11_dvfs 17>;
@@ -754,7 +754,7 @@
 			};
 
 			i2c18: i2c@890000 {
-				compatible = "qcom,sa8797p-i2c-geni";
+				compatible = "qcom,sa8797p-geni-i2c";
 				reg = <0x0 0x890000 0x0 0x4000>;
 				interrupts = <GIC_SPI 586 IRQ_TYPE_LEVEL_HIGH>;
 				dmas = <&gpi_dma2 0 4 QCOM_GPI_I2C>,
@@ -766,7 +766,7 @@
 			};
 
 			spi18: spi@890000 {
-				compatible = "qcom,sa8797p-spi-geni";
+				compatible = "qcom,sa8797p-geni-spi";
 				reg = <0x0 0x890000 0x0 0x4000>;
 				interrupts = <GIC_SPI 586 IRQ_TYPE_LEVEL_HIGH>;
 				dmas = <&gpi_dma2 0 4 QCOM_GPI_SPI>,
@@ -779,7 +779,7 @@
 			};
 
 			i2c19: i2c@894000 {
-				compatible = "qcom,sa8797p-i2c-geni";
+				compatible = "qcom,sa8797p-geni-i2c";
 				reg = <0x0 0x894000 0x0 0x4000>;
 				interrupts = <GIC_SPI 587 IRQ_TYPE_LEVEL_HIGH>;
 				dmas = <&gpi_dma2 0 5 QCOM_GPI_I2C>,
@@ -791,7 +791,7 @@
 			};
 
 			spi19: spi@894000 {
-				compatible = "qcom,sa8797p-spi-geni";
+				compatible = "qcom,sa8797p-geni-spi";
 				reg = <0x0 0x894000 0x0 0x4000>;
 				interrupts = <GIC_SPI 587 IRQ_TYPE_LEVEL_HIGH>;
 				dmas = <&gpi_dma2 0 5 QCOM_GPI_SPI>,
@@ -804,7 +804,7 @@
 			};
 
 			i2c20: i2c@898000 {
-				compatible = "qcom,sa8797p-i2c-geni";
+				compatible = "qcom,sa8797p-geni-i2c";
 				reg = <0x0 0x898000 0x0 0x4000>;
 				interrupts = <GIC_SPI 461 IRQ_TYPE_LEVEL_HIGH>;
 				dmas = <&gpi_dma2 0 6 QCOM_GPI_I2C>,
@@ -816,7 +816,7 @@
 			};
 
 			spi20: spi@898000 {
-				compatible = "qcom,sa8797p-spi-geni";
+				compatible = "qcom,sa8797p-geni-spi";
 				reg = <0x0 0x898000 0x0 0x4000>;
 				interrupts = <GIC_SPI 461 IRQ_TYPE_LEVEL_HIGH>;
 				dmas = <&gpi_dma2 0 6 QCOM_GPI_SPI>,
@@ -863,7 +863,7 @@
 			status = "ok";
 
 			i2c0: i2c@980000 {
-				compatible = "qcom,sa8797p-i2c-geni";
+				compatible = "qcom,sa8797p-geni-i2c";
 				reg = <0x0 0x980000 0x0 0x4000>;
 				interrupts = <GIC_SPI 314 IRQ_TYPE_LEVEL_HIGH>;
 				dmas = <&gpi_dma0 0 0 QCOM_GPI_I2C>,
@@ -875,7 +875,7 @@
 			};
 
 			spi0: spi@980000 {
-				compatible = "qcom,sa8797p-spi-geni";
+				compatible = "qcom,sa8797p-geni-spi";
 				reg = <0x0 0x980000 0x0 0x4000>;
 				interrupts = <GIC_SPI 314 IRQ_TYPE_LEVEL_HIGH>;
 				dmas = <&gpi_dma0 0 0 QCOM_GPI_SPI>,
@@ -888,7 +888,7 @@
 			};
 
 			uart0: serial@980000 {
-				compatible = "qcom,msm-geni-serial-hs";
+				compatible = "qcom,sa8797p-geni-uart";
 				reg = <0x0 0x980000 0x0 0x4000>;
 				interrupts = <GIC_SPI 314 IRQ_TYPE_LEVEL_HIGH>;
 				power-domains = <&scmi11_pd 0>, <&scmi11_dvfs 0>;
@@ -897,7 +897,7 @@
 			};
 
 			i2c1: i2c@984000 {
-				compatible = "qcom,sa8797p-i2c-geni";
+				compatible = "qcom,sa8797p-geni-i2c";
 				reg = <0x0 0x984000 0x0 0x4000>;
 				interrupts = <GIC_SPI 513 IRQ_TYPE_LEVEL_HIGH>;
 				dmas = <&gpi_dma0 0 1 QCOM_GPI_I2C>,
@@ -909,7 +909,7 @@
 			};
 
 			spi1: spi@984000 {
-				compatible = "qcom,sa8797p-spi-geni";
+				compatible = "qcom,sa8797p-geni-spi";
 				reg = <0x0 0x984000 0x0 0x4000>;
 				interrupts = <GIC_SPI 513 IRQ_TYPE_LEVEL_HIGH>;
 				dmas = <&gpi_dma0 0 1 QCOM_GPI_SPI>,
@@ -922,7 +922,7 @@
 			};
 
 			i2c2: i2c@988000 {
-				compatible = "qcom,sa8797p-i2c-geni";
+				compatible = "qcom,sa8797p-geni-i2c";
 				reg = <0x0 0x988000 0x0 0x4000>;
 				interrupts = <GIC_SPI 514 IRQ_TYPE_LEVEL_HIGH>;
 				dmas = <&gpi_dma0 0 2 QCOM_GPI_I2C>,
@@ -934,7 +934,7 @@
 			};
 
 			spi2: spi@988000 {
-				compatible = "qcom,sa8797p-spi-geni";
+				compatible = "qcom,sa8797p-geni-spi";
 				reg = <0x0 0x988000 0x0 0x4000>;
 				interrupts = <GIC_SPI 514 IRQ_TYPE_LEVEL_HIGH>;
 				dmas = <&gpi_dma0 0 2 QCOM_GPI_SPI>,
@@ -947,7 +947,7 @@
 			};
 
 			i2c3: i2c@98c000 {
-				compatible = "qcom,sa8797p-i2c-geni";
+				compatible = "qcom,sa8797p-geni-i2c";
 				reg = <0x0 0x98c000 0x0 0x4000>;
 				interrupts = <GIC_SPI 515 IRQ_TYPE_LEVEL_HIGH>;
 				dmas = <&gpi_dma0 0 3 QCOM_GPI_I2C>,
@@ -959,7 +959,7 @@
 			};
 
 			spi3: spi@98c000 {
-				compatible = "qcom,sa8797p-spi-geni";
+				compatible = "qcom,sa8797p-geni-spi";
 				reg = <0x0 0x98c000 0x0 0x4000>;
 				interrupts = <GIC_SPI 515 IRQ_TYPE_LEVEL_HIGH>;
 				dmas = <&gpi_dma0 0 3 QCOM_GPI_SPI>,
@@ -972,7 +972,7 @@
 			};
 
 			uart3: serial@98c000 {
-				compatible = "qcom,sa8797p-msm-geni-serial-hs";
+				compatible = "qcom,sa8797p-geni-uart";
 				reg = <0x0 0x98c000 0x0 0x4000>;
 				interrupts = <GIC_SPI 515 IRQ_TYPE_LEVEL_HIGH>;
 				power-domains = <&scmi11_pd 3>, <&scmi11_dvfs 3>;
@@ -982,7 +982,7 @@
 			};
 
 			i2c4: i2c@990000 {
-				compatible = "qcom,sa8797p-i2c-geni";
+				compatible = "qcom,sa8797p-geni-i2c";
 				reg = <0x0 0x990000 0x0 0x4000>;
 				interrupts = <GIC_SPI 516 IRQ_TYPE_LEVEL_HIGH>;
 				dmas = <&gpi_dma0 0 4 QCOM_GPI_I2C>,
@@ -994,7 +994,7 @@
 			};
 
 			spi4: spi@990000 {
-				compatible = "qcom,sa8797p-spi-geni";
+				compatible = "qcom,sa8797p-geni-spi";
 				reg = <0x0 0x990000 0x0 0x4000>;
 				interrupts = <GIC_SPI 516 IRQ_TYPE_LEVEL_HIGH>;
 				dmas = <&gpi_dma0 0 4 QCOM_GPI_SPI>,
@@ -1007,7 +1007,7 @@
 			};
 
 			i2c5: i2c@994000 {
-				compatible = "qcom,sa8797p-i2c-geni";
+				compatible = "qcom,sa8797p-geni-i2c";
 				reg = <0x0 0x994000 0x0 0x4000>;
 				interrupts = <GIC_SPI 517 IRQ_TYPE_LEVEL_HIGH>;
 				dmas = <&gpi_dma0 0 5 QCOM_GPI_I2C>,
@@ -1019,7 +1019,7 @@
 			};
 
 			spi5: spi@994000 {
-				compatible = "qcom,sa8797p-spi-geni";
+				compatible = "qcom,sa8797p-geni-spi";
 				reg = <0x0 0x994000 0x0 0x4000>;
 				interrupts = <GIC_SPI 517 IRQ_TYPE_LEVEL_HIGH>;
 				dmas = <&gpi_dma0 0 5 QCOM_GPI_SPI>,
@@ -1032,7 +1032,7 @@
 			};
 
 			uart5: serial@994000 {
-				compatible = "qcom,msm-geni-serial-hs";
+				compatible = "qcom,sa8797p-geni-uart";
 				reg = <0x0 0x994000 0x0 0x4000>;
 				interrupts = <GIC_SPI 517 IRQ_TYPE_LEVEL_HIGH>;
 				power-domains = <&scmi11_pd 5>, <&scmi11_dvfs 5>;
@@ -1075,7 +1075,7 @@
 			status = "ok";
 
 			i2c7: i2c@a80000 {
-				compatible = "qcom,sa8797p-i2c-geni";
+				compatible = "qcom,sa8797p-geni-i2c";
 				reg = <0x0 0xa80000 0x0 0x4000>;
 				interrupts = <GIC_SPI 353 IRQ_TYPE_LEVEL_HIGH>;
 				dmas = <&gpi_dma1 0 0 QCOM_GPI_I2C>,
@@ -1087,7 +1087,7 @@
 			};
 
 			spi7: spi@a80000 {
-				compatible = "qcom,sa8797p-spi-geni";
+				compatible = "qcom,sa8797p-geni-spi";
 				reg = <0x0 0xa80000 0x0 0x4000>;
 				interrupts = <GIC_SPI 353 IRQ_TYPE_LEVEL_HIGH>;
 				dmas = <&gpi_dma1 0 0 QCOM_GPI_SPI>,
@@ -1100,7 +1100,7 @@
 			};
 
 			i2c8: i2c@a84000 {
-				compatible = "qcom,sa8797p-i2c-geni";
+				compatible = "qcom,sa8797p-geni-i2c";
 				reg = <0x0 0xa84000 0x0 0x4000>;
 				interrupts = <GIC_SPI 354 IRQ_TYPE_LEVEL_HIGH>;
 				dmas = <&gpi_dma1 0 1 QCOM_GPI_I2C>,
@@ -1112,7 +1112,7 @@
 			};
 
 			spi8: spi@a84000 {
-				compatible = "qcom,sa8797p-spi-geni";
+				compatible = "qcom,sa8797p-geni-spi";
 				reg = <0x0 0xa84000 0x0 0x4000>;
 				interrupts = <GIC_SPI 354 IRQ_TYPE_LEVEL_HIGH>;
 				dmas = <&gpi_dma1 0 1 QCOM_GPI_SPI>,
@@ -1125,7 +1125,7 @@
 			};
 
 			i2c9: i2c@a88000 {
-				compatible = "qcom,sa8797p-i2c-geni";
+				compatible = "qcom,sa8797p-geni-i2c";
 				reg = <0x0 0xa88000 0x0 0x4000>;
 				interrupts = <GIC_SPI 355 IRQ_TYPE_LEVEL_HIGH>;
 				dmas = <&gpi_dma1 0 2 QCOM_GPI_I2C>,
@@ -1137,7 +1137,7 @@
 			};
 
 			uart9: serial@a88000 {
-				compatible = "qcom,msm-geni-serial-hs";
+				compatible = "qcom,sa8797p-geni-uart";
 				reg = <0x0 0xa88000 0x0 0x4000>;
 				interrupts = <GIC_SPI 355 IRQ_TYPE_LEVEL_HIGH>;
 				power-domains = <&scmi11_pd 9>, <&scmi11_dvfs 9>;
@@ -1146,7 +1146,7 @@
 			};
 
 			i2c10: i2c@a8c000 {
-				compatible = "qcom,sa8797p-i2c-geni";
+				compatible = "qcom,sa8797p-geni-i2c";
 				reg = <0x0 0xa8c000 0x0 0x4000>;
 				interrupts = <GIC_SPI 356 IRQ_TYPE_LEVEL_HIGH>;
 				dmas = <&gpi_dma1 0 3 QCOM_GPI_I2C>,
@@ -1158,7 +1158,7 @@
 			};
 
 			uart10: serial@a8c000 {
-				compatible = "qcom,msm-geni-serial-hs";
+				compatible = "qcom,sa8797p-geni-uart";
 				reg = <0x0 0xa8c000 0x0 0x4000>;
 				interrupts = <GIC_SPI 356 IRQ_TYPE_LEVEL_HIGH>;
 				power-domains = <&scmi11_pd 10>, <&scmi11_dvfs 10>;
@@ -1167,7 +1167,7 @@
 			};
 
 			i2c11: i2c@a90000 {
-				compatible = "qcom,sa8797p-i2c-geni";
+				compatible = "qcom,sa8797p-geni-i2c";
 				reg = <0x0 0xa90000 0x0 0x4000>;
 				interrupts = <GIC_SPI 357 IRQ_TYPE_LEVEL_HIGH>;
 				dmas = <&gpi_dma1 0 4 QCOM_GPI_I2C>,
@@ -1179,7 +1179,7 @@
 			};
 
 			spi11: spi@a90000 {
-				compatible = "qcom,sa8797p-spi-geni";
+				compatible = "qcom,sa8797p-geni-spi";
 				reg = <0x0 0xa90000 0x0 0x4000>;
 				interrupts = <GIC_SPI 357 IRQ_TYPE_LEVEL_HIGH>;
 				dmas = <&gpi_dma1 0 4 QCOM_GPI_SPI>,
@@ -1192,7 +1192,7 @@
 			};
 
 			i2c12: i2c@a94000 {
-				compatible = "qcom,sa8797p-i2c-geni";
+				compatible = "qcom,sa8797p-geni-i2c";
 				reg = <0x0 0xa94000 0x0 0x4000>;
 				interrupts = <GIC_SPI 358 IRQ_TYPE_LEVEL_HIGH>;
 				dmas = <&gpi_dma1 0 5 QCOM_GPI_I2C>,
@@ -1204,7 +1204,7 @@
 			};
 
 			spi12: spi@a94000 {
-				compatible = "qcom,sa8797p-spi-geni";
+				compatible = "qcom,sa8797p-geni-spi";
 				reg = <0x0 0xa94000 0x0 0x4000>;
 				interrupts = <GIC_SPI 358 IRQ_TYPE_LEVEL_HIGH>;
 				dmas = <&gpi_dma1 0 5 QCOM_GPI_SPI>,
@@ -1217,7 +1217,7 @@
 			};
 
 			uart12: serial@a94000 {
-				compatible = "qcom,sa8797p-msm-geni-serial-hs";
+				compatible = "qcom,sa8797p-geni-uart";
 				reg = <0x0 0xa94000 0x0 0x4000>;
 				interrupts = <GIC_SPI 358 IRQ_TYPE_LEVEL_HIGH>;
 				power-domains = <&scmi11_pd 12>, <&scmi11_dvfs 12>;
@@ -1227,7 +1227,7 @@
 			};
 
 			i2c13: i2c@a98000 {
-				compatible = "qcom,sa8797p-i2c-geni";
+				compatible = "qcom,sa8797p-geni-i2c";
 				reg = <0x0 0xa98000 0x0 0x4000>;
 				interrupts = <GIC_SPI 363 IRQ_TYPE_LEVEL_HIGH>;
 				dmas = <&gpi_dma1 0 6 QCOM_GPI_I2C>,
@@ -1239,7 +1239,7 @@
 			};
 
 			spi13: spi@a98000 {
-				compatible = "qcom,sa8797p-spi-geni";
+				compatible = "qcom,sa8797p-geni-spi";
 				reg = <0x0 0xa98000 0x0 0x4000>;
 				interrupts = <GIC_SPI 363 IRQ_TYPE_LEVEL_HIGH>;
 				dmas = <&gpi_dma1 0 6 QCOM_GPI_SPI>,
