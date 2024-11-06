@@ -12,7 +12,7 @@
 	qcom,board-id = <0xf 0>;
 
 	aliases {
-		serial0 = &qupv3_se1_2uart;
+		serial0 = &uart15;
 	};
 
 	chosen { };
@@ -38,9 +38,7 @@
 	status = "okay";
 };
 
-&qupv3_se1_2uart {
-	power-domains = <&scmi11_pd 10>, <&scmi11_dvfs 10>;
-	power-domain-names = "power", "perf";
+&uart15 {
 	status = "okay";
 };
 
