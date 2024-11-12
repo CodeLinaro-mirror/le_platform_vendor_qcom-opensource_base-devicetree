@@ -1824,6 +1824,13 @@
 			};
 		};
 
+		watchdog@17821000 {
+			compatible = "qcom,apss-wdt-sa8797p", "qcom,win-wdt";
+			reg = <0x0 0x17821000 0x0 0x1000>;
+			clocks = <&xo_board_clk>;
+			interrupts = <GIC_SPI 24 IRQ_TYPE_LEVEL_HIGH>;
+		};
+
 		arch_timer: timer {
 			compatible = "arm,armv8-timer";
 			interrupts = <GIC_PPI 13 (GIC_CPU_MASK_SIMPLE(8) | IRQ_TYPE_LEVEL_LOW)>,
