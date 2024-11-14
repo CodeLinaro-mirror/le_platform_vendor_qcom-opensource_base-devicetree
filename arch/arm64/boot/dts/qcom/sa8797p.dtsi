@@ -4522,3 +4522,4 @@
 	};
 };
 #include "sa8797p-scmi.dtsi"
+#include "sa8797p-usb.dtsi"

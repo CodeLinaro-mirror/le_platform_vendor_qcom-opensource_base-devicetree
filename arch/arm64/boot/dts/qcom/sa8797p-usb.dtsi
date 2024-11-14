@@ -1,0 +1,43 @@
+// SPDX-License-Identifier: BSD-3-Clause
+/*
+ * Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+ */
+
+&soc {
+	usb_0: usb@a6f8800 {
+		compatible = "qcom,sa8255p-dwc3";
+		reg = <0 0x0a6f8800 0 0x400>;
+		status = "okay";
+		#address-cells = <2>;
+		#size-cells = <2>;
+		ranges;
+		dma-ranges;
+                power-domains = <&scmi0_pd 0>, <&scmi0_pd 1>;
+                power-domain-names = "transfer", "core";
+
+
+		usb_0_dwc3: dwc3@a600000 {
+			compatible = "snps,dwc3";
+			reg = <0 0x0a600000 0 0xe000>;
+			interrupts = <GIC_SPI 133 IRQ_TYPE_LEVEL_HIGH>;
+			iommus = <&apps_smmu_0 0x1500 0x0>;
+			qcom,iommu-dma = "bypass";
+			memory-region = <&dwc3_mem_region>;
+			snps,dis_u2_susphy_quirk;
+			snps,dis_enblslpm_quirk;
+			usb-phy = <&usb_nop_phy>, <&usb_nop_phy>;
+			maximum-speed = "high-speed";
+			dr_mode = "otg";
+			usb-role-switch;
+		};
+	};
+
+	dwc3_mem_region: dwc3_mem_region {
+		iommu-addresses = <&usb_0_dwc3 0x0 0x0 0x0 0x90000000>,
+					<&usb_0_dwc3 0x0 0xf0000000 0xffffffff 0x10000000>;
+	};
+
+	usb_nop_phy: usb_nop_phy {
+               compatible = "usb-nop-xceiv";
+       };
+};
