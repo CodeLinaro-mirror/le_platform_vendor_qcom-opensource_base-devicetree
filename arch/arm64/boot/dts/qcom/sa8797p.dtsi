@@ -1945,6 +1945,15 @@
 				<GIC_SPI 858 IRQ_TYPE_LEVEL_HIGH>,
 				<GIC_SPI 859 IRQ_TYPE_LEVEL_HIGH>;
 		};
+
+		dcc: dma@100ff000 {
+			compatible = "qcom,sa8797p-dcc", "qcom,dcc-v3";
+			#address-cells = <2>;
+			#size-cells = <2>;
+			reg = <0x0 0x100ff000 0x0 0x1000>,
+				<0x0 0x10080000 0x0 0x6000>;
+			qcom,dcc-offset = <0>;
+		};
 	};
 
 	thermal-zones {
