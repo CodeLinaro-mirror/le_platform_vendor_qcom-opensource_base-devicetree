@@ -34,6 +34,10 @@
 	status = "okay";
 };
 
+&pdp_scmi {
+	status = "okay";
+};
+
 &qupv3_id_2 {
 	status = "okay";
 };
