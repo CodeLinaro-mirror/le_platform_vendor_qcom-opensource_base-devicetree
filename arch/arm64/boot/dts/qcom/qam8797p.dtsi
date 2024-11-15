@@ -22,7 +22,7 @@
 };
 
 &scmi0 {
-       status = "okay";
+	status = "okay";
 };
 
 &qupv3_id_2 {
@@ -33,32 +33,22 @@
 	status = "okay";
 };
 
-&soc {
-
-	usb_emu_phy_0: usb_emu_phy@a784000 {
-		compatible = "qcom,usb-emu-phy";
-		reg = <0 0x0a784000 0 0x9500>;
-
-		qcom,emu-init-seq = <0xfffff 0x4
-				     0x2110010 0x34
-				     0x0110010 0x34
-				     0xffff3 0x4
-				     0xffff0 0x4
-				     0x100000 0x20
-				     0x0 0x20
-				     0x1A0 0x20
-				     0x100000 0x3c
-				     0x0 0x3c
-				     0x10060 0x3c
-				     0x0 0x4
-				     0x9 0x14>;
-	};
+&scmi1 {
+	status = "okay";
 };
 
-&usb_0 {
-	dwc3@a600000 {
-		usb-phy = <&usb_emu_phy_0>, <&usb_nop_phy>;
-		maximum-speed = "high-speed";
-		dr_mode = "peripheral";
-	};
+&scmi2 {
+	status = "okay";
+};
+
+&scmi12 {
+	status = "okay";
+};
+
+&scmi13 {
+	status = "okay";
+};
+
+&scmi14 {
+	status = "okay";
 };

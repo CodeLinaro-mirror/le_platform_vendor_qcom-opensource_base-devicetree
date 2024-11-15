@@ -3,32 +3,154 @@
  * Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
  */
 
+#include <dt-bindings/phy/phy-qcom-qmp.h>
+
 &soc {
-	usb_0: usb@a6f8800 {
-		compatible = "qcom,sa8255p-dwc3";
-		reg = <0 0x0a6f8800 0 0x400>;
-		status = "okay";
+	usb_2_eusbphy: phy@88e0000 {
+		compatible = "qcom,sa8797p-snps-eusb2-phy-fw-managed";
+		reg = <0x0 0x088e0000 0x0 0x154>;
+		#phy-cells = <0>;
+
+		power-domains = <&scmi14_pd 0>, <&scmi14_pd 1>;
+		power-domain-names = "transfer", "core";
+
+		status = "disabled";
+	};
+
+	usb_0_qmpphy: phy@88e1000 {
+		compatible = "qcom,sa8797-qmp-usb3-dp-phy-fw-managed";
+		reg = <0x0 0x088e1000 0x0 0x3000>;
+		#phy-cells = <1>;
+
+		power-domains = <&scmi12_pd 2>, <&scmi12_pd 3>;
+		power-domain-names = "transfer", "core";
+	};
+
+	usb_1_qmpphy: phy@88e4000 {
+		compatible = "qcom,sa8797-qmp-usb3-dp-phy-fw-managed";
+		reg = <0x0 0x088e4000 0x0 0x3000>;
+		#phy-cells = <1>;
+
+		power-domains = <&scmi13_pd 2>, <&scmi13_pd 3>;
+		power-domain-names = "transfer", "core";
+
+		status = "disabled";
+	};
+
+	usb_0_eusbphy: phy@88ea000 {
+		compatible = "qcom,sa8797p-snps-eusb2-phy-fw-managed";
+		reg = <0x0 0x088ea000 0x0 0x154>;
+		#phy-cells = <0>;
+
+		power-domains = <&scmi12_pd 0>, <&scmi12_pd 1>;
+		power-domain-names = "transfer", "core";
+	};
+
+	usb_1_eusbphy: phy@88eb000 {
+		compatible = "qcom,sa8797p-snps-eusb2-phy-fw-managed";
+		reg = <0x0 0x088eb000 0x0 0x154>;
+		#phy-cells = <0>;
+
+		power-domains = <&scmi13_pd 0>, <&scmi13_pd 1>;
+		power-domain-names = "transfer", "core";
+
+		status = "disabled";
+	};
+
+	usb_2: usb@a2f8800 {
+		compatible = "qcom,sa8797p-dwc3";
+		reg = <0 0x0a2f8800 0 0x400>;
 		#address-cells = <2>;
 		#size-cells = <2>;
 		ranges;
 		dma-ranges;
-                power-domains = <&scmi0_pd 0>, <&scmi0_pd 1>;
-                power-domain-names = "transfer", "core";
 
+		power-domains = <&scmi2_pd 0>, <&scmi2_pd 1>;
+		power-domain-names = "transfer", "core";
+
+		interrupts-extended = <&intc GIC_SPI 907 IRQ_TYPE_LEVEL_HIGH>;
+		interrupt-names = "pwr_event";
+
+		status = "disabled";
+
+		usb_2_dwc3: dwc3@a200000 {
+			compatible = "snps,dwc3";
+			reg = <0 0x0a200000 0 0xe000>;
+			interrupts = <GIC_SPI 910 IRQ_TYPE_LEVEL_HIGH>;
+			iommus = <&apps_smmu_0 0x14e0 0x0>;
+			qcom,iommu-dma = "bypass";
+			memory-region = <&dwc3_mem_region>;
+			snps,dis_u2_susphy_quirk;
+			snps,dis_enblslpm_quirk;
+			phys = <&usb_2_eusbphy>;
+			phy-names = "usb2-phy";
+			maximum-speed = "high-speed";
+			dr_mode = "otg";
+			usb-role-switch;
+		};
+	};
+
+	usb_1: usb@a4f8800 {
+		compatible = "qcom,sa8797p-dwc3";
+		reg = <0 0x0a4f8800 0 0x400>;
+		#address-cells = <2>;
+		#size-cells = <2>;
+		ranges;
+		dma-ranges;
+
+		power-domains = <&scmi1_pd 0>, <&scmi1_pd 1>;
+		power-domain-names = "transfer", "core";
+
+		interrupts-extended = <&intc GIC_SPI 918 IRQ_TYPE_LEVEL_HIGH>;
+		interrupt-names = "pwr_event";
+
+		status = "disabled";
+
+		usb_1_dwc3: dwc3@a400000 {
+			compatible = "snps,dwc3";
+			reg = <0 0x0a400000 0 0xe000>;
+			interrupts = <GIC_SPI 917 IRQ_TYPE_LEVEL_HIGH>;
+			iommus = <&apps_smmu_0 0x15c0 0x0>;
+			qcom,iommu-dma = "bypass";
+			memory-region = <&dwc3_mem_region>;
+			snps,dis_u2_susphy_quirk;
+			snps,dis_enblslpm_quirk;
+			phys = <&usb_1_eusbphy>, <&usb_1_qmpphy QMP_USB43DP_USB3_PHY>;
+			phy-names = "usb2-phy", "usb3-phy";
+			maximum-speed = "super-speed-plus";
+			dr_mode = "otg";
+			usb-role-switch;
+		};
+	};
+
+	usb_0: usb@a6f8800 {
+		compatible = "qcom,sa8797p-dwc3";
+		reg = <0 0x0a6f8800 0 0x400>;
+		#address-cells = <2>;
+		#size-cells = <2>;
+		ranges;
+		dma-ranges;
+
+		interrupts-extended = <&intc GIC_SPI 130 IRQ_TYPE_LEVEL_HIGH>;
+		interrupt-names = "pwr_event";
+
+		power-domains = <&scmi0_pd 0>, <&scmi0_pd 1>;
+		power-domain-names = "transfer", "core";
+
+		status = "okay";
 
 		usb_0_dwc3: dwc3@a600000 {
 			compatible = "snps,dwc3";
 			reg = <0 0x0a600000 0 0xe000>;
 			interrupts = <GIC_SPI 133 IRQ_TYPE_LEVEL_HIGH>;
 			iommus = <&apps_smmu_0 0x1500 0x0>;
-			qcom,iommu-dma = "bypass";
 			memory-region = <&dwc3_mem_region>;
 			snps,dis_u2_susphy_quirk;
 			snps,dis_enblslpm_quirk;
-			usb-phy = <&usb_nop_phy>, <&usb_nop_phy>;
-			maximum-speed = "high-speed";
-			dr_mode = "otg";
-			usb-role-switch;
+			phys = <&usb_0_eusbphy>, <&usb_0_qmpphy QMP_USB43DP_USB3_PHY>;
+			phy-names = "usb2-phy", "usb3-phy";
+			maximum-speed = "super-speed-plus";
+			dr_mode = "peripheral";
 		};
 	};
 
@@ -38,6 +160,6 @@
 	};
 
 	usb_nop_phy: usb_nop_phy {
-               compatible = "usb-nop-xceiv";
-       };
+		compatible = "usb-nop-xceiv";
+	};
 };
