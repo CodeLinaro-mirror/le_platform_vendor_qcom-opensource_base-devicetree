@@ -4,6 +4,12 @@
 */
 
 &soc {
+	scm_user_intf_device {
+		compatible = "qcom,scm-user-intf";
+		scm_dev = "scm";
+		status = "ok";
+	};
+
 	vfio_timer@17813000 {
 		compatible = "qcom,vfio-platform";
 		interrupts = <GIC_SPI 39 IRQ_TYPE_LEVEL_HIGH>;
@@ -18,7 +24,40 @@
 		reg = <0x0 0x82010000 0x0 0x1000>,
 			  <0x0 0x9007000 0x0 0x1000>;
 		iommus = <&apps_smmu_0 0x16A0 0x0>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_SAIL0 1 IRQ_TYPE_LEVEL_HIGH>;
-		dma-coherent;
+                interrupts-extended = <&ipcc0 IPCC_MPROC_SAIL0 1 IRQ_TYPE_LEVEL_HIGH>;
+                dma-coherent;
+        };
+
+        umd_glink@9007000 {
+                compatible = "qcom,vfio-platform";
+		reg = <0x0 0x9007000 0x0 0x1000>,
+              <0x0 0x89B00000 0x0 0x400000>,
+              <0x0 0x01FD4000 0x0 0x1000>;
+		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 0 IRQ_TYPE_LEVEL_HIGH>,
+                        <&ipcc0 IPCC_MPROC_NSP0 0 IRQ_TYPE_LEVEL_HIGH>;
+                iommus = <&apps_smmu_0 0x01C20 0x0>;
+                dma-coherent;
+        };
+
+        umd_pil@9007000 {
+                compatible = "qcom,vfio-platform";
+		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 2 IRQ_TYPE_LEVEL_HIGH>,
+                              <&ipcc0 IPCC_MPROC_NSP0 2 IRQ_TYPE_LEVEL_HIGH>;
+		reg = <0x0 0x9007000 0x0 0x1000>,
+              <0x0 0x89B00000 0x0 0x400000>,
+              <0x0 0x01FD4000 0x0 0x1000>,
+              <0x0 0xa0100000 0x0 0x100000>,
+              <0x0 0x9df00000 0x0 0x80000>,
+              <0x0 0x96500000 0x0 0x2800000>,
+              <0x0 0x9dd00000 0x0 0x80000>,
+              <0x0 0x8d900000 0x0 0x2300000>,
+              <0x0 0x8c900000 0x0 0x800000>,
+              <0x0 0x9f500000 0x0 0xc00000>,
+              <0x0 0x8d100000 0x0 0x800000>,
+              <0x0 0x8bb1a000 0x0 0x2000>,
+              <0x0 0x8bb1c000 0x0 0x2000>,
+              <0x0 0x8bc00000 0x0 0x300000>;
+		iommus = <&apps_smmu_0 0x01000 0x0>;
+        	dma-coherent;
 	};
 };

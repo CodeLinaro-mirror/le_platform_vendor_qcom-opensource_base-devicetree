@@ -599,9 +599,9 @@
 			reg = <0x0 0x8bf00000 0x0 0xa00000>;
 		};
 
-		video_mem: video_region@8c900000 {
+		video_mem: video_region@9f500000 {
 			no-map;
-			reg = <0x0 0x8c900000 0x0 0x800000>;
+			reg = <0x0 0x9f500000 0x0 0xc00000>;
 		};
 
 		cvp_mem: cvp_region@8d100000 {
@@ -678,6 +678,11 @@
 			no-map;
 			reg = <0x0 0x9e000000 0x0 0x100000>;
 		};
+
+                pil_umd_reserved: mdt_load_region@a0100000 {
+                       no-map;
+                       reg = <0x0 0xa0100000 0x0 0x100000>;
+                };
 
 		camera_icp_1_mem: camera_icp_1_region@9e100000 {
 			no-map;
