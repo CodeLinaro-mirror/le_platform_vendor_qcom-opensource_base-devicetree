@@ -12,4 +12,13 @@
 		qcom,iommu-dma-addr-pool = <0x0 0x60002000 0x0 0x1FFFE000>;
 		dma-coherent;
 	};
+
+	safety-ddr@82010000 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x82010000 0x0 0x1000>,
+			  <0x0 0x9007000 0x0 0x1000>;
+		iommus = <&apps_smmu_0 0x16A0 0x0>;
+		interrupts-extended = <&ipcc0 IPCC_MPROC_SAIL0 1 IRQ_TYPE_LEVEL_HIGH>;
+		dma-coherent;
+	};
 };
