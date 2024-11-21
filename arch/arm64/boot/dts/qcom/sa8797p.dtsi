@@ -132,9 +132,9 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x10000>;
 			enable-method = "psci";
-			next-level-cache = <&L2_6>;
+			next-level-cache = <&L2_10000>;
                         clocks = <&cpu_perf 1>;
-			L2_6: l2-cache {
+			L2_10000: l2-cache {
 				compatible = "cache";
 				cache-level = <2>;
 				cache-unified;
@@ -152,7 +152,7 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x10100>;
 			enable-method = "psci";
-			next-level-cache = <&L2_6>;
+			next-level-cache = <&L2_10000>;
                         clocks = <&cpu_perf 1>;
 
 			CPU7_idle: thermal-idle {
@@ -168,7 +168,7 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x10200>;
 			enable-method = "psci";
-			next-level-cache = <&L2_6>;
+			next-level-cache = <&L2_10000>;
                         clocks = <&cpu_perf 1>;
 
 			CPU8_idle: thermal-idle {
@@ -184,7 +184,7 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x10300>;
 			enable-method = "psci";
-			next-level-cache = <&L2_6>;
+			next-level-cache = <&L2_10000>;
                         clocks = <&cpu_perf 1>;
 
 			CPU9_idle: thermal-idle {
@@ -200,7 +200,7 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x10400>;
 			enable-method = "psci";
-			next-level-cache = <&L2_6>;
+			next-level-cache = <&L2_10000>;
                         clocks = <&cpu_perf 1>;
 
 			CPU10_idle: thermal-idle {
@@ -216,7 +216,7 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x10500>;
 			enable-method = "psci";
-			next-level-cache = <&L2_6>;
+			next-level-cache = <&L2_10000>;
                         clocks = <&cpu_perf 1>;
 
 			CPU11_idle: thermal-idle {
@@ -232,9 +232,9 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x20000>;
 			enable-method = "psci";
-			next-level-cache = <&L2_12>;
+			next-level-cache = <&L2_20000>;
                         clocks = <&cpu_perf 2>;
-			L2_12: l2-cache {
+			L2_20000: l2-cache {
 				compatible = "cache";
 				cache-level = <2>;
 				cache-unified;
@@ -252,7 +252,7 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x20100>;
 			enable-method = "psci";
-			next-level-cache = <&L2_12>;
+			next-level-cache = <&L2_20000>;
                         clocks = <&cpu_perf 2>;
 
 			CPU13_idle: thermal-idle {
@@ -263,12 +263,12 @@
 
 		};
 
-		CPU14: cpu@30200 {
+		CPU14: cpu@20200 {
 			device_type = "cpu";
 			compatible = "arm,armv8";
-			reg = <0x0 0x30200>;
+			reg = <0x0 0x20200>;
 			enable-method = "psci";
-			next-level-cache = <&L2_12>;
+			next-level-cache = <&L2_20000>;
                         clocks = <&cpu_perf 2>;
 
 			CPU14_idle: thermal-idle {
@@ -279,12 +279,12 @@
 
 		};
 
-		CPU15: cpu@40300 {
+		CPU15: cpu@20300 {
 			device_type = "cpu";
 			compatible = "arm,armv8";
-			reg = <0x0 0x40300>;
+			reg = <0x0 0x20300>;
 			enable-method = "psci";
-			next-level-cache = <&L2_12>;
+			next-level-cache = <&L2_20000>;
                         clocks = <&cpu_perf 2>;
 
 			CPU15_idle: thermal-idle {
@@ -295,12 +295,12 @@
 
 		};
 
-		CPU16: cpu@50400 {
+		CPU16: cpu@20400 {
 			device_type = "cpu";
 			compatible = "arm,armv8";
-			reg = <0x0 0x50400>;
+			reg = <0x0 0x20400>;
 			enable-method = "psci";
-			next-level-cache = <&L2_12>;
+			next-level-cache = <&L2_20000>;
                         clocks = <&cpu_perf 2>;
 
 			CPU16_idle: thermal-idle {
@@ -311,12 +311,12 @@
 
 		};
 
-		CPU17: cpu@60500 {
+		CPU17: cpu@20500 {
 			device_type = "cpu";
 			compatible = "arm,armv8";
-			reg = <0x0 0x60500>;
+			reg = <0x0 0x20500>;
 			enable-method = "psci";
-			next-level-cache = <&L2_12>;
+			next-level-cache = <&L2_20000>;
                         clocks = <&cpu_perf 2>;
 
 			CPU17_idle: thermal-idle {
