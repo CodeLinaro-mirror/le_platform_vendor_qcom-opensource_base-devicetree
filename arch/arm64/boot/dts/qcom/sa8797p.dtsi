@@ -2004,12 +2004,53 @@
 
 		pdp_mbox0: mailbox@19980000 {
 			compatible = "qcom,x1e80100-cpucp-mbox";
-			reg = <0x0 0x17610000 0x0 0x4C08>,
-				<0x0 0x19980000 0x0 0x300>;
-			reg-names = "rx", "tx";
-			qcom,rx-chans = <0x249>;
+			reg = <0x0 0x19980000 0x0 0x300>,
+				<0x0 0x17610000 0x0 0x4c08>;
+			reg-names = "tx", "rx";
+			qcom,rx-chans = <0xB>;
 			#mbox-cells = <1>;
 			interrupts = <GIC_SPI 56 IRQ_TYPE_LEVEL_HIGH>;
+		};
+
+		pdp_mbox1: mailbox@1a980000 {
+			compatible = "qcom,x1e80100-cpucp-mbox";
+			reg = <0x0 0x1a980000 0x0 0x300>,
+				<0x0 0x17610000 0x0 0x4c08>;
+			reg-names = "tx", "rx";
+			#mbox-cells = <1>;
+			qcom,rx-chans = <0x10>;
+			interrupts = <GIC_SPI 56 IRQ_TYPE_LEVEL_HIGH>;
+		};
+
+		pdp_mbox2: mailbox@1b980000 {
+			compatible = "qcom,x1e80100-cpucp-mbox";
+			reg = <0x0 0x1b980000 0x0 0x300>,
+				<0x0 0x17610000 0x0 0x4c08>;
+			reg-names = "tx", "rx";
+			#mbox-cells = <1>;
+			qcom,rx-chans = <0x20>;
+			interrupts = <GIC_SPI 56 IRQ_TYPE_LEVEL_HIGH>;
+		};
+
+		pdp0_log: qcom,pdp0_log@8764a000 {
+			compatible = "qcom,pdp-log";
+			reg =	<0x0 0x8764a000 0x0 0x10000>;
+			mboxes = <&pdp_mbox0 3>, <&pdp_mbox0 2>;
+			qcom,log-type = <1>;
+		};
+
+		pdp1_log: qcom,pdp1_log@8764a000 {
+			compatible = "qcom,pdp-log";
+			reg =	<0x0 0x8768a000 0x0 0x10000>;
+			mboxes = <&pdp_mbox1 4>, <&pdp_mbox1 2>;
+			qcom,log-type = <2>;
+		};
+
+		pdp2_log: qcom,pdp2_log@876ca000 {
+			compatible = "qcom,pdp-log";
+			reg =	<0x0 0x876ca000 0x0 0x10000>;
+			mboxes = <&pdp_mbox2 5>, <&pdp_mbox2 2>;
+			qcom,log-type = <3>;
 		};
 
 		dcc: dma@100ff000 {
