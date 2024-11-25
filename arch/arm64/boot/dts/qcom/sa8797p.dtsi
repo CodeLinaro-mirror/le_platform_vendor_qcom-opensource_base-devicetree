@@ -1896,6 +1896,7 @@
 			interrupt-names = "eventq", "cmdq-sync", "gerror";
 			dma-coherent;
 			#iommu-cells = <1>;
+			status = "disabled";
 		};
 
 		ufshc_mem: ufshc@1d44000 {
@@ -1953,6 +1954,7 @@
 				<GIC_SPI 669 IRQ_TYPE_LEVEL_HIGH>,
 				<GIC_SPI 670 IRQ_TYPE_LEVEL_HIGH>,
 				<GIC_SPI 670 IRQ_TYPE_LEVEL_HIGH>;
+			status = "disabled";
 		};
 
 		adreno_smmu_1: iommu@98a0000 {
@@ -1988,6 +1990,7 @@
 				<GIC_SPI 857 IRQ_TYPE_LEVEL_HIGH>,
 				<GIC_SPI 858 IRQ_TYPE_LEVEL_HIGH>,
 				<GIC_SPI 859 IRQ_TYPE_LEVEL_HIGH>;
+			status = "disabled";
 		};
 
 		pdp_mbox0: mailbox@0x19980000 {
