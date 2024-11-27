@@ -1873,10 +1873,10 @@
 &soc {
 	scmichannels: sram@d7600000 {
 		compatible = "mmio-sram";
+		reg = <0x0 0xd7600000 0x0 0x40000>;
+		ranges = <0x0 0x0 0x0 0xffffffff>;
 		#address-cells = <1>;
 		#size-cells = <1>;
-		reg = <0xd7600000 0x40000>;
-		ranges = <0x0 0x0 0x0 0xffffffff>;
 
 		shmem0: scmi-sram@d7600000 {
 			compatible = "arm,scmi-shmem";
