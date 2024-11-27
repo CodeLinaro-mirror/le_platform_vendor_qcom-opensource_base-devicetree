@@ -1777,7 +1777,7 @@
 				reg = <0x17811000 0x1000>,
 				      <0x17812000 0x1000>;
 				interrupts = <GIC_SPI 38 IRQ_TYPE_LEVEL_HIGH>,
-					     <GIC_SPI 36 IRQ_TYPE_LEVEL_HIGH>;
+					     <GIC_SPI 31 IRQ_TYPE_LEVEL_HIGH>;
 				frame-number = <0>;
 			};
 
