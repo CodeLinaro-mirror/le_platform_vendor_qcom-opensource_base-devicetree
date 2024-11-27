@@ -58,6 +58,14 @@
 	status = "okay";
 };
 
+&scmi16 {
+    status = "okay";
+};
+
+&scmi17 {
+    status = "okay";
+};
+
 &soc {
 	kiumd {
 		compatible = "qcom,kiumd";
@@ -141,5 +149,23 @@
 		power-domain-names = "perf";
 
 		qcom,dev-name = "scmi_hpass2";
+	};
+
+	scmi_mdss0 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi16_dvfs 0>;
+		power-domain-names = "perf";
+
+		qcom,dev-name = "scmi_mdss0";
+	};
+
+	scmi_mdss1 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi17_dvfs 0>;
+		power-domain-names = "perf";
+
+		qcom,dev-name = "scmi_mdss1";
 	};
 };
