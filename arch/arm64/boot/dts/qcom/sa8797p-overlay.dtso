@@ -38,6 +38,14 @@
 	status = "okay";
 };
 
+&scmi27 {
+    status = "okay";
+};
+
+&scmi28 {
+    status = "okay";
+};
+
 &soc {
 	kiumd {
 		compatible = "qcom,kiumd";
@@ -165,4 +173,22 @@
 
 		qcom,dev-name = "scmi_camera";
         };
+
+	scmi_dprx0 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi27_dvfs 0>;
+		power-domain-names = "perf";
+
+		qcom,dev-name = "scmi_dprx0";
+	};
+
+	scmi_dprx1 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi28_dvfs 0>;
+		power-domain-names = "perf";
+
+		qcom,dev-name = "scmi_dprx1";
+	};
 };
