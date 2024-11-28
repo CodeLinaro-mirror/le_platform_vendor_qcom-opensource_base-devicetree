@@ -54,6 +54,10 @@
         };
 };
 
+&scmi19 {
+	status = "okay";
+};
+
 &soc {
 	kiumd {
 		compatible = "qcom,kiumd";
@@ -74,5 +78,68 @@
 		hyplog-address-offset = <0x410>;
 		hyplog-size-offset = <0x414>;
 		tmecrashdump-address-offset = <0x87000000>;
+	};
+
+	scmi_nsp0 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi19_dvfs 0>;
+		power-domain-names = "perf";
+
+		qcom,dev-name = "scmi_nsp0";
+	};
+
+	scmi_nsp1 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi19_dvfs 1>;
+		power-domain-names = "perf";
+
+		qcom,dev-name = "scmi_nsp1";
+	};
+
+	scmi_nsp2 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi19_dvfs 2>;
+		power-domain-names = "perf";
+
+		qcom,dev-name = "scmi_nsp2";
+	};
+
+	scmi_nsp3 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi19_dvfs 3>;
+		power-domain-names = "perf";
+
+		qcom,dev-name = "scmi_nsp3";
+	};
+
+	scmi_hpass0 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi19_dvfs 4>;
+		power-domain-names = "perf";
+
+		qcom,dev-name = "scmi_hpass0";
+	};
+
+	scmi_hpass1 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi19_dvfs 5>;
+		power-domain-names = "perf";
+
+		qcom,dev-name = "scmi_hpass1";
+	};
+
+	scmi_hpass2 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi19_dvfs 6>;
+		power-domain-names = "perf";
+
+		qcom,dev-name = "scmi_hpass2";
 	};
 };
