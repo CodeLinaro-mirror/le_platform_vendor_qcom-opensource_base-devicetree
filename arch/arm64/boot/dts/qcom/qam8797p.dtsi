@@ -9,3 +9,99 @@
 	qcom,msm-id = <690 0x10000>;
 };
 
+&scmi11 {
+	status = "okay";
+};
+
+&pdp_scmi {
+	status = "okay";
+};
+
+&scmi3 {
+	status = "okay";
+};
+
+&scmi0 {
+       status = "okay";
+};
+
+&qupv3_id_2 {
+	status = "okay";
+};
+
+&uart15 {
+	status = "okay";
+};
+
+&tlmm {
+	qupv3_se1_2uart_pins: qupv3_se1_2uart_pins {
+		qupv3_se1_2uart_tx_active: qupv3_se1_2uart_tx_active {
+			mux {
+				pins = "gpio143";
+				function = "qup2_se1_l2";
+			};
+
+			config {
+				pins = "gpio143";
+				drive-strength = <2>;
+				bias-disable;
+			};
+		};
+
+		qupv3_se1_2uart_rx_active: qupv3_se1_2uart_rx_active {
+			mux {
+				pins = "gpio144";
+				function = "qup2_se1_l3";
+			};
+
+			config {
+				pins = "gpio144";
+				drive-strength = <2>;
+				bias-disable;
+			};
+		};
+
+		qupv3_se1_2uart_sleep: qupv3_se1_2uart_sleep {
+			mux {
+				pins = "gpio143", "gpio144";
+				function = "gpio";
+			};
+
+			config {
+				pins = "gpio143", "gpio144";
+				drive-strength = <2>;
+				bias-pull-down;
+			};
+		};
+	};
+};
+
+&soc {
+
+	usb_emu_phy_0: usb_emu_phy@a784000 {
+		compatible = "qcom,usb-emu-phy";
+		reg = <0 0x0a784000 0 0x9500>;
+
+		qcom,emu-init-seq = <0xfffff 0x4
+				     0x2110010 0x34
+				     0x0110010 0x34
+				     0xffff3 0x4
+				     0xffff0 0x4
+				     0x100000 0x20
+				     0x0 0x20
+				     0x1A0 0x20
+				     0x100000 0x3c
+				     0x0 0x3c
+				     0x10060 0x3c
+				     0x0 0x4
+				     0x9 0x14>;
+	};
+};
+
+&usb_0 {
+	dwc3@a600000 {
+		usb-phy = <&usb_emu_phy_0>, <&usb_nop_phy>;
+		maximum-speed = "high-speed";
+		dr_mode = "peripheral";
+	};
+};

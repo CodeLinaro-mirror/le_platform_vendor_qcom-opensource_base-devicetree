@@ -12,14 +12,18 @@
 	#address-cells = <2>;
 	#size-cells = <2>;
 
+	chosen { };
+
 	clocks {
 		xo_board_clk: xo-board-clk {
 			compatible = "fixed-clock";
+			clock-frequency = <19200000>;
 			#clock-cells = <0>;
 		};
 
 		sleep_clk: sleep-clk {
 			compatible = "fixed-clock";
+			clock-frequency = <32768>;
 			#clock-cells = <0>;
 		};
 	};
@@ -1772,6 +1776,7 @@
 			compatible = "arm,armv7-timer-mem";
 			reg = <0x0 0x17810000 0x0 0x1000>;
 			ranges = <0x0 0x0 0x0 0x20000000>;
+			clock-frequency = <19200000>;
 			#address-cells = <1>;
 			#size-cells = <1>;
 
@@ -1839,6 +1844,7 @@
 				     <GIC_PPI 14 (GIC_CPU_MASK_SIMPLE(8) | IRQ_TYPE_LEVEL_LOW)>,
 				     <GIC_PPI 11 (GIC_CPU_MASK_SIMPLE(8) | IRQ_TYPE_LEVEL_LOW)>,
 				     <GIC_PPI 12 (GIC_CPU_MASK_SIMPLE(8) | IRQ_TYPE_LEVEL_LOW)>;
+			clock-frequency = <19200000>;
 		};
 
 		ipcc0: mailbox@9007000 {
