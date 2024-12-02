@@ -28,59 +28,259 @@
                 dma-coherent;
         };
 
-        umd_glink@9007000 {
-                compatible = "qcom,vfio-platform";
+	umd_glink@9007000 {
+		compatible = "qcom,vfio-platform";
 		reg = <0x0 0x9007000 0x0 0x1000>,
-                        <0x0 0x89B00000 0x0 0x400000>,
-                        <0x0 0x01FD4000 0x0 0x1000>;
+		    <0x0 0x89B00000 0x0 0x400000>,
+		    <0x0 0x01FD4000 0x0 0x1000>;
 		interrupts-extended =
-                                <&ipcc0 IPCC_MPROC_ADSP0 0 IRQ_TYPE_LEVEL_HIGH>,
-                                <&ipcc0 IPCC_MPROC_ADSP1 0 IRQ_TYPE_LEVEL_HIGH>,
-                                <&ipcc0 IPCC_MPROC_ADSP2 0 IRQ_TYPE_LEVEL_HIGH>,
-                                <&ipcc0 IPCC_MPROC_NSP0 0 IRQ_TYPE_LEVEL_HIGH>,
-                                <&ipcc0 IPCC_MPROC_NSP1 0 IRQ_TYPE_LEVEL_HIGH>,
-                                <&ipcc0 IPCC_MPROC_NSP2 0 IRQ_TYPE_LEVEL_HIGH>,
-                                <&ipcc0 IPCC_MPROC_NSP3 0 IRQ_TYPE_LEVEL_HIGH>;
-                iommus = <&apps_smmu_0 0x01C20 0x0>;
-                dma-coherent;
-        };
-
-        umd_pil@9007000 {
-                compatible = "qcom,vfio-platform";
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 2 IRQ_TYPE_LEVEL_HIGH>,
-                              <&ipcc0 IPCC_MPROC_ADSP1 2 IRQ_TYPE_LEVEL_HIGH>,
-                              <&ipcc0 IPCC_MPROC_ADSP2 2 IRQ_TYPE_LEVEL_HIGH>,
-                              <&ipcc0 IPCC_MPROC_NSP0 2 IRQ_TYPE_LEVEL_HIGH>,
-                              <&ipcc0 IPCC_MPROC_NSP1 2 IRQ_TYPE_LEVEL_HIGH>,
-                              <&ipcc0 IPCC_MPROC_NSP2 2 IRQ_TYPE_LEVEL_HIGH>,
-                              <&ipcc0 IPCC_MPROC_NSP3 2 IRQ_TYPE_LEVEL_HIGH>;
-		reg = <0x0 0x9007000 0x0 0x1000>,
-                        <0x0 0x89B00000 0x0 0x400000>,
-                        <0x0 0x01FD4000 0x0 0x1000>,
-                        <0x0 0xa0100000 0x0 0x100000>,
-                        <0x0 0x9df00000 0x0 0x80000>,
-                        <0x0 0x96500000 0x0 0x2800000>,
-                        <0x0 0x9dd00000 0x0 0x80000>,
-                        <0x0 0x8d900000 0x0 0x2300000>,
-                        <0x0 0x8c900000 0x0 0x800000>,
-                        <0x0 0x9f500000 0x0 0xc00000>,
-                        <0x0 0x8d100000 0x0 0x800000>,
-                        <0x0 0x8bb1a000 0x0 0x2000>,
-                        <0x0 0x8bb1c000 0x0 0x2000>,
-                        <0x0 0x8bc00000 0x0 0x300000>,
-                        <0x0 0x9e100000 0x0 0x800000>,
-                        <0x0 0x9e900000 0x0 0x800000>,
-                        <0x0 0x98d00000 0x0 0x2800000>,
-                        <0x0 0x9df80000 0x0 0x80000>,
-                        <0x0 0x9b500000 0x0 0x2800000>,
-                        <0x0 0x9e000000 0x0 0x80000>,
-                        <0x0 0x8fc00000 0x0 0x2300000>,
-                        <0x0 0x9dd80000 0x0 0x80000>,
-                        <0x0 0x91f00000 0x0 0x2300000>,
-                        <0x0 0x9de00000 0x0 0x80000>,
-                        <0x0 0x94200000 0x0 0x2300000>,
-                        <0x0 0x9de80000 0x0 0x80000>;
-		iommus = <&apps_smmu_0 0x01000 0x0>;
-        	dma-coherent;
+			<&ipcc0 IPCC_MPROC_ADSP0 0 IRQ_TYPE_LEVEL_HIGH>,
+			<&ipcc0 IPCC_MPROC_ADSP1 0 IRQ_TYPE_LEVEL_HIGH>,
+			<&ipcc0 IPCC_MPROC_ADSP2 0 IRQ_TYPE_LEVEL_HIGH>,
+			<&ipcc0 IPCC_MPROC_NSP0 0 IRQ_TYPE_LEVEL_HIGH>,
+			<&ipcc0 IPCC_MPROC_NSP1 0 IRQ_TYPE_LEVEL_HIGH>,
+			<&ipcc0 IPCC_MPROC_NSP2 0 IRQ_TYPE_LEVEL_HIGH>,
+			<&ipcc0 IPCC_MPROC_NSP3 0 IRQ_TYPE_LEVEL_HIGH>;
+		iommus = <&apps_smmu_0 0x01C20 0x0>;
+		dma-coherent;
 	};
+
+	umd_pil@9007000 {
+		compatible = "qcom,vfio-platform";
+		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 2 IRQ_TYPE_LEVEL_HIGH>,
+			<&ipcc0 IPCC_MPROC_ADSP1 2 IRQ_TYPE_LEVEL_HIGH>,
+			<&ipcc0 IPCC_MPROC_ADSP2 2 IRQ_TYPE_LEVEL_HIGH>,
+			<&ipcc0 IPCC_MPROC_NSP0 2 IRQ_TYPE_LEVEL_HIGH>,
+			<&ipcc0 IPCC_MPROC_NSP1 2 IRQ_TYPE_LEVEL_HIGH>,
+			<&ipcc0 IPCC_MPROC_NSP2 2 IRQ_TYPE_LEVEL_HIGH>,
+			<&ipcc0 IPCC_MPROC_NSP3 2 IRQ_TYPE_LEVEL_HIGH>;
+		reg = <0x0 0x9007000 0x0 0x1000>,
+		    <0x0 0x89B00000 0x0 0x400000>,
+		    <0x0 0x01FD4000 0x0 0x1000>,
+		    <0x0 0xa0100000 0x0 0x100000>,
+		    <0x0 0x9df00000 0x0 0x80000>,
+		    <0x0 0x96500000 0x0 0x2800000>,
+		    <0x0 0x9dd00000 0x0 0x80000>,
+		    <0x0 0x8d900000 0x0 0x2300000>,
+		    <0x0 0x8c900000 0x0 0x800000>,
+		    <0x0 0x9f500000 0x0 0xc00000>,
+		    <0x0 0x8d100000 0x0 0x800000>,
+		    <0x0 0x8bb1a000 0x0 0x2000>,
+		    <0x0 0x8bb1c000 0x0 0x2000>,
+		    <0x0 0x8bc00000 0x0 0x300000>,
+		    <0x0 0x9e100000 0x0 0x800000>,
+		    <0x0 0x9e900000 0x0 0x800000>,
+		    <0x0 0x98d00000 0x0 0x2800000>,
+		    <0x0 0x9df80000 0x0 0x80000>,
+		    <0x0 0x9b500000 0x0 0x2800000>,
+		    <0x0 0x9e000000 0x0 0x80000>,
+		    <0x0 0x8fc00000 0x0 0x2300000>,
+		    <0x0 0x9dd80000 0x0 0x80000>,
+		    <0x0 0x91f00000 0x0 0x2300000>,
+		    <0x0 0x9de00000 0x0 0x80000>,
+		    <0x0 0x94200000 0x0 0x2300000>,
+		    <0x0 0x9de80000 0x0 0x80000>;
+		iommus = <&apps_smmu_0 0x01000 0x0>;
+		dma-coherent;
+	};
+
+	cdsp0_cb@1 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x1 0x0 0x0>;
+		iommus = <&apps_smmu_2 0x0301 0x0040>,
+		       <&apps_smmu_2 0x0341 0x0040>,
+		       <&apps_smmu_2 0x0361 0x0000>;
+		dma-coherent;
+	};
+
+	cdsp0_cb@2 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x2 0x0 0x0>;
+		iommus = <&apps_smmu_2 0x0306 0x0040>,
+		       <&apps_smmu_2 0x0346 0x0040>,
+		       <&apps_smmu_2 0x0366 0x0000>;
+		dma-coherent;
+	};
+
+	cdsp0_cb@3 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x3 0x0 0x0>;
+		iommus = <&apps_smmu_2 0x030B 0x0040>,
+		       <&apps_smmu_2 0x034B 0x0040>,
+		       <&apps_smmu_2 0x036B 0x0000>;
+		dma-coherent;
+	};
+
+	cdsp1_cb@1 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x1 0x0 0x0>;
+		iommus = <&apps_smmu_2 0x0701 0x0040>,
+		       <&apps_smmu_2 0x0741 0x0040>,
+		       <&apps_smmu_2 0x0761 0x0000>;
+		dma-coherent;
+	};
+
+	cdsp1_cb@2 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x2 0x0 0x0>;
+		iommus = <&apps_smmu_2 0x0706 0x0040>,
+		       <&apps_smmu_2 0x0746 0x0040>,
+		       <&apps_smmu_2 0x0766 0x0000>;
+		dma-coherent;
+	};
+
+	cdsp1_cb@3 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x3 0x0 0x0>;
+		iommus = <&apps_smmu_2 0x070B 0x0040>,
+		       <&apps_smmu_2 0x074B 0x0040>,
+		       <&apps_smmu_2 0x076B 0x0000>;
+		dma-coherent;
+	};
+
+	cdsp2_cb@1 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x1 0x0 0x0>;
+		iommus = <&apps_smmu_2 0x0B01 0x0040>,
+		       <&apps_smmu_2 0x0B41 0x0040>,
+		       <&apps_smmu_2 0x0B61 0x0000>;
+		dma-coherent;
+	};
+
+	cdsp2_cb@2 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x2 0x0 0x0>;
+		iommus = <&apps_smmu_2 0x0B06 0x0040>,
+		       <&apps_smmu_2 0x0B46 0x0040>,
+		       <&apps_smmu_2 0x0B66 0x0000>;
+		dma-coherent;
+	};
+
+	cdsp2_cb@3 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x3 0x0 0x0>;
+		iommus = <&apps_smmu_2 0x0B0B 0x0040>,
+		       <&apps_smmu_2 0x0B4B 0x0040>,
+		       <&apps_smmu_2 0x0B6B 0x0000>;
+		dma-coherent;
+	};
+
+
+	cdsp3_cb@1 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x1 0x0 0x0>;
+		iommus = <&apps_smmu_2 0x0F01 0x0040>,
+		       <&apps_smmu_2 0x0F41 0x0040>,
+		       <&apps_smmu_2 0x0F61 0x0000>;
+		dma-coherent;
+	};
+
+	cdsp3_cb@2 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x2 0x0 0x0>;
+		iommus = <&apps_smmu_2 0x0F06 0x0040>,
+		       <&apps_smmu_2 0x0F46 0x0040>,
+		       <&apps_smmu_2 0x0F66 0x0000>;
+		dma-coherent;
+	};
+
+	cdsp3_cb@3 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x3 0x0 0x0>;
+		iommus = <&apps_smmu_2 0x0F0B 0x0040>,
+		       <&apps_smmu_2 0x0F4B 0x0040>,
+		       <&apps_smmu_2 0x0F6B 0x0000>;
+		dma-coherent;
+	};
+
+	hpass0_audio_cb@1 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x1 0x0 0x0>;
+		iommus = <&apps_smmu_0 0x09E3 0x0000>,
+		       <&apps_smmu_0 0x0A43 0x0020>,
+		       <&apps_smmu_0 0x0A63 0x0020>,
+		       <&apps_smmu_0 0x0A83 0x0000>;
+		dma-coherent;
+	};
+
+	hpass0_audio_cb@2 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x2 0x0 0x0>;
+		iommus = <&apps_smmu_0 0x09E4 0x0000>,
+		       <&apps_smmu_0 0x0A44 0x0020>,
+		       <&apps_smmu_0 0x0A64 0x0020>,
+		       <&apps_smmu_0 0x0A84 0x0000>;
+		dma-coherent;
+	};
+
+	hpass0_audio_cb@3 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x3 0x0 0x0>;
+		iommus = <&apps_smmu_0 0x09E5 0x0000>,
+		       <&apps_smmu_0 0x0A45 0x0020>,
+		       <&apps_smmu_0 0x0A65 0x0020>,
+		       <&apps_smmu_0 0x0A85 0x0000>;
+		dma-coherent;
+	};
+
+	hpass1_audio_cb@1 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x1 0x0 0x0>;
+		iommus = <&apps_smmu_0 0x0A0B 0x0040>,
+		       <&apps_smmu_0 0x0A4B 0x0040>,
+		       <&apps_smmu_0 0x0A6B 0x0000>,
+		       <&apps_smmu_0 0x0A8B 0x0000>;
+		dma-coherent;
+	};
+
+	hpass1_audio_cb@2 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x2 0x0 0x0>;
+		iommus = <&apps_smmu_0 0x0A0C 0x0080>,
+		       <&apps_smmu_0 0x0A4C 0x0020>,
+		       <&apps_smmu_0 0x0A6C 0x0020>,
+		       <&apps_smmu_0 0x0A8C 0x0080>;
+		dma-coherent;
+	};
+
+	hpass1_audio_cb@3 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x3 0x0 0x0>;
+		iommus = <&apps_smmu_0 0x0A0D 0x0080>,
+		       <&apps_smmu_0 0x0A4D 0x0020>,
+		       <&apps_smmu_0 0x0A6D 0x0020>,
+		       <&apps_smmu_0 0x0A8D 0x0080>;
+		dma-coherent;
+	};
+
+	hpass2_audio_cb@1 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x1 0x0 0x0>;
+		iommus = <&apps_smmu_0 0x0A33 0x0040>,
+		       <&apps_smmu_0 0x0A53 0x0000>,
+		       <&apps_smmu_0 0x0A73 0x0040>,
+		       <&apps_smmu_0 0x0A93 0x0000>;
+		dma-coherent;
+	};
+
+	hpass2_audio_cb@2 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x2 0x0 0x0>;
+		iommus = <&apps_smmu_0 0x0A34 0x0040>,
+		       <&apps_smmu_0 0x0A54 0x0000>,
+		       <&apps_smmu_0 0x0A74 0x0040>,
+		       <&apps_smmu_0 0x0A94 0x0000>;
+		dma-coherent;
+	};
+
+	hpass2_audio_cb@3 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x3 0x0 0x0>;
+		iommus = <&apps_smmu_0 0x0A35 0x0000>,
+		       <&apps_smmu_0 0x0A55 0x0020>,
+		       <&apps_smmu_0 0x0A75 0x0020>,
+		       <&apps_smmu_0 0x0A95 0x0000>;
+		dma-coherent;
+	};
+
 };
