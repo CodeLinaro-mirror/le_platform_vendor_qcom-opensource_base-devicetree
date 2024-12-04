@@ -30,6 +30,14 @@
 	clock-frequency = <32768>;
 };
 
+&scmi9 {
+	status = "okay";
+};
+
+&scmi10 {
+	status = "okay";
+};
+
 &scmi11 {
 	status = "okay";
 };

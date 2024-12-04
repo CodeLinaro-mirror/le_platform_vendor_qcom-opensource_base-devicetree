@@ -1145,6 +1145,15 @@
 				status = "disabled";
 			};
 
+			uart4: uart@990000 {
+				compatible = "qcom,sa8797p-geni-uart";
+				reg = <0x0 0x990000 0x0 0x4000>;
+				interrupts = <GIC_SPI 516 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi11_pd 4>, <&scmi11_dvfs 4>;
+				power-domain-names = "power", "perf";
+				status = "disabled";
+			};
+
 			i2c5: i2c@994000 {
 				compatible = "qcom,sa8797p-geni-i2c";
 				reg = <0x0 0x994000 0x0 0x4000>;
