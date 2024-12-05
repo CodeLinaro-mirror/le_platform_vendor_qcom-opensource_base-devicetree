@@ -33,49 +33,6 @@
 	status = "okay";
 };
 
-&tlmm {
-	qupv3_se1_2uart_pins: qupv3_se1_2uart_pins {
-		qupv3_se1_2uart_tx_active: qupv3_se1_2uart_tx_active {
-			mux {
-				pins = "gpio143";
-				function = "qup2_se1_l2";
-			};
-
-			config {
-				pins = "gpio143";
-				drive-strength = <2>;
-				bias-disable;
-			};
-		};
-
-		qupv3_se1_2uart_rx_active: qupv3_se1_2uart_rx_active {
-			mux {
-				pins = "gpio144";
-				function = "qup2_se1_l3";
-			};
-
-			config {
-				pins = "gpio144";
-				drive-strength = <2>;
-				bias-disable;
-			};
-		};
-
-		qupv3_se1_2uart_sleep: qupv3_se1_2uart_sleep {
-			mux {
-				pins = "gpio143", "gpio144";
-				function = "gpio";
-			};
-
-			config {
-				pins = "gpio143", "gpio144";
-				drive-strength = <2>;
-				bias-pull-down;
-			};
-		};
-	};
-};
-
 &soc {
 
 	usb_emu_phy_0: usb_emu_phy@a784000 {
