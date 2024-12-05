@@ -1449,7 +1449,7 @@
 						    "rx1",
 						    "tx2",
 						    "rx2";
-					power-domains = <&scmi11_pd 21>;
+					power-domains = <&scmi9_pd 21>;
 					status = "disabled";
 				};
 
@@ -1468,7 +1468,7 @@
 						    "rx1",
 						    "tx2",
 						    "rx2";
-					power-domains = <&scmi11_pd 22>;
+					power-domains = <&scmi9_pd 22>;
 					status = "disabled";
 				};
 
@@ -1487,7 +1487,7 @@
 						    "rx1",
 						    "tx2",
 						    "rx2";
-					power-domains = <&scmi11_pd 23>;
+					power-domains = <&scmi9_pd 23>;
 					status = "disabled";
 				};
 
@@ -1506,7 +1506,7 @@
 						    "rx1",
 						    "tx2",
 						    "rx2";
-					power-domains = <&scmi11_pd 24>;
+					power-domains = <&scmi9_pd 24>;
 					status = "disabled";
 				};
 
@@ -1525,7 +1525,7 @@
 						    "rx1",
 						    "tx2",
 						    "rx2";
-					power-domains = <&scmi11_pd 25>;
+					power-domains = <&scmi9_pd 25>;
 					status = "disabled";
 				};
 			};
@@ -1564,7 +1564,7 @@
 						    "rx1",
 						    "tx2",
 						    "rx2";
-					power-domains = <&scmi11_pd 26>;
+					power-domains = <&scmi9_pd 26>;
 					status = "disabled";
 				};
 
@@ -1583,7 +1583,7 @@
 						    "rx1",
 						    "tx2",
 						    "rx2";
-					power-domains = <&scmi11_pd 27>;
+					power-domains = <&scmi9_pd 27>;
 					status = "disabled";
 				};
 
@@ -1602,7 +1602,7 @@
 						    "rx1",
 						    "tx2",
 						    "rx2";
-					power-domains = <&scmi11_pd 28>;
+					power-domains = <&scmi9_pd 28>;
 					status = "disabled";
 				};
 
@@ -1621,7 +1621,7 @@
 						    "rx1",
 						    "tx2",
 						    "rx2";
-					power-domains = <&scmi11_pd 29>;
+					power-domains = <&scmi9_pd 29>;
 					status = "disabled";
 				};
 
@@ -1640,7 +1640,7 @@
 						    "rx1",
 						    "tx2",
 						    "rx2";
-					power-domains = <&scmi11_pd 30>;
+					power-domains = <&scmi9_pd 30>;
 					status = "disabled";
 				};
 			};
