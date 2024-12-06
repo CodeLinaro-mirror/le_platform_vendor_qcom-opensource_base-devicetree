@@ -1875,21 +1875,24 @@
 			compatible = "qcom,sa8797p-smmu-500", "qcom,smmu-500", "arm,mmu-500";
 			reg = <0x0 0x15A00000 0x0 0x100000>;
 			#iommu-cells = <2>;
-			#global-interrupts = <2>;
+			#global-interrupts = <1>;
+			dma-coherent;
 		};
 
 		apps_smmu_1: iommu@15c00000 {
 			compatible = "qcom,sa8797p-smmu-500", "qcom,smmu-500", "arm,mmu-500";
 			reg = <0x0 0x15C00000 0x0 0x100000>;
 			#iommu-cells = <2>;
-			#global-interrupts = <2>;
+			#global-interrupts = <1>;
+			dma-coherent;
 		};
 
 		apps_smmu_2: iommu@15e00000 {
 			compatible = "qcom,sa8797p-smmu-500", "qcom,smmu-500", "arm,mmu-500";
 			reg = <0x0 0x15E00000 0x0 0x100000>;
 			#iommu-cells = <2>;
-			#global-interrupts = <2>;
+			#global-interrupts = <1>;
+			dma-coherent;
 		};
 
 		pcie_smmu: iommu@9980000 {
@@ -1929,10 +1932,9 @@
 			compatible = "qcom,adreno-smmu", "qcom,smmu-500", "arm,mmu-500";
 			reg = <0x0 0x03da0000 0x0 0x40000>;
 			#iommu-cells = <2>;
-			#global-interrupts = <2>;
+			#global-interrupts = <1>;
 			dma-coherent;
 			interrupts = <GIC_SPI 673 IRQ_TYPE_LEVEL_HIGH>,
-				<GIC_SPI 675 IRQ_TYPE_LEVEL_HIGH>,
 				<GIC_SPI 678 IRQ_TYPE_LEVEL_HIGH>,
 				<GIC_SPI 679 IRQ_TYPE_LEVEL_HIGH>,
 				<GIC_SPI 680 IRQ_TYPE_LEVEL_HIGH>,
@@ -1968,10 +1970,9 @@
 			compatible = "qcom,adreno-smmu", "qcom,smmu-500", "arm,mmu-500";
 			reg = <0x0 0x098a0000 0x0 0x40000>;
 			#iommu-cells = <2>;
-			#global-interrupts = <2>;
+			#global-interrupts = <1>;
 			dma-coherent;
 			interrupts = <GIC_SPI 932 IRQ_TYPE_LEVEL_HIGH>,
-				<GIC_SPI 934 IRQ_TYPE_LEVEL_HIGH>,
 				<GIC_SPI 936 IRQ_TYPE_LEVEL_HIGH>,
 				<GIC_SPI 937 IRQ_TYPE_LEVEL_HIGH>,
 				<GIC_SPI 938 IRQ_TYPE_LEVEL_HIGH>,
