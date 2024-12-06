@@ -9,6 +9,14 @@
 	qcom,msm-id = <690 0x10000>;
 };
 
+&scmi9 {
+	status = "okay";
+};
+
+&scmi10 {
+	status = "okay";
+};
+
 &scmi11 {
 	status = "okay";
 };
@@ -23,6 +31,14 @@
 
 &scmi0 {
        status = "okay";
+};
+
+&qupv3_id_0 {
+	status = "okay";
+};
+
+&qupv3_id_1 {
+	status = "okay";
 };
 
 &qupv3_id_2 {
