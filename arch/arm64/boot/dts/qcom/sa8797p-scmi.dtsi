@@ -1851,14 +1851,32 @@
 			#reset-cells = <1>;
 		};
 	};
+
+	pdp_scmi: qcom,pdp-scmi {
+		compatible = "arm,scmi";
+		mboxes = <&pdp_mbox0 0>, <&pdp_mbox0 1>;
+		mbox-names = "tx", "rx";
+		shmem = <&pdp0_tx>, <&pdp0_rx>;
+
+		#address-cells = <1>;
+		#size-cells = <0>;
+
+		status = "disabled";
+
+		cpu_perf: protocol@13 {
+			reg = <0x13>;
+			#clock-cells = <1>;
+		};
+	};
+
 };
 &soc {
 	scmichannels: sram@d7600000 {
 		compatible = "mmio-sram";
+		reg = <0x0 0xd7600000 0x0 0x40000>;
+		ranges = <0x0 0x0 0x0 0xffffffff>;
 		#address-cells = <1>;
 		#size-cells = <1>;
-		reg = <0xd7600000 0x40000>;
-		ranges = <0x0 0x0 0x0 0xffffffff>;
 
 		shmem0: scmi-sram@d7600000 {
 			compatible = "arm,scmi-shmem";
@@ -2179,5 +2197,24 @@
 			compatible = "arm,scmi-shmem";
 			reg = <0xd763f000 0x1000>;
 		};
+	};
+
+	pdp_sram: pdp-sram@0x87608000 {
+		#address-cells = <1>;
+		#size-cells = <1>;
+		compatible = "mmio-sram";
+		reg = <0x0 0x87608000 0x0 0x240>;
+		ranges = <0 0x0 0x87608000 0x240>;
+
+		pdp0_rx: scmi-shmem@0 {
+			compatible = "arm,scmi-shmem";
+			reg = <0x0 0x60>;
+		};
+
+		pdp0_tx: scmi-shmem@120 {
+			compatible = "arm,scmi-shmem";
+			reg = <0x120 0x60>;
+		};
+
 	};
 };
