@@ -16,27 +16,11 @@
 	};
 };
 
-&scmi9 {
-	status = "okay";
-};
-
-&scmi10 {
-	status = "okay";
-};
-
-&scmi11 {
+&i2c18 {
 	status = "okay";
 };
 
 &pdp_scmi {
-	status = "okay";
-};
-
-&scmi3 {
-	status = "okay";
-};
-
-&scmi0 {
 	status = "okay";
 };
 
@@ -52,15 +36,43 @@
 	status = "okay";
 };
 
-&i2c18 {
+&scmi0 {
 	status = "okay";
 };
 
-&uart4 {
+&scmi1 {
 	status = "okay";
 };
 
-&uart15 {
+&scmi2 {
+	status = "okay";
+};
+
+&scmi3 {
+	status = "okay";
+};
+
+&scmi9 {
+	status = "okay";
+};
+
+&scmi10 {
+	status = "okay";
+};
+
+&scmi11 {
+	status = "okay";
+};
+
+&scmi12 {
+	status = "okay";
+};
+
+&scmi13 {
+	status = "okay";
+};
+
+&scmi14 {
 	status = "okay";
 };
 
@@ -74,22 +86,10 @@
 	};
 };
 
-&scmi1 {
+&uart4 {
 	status = "okay";
 };
 
-&scmi2 {
-	status = "okay";
-};
-
-&scmi12 {
-	status = "okay";
-};
-
-&scmi13 {
-	status = "okay";
-};
-
-&scmi14 {
+&uart15 {
 	status = "okay";
 };

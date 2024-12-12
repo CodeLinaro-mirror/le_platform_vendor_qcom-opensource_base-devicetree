@@ -6,6 +6,7 @@
 #include <dt-bindings/interrupt-controller/arm-gic.h>
 #include <dt-bindings/dma/qcom-gpi.h>
 #include <dt-bindings/gpio/gpio.h>
+
 / {
 	interrupt-parent = <&intc>;
 
@@ -39,6 +40,7 @@
 			enable-method = "psci";
 			next-level-cache = <&L2_0>;
                         clocks = <&cpu_perf 0>;
+
 			L2_0: l2-cache {
 				compatible = "cache";
 				cache-level = <2>;
@@ -80,7 +82,6 @@
 				duration-us = <800000>;
 				exit-latency-us = <10000>;
 			};
-
 		};
 
 		CPU3: cpu@300 {
@@ -96,7 +97,6 @@
 				duration-us = <800000>;
 				exit-latency-us = <10000>;
 			};
-
 		};
 
 		CPU4: cpu@400 {
@@ -112,7 +112,6 @@
 				duration-us = <800000>;
 				exit-latency-us = <10000>;
 			};
-
 		};
 
 		CPU5: cpu@500 {
@@ -128,7 +127,6 @@
 				duration-us = <800000>;
 				exit-latency-us = <10000>;
 			};
-
 		};
 
 		CPU6: cpu@10000 {
@@ -138,6 +136,7 @@
 			enable-method = "psci";
 			next-level-cache = <&L2_10000>;
                         clocks = <&cpu_perf 1>;
+
 			L2_10000: l2-cache {
 				compatible = "cache";
 				cache-level = <2>;
@@ -164,7 +163,6 @@
 				duration-us = <800000>;
 				exit-latency-us = <10000>;
 			};
-
 		};
 
 		CPU8: cpu@10200 {
@@ -180,7 +178,6 @@
 				duration-us = <800000>;
 				exit-latency-us = <10000>;
 			};
-
 		};
 
 		CPU9: cpu@10300 {
@@ -196,7 +193,6 @@
 				duration-us = <800000>;
 				exit-latency-us = <10000>;
 			};
-
 		};
 
 		CPU10: cpu@10400 {
@@ -212,7 +208,6 @@
 				duration-us = <800000>;
 				exit-latency-us = <10000>;
 			};
-
 		};
 
 		CPU11: cpu@10500 {
@@ -228,7 +223,6 @@
 				duration-us = <800000>;
 				exit-latency-us = <10000>;
 			};
-
 		};
 
 		CPU12: cpu@20000 {
@@ -238,6 +232,7 @@
 			enable-method = "psci";
 			next-level-cache = <&L2_20000>;
                         clocks = <&cpu_perf 2>;
+
 			L2_20000: l2-cache {
 				compatible = "cache";
 				cache-level = <2>;
@@ -264,7 +259,6 @@
 				duration-us = <800000>;
 				exit-latency-us = <10000>;
 			};
-
 		};
 
 		CPU14: cpu@20200 {
@@ -280,7 +274,6 @@
 				duration-us = <800000>;
 				exit-latency-us = <10000>;
 			};
-
 		};
 
 		CPU15: cpu@20300 {
@@ -296,7 +289,6 @@
 				duration-us = <800000>;
 				exit-latency-us = <10000>;
 			};
-
 		};
 
 		CPU16: cpu@20400 {
@@ -312,7 +304,6 @@
 				duration-us = <800000>;
 				exit-latency-us = <10000>;
 			};
-
 		};
 
 		CPU17: cpu@20500 {
@@ -328,7 +319,6 @@
 				duration-us = <800000>;
 				exit-latency-us = <10000>;
 			};
-
 		};
 
 		cpu-map {
@@ -760,13 +750,13 @@
 			no-map;
 			reg = <0x8 0xc8000000 0x0 0x18000000>;
 		};
-
 	};
 
 	soc: soc@0 {
 		compatible = "simple-bus";
 		#address-cells = <2>;
 		#size-cells = <2>;
+		dma-ranges = <0 0 0 0 0x10 0>;
 		ranges = <0 0 0 0 0x10 0>;
 
 		gpi_dma2: dma-controller@800000 {
@@ -1762,8 +1752,6 @@
 
 		intc: interrupt-controller@17000000 {
 			compatible = "arm,gic-v3";
-			#address-cells = <2>;
-			#size-cells = <2>;
 			reg = <0x0 0x17000000 0x0 0x10000>,     /* GICD */
 			      <0x0 0x17080000 0x0 0x480000>;    /* GICR * 18 */
 			interrupt-controller;
@@ -1771,13 +1759,13 @@
 			interrupts = <GIC_PPI 9 IRQ_TYPE_LEVEL_HIGH>;
 			#redistributor-regions = <1>;
 			redistributor-stride = <0x0 0x40000>;
+			ranges;
 
 			gic-its@17040000 {
 				compatible = "arm,gic-v3-its";
 				reg = <0x0 0x17040000 0x0 0x40000>;
 				msi-controller;
 				#msi-cells = <1>;
-				status = "disabled";
 			};
 		};
 
