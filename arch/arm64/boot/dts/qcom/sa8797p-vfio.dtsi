@@ -21,12 +21,15 @@
 
 	safety-ddr@82010000 {
 		compatible = "qcom,vfio-platform";
-		reg = <0x0 0x82010000 0x0 0x1000>,
-			  <0x0 0x9007000 0x0 0x1000>;
+		reg = <0x0 0x82010000 0x0 0x10000>,
+			  <0x0 0x09185000 0x0 0x1000>,
+			  <0x0 0x87200000 0x0 0x1000>,
+			  <0x0 0x87A00000 0x0 0x1000>,
+			  <0x0 0x01F76030 0x0 0x1000>;
 		iommus = <&apps_smmu_0 0x16A0 0x0>;
-                interrupts-extended = <&ipcc0 IPCC_MPROC_SAIL0 1 IRQ_TYPE_LEVEL_HIGH>;
-                dma-coherent;
-        };
+		interrupts-extended = <&ipcc2 IPCC_COMPUTE_L1_SAIL0 1 IRQ_TYPE_LEVEL_HIGH>;
+		dma-coherent;
+	};
 
 	umd_glink@9007000 {
 		compatible = "qcom,vfio-platform";
