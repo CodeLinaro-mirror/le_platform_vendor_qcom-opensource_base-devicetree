@@ -34,6 +34,10 @@
 	status = "okay";
 };
 
+&scmi21 {
+	status = "okay";
+};
+
 &soc {
 	kiumd {
 		compatible = "qcom,kiumd";
@@ -155,4 +159,13 @@
 
 		qcom,dev-name = "scmi_mdss1";
 	};
+
+	scmi_camera {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi21_dvfs 0>;
+		power-domain-names = "perf_camera";
+
+		qcom,dev-name = "scmi_camera";
+        };
 };
