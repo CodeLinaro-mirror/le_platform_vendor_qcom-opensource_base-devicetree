@@ -49,13 +49,10 @@
 
 	qtee_shmbridge {
 		compatible = "qcom,tee-shared-memory-bridge";
-		qcom,support-hypervisor;
-		memory-region = <&cma>;
 	};
 
 	qcom_smcinvoke {
 		compatible = "qcom,smcinvoke";
-		qcom,support-hypervisor;
 	};
 
 	qcom_tzlog: tz-log@14680720 {
