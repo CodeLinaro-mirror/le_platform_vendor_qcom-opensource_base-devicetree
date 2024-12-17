@@ -11,7 +11,7 @@
 / {
 	model = "Qualcomm Technologies, Inc. SA8797P ADP STAR";
 	compatible = "qcom,sa8797p-adp-star", "qcom,sa8797p-adp", "qcom,sa8797p";
-	qcom,board-id = <0x10008 0>, <0x010025 0>; //FIXME: MTP board id
+	qcom,board-id = <0x010025 0>;
 
 	aliases {
 		serial0 = &uart15;
