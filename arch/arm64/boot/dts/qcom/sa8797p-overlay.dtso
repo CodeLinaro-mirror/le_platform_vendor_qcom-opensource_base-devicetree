@@ -9,7 +9,7 @@
 #include <dt-bindings/interrupt-controller/arm-gic.h>
 #include "oot-dt-bindings/qcom-ipcc-sa8797p.h"
 #include "sa8797p-vfio.dtsi"
-
+#include "sa8797p-vms.dtsi"
 
 &{/reserved-memory} {
 	cma: linux,cma {
