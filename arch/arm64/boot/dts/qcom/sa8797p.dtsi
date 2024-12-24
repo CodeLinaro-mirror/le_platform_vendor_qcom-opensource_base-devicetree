@@ -2023,7 +2023,7 @@
 	};
 
 	thermal-zones {
-		ddr-0-0-thermal {
+		ddr-0-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -2044,7 +2044,7 @@
 			};
 		};
 
-		cpu-0-0-0-thermal {
+		cpu-0-0-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -2072,7 +2072,7 @@
 			};
 		};
 
-		cpu-0-1-0-thermal {
+		cpu-0-1-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -2100,7 +2100,7 @@
 			};
 		};
 
-		cpu-0-2-0-thermal {
+		cpu-0-2-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -2128,7 +2128,7 @@
 			};
 		};
 
-		cpu-0-3-0-thermal {
+		cpu-0-3-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -2156,7 +2156,7 @@
 			};
 		};
 
-		cpu-0-4-0-thermal {
+		cpu-0-4-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -2184,7 +2184,7 @@
 			};
 		};
 
-		cpu-0-5-0-thermal {
+		cpu-0-5-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -2212,7 +2212,7 @@
 			};
 		};
 
-		cpullc-0-0-thermal {
+		cpullc-0-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -2233,7 +2233,7 @@
 			};
 		};
 
-		cpu-1-0-0-thermal {
+		cpu-1-0-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -2261,7 +2261,7 @@
 			};
 		};
 
-		cpu-1-1-0-thermal {
+		cpu-1-1-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -2289,7 +2289,7 @@
 			};
 		};
 
-		cpu-1-2-0-thermal {
+		cpu-1-2-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -2317,7 +2317,7 @@
 			};
 		};
 
-		cpu-1-3-0-thermal {
+		cpu-1-3-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -2345,7 +2345,7 @@
 			};
 		};
 
-		cpu-1-4-0-thermal {
+		cpu-1-4-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -2373,7 +2373,7 @@
 			};
 		};
 
-		cpu-1-5-0-thermal {
+		cpu-1-5-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -2401,7 +2401,7 @@
 			};
 		};
 
-		cpullc-1-0-thermal {
+		cpullc-1-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -2422,7 +2422,7 @@
 			};
 		};
 
-		ddr-1-0-thermal {
+		ddr-1-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -2443,7 +2443,7 @@
 			};
 		};
 
-		ddr-0-1-thermal {
+		ddr-0-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -2464,7 +2464,7 @@
 			};
 		};
 
-		cpu-0-0-1-thermal {
+		cpu-0-0-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -2492,7 +2492,7 @@
 			};
 		};
 
-		cpu-0-1-1-thermal {
+		cpu-0-1-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -2520,7 +2520,7 @@
 			};
 		};
 
-		cpu-0-2-1-thermal {
+		cpu-0-2-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -2548,7 +2548,7 @@
 			};
 		};
 
-		cpu-0-3-1-thermal {
+		cpu-0-3-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -2576,7 +2576,7 @@
 			};
 		};
 
-		cpu-0-4-1-thermal {
+		cpu-0-4-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -2604,7 +2604,7 @@
 			};
 		};
 
-		cpu-0-5-1-thermal {
+		cpu-0-5-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -2632,7 +2632,7 @@
 			};
 		};
 
-		cpullc-0-1-thermal {
+		cpullc-0-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -2653,7 +2653,7 @@
 			};
 		};
 
-		cpu-1-0-1-thermal {
+		cpu-1-0-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -2681,7 +2681,7 @@
 			};
 		};
 
-		cpu-1-1-1-thermal {
+		cpu-1-1-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -2709,7 +2709,7 @@
 			};
 		};
 
-		cpu-1-2-1-thermal {
+		cpu-1-2-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -2737,7 +2737,7 @@
 			};
 		};
 
-		cpu-1-3-1-thermal {
+		cpu-1-3-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -2765,7 +2765,7 @@
 			};
 		};
 
-		cpu-1-4-1-thermal {
+		cpu-1-4-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -2793,7 +2793,7 @@
 			};
 		};
 
-		cpu-1-5-1-thermal {
+		cpu-1-5-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -2821,7 +2821,7 @@
 			};
 		};
 
-		cpullc-1-1-thermal {
+		cpullc-1-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -2842,7 +2842,7 @@
 			};
 		};
 
-		ddr-1-1-thermal {
+		ddr-1-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -2863,7 +2863,7 @@
 			};
 		};
 
-		amux-2-thermal {
+		amux-2 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -2884,7 +2884,7 @@
 			};
 		};
 
-		cpu-2-0-0-thermal {
+		cpu-2-0-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -2912,7 +2912,7 @@
 			};
 		};
 
-		cpu-2-1-0-thermal {
+		cpu-2-1-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -2940,7 +2940,7 @@
 			};
 		};
 
-		cpu-2-2-0-thermal {
+		cpu-2-2-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -2968,7 +2968,7 @@
 			};
 		};
 
-		cpu-2-3-0-thermal {
+		cpu-2-3-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -2996,7 +2996,7 @@
 			};
 		};
 
-		cpu-2-4-0-thermal {
+		cpu-2-4-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -3024,7 +3024,7 @@
 			};
 		};
 
-		cpu-2-5-0-thermal {
+		cpu-2-5-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -3052,7 +3052,7 @@
 			};
 		};
 
-		cpullc-2-0-thermal {
+		cpullc-2-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -3073,7 +3073,7 @@
 			};
 		};
 
-		audiohvx-0-0-thermal {
+		audiohvx-0-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -3094,7 +3094,7 @@
 			};
 		};
 
-		audiohmx-0-0-thermal {
+		audiohmx-0-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -3115,7 +3115,7 @@
 			};
 		};
 
-		audiohvx-1-0-thermal {
+		audiohvx-1-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -3136,7 +3136,7 @@
 			};
 		};
 
-		audiohmx-1-0-thermal {
+		audiohmx-1-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -3157,7 +3157,7 @@
 			};
 		};
 
-		audiohvx-2-0-thermal {
+		audiohvx-2-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -3178,7 +3178,7 @@
 			};
 		};
 
-		audiohmx-2-0-thermal {
+		audiohmx-2-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -3199,7 +3199,7 @@
 			};
 		};
 
-		pcie-0-thermal {
+		pcie-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -3220,7 +3220,7 @@
 			};
 		};
 
-		amux-3-thermal {
+		amux-3 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -3241,7 +3241,7 @@
 			};
 		};
 
-		cpu-2-0-1-thermal {
+		cpu-2-0-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -3269,7 +3269,7 @@
 			};
 		};
 
-		cpu-2-1-1-thermal {
+		cpu-2-1-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -3297,7 +3297,7 @@
 			};
 		};
 
-		cpu-2-2-1-thermal {
+		cpu-2-2-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -3325,7 +3325,7 @@
 			};
 		};
 
-		cpu-2-3-1-thermal {
+		cpu-2-3-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -3353,7 +3353,7 @@
 			};
 		};
 
-		cpu-2-4-1-thermal {
+		cpu-2-4-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -3381,7 +3381,7 @@
 			};
 		};
 
-		cpu-2-5-1-thermal {
+		cpu-2-5-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -3409,7 +3409,7 @@
 			};
 		};
 
-		cpullc-2-1-thermal {
+		cpullc-2-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -3430,7 +3430,7 @@
 			};
 		};
 
-		audiohvx-0-1-thermal {
+		audiohvx-0-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -3451,7 +3451,7 @@
 			};
 		};
 
-		audiohmx-0-1-thermal {
+		audiohmx-0-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -3472,7 +3472,7 @@
 			};
 		};
 
-		audiohvx-1-1-thermal {
+		audiohvx-1-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -3493,7 +3493,7 @@
 			};
 		};
 
-		audiohmx-1-1-thermal {
+		audiohmx-1-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -3514,7 +3514,7 @@
 			};
 		};
 
-		audiohvx-2-1-thermal {
+		audiohvx-2-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -3535,7 +3535,7 @@
 			};
 		};
 
-		audiohmx-2-1-thermal {
+		audiohmx-2-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -3556,7 +3556,7 @@
 			};
 		};
 
-		pcie-1-thermal {
+		pcie-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -3577,7 +3577,7 @@
 			};
 		};
 
-		nsphvx-0-0-thermal {
+		nsphvx-0-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -3598,7 +3598,7 @@
 			};
 		};
 
-		nsphvx-0-2-thermal {
+		nsphvx-0-2 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -3619,7 +3619,7 @@
 			};
 		};
 
-		nsphmx-0-0-0-thermal {
+		nsphmx-0-0-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -3640,7 +3640,7 @@
 			};
 		};
 
-		nsphmx-0-1-0-thermal {
+		nsphmx-0-1-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -3661,7 +3661,7 @@
 			};
 		};
 
-		nsphvx-1-0-thermal {
+		nsphvx-1-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -3682,7 +3682,7 @@
 			};
 		};
 
-		nsphvx-1-2-thermal {
+		nsphvx-1-2 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -3703,7 +3703,7 @@
 			};
 		};
 
-		nsphmx-1-0-0-thermal {
+		nsphmx-1-0-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -3724,7 +3724,7 @@
 			};
 		};
 
-		nsphmx-1-1-0-thermal {
+		nsphmx-1-1-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -3745,7 +3745,7 @@
 			};
 		};
 
-		nsphvx-2-0-thermal {
+		nsphvx-2-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -3766,7 +3766,7 @@
 			};
 		};
 
-		nsphvx-2-2-thermal {
+		nsphvx-2-2 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -3787,7 +3787,7 @@
 			};
 		};
 
-		nsphmx-2-0-0-thermal {
+		nsphmx-2-0-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -3808,7 +3808,7 @@
 			};
 		};
 
-		nsphmx-2-1-0-thermal {
+		nsphmx-2-1-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -3829,7 +3829,7 @@
 			};
 		};
 
-		nsphvx-3-0-thermal {
+		nsphvx-3-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -3850,7 +3850,7 @@
 			};
 		};
 
-		nsphvx-3-2-thermal {
+		nsphvx-3-2 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -3871,7 +3871,7 @@
 			};
 		};
 
-		nsphmx-3-0-0-thermal {
+		nsphmx-3-0-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -3892,7 +3892,7 @@
 			};
 		};
 
-		nsphmx-3-1-0-thermal {
+		nsphmx-3-1-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -3913,7 +3913,7 @@
 			};
 		};
 
-		nsphvx-0-1-thermal {
+		nsphvx-0-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -3934,7 +3934,7 @@
 			};
 		};
 
-		nsphvx-0-3-thermal {
+		nsphvx-0-3 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -3955,7 +3955,7 @@
 			};
 		};
 
-		nsphmx-0-0-1-thermal {
+		nsphmx-0-0-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -3976,7 +3976,7 @@
 			};
 		};
 
-		nsphmx-0-1-1-thermal {
+		nsphmx-0-1-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -3997,7 +3997,7 @@
 			};
 		};
 
-		nsphvx-1-1-thermal {
+		nsphvx-1-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -4018,7 +4018,7 @@
 			};
 		};
 
-		nsphvx-1-3-thermal {
+		nsphvx-1-3 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -4039,7 +4039,7 @@
 			};
 		};
 
-		nsphmx-1-0-1-thermal {
+		nsphmx-1-0-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -4060,7 +4060,7 @@
 			};
 		};
 
-		nsphmx-1-1-1-thermal {
+		nsphmx-1-1-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -4081,7 +4081,7 @@
 			};
 		};
 
-		nsphvx-2-1-thermal {
+		nsphvx-2-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -4102,7 +4102,7 @@
 			};
 		};
 
-		nsphvx-2-3-thermal {
+		nsphvx-2-3 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -4123,7 +4123,7 @@
 			};
 		};
 
-		nsphmx-2-0-1-thermal {
+		nsphmx-2-0-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -4144,7 +4144,7 @@
 			};
 		};
 
-		nsphmx-2-1-1-thermal {
+		nsphmx-2-1-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -4165,7 +4165,7 @@
 			};
 		};
 
-		nsphvx-3-1-thermal {
+		nsphvx-3-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -4186,7 +4186,7 @@
 			};
 		};
 
-		nsphvx-3-3-thermal {
+		nsphvx-3-3 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -4207,7 +4207,7 @@
 			};
 		};
 
-		nsphmx-3-0-1-thermal {
+		nsphmx-3-0-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -4228,7 +4228,7 @@
 			};
 		};
 
-		nsphmx-3-1-1-thermal {
+		nsphmx-3-1-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -4249,7 +4249,7 @@
 			};
 		};
 
-		amux-6-thermal {
+		amux-6 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -4270,7 +4270,7 @@
 			};
 		};
 
-		gpuss-0-0-0-0-thermal {
+		gpuss-0-0-0-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -4291,7 +4291,7 @@
 			};
 		};
 
-		gpuss-0-1-0-0-thermal {
+		gpuss-0-1-0-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -4312,7 +4312,7 @@
 			};
 		};
 
-		gpuss-0-2-0-0-thermal {
+		gpuss-0-2-0-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -4333,7 +4333,7 @@
 			};
 		};
 
-		gpucore-0-0-0-thermal {
+		gpucore-0-0-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -4354,7 +4354,7 @@
 			};
 		};
 
-		gpuss-1-0-thermal {
+		gpuss-1-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -4375,7 +4375,7 @@
 			};
 		};
 
-		gpuss-1-1-thermal {
+		gpuss-1-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -4396,7 +4396,7 @@
 			};
 		};
 
-		cv-0-thermal {
+		cv-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -4417,7 +4417,7 @@
 			};
 		};
 
-		video-0-thermal {
+		video-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -4438,7 +4438,7 @@
 			};
 		};
 
-		camera-1-thermal {
+		camera-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -4459,7 +4459,7 @@
 			};
 		};
 
-		ddr-2-0-thermal {
+		ddr-2-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -4480,7 +4480,7 @@
 			};
 		};
 
-		ddr-3-0-thermal {
+		ddr-3-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -4501,7 +4501,7 @@
 			};
 		};
 
-		gpuss-0-0-1-1-thermal {
+		gpuss-0-0-1-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -4522,7 +4522,7 @@
 			};
 		};
 
-		gpuss-0-1-1-1-thermal {
+		gpuss-0-1-1-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -4543,7 +4543,7 @@
 			};
 		};
 
-		gpuss-0-2-1-1-thermal {
+		gpuss-0-2-1-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -4564,7 +4564,7 @@
 			};
 		};
 
-		gpucore-0-1-1-thermal {
+		gpucore-0-1-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -4585,7 +4585,7 @@
 			};
 		};
 
-		amux-7-thermal {
+		amux-7 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -4606,7 +4606,7 @@
 			};
 		};
 
-		gpuss-0-0-1-0-thermal {
+		gpuss-0-0-1-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -4627,7 +4627,7 @@
 			};
 		};
 
-		gpuss-0-1-1-0-thermal {
+		gpuss-0-1-1-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -4648,7 +4648,7 @@
 			};
 		};
 
-		gpuss-0-2-1-0-thermal {
+		gpuss-0-2-1-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -4669,7 +4669,7 @@
 			};
 		};
 
-		gpucore-0-1-0-thermal {
+		gpucore-0-1-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -4690,7 +4690,7 @@
 			};
 		};
 
-		gpuss-1-2-thermal {
+		gpuss-1-2 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -4711,7 +4711,7 @@
 			};
 		};
 
-		gpucore-1-0-thermal {
+		gpucore-1-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -4732,7 +4732,7 @@
 			};
 		};
 
-		cv-1-thermal {
+		cv-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -4753,7 +4753,7 @@
 			};
 		};
 
-		video-1-thermal {
+		video-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -4774,7 +4774,7 @@
 			};
 		};
 
-		camera-2-thermal {
+		camera-2 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -4795,7 +4795,7 @@
 			};
 		};
 
-		ddr-2-1-thermal {
+		ddr-2-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -4816,7 +4816,7 @@
 			};
 		};
 
-		ddr-3-1-thermal {
+		ddr-3-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -4837,7 +4837,7 @@
 			};
 		};
 
-		gpuss-0-0-0-1-thermal {
+		gpuss-0-0-0-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -4858,7 +4858,7 @@
 			};
 		};
 
-		gpuss-0-1-0-1-thermal {
+		gpuss-0-1-0-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -4879,7 +4879,7 @@
 			};
 		};
 
-		gpuss-0-2-0-1-thermal {
+		gpuss-0-2-0-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
@@ -4900,7 +4900,7 @@
 			};
 		};
 
-		gpucore-0-0-1-thermal {
+		gpucore-0-0-1 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
 
