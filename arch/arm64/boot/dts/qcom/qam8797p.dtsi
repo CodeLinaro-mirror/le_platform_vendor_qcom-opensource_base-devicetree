@@ -7,9 +7,16 @@
 	model = "Qualcomm Technologies, Inc. QAM8797P SIP";
 	compatible = "qcom,sa8797p-qam","qcom,sa8797p";
 	qcom,msm-id = <690 0x10000>;
+
+	aliases {
+		i2c18 = &i2c18;
+		spi16 = &spi16;
+		serial0 = &uart15;
+		serial1 = &uart4;
+	};
 };
 
-&scmi11 {
+&i2c18 {
 	status = "okay";
 };
 
@@ -17,11 +24,11 @@
 	status = "okay";
 };
 
-&scmi3 {
+&qupv3_id_0 {
 	status = "okay";
 };
 
-&scmi0 {
+&qupv3_id_1 {
 	status = "okay";
 };
 
@@ -29,7 +36,7 @@
 	status = "okay";
 };
 
-&uart15 {
+&scmi0 {
 	status = "okay";
 };
 
@@ -38,6 +45,22 @@
 };
 
 &scmi2 {
+	status = "okay";
+};
+
+&scmi3 {
+	status = "okay";
+};
+
+&scmi9 {
+	status = "okay";
+};
+
+&scmi10 {
+	status = "okay";
+};
+
+&scmi11 {
 	status = "okay";
 };
 
@@ -50,5 +73,23 @@
 };
 
 &scmi14 {
+	status = "okay";
+};
+
+&spi16 {
+	status = "okay";
+	spidev@0 {
+		compatible = "micron,spi-authenta";
+		reg = <0>;
+		spi-max-frequency = <50000000>;
+		spi-cpha;
+	};
+};
+
+&uart4 {
+	status = "okay";
+};
+
+&uart15 {
 	status = "okay";
 };

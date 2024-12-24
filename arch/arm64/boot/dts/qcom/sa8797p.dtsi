@@ -6,6 +6,7 @@
 #include <dt-bindings/interrupt-controller/arm-gic.h>
 #include <dt-bindings/dma/qcom-gpi.h>
 #include <dt-bindings/gpio/gpio.h>
+
 / {
 	interrupt-parent = <&intc>;
 
@@ -39,6 +40,7 @@
 			enable-method = "psci";
 			next-level-cache = <&L2_0>;
                         clocks = <&cpu_perf 0>;
+
 			L2_0: l2-cache {
 				compatible = "cache";
 				cache-level = <2>;
@@ -80,7 +82,6 @@
 				duration-us = <800000>;
 				exit-latency-us = <10000>;
 			};
-
 		};
 
 		CPU3: cpu@300 {
@@ -96,7 +97,6 @@
 				duration-us = <800000>;
 				exit-latency-us = <10000>;
 			};
-
 		};
 
 		CPU4: cpu@400 {
@@ -112,7 +112,6 @@
 				duration-us = <800000>;
 				exit-latency-us = <10000>;
 			};
-
 		};
 
 		CPU5: cpu@500 {
@@ -128,7 +127,6 @@
 				duration-us = <800000>;
 				exit-latency-us = <10000>;
 			};
-
 		};
 
 		CPU6: cpu@10000 {
@@ -138,6 +136,7 @@
 			enable-method = "psci";
 			next-level-cache = <&L2_10000>;
                         clocks = <&cpu_perf 1>;
+
 			L2_10000: l2-cache {
 				compatible = "cache";
 				cache-level = <2>;
@@ -164,7 +163,6 @@
 				duration-us = <800000>;
 				exit-latency-us = <10000>;
 			};
-
 		};
 
 		CPU8: cpu@10200 {
@@ -180,7 +178,6 @@
 				duration-us = <800000>;
 				exit-latency-us = <10000>;
 			};
-
 		};
 
 		CPU9: cpu@10300 {
@@ -196,7 +193,6 @@
 				duration-us = <800000>;
 				exit-latency-us = <10000>;
 			};
-
 		};
 
 		CPU10: cpu@10400 {
@@ -212,7 +208,6 @@
 				duration-us = <800000>;
 				exit-latency-us = <10000>;
 			};
-
 		};
 
 		CPU11: cpu@10500 {
@@ -228,7 +223,6 @@
 				duration-us = <800000>;
 				exit-latency-us = <10000>;
 			};
-
 		};
 
 		CPU12: cpu@20000 {
@@ -238,6 +232,7 @@
 			enable-method = "psci";
 			next-level-cache = <&L2_20000>;
                         clocks = <&cpu_perf 2>;
+
 			L2_20000: l2-cache {
 				compatible = "cache";
 				cache-level = <2>;
@@ -264,7 +259,6 @@
 				duration-us = <800000>;
 				exit-latency-us = <10000>;
 			};
-
 		};
 
 		CPU14: cpu@20200 {
@@ -280,7 +274,6 @@
 				duration-us = <800000>;
 				exit-latency-us = <10000>;
 			};
-
 		};
 
 		CPU15: cpu@20300 {
@@ -296,7 +289,6 @@
 				duration-us = <800000>;
 				exit-latency-us = <10000>;
 			};
-
 		};
 
 		CPU16: cpu@20400 {
@@ -312,7 +304,6 @@
 				duration-us = <800000>;
 				exit-latency-us = <10000>;
 			};
-
 		};
 
 		CPU17: cpu@20500 {
@@ -328,7 +319,6 @@
 				duration-us = <800000>;
 				exit-latency-us = <10000>;
 			};
-
 		};
 
 		cpu-map {
@@ -445,29 +435,29 @@
 			reg = <0x0 0x80000000 0x0 0x800000>;
 		};
 
-		tz_sail_mailbox_p_mem: tz_sail_mailbox_p_region@81d00000 {
-			no-map;
-			reg = <0x0 0x81d00000 0x0 0x100000>;
-		};
-
-		hlos_sail_mailbox_p_mem: hlos_sail_mailbox_p_region@81e00000 {
-			no-map;
-			reg = <0x0 0x81e00000 0x0 0x1f0000>;
-		};
-
 		tme_sail_p_mem: tme_sail_p_region@81ff0000 {
 			no-map;
 			reg = <0x0 0x81ff0000 0x0 0x10000>;
 		};
 
-		sail_minidump_mem: sail_minidump_region@82000000 {
+		tz_sail_mailbox_p_mem: tz_sail_mailbox_p_region@82000000 {
 			no-map;
-			reg = <0x0 0x82000000 0x0 0x100000>;
+			reg = <0x0 0x82000000 0x0 0x8000>;
 		};
 
-		sail_ota_mem: sail_ota_region@82100000 {
+		hlos_sail_mailbox_p_mem: hlos_sail_mailbox_p_region@82008000 {
 			no-map;
-			reg = <0x0 0x82100000 0x0 0x500000>;
+			reg = <0x0 0x82008000 0x0 0x1F8000>;
+		};
+
+		sail_ota_mem: sail_ota_region@82200000 {
+			no-map;
+			reg = <0x0 0x82200000 0x0 0x5FF000>;
+		};
+
+		sail_vdt_mem: sail_vdt_region@827FF000 {
+			no-map;
+			reg = <0x0 0x827FF000 0x0 0x1000>;
 		};
 
 		dare_hyp_mem: dare_hyp_region@82800000 {
@@ -760,13 +750,13 @@
 			no-map;
 			reg = <0x8 0xc8000000 0x0 0x18000000>;
 		};
-
 	};
 
 	soc: soc@0 {
 		compatible = "simple-bus";
 		#address-cells = <2>;
 		#size-cells = <2>;
+		dma-ranges = <0 0 0 0 0x10 0>;
 		ranges = <0 0 0 0 0x10 0>;
 
 		gpi_dma2: dma-controller@800000 {
@@ -1458,7 +1448,7 @@
 						    "rx1",
 						    "tx2",
 						    "rx2";
-					power-domains = <&scmi11_pd 21>;
+					power-domains = <&scmi9_pd 21>;
 					status = "disabled";
 				};
 
@@ -1477,7 +1467,7 @@
 						    "rx1",
 						    "tx2",
 						    "rx2";
-					power-domains = <&scmi11_pd 22>;
+					power-domains = <&scmi9_pd 22>;
 					status = "disabled";
 				};
 
@@ -1496,7 +1486,7 @@
 						    "rx1",
 						    "tx2",
 						    "rx2";
-					power-domains = <&scmi11_pd 23>;
+					power-domains = <&scmi9_pd 23>;
 					status = "disabled";
 				};
 
@@ -1515,7 +1505,7 @@
 						    "rx1",
 						    "tx2",
 						    "rx2";
-					power-domains = <&scmi11_pd 24>;
+					power-domains = <&scmi9_pd 24>;
 					status = "disabled";
 				};
 
@@ -1534,7 +1524,7 @@
 						    "rx1",
 						    "tx2",
 						    "rx2";
-					power-domains = <&scmi11_pd 25>;
+					power-domains = <&scmi9_pd 25>;
 					status = "disabled";
 				};
 			};
@@ -1573,7 +1563,7 @@
 						    "rx1",
 						    "tx2",
 						    "rx2";
-					power-domains = <&scmi11_pd 26>;
+					power-domains = <&scmi9_pd 26>;
 					status = "disabled";
 				};
 
@@ -1592,7 +1582,7 @@
 						    "rx1",
 						    "tx2",
 						    "rx2";
-					power-domains = <&scmi11_pd 27>;
+					power-domains = <&scmi9_pd 27>;
 					status = "disabled";
 				};
 
@@ -1611,7 +1601,7 @@
 						    "rx1",
 						    "tx2",
 						    "rx2";
-					power-domains = <&scmi11_pd 28>;
+					power-domains = <&scmi9_pd 28>;
 					status = "disabled";
 				};
 
@@ -1630,7 +1620,7 @@
 						    "rx1",
 						    "tx2",
 						    "rx2";
-					power-domains = <&scmi11_pd 29>;
+					power-domains = <&scmi9_pd 29>;
 					status = "disabled";
 				};
 
@@ -1649,7 +1639,7 @@
 						    "rx1",
 						    "tx2",
 						    "rx2";
-					power-domains = <&scmi11_pd 30>;
+					power-domains = <&scmi9_pd 30>;
 					status = "disabled";
 				};
 			};
@@ -1762,8 +1752,6 @@
 
 		intc: interrupt-controller@17000000 {
 			compatible = "arm,gic-v3";
-			#address-cells = <2>;
-			#size-cells = <2>;
 			reg = <0x0 0x17000000 0x0 0x10000>,     /* GICD */
 			      <0x0 0x17080000 0x0 0x480000>;    /* GICR * 18 */
 			interrupt-controller;
@@ -1771,13 +1759,13 @@
 			interrupts = <GIC_PPI 9 IRQ_TYPE_LEVEL_HIGH>;
 			#redistributor-regions = <1>;
 			redistributor-stride = <0x0 0x40000>;
+			ranges;
 
 			gic-its@17040000 {
 				compatible = "arm,gic-v3-its";
 				reg = <0x0 0x17040000 0x0 0x40000>;
 				msi-controller;
 				#msi-cells = <1>;
-				status = "disabled";
 			};
 		};
 

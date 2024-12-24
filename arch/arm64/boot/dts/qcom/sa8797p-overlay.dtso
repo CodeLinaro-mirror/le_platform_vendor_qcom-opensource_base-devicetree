@@ -6,55 +6,35 @@
 /dts-v1/;
 /plugin/;
 
-#include <dt-bindings/interrupt-controller/irq.h>
 #include <dt-bindings/interrupt-controller/arm-gic.h>
-#include <dt-bindings/input/input.h>
-#include <dt-bindings/gpio/gpio.h>
 #include "oot-dt-bindings/qcom-ipcc-sa8797p.h"
 #include "sa8797p-vfio.dtsi"
 
 
-/ {
-	model = "Qualcomm SA8797";
-	compatible = "qcom,sa8797p-rumi", "qcom,sa8797p";
-	qcom,board-id = <0xf 0>;
-
-	firmware {
-		qtee_shmbridge {
-			compatible = "qcom,tee-shared-memory-bridge";
-			qcom,support-hypervisor;
-			memory-region = <&cma>;
-		};
-
-		qcom_smcinvoke {
-			compatible = "qcom,smcinvoke";
-			qcom,support-hypervisor;
-		};
+&{/reserved-memory} {
+	cma: linux,cma {
+		compatible = "shared-dma-pool";
+		alloc-ranges = <0x0 0x00000000 0x0 0xdfffffff>;
+		reusable;
+		alignment = <0x0 0x400000>;
+		size = <0x0 0x2000000>;
+		linux,cma-default;
 	};
 };
 
-
-&{/} {
-        #address-cells = <2>;
-        #size-cells = <2>;
-
+&scmi16 {
+    status = "okay";
 };
 
-&{/reserved-memory} {
-	#address-cells = <2>;
-	#size-cells = <2>;
-	ranges;
-	cma: linux,cma {
-                compatible = "shared-dma-pool";
-                alloc-ranges = <0x0 0x00000000 0x0 0xdfffffff>;
-                reusable;
-                alignment = <0x0 0x400000>;
-                size = <0x0 0x2000000>;
-                linux,cma-default;
-        };
+&scmi17 {
+    status = "okay";
 };
 
 &scmi19 {
+	status = "okay";
+};
+
+&scmi21 {
 	status = "okay";
 };
 
@@ -71,13 +51,29 @@
 		status = "ok";
 	};
 
+	qtee_shmbridge {
+		compatible = "qcom,tee-shared-memory-bridge";
+	};
+
+	qcom_smcinvoke {
+		compatible = "qcom,smcinvoke";
+	};
+
 	qcom_tzlog: tz-log@14680720 {
 		compatible = "qcom,tz-log";
-		reg = <0x14680720 0x3000>;
+		reg = <0x0 0x14680720 0x0 0x3000>;
 		qcom,hyplog-enabled;
 		hyplog-address-offset = <0x410>;
 		hyplog-size-offset = <0x414>;
 		tmecrashdump-address-offset = <0x87000000>;
+	};
+
+	qcom,dma-heaps {
+		compatible = "qcom,dma-heaps";
+	};
+
+	qcom,secure-buffer {
+		compatible = "qcom,secure-buffer";
 	};
 
 	scmi_nsp0 {
@@ -142,4 +138,31 @@
 
 		qcom,dev-name = "scmi_hpass2";
 	};
+
+	scmi_mdss0 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi16_dvfs 0>;
+		power-domain-names = "perf";
+
+		qcom,dev-name = "scmi_mdss0";
+	};
+
+	scmi_mdss1 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi17_dvfs 0>;
+		power-domain-names = "perf";
+
+		qcom,dev-name = "scmi_mdss1";
+	};
+
+	scmi_camera {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi21_dvfs 0>;
+		power-domain-names = "perf_camera";
+
+		qcom,dev-name = "scmi_camera";
+        };
 };
