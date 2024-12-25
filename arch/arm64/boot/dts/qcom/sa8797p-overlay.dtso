@@ -11,6 +11,11 @@
 #include "sa8797p-vfio.dtsi"
 #include "sa8797p-vms.dtsi"
 
+/ {
+	model = "Qualcomm Technologies, Inc. SA8797P";
+	compatible = "qcom,sa8797p";
+};
+
 &{/reserved-memory} {
 	cma: linux,cma {
 		compatible = "shared-dma-pool";
