@@ -52,6 +52,14 @@
 	status = "okay";
 };
 
+&scmi7 {
+       status = "okay";
+};
+
+&scmi8 {
+       status = "okay";
+};
+
 &scmi9 {
 	status = "okay";
 };
@@ -73,6 +81,10 @@
 };
 
 &scmi14 {
+	status = "okay";
+};
+
+&scmi15 {
 	status = "okay";
 };
 
