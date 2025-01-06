@@ -4955,8 +4955,8 @@
 		snps,no-pbl-x8;
 		dma-coherent;
 
-		rx-fifo-depth = <8192>;
-		tx-fifo-depth = <8192>;
+		rx-fifo-depth = <98304>;
+		tx-fifo-depth = <98304>;
 
 		phy-mode = "usxgmii";
 
