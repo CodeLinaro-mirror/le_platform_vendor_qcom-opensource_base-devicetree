@@ -501,7 +501,10 @@
 			reg = <0x0 0x87242000 0x0 0x1c0000>;
 		};
 
-		/* UEFI region at 0x87442000 is reclaimed by Linux */
+		uefi_log: uefi-log@87442000 {
+			reg = <0x0 0x87442000 0x0 0x10000>;
+			no-map;
+		};
 
 		secdata_apss_mem: secdata_apss_region@87452000 {
 			no-map;
