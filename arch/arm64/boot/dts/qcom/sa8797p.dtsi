@@ -2002,11 +2002,12 @@
 			power-domain-names = "power";
 		};
 
-		pdp_mbox0: mailbox@0x19980000 {
+		pdp_mbox0: mailbox@19980000 {
 			compatible = "qcom,x1e80100-cpucp-mbox";
 			reg = <0x0 0x17610000 0x0 0x4C08>,
 				<0x0 0x19980000 0x0 0x300>;
 			reg-names = "rx", "tx";
+			qcom,rx-chans = <0x249>;
 			#mbox-cells = <1>;
 			interrupts = <GIC_SPI 56 IRQ_TYPE_LEVEL_HIGH>;
 		};
