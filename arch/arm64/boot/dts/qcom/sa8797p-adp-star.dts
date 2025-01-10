@@ -20,9 +20,7 @@
 };
 
 &ethernet0 {
-	pinctrl-0 = <&ethernet0_default>;
-	pinctrl-names = "default";
-
+	phy-mode = "usxgmii";
 	phy-handle = <&usxsgmii_phy0>;
 
 	mdio {
