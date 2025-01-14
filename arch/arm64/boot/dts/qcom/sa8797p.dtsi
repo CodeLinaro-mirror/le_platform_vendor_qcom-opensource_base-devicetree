@@ -2072,6 +2072,15 @@
 			qcom,dcc-offset = <0>;
 		};
 
+		cpucp_mbox: mailbox@18830000 {
+			compatible = "qcom,x1e80100-cpucp-mbox";
+			reg =	<0x0 0x18830000 0x0 0x300>,
+				<0x0 0x17620000 0x0 0x4C08>;
+			reg-names = "tx", "rx";
+			#mbox-cells = <1>;
+			interrupts = <GIC_SPI 50 IRQ_TYPE_LEVEL_HIGH>;
+		};
+
 		qcom,msm-imem@14680000 {
 			compatible = "qcom,msm-imem";
 			reg = <0x0 0x14680000 0x0 0x1000>;
@@ -2684,6 +2693,7 @@
 				qcom,dump-size = <0x10000>;
 			};
 		};
+
 	};
 
 	thermal-zones {
