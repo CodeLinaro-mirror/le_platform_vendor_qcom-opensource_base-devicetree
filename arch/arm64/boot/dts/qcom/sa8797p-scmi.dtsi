@@ -1867,8 +1867,13 @@
 			reg = <0x13>;
 			#clock-cells = <1>;
 		};
-	};
 
+		vendor_pdp: protocol@80 {
+			reg = <0x80>;
+			#clock-cells = <1>;
+		};
+
+	};
 };
 &soc {
 	scmichannels: sram@d7600000 {
