@@ -24,6 +24,8 @@
 
 		power-domains = <&scmi12_pd 2>, <&scmi12_pd 3>;
 		power-domain-names = "transfer", "core";
+
+		status = "disabled";
 	};
 
 	usb_1_qmpphy: phy@88e4000 {
@@ -44,6 +46,8 @@
 
 		power-domains = <&scmi12_pd 0>, <&scmi12_pd 1>;
 		power-domain-names = "transfer", "core";
+
+		status = "disabled";
 	};
 
 	usb_1_eusbphy: phy@88eb000 {
@@ -78,14 +82,13 @@
 			reg = <0 0x0a200000 0 0xe000>;
 			interrupts = <GIC_SPI 910 IRQ_TYPE_LEVEL_HIGH>;
 			iommus = <&apps_smmu_0 0x14e0 0x0>;
-			qcom,iommu-dma = "bypass";
-			memory-region = <&dwc3_mem_region>;
+			memory-region = <&dwc3_mem_region2>;
 			snps,dis_u2_susphy_quirk;
 			snps,dis_enblslpm_quirk;
 			phys = <&usb_2_eusbphy>;
 			phy-names = "usb2-phy";
 			maximum-speed = "high-speed";
-			dr_mode = "otg";
+			dr_mode = "host";
 			usb-role-switch;
 		};
 	};
@@ -111,14 +114,13 @@
 			reg = <0 0x0a400000 0 0xe000>;
 			interrupts = <GIC_SPI 917 IRQ_TYPE_LEVEL_HIGH>;
 			iommus = <&apps_smmu_0 0x15c0 0x0>;
-			qcom,iommu-dma = "bypass";
-			memory-region = <&dwc3_mem_region>;
+			memory-region = <&dwc3_mem_region1>;
 			snps,dis_u2_susphy_quirk;
 			snps,dis_enblslpm_quirk;
 			phys = <&usb_1_eusbphy>, <&usb_1_qmpphy QMP_USB43DP_USB3_PHY>;
 			phy-names = "usb2-phy", "usb3-phy";
 			maximum-speed = "super-speed-plus";
-			dr_mode = "otg";
+			dr_mode = "host";
 			usb-role-switch;
 		};
 	};
@@ -137,14 +139,14 @@
 		power-domains = <&scmi0_pd 0>, <&scmi0_pd 1>;
 		power-domain-names = "transfer", "core";
 
-		status = "okay";
+		status = "disabled";
 
 		usb_0_dwc3: dwc3@a600000 {
 			compatible = "snps,dwc3";
 			reg = <0 0x0a600000 0 0xe000>;
 			interrupts = <GIC_SPI 133 IRQ_TYPE_LEVEL_HIGH>;
 			iommus = <&apps_smmu_0 0x1500 0x0>;
-			memory-region = <&dwc3_mem_region>;
+			memory-region = <&dwc3_mem_region0>;
 			snps,dis_u2_susphy_quirk;
 			snps,dis_enblslpm_quirk;
 			phys = <&usb_0_eusbphy>, <&usb_0_qmpphy QMP_USB43DP_USB3_PHY>;
@@ -154,9 +156,19 @@
 		};
 	};
 
-	dwc3_mem_region: dwc3_mem_region {
+	dwc3_mem_region0: dwc3_mem_region {
 		iommu-addresses = <&usb_0_dwc3 0x0 0x0 0x0 0x90000000>,
 					<&usb_0_dwc3 0x0 0xf0000000 0xffffffff 0x10000000>;
+	};
+
+	dwc3_mem_region1: dwc3_mem_region {
+		iommu-addresses = <&usb_1_dwc3 0x0 0x0 0x0 0x90000000>,
+					<&usb_1_dwc3 0x0 0xf0000000 0xffffffff 0x10000000>;
+	};
+
+	dwc3_mem_region2: dwc3_mem_region {
+		iommu-addresses = <&usb_2_dwc3 0x0 0x0 0x0 0x90000000>,
+					<&usb_2_dwc3 0x0 0xf0000000 0xffffffff 0x10000000>;
 	};
 
 	usb_nop_phy: usb_nop_phy {
