@@ -57,16 +57,20 @@
 	status = "okay";
 };
 
+&scmi11 {
+	status = "okay";
+};
+
 &scmi14 {
 	status = "okay";
 };
 
 &scmi16 {
-    status = "okay";
+	status = "okay";
 };
 
 &scmi17 {
-    status = "okay";
+	status = "okay";
 };
 
 &scmi19 {
@@ -78,11 +82,11 @@
 };
 
 &scmi27 {
-    status = "okay";
+	status = "okay";
 };
 
 &scmi28 {
-    status = "okay";
+	status = "okay";
 };
 
 &scmi63 {
@@ -293,5 +297,14 @@
 		power-domain-names = "usb_transfer", "usb_core";
 
 		qcom,dev-name = "scmi_usb2_phy2";
+	};
+
+	scmi_uart17 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi11_pd 17>, <&scmi11_dvfs 17>;
+		power-domain-names = "power", "perf";
+
+		qcom,dev-name = "scmi_uart17";
 	};
 };
