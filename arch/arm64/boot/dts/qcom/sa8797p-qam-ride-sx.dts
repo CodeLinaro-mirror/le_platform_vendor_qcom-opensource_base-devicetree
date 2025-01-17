@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BSD-3-Clause
 /*
- * Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+ * Copyright (c) 2024-2025 Qualcomm Innovation Center, Inc. All rights reserved.
  */
 
 /dts-v1/;
@@ -12,4 +12,16 @@
 	model = "Qualcomm Technologies, Inc. SA8797P QAM RIDE-SX";
 	compatible = "qcom,sa8797p-qam-ride-sx", "qcom,sa8797p-qam", "qcom,sa8797p";
 	qcom,board-id = <0x01010025 1>;
+};
+
+&pcie0 {
+	power-domains = <&scmi5_pd 0>;
+	power-domain-names = "power";
+	status = "okay";
+};
+
+&pcie1 {
+	power-domains = <&scmi6_pd 0>;
+	power-domain-names = "power";
+	status = "okay";
 };
