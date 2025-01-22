@@ -1,6 +1,6 @@
 //SPDX-License-Identifier: BSD-3-Clause
 /*
-* Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+* Copyright (c) 2024-2025 Qualcomm Innovation Center, Inc. All rights reserved.
 */
 
 &soc {
@@ -56,7 +56,8 @@
 			<&ipcc0 IPCC_MPROC_NSP0 2 IRQ_TYPE_LEVEL_HIGH>,
 			<&ipcc0 IPCC_MPROC_NSP1 2 IRQ_TYPE_LEVEL_HIGH>,
 			<&ipcc0 IPCC_MPROC_NSP2 2 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 2 IRQ_TYPE_LEVEL_HIGH>;
+			<&ipcc0 IPCC_MPROC_NSP3 2 IRQ_TYPE_LEVEL_HIGH>,
+			<&ipcc0 IPCC_MPROC_SOCCP 2 IRQ_TYPE_LEVEL_HIGH>;
 		reg = <0x0 0x9007000 0x0 0x1000>,
 		    <0x0 0x89B00000 0x0 0x400000>,
 		    <0x0 0x01FD4000 0x0 0x1000>,
