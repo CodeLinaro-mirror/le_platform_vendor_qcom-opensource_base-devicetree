@@ -423,4 +423,8 @@
 
 		qcom,dev-name = "scmi_soccp";
 	};
+
+	ddr_bwprofiler {
+		compatible = "qcom,ddr_bwprofiler";
+	};
 };
