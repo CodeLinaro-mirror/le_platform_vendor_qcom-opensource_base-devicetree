@@ -312,4 +312,12 @@
 		iommus = <&apps_smmu_0 0x12E0 0x00>;
 		dma-coherent;
 	};
+
+	nsp_sysmon@89b00000 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x89b00000 0x0 0x400000>,
+			<0x0 0x01FD4000 0x0 0x1000>;
+		iommus = <&apps_smmu_1 0x16C0 0x0>;
+		dma-coherent;
+	};
 };
