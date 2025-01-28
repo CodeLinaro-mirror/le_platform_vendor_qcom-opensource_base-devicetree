@@ -318,6 +318,13 @@
 		dma-coherent;
 	};
 
+	hscnoc@2000000 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x2000000 0x0 0x3A000>;
+		iommus = <&apps_smmu_2 0x1320 0x0000>;
+		dma-coherent;
+	};
+
 	nsp_sysmon@89b00000 {
 		compatible = "qcom,vfio-platform";
 		reg = <0x0 0x89b00000 0x0 0x400000>,
