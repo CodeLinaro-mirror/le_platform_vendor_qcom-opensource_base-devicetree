@@ -5857,37 +5857,34 @@
 			queue1 {
 				snps,dcb-algorithm;
 				snps,map-to-dma-channel = <0x1>;
-				snps,route-up;
+				snps,route-ptp;
 			};
 
 			queue2 {
-				snps,dcb-algorithm;
+				snps,avb-algorithm;
 				snps,map-to-dma-channel = <0x2>;
-				snps,route-up;
+				snps,route-avcp;
 			};
 
 			queue3 {
-				snps,dcb-algorithm;
+				snps,avb-algorithm;
 				snps,map-to-dma-channel = <0x3>;
-				snps,route-up;
+				snps,priority = <0xc>;
 			};
 
 			queue4 {
 				snps,dcb-algorithm;
 				snps,map-to-dma-channel = <0x4>;
-				snps,route-ptp;
 			};
 
 			queue5 {
 				snps,dcb-algorithm;
 				snps,map-to-dma-channel = <0x5>;
-				snps,route-up;
 			};
 
 			queue6 {
 				snps,dcb-algorithm;
 				snps,map-to-dma-channel = <0x6>;
-				snps,route-up;
 			};
 		};
 
