@@ -1,6 +1,16 @@
 // SPDX-License-Identifier: BSD-3-Clause
 /*
- * Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+ * Copyright (c) 2024-2025 Qualcomm Innovation Center, Inc. All rights reserved.
  */
 
 #include "qam8397p.dtsi"
+
+&ethernet0 {
+	phy-mode = "10gbase-r";
+
+	fixed-link {
+		status = "okay";
+		speed = <10000>;
+		full-duplex;
+	};
+};

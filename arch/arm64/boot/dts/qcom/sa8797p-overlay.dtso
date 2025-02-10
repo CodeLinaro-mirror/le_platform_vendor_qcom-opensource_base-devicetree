@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BSD-3-Clause
 /*
- * Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+ * Copyright (c) 2024-2025 Qualcomm Innovation Center, Inc. All rights reserved.
  */
 
 /dts-v1/;
@@ -41,6 +41,16 @@
 		alignment = <0x0 0x400000>;
 		size = <0x0 0x1000000>; /* 16M */
 	};
+
+	tz-start-count {
+		reg = <0x0 0x146807f8 0x0 0x8>;
+		no-map;
+	};
+
+	tz-end-count {
+		reg = <0x0 0x146807dc 0x0 0x8>;
+		no-map;
+	};
 };
 
 &scmi16 {
@@ -67,7 +77,16 @@
     status = "okay";
 };
 
+&scmi63 {
+	status = "okay";
+};
+
 &soc {
+	kaslr_store {
+		compatible = "qcom,kaslr-off-store";
+		reg = <0x0 0x146d86d0 0x0 0xc>;
+	};
+
 	kiumd {
 		compatible = "qcom,kiumd";
 		qcom,dev-name = "kiumd";
@@ -214,4 +233,34 @@
 
 		qcom,dev-name = "scmi_dprx1";
 	};
+
+	test_scmi {
+                compatible = "qcom,uscmi";
+
+                power-domains = <&scmi63_pd 2> , <&scmi63_dvfs 2>;
+                power-domain-names = "power", "perf";
+
+                resets = <&scmi63_rst 0>;
+                reset-names = "core";
+
+                qcom,dev-name = "test_scmi";
+        };
+
+        test_scmi_perf {
+                compatible = "qcom,uscmi";
+
+                power-domains = <&scmi63_dvfs 1>;
+                power-domain-names = "perf";
+
+                qcom,dev-name = "test_scmi_perf";
+        };
+
+        test_scmi_power {
+                compatible = "qcom,uscmi";
+
+                power-domains = <&scmi63_pd 1>;
+
+                qcom,dev-name = "test_scmi_power";
+        };
+
 };
