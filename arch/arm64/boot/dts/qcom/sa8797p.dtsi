@@ -1975,6 +1975,16 @@
 			};
 		};
 
+		pdc: interrupt-controller@b220000 {
+			compatible = "qcom,sa8797p-pdc", "qcom-pdc";
+			reg = <0xb220000 0x10000>;
+			qcom,pdc-ranges = <0 745 43>, <67 543 31>, <98 609 32>,
+					  <130 717 12>, <142 251 5>, <147 796 16>;
+			#interrupt-cells = <2>;
+			interrupt-parent = <&intc>;
+			interrupt-controller;
+		};
+
 		memtimer: timer@17810000 {
 			compatible = "arm,armv7-timer-mem";
 			reg = <0x0 0x17810000 0x0 0x1000>;
