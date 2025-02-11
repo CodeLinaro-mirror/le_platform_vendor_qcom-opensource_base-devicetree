@@ -239,6 +239,27 @@
 		dma-coherent;
 	};
 
+	hpass0_compute_cb@1 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x1 0x0 0x0>;
+		iommus = <&apps_smmu_0 0x0DE3 0x0000>;
+		dma-coherent;
+	};
+
+	hpass0_compute_cb@2 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x2 0x0 0x0>;
+		iommus = <&apps_smmu_0 0x0DE4 0x0000>;
+		dma-coherent;
+	};
+
+	hpass0_compute_cb@3 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x3 0x0 0x0>;
+		iommus = <&apps_smmu_0 0x0DE5 0x0000>;
+		dma-coherent;
+	};
+
 	hpass1_audio_cb@1 {
 		compatible = "qcom,vfio-platform";
 		reg = <0x0 0x1 0x0 0x0>;
@@ -269,6 +290,27 @@
 		dma-coherent;
 	};
 
+	hpass1_compute_cb@1 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x1 0x0 0x0>;
+		iommus = <&apps_smmu_0 0x0E0B 0x0000>;
+		dma-coherent;
+	};
+
+	hpass1_compute_cb@2 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x2 0x0 0x0>;
+		iommus = <&apps_smmu_0 0x0E0C 0x0000>;
+		dma-coherent;
+	};
+
+	hpass1_compute_cb@3 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x3 0x0 0x0>;
+		iommus = <&apps_smmu_0 0x0E0D 0x0000>;
+		dma-coherent;
+	};
+
 	hpass2_audio_cb@1 {
 		compatible = "qcom,vfio-platform";
 		reg = <0x0 0x1 0x0 0x0>;
@@ -296,6 +338,27 @@
 		       <&apps_smmu_0 0x0A55 0x0020>,
 		       <&apps_smmu_0 0x0A75 0x0020>,
 		       <&apps_smmu_0 0x0A95 0x0000>;
+		dma-coherent;
+	};
+
+	hpass2_compute_cb@1 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x1 0x0 0x0>;
+		iommus = <&apps_smmu_0 0x0E33 0x0000>;
+		dma-coherent;
+	};
+
+	hpass2_compute_cb@2 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x2 0x0 0x0>;
+		iommus = <&apps_smmu_0 0x0E34 0x0000>;
+		dma-coherent;
+	};
+
+	hpass2_compute_cb@3 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x3 0x0 0x0>;
+		iommus = <&apps_smmu_0 0x0E35 0x0000>;
 		dma-coherent;
 	};
 
