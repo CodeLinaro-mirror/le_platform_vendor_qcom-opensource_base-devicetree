@@ -5626,8 +5626,8 @@
 			 <&apps_smmu_2 0x1206 0x0>,
 			 <&apps_smmu_2 0x1207 0x0>;
 
-		power-domains = <&scmi7_pd 0>, <&scmi7_pd 1>, <&scmi7_dvfs 0>;
-		power-domain-names = "power_core", "power_mdio", "perf_serdes";
+		power-domains = <&scmi7_pd 0>, <&scmi7_pd 1>, <&scmi7_dvfs 0>, <&scmi7_dvfs 1>;
+		power-domain-names = "power_core", "power_mdio", "perf_serdes", "perf_5g_serdes";
 
 		pinctrl-0 = <&ethernet0_default>;
 		pinctrl-names = "default";
@@ -5753,8 +5753,8 @@
 			 <&apps_smmu_2 0x11c6 0x0>,
 			 <&apps_smmu_2 0x11c7 0x0>;
 
-		power-domains = <&scmi8_pd 0>, <&scmi8_pd 1>, <&scmi8_dvfs 0>;
-		power-domain-names = "power_core", "power_mdio", "perf_serdes";
+		power-domains = <&scmi8_pd 0>, <&scmi8_pd 1>, <&scmi8_dvfs 0>, <&scmi8_dvfs 1>;
+		power-domain-names = "power_core", "power_mdio", "perf_serdes", "perf_5g_serdes";
 
 		pinctrl-0 = <&ethernet1_default>;
 		pinctrl-names = "default";
