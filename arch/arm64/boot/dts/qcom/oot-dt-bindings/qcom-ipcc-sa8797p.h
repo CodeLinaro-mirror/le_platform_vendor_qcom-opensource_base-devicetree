@@ -1,6 +1,6 @@
 /* SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause */
 /*
- * Copyright (c) 2024, Qualcomm Innovation Center, Inc. All rights reserved.
+ * Copyright (c) 2024-2025, Qualcomm Innovation Center, Inc. All rights reserved.
  */
 
 #ifndef __DT_BINDINGS_MAILBOX_IPCC_SA8797P_H
@@ -145,6 +145,17 @@
 #define IPCC_FENCE_SOCCP		33
 #define IPCC_FENCE_IPA			34
 #define IPCC_FENCE_GPU1			35
+
+/* Signal IDs for COMPUTE_L0 protocol */
+#define IPCC_COMPUTE_L0_SIGNAL_IPCLITE_MSG		0
+#define IPCC_COMPUTE_L0_SIGNAL_IPCLITE_MEM_INIT		1
+#define IPCC_COMPUTE_L0_SIGNAL_IPCLITE_VERSION		2
+#define IPCC_COMPUTE_L0_SIGNAL_IPCLITE_TEST		3
+#define IPCC_COMPUTE_L0_SIGNAL_IPCLITE_SSR		4
+#define IPCC_COMPUTE_L0_SIGNAL_IPCLITE_DEBUG		5
+
+#define IPCC_COMPUTE_L0_SIGNAL_MAX			32 /* Used by driver only */
+#define IPCC_COMPUTE_L1_SIGNAL_MAX			32 /* Used by driver only */
 
 #endif
 
