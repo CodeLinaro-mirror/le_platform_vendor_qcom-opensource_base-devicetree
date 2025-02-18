@@ -68,8 +68,7 @@
 			<&ipcc0 IPCC_MPROC_NSP0 2 IRQ_TYPE_LEVEL_HIGH>,
 			<&ipcc0 IPCC_MPROC_NSP1 2 IRQ_TYPE_LEVEL_HIGH>,
 			<&ipcc0 IPCC_MPROC_NSP2 2 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 2 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_SOCCP 2 IRQ_TYPE_LEVEL_HIGH>;
+			<&ipcc0 IPCC_MPROC_NSP3 2 IRQ_TYPE_LEVEL_HIGH>;
 		reg = <0x0 0x9007000 0x0 0x1000>,
 		    <0x0 0x89B00000 0x0 0x400000>,
 		    <0x0 0x01FD4000 0x0 0x1000>,
@@ -95,7 +94,8 @@
 		    <0x0 0x91f00000 0x0 0x2300000>,
 		    <0x0 0x9de00000 0x0 0x80000>,
 		    <0x0 0x94200000 0x0 0x2300000>,
-		    <0x0 0x9de80000 0x0 0x80000>;
+		    <0x0 0x9de80000 0x0 0x80000>,
+		    <0x0 0x14680000 0x0 0x1000>;
 		iommus = <&apps_smmu_0 0x01000 0x0>;
 		dma-coherent;
 	};
@@ -239,6 +239,27 @@
 		dma-coherent;
 	};
 
+	hpass0_compute_cb@1 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x1 0x0 0x0>;
+		iommus = <&apps_smmu_0 0x0DE3 0x0000>;
+		dma-coherent;
+	};
+
+	hpass0_compute_cb@2 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x2 0x0 0x0>;
+		iommus = <&apps_smmu_0 0x0DE4 0x0000>;
+		dma-coherent;
+	};
+
+	hpass0_compute_cb@3 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x3 0x0 0x0>;
+		iommus = <&apps_smmu_0 0x0DE5 0x0000>;
+		dma-coherent;
+	};
+
 	hpass1_audio_cb@1 {
 		compatible = "qcom,vfio-platform";
 		reg = <0x0 0x1 0x0 0x0>;
@@ -266,6 +287,27 @@
 		       <&apps_smmu_0 0x0A4D 0x0020>,
 		       <&apps_smmu_0 0x0A6D 0x0020>,
 		       <&apps_smmu_0 0x0A8D 0x0080>;
+		dma-coherent;
+	};
+
+	hpass1_compute_cb@1 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x1 0x0 0x0>;
+		iommus = <&apps_smmu_0 0x0E0B 0x0000>;
+		dma-coherent;
+	};
+
+	hpass1_compute_cb@2 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x2 0x0 0x0>;
+		iommus = <&apps_smmu_0 0x0E0C 0x0000>;
+		dma-coherent;
+	};
+
+	hpass1_compute_cb@3 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x3 0x0 0x0>;
+		iommus = <&apps_smmu_0 0x0E0D 0x0000>;
 		dma-coherent;
 	};
 
@@ -299,6 +341,27 @@
 		dma-coherent;
 	};
 
+	hpass2_compute_cb@1 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x1 0x0 0x0>;
+		iommus = <&apps_smmu_0 0x0E33 0x0000>;
+		dma-coherent;
+	};
+
+	hpass2_compute_cb@2 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x2 0x0 0x0>;
+		iommus = <&apps_smmu_0 0x0E34 0x0000>;
+		dma-coherent;
+	};
+
+	hpass2_compute_cb@3 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x3 0x0 0x0>;
+		iommus = <&apps_smmu_0 0x0E35 0x0000>;
+		dma-coherent;
+	};
+
 	sail_mailbox: sail-mailbox@82030000 {
 	compatible = "qcom,vfio-platform";
 	reg = <0x0 0x82030000 0x0 0x1D0000>,
@@ -325,9 +388,13 @@
 		dma-coherent;
 	};
 
-	hscnoc@2000000 {
+	hscnoc@2030000 {
 		compatible = "qcom,vfio-platform";
-		reg = <0x0 0x2000000 0x0 0x3A000>;
+		reg = <0x0 0x2030000 0x0 0xA000>,
+			<0x0 0x2240000 0x0 0x6000>,
+			<0x0 0x2930000 0x0 0x5000>,
+			<0x0 0x2A40000 0x0 0x6000>,
+			<0x0 0x1014000 0x0 0x3000>;
 		iommus = <&apps_smmu_2 0x1320 0x0000>;
 		dma-coherent;
 	};

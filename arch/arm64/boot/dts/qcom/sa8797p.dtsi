@@ -38,6 +38,8 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x0>;
 			enable-method = "psci";
+			power-domains = <&CPU_PD0>;
+			power-domain-names = "psci";
 			next-level-cache = <&L2_0>;
                         clocks = <&cpu_perf 0>;
 			#cooling-cells = <2>;
@@ -59,6 +61,8 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x100>;
 			enable-method = "psci";
+			power-domains = <&CPU_PD1>;
+			power-domain-names = "psci";
 			next-level-cache = <&L2_0>;
                         clocks = <&cpu_perf 0>;
 			#cooling-cells = <2>;
@@ -74,6 +78,8 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x200>;
 			enable-method = "psci";
+			power-domains = <&CPU_PD2>;
+			power-domain-names = "psci";
 			next-level-cache = <&L2_0>;
                         clocks = <&cpu_perf 0>;
 			#cooling-cells = <2>;
@@ -89,6 +95,8 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x300>;
 			enable-method = "psci";
+			power-domains = <&CPU_PD3>;
+			power-domain-names = "psci";
 			next-level-cache = <&L2_0>;
                         clocks = <&cpu_perf 0>;
 			#cooling-cells = <2>;
@@ -104,6 +112,8 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x400>;
 			enable-method = "psci";
+			power-domains = <&CPU_PD4>;
+			power-domain-names = "psci";
 			next-level-cache = <&L2_0>;
                         clocks = <&cpu_perf 0>;
 			#cooling-cells = <2>;
@@ -119,6 +129,8 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x500>;
 			enable-method = "psci";
+			power-domains = <&CPU_PD5>;
+			power-domain-names = "psci";
 			next-level-cache = <&L2_0>;
                         clocks = <&cpu_perf 0>;
 			#cooling-cells = <2>;
@@ -133,6 +145,8 @@
 			device_type = "cpu";
 			compatible = "arm,armv8";
 			reg = <0x0 0x10000>;
+			power-domains = <&CPU_PD6>;
+			power-domain-names = "psci";
 			enable-method = "psci";
 			next-level-cache = <&L2_10000>;
                         clocks = <&cpu_perf 1>;
@@ -155,6 +169,8 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x10100>;
 			enable-method = "psci";
+			power-domains = <&CPU_PD7>;
+			power-domain-names = "psci";
 			next-level-cache = <&L2_10000>;
                         clocks = <&cpu_perf 1>;
 			#cooling-cells = <2>;
@@ -170,6 +186,8 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x10200>;
 			enable-method = "psci";
+			power-domains = <&CPU_PD8>;
+			power-domain-names = "psci";
 			next-level-cache = <&L2_10000>;
                         clocks = <&cpu_perf 1>;
 			#cooling-cells = <2>;
@@ -185,6 +203,8 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x10300>;
 			enable-method = "psci";
+			power-domains = <&CPU_PD9>;
+			power-domain-names = "psci";
 			next-level-cache = <&L2_10000>;
                         clocks = <&cpu_perf 1>;
 			#cooling-cells = <2>;
@@ -200,6 +220,8 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x10400>;
 			enable-method = "psci";
+			power-domains = <&CPU_PD10>;
+			power-domain-names = "psci";
 			next-level-cache = <&L2_10000>;
                         clocks = <&cpu_perf 1>;
 			#cooling-cells = <2>;
@@ -215,6 +237,8 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x10500>;
 			enable-method = "psci";
+			power-domains = <&CPU_PD11>;
+			power-domain-names = "psci";
 			next-level-cache = <&L2_10000>;
                         clocks = <&cpu_perf 1>;
 			#cooling-cells = <2>;
@@ -230,6 +254,8 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x20000>;
 			enable-method = "psci";
+			power-domains = <&CPU_PD12>;
+			power-domain-names = "psci";
 			next-level-cache = <&L2_20000>;
                         clocks = <&cpu_perf 2>;
 			#cooling-cells = <2>;
@@ -251,6 +277,8 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x20100>;
 			enable-method = "psci";
+			power-domains = <&CPU_PD13>;
+			power-domain-names = "psci";
 			next-level-cache = <&L2_20000>;
                         clocks = <&cpu_perf 2>;
 			#cooling-cells = <2>;
@@ -266,6 +294,8 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x20200>;
 			enable-method = "psci";
+			power-domains = <&CPU_PD14>;
+			power-domain-names = "psci";
 			next-level-cache = <&L2_20000>;
                         clocks = <&cpu_perf 2>;
 			#cooling-cells = <2>;
@@ -281,6 +311,8 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x20300>;
 			enable-method = "psci";
+			power-domains = <&CPU_PD15>;
+			power-domain-names = "psci";
 			next-level-cache = <&L2_20000>;
                         clocks = <&cpu_perf 2>;
 			#cooling-cells = <2>;
@@ -296,6 +328,8 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x20400>;
 			enable-method = "psci";
+			power-domains = <&CPU_PD16>;
+			power-domain-names = "psci";
 			next-level-cache = <&L2_20000>;
                         clocks = <&cpu_perf 2>;
 			#cooling-cells = <2>;
@@ -311,6 +345,8 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x20500>;
 			enable-method = "psci";
+			power-domains = <&CPU_PD17>;
+			power-domain-names = "psci";
 			next-level-cache = <&L2_20000>;
                         clocks = <&cpu_perf 2>;
 			#cooling-cells = <2>;
@@ -400,6 +436,38 @@
 				};
 			};
 		};
+
+		idle-states {
+			entry-method = "psci";
+
+			CORE_OFF_C4: medium-cluster0-c4 { /* C4 */
+				compatible = "arm,idle-state";
+				idle-state-name = "ret";
+				entry-latency-us = <93>;
+				exit-latency-us = <129>;
+				min-residency-us = <560>;
+				boot-lpm-disable;
+				arm,psci-suspend-param = <0x00000004>;
+			};
+		};
+
+		domain-idle-states {
+			CLUSTER_PWR_DN: cluster-sleep-0 {
+				compatible = "domain-idle-state";
+				arm,psci-suspend-param = <0x01000064>;
+				entry-latency-us = <2150>;
+				exit-latency-us = <1983>;
+				min-residency-us = <9144>;
+			};
+
+			APSS_OFF: cluster-sleep-1 {
+				compatible = "domain-idle-state";
+				arm,psci-suspend-param = <0x0200C364>;
+				entry-latency-us = <2800>;
+				exit-latency-us = <4400>;
+				min-residency-us = <10150>;
+			};
+		};
 	};
 
 	firmware {
@@ -421,8 +489,137 @@
 	psci {
 		compatible = "arm,psci-1.0";
 		method = "smc";
-		mode-bootloader = <0x10001 0x2>;
-		mode-edl = <0 0x1>;
+
+		CPU_PD0: cpu-pd0 {
+			#power-domain-cells = <0>;
+			power-domains = <&CLUSTER_PD0>;
+			domain-idle-states = <&CORE_OFF_C4>;
+		};
+
+		CPU_PD1: cpu-pd1 {
+			#power-domain-cells = <0>;
+			power-domains = <&CLUSTER_PD0>;
+			domain-idle-states = <&CORE_OFF_C4>;
+		};
+
+		CPU_PD2: cpu-pd2 {
+			#power-domain-cells = <0>;
+			power-domains = <&CLUSTER_PD0>;
+			domain-idle-states = <&CORE_OFF_C4>;
+		};
+
+		CPU_PD3: cpu-pd3 {
+			#power-domain-cells = <0>;
+			power-domains = <&CLUSTER_PD0>;
+			domain-idle-states = <&CORE_OFF_C4>;
+		};
+
+		CPU_PD4: cpu-pd4 {
+			#power-domain-cells = <0>;
+			power-domains = <&CLUSTER_PD0>;
+			domain-idle-states = <&CORE_OFF_C4>;
+		};
+
+		CPU_PD5: cpu-pd5 {
+			#power-domain-cells = <0>;
+			power-domains = <&CLUSTER_PD0>;
+			domain-idle-states = <&CORE_OFF_C4>;
+		};
+
+		CPU_PD6: cpu-pd6 {
+			#power-domain-cells = <0>;
+			power-domains = <&CLUSTER_PD1>;
+			domain-idle-states = <&CORE_OFF_C4>;
+		};
+
+		CPU_PD7: cpu-pd7 {
+			#power-domain-cells = <0>;
+			power-domains = <&CLUSTER_PD1>;
+			domain-idle-states = <&CORE_OFF_C4>;
+		};
+
+		CPU_PD8: cpu-pd8 {
+			#power-domain-cells = <0>;
+			power-domains = <&CLUSTER_PD1>;
+			domain-idle-states = <&CORE_OFF_C4>;
+		};
+
+		CPU_PD9: cpu-pd9 {
+			#power-domain-cells = <0>;
+			power-domains = <&CLUSTER_PD1>;
+			domain-idle-states = <&CORE_OFF_C4>;
+		};
+
+		CPU_PD10: cpu-pd10 {
+			#power-domain-cells = <0>;
+			power-domains = <&CLUSTER_PD1>;
+			domain-idle-states = <&CORE_OFF_C4>;
+		};
+
+		CPU_PD11: cpu-pd11 {
+			#power-domain-cells = <0>;
+			power-domains = <&CLUSTER_PD1>;
+			domain-idle-states = <&CORE_OFF_C4>;
+		};
+
+		CPU_PD12: cpu-pd12 {
+			#power-domain-cells = <0>;
+			power-domains = <&CLUSTER_PD2>;
+			domain-idle-states = <&CORE_OFF_C4>;
+		};
+
+		CPU_PD13: cpu-pd13 {
+			#power-domain-cells = <0>;
+			power-domains = <&CLUSTER_PD2>;
+			domain-idle-states = <&CORE_OFF_C4>;
+		};
+
+		CPU_PD14: cpu-pd14 {
+			#power-domain-cells = <0>;
+			power-domains = <&CLUSTER_PD2>;
+			domain-idle-states = <&CORE_OFF_C4>;
+		};
+
+		CPU_PD15: cpu-pd15 {
+			#power-domain-cells = <0>;
+			power-domains = <&CLUSTER_PD2>;
+			domain-idle-states = <&CORE_OFF_C4>;
+		};
+
+		CPU_PD16: cpu-pd16 {
+			#power-domain-cells = <0>;
+			power-domains = <&CLUSTER_PD2>;
+			domain-idle-states = <&CORE_OFF_C4>;
+		};
+
+		CPU_PD17: cpu-pd17 {
+			#power-domain-cells = <0>;
+			power-domains = <&CLUSTER_PD2>;
+			domain-idle-states = <&CORE_OFF_C4>;
+		};
+
+		CLUSTER_PD0: cluster-pd0 {
+			#power-domain-cells = <0>;
+			power-domains = <&CLUSTER_PD3>;
+			domain-idle-states = <&CLUSTER_PWR_DN>;
+		};
+
+		CLUSTER_PD1: cluster-pd1 {
+			#power-domain-cells = <0>;
+			power-domains = <&CLUSTER_PD3>;
+			domain-idle-states = <&CLUSTER_PWR_DN>;
+		};
+
+		CLUSTER_PD2: cluster-pd2 {
+			#power-domain-cells = <0>;
+			power-domains = <&CLUSTER_PD3>;
+			domain-idle-states = <&CLUSTER_PWR_DN>;
+		};
+
+		CLUSTER_PD3: cluster-pd3 {
+			#power-domain-cells = <0>;
+			domain-idle-states = <&APSS_OFF>;
+		};
 	};
 
 	reserved_memory: reserved-memory {
@@ -1776,6 +1973,16 @@
 				msi-controller;
 				#msi-cells = <1>;
 			};
+		};
+
+		pdc: interrupt-controller@b220000 {
+			compatible = "qcom,sa8797p-pdc", "qcom-pdc";
+			reg = <0xb220000 0x10000>;
+			qcom,pdc-ranges = <0 745 43>, <67 543 31>, <98 609 32>,
+					  <130 717 12>, <142 251 5>, <147 796 16>;
+			#interrupt-cells = <2>;
+			interrupt-parent = <&intc>;
+			interrupt-controller;
 		};
 
 		memtimer: timer@17810000 {
@@ -5660,37 +5867,34 @@
 			queue1 {
 				snps,dcb-algorithm;
 				snps,map-to-dma-channel = <0x1>;
-				snps,route-up;
+				snps,route-ptp;
 			};
 
 			queue2 {
-				snps,dcb-algorithm;
+				snps,avb-algorithm;
 				snps,map-to-dma-channel = <0x2>;
-				snps,route-up;
+				snps,route-avcp;
 			};
 
 			queue3 {
-				snps,dcb-algorithm;
+				snps,avb-algorithm;
 				snps,map-to-dma-channel = <0x3>;
-				snps,route-up;
+				snps,priority = <0xc>;
 			};
 
 			queue4 {
 				snps,dcb-algorithm;
 				snps,map-to-dma-channel = <0x4>;
-				snps,route-ptp;
 			};
 
 			queue5 {
 				snps,dcb-algorithm;
 				snps,map-to-dma-channel = <0x5>;
-				snps,route-up;
 			};
 
 			queue6 {
 				snps,dcb-algorithm;
 				snps,map-to-dma-channel = <0x6>;
-				snps,route-up;
 			};
 		};
 
@@ -5863,3 +6067,4 @@
 #include "sa8797p-scmi.dtsi"
 #include "sa8797p-pinctrl.dtsi"
 #include "sa8797p-usb.dtsi"
+#include "sa8797p-pcie.dtsi"
