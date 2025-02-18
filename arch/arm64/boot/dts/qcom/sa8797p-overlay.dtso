@@ -93,6 +93,10 @@
 	status = "okay";
 };
 
+&scmi32 {
+	status = "okay";
+};
+
 &scmi63 {
 	status = "okay";
 };
@@ -317,5 +321,14 @@
 
 		power-domains = <&scmi25_pd 0>, <&scmi25_pd 1>;
 		power-domain-names = "power_regulator", "power_gpio";
+	};
+
+	scmi_pcie2 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi32_pd 0>;
+		power-domain-names = "power";
+
+		qcom,dev-name = "scmi_pcie2";
 	};
 };
