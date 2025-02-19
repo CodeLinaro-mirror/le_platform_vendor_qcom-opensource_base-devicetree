@@ -15,6 +15,8 @@ dtb-y += arch/arm64/boot/dts/qcom/sa8797p-ride-sx.dtb
 dtb-y += arch/arm64/boot/dts/qcom/sa8797p-rumi.dtb
 dtb-y += arch/arm64/boot/dts/qcom/sa8797p-overlay.dtbo
 dtb-y += arch/arm64/boot/dts/qcom/sa8397p-overlay.dtbo
+dtb-y += arch/arm64/boot/dts/qcom/sa8797p-qam-ride-sx-pcie-ep.dtb
+dtb-y += arch/arm64/boot/dts/qcom/sa8797p-adp-star-pcie-ep.dtb
 
 #include common target file
 include $(PWD)/Makefile.common
