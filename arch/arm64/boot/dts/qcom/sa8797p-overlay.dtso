@@ -81,6 +81,10 @@
 	status = "okay";
 };
 
+&scmi25 {
+	status = "okay";
+};
+
 &scmi27 {
 	status = "okay";
 };
@@ -306,5 +310,12 @@
 		power-domain-names = "power", "perf";
 
 		qcom,dev-name = "scmi_uart17";
+	};
+
+	scmi_bluetooth {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi25_pd 0>, <&scmi25_pd 1>;
+		power-domain-names = "power_regulator", "power_gpio";
 	};
 };
