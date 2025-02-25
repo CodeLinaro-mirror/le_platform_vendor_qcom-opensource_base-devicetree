@@ -5836,8 +5836,9 @@
 		      <0x0 0x1A7F000 0x0 0x1000>;
 		reg-names = "stmmaceth", "rgmii";
 
-		interrupts = <GIC_SPI 821 IRQ_TYPE_LEVEL_HIGH>;
-		interrupt-names = "macirq";
+		interrupts = <GIC_SPI 821 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 713 IRQ_TYPE_LEVEL_HIGH>;
+		interrupt-names = "macirq", "sfty";
 
 		iommus = <&apps_smmu_2 0x1201 0x0>,
 			 <&apps_smmu_2 0x1202 0x0>,
@@ -5960,8 +5961,9 @@
 		      <0x0 0x01AFF000 0x0 0x1000>;
 		reg-names = "stmmaceth", "rgmii";
 
-		interrupts = <GIC_SPI 820 IRQ_TYPE_LEVEL_HIGH>;
-		interrupt-names = "macirq";
+		interrupts = <GIC_SPI 820 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 361 IRQ_TYPE_LEVEL_HIGH>;
+		interrupt-names = "macirq", "sfty";
 
 		iommus = <&apps_smmu_2 0x11c1 0x0>,
 			 <&apps_smmu_2 0x11c2 0x0>,
