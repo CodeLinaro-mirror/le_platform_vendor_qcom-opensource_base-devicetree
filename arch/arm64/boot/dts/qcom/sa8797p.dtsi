@@ -2137,6 +2137,11 @@
 			status = "disabled";
 		};
 
+		rng: rng@10c3000 {
+			compatible = "qcom,sa8797p-trng", "qcom,trng";
+			reg = <0x0 0x10c3000 0x0 0x1000>;
+		};
+
 		ufshc_mem: ufshc@1d44000 {
 			compatible = "qcom,sa8255p-ufshc", "qcom,ufshc", "jedec,ufs-2.0";
 			reg = <0 0x1d44000 0 0x3000>;
