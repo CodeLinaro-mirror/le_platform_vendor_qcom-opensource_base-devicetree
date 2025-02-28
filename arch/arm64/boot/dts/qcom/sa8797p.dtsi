@@ -13,6 +13,11 @@
 	#address-cells = <2>;
 	#size-cells = <2>;
 
+	aliases {
+		i2c0 = &ccu_i2c0;
+		i2c1 = &ccu_i2c5;
+	};
+
 	chosen { };
 
 	clocks {
@@ -1624,24 +1629,24 @@
 			      <0x0 0x09c20000 0x0 0x1000>;
 			reg-names = "ccu_qupv3_0_common",
 				    "ccu_qupv3_1_common",
-				    "ccu_qup0_IRQ",
-				    "ccu_qup1_IRQ";
+				    "ccu_qupv3_0_IRQ",
+				    "ccu_qupv3_1_IRQ";
 			qcom,common-reg-offset = <0x40000>;
-			interrupt-extended = <&intc GIC_SPI 989 IRQ_TYPE_LEVEL_HIGH>,
-					     <&intc GIC_SPI 988 IRQ_TYPE_LEVEL_HIGH>;
+			interrupts = <GIC_ESPI 29 IRQ_TYPE_EDGE_RISING>,
+					     <GIC_ESPI 28 IRQ_TYPE_EDGE_RISING>;
 			interrupt-names = "ccu_qup0_irq",
 					  "ccu_qup1_irq";
 			ranges;
 			status = "disabled";
 
-			ccu_gpi_dma0: dma-controller@9b56000 {
+			ccu_gpi_dma0: dma-controller0@9b56000 {
 				compatible = "qcom,sa8797-ccu-gpi-dma";
 				#dma-cells = <4>;
 				reg = <0x0 0x009b56000 0x0 0x30000>;
 				dma-channels = <15>;
 				dma-channel-mask = <0x7fff>;
 				static-gpii-mask = <0x7fff>;
-				iommus = <&apps_smmu_2 0x1480 0x0>;
+				//iommus = <&apps_smmu_2 0x1480 0x0>;
 				status = "disabled";
 			};
 
@@ -1668,7 +1673,7 @@
 						    "rx1",
 						    "tx2",
 						    "rx2";
-					power-domains = <&scmi9_pd 21>;
+					power-domains = <&scmi9_pd 22>;
 					status = "disabled";
 				};
 
@@ -1687,7 +1692,7 @@
 						    "rx1",
 						    "tx2",
 						    "rx2";
-					power-domains = <&scmi9_pd 22>;
+					power-domains = <&scmi9_pd 23>;
 					status = "disabled";
 				};
 
@@ -1706,7 +1711,7 @@
 						    "rx1",
 						    "tx2",
 						    "rx2";
-					power-domains = <&scmi9_pd 23>;
+					power-domains = <&scmi9_pd 24>;
 					status = "disabled";
 				};
 
@@ -1725,7 +1730,7 @@
 						    "rx1",
 						    "tx2",
 						    "rx2";
-					power-domains = <&scmi9_pd 24>;
+					power-domains = <&scmi9_pd 25>;
 					status = "disabled";
 				};
 
@@ -1744,19 +1749,19 @@
 						    "rx1",
 						    "tx2",
 						    "rx2";
-					power-domains = <&scmi9_pd 25>;
+					power-domains = <&scmi9_pd 26>;
 					status = "disabled";
 				};
 			};
 
-			ccu_gpi_dma1: dma-controller@9bd6000 {
+			ccu_gpi_dma1: dma-controller1@9bd6000 {
 				compatible = "qcom,sa8797-ccu-gpi-dma";
 				#dma-cells = <4>;
 				reg = <0x0 0x009bd6000 0x0 0x30000>;
 				dma-channels = <15>;
 				dma-channel-mask = <0x7fff>;
 				static-gpii-mask = <0x7fff>;
-				iommus = <&apps_smmu_2 0x1480 0x0>;
+				//iommus = <&apps_smmu_2 0x1480 0x0>;
 				status = "disabled";
 			};
 
@@ -1783,7 +1788,7 @@
 						    "rx1",
 						    "tx2",
 						    "rx2";
-					power-domains = <&scmi9_pd 26>;
+					power-domains = <&scmi9_pd 27>;
 					status = "disabled";
 				};
 
@@ -1802,7 +1807,7 @@
 						    "rx1",
 						    "tx2",
 						    "rx2";
-					power-domains = <&scmi9_pd 27>;
+					power-domains = <&scmi9_pd 28>;
 					status = "disabled";
 				};
 
@@ -1821,7 +1826,7 @@
 						    "rx1",
 						    "tx2",
 						    "rx2";
-					power-domains = <&scmi9_pd 28>;
+					power-domains = <&scmi9_pd 29>;
 					status = "disabled";
 				};
 
@@ -1840,7 +1845,7 @@
 						    "rx1",
 						    "tx2",
 						    "rx2";
-					power-domains = <&scmi9_pd 29>;
+					power-domains = <&scmi9_pd 30>;
 					status = "disabled";
 				};
 
@@ -1859,7 +1864,7 @@
 						    "rx1",
 						    "tx2",
 						    "rx2";
-					power-domains = <&scmi9_pd 30>;
+					power-domains = <&scmi9_pd 31>;
 					status = "disabled";
 				};
 			};
