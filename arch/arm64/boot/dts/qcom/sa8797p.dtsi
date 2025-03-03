@@ -637,17 +637,17 @@
 			reg = <0x0 0x80000000 0x0 0x800000>;
 		};
 
-		tme_sail_p_mem: tme_sail_p_region@81ff0000 {
+		tme_sail_mem: tme_sail_region@81ff0000 {
 			no-map;
 			reg = <0x0 0x81ff0000 0x0 0x10000>;
 		};
 
-		tz_sail_mailbox_p_mem: tz_sail_mailbox_p_region@82000000 {
+		tz_sail_mailbox_mem: tz_sail_mailbox_region@82000000 {
 			no-map;
 			reg = <0x0 0x82000000 0x0 0x8000>;
 		};
 
-		hlos_sail_mailbox_p_mem: hlos_sail_mailbox_p_region@82008000 {
+		hlos_sail_mailbox_mem: hlos_sail_mailbox_region@82008000 {
 			no-map;
 			reg = <0x0 0x82008000 0x0 0x1F8000>;
 		};
@@ -669,12 +669,12 @@
 
 		deepsleep_mem: deepsleep_region@84c00000 {
 			no-map;
-			reg = <0x0 0x84c00000 0x0 0x684800>;
+			reg = <0x0 0x84c00000 0x0 0x800000>;
 		};
 
 		deepsleep_backup_mem: deepsleep_backup_region@86a00000 {
 			no-map;
-			reg = <0x0 0x86a00000 0x0 0x111000>;
+			reg = <0x0 0x86a00000 0x0 0x200000>;
 		};
 
 		soccp_fe_vm_mem: soccp_fe_vm_region@86c00000 {
@@ -696,6 +696,11 @@
 			compatible = "qcom,cmd-db";
 			no-map;
 			reg = <0x0 0x87148000 0x0 0x20000>;
+		};
+
+		nsp_sync_buffer_mem: nsp_sync_buffer_region@871ff000 {
+			no-map;
+			reg = <0x0 0x871ff000 0x0 0x1000>;
 		};
 
 		ddr_training_checksum_data_mem: ddr_training_checksum_data_region@87200000 {
@@ -950,15 +955,10 @@
 			reg = <0x0 0xd7600000 0x0 0x40000>;
 		};
 
-                gearvm_logs_mem: gearvm_logs_region@d7640000 {
-        		no-map;
-        		reg = <0x0 0xd7640000 0x0 0x10000>;
-        	};
-
-        	gearvm_reserved_mem: gearvm_reserved_region@d7654000 {
-        		no-map;
-        		reg = <0x0 0xd7654000 0x0 0x1b0000>;
-        	};
+		gearvm_shared_mem: gearvm_shared_region@d7640000 {
+			no-map;
+			reg = <0x0 0xd7640000 0x0 0x200000>;
+		};
 
 		sail_p_mem: sail_p_region@8c0000000 {
 			no-map;
