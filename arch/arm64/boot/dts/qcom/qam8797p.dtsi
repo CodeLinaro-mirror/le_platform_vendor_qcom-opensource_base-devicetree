@@ -6,7 +6,7 @@
 / {
 	model = "Qualcomm Technologies, Inc. QAM8797P SIP";
 	compatible = "qcom,sa8797p-qam","qcom,sa8797p";
-	qcom,msm-id = <690 0x10000>;
+	qcom,msm-id = <690 0x10000>, <690 0x10001>;
 
 	aliases {
 		i2c18 = &i2c18;
