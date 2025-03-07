@@ -635,7 +635,7 @@
 
 	auto_vm_0_mem_2: auto_vm_0_mem_2@883000000 {
 		no-map;
-		reg = <0x8 0x83000000 0x0 0x2A000000>;
+		reg = <0x8 0x83000000 0x0 0x21000000>;
 	};
 
 	auto_vm_0_mem_3: auto_vm_0_mem_3@900000000 {
