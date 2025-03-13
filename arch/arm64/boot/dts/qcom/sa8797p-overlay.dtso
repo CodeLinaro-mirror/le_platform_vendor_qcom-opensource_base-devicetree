@@ -96,7 +96,12 @@
 &soc {
 	kaslr_store {
 		compatible = "qcom,kaslr-off-store";
-		reg = <0x0 0x146d86d0 0x0 0xc>;
+		reg = <0x0 0x146806d0 0x0 0xc>;
+	};
+
+	dload_type {
+		compatible = "qcom,msm-imem-dload-type";
+		reg = <0x0 0x1468001c 0x0 0x4>;
 	};
 
 	kiumd {
