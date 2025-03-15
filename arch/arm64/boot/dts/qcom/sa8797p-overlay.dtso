@@ -312,6 +312,18 @@
 		qcom,dev-name = "scmi_uart17";
 	};
 
+	scmi_emac1 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi8_pd 0>, <&scmi8_pd 1>, <&scmi8_dvfs 0>, <&scmi8_dvfs 1>;
+		power-domain-names = "emac_power", "emac_clock", "emac_perf", "perf_5g_serdes";
+
+		resets = <&scmi8_rst 0>;
+		reset-names = "emac_reset";
+
+		qcom,dev-name = "scmi_emac1";
+	};
+
 	scmi_bluetooth {
 		compatible = "qcom,uscmi";
 
