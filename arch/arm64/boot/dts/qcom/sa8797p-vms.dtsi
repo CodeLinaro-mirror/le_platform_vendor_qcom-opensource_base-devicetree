@@ -1,7 +1,9 @@
 // SPDX-License-Identifier: BSD-3-Clause
 /*
-* Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+* Copyright (c) 2024-2025 Qualcomm Innovation Center, Inc. All rights reserved.
 */
+
+#include "oot-dt-bindings/qcom-shmem-sa8797p.h"
 
 &soc {
 	auto_vm: qcom,auto_vm@880000000 {
@@ -281,6 +283,7 @@
 		qcom,firmware-name = "autoghgvm";
 		qcom,firmware-index = <0>;
 		memory-region = <&auto_vm_0_mem_0 &auto_vm_0_mem_1 &auto_vm_0_mem_2 &auto_vm_0_mem_3 &auto_vm_0_mem_4 &auto_vm_0_mem_5 &auto_vm_0_mem_6>;
+		shared-regions = <&glink_cma_mem1 &glink_cma_mem2>;
 		enable-gvm-dump;
 		virtio-backends = <&auto_vm_be0
 				&auto_vm_be1
@@ -333,6 +336,22 @@
 	#address-cells = <2>;
 	#size-cells = <2>;
 	ranges;
+
+	glink_cma_mem1: glink_cma_mem1@80800000 {
+		no-map;
+		reg = <0x0 0x80800000 0x0 0x9000>;
+		qcom,dst-vmids = <AC_VM_CDSP_Q6_ELF_00>;
+		qcom,dst-perms = <QCOM_PERM_RWX>;
+		gunyah-label = <0x60>;
+	};
+
+	glink_cma_mem2: glink_cma_mem2@80809000 {
+		no-map;
+		reg = <0x0 0x80809000 0x0 0x9000>;
+		qcom,dst-vmids = <AC_VM_CDSP_Q6_ELF_01>;
+		qcom,dst-perms = <QCOM_PERM_RWX>;
+		gunyah-label = <0x61>;
+	};
 
 	auto_vm_vblk0_ring: auto_vm_vblk0_ring@880000000 {
 		no-map;
@@ -616,7 +635,7 @@
 
 	auto_vm_0_mem_2: auto_vm_0_mem_2@883000000 {
 		no-map;
-		reg = <0x8 0x83000000 0x0 0x2A000000>;
+		reg = <0x8 0x83000000 0x0 0x21000000>;
 	};
 
 	auto_vm_0_mem_3: auto_vm_0_mem_3@900000000 {

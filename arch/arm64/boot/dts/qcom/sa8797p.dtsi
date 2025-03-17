@@ -13,6 +13,11 @@
 	#address-cells = <2>;
 	#size-cells = <2>;
 
+	aliases {
+		i2c0 = &ccu_i2c0;
+		i2c1 = &ccu_i2c5;
+	};
+
 	chosen { };
 
 	clocks {
@@ -657,14 +662,24 @@
 			reg = <0x0 0x827FF000 0x0 0x1000>;
 		};
 
-		dare_hyp_mem: dare_hyp_region@82800000 {
+		gunyah_hyp_mem: gunyah_hyp_region@82800000 {
 			no-map;
-			reg = <0x0 0x82800000 0x0 0x1f00000>;
+			reg = <0x0 0x82800000 0x0 0x2400000>;
 		};
 
-		deepsleep_backup_mem: deepsleep_backup_region@84700000 {
+		deepsleep_mem: deepsleep_region@84c00000 {
 			no-map;
-			reg = <0x0 0x84700000 0x0 0x200000>;
+			reg = <0x0 0x84c00000 0x0 0x684800>;
+		};
+
+		deepsleep_backup_mem: deepsleep_backup_region@86a00000 {
+			no-map;
+			reg = <0x0 0x86a00000 0x0 0x111000>;
+		};
+
+		soccp_fe_vm_mem: soccp_fe_vm_region@86c00000 {
+			no-map;
+			reg = <0x0 0x86c00000 0x0 0x400000>;
 		};
 
 		tme_crash_dump_mem: tme_crash_dump_region@87000000 {
@@ -728,6 +743,11 @@
 			reg = <0x0 0x874f4000 0x0 0x80000>;
 		};
 
+		qup_fw_mem: qup_fw_region@87574000 {
+			no-map;
+			reg = <0x0 0x87574000 0x0 0x20000>;
+		};
+
 		pdp_ns_mem: pdp_ns_mem_region@87600000 {
 			no-map;
 			reg = <0x0 0x87600000 0x0 0x200000>;
@@ -788,16 +808,6 @@
 		soccp_mem: soccp_region@8bc00000 {
 			no-map;
 			reg = <0x0 0x8bc00000 0x0 0x300000>;
-		};
-
-		audio_cfg_mem: audio_cfg_region@8bf00000 {
-			no-map;
-			reg = <0x0 0x8bf00000 0x0 0xa00000>;
-		};
-
-		video_mem: video_region@9f500000 {
-			no-map;
-			reg = <0x0 0x9f500000 0x0 0xc00000>;
 		};
 
 		cvp_mem: cvp_region@8d100000 {
@@ -875,11 +885,6 @@
 			reg = <0x0 0x9e000000 0x0 0x100000>;
 		};
 
-                pil_umd_reserved: mdt_load_region@a0100000 {
-                       no-map;
-                       reg = <0x0 0xa0100000 0x0 0x100000>;
-                };
-
 		camera_icp_1_mem: camera_icp_1_region@9e100000 {
 			no-map;
 			reg = <0x0 0x9e100000 0x0 0x800000>;
@@ -898,6 +903,26 @@
 		camera_qup_2_mem: camera_qup_2_region@9f300000 {
 			no-map;
 			reg = <0x0 0x9f300000 0x0 0x2e00000>;
+		};
+
+		video_mem: video_region@9f500000 {
+			no-map;
+			reg = <0x0 0x9f500000 0x0 0xc00000>;
+		};
+
+		pil_umd_reserved: mdt_load_region@a0100000 {
+			no-map;
+			reg = <0x0 0xa0100000 0x0 0x100000>;
+		};
+
+		mm_calibration_data_mem: mm_calibration_data_region@bae00000 {
+			no-map;
+			reg = <0x0 0xbae00000 0x0 0x800000>;
+		};
+
+		audio_config_mem: audio_config_region@bb600000 {
+			no-map;
+			reg = <0x0 0xbb600000 0x0 0xa00000>;
 		};
 
 		dare_tz_mem: dare_tz_region@bc000000 {
@@ -934,12 +959,6 @@
         		no-map;
         		reg = <0x0 0xd7654000 0x0 0x1b0000>;
         	};
-
-		/* UEFI region at 0xd8d00000 is reclaimed by Linux */
-
-		/* UEFI region at 0xd9d00000 is reclaimed by Linux */
-
-		/* Linux kernel image is loaded at 0xd9e00000 */
 
 		sail_p_mem: sail_p_region@8c0000000 {
 			no-map;
@@ -1610,24 +1629,24 @@
 			      <0x0 0x09c20000 0x0 0x1000>;
 			reg-names = "ccu_qupv3_0_common",
 				    "ccu_qupv3_1_common",
-				    "ccu_qup0_IRQ",
-				    "ccu_qup1_IRQ";
+				    "ccu_qupv3_0_IRQ",
+				    "ccu_qupv3_1_IRQ";
 			qcom,common-reg-offset = <0x40000>;
-			interrupt-extended = <&intc GIC_SPI 989 IRQ_TYPE_LEVEL_HIGH>,
-					     <&intc GIC_SPI 988 IRQ_TYPE_LEVEL_HIGH>;
+			interrupts = <GIC_ESPI 29 IRQ_TYPE_EDGE_RISING>,
+					     <GIC_ESPI 28 IRQ_TYPE_EDGE_RISING>;
 			interrupt-names = "ccu_qup0_irq",
 					  "ccu_qup1_irq";
 			ranges;
 			status = "disabled";
 
-			ccu_gpi_dma0: dma-controller@9b56000 {
+			ccu_gpi_dma0: dma-controller0@9b56000 {
 				compatible = "qcom,sa8797-ccu-gpi-dma";
 				#dma-cells = <4>;
 				reg = <0x0 0x009b56000 0x0 0x30000>;
 				dma-channels = <15>;
 				dma-channel-mask = <0x7fff>;
 				static-gpii-mask = <0x7fff>;
-				iommus = <&apps_smmu_2 0x1480 0x0>;
+				//iommus = <&apps_smmu_2 0x1480 0x0>;
 				status = "disabled";
 			};
 
@@ -1654,7 +1673,7 @@
 						    "rx1",
 						    "tx2",
 						    "rx2";
-					power-domains = <&scmi9_pd 21>;
+					power-domains = <&scmi9_pd 22>;
 					status = "disabled";
 				};
 
@@ -1673,7 +1692,7 @@
 						    "rx1",
 						    "tx2",
 						    "rx2";
-					power-domains = <&scmi9_pd 22>;
+					power-domains = <&scmi9_pd 23>;
 					status = "disabled";
 				};
 
@@ -1692,7 +1711,7 @@
 						    "rx1",
 						    "tx2",
 						    "rx2";
-					power-domains = <&scmi9_pd 23>;
+					power-domains = <&scmi9_pd 24>;
 					status = "disabled";
 				};
 
@@ -1711,7 +1730,7 @@
 						    "rx1",
 						    "tx2",
 						    "rx2";
-					power-domains = <&scmi9_pd 24>;
+					power-domains = <&scmi9_pd 25>;
 					status = "disabled";
 				};
 
@@ -1730,19 +1749,19 @@
 						    "rx1",
 						    "tx2",
 						    "rx2";
-					power-domains = <&scmi9_pd 25>;
+					power-domains = <&scmi9_pd 26>;
 					status = "disabled";
 				};
 			};
 
-			ccu_gpi_dma1: dma-controller@9bd6000 {
+			ccu_gpi_dma1: dma-controller1@9bd6000 {
 				compatible = "qcom,sa8797-ccu-gpi-dma";
 				#dma-cells = <4>;
 				reg = <0x0 0x009bd6000 0x0 0x30000>;
 				dma-channels = <15>;
 				dma-channel-mask = <0x7fff>;
 				static-gpii-mask = <0x7fff>;
-				iommus = <&apps_smmu_2 0x1480 0x0>;
+				//iommus = <&apps_smmu_2 0x1480 0x0>;
 				status = "disabled";
 			};
 
@@ -1769,7 +1788,7 @@
 						    "rx1",
 						    "tx2",
 						    "rx2";
-					power-domains = <&scmi9_pd 26>;
+					power-domains = <&scmi9_pd 27>;
 					status = "disabled";
 				};
 
@@ -1788,7 +1807,7 @@
 						    "rx1",
 						    "tx2",
 						    "rx2";
-					power-domains = <&scmi9_pd 27>;
+					power-domains = <&scmi9_pd 28>;
 					status = "disabled";
 				};
 
@@ -1807,7 +1826,7 @@
 						    "rx1",
 						    "tx2",
 						    "rx2";
-					power-domains = <&scmi9_pd 28>;
+					power-domains = <&scmi9_pd 29>;
 					status = "disabled";
 				};
 
@@ -1826,7 +1845,7 @@
 						    "rx1",
 						    "tx2",
 						    "rx2";
-					power-domains = <&scmi9_pd 29>;
+					power-domains = <&scmi9_pd 30>;
 					status = "disabled";
 				};
 
@@ -1845,7 +1864,7 @@
 						    "rx1",
 						    "tx2",
 						    "rx2";
-					power-domains = <&scmi9_pd 30>;
+					power-domains = <&scmi9_pd 31>;
 					status = "disabled";
 				};
 			};
@@ -2121,6 +2140,11 @@
 			dma-coherent;
 			#iommu-cells = <1>;
 			status = "disabled";
+		};
+
+		rng: rng@10c3000 {
+			compatible = "qcom,sa8797p-trng", "qcom,trng";
+			reg = <0x0 0x10c3000 0x0 0x1000>;
 		};
 
 		ufshc_mem: ufshc@1d44000 {
@@ -5822,8 +5846,9 @@
 		      <0x0 0x1A7F000 0x0 0x1000>;
 		reg-names = "stmmaceth", "rgmii";
 
-		interrupts = <GIC_SPI 821 IRQ_TYPE_LEVEL_HIGH>;
-		interrupt-names = "macirq";
+		interrupts = <GIC_SPI 821 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 713 IRQ_TYPE_LEVEL_HIGH>;
+		interrupt-names = "macirq", "sfty";
 
 		iommus = <&apps_smmu_2 0x1201 0x0>,
 			 <&apps_smmu_2 0x1202 0x0>,
@@ -5946,8 +5971,9 @@
 		      <0x0 0x01AFF000 0x0 0x1000>;
 		reg-names = "stmmaceth", "rgmii";
 
-		interrupts = <GIC_SPI 820 IRQ_TYPE_LEVEL_HIGH>;
-		interrupt-names = "macirq";
+		interrupts = <GIC_SPI 820 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 361 IRQ_TYPE_LEVEL_HIGH>;
+		interrupt-names = "macirq", "sfty";
 
 		iommus = <&apps_smmu_2 0x11c1 0x0>,
 			 <&apps_smmu_2 0x11c2 0x0>,
