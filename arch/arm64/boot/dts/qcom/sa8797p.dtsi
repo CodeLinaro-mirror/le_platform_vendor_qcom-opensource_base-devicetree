@@ -478,6 +478,7 @@
 	firmware {
 		qcom_scm {
 			compatible = "qcom,scm-sa8797p", "qcom,scm";
+			memory-region = <&tzffi_mem>;
 		};
 	};
 
@@ -776,8 +777,9 @@
 		};
 
 		tzffi_mem: tzffi_region@8a300000 {
-			no-map;
+			compatible = "shared-dma-pool";
 			reg = <0x0 0x8a300000 0x0 0x1400000>;
+			no-map;
 		};
 
 		gunyah_md_mem: gunyah_md_region@8b700000 {
