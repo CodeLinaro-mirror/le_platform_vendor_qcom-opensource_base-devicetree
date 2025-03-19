@@ -42,11 +42,11 @@
 };
 
 &xpcs1 {
-	status = "okay";
+	status = "disabled";
 };
 
 &ethernet1 {
-	status = "okay";
+	status = "disabled";
 
 	phy-mode = "usxgmii";
 	phy-handle = <&usxsgmii_phy1>;
