@@ -354,4 +354,14 @@
 
 		qcom,dev-name = "scmi_wlan";
 	};
+
+	tlmm_fusa {
+		compatible = "qcom,tlmm-fusa";
+		interrupts = <GIC_SPI 97 IRQ_TYPE_EDGE_RISING>;
+		reg = <0x0 0xf1ea000 0x0 0x2>,
+		      <0x0 0xf21c000 0x0 0x4>,
+		      <0x0 0xf21c008 0x0 0x4>;
+		reg-names = "error_status", "ahb_hreset_status", "por_ares_status";
+		qcom,por-ares-reset-bit = <6>;
+	};
 };
