@@ -16,6 +16,8 @@
 	aliases {
 		i2c0 = &ccu_i2c0;
 		i2c1 = &ccu_i2c5;
+		ethernet0 = &ethernet0;
+		ethernet1 = &ethernet1;
 	};
 
 	chosen { };
