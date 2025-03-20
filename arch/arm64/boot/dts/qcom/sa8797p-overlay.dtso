@@ -114,6 +114,11 @@
 		status = "ok";
 	};
 
+	mini_dump_mode {
+		compatible = "qcom,minidump";
+		status = "ok";
+	};
+
 	scm_user_intf_device {
 		compatible = "qcom,scm-user-intf";
 		scm_dev = "scm";
