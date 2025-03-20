@@ -81,6 +81,10 @@
 	status = "okay";
 };
 
+&scmi24 {
+	status = "okay";
+};
+
 &scmi25 {
 	status = "okay";
 };
@@ -340,5 +344,14 @@
 		power-domain-names = "power", "dummy";
 
 		qcom,dev-name = "scmi_pcie2";
+	};
+
+	scmi_wlan {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi24_pd 0>, <&scmi24_pd 1>;
+		power-domain-names = "power_regulator", "power_gpio";
+
+		qcom,dev-name = "scmi_wlan";
 	};
 };
