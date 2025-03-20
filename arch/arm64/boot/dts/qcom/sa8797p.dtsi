@@ -452,14 +452,14 @@
 				exit-latency-us = <129>;
 				min-residency-us = <560>;
 				boot-lpm-disable;
-				arm,psci-suspend-param = <0x00000004>;
+				arm,psci-suspend-param = <0x00000003>;
 			};
 		};
 
 		domain-idle-states {
 			CLUSTER_PWR_DN: cluster-sleep-0 {
 				compatible = "domain-idle-state";
-				arm,psci-suspend-param = <0x01000064>;
+				arm,psci-suspend-param = <0x01000063>;
 				entry-latency-us = <2150>;
 				exit-latency-us = <1983>;
 				min-residency-us = <9144>;
@@ -467,7 +467,7 @@
 
 			APSS_OFF: cluster-sleep-1 {
 				compatible = "domain-idle-state";
-				arm,psci-suspend-param = <0x0200C364>;
+				arm,psci-suspend-param = <0x0200C363>;
 				entry-latency-us = <2800>;
 				exit-latency-us = <4400>;
 				min-residency-us = <10150>;
