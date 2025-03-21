@@ -479,6 +479,7 @@
 		qcom_scm {
 			compatible = "qcom,scm-sa8797p", "qcom,scm";
 			memory-region = <&tzffi_mem>;
+			qcom,dload-mode = <&tcsr 0x79000>;
 		};
 	};
 
@@ -1876,6 +1877,11 @@
 			compatible = "qcom,tcsr-mutex";
 			reg = <0x0 0x01f40000 0x0 0x20000>;
 			#hwlock-cells = <1>;
+		};
+
+		tcsr: syscon@1f60000 {
+			compatible = "syscon";
+			reg = <0x0 0x1f60000 0x0 0xa0000>;
 		};
 
 		tsens0: thermal-sensor@c22c000 {
