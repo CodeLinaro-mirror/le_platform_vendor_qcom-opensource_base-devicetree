@@ -7,5 +7,5 @@
 
 / {
 	compatible = "qcom,sa8797p-adp","qcom,sa8797p";
-	qcom,msm-id = <648 0x10000>, <690 0x10000>;
+	qcom,msm-id = <648 0x10000>, <648 0x10001>, <690 0x10000>, <690 0x10001>;
 };
