@@ -1651,7 +1651,7 @@
 				dma-channels = <15>;
 				dma-channel-mask = <0x7fff>;
 				static-gpii-mask = <0x7fff>;
-				//iommus = <&apps_smmu_2 0x1480 0x0>;
+				iommus = <&apps_smmu_2 0x1480 0x0>;
 				status = "disabled";
 			};
 
@@ -1660,6 +1660,7 @@
 				reg = <0x0 0x9b96000 0x0 0x1000>;
 				#address-cells = <2>;
 				#size-cells = <2>;
+				iommus = <&apps_smmu_2 0x1480 0x0>;
 				ranges;
 				status = "disabled";
 
@@ -1766,7 +1767,7 @@
 				dma-channels = <15>;
 				dma-channel-mask = <0x7fff>;
 				static-gpii-mask = <0x7fff>;
-				//iommus = <&apps_smmu_2 0x1480 0x0>;
+				iommus = <&apps_smmu_2 0x1480 0x0>;
 				status = "disabled";
 			};
 
@@ -1775,6 +1776,7 @@
 				reg = <0x0 0x9c16000 0x0 0x1000>;
 				#address-cells = <2>;
 				#size-cells = <2>;
+				iommus = <&apps_smmu_2 0x1480 0x0>;
 				ranges;
 				status = "disabled";
 
