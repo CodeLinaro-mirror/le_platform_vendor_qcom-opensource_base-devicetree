@@ -81,11 +81,23 @@
 	status = "okay";
 };
 
+&scmi24 {
+	status = "okay";
+};
+
+&scmi25 {
+	status = "okay";
+};
+
 &scmi27 {
 	status = "okay";
 };
 
 &scmi28 {
+	status = "okay";
+};
+
+&scmi32 {
 	status = "okay";
 };
 
@@ -96,12 +108,22 @@
 &soc {
 	kaslr_store {
 		compatible = "qcom,kaslr-off-store";
-		reg = <0x0 0x146d86d0 0x0 0xc>;
+		reg = <0x0 0x146806d0 0x0 0xc>;
+	};
+
+	dload_type {
+		compatible = "qcom,msm-imem-dload-type";
+		reg = <0x0 0x1468001c 0x0 0x4>;
 	};
 
 	kiumd {
 		compatible = "qcom,kiumd";
 		qcom,dev-name = "kiumd";
+		status = "ok";
+	};
+
+	mini_dump_mode {
+		compatible = "qcom,minidump";
 		status = "ok";
 	};
 
@@ -306,5 +328,42 @@
 		power-domain-names = "power", "perf";
 
 		qcom,dev-name = "scmi_uart17";
+	};
+
+	scmi_emac1 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi8_pd 0>, <&scmi8_pd 1>, <&scmi8_dvfs 0>, <&scmi8_dvfs 1>;
+		power-domain-names = "emac_power", "emac_clock", "emac_perf", "perf_5g_serdes";
+
+		resets = <&scmi8_rst 0>;
+		reset-names = "emac_reset";
+
+		qcom,dev-name = "scmi_emac1";
+	};
+
+	scmi_bluetooth {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi25_pd 0>, <&scmi25_pd 1>;
+		power-domain-names = "power_regulator", "power_gpio";
+	};
+
+	scmi_pcie2 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi32_pd 0>, <&scmi63_pd 0>;
+		power-domain-names = "power", "dummy";
+
+		qcom,dev-name = "scmi_pcie2";
+	};
+
+	scmi_wlan {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi24_pd 0>, <&scmi24_pd 1>;
+		power-domain-names = "power_regulator", "power_gpio";
+
+		qcom,dev-name = "scmi_wlan";
 	};
 };
