@@ -283,7 +283,7 @@
 		qcom,firmware-name = "autoghgvm";
 		qcom,firmware-index = <0>;
 		memory-region = <&auto_vm_0_mem_0 &auto_vm_0_mem_1 &auto_vm_0_mem_2 &auto_vm_0_mem_3 &auto_vm_0_mem_4 &auto_vm_0_mem_5 &auto_vm_0_mem_6>;
-		shared-regions = <&glink_cma_mem1 &glink_cma_mem2>;
+		shared-regions = <&glink_cma_mem1 &glink_cma_mem2 &vm_cp_pixel &vm_cp_nonpixel &vm_cp_bitstream>;
 		enable-gvm-dump;
 		virtio-backends = <&auto_vm_be0
 				&auto_vm_be1
@@ -623,6 +623,27 @@
 		gunyah-label = <0x50>;
 	};
 
+	vm_cp_pixel: vm_cp_pixel@BE8000000 {
+		no-map;
+		reg = <0xB 0xE8000000 0x0 0x10000000>;
+		gunyah-label = <0xC0A>;
+		qcom,is-phantom;
+	};
+
+	vm_cp_nonpixel: vm_cp_nonpixel@BF8000000 {
+		no-map;
+		reg = <0xB 0xF8000000 0x0 0x8000000>;
+		gunyah-label = <0xC0B>;
+		qcom,is-phantom;
+	};
+
+	vm_cp_bitstream: vm_cp_bitstream@CE000000 {
+		no-map;
+		reg = <0x0 0xCE000000 0x0 0x6000000>;
+		gunyah-label = <0xC09>;
+		qcom,is-phantom;
+	};
+
 	auto_vm_0_mem_0: auto_vm_0_mem_0@A4000000 {
 		no-map;
 		reg = <0x0 0xA4000000 0x0 0x16E00000>;
@@ -630,7 +651,7 @@
 
 	auto_vm_0_mem_1: auto_vm_0_mem_1@C8000000 {
 		no-map;
-		reg = <0x0 0xC8000000 0x0 0xC000000>;
+		reg = <0x0 0xC8000000 0x0 0x6000000>;
 	};
 
 	auto_vm_0_mem_2: auto_vm_0_mem_2@883000000 {
@@ -655,6 +676,6 @@
 
 	auto_vm_0_mem_6: auto_vm_0_mem_6@B40000000 {
 		no-map;
-		reg = <0xB 0x40000000 0x0 0xC0000000>;
+		reg = <0xB 0x40000000 0x0 0xA8000000>;
 	};
 };
