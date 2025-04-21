@@ -119,6 +119,10 @@
 		reg = <0x0 0x146806d0 0x0 0xc>;
 	};
 
+	dload_mode {
+		compatible = "qcom,dload-mode";
+	};
+
 	dload_type {
 		compatible = "qcom,msm-imem-dload-type";
 		reg = <0x0 0x1468001c 0x0 0x4>;
