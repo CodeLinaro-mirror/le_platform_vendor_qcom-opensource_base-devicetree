@@ -5822,13 +5822,13 @@
 			     <GIC_SPI 713 IRQ_TYPE_LEVEL_HIGH>;
 		interrupt-names = "macirq", "sfty";
 
-		iommus = <&apps_smmu_2 0x1201 0x0>,
+		iommus = <&apps_smmu_2 0x1201 0x2>,
 			 <&apps_smmu_2 0x1202 0x0>,
-			 <&apps_smmu_2 0x1203 0x0>,
+			 <&apps_smmu_2 0x1203 0x2>,
 			 <&apps_smmu_2 0x1204 0x0>,
-			 <&apps_smmu_2 0x1205 0x0>,
+			 <&apps_smmu_2 0x1205 0x2>,
 			 <&apps_smmu_2 0x1206 0x0>,
-			 <&apps_smmu_2 0x1207 0x0>;
+			 <&apps_smmu_2 0x1207 0x2>;
 
 		power-domains = <&scmi7_pd 0>, <&scmi7_pd 1>, <&scmi7_dvfs 0>, <&scmi7_dvfs 1>;
 		power-domain-names = "power_core", "power_mdio", "perf_serdes", "perf_5g_serdes";
@@ -5947,13 +5947,13 @@
 			     <GIC_SPI 361 IRQ_TYPE_LEVEL_HIGH>;
 		interrupt-names = "macirq", "sfty";
 
-		iommus = <&apps_smmu_2 0x11c1 0x0>,
-			 <&apps_smmu_2 0x11c2 0x0>,
-			 <&apps_smmu_2 0x11c3 0x0>,
-			 <&apps_smmu_2 0x11c4 0x0>,
-			 <&apps_smmu_2 0x11c5 0x0>,
-			 <&apps_smmu_2 0x11c6 0x0>,
-			 <&apps_smmu_2 0x11c7 0x0>;
+		iommus = <&apps_smmu_2 0x11c1 0x8>,
+			 <&apps_smmu_2 0x11c2 0x1>,
+			 <&apps_smmu_2 0x11c3 0x1>,
+			 <&apps_smmu_2 0x11c4 0x3>,
+			 <&apps_smmu_2 0x11c5 0x3>,
+			 <&apps_smmu_2 0x11c6 0x3>,
+			 <&apps_smmu_2 0x11c7 0x3>;
 
 		power-domains = <&scmi8_pd 0>, <&scmi8_pd 1>, <&scmi8_dvfs 0>, <&scmi8_dvfs 1>;
 		power-domain-names = "power_core", "power_mdio", "perf_serdes", "perf_5g_serdes";
