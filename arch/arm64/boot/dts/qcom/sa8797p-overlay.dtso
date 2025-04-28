@@ -113,6 +113,10 @@
 	status = "okay";
 };
 
+&cpucp_scmi {
+	status = "okay";
+};
+
 &soc {
 	kaslr_store {
 		compatible = "qcom,kaslr-off-store";
