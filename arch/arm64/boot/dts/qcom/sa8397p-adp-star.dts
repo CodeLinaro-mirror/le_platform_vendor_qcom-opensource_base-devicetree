@@ -12,4 +12,5 @@
 	model = "Qualcomm Technologies, Inc. SA8397P ADP STAR";
 	compatible = "qcom,sa8397p-adp-star", "qcom,sa8397p-adp", "qcom,sa8397p";
 	qcom,board-id = <0x010025 0>;
+	qcom,sku-id = <0x100>;
 };

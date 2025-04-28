@@ -12,6 +12,7 @@
 	model = "Qualcomm Technologies, Inc. SA8397P QAM RIDE-SX";
 	compatible = "qcom,sa8397p-qam-ride-sx", "qcom,sa8397p-qam", "qcom,sa8397p";
 	qcom,board-id = <0x01010025 1>;
+	qcom,sku-id = <0x100>;
 };
 
 &ethernet0 {

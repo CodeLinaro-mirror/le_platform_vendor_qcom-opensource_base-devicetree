@@ -1,0 +1,15 @@
+// SPDX-License-Identifier: BSD-3-Clause
+/*
+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+ */
+
+/dts-v1/;
+
+#include "sa8x97p.dtsi"
+
+/ {
+	model = "Qualcomm Technologies, Inc. SA8797P QAM RIDE-SX";
+	compatible = "qcom,sa8797p-qam-ride-sx", "qcom,sa8797p-qam", "qcom,sa8797p";
+	qcom,board-id = <0x01010025 1>;
+	qcom,sku-id = <0x102>;
+};
