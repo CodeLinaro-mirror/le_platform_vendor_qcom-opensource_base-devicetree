@@ -59,6 +59,30 @@
 			drive-strength = <16>;
 			bias-pull-up;
 		};
+
+		ethernet0_pps_o_0: ethernet0-pps-o-0-pins {
+			pins = "gpio139";
+			function = "emac0_ptp";
+			output-enable;
+		};
+
+		ethernet0_pps_o_1: ethernet0-pps-o-1-pins {
+			pins = "gpio140";
+			function = "emac0_ptp";
+			output-enable;
+		};
+
+		ethernet0_pps_o_2: ethernet0-pps-o-2-pins {
+			pins = "gpio141";
+			function = "emac0_ptp";
+			output-enable;
+		};
+
+		ethernet0_pps_o_3: ethernet0-pps-o-3-pins {
+			pins = "gpio142";
+			function = "emac0_ptp";
+			output-enable;
+		};
 	};
 
 	ethernet1_default: ethernet1-default-state {
