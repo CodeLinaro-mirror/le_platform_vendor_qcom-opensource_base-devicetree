@@ -1,0 +1,8 @@
+// SPDX-License-Identifier: BSD-3-Clause
+/*
+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+ */
+
+/ {
+	compatible = "qcom,sa8x97p-la-gvm", "qcom,la-gvm";
+};

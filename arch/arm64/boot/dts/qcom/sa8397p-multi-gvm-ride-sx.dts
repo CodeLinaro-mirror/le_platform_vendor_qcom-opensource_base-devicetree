@@ -1,0 +1,16 @@
+// SPDX-License-Identifier: BSD-3-Clause
+/*
+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+ */
+
+/dts-v1/;
+
+#include "sa8x97p.dtsi"
+#include "sa8397p.dtsi"
+#include "sa8x97p-multi-gvm.dtsi"
+
+/ {
+	model = "Qualcomm Technologies, Inc. SA8397p";
+	compatible = "qcom,sa8397p";
+	qcom,board-id = <0x01010025 1>;
+};
