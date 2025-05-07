@@ -283,7 +283,7 @@
 		qcom,firmware-name = "autoghgvm";
 		qcom,firmware-index = <0>;
 		memory-region = <&auto_vm_0_mem_0 &auto_vm_0_mem_1 &auto_vm_0_mem_2 &auto_vm_0_mem_3 &auto_vm_0_mem_4 &auto_vm_0_mem_5 &auto_vm_0_mem_6>;
-		shared-regions = <&glink_cma_mem1 &glink_cma_mem2 &vm_cp_pixel &vm_cp_nonpixel &vm_cp_bitstream>;
+		shared-regions = <&glink_cma_mem1 &glink_cma_mem2 &glink_cma_mem3 &glink_cma_mem4 &glink_cma_mem5 &glink_cma_mem6 &glink_cma_mem7 &vm_cp_pixel &vm_cp_nonpixel &vm_cp_bitstream>;
 		enable-gvm-dump;
 		virtio-backends = <&auto_vm_be0
 				&auto_vm_be1
@@ -351,6 +351,46 @@
 		qcom,dst-vmids = <AC_VM_CDSP_Q6_ELF_01>;
 		qcom,dst-perms = <QCOM_PERM_RWX>;
 		gunyah-label = <0x61>;
+	};
+
+	glink_cma_mem3: glink_cma_mem3@80812000 {
+		no-map;
+		reg = <0x0 0x80812000 0x0 0x9000>;
+		qcom,dst-vmids = <AC_VM_CDSP_Q6_ELF_10>;
+		qcom,dst-perms = <QCOM_PERM_RWX>;
+		gunyah-label = <0x62>;
+	};
+
+	glink_cma_mem4: glink_cma_mem4@8081b000 {
+		no-map;
+		reg = <0x0 0x8081B000 0x0 0x9000>;
+		qcom,dst-vmids = <AC_VM_CDSP_Q6_ELF_11>;
+		qcom,dst-perms = <QCOM_PERM_RWX>;
+		gunyah-label = <0x63>;
+	};
+
+	glink_cma_mem5: glink_cma_mem5@80824000 {
+		no-map;
+		reg = <0x0 0x80824000 0x0 0x9000>;
+		qcom,dst-vmids = <AC_VM_HPASS0_COMPUTE_Q6_ELF>;
+		qcom,dst-perms = <QCOM_PERM_RWX>;
+		gunyah-label = <0x64>;
+	};
+
+	glink_cma_mem6: glink_cma_mem6@8082d000 {
+		no-map;
+		reg = <0x0 0x8082D000 0x0 0x9000>;
+		qcom,dst-vmids = <AC_VM_HPASS1_COMPUTE_Q6_ELF>;
+		qcom,dst-perms = <QCOM_PERM_RWX>;
+		gunyah-label = <0x65>;
+	};
+
+	glink_cma_mem7: glink_cma_mem7@80836000 {
+		no-map;
+		reg = <0x0 0x80836000 0x0 0x9000>;
+		qcom,dst-vmids = <AC_VM_HPASS2_COMPUTE_Q6_ELF>;
+		qcom,dst-perms = <QCOM_PERM_RWX>;
+		gunyah-label = <0x66>;
 	};
 
 	auto_vm_vblk0_ring: auto_vm_vblk0_ring@880000000 {

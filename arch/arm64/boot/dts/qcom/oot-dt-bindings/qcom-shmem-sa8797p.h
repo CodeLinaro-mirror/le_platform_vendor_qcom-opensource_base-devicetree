@@ -9,6 +9,12 @@
 /* VMIDs */
 #define AC_VM_CDSP_Q6_ELF_00		0x4E
 #define AC_VM_CDSP_Q6_ELF_01		0x4F
+#define AC_VM_CDSP_Q6_ELF_10		0x50
+#define AC_VM_CDSP_Q6_ELF_11		0x51
+
+#define AC_VM_HPASS0_COMPUTE_Q6_ELF	0x54
+#define AC_VM_HPASS1_COMPUTE_Q6_ELF	0x27
+#define AC_VM_HPASS2_COMPUTE_Q6_ELF	0x4D
 
 /* Access permissions */
 #define QCOM_PERM_READ			0x4
