@@ -856,16 +856,16 @@
 		dma-coherent;
 	};
 
-	hsi2s_tlmm@0 {
-		compatible = "qcom,apps-pinctlr";
-		pinctrl-names = "default";
-		pinctrl-0 = <&aud_intfc4_sck_active &aud_intfc4_ws_active &aud_intfc4_data0_active &aud_intfc4_data1_active &aud_intfc5_sck_active &aud_intfc5_ws_active &aud_intfc5_data0_active &aud_intfc5_data1_active>;
-	};
-
 	vfio_hsi2s@4F00000 {
 		compatible = "qcom,vfio-platform";
 		reg = <0x0 0x4F00000 0x0 0x60000>,
 			<0x0 0x5011000 0x0 0x20000>;
+		pinctrl-names = "default";
+		pinctrl-0 = <&aud_intfc4_sck_active &aud_intfc4_ws_active
+			&aud_intfc4_data0_active &aud_intfc4_data1_active
+			&aud_intfc5_sck_active &aud_intfc5_ws_active
+			&aud_intfc5_data0_active &aud_intfc5_data1_active>;
+
 		interrupts = <GIC_SPI 88 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_0 0x0ABB 0x0>,
 			<&apps_smmu_0 0x0ABC 0x1>;
