@@ -24,15 +24,24 @@
 		reg = <0x0 0x82010000 0x0 0x10000>,
 			  <0x0 0x09185000 0x0 0x1000>,
 			  <0x0 0x87200000 0x0 0x1000>,
-			  <0x0 0x87A00000 0x0 0x1000>,
+			  <0x0 0x87ADB000 0x0 0x1000>,
 			  <0x0 0x01F76030 0x0 0x1000>,
 			  <0x0 0x1F73000  0x0 0x1000>,
 			  <0x0 0x210AF000  0x0 0x4000000>,
 			  <0x0 0x17F60000  0x0 0x2000>,
 			  <0x0 0x19AA0000  0x0 0x2000>,
-			  <0x0 0x87ADA000  0x0 0x2000>;
+			  <0x0 0x87ADA000  0x0 0x2000>,
+			  <0x0 0x01F97000 0x0 0x1000>;
 		iommus = <&apps_smmu_0 0x16A0 0x0>;
 		interrupts-extended = <&ipcc2 IPCC_COMPUTE_L1_SAIL0 1 IRQ_TYPE_LEVEL_HIGH>;
+		dma-coherent;
+	};
+
+	apss-stl@1F97000 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x01F97000 0x0 0x1000>,
+			  <0x0 0x17771000 0x0 0x1000>;
+		iommus = <&apps_smmu_1 0x0460 0x0000>;
 		dma-coherent;
 	};
 
@@ -99,6 +108,44 @@
 		    <0x0 0x14680000 0x0 0x1000>,
 		    <0x0 0xc300000 0x0 0x1000>;
 		iommus = <&apps_smmu_0 0x01000 0x0>;
+		dma-coherent;
+	};
+
+	umd_ipclite@89f00000 {
+		compatible = "qcom,vfio-platform";
+		memory-region = <&global_sync_mem>;
+		reg = <0x0 0x89f00000 0x0 0x400000>,
+			<0x0 0x90c5000 0x0 0x1000>,
+			<0x0 0x1f4a000 0x0 0x1000>,
+			<0x0 0x1f4b000 0x0 0x1000>;
+
+		interrupts-extended = <&ipcc1 IPCC_COMPUTE_L0_APSS_NS0 IPCC_COMPUTE_L0_SIGNAL_IPCLITE_MSG IRQ_TYPE_EDGE_RISING>,
+			<&ipcc1 IPCC_COMPUTE_L0_APSS_NS0 IPCC_COMPUTE_L0_SIGNAL_IPCLITE_MEM_INIT IRQ_TYPE_EDGE_RISING>,
+			<&ipcc1 IPCC_COMPUTE_L0_APSS_NS0 IPCC_COMPUTE_L0_SIGNAL_IPCLITE_VERSION IRQ_TYPE_EDGE_RISING>,
+			<&ipcc1 IPCC_COMPUTE_L0_APSS_NS0 IPCC_COMPUTE_L0_SIGNAL_IPCLITE_TEST IRQ_TYPE_EDGE_RISING>,
+			<&ipcc1 IPCC_COMPUTE_L0_APSS_NS0 IPCC_COMPUTE_L0_SIGNAL_IPCLITE_SSR IRQ_TYPE_EDGE_RISING>,
+			<&ipcc1 IPCC_COMPUTE_L0_APSS_NS0 IPCC_COMPUTE_L0_SIGNAL_IPCLITE_DEBUG IRQ_TYPE_EDGE_RISING>,
+			<&ipcc1 IPCC_COMPUTE_L0_NSP0 IPCC_COMPUTE_L0_SIGNAL_IPCLITE_MSG IRQ_TYPE_EDGE_RISING>,
+			<&ipcc1 IPCC_COMPUTE_L0_NSP0 IPCC_COMPUTE_L0_SIGNAL_IPCLITE_MEM_INIT IRQ_TYPE_EDGE_RISING>,
+			<&ipcc1 IPCC_COMPUTE_L0_NSP0 IPCC_COMPUTE_L0_SIGNAL_IPCLITE_VERSION IRQ_TYPE_EDGE_RISING>,
+			<&ipcc1 IPCC_COMPUTE_L0_NSP0 IPCC_COMPUTE_L0_SIGNAL_IPCLITE_TEST IRQ_TYPE_EDGE_RISING>,
+			<&ipcc1 IPCC_COMPUTE_L0_NSP0 IPCC_COMPUTE_L0_SIGNAL_IPCLITE_SSR IRQ_TYPE_EDGE_RISING>,
+			<&ipcc1 IPCC_COMPUTE_L0_NSP0 IPCC_COMPUTE_L0_SIGNAL_IPCLITE_DEBUG IRQ_TYPE_EDGE_RISING>;
+
+		iommus = <&apps_smmu_0 0x0440 0x0>;
+		dma-coherent;
+	};
+
+	umd_llcc@20400000 {
+		compatible = "qcom,vfio-platform";
+		interrupts = <GIC_SPI 580 IRQ_TYPE_LEVEL_HIGH>;
+		reg = <0x0 0x20400000 0x0 0x100000>,
+		    <0x0 0x20600000 0x0 0x100000>,
+		    <0x0 0x21000000 0x0 0x4000000>,
+		    <0x0 0x198700000 0x0 0x10000>,
+		    <0x0 0x89B00000 0x0 0x400000>,
+		    <0x0 0x1F40000 0x0 0x1000>;
+		iommus = <&apps_smmu_2 0x0C20 0x0>;
 		dma-coherent;
 	};
 
@@ -799,6 +846,42 @@
 		compatible = "qcom,vfio-platform";
 		iommus = <&apps_smmu_0 0x1860 0x0>,
 			<&apps_smmu_0 0x1880 0x0>;
+		dma-coherent;
+	};
+
+	hsi2s_tlmm@0 {
+		compatible = "qcom,apps-pinctlr";
+		pinctrl-names = "default";
+		pinctrl-0 = <&aud_intfc4_sck_active &aud_intfc4_ws_active &aud_intfc4_data0_active &aud_intfc4_data1_active &aud_intfc5_sck_active &aud_intfc5_ws_active &aud_intfc5_data0_active &aud_intfc5_data1_active>;
+	};
+
+	vfio_hsi2s@4F00000 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x4F00000 0x0 0x60000>,
+			<0x0 0x5011000 0x0 0x20000>;
+		interrupts = <GIC_SPI 88 IRQ_TYPE_LEVEL_HIGH>;
+		iommus = <&apps_smmu_0 0x0ABB 0x0>,
+			<&apps_smmu_0 0x0ABC 0x1>;
+		qcom,iommu-dma-addr-pool = <0x0 0x0 0x0 0xFFFFFFFF>;
+		dma-coherent;
+	};
+
+	vfio_soccp@9007000 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x9007000 0x0 0x1000>,
+			<0x0 0x89B00000 0x0 0x400000>,
+			<0x0 0x01FD4000 0x0 0x1000>,
+			<0x0 0x01FB5000 0x0 0x1000>,
+			<0x0 0x00DA2000 0x0 0x1000>,
+			<0x0 0x9305000 0x0 0x1000>,
+			<0x0 0x931B000 0x0 0x1000>,
+			<0x0 0x931C000 0x0 0x1000>;
+
+		interrupts-extended = <&ipcc0 IPCC_MPROC_SOCCP 2 IRQ_TYPE_LEVEL_HIGH>,
+				<&intc GIC_SPI 167 IRQ_TYPE_LEVEL_HIGH>,
+				<&intc GIC_SPI 229 IRQ_TYPE_LEVEL_HIGH>;
+
+		iommus = <&apps_smmu_0 0x1962 0x1>;
 		dma-coherent;
 	};
 };

@@ -101,6 +101,14 @@
 	status = "okay";
 };
 
+&scmi40 {
+	status = "okay";
+};
+
+&scmi41 {
+	status = "okay";
+};
+
 &scmi63 {
 	status = "okay";
 };
@@ -109,6 +117,10 @@
 	kaslr_store {
 		compatible = "qcom,kaslr-off-store";
 		reg = <0x0 0x146806d0 0x0 0xc>;
+	};
+
+	dload_mode {
+		compatible = "qcom,dload-mode";
 	};
 
 	dload_type {
@@ -245,6 +257,24 @@
 		power-domain-names = "perf";
 
 		qcom,dev-name = "scmi_mdss1";
+	};
+
+	scmi_mdss0_secure {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi40_dvfs 0>;
+		power-domain-names = "perf";
+
+		qcom,dev-name = "scmi_mdss0_secure";
+	};
+
+	scmi_mdss1_secure {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi41_dvfs 0>;
+		power-domain-names = "perf";
+
+		qcom,dev-name = "scmi_mdss1_secure";
 	};
 
 	scmi_camera {
