@@ -461,7 +461,7 @@
 		domain-idle-states {
 			CLUSTER_PWR_DN: cluster-sleep-0 {
 				compatible = "domain-idle-state";
-				arm,psci-suspend-param = <0x01000063>;
+				arm,psci-suspend-param = <0x01000053>;
 				entry-latency-us = <2150>;
 				exit-latency-us = <1983>;
 				min-residency-us = <9144>;
@@ -469,7 +469,7 @@
 
 			APSS_OFF: cluster-sleep-1 {
 				compatible = "domain-idle-state";
-				arm,psci-suspend-param = <0x0200C363>;
+				arm,psci-suspend-param = <0x0200C353>;
 				entry-latency-us = <2800>;
 				exit-latency-us = <4400>;
 				min-residency-us = <10150>;
@@ -1998,7 +1998,7 @@
 			redistributor-stride = <0x0 0x40000>;
 			ranges;
 
-			gic-its@17040000 {
+			gic_its: msi-controller@17040000 {
 				compatible = "arm,gic-v3-its";
 				reg = <0x0 0x17040000 0x0 0x40000>;
 				msi-controller;
@@ -2161,18 +2161,20 @@
 
 		ufshc_mem: ufshc@1d44000 {
 			compatible = "qcom,sa8255p-ufshc", "qcom,ufshc", "jedec,ufs-2.0";
-			reg = <0 0x1d44000 0 0x3000>;
-			reg-names = "ufs_mem";
+			reg =	<0x0 0x1D44000 0x0 0x3000>,
+				<0x0 0x1D65000 0x0 0x2000>,
+				<0x0 0x1D64000 0x0 0x10>;
+			reg-names = "ufs_mem", "mcq_sqd", "mcq_vs";
+
 			interrupts = <GIC_SPI 265 IRQ_TYPE_LEVEL_HIGH>;
 			lanes-per-direction = <1>;
 			#reset-cells = <1>;
 
+			msi-parent = <&gic_its 0x14C0>;
+
 			iommus = <&apps_smmu_0 0x14C0 0x0>;
-			qcom,iommu-dma = "bypass";
 
 			reset-gpios = <&tlmm 181 GPIO_ACTIVE_LOW>;
-
-			qcom,firmware-managed-resources;
 
 			power-domains = <&scmi3_pd 0>;
 			power-domain-names = "power";
@@ -2893,6 +2895,84 @@
 				};
 			};
 		};
+
+		qfprom_tcsr_softsku_0: qfprom@1f97070 {
+			compatible = "qcom,sm8450-qfprom";
+			reg = <0x0 0x1f97070 0x0 0x4>;
+			#address-cells = <1>;
+			#size-cells = <1>;
+		};
+
+		qfprom_tcsr_softsku_1: qfprom@1f97074 {
+			compatible = "qcom,sm8450-qfprom";
+			reg = <0x0 0x1f97074 0x0 0x4>;
+			#address-cells = <1>;
+			#size-cells = <1>;
+		};
+
+		qfprom_tcsr_softsku_2: qfprom@1f97078 {
+			compatible = "qcom,sm8450-qfprom";
+			reg = <0x0 0x1f97078 0x0 0x4>;
+			#address-cells = <1>;
+			#size-cells = <1>;
+		};
+
+		qfprom_tcsr_softsku_3: qfprom@1f9707c {
+			compatible = "qcom,sm8450-qfprom";
+			reg = <0x0 0x1f9707c 0x0 0x4>;
+			#address-cells = <1>;
+			#size-cells = <1>;
+		};
+
+		qfprom_tcsr_softsku_4: qfprom@1f97080 {
+			compatible = "qcom,sm8450-qfprom";
+			reg = <0x0 0x1f97080 0x0 0x4>;
+			#address-cells = <1>;
+			#size-cells = <1>;
+		};
+
+		qfprom_tcsr_qtv_0: qfprom@1f96004 {
+			compatible = "qcom,sm8450-qfprom";
+			reg = <0x0 0x1f96004 0x0 0x4>;
+			#address-cells = <1>;
+			#size-cells = <1>;
+		};
+
+		qfprom_tcsr_qtv_1: qfprom@1f96008 {
+			compatible = "qcom,sm8450-qfprom";
+			reg = <0x0 0x1f96008 0x0 0x4>;
+			#address-cells = <1>;
+			#size-cells = <1>;
+		};
+
+		qfprom_tcsr_qtv_2: qfprom@1f9600c {
+			compatible = "qcom,sm8450-qfprom";
+			reg = <0x0 0x1f9600c 0x0 0x4>;
+			#address-cells = <1>;
+			#size-cells = <1>;
+		};
+
+		qfprom_tcsr_qtv_3: qfprom@1f96010 {
+			compatible = "qcom,sm8450-qfprom";
+			reg = <0x0 0x1f96010 0x0 0x4>;
+			#address-cells = <1>;
+			#size-cells = <1>;
+		};
+
+		qfprom_tcsr_qtv_4: qfprom@1f96014 {
+			compatible = "qcom,sm8450-qfprom";
+			reg = <0x0 0x1f96014 0x0 0x4>;
+			#address-cells = <1>;
+			#size-cells = <1>;
+		};
+
+		qfprom_tcsr_qtv_5: qfprom@1f96018 {
+			compatible = "qcom,sm8450-qfprom";
+			reg = <0x0 0x1f96018 0x0 0x4>;
+			#address-cells = <1>;
+			#size-cells = <1>;
+		};
+
 	};
 
 	thermal-zones {
