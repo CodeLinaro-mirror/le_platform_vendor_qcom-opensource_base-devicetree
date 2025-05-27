@@ -47,6 +47,8 @@
 		power-domains = <&scmi12_pd 0>, <&scmi12_pd 1>;
 		power-domain-names = "transfer", "core";
 
+		qcom,enable-eud;
+
 		status = "disabled";
 	};
 
