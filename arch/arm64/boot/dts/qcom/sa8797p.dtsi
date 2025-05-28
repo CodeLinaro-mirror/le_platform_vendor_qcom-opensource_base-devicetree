@@ -118,15 +118,7 @@
 	status = "okay";
 };
 
-&usb_1_eusbphy {
-	status = "okay";
-};
-
 &usb_0_qmpphy {
-	status = "okay";
-};
-
-&usb_1_qmpphy {
 	status = "okay";
 };
 
@@ -134,6 +126,3 @@
 	status = "okay";
 };
 
-&usb_1 {
-	status = "okay";
-};
