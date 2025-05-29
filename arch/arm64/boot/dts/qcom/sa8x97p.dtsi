@@ -616,12 +616,12 @@
 
 		xbl_dtlog_mem: xbl_dtlog_region@87202000 {
 			no-map;
-			reg = <0x0 0x87202000 0x0 0x40000>;
+			reg = <0x0 0x87202000 0x0 0x60000>;
 		};
 
-		xbl_ramdump_mem: xbl_ramdump_region@87242000 {
+		xbl_ramdump_mem: xbl_ramdump_region@87262000 {
 			no-map;
-			reg = <0x0 0x87242000 0x0 0x1c0000>;
+			reg = <0x0 0x87262000 0x0 0x1c0000>;
 		};
 
 		uefi_log: uefi-log@87442000 {
@@ -649,7 +649,7 @@
 			reg = <0x0 0x87494000 0x0 0x60000>;
 		};
 
-		pmic_minii_dump_mem: pmic_minii_dump_region@874f4000 {
+		pmic_mini_dump_mem: pmic_mini_dump_region@874f4000 {
 			no-map;
 			reg = <0x0 0x874f4000 0x0 0x80000>;
 		};
@@ -657,6 +657,11 @@
 		qup_fw_mem: qup_fw_region@87574000 {
 			no-map;
 			reg = <0x0 0x87574000 0x0 0x20000>;
+		};
+
+		softsku_mem: softsku_region@87594000 {
+			no-map;
+			reg = <0x0 0x87594000 0x0 0x9000>;
 		};
 
 		pdp_ns_mem: pdp_ns_mem_region@87600000 {
@@ -695,6 +700,11 @@
 		gunyah_md_mem: gunyah_md_region@8b700000 {
 			no-map;
 			reg = <0x0 0x8b700000 0x0 0x80000>;
+		};
+
+		flashless_qntm_tool_mem: flashless_qntm_tool_region@8b780000 {
+			no-map;
+			reg = <0x0 0x8b780000 0x0 0x182000>;
 		};
 
 		ipa_fw_mem: ipa_fw_region@8bb00000 {
@@ -827,6 +837,16 @@
 			reg = <0x0 0xa0100000 0x0 0x100000>;
 		};
 
+		cma_reserved: cma_region@ba200000 {
+			no-map;
+			reg = <0x0 0xba200000 0x0 0x200000>;
+		};
+
+		display_config_reserved: display_config_region@ba400000 {
+			no-map;
+			reg = <0x0 0xba400000 0x0 0xa00000>;
+		};
+
 		mm_calibration_data_mem: mm_calibration_data_region@bae00000 {
 			no-map;
 			reg = <0x0 0xbae00000 0x0 0x800000>;
@@ -862,9 +882,14 @@
 			reg = <0x0 0xd7600000 0x0 0x40000>;
 		};
 
-		gearvm_shared_mem: gearvm_shared_region@d7640000 {
+		gearvm_logs_mem: gearvm_logs_region@d7640000 {
 			no-map;
-			reg = <0x0 0xd7640000 0x0 0x1c0000>;
+			reg = <0x0 0xd7640000 0x0 0x10000>;
+		};
+
+		gearvm_shared_mem: gearvm_shared_region@d7650000 {
+			no-map;
+			reg = <0x0 0xd7650000 0x0 0x1b0000>;
 		};
 
 		sail_p_mem: sail_p_region@8c0000000 {
