@@ -683,9 +683,19 @@
 			reg = <0x0 0x86a00000 0x0 0x200000>;
 		};
 
-		soccp_fe_vm_mem: soccp_fe_vm_region@86c00000 {
+		soccp_fe_vm_0: soccp_fe_vm_0_region@86c00000 {
 			no-map;
-			reg = <0x0 0x86c00000 0x0 0x400000>;
+			reg = <0x0 0x86c00000 0x0 0xac000>;
+		};
+
+		soccp_fe_vm_1: soccp_fe_vm_1_region@86cac000 {
+			no-map;
+			reg = <0x0 0x86cac000 0x0 0x18d000>;
+		};
+
+		soccp_fe_vm_2: soccp_fe_vm_2_region@86e39000 {
+			no-map;
+			reg = <0x0 0x86e39000 0x0 0x1c7000>;
 		};
 
 		tme_crash_dump_mem: tme_crash_dump_region@87000000 {
