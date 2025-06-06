@@ -860,6 +860,13 @@
 		dma-coherent;
 	};
 
+	qdss_etr_irq {
+		compatible = "qcom,vfio-platform";
+		interrupts = <GIC_SPI 738 IRQ_TYPE_EDGE_RISING>;
+		iommus = <&apps_smmu_2 0x0160 0x0>;
+		dma-coherent;
+	};
+
 	vfio_hsi2s@4F00000 {
 		compatible = "qcom,vfio-platform";
 		reg = <0x0 0x4F00000 0x0 0x60000>,
