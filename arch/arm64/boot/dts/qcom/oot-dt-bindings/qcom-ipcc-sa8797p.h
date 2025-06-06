@@ -1,6 +1,6 @@
 /* SPDX-License-Identifier: GPL-2.0-only OR BSD-2-Clause */
 /*
- * Copyright (c) 2024-2025, Qualcomm Innovation Center, Inc. All rights reserved.
+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
  */
 
 #ifndef __DT_BINDINGS_MAILBOX_IPCC_SA8797P_H
@@ -156,6 +156,9 @@
 
 #define IPCC_COMPUTE_L0_SIGNAL_MAX			32 /* Used by driver only */
 #define IPCC_COMPUTE_L1_SIGNAL_MAX			32 /* Used by driver only */
+
+#define IPCC_MPROC_SIGNAL_SCMI_A2P		5
+#define IPCC_MPROC_SIGNAL_SCMI_P2A		6
 
 #endif
 
