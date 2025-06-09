@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BSD-3-Clause
 /*
-* Copyright (c) 2024-2025 Qualcomm Innovation Center, Inc. All rights reserved.
+* Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
 */
 
 #include "oot-dt-bindings/qcom-shmem-sa8797p.h"
@@ -815,6 +815,24 @@
 
 		mmidgrp1600: mmidgrp1600 {
 			grp-start-id = <1600>;
+			role = "be";
+			remote-vmids = <2>;
+		};
+
+		mmidgrp1700: mmidgrp1700 {
+			grp-start-id = <1700>;
+			role = "be";
+			remote-vmids = <2>;
+		};
+
+		mmidgrp1800: mmidgrp1800 {
+			grp-start-id = <1800>;
+			role = "be";
+			remote-vmids = <2>;
+		};
+
+		mmidgrp1900: mmidgrp1900 {
+			grp-start-id = <1900>;
 			role = "be";
 			remote-vmids = <2>;
 		};
