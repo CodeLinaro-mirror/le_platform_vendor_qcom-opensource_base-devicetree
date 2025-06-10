@@ -24,3 +24,17 @@
 		full-duplex;
 	};
 };
+
+&ethernet1 {
+	phy-mode = "10gbase-r";
+	status = "okay";
+	fixed-link {
+		status = "okay";
+		speed = <10000>;
+		full-duplex;
+	};
+};
+
+&xpcs1 {
+	status = "okay";
+};
