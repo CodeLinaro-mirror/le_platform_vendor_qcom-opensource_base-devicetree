@@ -824,7 +824,7 @@
 
 		gpu_microcode_2_mem: gpu_microcode_2_region@8bb1c000 {
 			no-map;
-			reg = <0x0 0x8bb1c000 0x0 0xe4000>;
+			reg = <0x0 0x8bb1c000 0x0 0x2000>;
 		};
 
 		soccp_mem: soccp_region@8bc00000 {
@@ -924,7 +924,7 @@
 
 		camera_qup_2_mem: camera_qup_2_region@9f300000 {
 			no-map;
-			reg = <0x0 0x9f300000 0x0 0x2e00000>;
+			reg = <0x0 0x9f300000 0x0 0x200000>;
 		};
 
 		video_mem: video_region@9f500000 {
@@ -974,7 +974,7 @@
 
 		gearvm_shared_mem: gearvm_shared_region@d7640000 {
 			no-map;
-			reg = <0x0 0xd7640000 0x0 0x200000>;
+			reg = <0x0 0xd7640000 0x0 0x1c0000>;
 		};
 
 		sail_p_mem: sail_p_region@8c0000000 {
