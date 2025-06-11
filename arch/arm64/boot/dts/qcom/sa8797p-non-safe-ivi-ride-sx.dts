@@ -7,17 +7,22 @@
 
 #include "sa8x97p.dtsi"
 #include "sa8797p.dtsi"
-#include "sa8x97p-multi-gvm.dtsi"
+#include "sa8x97p-non-safe.dtsi"
 
 / {
-	model = "Qualcomm Technologies, Inc. SA8797P MULTI GVM RIDE-SX";
-	compatible = "qcom,sa8797p";
+	model = "Qualcomm Technologies, Inc. SA8797P NON-SAFE IVI RIDE-SX";
+	compatible = "qcom,sa8797p-ride-sx", "qcom,non-safe-ivi", "qcom,sa8797p";
 	qcom,board-id = <0x01010025 1>;
-	qcom,sku-id = <0x200>;
 };
 
 &ethernet0 {
 	phy-mode = "10gbase-r";
+
+	/delete-property/ interrupts;
+	/delete-property/ interrupt-names;
+
+	interrupts = <GIC_SPI 821 IRQ_TYPE_LEVEL_HIGH>;
+	interrupt-names = "macirq";
 
 	fixed-link {
 		status = "okay";
