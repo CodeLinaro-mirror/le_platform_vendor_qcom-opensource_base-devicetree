@@ -450,24 +450,24 @@
 	glink_cma_mem5: glink_cma_mem5@80824000 {
 		no-map;
 		reg = <0x0 0x80824000 0x0 0x9000>;
-		qcom,dst-vmids = <AC_VM_HPASS0_COMPUTE_Q6_ELF>;
-		qcom,dst-perms = <QCOM_PERM_RWX>;
+		qcom,dst-vmids = <AC_VM_HPASS0_COMPUTE_Q6_ELF AC_VM_HPASS0_AUDIO_Q6_ELF>;
+		qcom,dst-perms = <QCOM_PERM_RWX QCOM_PERM_RWX>;
 		gunyah-label = <0x64>;
 	};
 
 	glink_cma_mem6: glink_cma_mem6@8082d000 {
 		no-map;
 		reg = <0x0 0x8082D000 0x0 0x9000>;
-		qcom,dst-vmids = <AC_VM_HPASS1_COMPUTE_Q6_ELF>;
-		qcom,dst-perms = <QCOM_PERM_RWX>;
+		qcom,dst-vmids = <AC_VM_HPASS1_COMPUTE_Q6_ELF AC_VM_HPASS1_AUDIO_Q6_ELF>;
+		qcom,dst-perms = <QCOM_PERM_RWX QCOM_PERM_RWX>;
 		gunyah-label = <0x65>;
 	};
 
 	glink_cma_mem7: glink_cma_mem7@80836000 {
 		no-map;
 		reg = <0x0 0x80836000 0x0 0x9000>;
-		qcom,dst-vmids = <AC_VM_HPASS2_COMPUTE_Q6_ELF>;
-		qcom,dst-perms = <QCOM_PERM_RWX>;
+		qcom,dst-vmids = <AC_VM_HPASS2_COMPUTE_Q6_ELF AC_VM_HPASS2_AUDIO_Q6_ELF>;
+		qcom,dst-perms = <QCOM_PERM_RWX QCOM_PERM_RWX>;
 		gunyah-label = <0x66>;
 	};
 
