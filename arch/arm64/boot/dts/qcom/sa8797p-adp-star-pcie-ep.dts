@@ -1,0 +1,19 @@
+// SPDX-License-Identifier: BSD-3-Clause
+/*
+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+ */
+
+/dts-v1/;
+
+#include "sa8x97p.dtsi"
+#include "sa8797p.dtsi"
+
+/ {
+	model = "Qualcomm Technologies, Inc. SA8797P ADP STAR  PCIe EP";
+	compatible = "qcom,sa8797p-adp-star", "qcom,sa8797p-adp", "qcom,sa8797p";
+	qcom,board-id =  <0x05010025 5>;
+
+	aliases {
+		serial0 = &uart15;
+	};
+};

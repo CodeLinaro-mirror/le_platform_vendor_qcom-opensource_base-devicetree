@@ -1,15 +1,25 @@
 // SPDX-License-Identifier: BSD-3-Clause
 /*
- * Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
  */
 
 /dts-v1/;
 
-#include "sa8797p.dtsi"
-#include "sa8397p-qam-ride-common.dtsi"
+#include "sa8x97p.dtsi"
+#include "sa8397p.dtsi"
 
 / {
 	model = "Qualcomm Technologies, Inc. SA8397P QAM RIDE-SX";
 	compatible = "qcom,sa8397p-qam-ride-sx", "qcom,sa8397p-qam", "qcom,sa8397p";
 	qcom,board-id = <0x01010025 1>;
+};
+
+&ethernet0 {
+	phy-mode = "10gbase-r";
+
+	fixed-link {
+		status = "okay";
+		speed = <10000>;
+		full-duplex;
+	};
 };
