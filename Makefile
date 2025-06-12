@@ -27,6 +27,7 @@ dtb-y += arch/arm64/boot/dts/qcom/sa8797p-non-safe-la-gvm-ride-sx.dtb
 dtb-y += arch/arm64/boot/dts/qcom/sa8797p-non-safe-multi-gvm-ride-sx.dtb
 dtb-y += arch/arm64/boot/dts/qcom/sa8797p-la-gvm-ride-sx.dtb
 dtb-y += arch/arm64/boot/dts/qcom/sa8797p-overlay.dtbo
+dtb-y += arch/arm64/boot/dts/qcom/sa8797p-qvp.dtb
 
 #include common target file
 include $(PWD)/Makefile.common
