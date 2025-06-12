@@ -137,6 +137,14 @@
 	status = "okay";
 };
 
+&scmi45 {
+	status = "okay";
+};
+
+&scmi46 {
+	status = "okay";
+};
+
 &scmi63 {
 	status = "okay";
 };
@@ -420,11 +428,20 @@
 		qcom,dev-name = "scmi_emac1";
 	};
 
-	scmi_bluetooth {
+	scmi_bluetooth0 {
 		compatible = "qcom,uscmi";
 
 		power-domains = <&scmi25_pd 0>, <&scmi25_pd 1>;
 		power-domain-names = "power_regulator", "power_gpio";
+		qcom,dev-name = "scmi_bluetooth0";
+	};
+
+	scmi_bluetooth1 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi46_pd 0>, <&scmi46_pd 1>;
+		power-domain-names = "power_regulator", "power_gpio";
+		qcom,dev-name = "scmi_bluetooth1";
 	};
 
 	scmi_pcie2 {
@@ -445,13 +462,22 @@
 		qcom,dev-name = "scmi_pcie3";
 	};
 
-	scmi_wlan {
+	scmi_wlan0 {
 		compatible = "qcom,uscmi";
 
 		power-domains = <&scmi24_pd 0>, <&scmi24_pd 1>;
 		power-domain-names = "power_regulator", "power_gpio";
 
-		qcom,dev-name = "scmi_wlan";
+		qcom,dev-name = "scmi_wlan0";
+	};
+
+	scmi_wlan1 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi45_pd 0>, <&scmi45_pd 1>;
+		power-domain-names = "power_regulator", "power_gpio";
+
+		qcom,dev-name = "scmi_wlan1";
 	};
 
 	tlmm_fusa {
