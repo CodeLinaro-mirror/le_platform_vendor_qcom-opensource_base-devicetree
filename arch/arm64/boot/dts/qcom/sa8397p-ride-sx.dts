@@ -12,6 +12,7 @@
 	model = "Qualcomm Technologies, Inc. SA8397P QAM RIDE-SX";
 	compatible = "qcom,sa8397p-qam-ride-sx", "qcom,sa8397p-qam", "qcom,sa8397p";
 	qcom,board-id = <0x01010025 1>;
+	qcom,sku-id = <0x100>;
 };
 
 &ethernet0 {
@@ -22,4 +23,18 @@
 		speed = <10000>;
 		full-duplex;
 	};
+};
+
+&ethernet1 {
+	phy-mode = "10gbase-r";
+	status = "okay";
+	fixed-link {
+		status = "okay";
+		speed = <10000>;
+		full-duplex;
+	};
+};
+
+&xpcs1 {
+	status = "okay";
 };

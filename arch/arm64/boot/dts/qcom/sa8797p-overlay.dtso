@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BSD-3-Clause
 /*
- * Copyright (c) 2024-2025 Qualcomm Innovation Center, Inc. All rights reserved.
+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
  */
 
 /dts-v1/;
@@ -53,11 +53,19 @@
 	};
 };
 
+&scmi1 {
+	status = "okay";
+};
+
 &scmi2 {
 	status = "okay";
 };
 
 &scmi11 {
+	status = "okay";
+};
+
+&scmi13 {
 	status = "okay";
 };
 
@@ -459,5 +467,29 @@
 		      <0x0 0x0252c000 0x0 0x0001000>,
 		      <0x0 0x0272b000 0x0 0x0001000>,
 		      <0x0 0x0272c000 0x0 0x0001000>;
+	};
+
+	scmi_usb1 {
+		compatible = "qcom,uscmi";
+		power-domains = <&scmi1_pd 0>, <&scmi1_pd 1>;
+		power-domain-names = "usb_transfer", "usb_core";
+
+		qcom,dev-name = "scmi_usb1";
+	};
+
+	scmi_usb1_phy2 {
+		compatible = "qcom,uscmi";
+		power-domains = <&scmi13_pd 0>, <&scmi13_pd 1>;
+		power-domain-names = "usb_transfer", "usb_core";
+
+		qcom,dev-name = "scmi_usb1_phy2";
+	};
+
+	scmi_usb1_qmp {
+		compatible = "qcom,uscmi";
+		power-domains = <&scmi13_pd 2>, <&scmi13_pd 3>;
+		power-domain-names = "usb_transfer", "usb_core";
+
+		qcom,dev-name = "scmi_usb1_qmp";
 	};
 };

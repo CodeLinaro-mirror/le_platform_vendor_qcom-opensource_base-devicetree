@@ -7,11 +7,10 @@
 
 #include "sa8x97p.dtsi"
 #include "sa8797p.dtsi"
-#include "sa8x97p-multi-gvm.dtsi"
 
 / {
-	model = "Qualcomm Technologies, Inc. SA8797P MULTI GVM RIDE-SX";
-	compatible = "qcom,sa8797p";
+	model = "Qualcomm Technologies, Inc. SA8797P SAFE IVI RIDE-SX";
+	compatible = "qcom,sa8797p-qam-ride-sx", "qcom,safe-ivi", "qcom,sa8797p-qam", "qcom,sa8797p";
 	qcom,board-id = <0x01010025 1>;
 	qcom,sku-id = <0x200>;
 };
