@@ -2,6 +2,7 @@
 
 # SA8397
 dtb-y += arch/arm64/boot/dts/qcom/sa8397p-adp-star.dtb
+dtb-y += arch/arm64/boot/dts/qcom/sa8397p-non-safe-ivi-adp-star.dtb
 dtb-y += arch/arm64/boot/dts/qcom/sa8397p-non-safe-ivi-ride-sx.dtb
 dtb-y += arch/arm64/boot/dts/qcom/sa8397p-safe-ivi-ride-sx.dtb
 dtb-y += arch/arm64/boot/dts/qcom/sa8397p-ride-sx.dtb
@@ -15,6 +16,7 @@ dtb-y += arch/arm64/boot/dts/qcom/sa8397p-overlay.dtbo
 
 # SA8797
 dtb-y += arch/arm64/boot/dts/qcom/sa8797p-adp-star.dtb
+dtb-y += arch/arm64/boot/dts/qcom/sa8797p-non-safe-ivi-adp-star.dtb
 dtb-y += arch/arm64/boot/dts/qcom/sa8797p-adp-star-pcie-ep.dtb
 dtb-y += arch/arm64/boot/dts/qcom/sa8797p-qam-ride-sx-pcie-ep.dtb
 dtb-y += arch/arm64/boot/dts/qcom/sa8797p-non-safe-ivi-ride-sx.dtb
