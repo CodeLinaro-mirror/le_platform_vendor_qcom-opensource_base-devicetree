@@ -1,0 +1,21 @@
+// SPDX-License-Identifier: BSD-3-Clause
+/*
+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+ */
+
+/dts-v1/;
+
+#include "sa8x97p-qvp.dtsi"
+
+/ {
+	model = "Qualcomm Technologies, Inc. SA8797P Virtual Platform";
+	compatible = "qcom,sa8797p", "qcom,scm-sa8797p";
+	qcom,board-id = <0x10029 0x00>;
+	qcom,msm-id = <690 0x10000>, <690 0x10001>;
+
+	chosen {
+		bootargs = "rw rootwait root=/dev/vda nokaslr earlycon=pl011,0x40000000 earlyprintk=serial,ttyAMA0 loglevel=8 firmware_class.path=/firmware/vm/boot androidboot.hardware=qcom cgroup.memory=nokmem,nosocket qcom_scm.download_mode=1 ";
+		stdout-path = "/pl011@40000000";
+		kaslr-seed = <0xdec2698b 0x996c3b6b>;
+	};
+};
