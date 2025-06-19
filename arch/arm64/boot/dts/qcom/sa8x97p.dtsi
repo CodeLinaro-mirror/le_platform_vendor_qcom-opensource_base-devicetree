@@ -1996,6 +1996,8 @@
 			reg = <0x0 0x17000000 0x0 0x10000>,     /* GICD */
 			      <0x0 0x17080000 0x0 0x480000>;    /* GICR * 18 */
 			interrupt-controller;
+			#address-cells = <2>;
+			#size-cells = <2>;
 			#interrupt-cells = <3>;
 			interrupts = <GIC_PPI 9 IRQ_TYPE_LEVEL_HIGH>;
 			#redistributor-regions = <1>;
