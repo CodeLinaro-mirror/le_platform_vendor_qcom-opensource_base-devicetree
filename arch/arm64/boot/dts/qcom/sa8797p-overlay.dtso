@@ -109,6 +109,10 @@
 	status = "okay";
 };
 
+&scmi30 {
+	status = "okay";
+};
+
 &scmi32 {
 	status = "okay";
 };
@@ -439,6 +443,15 @@
 		power-domain-names = "perf";
 
 		qcom,dev-name = "scmi_soccp";
+	};
+
+	scmi_gpce {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi30_dvfs 0>;
+		power-domain-names = "gpce_clock";
+
+		qcom,dev-name = "scmi_gpce";
 	};
 
 	ddr_bwprofiler {
