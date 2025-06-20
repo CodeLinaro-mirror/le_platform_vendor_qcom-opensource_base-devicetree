@@ -13,3 +13,9 @@
 	compatible = "qcom,sa8797p-qam-ride-sx", "qcom,sa8797p-qam", "qcom,sa8797p";
 	qcom,board-id = <0x04010025 4>;
 };
+
+&pcie0_ep {
+	power-domains = <&scmi5_pd 1>;
+	power-domain-names = "power";
+	status = "okay";
+};
