@@ -351,6 +351,37 @@
 				&auto_vm_be45
 				&auto_vm_be46>;
 	};
+
+	qcom,test-dbl-gvm1 {
+		compatible = "qcom,gh-dbl";
+		qcom,label = <0x4>;
+	};
+
+	qcom,test-dbl-gvm2 {
+		compatible = "qcom,gh-dbl";
+		qcom,label = <0x5>;
+	};
+
+	qcom,test-msgq-gvm1 {
+		compatible = "qcom,gh-msgq-test";
+		gunyah-label = <4>;
+		qcom,primary;
+	};
+
+	qcom,test-msgq-gvm2 {
+		compatible = "qcom,gh-msgq-test";
+		gunyah-label = <5>;
+		qcom,primary;
+	};
+
+	qcom,gh-qtimer@17C25000 {
+		compatible = "qcom,gh-qtmr";
+		reg = <0x0 0x17C25000 0x0 0x1000>;
+		reg-names = "qtmr-base";
+		interrupts = <GIC_SPI 10 IRQ_TYPE_LEVEL_HIGH>;
+		interrupt-names = "qcom,qtmr-intr";
+		qcom,primary;
+	};
 };
 
 &soccp_fe_vm_1 {
