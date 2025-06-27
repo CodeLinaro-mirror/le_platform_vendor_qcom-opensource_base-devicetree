@@ -49,18 +49,12 @@
 			power-domain-names = "psci";
 			next-level-cache = <&L2_0>;
 			clocks = <&cpu_perf 0>;
-			#cooling-cells = <2>;
 			L2_0: l2-cache {
 				compatible = "cache";
 				cache-level = <2>;
 				cache-unified;
 			};
 
-			CPU0_idle: thermal-idle {
-				#cooling-cells = <2>;
-				duration-us = <800000>;
-				exit-latency-us = <10000>;
-			};
 		};
 
 		CPU1: cpu@100 {
@@ -3020,17 +3014,10 @@
 					type = "passive";
 				};
 
-				cpu0_alert0: trip-point1 {
-					temperature = <116000>;
-					hysteresis = <3000>;
+				trip-point1 {
+					temperature = <125000>;
+					hysteresis = <10000>;
 					type = "passive";
-				};
-			};
-
-			cooling-maps {
-				map0 {
-					trip = <&cpu0_alert0>;
-					cooling-device = <&CPU0_idle 100 100>;
 				};
 			};
 		};
@@ -3440,17 +3427,10 @@
 					type = "passive";
 				};
 
-				cpu0_alert1: trip-point1 {
-					temperature = <116000>;
-					hysteresis = <3000>;
+				trip-point1 {
+					temperature = <125000>;
+					hysteresis = <10000>;
 					type = "passive";
-				};
-			};
-
-			cooling-maps {
-				map0 {
-					trip = <&cpu0_alert1>;
-					cooling-device = <&CPU0_idle 100 100>;
 				};
 			};
 		};
