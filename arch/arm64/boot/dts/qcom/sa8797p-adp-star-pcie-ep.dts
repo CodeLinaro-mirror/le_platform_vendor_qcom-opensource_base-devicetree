@@ -17,3 +17,9 @@
 		serial0 = &uart15;
 	};
 };
+
+&pcie0_ep {
+	power-domains = <&scmi5_pd 1>;
+	power-domain-names = "power";
+	status = "okay";
+};
