@@ -1,5 +1,5 @@
 /*
- * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+ * Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
@@ -1852,11 +1852,11 @@
 		};
 	};
 
-	pdp_scmi: qcom,pdp0-scmi {
+	pdp_scmi: qcom,pdp-scmi {
 		compatible = "arm,scmi";
-		mboxes = <&pdp_mbox0 0>, <&pdp_mbox0 11>, <&pdp_mbox0 1>;
-		mbox-names = "a2p_tx", "a2p_rx", "p2a";
-		shmem = <&pdp0_a2p>, <&pdp0_p2a>;
+		mboxes = <&pdp_mbox0 0>, <&pdp_mbox0 1>;
+		mbox-names = "tx", "rx";
+		shmem = <&pdp0_tx>, <&pdp0_rx>;
 
 		#address-cells = <1>;
 		#size-cells = <0>;
@@ -1869,42 +1869,6 @@
 		};
 
 		vendor_pdp: protocol@80 {
-			reg = <0x80>;
-			#clock-cells = <1>;
-		};
-
-	};
-
-	pdp1_scmi: qcom,pdp1-scmi {
-		compatible = "arm,scmi";
-		mboxes = <&pdp_mbox1 0>, <&pdp_mbox1 12>;
-		mbox-names = "a2p_tx1", "a2p_rx1";
-		shmem = <&pdp1_a2p>;
-
-		#address-cells = <1>;
-		#size-cells = <0>;
-
-		status = "disabled";
-
-		vendor_pdp1: protocol@80 {
-			reg = <0x80>;
-			#clock-cells = <1>;
-		};
-
-	};
-
-	pdp2_scmi: qcom,pdp2-scmi {
-		compatible = "arm,scmi";
-		mboxes = <&pdp_mbox2 0>, <&pdp_mbox2 13>;
-		mbox-names = "a2p_tx2", "a2p_rx2";
-		shmem = <&pdp2_a2p>;
-
-		#address-cells = <1>;
-		#size-cells = <0>;
-
-		status = "disabled";
-
-		vendor_pdp2: protocol@80 {
 			reg = <0x80>;
 			#clock-cells = <1>;
 		};
@@ -2262,37 +2226,17 @@
 		#address-cells = <1>;
 		#size-cells = <1>;
 		compatible = "mmio-sram";
-		reg = <0x0 0x87608000 0x0 0x300>;
-		ranges = <0 0x0 0x87608000 0x300>;
+		reg = <0x0 0x87608000 0x0 0x240>;
+		ranges = <0 0x0 0x87608000 0x240>;
 
-		pdp0_p2a: scmi-shmem@0 {
+		pdp0_rx: scmi-shmem@0 {
 			compatible = "arm,scmi-shmem";
-			reg = <0x0 0x80>;
+			reg = <0x0 0x60>;
 		};
 
-		pdp0_a2p: scmi-shmem@180 {
+		pdp0_tx: scmi-shmem@120 {
 			compatible = "arm,scmi-shmem";
-			reg = <0x180 0x80>;
-		};
-
-		pdp1_p2a: scmi-shmem@80 {
-			compatible = "arm,scmi-shmem";
-			reg = <0x80 0x80>;
-		};
-
-		pdp1_a2p: scmi-shmem@200 {
-			compatible = "arm,scmi-shmem";
-			reg = <0x200 0x80>;
-		};
-
-		pdp2_p2a: scmi-shmem@100 {
-			compatible = "arm,scmi-shmem";
-			reg = <0x100 0x80>;
-		};
-
-		pdp2_a2p: scmi-shmem@280 {
-			compatible = "arm,scmi-shmem";
-			reg = <0x280 0x80>;
+			reg = <0x120 0x60>;
 		};
 
 	};
