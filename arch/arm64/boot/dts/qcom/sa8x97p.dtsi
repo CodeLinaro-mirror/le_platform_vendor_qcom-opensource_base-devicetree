@@ -2267,7 +2267,7 @@
 			reg = <0x0 0x19980000 0x0 0x300>,
 				<0x0 0x17610000 0x0 0x4c08>;
 			reg-names = "tx", "rx";
-			qcom,rx-chans = <0x80b>;
+			qcom,rx-chans = <0xB>;
 			#mbox-cells = <1>;
 			interrupts = <GIC_SPI 56 IRQ_TYPE_LEVEL_HIGH>;
 		};
@@ -2278,7 +2278,7 @@
 				<0x0 0x17610000 0x0 0x4c08>;
 			reg-names = "tx", "rx";
 			#mbox-cells = <1>;
-			qcom,rx-chans = <0x1010>;
+			qcom,rx-chans = <0x10>;
 			interrupts = <GIC_SPI 56 IRQ_TYPE_LEVEL_HIGH>;
 		};
 
@@ -2288,7 +2288,7 @@
 				<0x0 0x17610000 0x0 0x4c08>;
 			reg-names = "tx", "rx";
 			#mbox-cells = <1>;
-			qcom,rx-chans = <0x2020>;
+			qcom,rx-chans = <0x20>;
 			interrupts = <GIC_SPI 56 IRQ_TYPE_LEVEL_HIGH>;
 		};
 
