@@ -336,6 +336,13 @@
 		qcom,dev-name = "scmi_dprx1";
 	};
 
+	scmi_uetm {
+		qcom,dev-name = "uetm";
+		compatible = "qcom,uscmi-vendor";
+		qcom,algo = <0x00 0x5545544d>;
+		qcom,vendor = <&vendor_cpupcp>;
+	};
+
 	test_scmi {
                 compatible = "qcom,uscmi";
 
