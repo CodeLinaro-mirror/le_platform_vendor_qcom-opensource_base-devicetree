@@ -42,6 +42,14 @@
 		size = <0x0 0x1000000>; /* 16M */
 	};
 
+	tzcom_mem: qcom,tzcom {
+		compatible = "shared-dma-pool";
+		alloc-ranges = <0x0 0x00000000 0x0 0xffffffff>;
+		reusable;
+		alignment = <0x0 0x400000>;
+		size = <0x0 0x1400000>; /* 20M */
+	};
+
 	tz-start-count {
 		reg = <0x0 0x146807f8 0x0 0x8>;
 		no-map;
