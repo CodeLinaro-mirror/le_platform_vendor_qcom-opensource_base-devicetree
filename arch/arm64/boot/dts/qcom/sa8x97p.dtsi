@@ -2979,7 +2979,7 @@
 
 	};
 
-	thermal-zones {
+	thermal_zones: thermal-zones {
 		ddr-0-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
@@ -6150,3 +6150,4 @@
 #include "sa8797p-pinctrl.dtsi"
 #include "sa8797p-usb.dtsi"
 #include "sa8797p-pcie.dtsi"
+#include "sa8797p-pmic.dtsi"

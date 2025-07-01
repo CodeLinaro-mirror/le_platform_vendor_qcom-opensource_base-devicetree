@@ -104,6 +104,10 @@
 	status = "okay";
 };
 
+&scmi23 {
+	status = "okay";
+};
+
 &spi16 {
 	status = "okay";
 	spidev@0 {
