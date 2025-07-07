@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BSD-3-Clause
 /*
- * Copyright (c) 2024-2025 Qualcomm Innovation Center, Inc. All rights reserved.
+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
  */
 
 #include <dt-bindings/phy/phy-qcom-qmp.h>
@@ -90,8 +90,9 @@
 			phys = <&usb_2_eusbphy>;
 			phy-names = "usb2-phy";
 			maximum-speed = "high-speed";
-			dr_mode = "host";
+			dr_mode = "otg";
 			usb-role-switch;
+			role-switch-default-mode = "host";
 		};
 	};
 
@@ -124,8 +125,9 @@
 			phys = <&usb_1_eusbphy>, <&usb_1_qmpphy QMP_USB43DP_USB3_PHY>;
 			phy-names = "usb2-phy", "usb3-phy";
 			maximum-speed = "super-speed-plus";
-			dr_mode = "host";
+			dr_mode = "otg";
 			usb-role-switch;
+			role-switch-default-mode = "host";
 		};
 	};
 
@@ -158,7 +160,8 @@
 			phys = <&usb_0_eusbphy>, <&usb_0_qmpphy QMP_USB43DP_USB3_PHY>;
 			phy-names = "usb2-phy", "usb3-phy";
 			maximum-speed = "super-speed-plus";
-			dr_mode = "peripheral";
+			dr_mode = "otg";
+			usb-role-switch;
 		};
 	};
 
