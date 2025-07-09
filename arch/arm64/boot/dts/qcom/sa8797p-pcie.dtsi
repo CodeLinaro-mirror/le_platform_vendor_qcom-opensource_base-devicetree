@@ -20,15 +20,7 @@
 
 		linux,pci-domain = <0>;
 
-		interrupts = <GIC_SPI 141 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 142 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 143 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 144 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 145 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 146 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 147 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 148 IRQ_TYPE_LEVEL_HIGH>;
-		interrupt-parent = <&intc>;
+		msi-map = <0x0 &gic_its 0x80000 0x10000>;
 
 		/*TODO: SMMU V3 is not yet enabled*/
 		/*
@@ -59,15 +51,7 @@
 
 		linux,pci-domain = <1>;
 
-		interrupts = <GIC_SPI 834 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 99 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 833 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 849 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 842 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 824 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 349 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 949 IRQ_TYPE_LEVEL_HIGH>;
-		interrupt-parent = <&intc>;
+		msi-map = <0x0 &gic_its 0x90000 0x10000>;
 
 		/*TODO: SMMU V3 is not yet enabled*/
 		/*
@@ -98,15 +82,8 @@
 
 		linux,pci-domain = <2>;
 
-		interrupts = <GIC_SPI 844 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 838 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 113 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 825 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 846 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 350 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 837 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 104 IRQ_TYPE_LEVEL_HIGH>;
-		interrupt-parent = <&intc>;
+
+		msi-map = <0x0 &gic_its 0xa0000 0x10000>;
 
 		/*TODO: SMMU V3 is not yet enabled*/
 		/*
@@ -137,15 +114,7 @@
 
 		linux,pci-domain = <3>;
 
-		interrupts = <GIC_SPI 364 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 287 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 831 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 659 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 840 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 823 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 241 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 240 IRQ_TYPE_LEVEL_HIGH>;
-		interrupt-parent = <&intc>;
+		msi-map = <0x0 &gic_its 0xb0000 0x10000>;
 
 		/*TODO: SMMU V3 is not yet enabled*/
 		/*
