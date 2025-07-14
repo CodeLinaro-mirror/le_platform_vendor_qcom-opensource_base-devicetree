@@ -853,6 +853,11 @@
 			reg = <0x0 0xbae00000 0x0 0x800000>;
 		};
 
+		mm_dspq: mm_dspq_region@ba200000 {
+                        no-map;
+                        reg = <0x0 0xba200000 0x0 0x200000>;
+                };
+
 		audio_config_mem: audio_config_region@bb600000 {
 			no-map;
 			reg = <0x0 0xbb600000 0x0 0xa00000>;
