@@ -865,7 +865,7 @@
 	qdss_etr_irq {
 		compatible = "qcom,vfio-platform";
 		interrupts = <GIC_SPI 738 IRQ_TYPE_EDGE_RISING>;
-		iommus = <&apps_smmu_2 0x0160 0x0>;
+		iommus = <&apps_smmu_1 0x0880 0x0>;
 		dma-coherent;
 	};
 
