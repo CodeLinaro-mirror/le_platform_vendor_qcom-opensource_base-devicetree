@@ -5818,3 +5818,4 @@
 #include "sa8797p-pinctrl.dtsi"
 #include "sa8797p-usb.dtsi"
 #include "sa8797p-pcie.dtsi"
+#include "sa8797p-pmic.dtsi"
