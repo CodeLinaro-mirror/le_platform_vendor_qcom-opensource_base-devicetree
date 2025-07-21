@@ -21,6 +21,12 @@
 			memory-region = <&qseecom_ta_mem>;
 		};
 
+		qcom,tzcom {
+			qcom,dma-heap-name = "qcom,tzcom";
+			qcom,dma-heap-type = <HEAP_TYPE_CMA>;
+			memory-region = <&tzcom_mem>;
+		};
+
 		qcom,soccp_fe_vm_0 {
 			qcom,dma-heap-name = "qcom,soccp_fe_vm_0";
 			qcom,dma-heap-type = <HEAP_TYPE_CARVEOUT>;

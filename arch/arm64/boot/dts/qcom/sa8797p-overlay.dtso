@@ -42,6 +42,14 @@
 		size = <0x0 0x1000000>; /* 16M */
 	};
 
+	tzcom_mem: qcom,tzcom {
+		compatible = "shared-dma-pool";
+		alloc-ranges = <0x0 0x00000000 0x0 0xffffffff>;
+		reusable;
+		alignment = <0x0 0x400000>;
+		size = <0x0 0x1400000>; /* 20M */
+	};
+
 	tz-start-count {
 		reg = <0x0 0x146807f8 0x0 0x8>;
 		no-map;
@@ -109,7 +117,15 @@
 	status = "okay";
 };
 
+&scmi30 {
+	status = "okay";
+};
+
 &scmi32 {
+	status = "okay";
+};
+
+&scmi33 {
 	status = "okay";
 };
 
@@ -320,6 +336,13 @@
 		qcom,dev-name = "scmi_dprx1";
 	};
 
+	scmi_uetm {
+		qcom,dev-name = "uetm";
+		compatible = "qcom,uscmi-vendor";
+		qcom,algo = <0x00 0x5545544d>;
+		qcom,vendor = <&vendor_cpupcp>;
+	};
+
 	test_scmi {
                 compatible = "qcom,uscmi";
 
@@ -413,6 +436,15 @@
 		qcom,dev-name = "scmi_pcie2";
 	};
 
+	scmi_pcie3 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi33_pd 0>, <&scmi63_pd 0>;
+		power-domain-names = "power", "dummy";
+
+		qcom,dev-name = "scmi_pcie3";
+	};
+
 	scmi_wlan {
 		compatible = "qcom,uscmi";
 
@@ -439,6 +471,15 @@
 		power-domain-names = "perf";
 
 		qcom,dev-name = "scmi_soccp";
+	};
+
+	scmi_gpce {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi30_dvfs 0>;
+		power-domain-names = "gpce_clock";
+
+		qcom,dev-name = "scmi_gpce";
 	};
 
 	ddr_bwprofiler {

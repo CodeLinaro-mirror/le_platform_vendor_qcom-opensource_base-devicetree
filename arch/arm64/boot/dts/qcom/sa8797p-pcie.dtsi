@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: BSD-3-Clause
 /*
- * Copyright (c) 2024-2025 Qualcomm Innovation Center, Inc. All rights reserved.
+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
  */
 
 / {
@@ -20,15 +20,7 @@
 
 		linux,pci-domain = <0>;
 
-		interrupts = <GIC_SPI 141 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 142 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 143 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 144 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 145 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 146 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 147 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 148 IRQ_TYPE_LEVEL_HIGH>;
-		interrupt-parent = <&intc>;
+		msi-map = <0x0 &gic_its 0x80000 0x10000>;
 
 		/*TODO: SMMU V3 is not yet enabled*/
 		/*
@@ -59,15 +51,7 @@
 
 		linux,pci-domain = <1>;
 
-		interrupts = <GIC_SPI 834 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 99 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 833 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 849 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 842 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 824 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 349 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 949 IRQ_TYPE_LEVEL_HIGH>;
-		interrupt-parent = <&intc>;
+		msi-map = <0x0 &gic_its 0x90000 0x10000>;
 
 		/*TODO: SMMU V3 is not yet enabled*/
 		/*
@@ -98,15 +82,8 @@
 
 		linux,pci-domain = <2>;
 
-		interrupts = <GIC_SPI 844 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 838 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 113 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 825 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 846 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 350 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 837 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 104 IRQ_TYPE_LEVEL_HIGH>;
-		interrupt-parent = <&intc>;
+
+		msi-map = <0x0 &gic_its 0xa0000 0x10000>;
 
 		/*TODO: SMMU V3 is not yet enabled*/
 		/*
@@ -137,15 +114,7 @@
 
 		linux,pci-domain = <3>;
 
-		interrupts = <GIC_SPI 364 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 287 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 831 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 659 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 840 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 823 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 241 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 240 IRQ_TYPE_LEVEL_HIGH>;
-		interrupt-parent = <&intc>;
+		msi-map = <0x0 &gic_its 0xb0000 0x10000>;
 
 		/*TODO: SMMU V3 is not yet enabled*/
 		/*
@@ -156,6 +125,50 @@
 		 *	    <0x200 &pcie_smmu 0x30002 0x1>,
 		 *	    <0x300 &pcie_smmu 0x30003 0x1>;
 		 */
+
+		status = "disabled";
+	};
+};
+
+&soc {
+	pcie0_ep: pcie-ep@0x40000000 {
+		compatible = "qcom,sa8797p-pcie-ep";
+		reg = <0x0 0x01b80000 0x0 0x4000>,
+		      <0x0 0x40000000 0x0 0xf20>,
+		      <0x0 0x40000f20 0x0 0xa8>,
+		      <0x0 0x40010000 0x0 0x4000>,
+		      <0x0 0x40040000 0x0 0x100000>,
+		      <0x0 0x01b84000 0x0 0x1000>,
+		      <0x0 0x40030000 0x0 0x10000>,
+		      <0x0 0x01b09000 0x0 0x518>;
+		reg-names = "parf", "dbi", "elbi", "atu", "addr_space",
+			    "mmio", "dma", "phy_pcs";
+
+		pinctrl-names = "default";
+		pinctrl-0 = <&pcie0_ep_clkreq_default &pcie0_ep_perst_default
+				&pcie0_ep_wake_default>;
+
+		reset-gpio = <&tlmm 2 GPIO_ACTIVE_LOW>;
+		wake-gpios = <&tlmm 0 GPIO_ACTIVE_HIGH>;
+
+		#dma-cells = <1>;
+		dmas = <&pcie0_ep 0>, <&pcie0_ep 1>;
+		dma-names = "rx", "tx";
+
+		interrupts = <GIC_SPI 140 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 153 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 443 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 443 IRQ_TYPE_LEVEL_HIGH>;
+		interrupt-names = "global", "doorbell", "dma0", "dma1";
+
+		/*TODO: SMMU V3 is not yet enabled*/
+		/*
+		 *dma-coherent;
+		 *iommus = <&pcie_smmu 0x0000 0x7f>;
+		 */
+
+		max-link-speed = <4>;
+		num-lanes = <8>;
 
 		status = "disabled";
 	};

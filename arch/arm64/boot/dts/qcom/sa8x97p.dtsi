@@ -49,18 +49,12 @@
 			power-domain-names = "psci";
 			next-level-cache = <&L2_0>;
 			clocks = <&cpu_perf 0>;
-			#cooling-cells = <2>;
 			L2_0: l2-cache {
 				compatible = "cache";
 				cache-level = <2>;
 				cache-unified;
 			};
 
-			CPU0_idle: thermal-idle {
-				#cooling-cells = <2>;
-				duration-us = <800000>;
-				exit-latency-us = <10000>;
-			};
 		};
 
 		CPU1: cpu@100 {
@@ -72,12 +66,6 @@
 			power-domain-names = "psci";
 			next-level-cache = <&L2_0>;
 			clocks = <&cpu_perf 0>;
-			#cooling-cells = <2>;
-			CPU1_idle: thermal-idle {
-				#cooling-cells = <2>;
-				duration-us = <800000>;
-				exit-latency-us = <10000>;
-			};
 		};
 
 		CPU2: cpu@200 {
@@ -89,12 +77,6 @@
 			power-domain-names = "psci";
 			next-level-cache = <&L2_0>;
 			clocks = <&cpu_perf 0>;
-			#cooling-cells = <2>;
-			CPU2_idle: thermal-idle {
-				#cooling-cells = <2>;
-				duration-us = <800000>;
-				exit-latency-us = <10000>;
-			};
 		};
 
 		CPU3: cpu@300 {
@@ -106,12 +88,6 @@
 			power-domain-names = "psci";
 			next-level-cache = <&L2_0>;
 			clocks = <&cpu_perf 0>;
-			#cooling-cells = <2>;
-			CPU3_idle: thermal-idle {
-				#cooling-cells = <2>;
-				duration-us = <800000>;
-				exit-latency-us = <10000>;
-			};
 		};
 
 		CPU4: cpu@400 {
@@ -123,12 +99,6 @@
 			power-domain-names = "psci";
 			next-level-cache = <&L2_0>;
 			clocks = <&cpu_perf 0>;
-			#cooling-cells = <2>;
-			CPU4_idle: thermal-idle {
-				#cooling-cells = <2>;
-				duration-us = <800000>;
-				exit-latency-us = <10000>;
-			};
 		};
 
 		CPU5: cpu@500 {
@@ -140,12 +110,6 @@
 			power-domain-names = "psci";
 			next-level-cache = <&L2_0>;
 			clocks = <&cpu_perf 0>;
-			#cooling-cells = <2>;
-			CPU5_idle: thermal-idle {
-				#cooling-cells = <2>;
-				duration-us = <800000>;
-				exit-latency-us = <10000>;
-			};
 		};
 
 		CPU6: cpu@10000 {
@@ -157,17 +121,10 @@
 			enable-method = "psci";
 			next-level-cache = <&L2_10000>;
 			clocks = <&cpu_perf 1>;
-			#cooling-cells = <2>;
 			L2_10000: l2-cache {
 				compatible = "cache";
 				cache-level = <2>;
 				cache-unified;
-			};
-
-			CPU6_idle: thermal-idle {
-				#cooling-cells = <2>;
-				duration-us = <800000>;
-				exit-latency-us = <10000>;
 			};
 		};
 
@@ -180,12 +137,6 @@
 			power-domain-names = "psci";
 			next-level-cache = <&L2_10000>;
 			clocks = <&cpu_perf 1>;
-			#cooling-cells = <2>;
-			CPU7_idle: thermal-idle {
-				#cooling-cells = <2>;
-				duration-us = <800000>;
-				exit-latency-us = <10000>;
-			};
 		};
 
 		CPU8: cpu@10200 {
@@ -197,12 +148,6 @@
 			power-domain-names = "psci";
 			next-level-cache = <&L2_10000>;
 			clocks = <&cpu_perf 1>;
-			#cooling-cells = <2>;
-			CPU8_idle: thermal-idle {
-				#cooling-cells = <2>;
-				duration-us = <800000>;
-				exit-latency-us = <10000>;
-			};
 		};
 
 		CPU9: cpu@10300 {
@@ -214,12 +159,6 @@
 			power-domain-names = "psci";
 			next-level-cache = <&L2_10000>;
 			clocks = <&cpu_perf 1>;
-			#cooling-cells = <2>;
-			CPU9_idle: thermal-idle {
-				#cooling-cells = <2>;
-				duration-us = <800000>;
-				exit-latency-us = <10000>;
-			};
 		};
 
 		CPU10: cpu@10400 {
@@ -231,12 +170,6 @@
 			power-domain-names = "psci";
 			next-level-cache = <&L2_10000>;
 			clocks = <&cpu_perf 1>;
-			#cooling-cells = <2>;
-			CPU10_idle: thermal-idle {
-				#cooling-cells = <2>;
-				duration-us = <800000>;
-				exit-latency-us = <10000>;
-			};
 		};
 
 		CPU11: cpu@10500 {
@@ -248,12 +181,6 @@
 			power-domain-names = "psci";
 			next-level-cache = <&L2_10000>;
 			clocks = <&cpu_perf 1>;
-			#cooling-cells = <2>;
-			CPU11_idle: thermal-idle {
-				#cooling-cells = <2>;
-				duration-us = <800000>;
-				exit-latency-us = <10000>;
-			};
 		};
 
 		CPU12: cpu@20000 {
@@ -265,17 +192,10 @@
 			power-domain-names = "psci";
 			next-level-cache = <&L2_20000>;
 			clocks = <&cpu_perf 2>;
-			#cooling-cells = <2>;
 			L2_20000: l2-cache {
 				compatible = "cache";
 				cache-level = <2>;
 				cache-unified;
-			};
-
-			CPU12_idle: thermal-idle {
-				#cooling-cells = <2>;
-				duration-us = <800000>;
-				exit-latency-us = <10000>;
 			};
 		};
 
@@ -288,12 +208,6 @@
 			power-domain-names = "psci";
 			next-level-cache = <&L2_20000>;
 			clocks = <&cpu_perf 2>;
-			#cooling-cells = <2>;
-			CPU13_idle: thermal-idle {
-				#cooling-cells = <2>;
-				duration-us = <800000>;
-				exit-latency-us = <10000>;
-			};
 		};
 
 		CPU14: cpu@20200 {
@@ -305,12 +219,6 @@
 			power-domain-names = "psci";
 			next-level-cache = <&L2_20000>;
 			clocks = <&cpu_perf 2>;
-			#cooling-cells = <2>;
-			CPU14_idle: thermal-idle {
-				#cooling-cells = <2>;
-				duration-us = <800000>;
-				exit-latency-us = <10000>;
-			};
 		};
 
 		CPU15: cpu@20300 {
@@ -322,12 +230,6 @@
 			power-domain-names = "psci";
 			next-level-cache = <&L2_20000>;
 			clocks = <&cpu_perf 2>;
-			#cooling-cells = <2>;
-			CPU15_idle: thermal-idle {
-				#cooling-cells = <2>;
-				duration-us = <800000>;
-				exit-latency-us = <10000>;
-			};
 		};
 
 		CPU16: cpu@20400 {
@@ -339,12 +241,6 @@
 			power-domain-names = "psci";
 			next-level-cache = <&L2_20000>;
 			clocks = <&cpu_perf 2>;
-			#cooling-cells = <2>;
-			CPU16_idle: thermal-idle {
-				#cooling-cells = <2>;
-				duration-us = <800000>;
-				exit-latency-us = <10000>;
-			};
 		};
 
 		CPU17: cpu@20500 {
@@ -356,12 +252,6 @@
 			power-domain-names = "psci";
 			next-level-cache = <&L2_20000>;
 			clocks = <&cpu_perf 2>;
-			#cooling-cells = <2>;
-			CPU17_idle: thermal-idle {
-				#cooling-cells = <2>;
-				duration-us = <800000>;
-				exit-latency-us = <10000>;
-			};
 		};
 
 		cpu-map {
@@ -726,12 +616,12 @@
 
 		xbl_dtlog_mem: xbl_dtlog_region@87202000 {
 			no-map;
-			reg = <0x0 0x87202000 0x0 0x40000>;
+			reg = <0x0 0x87202000 0x0 0x60000>;
 		};
 
-		xbl_ramdump_mem: xbl_ramdump_region@87242000 {
+		xbl_ramdump_mem: xbl_ramdump_region@87262000 {
 			no-map;
-			reg = <0x0 0x87242000 0x0 0x1c0000>;
+			reg = <0x0 0x87262000 0x0 0x1c0000>;
 		};
 
 		uefi_log: uefi-log@87442000 {
@@ -759,7 +649,7 @@
 			reg = <0x0 0x87494000 0x0 0x60000>;
 		};
 
-		pmic_minii_dump_mem: pmic_minii_dump_region@874f4000 {
+		pmic_mini_dump_mem: pmic_mini_dump_region@874f4000 {
 			no-map;
 			reg = <0x0 0x874f4000 0x0 0x80000>;
 		};
@@ -767,6 +657,11 @@
 		qup_fw_mem: qup_fw_region@87574000 {
 			no-map;
 			reg = <0x0 0x87574000 0x0 0x20000>;
+		};
+
+		softsku_mem: softsku_region@87594000 {
+			no-map;
+			reg = <0x0 0x87594000 0x0 0x9000>;
 		};
 
 		pdp_ns_mem: pdp_ns_mem_region@87600000 {
@@ -805,6 +700,11 @@
 		gunyah_md_mem: gunyah_md_region@8b700000 {
 			no-map;
 			reg = <0x0 0x8b700000 0x0 0x80000>;
+		};
+
+		flashless_qntm_tool_mem: flashless_qntm_tool_region@8b780000 {
+			no-map;
+			reg = <0x0 0x8b780000 0x0 0x182000>;
 		};
 
 		ipa_fw_mem: ipa_fw_region@8bb00000 {
@@ -937,6 +837,16 @@
 			reg = <0x0 0xa0100000 0x0 0x100000>;
 		};
 
+		cma_reserved: cma_region@ba200000 {
+			no-map;
+			reg = <0x0 0xba200000 0x0 0x200000>;
+		};
+
+		display_config_reserved: display_config_region@ba400000 {
+			no-map;
+			reg = <0x0 0xba400000 0x0 0xa00000>;
+		};
+
 		mm_calibration_data_mem: mm_calibration_data_region@bae00000 {
 			no-map;
 			reg = <0x0 0xbae00000 0x0 0x800000>;
@@ -972,9 +882,14 @@
 			reg = <0x0 0xd7600000 0x0 0x40000>;
 		};
 
-		gearvm_shared_mem: gearvm_shared_region@d7640000 {
+		gearvm_logs_mem: gearvm_logs_region@d7640000 {
 			no-map;
-			reg = <0x0 0xd7640000 0x0 0x1c0000>;
+			reg = <0x0 0xd7640000 0x0 0x10000>;
+		};
+
+		gearvm_shared_mem: gearvm_shared_region@d7650000 {
+			no-map;
+			reg = <0x0 0xd7650000 0x0 0x1b0000>;
 		};
 
 		sail_p_mem: sail_p_region@8c0000000 {
@@ -988,8 +903,8 @@
 		};
 
 		dump_mem: mem-dump-region {
-			alloc-ranges = <0x1 0x00000000 0xfffffffe 0xffffffff>;
-			size = <0x0 0xa980000>;
+			alloc-ranges = <0x0 0x00000000 0x0 0xffffffff>;
+			size = <0x0 0x79b0000>;
 		};
 	};
 
@@ -1656,6 +1571,7 @@
 				dma-channel-mask = <0x7fff>;
 				static-gpii-mask = <0x7fff>;
 				iommus = <&apps_smmu_2 0x1480 0x0>;
+				dma-coherent;
 				status = "disabled";
 			};
 
@@ -1665,6 +1581,7 @@
 				#address-cells = <2>;
 				#size-cells = <2>;
 				iommus = <&apps_smmu_2 0x1480 0x0>;
+				dma-coherent;
 				ranges;
 				status = "disabled";
 
@@ -1772,6 +1689,7 @@
 				dma-channel-mask = <0x7fff>;
 				static-gpii-mask = <0x7fff>;
 				iommus = <&apps_smmu_2 0x1480 0x0>;
+				dma-coherent;
 				status = "disabled";
 			};
 
@@ -1781,6 +1699,7 @@
 				#address-cells = <2>;
 				#size-cells = <2>;
 				iommus = <&apps_smmu_2 0x1480 0x0>;
+				dma-coherent;
 				ranges;
 				status = "disabled";
 
@@ -1989,6 +1908,7 @@
 			interrupt-controller;
 			#interrupt-cells = <2>;
 			gpio-ranges = <&tlmm 0 0 181>;
+			wakeup-parent = <&pdc>;
 		};
 
 		intc: interrupt-controller@17000000 {
@@ -1996,6 +1916,8 @@
 			reg = <0x0 0x17000000 0x0 0x10000>,     /* GICD */
 			      <0x0 0x17080000 0x0 0x480000>;    /* GICR * 18 */
 			interrupt-controller;
+			#address-cells = <2>;
+			#size-cells = <2>;
 			#interrupt-cells = <3>;
 			interrupts = <GIC_PPI 9 IRQ_TYPE_LEVEL_HIGH>;
 			#redistributor-regions = <1>;
@@ -2011,8 +1933,8 @@
 		};
 
 		pdc: interrupt-controller@b220000 {
-			compatible = "qcom,sa8797p-pdc", "qcom-pdc";
-			reg = <0xb220000 0x10000>;
+			compatible = "qcom,sa8797p-pdc", "qcom,pdc";
+			reg = <0x0 0xb220000 0x0 0x10000>;
 			qcom,pdc-ranges = <0 745 43>, <67 543 31>, <98 609 32>,
 					  <130 717 12>, <142 251 5>, <147 796 16>;
 			#interrupt-cells = <2>;
@@ -2770,109 +2692,109 @@
 
 				cpu_cache {
 					cache_cpu0 {
-						qcom,dump-size = <0x200000>;
+						qcom,dump-size = <0x100000>;
 						qcom,dump-id = <0x230>;
 						qcom,instance = <0x0>;
 					};
 
 					cache_cpu1 {
-						qcom,dump-size = <0x200000>;
+						qcom,dump-size = <0x100000>;
 						qcom,dump-id = <0x230>;
 						qcom,instance = <0x1>;
 					};
 
 					cache_cpu2 {
-						qcom,dump-size = <0x200000>;
+						qcom,dump-size = <0x100000>;
 						qcom,dump-id = <0x230>;
 						qcom,instance = <0x2>;
 					};
 
 					cache_cpu3 {
-						qcom,dump-size = <0x200000>;
+						qcom,dump-size = <0x100000>;
 						qcom,dump-id = <0x230>;
 						qcom,instance = <0x3>;
 					};
 
 					cache_cpu4 {
-						qcom,dump-size = <0x200000>;
+						qcom,dump-size = <0x100000>;
 						qcom,dump-id = <0x230>;
 						qcom,instance = <0x4>;
 					};
 
 					cache_cpu5 {
-						qcom,dump-size = <0x200000>;
+						qcom,dump-size = <0x100000>;
 						qcom,dump-id = <0x230>;
 						qcom,instance = <0x5>;
 					};
 
 					cache_cpu6 {
-						qcom,dump-size = <0x200000>;
+						qcom,dump-size = <0x100000>;
 						qcom,dump-id = <0x230>;
 						qcom,instance = <0x6>;
 					};
 
 					cache_cpu7 {
-						qcom,dump-size = <0x200000>;
+						qcom,dump-size = <0x100000>;
 						qcom,dump-id = <0x230>;
 						qcom,instance = <0x7>;
 					};
 
 					cache_cpu8 {
-						qcom,dump-size = <0x200000>;
+						qcom,dump-size = <0x100000>;
 						qcom,dump-id = <0x230>;
 						qcom,instance = <0x8>;
 					};
 
 					cache_cpu9 {
-						qcom,dump-size = <0x200000>;
+						qcom,dump-size = <0x100000>;
 						qcom,dump-id = <0x230>;
 						qcom,instance = <0x9>;
 					};
 
 					cache_cpu10 {
-						qcom,dump-size = <0x200000>;
+						qcom,dump-size = <0x100000>;
 						qcom,dump-id = <0x230>;
 						qcom,instance = <0xa>;
 					};
 
 					cache_cpu11 {
-						qcom,dump-size = <0x200000>;
+						qcom,dump-size = <0x100000>;
 						qcom,dump-id = <0x230>;
 						qcom,instance = <0xb>;
 					};
 
 					cache_cpu12 {
-						qcom,dump-size = <0x200000>;
+						qcom,dump-size = <0x100000>;
 						qcom,dump-id = <0x230>;
 						qcom,instance = <0xc>;
 					};
 
 					cache_cpu13 {
-						qcom,dump-size = <0x200000>;
+						qcom,dump-size = <0x100000>;
 						qcom,dump-id = <0x230>;
 						qcom,instance = <0xd>;
 					};
 
 					cache_cpu14 {
-						qcom,dump-size = <0x200000>;
+						qcom,dump-size = <0x100000>;
 						qcom,dump-id = <0x230>;
 						qcom,instance = <0xe>;
 					};
 
 					cache_cpu15 {
-						qcom,dump-size = <0x200000>;
+						qcom,dump-size = <0x100000>;
 						qcom,dump-id = <0x230>;
 						qcom,instance = <0xf>;
 					};
 
 					cache_cpu16 {
-						qcom,dump-size = <0x200000>;
+						qcom,dump-size = <0x100000>;
 						qcom,dump-id = <0x230>;
 						qcom,instance = <0x10>;
 					};
 
 					cache_cpu17 {
-						qcom,dump-size = <0x200000>;
+						qcom,dump-size = <0x100000>;
 						qcom,dump-id = <0x230>;
 						qcom,instance = <0x11>;
 					};
@@ -2880,19 +2802,19 @@
 
 				cluster_cache {
 					cl_cache0 {
-						qcom,dump-size = <0x1800000>;
+						qcom,dump-size = <0x1000000>;
 						qcom,dump-id = <0x240>;
 						qcom,instance = <0x0>;
 					};
 
 					cl_cache1 {
-						qcom,dump-size = <0x1800000>;
+						qcom,dump-size = <0x1000000>;
 						qcom,dump-id = <0x240>;
 						qcom,instance = <0x1>;
 					};
 
 					cl_cache2 {
-						qcom,dump-size = <0x1800000>;
+						qcom,dump-size = <0x1000000>;
 						qcom,dump-id = <0x240>;
 						qcom,instance = <0x2>;
 					};
@@ -2979,7 +2901,7 @@
 
 	};
 
-	thermal-zones {
+	thermal_zones: thermal-zones {
 		ddr-0-0 {
 			polling-delay-passive = <0>;
 			polling-delay = <0>;
@@ -3014,17 +2936,10 @@
 					type = "passive";
 				};
 
-				cpu0_alert0: trip-point1 {
-					temperature = <116000>;
-					hysteresis = <3000>;
+				trip-point1 {
+					temperature = <125000>;
+					hysteresis = <10000>;
 					type = "passive";
-				};
-			};
-
-			cooling-maps {
-				map0 {
-					trip = <&cpu0_alert0>;
-					cooling-device = <&CPU0_idle 100 100>;
 				};
 			};
 		};
@@ -3042,17 +2957,10 @@
 					type = "passive";
 				};
 
-				cpu1_alert0: trip-point1 {
-					temperature = <116000>;
-					hysteresis = <3000>;
+				trip-point1 {
+					temperature = <125000>;
+					hysteresis = <10000>;
 					type = "passive";
-				};
-			};
-
-			cooling-maps {
-				map0 {
-					trip = <&cpu1_alert0>;
-					cooling-device = <&CPU1_idle 100 100>;
 				};
 			};
 		};
@@ -3070,17 +2978,10 @@
 					type = "passive";
 				};
 
-				cpu2_alert0: trip-point1 {
-					temperature = <116000>;
-					hysteresis = <3000>;
+				trip-point1 {
+					temperature = <125000>;
+					hysteresis = <10000>;
 					type = "passive";
-				};
-			};
-
-			cooling-maps {
-				map0 {
-					trip = <&cpu2_alert0>;
-					cooling-device = <&CPU2_idle 100 100>;
 				};
 			};
 		};
@@ -3098,17 +2999,10 @@
 					type = "passive";
 				};
 
-				cpu3_alert0: trip-point1 {
-					temperature = <116000>;
-					hysteresis = <3000>;
+				trip-point1 {
+					temperature = <125000>;
+					hysteresis = <10000>;
 					type = "passive";
-				};
-			};
-
-			cooling-maps {
-				map0 {
-					trip = <&cpu3_alert0>;
-					cooling-device = <&CPU3_idle 100 100>;
 				};
 			};
 		};
@@ -3126,17 +3020,10 @@
 					type = "passive";
 				};
 
-				cpu4_alert0: trip-point1 {
-					temperature = <116000>;
-					hysteresis = <3000>;
+				trip-point1 {
+					temperature = <125000>;
+					hysteresis = <10000>;
 					type = "passive";
-				};
-			};
-
-			cooling-maps {
-				map0 {
-					trip = <&cpu4_alert0>;
-					cooling-device = <&CPU4_idle 100 100>;
 				};
 			};
 		};
@@ -3154,17 +3041,10 @@
 					type = "passive";
 				};
 
-				cpu5_alert0: trip-point1 {
-					temperature = <116000>;
-					hysteresis = <3000>;
+				trip-point1 {
+					temperature = <125000>;
+					hysteresis = <10000>;
 					type = "passive";
-				};
-			};
-
-			cooling-maps {
-				map0 {
-					trip = <&cpu5_alert0>;
-					cooling-device = <&CPU5_idle 100 100>;
 				};
 			};
 		};
@@ -3203,17 +3083,10 @@
 					type = "passive";
 				};
 
-				cpu6_alert0: trip-point1 {
-					temperature = <116000>;
-					hysteresis = <3000>;
+				trip-point1 {
+					temperature = <125000>;
+					hysteresis = <10000>;
 					type = "passive";
-				};
-			};
-
-			cooling-maps {
-				map0 {
-					trip = <&cpu6_alert0>;
-					cooling-device = <&CPU6_idle 100 100>;
 				};
 			};
 		};
@@ -3231,17 +3104,10 @@
 					type = "passive";
 				};
 
-				cpu7_alert0: trip-point1 {
-					temperature = <116000>;
-					hysteresis = <3000>;
+				trip-point1 {
+					temperature = <125000>;
+					hysteresis = <10000>;
 					type = "passive";
-				};
-			};
-
-			cooling-maps {
-				map0 {
-					trip = <&cpu7_alert0>;
-					cooling-device = <&CPU7_idle 100 100>;
 				};
 			};
 		};
@@ -3259,17 +3125,10 @@
 					type = "passive";
 				};
 
-				cpu8_alert0: trip-point1 {
-					temperature = <116000>;
-					hysteresis = <3000>;
+				trip-point1 {
+					temperature = <125000>;
+					hysteresis = <10000>;
 					type = "passive";
-				};
-			};
-
-			cooling-maps {
-				map0 {
-					trip = <&cpu8_alert0>;
-					cooling-device = <&CPU8_idle 100 100>;
 				};
 			};
 		};
@@ -3287,17 +3146,10 @@
 					type = "passive";
 				};
 
-				cpu9_alert0: trip-point1 {
-					temperature = <116000>;
-					hysteresis = <3000>;
+				trip-point1 {
+					temperature = <125000>;
+					hysteresis = <10000>;
 					type = "passive";
-				};
-			};
-
-			cooling-maps {
-				map0 {
-					trip = <&cpu9_alert0>;
-					cooling-device = <&CPU9_idle 100 100>;
 				};
 			};
 		};
@@ -3315,17 +3167,10 @@
 					type = "passive";
 				};
 
-				cpu10_alert0: trip-point1 {
-					temperature = <116000>;
-					hysteresis = <3000>;
+				trip-point1 {
+					temperature = <125000>;
+					hysteresis = <10000>;
 					type = "passive";
-				};
-			};
-
-			cooling-maps {
-				map0 {
-					trip = <&cpu10_alert0>;
-					cooling-device = <&CPU10_idle 100 100>;
 				};
 			};
 		};
@@ -3343,17 +3188,10 @@
 					type = "passive";
 				};
 
-				cpu11_alert0: trip-point1 {
-					temperature = <116000>;
-					hysteresis = <3000>;
+				trip-point1 {
+					temperature = <125000>;
+					hysteresis = <10000>;
 					type = "passive";
-				};
-			};
-
-			cooling-maps {
-				map0 {
-					trip = <&cpu11_alert0>;
-					cooling-device = <&CPU11_idle 100 100>;
 				};
 			};
 		};
@@ -3434,17 +3272,10 @@
 					type = "passive";
 				};
 
-				cpu0_alert1: trip-point1 {
-					temperature = <116000>;
-					hysteresis = <3000>;
+				trip-point1 {
+					temperature = <125000>;
+					hysteresis = <10000>;
 					type = "passive";
-				};
-			};
-
-			cooling-maps {
-				map0 {
-					trip = <&cpu0_alert1>;
-					cooling-device = <&CPU0_idle 100 100>;
 				};
 			};
 		};
@@ -3462,17 +3293,10 @@
 					type = "passive";
 				};
 
-				cpu1_alert1: trip-point1 {
-					temperature = <116000>;
-					hysteresis = <3000>;
+				trip-point1 {
+					temperature = <125000>;
+					hysteresis = <10000>;
 					type = "passive";
-				};
-			};
-
-			cooling-maps {
-				map0 {
-					trip = <&cpu1_alert1>;
-					cooling-device = <&CPU1_idle 100 100>;
 				};
 			};
 		};
@@ -3490,17 +3314,10 @@
 					type = "passive";
 				};
 
-				cpu2_alert1: trip-point1 {
-					temperature = <116000>;
-					hysteresis = <3000>;
+				trip-point1 {
+					temperature = <125000>;
+					hysteresis = <10000>;
 					type = "passive";
-				};
-			};
-
-			cooling-maps {
-				map0 {
-					trip = <&cpu2_alert1>;
-					cooling-device = <&CPU2_idle 100 100>;
 				};
 			};
 		};
@@ -3518,17 +3335,10 @@
 					type = "passive";
 				};
 
-				cpu3_alert1: trip-point1 {
-					temperature = <116000>;
-					hysteresis = <3000>;
+				trip-point1 {
+					temperature = <125000>;
+					hysteresis = <10000>;
 					type = "passive";
-				};
-			};
-
-			cooling-maps {
-				map0 {
-					trip = <&cpu3_alert1>;
-					cooling-device = <&CPU3_idle 100 100>;
 				};
 			};
 		};
@@ -3546,17 +3356,10 @@
 					type = "passive";
 				};
 
-				cpu4_alert1: trip-point1 {
-					temperature = <116000>;
-					hysteresis = <3000>;
+				trip-point1 {
+					temperature = <125000>;
+					hysteresis = <10000>;
 					type = "passive";
-				};
-			};
-
-			cooling-maps {
-				map0 {
-					trip = <&cpu4_alert1>;
-					cooling-device = <&CPU4_idle 100 100>;
 				};
 			};
 		};
@@ -3574,17 +3377,10 @@
 					type = "passive";
 				};
 
-				cpu5_alert1: trip-point1 {
-					temperature = <116000>;
-					hysteresis = <3000>;
+				trip-point1 {
+					temperature = <125000>;
+					hysteresis = <10000>;
 					type = "passive";
-				};
-			};
-
-			cooling-maps {
-				map0 {
-					trip = <&cpu5_alert1>;
-					cooling-device = <&CPU5_idle 100 100>;
 				};
 			};
 		};
@@ -3623,17 +3419,10 @@
 					type = "passive";
 				};
 
-				cpu6_alert1: trip-point1 {
-					temperature = <116000>;
-					hysteresis = <3000>;
+				trip-point1 {
+					temperature = <125000>;
+					hysteresis = <10000>;
 					type = "passive";
-				};
-			};
-
-			cooling-maps {
-				map0 {
-					trip = <&cpu6_alert1>;
-					cooling-device = <&CPU6_idle 100 100>;
 				};
 			};
 		};
@@ -3651,17 +3440,10 @@
 					type = "passive";
 				};
 
-				cpu7_alert1: trip-point1 {
-					temperature = <116000>;
-					hysteresis = <3000>;
+				trip-point1 {
+					temperature = <125000>;
+					hysteresis = <10000>;
 					type = "passive";
-				};
-			};
-
-			cooling-maps {
-				map0 {
-					trip = <&cpu7_alert1>;
-					cooling-device = <&CPU7_idle 100 100>;
 				};
 			};
 		};
@@ -3679,17 +3461,10 @@
 					type = "passive";
 				};
 
-				cpu8_alert1: trip-point1 {
-					temperature = <116000>;
-					hysteresis = <3000>;
+				trip-point1 {
+					temperature = <125000>;
+					hysteresis = <10000>;
 					type = "passive";
-				};
-			};
-
-			cooling-maps {
-				map0 {
-					trip = <&cpu8_alert1>;
-					cooling-device = <&CPU8_idle 100 100>;
 				};
 			};
 		};
@@ -3707,17 +3482,10 @@
 					type = "passive";
 				};
 
-				cpu9_alert1: trip-point1 {
-					temperature = <116000>;
-					hysteresis = <3000>;
+				trip-point1 {
+					temperature = <125000>;
+					hysteresis = <10000>;
 					type = "passive";
-				};
-			};
-
-			cooling-maps {
-				map0 {
-					trip = <&cpu9_alert1>;
-					cooling-device = <&CPU9_idle 100 100>;
 				};
 			};
 		};
@@ -3735,17 +3503,10 @@
 					type = "passive";
 				};
 
-				cpu10_alert1: trip-point1 {
-					temperature = <116000>;
-					hysteresis = <3000>;
+				trip-point1 {
+					temperature = <125000>;
+					hysteresis = <10000>;
 					type = "passive";
-				};
-			};
-
-			cooling-maps {
-				map0 {
-					trip = <&cpu10_alert1>;
-					cooling-device = <&CPU10_idle 100 100>;
 				};
 			};
 		};
@@ -3763,17 +3524,10 @@
 					type = "passive";
 				};
 
-				cpu11_alert1: trip-point1 {
-					temperature = <116000>;
-					hysteresis = <3000>;
+				trip-point1 {
+					temperature = <125000>;
+					hysteresis = <10000>;
 					type = "passive";
-				};
-			};
-
-			cooling-maps {
-				map0 {
-					trip = <&cpu11_alert1>;
-					cooling-device = <&CPU11_idle 100 100>;
 				};
 			};
 		};
@@ -3854,17 +3608,10 @@
 					type = "passive";
 				};
 
-				cpu12_alert0: trip-point1 {
-					temperature = <116000>;
-					hysteresis = <3000>;
+				trip-point1 {
+					temperature = <125000>;
+					hysteresis = <10000>;
 					type = "passive";
-				};
-			};
-
-			cooling-maps {
-				map0 {
-					trip = <&cpu12_alert0>;
-					cooling-device = <&CPU12_idle 100 100>;
 				};
 			};
 		};
@@ -3882,17 +3629,10 @@
 					type = "passive";
 				};
 
-				cpu13_alert0: trip-point1 {
-					temperature = <116000>;
-					hysteresis = <3000>;
+				trip-point1 {
+					temperature = <125000>;
+					hysteresis = <10000>;
 					type = "passive";
-				};
-			};
-
-			cooling-maps {
-				map0 {
-					trip = <&cpu13_alert0>;
-					cooling-device = <&CPU13_idle 100 100>;
 				};
 			};
 		};
@@ -3910,17 +3650,10 @@
 					type = "passive";
 				};
 
-				cpu14_alert0: trip-point1 {
-					temperature = <116000>;
-					hysteresis = <3000>;
+				trip-point1 {
+					temperature = <125000>;
+					hysteresis = <10000>;
 					type = "passive";
-				};
-			};
-
-			cooling-maps {
-				map0 {
-					trip = <&cpu14_alert0>;
-					cooling-device = <&CPU14_idle 100 100>;
 				};
 			};
 		};
@@ -3938,17 +3671,10 @@
 					type = "passive";
 				};
 
-				cpu15_alert0: trip-point1 {
-					temperature = <116000>;
-					hysteresis = <3000>;
+				trip-point1 {
+					temperature = <125000>;
+					hysteresis = <10000>;
 					type = "passive";
-				};
-			};
-
-			cooling-maps {
-				map0 {
-					trip = <&cpu15_alert0>;
-					cooling-device = <&CPU15_idle 100 100>;
 				};
 			};
 		};
@@ -3966,17 +3692,10 @@
 					type = "passive";
 				};
 
-				cpu16_alert0: trip-point1 {
-					temperature = <116000>;
-					hysteresis = <3000>;
+				trip-point1 {
+					temperature = <125000>;
+					hysteresis = <10000>;
 					type = "passive";
-				};
-			};
-
-			cooling-maps {
-				map0 {
-					trip = <&cpu16_alert0>;
-					cooling-device = <&CPU16_idle 100 100>;
 				};
 			};
 		};
@@ -3994,17 +3713,10 @@
 					type = "passive";
 				};
 
-				cpu17_alert0: trip-point1 {
-					temperature = <116000>;
-					hysteresis = <3000>;
+				trip-point1 {
+					temperature = <125000>;
+					hysteresis = <10000>;
 					type = "passive";
-				};
-			};
-
-			cooling-maps {
-				map0 {
-					trip = <&cpu17_alert0>;
-					cooling-device = <&CPU17_idle 100 100>;
 				};
 			};
 		};
@@ -4211,17 +3923,10 @@
 					type = "passive";
 				};
 
-				cpu12_alert1: trip-point1 {
-					temperature = <116000>;
-					hysteresis = <3000>;
+				trip-point1 {
+					temperature = <125000>;
+					hysteresis = <10000>;
 					type = "passive";
-				};
-			};
-
-			cooling-maps {
-				map0 {
-					trip = <&cpu12_alert1>;
-					cooling-device = <&CPU12_idle 100 100>;
 				};
 			};
 		};
@@ -4239,17 +3944,10 @@
 					type = "passive";
 				};
 
-				cpu13_alert1: trip-point1 {
-					temperature = <116000>;
-					hysteresis = <3000>;
+				trip-point1 {
+					temperature = <125000>;
+					hysteresis = <10000>;
 					type = "passive";
-				};
-			};
-
-			cooling-maps {
-				map0 {
-					trip = <&cpu13_alert1>;
-					cooling-device = <&CPU13_idle 100 100>;
 				};
 			};
 		};
@@ -4267,17 +3965,10 @@
 					type = "passive";
 				};
 
-				cpu14_alert1: trip-point1 {
-					temperature = <116000>;
-					hysteresis = <3000>;
+				trip-point1 {
+					temperature = <125000>;
+					hysteresis = <10000>;
 					type = "passive";
-				};
-			};
-
-			cooling-maps {
-				map0 {
-					trip = <&cpu14_alert1>;
-					cooling-device = <&CPU14_idle 100 100>;
 				};
 			};
 		};
@@ -4295,17 +3986,10 @@
 					type = "passive";
 				};
 
-				cpu15_alert1: trip-point1 {
-					temperature = <116000>;
-					hysteresis = <3000>;
+				trip-point1 {
+					temperature = <125000>;
+					hysteresis = <10000>;
 					type = "passive";
-				};
-			};
-
-			cooling-maps {
-				map0 {
-					trip = <&cpu15_alert1>;
-					cooling-device = <&CPU15_idle 100 100>;
 				};
 			};
 		};
@@ -4323,17 +4007,10 @@
 					type = "passive";
 				};
 
-				cpu16_alert1: trip-point1 {
-					temperature = <116000>;
-					hysteresis = <3000>;
+				trip-point1 {
+					temperature = <125000>;
+					hysteresis = <10000>;
 					type = "passive";
-				};
-			};
-
-			cooling-maps {
-				map0 {
-					trip = <&cpu16_alert1>;
-					cooling-device = <&CPU16_idle 100 100>;
 				};
 			};
 		};
@@ -4351,17 +4028,10 @@
 					type = "passive";
 				};
 
-				cpu17_alert1: trip-point1 {
-					temperature = <116000>;
-					hysteresis = <3000>;
+				trip-point1 {
+					temperature = <125000>;
+					hysteresis = <10000>;
 					type = "passive";
-				};
-			};
-
-			cooling-maps {
-				map0 {
-					trip = <&cpu17_alert1>;
-					cooling-device = <&CPU17_idle 100 100>;
 				};
 			};
 		};
@@ -5922,12 +5592,11 @@
 
 		snps,tso;
 
-		snps,pbl = <4>;
-		snps,no-pbl-x8;
+		snps,pbl = <0x10>;
 		dma-coherent;
 
-		rx-fifo-depth = <57344>;
-		tx-fifo-depth = <57344>;
+		rx-fifo-depth = <98304>;
+		tx-fifo-depth = <98304>;
 
 		snps,axi-config = <&stmmac_axi_setup>;
 		snps,mtl-rx-config = <&mtl_rx_setup>;
@@ -6013,8 +5682,8 @@
 		};
 
 		stmmac_axi_setup: stmmac-axi-config {
-			snps,rd_osr_lmt = <0x8>;
-			snps,wr_osr_lmt = <0x8>;
+			snps,rd_osr_lmt = <0x10>;
+			snps,wr_osr_lmt = <0x10>;
 			snps,kbbe;
 			snps,blen = <0 0 0 0 16 0 0>;
 		};
@@ -6047,12 +5716,11 @@
 
 		snps,tso;
 
-		snps,pbl = <4>;
-		snps,no-pbl-x8;
+		snps,pbl = <0x10>;
 		dma-coherent;
 
-		rx-fifo-depth = <57344>;
-		tx-fifo-depth = <57344>;
+		rx-fifo-depth = <98304>;
+		tx-fifo-depth = <98304>;
 
 		snps,axi-config = <&stmmac_axi_setup1>;
 		snps,mtl-rx-config = <&mtl_rx_setup1>;
@@ -6138,8 +5806,8 @@
 		};
 
 		stmmac_axi_setup1: stmmac-axi-config {
-			snps,rd_osr_lmt = <0x8>;
-			snps,wr_osr_lmt = <0x8>;
+			snps,rd_osr_lmt = <0x10>;
+			snps,wr_osr_lmt = <0x10>;
 			snps,kbbe;
 			snps,blen = <0 0 0 0 16 0 0>;
 		};
