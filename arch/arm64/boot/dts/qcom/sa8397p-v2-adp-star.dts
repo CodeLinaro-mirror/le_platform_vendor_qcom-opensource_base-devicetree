@@ -1,0 +1,40 @@
+// SPDX-License-Identifier: BSD-3-Clause
+/*
+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+ */
+
+/dts-v1/;
+
+#include "sa8x97p.dtsi"
+#include "sa8x97p-v2.dtsi"
+#include "sa8397p.dtsi"
+
+/ {
+	model = "Qualcomm Technologies, Inc. SA8397P v2 ADP STAR";
+	compatible = "qcom,sa8397p-adp-star", "qcom,sa8397p-adp", "qcom,sa8397p";
+	qcom,msm-id = <689 0x20000>;
+	qcom,board-id = <0x010025 0>;
+	qcom,sku-id = <0x100>;
+};
+
+&ethernet0 {
+	phy-mode = "usxgmii";
+	phy-handle = <&usxsgmii_phy0>;
+
+	mdio {
+		compatible = "snps,dwmac-mdio";
+		#address-cells = <1>;
+		#size-cells = <0>;
+
+		usxsgmii_phy0: phy@0 {
+			compatible = "ethernet-phy-id31c3.1c12";
+			reg = <0x0>;
+			device_type = "ethernet-phy";
+			interrupts-extended = <&tlmm 45 IRQ_TYPE_EDGE_FALLING>;
+			resets = <&scmi7_rst 0>;
+			reset-names = "phy";
+			reset-assert-us = <100000>;
+			reset-deassert-us = <100000>;
+		};
+	};
+};
