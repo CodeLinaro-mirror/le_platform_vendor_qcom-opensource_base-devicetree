@@ -1,9 +1,10 @@
 /*
- * Copyright (c) 2024 Qualcomm Innovation Center, Inc. All rights reserved.
+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
  * SPDX-License-Identifier: BSD-3-Clause
  */
 
 #include <dt-bindings/interrupt-controller/arm-gic.h>
+#include "oot-dt-bindings/qcom-ipcc-sa8797p.h"
 
 &{/firmware} {
 	scmi0: scmi-0 {
@@ -1892,7 +1893,24 @@
 		};
 	};
 
+	aop_scmi: qcom,aop-scmi {
+		compatible = "arm,scmi";
+		mboxes = <&ipcc0 IPCC_MPROC_AOP IPCC_MPROC_SIGNAL_SCMI_A2P>,
+				<&ipcc0 IPCC_MPROC_AOP IPCC_MPROC_SIGNAL_SCMI_P2A>;
+		mbox-names = "aop_a2p", "aop_p2a";
+		shmem = <&aop0_a2p>, <&aop0_p2a>;
+
+		#address-cells = <1>;
+		#size-cells = <0>;
+
+		status = "disabled";
+
+		scmi_powercap: protocol@18 {
+			reg = <0x18>;
+		};
+	};
 };
+
 &soc {
 	scmichannels: sram@d7600000 {
 		compatible = "mmio-sram";
@@ -2260,4 +2278,31 @@
 
 	};
 
+	aop_sram_tx: aop-sram@c319000 {
+		#address-cells = <1>;
+		#size-cells = <1>;
+		compatible = "mmio-sram";
+		reg = <0x0 0xc319000 0x0 0x400>;
+		ranges = <0 0x0 0xc319000 0x400>;
+
+		aop0_a2p: aop0-a2p@0 {
+			compatible = "arm,scmi-shmem";
+			reg = <0x0 0x400>;
+			reg-io-width = <4>;
+		};
+	};
+
+	aop_sram_rx: aop-sram@c31a000 {
+		#address-cells = <1>;
+		#size-cells = <1>;
+		compatible = "mmio-sram";
+		reg = <0x0 0xc31a000 0x0 0x400>;
+		ranges = <0 0x0 0xc31a000 0x400>;
+
+		aop0_p2a: aop0-p2a@0 {
+			compatible = "arm,scmi-shmem";
+			reg = <0x0 0x400>;
+			reg-io-width = <4>;
+		};
+	};
 };
