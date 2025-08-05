@@ -1566,7 +1566,7 @@
 
 			ccu_gpi_dma0: dma-controller0@9b56000 {
 				compatible = "qcom,sa8797-ccu-gpi-dma";
-				#dma-cells = <4>;
+				#dma-cells = <5>;
 				reg = <0x0 0x009b56000 0x0 0x30000>;
 				dma-channels = <15>;
 				dma-channel-mask = <0x7fff>;
@@ -1589,12 +1589,12 @@
 				ccu_i2c0: i2c@9b86000 {
 					compatible = "qcom,sa8797p-geni-i2c-ccu";
 					reg = <0x0 0x9b86000 0x0 0x2000>;
-					dmas = <&ccu_gpi_dma0 0 0 QCOM_GPI_I2C 1>,
-					       <&ccu_gpi_dma0 1 0 QCOM_GPI_I2C 1>,
-					       <&ccu_gpi_dma0 0 0 QCOM_GPI_I2C 2>,
-					       <&ccu_gpi_dma0 1 0 QCOM_GPI_I2C 2>,
-					       <&ccu_gpi_dma0 0 0 QCOM_GPI_I2C 3>,
-					       <&ccu_gpi_dma0 1 0 QCOM_GPI_I2C 3>;
+					dmas = <&ccu_gpi_dma0 0 0 QCOM_GPI_I2C 1 512>,
+					       <&ccu_gpi_dma0 1 0 QCOM_GPI_I2C 1 512>,
+					       <&ccu_gpi_dma0 0 0 QCOM_GPI_I2C 2 512>,
+					       <&ccu_gpi_dma0 1 0 QCOM_GPI_I2C 2 512>,
+					       <&ccu_gpi_dma0 0 0 QCOM_GPI_I2C 3 512>,
+					       <&ccu_gpi_dma0 1 0 QCOM_GPI_I2C 3 512>;
 					dma-names = "tx",
 						    "rx",
 						    "tx1",
@@ -1608,12 +1608,12 @@
 				ccu_i2c1: i2c@9b88000 {
 					compatible = "qcom,sa8797p-geni-i2c-ccu";
 					reg = <0x0 0x9b88000 0x0 0x2000>;
-					dmas = <&ccu_gpi_dma0 0 1 QCOM_GPI_I2C 4>,
-					       <&ccu_gpi_dma0 1 1 QCOM_GPI_I2C 4>,
-					       <&ccu_gpi_dma0 0 1 QCOM_GPI_I2C 5>,
-					       <&ccu_gpi_dma0 1 1 QCOM_GPI_I2C 5>,
-					       <&ccu_gpi_dma0 0 1 QCOM_GPI_I2C 6>,
-					       <&ccu_gpi_dma0 1 1 QCOM_GPI_I2C 6>;
+					dmas = <&ccu_gpi_dma0 0 1 QCOM_GPI_I2C 4 512>,
+					       <&ccu_gpi_dma0 1 1 QCOM_GPI_I2C 4 512>,
+					       <&ccu_gpi_dma0 0 1 QCOM_GPI_I2C 5 512>,
+					       <&ccu_gpi_dma0 1 1 QCOM_GPI_I2C 5 512>,
+					       <&ccu_gpi_dma0 0 1 QCOM_GPI_I2C 6 512>,
+					       <&ccu_gpi_dma0 1 1 QCOM_GPI_I2C 6 512>;
 					dma-names = "tx",
 						    "rx",
 						    "tx1",
@@ -1627,12 +1627,12 @@
 				ccu_i2c2: i2c@9b8a000 {
 					compatible = "qcom,sa8797p-geni-i2c-ccu";
 					reg = <0x0 0x9b8a000 0x0 0x2000>;
-					dmas = <&ccu_gpi_dma0 0 2 QCOM_GPI_I2C 7>,
-					       <&ccu_gpi_dma0 1 2 QCOM_GPI_I2C 7>,
-					       <&ccu_gpi_dma0 0 2 QCOM_GPI_I2C 8>,
-					       <&ccu_gpi_dma0 1 2 QCOM_GPI_I2C 8>,
-					       <&ccu_gpi_dma0 0 2 QCOM_GPI_I2C 9>,
-					       <&ccu_gpi_dma0 1 2 QCOM_GPI_I2C 9>;
+					dmas = <&ccu_gpi_dma0 0 2 QCOM_GPI_I2C 7 512>,
+					       <&ccu_gpi_dma0 1 2 QCOM_GPI_I2C 7 512>,
+					       <&ccu_gpi_dma0 0 2 QCOM_GPI_I2C 8 512>,
+					       <&ccu_gpi_dma0 1 2 QCOM_GPI_I2C 8 512>,
+					       <&ccu_gpi_dma0 0 2 QCOM_GPI_I2C 9 512>,
+					       <&ccu_gpi_dma0 1 2 QCOM_GPI_I2C 9 512>;
 					dma-names = "tx",
 						    "rx",
 						    "tx1",
@@ -1646,12 +1646,12 @@
 				ccu_i2c3: i2c@9b8c000 {
 					compatible = "qcom,sa8797p-geni-i2c-ccu";
 					reg = <0x0 0x9b8c000 0x0 0x2000>;
-					dmas = <&ccu_gpi_dma0 0 3 QCOM_GPI_I2C 10>,
-					       <&ccu_gpi_dma0 1 3 QCOM_GPI_I2C 10>,
-					       <&ccu_gpi_dma0 0 3 QCOM_GPI_I2C 11>,
-					       <&ccu_gpi_dma0 1 3 QCOM_GPI_I2C 11>,
-					       <&ccu_gpi_dma0 0 3 QCOM_GPI_I2C 12>,
-					       <&ccu_gpi_dma0 1 3 QCOM_GPI_I2C 12>;
+					dmas = <&ccu_gpi_dma0 0 3 QCOM_GPI_I2C 10 512>,
+					       <&ccu_gpi_dma0 1 3 QCOM_GPI_I2C 10 512>,
+					       <&ccu_gpi_dma0 0 3 QCOM_GPI_I2C 11 512>,
+					       <&ccu_gpi_dma0 1 3 QCOM_GPI_I2C 11 512>,
+					       <&ccu_gpi_dma0 0 3 QCOM_GPI_I2C 12 512>,
+					       <&ccu_gpi_dma0 1 3 QCOM_GPI_I2C 12 512>;
 					dma-names = "tx",
 						    "rx",
 						    "tx1",
@@ -1665,12 +1665,12 @@
 				ccu_i2c4: i2c@9b8e000 {
 					compatible = "qcom,sa8797p-geni-i2c-ccu";
 					reg = <0x0 0x9b8e000 0x0 0x2000>;
-					dmas = <&ccu_gpi_dma0 0 4 QCOM_GPI_I2C 13>,
-					       <&ccu_gpi_dma0 1 4 QCOM_GPI_I2C 13>,
-					       <&ccu_gpi_dma0 0 4 QCOM_GPI_I2C 14>,
-					       <&ccu_gpi_dma0 1 4 QCOM_GPI_I2C 14>,
-					       <&ccu_gpi_dma0 0 4 QCOM_GPI_I2C 15>,
-					       <&ccu_gpi_dma0 1 4 QCOM_GPI_I2C 15>;
+					dmas = <&ccu_gpi_dma0 0 4 QCOM_GPI_I2C 13 512>,
+					       <&ccu_gpi_dma0 1 4 QCOM_GPI_I2C 13 512>,
+					       <&ccu_gpi_dma0 0 4 QCOM_GPI_I2C 14 512>,
+					       <&ccu_gpi_dma0 1 4 QCOM_GPI_I2C 14 512>,
+					       <&ccu_gpi_dma0 0 4 QCOM_GPI_I2C 15 512>,
+					       <&ccu_gpi_dma0 1 4 QCOM_GPI_I2C 15 512>;
 					dma-names = "tx",
 						    "rx",
 						    "tx1",
@@ -1684,7 +1684,7 @@
 
 			ccu_gpi_dma1: dma-controller1@9bd6000 {
 				compatible = "qcom,sa8797-ccu-gpi-dma";
-				#dma-cells = <4>;
+				#dma-cells = <5>;
 				reg = <0x0 0x009bd6000 0x0 0x30000>;
 				dma-channels = <15>;
 				dma-channel-mask = <0x7fff>;
@@ -1707,12 +1707,12 @@
 				ccu_i2c5: i2c@9c06000 {
 					compatible = "qcom,sa8797p-geni-i2c-ccu";
 					reg = <0x0 0x9c06000 0x0 0x2000>;
-					dmas = <&ccu_gpi_dma1 0 0 QCOM_GPI_I2C 1>,
-					       <&ccu_gpi_dma1 1 0 QCOM_GPI_I2C 1>,
-					       <&ccu_gpi_dma1 0 0 QCOM_GPI_I2C 2>,
-					       <&ccu_gpi_dma1 1 0 QCOM_GPI_I2C 2>,
-					       <&ccu_gpi_dma1 0 0 QCOM_GPI_I2C 3>,
-					       <&ccu_gpi_dma1 1 0 QCOM_GPI_I2C 3>;
+					dmas = <&ccu_gpi_dma1 0 0 QCOM_GPI_I2C 1 512>,
+					       <&ccu_gpi_dma1 1 0 QCOM_GPI_I2C 1 512>,
+					       <&ccu_gpi_dma1 0 0 QCOM_GPI_I2C 2 512>,
+					       <&ccu_gpi_dma1 1 0 QCOM_GPI_I2C 2 512>,
+					       <&ccu_gpi_dma1 0 0 QCOM_GPI_I2C 3 512>,
+					       <&ccu_gpi_dma1 1 0 QCOM_GPI_I2C 3 512>;
 					dma-names = "tx",
 						    "rx",
 						    "tx1",
@@ -1726,12 +1726,12 @@
 				ccu_i2c6: i2c@9c08000 {
 					compatible = "qcom,sa8797p-geni-i2c-ccu";
 					reg = <0x0 0x9c08000 0x0 0x2000>;
-					dmas = <&ccu_gpi_dma1 0 1 QCOM_GPI_I2C 4>,
-					       <&ccu_gpi_dma1 1 1 QCOM_GPI_I2C 4>,
-					       <&ccu_gpi_dma1 0 1 QCOM_GPI_I2C 5>,
-					       <&ccu_gpi_dma1 1 1 QCOM_GPI_I2C 5>,
-					       <&ccu_gpi_dma1 0 1 QCOM_GPI_I2C 6>,
-					       <&ccu_gpi_dma1 1 1 QCOM_GPI_I2C 6>;
+					dmas = <&ccu_gpi_dma1 0 1 QCOM_GPI_I2C 4 512>,
+					       <&ccu_gpi_dma1 1 1 QCOM_GPI_I2C 4 512>,
+					       <&ccu_gpi_dma1 0 1 QCOM_GPI_I2C 5 512>,
+					       <&ccu_gpi_dma1 1 1 QCOM_GPI_I2C 5 512>,
+					       <&ccu_gpi_dma1 0 1 QCOM_GPI_I2C 6 512>,
+					       <&ccu_gpi_dma1 1 1 QCOM_GPI_I2C 6 512>;
 					dma-names = "tx",
 						    "rx",
 						    "tx1",
@@ -1745,12 +1745,12 @@
 				ccu_i2c7: i2c@9c0a000 {
 					compatible = "qcom,sa8797p-geni-i2c-ccu";
 					reg = <0x0 0x9c0a000 0x0 0x2000>;
-					dmas = <&ccu_gpi_dma1 0 2 QCOM_GPI_I2C 7>,
-					       <&ccu_gpi_dma1 1 2 QCOM_GPI_I2C 7>,
-					       <&ccu_gpi_dma1 0 2 QCOM_GPI_I2C 8>,
-					       <&ccu_gpi_dma1 1 2 QCOM_GPI_I2C 8>,
-					       <&ccu_gpi_dma1 0 2 QCOM_GPI_I2C 9>,
-					       <&ccu_gpi_dma1 1 2 QCOM_GPI_I2C 9>;
+					dmas = <&ccu_gpi_dma1 0 2 QCOM_GPI_I2C 7 512>,
+					       <&ccu_gpi_dma1 1 2 QCOM_GPI_I2C 7 512>,
+					       <&ccu_gpi_dma1 0 2 QCOM_GPI_I2C 8 512>,
+					       <&ccu_gpi_dma1 1 2 QCOM_GPI_I2C 8 512>,
+					       <&ccu_gpi_dma1 0 2 QCOM_GPI_I2C 9 512>,
+					       <&ccu_gpi_dma1 1 2 QCOM_GPI_I2C 9 512>;
 					dma-names = "tx",
 						    "rx",
 						    "tx1",
@@ -1764,12 +1764,12 @@
 				ccu_i2c8: i2c@9c0c000 {
 					compatible = "qcom,sa8797p-geni-i2c-ccu";
 					reg = <0x0 0x9c0c000 0x0 0x2000>;
-					dmas = <&ccu_gpi_dma1 0 3 QCOM_GPI_I2C 10>,
-					       <&ccu_gpi_dma1 1 3 QCOM_GPI_I2C 10>,
-					       <&ccu_gpi_dma1 0 3 QCOM_GPI_I2C 11>,
-					       <&ccu_gpi_dma1 1 3 QCOM_GPI_I2C 11>,
-					       <&ccu_gpi_dma1 0 3 QCOM_GPI_I2C 12>,
-					       <&ccu_gpi_dma1 1 3 QCOM_GPI_I2C 12>;
+					dmas = <&ccu_gpi_dma1 0 3 QCOM_GPI_I2C 10 512>,
+					       <&ccu_gpi_dma1 1 3 QCOM_GPI_I2C 10 512>,
+					       <&ccu_gpi_dma1 0 3 QCOM_GPI_I2C 11 512>,
+					       <&ccu_gpi_dma1 1 3 QCOM_GPI_I2C 11 512>,
+					       <&ccu_gpi_dma1 0 3 QCOM_GPI_I2C 12 512>,
+					       <&ccu_gpi_dma1 1 3 QCOM_GPI_I2C 12 512>;
 					dma-names = "tx",
 						    "rx",
 						    "tx1",
@@ -1783,12 +1783,12 @@
 				ccu_i2c9: i2c@9c0e000 {
 					compatible = "qcom,sa8797p-geni-i2c-ccu";
 					reg = <0x0 0x9c0e000 0x0 0x2000>;
-					dmas = <&ccu_gpi_dma1 0 4 QCOM_GPI_I2C 13>,
-					       <&ccu_gpi_dma1 1 4 QCOM_GPI_I2C 13>,
-					       <&ccu_gpi_dma1 0 4 QCOM_GPI_I2C 14>,
-					       <&ccu_gpi_dma1 1 4 QCOM_GPI_I2C 14>,
-					       <&ccu_gpi_dma1 0 4 QCOM_GPI_I2C 15>,
-					       <&ccu_gpi_dma1 1 4 QCOM_GPI_I2C 15>;
+					dmas = <&ccu_gpi_dma1 0 4 QCOM_GPI_I2C 13 512>,
+					       <&ccu_gpi_dma1 1 4 QCOM_GPI_I2C 13 512>,
+					       <&ccu_gpi_dma1 0 4 QCOM_GPI_I2C 14 512>,
+					       <&ccu_gpi_dma1 1 4 QCOM_GPI_I2C 14 512>,
+					       <&ccu_gpi_dma1 0 4 QCOM_GPI_I2C 15 512>,
+					       <&ccu_gpi_dma1 1 4 QCOM_GPI_I2C 15 512>;
 					dma-names = "tx",
 						    "rx",
 						    "tx1",
