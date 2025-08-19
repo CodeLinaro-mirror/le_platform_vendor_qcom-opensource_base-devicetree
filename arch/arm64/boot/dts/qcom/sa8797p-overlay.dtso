@@ -433,7 +433,7 @@
 
 		power-domains = <&scmi25_pd 0>, <&scmi25_pd 1>;
 		power-domain-names = "power_regulator", "power_gpio";
-		qcom,dev-name = "scmi_bluetooth0";
+		qcom,dev-name = "scmi_bluetooth";
 	};
 
 	scmi_bluetooth1 {
@@ -469,6 +469,15 @@
 		power-domain-names = "power_regulator", "power_gpio";
 
 		qcom,dev-name = "scmi_wlan0";
+	};
+
+	scmi_wlan1 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi45_pd 0>, <&scmi45_pd 1>;
+		power-domain-names = "power_regulator", "power_gpio";
+
+		qcom,dev-name = "scmi_wlan1";
 	};
 
 	scmi_wlan1 {

@@ -10,6 +10,7 @@
 
 	aliases {
 		i2c18 = &i2c18;
+		i2c9 = &i2c9;
 		spi16 = &spi16;
 		serial0 = &uart15;
 		serial1 = &uart4;
@@ -17,6 +18,10 @@
 };
 
 &i2c18 {
+	status = "okay";
+};
+
+&i2c9 {
 	status = "okay";
 };
 
@@ -93,6 +98,10 @@
 };
 
 &scmi15 {
+	status = "okay";
+};
+
+&scmi23 {
 	status = "okay";
 };
 

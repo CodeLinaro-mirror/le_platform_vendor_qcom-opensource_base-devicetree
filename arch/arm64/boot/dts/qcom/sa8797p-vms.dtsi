@@ -56,6 +56,7 @@
 				&auto_vm_glink_ring
 				&auto_vm_frpc_ring
 				&auto_vm_i2c0_ring
+				&auto_vm_i2c1_ring
 				&auto_vm_ssr_ring
 				&auto_vm_resv_ring
 				&auto_vm_swiotlb>;
@@ -306,6 +307,11 @@
 		qcom,label = <0x51>;
 	};
 
+	auto_vm_be49: auto_vm_be49@52 {
+		qcom,vm = <&auto_vm>;
+		qcom,label = <0x52>;
+	};
+
 	auto_vm_0: gh-secure-vm-loader@0 {
 		compatible = "qcom,gh-secure-vm-loader";
 		qcom,pas-id = <44>;
@@ -364,6 +370,7 @@
 				&auto_vm_be46
 				&auto_vm_be47
 				&auto_vm_be48
+				&auto_vm_be49
 				>;
 	};
 
@@ -753,10 +760,16 @@
 		gunyah-label = <0x4F>;
 	};
 
-	auto_vm_resv_ring: auto_vm_resv_ring@880292000 {
+	auto_vm_i2c1_ring: auto_vm_i2c1_ring@880292000 {
 		no-map;
-		reg = <0x8 0x80292000 0x0 0xD6E000>;
+		reg = <0x8 0x80292000 0x0 0x2000>;
 		gunyah-label = <0x51>;
+	};
+
+	auto_vm_resv_ring: auto_vm_resv_ring@880294000 {
+		no-map;
+		reg = <0x8 0x80294000 0x0 0xD6C000>;
+		gunyah-label = <0x52>;
 	};
 
 	auto_vm_swiotlb: auto_vm_swiotlb@881000000 {

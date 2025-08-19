@@ -165,10 +165,36 @@
 };
 
 &thermal_zones {
+	ddr-0-0 {
+		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "critical";
+			};
+		};
+	};
+
+	cpu-0-0-0 {
+		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "critical";
+			};
+		};
+	};
+
 	cpu-0-1-0 {
 		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "critical";
+			};
+
 			cpu1_alert0: trip-point1 {
-				temperature = <116000>;
+				temperature = <114000>;
 				hysteresis = <3000>;
 			};
 		};
@@ -183,8 +209,14 @@
 
 	cpu-0-2-0 {
 		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "critical";
+			};
+
 			cpu2_alert0: trip-point1 {
-				temperature = <116000>;
+				temperature = <114000>;
 				hysteresis = <3000>;
 			};
 		};
@@ -199,8 +231,14 @@
 
 	cpu-0-3-0 {
 		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "critical";
+			};
+
 			cpu3_alert0: trip-point1 {
-				temperature = <116000>;
+				temperature = <114000>;
 				hysteresis = <3000>;
 			};
 		};
@@ -215,8 +253,14 @@
 
 	cpu-0-4-0 {
 		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "critical";
+			};
+
 			cpu4_alert0: trip-point1 {
-				temperature = <116000>;
+				temperature = <114000>;
 				hysteresis = <3000>;
 			};
 		};
@@ -231,8 +275,14 @@
 
 	cpu-0-5-0 {
 		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "critical";
+			};
+
 			cpu5_alert0: trip-point1 {
-				temperature = <116000>;
+				temperature = <114000>;
 				hysteresis = <3000>;
 			};
 		};
@@ -245,10 +295,26 @@
 		};
 	};
 
+	cpullc-0-0 {
+		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "critical";
+			};
+		};
+	};
+
 	cpu-1-0-0 {
 		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "critical";
+			};
+
 			cpu6_alert0: trip-point1 {
-				temperature = <116000>;
+				temperature = <114000>;
 				hysteresis = <3000>;
 			};
 		};
@@ -263,8 +329,14 @@
 
 	cpu-1-1-0 {
 		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "critical";
+			};
+
 			cpu7_alert0: trip-point1 {
-				temperature = <116000>;
+				temperature = <114000>;
 				hysteresis = <3000>;
 			};
 		};
@@ -279,8 +351,14 @@
 
 	cpu-1-2-0 {
 		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "critical";
+			};
+
 			cpu8_alert0: trip-point1 {
-				temperature = <116000>;
+				temperature = <114000>;
 				hysteresis = <3000>;
 			};
 		};
@@ -295,8 +373,14 @@
 
 	cpu-1-3-0 {
 		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "critical";
+			};
+
 			cpu9_alert0: trip-point1 {
-				temperature = <116000>;
+				temperature = <114000>;
 				hysteresis = <3000>;
 			};
 		};
@@ -311,8 +395,14 @@
 
 	cpu-1-4-0 {
 		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "critical";
+			};
+
 			cpu10_alert0: trip-point1 {
-				temperature = <116000>;
+				temperature = <114000>;
 				hysteresis = <3000>;
 			};
 		};
@@ -327,8 +417,14 @@
 
 	cpu-1-5-0 {
 		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "critical";
+			};
+
 			cpu11_alert0: trip-point1 {
-				temperature = <116000>;
+				temperature = <114000>;
 				hysteresis = <3000>;
 			};
 		};
@@ -341,10 +437,56 @@
 		};
 	};
 
+	cpullc-1-0 {
+		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "passive";
+			};
+		};
+	};
+
+	ddr-1-0 {
+		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "passive";
+			};
+		};
+	};
+
+	ddr-0-1 {
+		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "passive";
+			};
+		};
+	};
+
+	cpu-0-0-1 {
+		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "passive";
+			};
+		};
+	};
+
 	cpu-0-1-1 {
 		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "critical";
+			};
+
 			cpu1_alert1: trip-point1 {
-				temperature = <116000>;
+				temperature = <114000>;
 				hysteresis = <3000>;
 			};
 		};
@@ -359,8 +501,14 @@
 
 	cpu-0-2-1 {
 		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "critical";
+			};
+
 			cpu2_alert1: trip-point1 {
-				temperature = <116000>;
+				temperature = <114000>;
 				hysteresis = <3000>;
 			};
 		};
@@ -375,8 +523,14 @@
 
 	cpu-0-3-1 {
 		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "critical";
+			};
+
 			cpu3_alert1: trip-point1 {
-				temperature = <116000>;
+				temperature = <114000>;
 				hysteresis = <3000>;
 			};
 		};
@@ -391,8 +545,14 @@
 
 	cpu-0-4-1 {
 		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "critical";
+			};
+
 			cpu4_alert1: trip-point1 {
-				temperature = <116000>;
+				temperature = <114000>;
 				hysteresis = <3000>;
 			};
 		};
@@ -407,8 +567,14 @@
 
 	cpu-0-5-1 {
 		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "critical";
+			};
+
 			cpu5_alert1: trip-point1 {
-				temperature = <116000>;
+				temperature = <114000>;
 				hysteresis = <3000>;
 			};
 		};
@@ -421,10 +587,26 @@
 		};
 	};
 
+	cpullc-0-1 {
+		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "passive";
+			};
+		};
+	};
+
 	cpu-1-0-1 {
 		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "critical";
+			};
+
 			cpu6_alert1: trip-point1 {
-				temperature = <116000>;
+				temperature = <114000>;
 				hysteresis = <3000>;
 
 			};
@@ -440,8 +622,14 @@
 
 	cpu-1-1-1 {
 		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "critical";
+			};
+
 			cpu7_alert1: trip-point1 {
-				temperature = <116000>;
+				temperature = <114000>;
 				hysteresis = <3000>;
 			};
 		};
@@ -456,8 +644,14 @@
 
 	cpu-1-2-1 {
 		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "critical";
+			};
+
 			cpu8_alert1: trip-point1 {
-				temperature = <116000>;
+				temperature = <114000>;
 				hysteresis = <3000>;
 			};
 		};
@@ -472,8 +666,14 @@
 
 	cpu-1-3-1 {
 		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "critical";
+			};
+
 			cpu9_alert1: trip-point1 {
-				temperature = <116000>;
+				temperature = <114000>;
 				hysteresis = <3000>;
 			};
 		};
@@ -488,8 +688,14 @@
 
 	cpu-1-4-1 {
 		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "critical";
+			};
+
 			cpu10_alert1: trip-point1 {
-				temperature = <116000>;
+				temperature = <114000>;
 				hysteresis = <3000>;
 			};
 		};
@@ -504,8 +710,14 @@
 
 	cpu-1-5-1 {
 		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "critical";
+			};
+
 			cpu11_alert1: trip-point1 {
-				temperature = <116000>;
+				temperature = <114000>;
 				hysteresis = <3000>;
 			};
 		};
@@ -518,10 +730,46 @@
 		};
 	};
 
+	cpullc-1-1 {
+		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "passive";
+			};
+		};
+	};
+
+	ddr-1-1 {
+		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "passive";
+			};
+		};
+	};
+
+	amux-2 {
+		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "passive";
+			};
+		};
+	};
+
 	cpu-2-0-0 {
 		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "critical";
+			};
+
 			cpu12_alert0: trip-point1 {
-				temperature = <116000>;
+				temperature = <114000>;
 				hysteresis = <3000>;
 			};
 		};
@@ -536,8 +784,14 @@
 
 	cpu-2-1-0 {
 		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "critical";
+			};
+
 			cpu13_alert0: trip-point1 {
-				temperature = <116000>;
+				temperature = <114000>;
 				hysteresis = <3000>;
 			};
 		};
@@ -552,8 +806,14 @@
 
 	cpu-2-2-0 {
 		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "critical";
+			};
+
 			cpu14_alert0: trip-point1 {
-				temperature = <116000>;
+				temperature = <114000>;
 				hysteresis = <3000>;
 			};
 		};
@@ -568,8 +828,14 @@
 
 	cpu-2-3-0 {
 		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "critical";
+			};
+
 			cpu15_alert0: trip-point1 {
-				temperature = <116000>;
+				temperature = <114000>;
 				hysteresis = <3000>;
 			};
 		};
@@ -584,8 +850,14 @@
 
 	cpu-2-4-0 {
 		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "critical";
+			};
+
 			cpu16_alert0: trip-point1 {
-				temperature = <116000>;
+				temperature = <114000>;
 				hysteresis = <3000>;
 			};
 		};
@@ -600,8 +872,14 @@
 
 	cpu-2-5-0 {
 		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "critical";
+			};
+
 			cpu17_alert0: trip-point1 {
-				temperature = <116000>;
+				temperature = <114000>;
 				hysteresis = <3000>;
 			};
 		};
@@ -614,10 +892,106 @@
 		};
 	};
 
+	cpullc-2-0 {
+		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "passive";
+			};
+		};
+	};
+
+	audiohvx-0-0 {
+		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "passive";
+			};
+		};
+	};
+
+	audiohmx-0-0 {
+		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "passive";
+			};
+		};
+	};
+
+	audiohvx-1-0 {
+		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "passive";
+			};
+		};
+	};
+
+	audiohmx-1-0 {
+		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "passive";
+			};
+		};
+	};
+
+	audiohvx-2-0 {
+		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "passive";
+			};
+		};
+	};
+
+	audiohmx-2-0 {
+		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "passive";
+			};
+		};
+	};
+
+	pcie-0 {
+		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "passive";
+			};
+		};
+	};
+
+	amux-3 {
+		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "passive";
+			};
+		};
+	};
+
 	cpu-2-0-1 {
 		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "critical";
+			};
+
 			cpu12_alert1: trip-point1 {
-				temperature = <116000>;
+				temperature = <114000>;
 				hysteresis = <3000>;
 			};
 		};
@@ -632,8 +1006,14 @@
 
 	cpu-2-1-1 {
 		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "critical";
+			};
+
 			cpu13_alert1: trip-point1 {
-				temperature = <116000>;
+				temperature = <114000>;
 				hysteresis = <3000>;
 			};
 		};
@@ -648,8 +1028,14 @@
 
 	cpu-2-2-1 {
 		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "critical";
+			};
+
 			cpu14_alert1: trip-point1 {
-				temperature = <116000>;
+				temperature = <114000>;
 				hysteresis = <3000>;
 			};
 		};
@@ -664,8 +1050,14 @@
 
 	cpu-2-3-1 {
 		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "critical";
+			};
+
 			cpu15_alert1: trip-point1 {
-				temperature = <116000>;
+				temperature = <114000>;
 				hysteresis = <3000>;
 			};
 		};
@@ -680,8 +1072,14 @@
 
 	cpu-2-4-1 {
 		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "critical";
+			};
+
 			cpu16_alert1: trip-point1 {
-				temperature = <116000>;
+				temperature = <114000>;
 				hysteresis = <3000>;
 			};
 		};
@@ -696,8 +1094,14 @@
 
 	cpu-2-5-1 {
 		trips {
+			trip-point2 {
+				temperature = <115000>;
+				hysteresis = <3000>;
+				type = "critical";
+			};
+
 			cpu17_alert1: trip-point1 {
-				temperature = <116000>;
+				temperature = <114000>;
 				hysteresis = <3000>;
 			};
 		};
@@ -706,6 +1110,624 @@
 			map0 {
 				trip = <&cpu17_alert1>;
 				cooling-device = <&CPU17_idle 100 100>;
+			};
+		};
+	};
+
+	cpullc-2-1 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	audiohvx-0-1 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	audiohmx-0-1 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	audiohvx-1-1 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	audiohmx-1-1 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	audiohvx-2-1 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	audiohmx-2-1 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	pcie-1 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	nsphvx-0-0 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	nsphvx-0-2 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	nsphmx-0-0-0 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	nsphmx-0-1-0 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	nsphvx-1-0 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	nsphvx-1-2 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	nsphmx-1-0-0 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	nsphmx-1-1-0 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	nsphvx-2-0 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	nsphvx-2-2 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	nsphmx-2-0-0 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	nsphmx-2-1-0 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	nsphvx-3-0 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	nsphvx-3-2 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	nsphmx-3-0-0 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	nsphmx-3-1-0 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	nsphvx-0-1 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	nsphvx-0-3 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	nsphmx-0-0-1 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	nsphmx-0-1-1 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	nsphvx-1-1 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	nsphvx-1-3 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	nsphmx-1-0-1 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	nsphmx-1-1-1 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	nsphvx-2-1 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	nsphvx-2-3 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	nsphmx-2-0-1 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	nsphmx-2-1-1 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	nsphvx-3-1 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	nsphvx-3-3 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	nsphmx-3-0-1 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	nsphmx-3-1-1 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	amux-6 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	gpuss-0-0-0-0 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	gpuss-0-1-0-0 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	gpuss-0-2-0-0 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	gpucore-0-0-0 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	gpuss-1-0 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	gpuss-1-1 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	cv-0 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	video-0 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	camera-1 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	ddr-2-0 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	ddr-3-0 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	gpuss-0-0-1-1 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	gpuss-0-1-1-1 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	gpuss-0-2-1-1 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	gpucore-0-1-1 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	amux-7 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	gpuss-0-0-1-0 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	gpuss-0-1-1-0 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	gpuss-0-2-1-0 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	gpucore-0-1-0 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	gpuss-1-2 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	gpucore-1-0 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	cv-1 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	video-1 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	camera-2 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	ddr-2-1 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	ddr-3-1 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	gpuss-0-0-0-1 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	gpuss-0-1-0-1 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	gpuss-0-2-0-1 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	gpucore-0-0-1 {
+		trip-point2 {
+			temperature = <115000>;
+			hysteresis = <3000>;
+			type = "critical";
+		};
+	};
+
+	pm_kai_5_thermal {
+		cooling-maps {
+			map0 {
+				trip = <&kai_j_trip1>;
+				cooling-device = <&CPU0 6 6>;
+			};
+		};
+	};
+
+	pm_kai_6_thermal {
+		cooling-maps {
+			map0 {
+				trip = <&kai_k_trip1>;
+				cooling-device = <&CPU6 6 6>;
+			};
+
+			map1 {
+				trip = <&kai_k_trip1>;
+				cooling-device = <&CPU12 6 6>;
+			};
+		};
+	};
+
+	pm_kobra_thermal {
+		cooling-maps {
+			map0 {
+				trip = <&pm_kobra_trip1>;
+				cooling-device = <&CPU0 6 6>;
+			};
+
+			map1 {
+				trip = <&pm_kobra_trip1>;
+				cooling-device = <&CPU6 6 6>;
+			};
+
+			map2 {
+				trip = <&pm_kobra_trip1>;
+				cooling-device = <&CPU12 6 6>;
 			};
 		};
 	};

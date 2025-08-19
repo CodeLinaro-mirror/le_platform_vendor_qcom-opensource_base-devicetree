@@ -1566,7 +1566,7 @@
 
 			ccu_gpi_dma0: dma-controller0@9b56000 {
 				compatible = "qcom,sa8797-ccu-gpi-dma";
-				#dma-cells = <4>;
+				#dma-cells = <5>;
 				reg = <0x0 0x009b56000 0x0 0x30000>;
 				dma-channels = <15>;
 				dma-channel-mask = <0x7fff>;
@@ -1589,12 +1589,12 @@
 				ccu_i2c0: i2c@9b86000 {
 					compatible = "qcom,sa8797p-geni-i2c-ccu";
 					reg = <0x0 0x9b86000 0x0 0x2000>;
-					dmas = <&ccu_gpi_dma0 0 0 QCOM_GPI_I2C 1>,
-					       <&ccu_gpi_dma0 1 0 QCOM_GPI_I2C 1>,
-					       <&ccu_gpi_dma0 0 0 QCOM_GPI_I2C 2>,
-					       <&ccu_gpi_dma0 1 0 QCOM_GPI_I2C 2>,
-					       <&ccu_gpi_dma0 0 0 QCOM_GPI_I2C 3>,
-					       <&ccu_gpi_dma0 1 0 QCOM_GPI_I2C 3>;
+					dmas = <&ccu_gpi_dma0 0 0 QCOM_GPI_I2C 1 512>,
+					       <&ccu_gpi_dma0 1 0 QCOM_GPI_I2C 1 512>,
+					       <&ccu_gpi_dma0 0 0 QCOM_GPI_I2C 2 512>,
+					       <&ccu_gpi_dma0 1 0 QCOM_GPI_I2C 2 512>,
+					       <&ccu_gpi_dma0 0 0 QCOM_GPI_I2C 3 512>,
+					       <&ccu_gpi_dma0 1 0 QCOM_GPI_I2C 3 512>;
 					dma-names = "tx",
 						    "rx",
 						    "tx1",
@@ -1608,12 +1608,12 @@
 				ccu_i2c1: i2c@9b88000 {
 					compatible = "qcom,sa8797p-geni-i2c-ccu";
 					reg = <0x0 0x9b88000 0x0 0x2000>;
-					dmas = <&ccu_gpi_dma0 0 1 QCOM_GPI_I2C 4>,
-					       <&ccu_gpi_dma0 1 1 QCOM_GPI_I2C 4>,
-					       <&ccu_gpi_dma0 0 1 QCOM_GPI_I2C 5>,
-					       <&ccu_gpi_dma0 1 1 QCOM_GPI_I2C 5>,
-					       <&ccu_gpi_dma0 0 1 QCOM_GPI_I2C 6>,
-					       <&ccu_gpi_dma0 1 1 QCOM_GPI_I2C 6>;
+					dmas = <&ccu_gpi_dma0 0 1 QCOM_GPI_I2C 4 512>,
+					       <&ccu_gpi_dma0 1 1 QCOM_GPI_I2C 4 512>,
+					       <&ccu_gpi_dma0 0 1 QCOM_GPI_I2C 5 512>,
+					       <&ccu_gpi_dma0 1 1 QCOM_GPI_I2C 5 512>,
+					       <&ccu_gpi_dma0 0 1 QCOM_GPI_I2C 6 512>,
+					       <&ccu_gpi_dma0 1 1 QCOM_GPI_I2C 6 512>;
 					dma-names = "tx",
 						    "rx",
 						    "tx1",
@@ -1627,12 +1627,12 @@
 				ccu_i2c2: i2c@9b8a000 {
 					compatible = "qcom,sa8797p-geni-i2c-ccu";
 					reg = <0x0 0x9b8a000 0x0 0x2000>;
-					dmas = <&ccu_gpi_dma0 0 2 QCOM_GPI_I2C 7>,
-					       <&ccu_gpi_dma0 1 2 QCOM_GPI_I2C 7>,
-					       <&ccu_gpi_dma0 0 2 QCOM_GPI_I2C 8>,
-					       <&ccu_gpi_dma0 1 2 QCOM_GPI_I2C 8>,
-					       <&ccu_gpi_dma0 0 2 QCOM_GPI_I2C 9>,
-					       <&ccu_gpi_dma0 1 2 QCOM_GPI_I2C 9>;
+					dmas = <&ccu_gpi_dma0 0 2 QCOM_GPI_I2C 7 512>,
+					       <&ccu_gpi_dma0 1 2 QCOM_GPI_I2C 7 512>,
+					       <&ccu_gpi_dma0 0 2 QCOM_GPI_I2C 8 512>,
+					       <&ccu_gpi_dma0 1 2 QCOM_GPI_I2C 8 512>,
+					       <&ccu_gpi_dma0 0 2 QCOM_GPI_I2C 9 512>,
+					       <&ccu_gpi_dma0 1 2 QCOM_GPI_I2C 9 512>;
 					dma-names = "tx",
 						    "rx",
 						    "tx1",
@@ -1646,12 +1646,12 @@
 				ccu_i2c3: i2c@9b8c000 {
 					compatible = "qcom,sa8797p-geni-i2c-ccu";
 					reg = <0x0 0x9b8c000 0x0 0x2000>;
-					dmas = <&ccu_gpi_dma0 0 3 QCOM_GPI_I2C 10>,
-					       <&ccu_gpi_dma0 1 3 QCOM_GPI_I2C 10>,
-					       <&ccu_gpi_dma0 0 3 QCOM_GPI_I2C 11>,
-					       <&ccu_gpi_dma0 1 3 QCOM_GPI_I2C 11>,
-					       <&ccu_gpi_dma0 0 3 QCOM_GPI_I2C 12>,
-					       <&ccu_gpi_dma0 1 3 QCOM_GPI_I2C 12>;
+					dmas = <&ccu_gpi_dma0 0 3 QCOM_GPI_I2C 10 512>,
+					       <&ccu_gpi_dma0 1 3 QCOM_GPI_I2C 10 512>,
+					       <&ccu_gpi_dma0 0 3 QCOM_GPI_I2C 11 512>,
+					       <&ccu_gpi_dma0 1 3 QCOM_GPI_I2C 11 512>,
+					       <&ccu_gpi_dma0 0 3 QCOM_GPI_I2C 12 512>,
+					       <&ccu_gpi_dma0 1 3 QCOM_GPI_I2C 12 512>;
 					dma-names = "tx",
 						    "rx",
 						    "tx1",
@@ -1665,12 +1665,12 @@
 				ccu_i2c4: i2c@9b8e000 {
 					compatible = "qcom,sa8797p-geni-i2c-ccu";
 					reg = <0x0 0x9b8e000 0x0 0x2000>;
-					dmas = <&ccu_gpi_dma0 0 4 QCOM_GPI_I2C 13>,
-					       <&ccu_gpi_dma0 1 4 QCOM_GPI_I2C 13>,
-					       <&ccu_gpi_dma0 0 4 QCOM_GPI_I2C 14>,
-					       <&ccu_gpi_dma0 1 4 QCOM_GPI_I2C 14>,
-					       <&ccu_gpi_dma0 0 4 QCOM_GPI_I2C 15>,
-					       <&ccu_gpi_dma0 1 4 QCOM_GPI_I2C 15>;
+					dmas = <&ccu_gpi_dma0 0 4 QCOM_GPI_I2C 13 512>,
+					       <&ccu_gpi_dma0 1 4 QCOM_GPI_I2C 13 512>,
+					       <&ccu_gpi_dma0 0 4 QCOM_GPI_I2C 14 512>,
+					       <&ccu_gpi_dma0 1 4 QCOM_GPI_I2C 14 512>,
+					       <&ccu_gpi_dma0 0 4 QCOM_GPI_I2C 15 512>,
+					       <&ccu_gpi_dma0 1 4 QCOM_GPI_I2C 15 512>;
 					dma-names = "tx",
 						    "rx",
 						    "tx1",
@@ -1684,7 +1684,7 @@
 
 			ccu_gpi_dma1: dma-controller1@9bd6000 {
 				compatible = "qcom,sa8797-ccu-gpi-dma";
-				#dma-cells = <4>;
+				#dma-cells = <5>;
 				reg = <0x0 0x009bd6000 0x0 0x30000>;
 				dma-channels = <15>;
 				dma-channel-mask = <0x7fff>;
@@ -1707,12 +1707,12 @@
 				ccu_i2c5: i2c@9c06000 {
 					compatible = "qcom,sa8797p-geni-i2c-ccu";
 					reg = <0x0 0x9c06000 0x0 0x2000>;
-					dmas = <&ccu_gpi_dma1 0 0 QCOM_GPI_I2C 1>,
-					       <&ccu_gpi_dma1 1 0 QCOM_GPI_I2C 1>,
-					       <&ccu_gpi_dma1 0 0 QCOM_GPI_I2C 2>,
-					       <&ccu_gpi_dma1 1 0 QCOM_GPI_I2C 2>,
-					       <&ccu_gpi_dma1 0 0 QCOM_GPI_I2C 3>,
-					       <&ccu_gpi_dma1 1 0 QCOM_GPI_I2C 3>;
+					dmas = <&ccu_gpi_dma1 0 0 QCOM_GPI_I2C 1 512>,
+					       <&ccu_gpi_dma1 1 0 QCOM_GPI_I2C 1 512>,
+					       <&ccu_gpi_dma1 0 0 QCOM_GPI_I2C 2 512>,
+					       <&ccu_gpi_dma1 1 0 QCOM_GPI_I2C 2 512>,
+					       <&ccu_gpi_dma1 0 0 QCOM_GPI_I2C 3 512>,
+					       <&ccu_gpi_dma1 1 0 QCOM_GPI_I2C 3 512>;
 					dma-names = "tx",
 						    "rx",
 						    "tx1",
@@ -1726,12 +1726,12 @@
 				ccu_i2c6: i2c@9c08000 {
 					compatible = "qcom,sa8797p-geni-i2c-ccu";
 					reg = <0x0 0x9c08000 0x0 0x2000>;
-					dmas = <&ccu_gpi_dma1 0 1 QCOM_GPI_I2C 4>,
-					       <&ccu_gpi_dma1 1 1 QCOM_GPI_I2C 4>,
-					       <&ccu_gpi_dma1 0 1 QCOM_GPI_I2C 5>,
-					       <&ccu_gpi_dma1 1 1 QCOM_GPI_I2C 5>,
-					       <&ccu_gpi_dma1 0 1 QCOM_GPI_I2C 6>,
-					       <&ccu_gpi_dma1 1 1 QCOM_GPI_I2C 6>;
+					dmas = <&ccu_gpi_dma1 0 1 QCOM_GPI_I2C 4 512>,
+					       <&ccu_gpi_dma1 1 1 QCOM_GPI_I2C 4 512>,
+					       <&ccu_gpi_dma1 0 1 QCOM_GPI_I2C 5 512>,
+					       <&ccu_gpi_dma1 1 1 QCOM_GPI_I2C 5 512>,
+					       <&ccu_gpi_dma1 0 1 QCOM_GPI_I2C 6 512>,
+					       <&ccu_gpi_dma1 1 1 QCOM_GPI_I2C 6 512>;
 					dma-names = "tx",
 						    "rx",
 						    "tx1",
@@ -1745,12 +1745,12 @@
 				ccu_i2c7: i2c@9c0a000 {
 					compatible = "qcom,sa8797p-geni-i2c-ccu";
 					reg = <0x0 0x9c0a000 0x0 0x2000>;
-					dmas = <&ccu_gpi_dma1 0 2 QCOM_GPI_I2C 7>,
-					       <&ccu_gpi_dma1 1 2 QCOM_GPI_I2C 7>,
-					       <&ccu_gpi_dma1 0 2 QCOM_GPI_I2C 8>,
-					       <&ccu_gpi_dma1 1 2 QCOM_GPI_I2C 8>,
-					       <&ccu_gpi_dma1 0 2 QCOM_GPI_I2C 9>,
-					       <&ccu_gpi_dma1 1 2 QCOM_GPI_I2C 9>;
+					dmas = <&ccu_gpi_dma1 0 2 QCOM_GPI_I2C 7 512>,
+					       <&ccu_gpi_dma1 1 2 QCOM_GPI_I2C 7 512>,
+					       <&ccu_gpi_dma1 0 2 QCOM_GPI_I2C 8 512>,
+					       <&ccu_gpi_dma1 1 2 QCOM_GPI_I2C 8 512>,
+					       <&ccu_gpi_dma1 0 2 QCOM_GPI_I2C 9 512>,
+					       <&ccu_gpi_dma1 1 2 QCOM_GPI_I2C 9 512>;
 					dma-names = "tx",
 						    "rx",
 						    "tx1",
@@ -1764,12 +1764,12 @@
 				ccu_i2c8: i2c@9c0c000 {
 					compatible = "qcom,sa8797p-geni-i2c-ccu";
 					reg = <0x0 0x9c0c000 0x0 0x2000>;
-					dmas = <&ccu_gpi_dma1 0 3 QCOM_GPI_I2C 10>,
-					       <&ccu_gpi_dma1 1 3 QCOM_GPI_I2C 10>,
-					       <&ccu_gpi_dma1 0 3 QCOM_GPI_I2C 11>,
-					       <&ccu_gpi_dma1 1 3 QCOM_GPI_I2C 11>,
-					       <&ccu_gpi_dma1 0 3 QCOM_GPI_I2C 12>,
-					       <&ccu_gpi_dma1 1 3 QCOM_GPI_I2C 12>;
+					dmas = <&ccu_gpi_dma1 0 3 QCOM_GPI_I2C 10 512>,
+					       <&ccu_gpi_dma1 1 3 QCOM_GPI_I2C 10 512>,
+					       <&ccu_gpi_dma1 0 3 QCOM_GPI_I2C 11 512>,
+					       <&ccu_gpi_dma1 1 3 QCOM_GPI_I2C 11 512>,
+					       <&ccu_gpi_dma1 0 3 QCOM_GPI_I2C 12 512>,
+					       <&ccu_gpi_dma1 1 3 QCOM_GPI_I2C 12 512>;
 					dma-names = "tx",
 						    "rx",
 						    "tx1",
@@ -1783,12 +1783,12 @@
 				ccu_i2c9: i2c@9c0e000 {
 					compatible = "qcom,sa8797p-geni-i2c-ccu";
 					reg = <0x0 0x9c0e000 0x0 0x2000>;
-					dmas = <&ccu_gpi_dma1 0 4 QCOM_GPI_I2C 13>,
-					       <&ccu_gpi_dma1 1 4 QCOM_GPI_I2C 13>,
-					       <&ccu_gpi_dma1 0 4 QCOM_GPI_I2C 14>,
-					       <&ccu_gpi_dma1 1 4 QCOM_GPI_I2C 14>,
-					       <&ccu_gpi_dma1 0 4 QCOM_GPI_I2C 15>,
-					       <&ccu_gpi_dma1 1 4 QCOM_GPI_I2C 15>;
+					dmas = <&ccu_gpi_dma1 0 4 QCOM_GPI_I2C 13 512>,
+					       <&ccu_gpi_dma1 1 4 QCOM_GPI_I2C 13 512>,
+					       <&ccu_gpi_dma1 0 4 QCOM_GPI_I2C 14 512>,
+					       <&ccu_gpi_dma1 1 4 QCOM_GPI_I2C 14 512>,
+					       <&ccu_gpi_dma1 0 4 QCOM_GPI_I2C 15 512>,
+					       <&ccu_gpi_dma1 1 4 QCOM_GPI_I2C 15 512>;
 					dma-names = "tx",
 						    "rx",
 						    "tx1",
@@ -1944,6 +1944,11 @@
 				msi-controller;
 				#msi-cells = <1>;
 			};
+		};
+
+		sram@c30f000 {
+			compatible = "qcom,rpmh-stats";
+			reg = <0x0 0xC30F000 0x0 0x400>;
 		};
 
 		pdc: interrupt-controller@b220000 {
@@ -2837,80 +2842,172 @@
 		};
 
 		qfprom_tcsr_softsku_0: qfprom@1f97070 {
-			compatible = "qcom,sm8450-qfprom";
+			compatible = "qcom,qfprom";
 			reg = <0x0 0x1f97070 0x0 0x4>;
 			#address-cells = <1>;
 			#size-cells = <1>;
 		};
 
 		qfprom_tcsr_softsku_1: qfprom@1f97074 {
-			compatible = "qcom,sm8450-qfprom";
+			compatible = "qcom,qfprom";
 			reg = <0x0 0x1f97074 0x0 0x4>;
 			#address-cells = <1>;
 			#size-cells = <1>;
 		};
 
 		qfprom_tcsr_softsku_2: qfprom@1f97078 {
-			compatible = "qcom,sm8450-qfprom";
+			compatible = "qcom,qfprom";
 			reg = <0x0 0x1f97078 0x0 0x4>;
 			#address-cells = <1>;
 			#size-cells = <1>;
 		};
 
 		qfprom_tcsr_softsku_3: qfprom@1f9707c {
-			compatible = "qcom,sm8450-qfprom";
+			compatible = "qcom,qfprom";
 			reg = <0x0 0x1f9707c 0x0 0x4>;
 			#address-cells = <1>;
 			#size-cells = <1>;
 		};
 
 		qfprom_tcsr_softsku_4: qfprom@1f97080 {
-			compatible = "qcom,sm8450-qfprom";
+			compatible = "qcom,qfprom";
 			reg = <0x0 0x1f97080 0x0 0x4>;
 			#address-cells = <1>;
 			#size-cells = <1>;
 		};
 
 		qfprom_tcsr_qtv_0: qfprom@1f96004 {
-			compatible = "qcom,sm8450-qfprom";
+			compatible = "qcom,qfprom";
 			reg = <0x0 0x1f96004 0x0 0x4>;
 			#address-cells = <1>;
 			#size-cells = <1>;
 		};
 
 		qfprom_tcsr_qtv_1: qfprom@1f96008 {
-			compatible = "qcom,sm8450-qfprom";
+			compatible = "qcom,qfprom";
 			reg = <0x0 0x1f96008 0x0 0x4>;
 			#address-cells = <1>;
 			#size-cells = <1>;
 		};
 
 		qfprom_tcsr_qtv_2: qfprom@1f9600c {
-			compatible = "qcom,sm8450-qfprom";
+			compatible = "qcom,qfprom";
 			reg = <0x0 0x1f9600c 0x0 0x4>;
 			#address-cells = <1>;
 			#size-cells = <1>;
 		};
 
 		qfprom_tcsr_qtv_3: qfprom@1f96010 {
-			compatible = "qcom,sm8450-qfprom";
+			compatible = "qcom,qfprom";
 			reg = <0x0 0x1f96010 0x0 0x4>;
 			#address-cells = <1>;
 			#size-cells = <1>;
 		};
 
 		qfprom_tcsr_qtv_4: qfprom@1f96014 {
-			compatible = "qcom,sm8450-qfprom";
+			compatible = "qcom,qfprom";
 			reg = <0x0 0x1f96014 0x0 0x4>;
 			#address-cells = <1>;
 			#size-cells = <1>;
 		};
 
 		qfprom_tcsr_qtv_5: qfprom@1f96018 {
-			compatible = "qcom,sm8450-qfprom";
+			compatible = "qcom,qfprom";
 			reg = <0x0 0x1f96018 0x0 0x4>;
 			#address-cells = <1>;
 			#size-cells = <1>;
+		};
+
+		qcom_mpam: qcom,mpam {
+			compatible = "qcom,mpam";
+		};
+
+		cpu_mpam: qcom,cpu_mpam {
+			compatible = "qcom,cpu-mpam";
+			reg = <0x0 0x80580000 0x0 0x400>;
+			reg-names = "mon-base";
+
+			L2_0 {
+				qcom,msc-id = <0>;
+				qcom,msc-name = "L2_0";
+			};
+
+			L2_1 {
+				qcom,msc-id = <1>;
+				qcom,msc-name = "L2_1";
+			};
+
+			L2_2 {
+				qcom,msc-id = <2>;
+				qcom,msc-name = "L2_2";
+			};
+		};
+
+		noc_bw_mpam: qcom,noc_bw_mpam {
+			compatible = "qcom,platform-mpam";
+			reg = <0x0 0x80580400 0x0 0x400>;
+			reg-names = "mon-base";
+			qcom,msc-id = <3>;
+			qcom,msc-name = "noc_bw";
+			qcom,gears = "low", "medium", "high", "veryhigh";
+			qcom,gear-id = <1>, <2>, <3>, <4>;
+
+			cpu_cluster0 {
+				qcom,client-id = <0x1>;
+				qcom,client-name = "cpu_cluster0";
+			};
+
+			cpu_cluster1 {
+				qcom,client-id = <0x2>;
+				qcom,client-name = "cpu_cluster1";
+			};
+
+			cpu_cluster2 {
+				qcom,client-id = <0x4>;
+				qcom,client-name = "cpu_cluster2";
+			};
+		};
+
+		mpam_msc {
+			compatible = "qcom,mpam-msc";
+			ranges;
+
+			slc-mpam@84030800 {
+				compatible = "qcom,slc-mpam";
+				reg = <0x0 0x84030800 0x0 0x400>;
+				reg-names = "mon-base";
+				qcom,msc-id = <4>;
+				qcom,msc-name = "slc";
+				qcom,dev-index = <0>;
+				qcom,num-read-miss-cfg = <2>;
+				qcom,num-cap-cfg = <5>;
+				qcom,slc-clients = "APPS_CLIENT", "GPU_CLIENT";
+			};
+		};
+
+		slc_mpam: qcom,slc_mpam {
+			compatible = "qcom,mpam-slc";
+			qcom,msc-name = "slc";
+
+			apps {
+				qcom,client-id = <0>;
+				qcom,client-name = "apps";
+
+				part-id0 {
+					qcom,part-id = <0>;
+				};
+
+				part-id1 {
+					qcom,part-id = <1>;
+				};
+
+			};
+
+			gpu {
+				qcom,client-id = <1>;
+				qcom,client-name = "gpu";
+			};
+
 		};
 
 	};
@@ -5832,3 +5929,4 @@
 #include "sa8797p-pinctrl.dtsi"
 #include "sa8797p-usb.dtsi"
 #include "sa8797p-pcie.dtsi"
+#include "sa8797p-pmic.dtsi"

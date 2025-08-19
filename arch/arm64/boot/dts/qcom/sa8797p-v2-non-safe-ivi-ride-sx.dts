@@ -1,0 +1,46 @@
+// SPDX-License-Identifier: BSD-3-Clause
+/*
+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+ */
+
+/dts-v1/;
+
+#include "sa8x97p.dtsi"
+#include "sa8x97p-v2.dtsi"
+#include "sa8797p.dtsi"
+#include "sa8x97p-non-safe.dtsi"
+
+/ {
+	model = "Qualcomm Technologies, Inc. SA8797P v2 NON-SAFE IVI RIDE-SX";
+	compatible = "qcom,sa8797p-ride-sx", "qcom,non-safe-ivi", "qcom,sa8797p";
+	qcom,msm-id = <690 0x20000>;
+	qcom,board-id = <0x01010025 1>;
+};
+
+&ethernet0 {
+	phy-mode = "10gbase-r";
+
+	/delete-property/ interrupts;
+	/delete-property/ interrupt-names;
+
+	interrupts = <GIC_SPI 821 IRQ_TYPE_LEVEL_HIGH>;
+	interrupt-names = "macirq";
+
+	fixed-link {
+		status = "okay";
+		speed = <10000>;
+		full-duplex;
+	};
+};
+
+&pcie0 {
+	power-domains = <&scmi5_pd 0>;
+	power-domain-names = "power";
+	status = "okay";
+};
+
+&pcie1 {
+	power-domains = <&scmi6_pd 0>;
+	power-domain-names = "power";
+	status = "okay";
+};
