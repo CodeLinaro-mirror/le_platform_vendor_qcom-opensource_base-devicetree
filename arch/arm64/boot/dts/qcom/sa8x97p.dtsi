@@ -1550,10 +1550,12 @@
 			#size-cells = <2>;
 			reg = <0x0 0x09b96000 0x0 0x1000>,
 			      <0x0 0x09c16000 0x0 0x1000>,
+			      <0x0 0x09c1e000 0x0 0x1000>,
 			      <0x0 0x09c1f000 0x0 0x1000>,
 			      <0x0 0x09c20000 0x0 0x1000>;
 			reg-names = "ccu_qupv3_0_common",
 				    "ccu_qupv3_1_common",
+				    "ccu_top",
 				    "ccu_qupv3_0_IRQ",
 				    "ccu_qupv3_1_IRQ";
 			qcom,common-reg-offset = <0x40000>;
