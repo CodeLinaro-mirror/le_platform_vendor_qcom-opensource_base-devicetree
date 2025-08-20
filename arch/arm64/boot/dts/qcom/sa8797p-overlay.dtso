@@ -480,15 +480,6 @@
 		qcom,dev-name = "scmi_wlan1";
 	};
 
-	scmi_wlan1 {
-		compatible = "qcom,uscmi";
-
-		power-domains = <&scmi45_pd 0>, <&scmi45_pd 1>;
-		power-domain-names = "power_regulator", "power_gpio";
-
-		qcom,dev-name = "scmi_wlan1";
-	};
-
 	tlmm_fusa {
 		compatible = "qcom,tlmm-fusa";
 		interrupts = <GIC_SPI 97 IRQ_TYPE_EDGE_RISING>;
