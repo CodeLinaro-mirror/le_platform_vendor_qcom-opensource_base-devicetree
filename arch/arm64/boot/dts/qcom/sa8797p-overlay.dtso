@@ -428,7 +428,7 @@
 		qcom,dev-name = "scmi_emac1";
 	};
 
-	scmi_bluetooth0 {
+	scmi_bluetooth {
 		compatible = "qcom,uscmi";
 
 		power-domains = <&scmi25_pd 0>, <&scmi25_pd 1>;
@@ -462,13 +462,13 @@
 		qcom,dev-name = "scmi_pcie3";
 	};
 
-	scmi_wlan0 {
+	scmi_wlan {
 		compatible = "qcom,uscmi";
 
 		power-domains = <&scmi24_pd 0>, <&scmi24_pd 1>;
 		power-domain-names = "power_regulator", "power_gpio";
 
-		qcom,dev-name = "scmi_wlan0";
+		qcom,dev-name = "scmi_wlan";
 	};
 
 	scmi_wlan1 {
