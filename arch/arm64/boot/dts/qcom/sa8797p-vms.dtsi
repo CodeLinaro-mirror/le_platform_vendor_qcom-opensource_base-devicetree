@@ -801,7 +801,7 @@
 
 	auto_vm_0_mem_0: auto_vm_0_mem_0@A4000000 {
 		no-map;
-		reg = <0x0 0xA4000000 0x0 0x16E00000>;
+		reg = <0x0 0xA4000000 0x0 0x16000000>;
 	};
 
 	auto_vm_0_mem_1: auto_vm_0_mem_1@C8000000 {
