@@ -6,7 +6,9 @@
 / {
 	pcie0: pci@5000000000 {
 		compatible = "qcom,pcie-ecam-rc";
-		reg = <0x50 0x00000000 0x0 0x10000000>;
+		reg = <0x50 0x00000000 0x0 0x10000000>,
+		      <0x00 0x01b80000 0x0 0x00004000>;
+		reg-names = "dbi", "parf";
 
 		device_type = "pci";
 
@@ -19,6 +21,14 @@
 		bus-range = <0x00 0xff>;
 
 		linux,pci-domain = <0>;
+
+		interrupts = <GIC_SPI 140 IRQ_TYPE_LEVEL_HIGH>;
+		interrupt-names = "global_int";
+
+		interrupt-parent = <&intc>;
+
+		rasdp-off = <0x43C>;
+		safety-supported;
 
 		msi-map = <0x0 &gic_its 0x80000 0x10000>;
 
@@ -37,7 +47,9 @@
 
 	pcie1: pci@4800000000 {
 		compatible = "qcom,pcie-ecam-rc";
-		reg = <0x48 0x00000000 0x0 0x10000000>;
+		reg = <0x48 0x00000000 0x0 0x10000000>,
+		      <0x00 0x01b88000 0x0 0x00004000>;
+		reg-names = "dbi", "parf";
 
 		device_type = "pci";
 
@@ -50,6 +62,14 @@
 		bus-range = <0x00 0xff>;
 
 		linux,pci-domain = <1>;
+
+		interrupts = <GIC_SPI 102 IRQ_TYPE_LEVEL_HIGH>;
+		interrupt-names = "global_int";
+
+		interrupt-parent = <&intc>;
+
+		rasdp-off = <0x39C>;
+		safety-supported;
 
 		msi-map = <0x0 &gic_its 0x90000 0x10000>;
 
