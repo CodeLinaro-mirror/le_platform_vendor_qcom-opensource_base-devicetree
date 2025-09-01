@@ -9,8 +9,7 @@
 		compatible = "qcom,kpss-wdt";
 		reg = <0x0 0x17826000 0x0 0x1000>;
 		clocks = <&sleep_clk>;
-		interrupts = <GIC_SPI 0 IRQ_TYPE_EDGE_RISING>;
-		status = "disabled";
+		interrupts = <GIC_ESPI 848 IRQ_TYPE_EDGE_RISING>;
 	};
 };
 
