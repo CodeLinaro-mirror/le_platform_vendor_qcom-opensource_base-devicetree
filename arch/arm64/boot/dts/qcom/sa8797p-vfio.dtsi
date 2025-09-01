@@ -285,6 +285,61 @@
 		iommus = <&apps_smmu_2 0x0308 0x0040>,
 		       <&apps_smmu_2 0x0348 0x0040>,
 		       <&apps_smmu_2 0x0368 0x0000>;
+		qcom,iommu-dma-addr-range = <0x0 0x1000 0x2 0x0>;
+		qcom,iova-align-shift-max = <21>;
+		dma-coherent;
+	};
+
+	cdsp0_cb@9 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x9 0x0 0x0>;
+		iommus = <&apps_smmu_2 0x0309 0x0040>,
+		       <&apps_smmu_2 0x0349 0x0040>,
+		       <&apps_smmu_2 0x0369 0x0000>;
+		qcom,iommu-dma-addr-range = <0x0 0x1000 0x2 0x0>;
+		qcom,iova-align-shift-max = <21>;
+		dma-coherent;
+	};
+
+	cdsp0_cb@a {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0xa 0x0 0x0>;
+		iommus = <&apps_smmu_2 0x030a 0x0040>,
+		       <&apps_smmu_2 0x034a 0x0040>,
+		       <&apps_smmu_2 0x036a 0x0000>;
+		qcom,iommu-dma-addr-range = <0x0 0x1000 0x2 0x0>;
+		qcom,iova-align-shift-max = <21>;
+		dma-coherent;
+	};
+
+	cdsp0_cb@b {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0xb 0x0 0x0>;
+		iommus = <&apps_smmu_2 0x030b 0x0040>,
+		       <&apps_smmu_2 0x034b 0x0040>,
+		       <&apps_smmu_2 0x036b 0x0000>;
+		qcom,iommu-dma-addr-range = <0x0 0x1000 0x2 0x0>;
+		qcom,iova-align-shift-max = <21>;
+		dma-coherent;
+	};
+
+	cdsp0_cb@c {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0xc 0x0 0x0>;
+		iommus = <&apps_smmu_2 0x030c 0x0040>,
+		       <&apps_smmu_2 0x034c 0x0040>,
+		       <&apps_smmu_2 0x036c 0x0000>;
+		qcom,iommu-dma-addr-range = <0x0 0x1000 0x2 0x0>;
+		qcom,iova-align-shift-max = <21>;
+		dma-coherent;
+	};
+
+	cdsp0_cb@d {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0xd 0x0 0x0>;
+		iommus = <&apps_smmu_2 0x030d 0x0000>,
+		       <&apps_smmu_2 0x034d 0x0020>,
+		       <&apps_smmu_2 0x036d 0x0020>;
 		qcom,iommu-dma-addr-range = <0x4 0x0 0x80 0x0>;
 		qcom,iova-align-shift-max = <21>;
 		dma-coherent;
@@ -378,6 +433,61 @@
 		dma-coherent;
 	};
 
+	cdsp1_cb@9 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x9 0x0 0x0>;
+		iommus = <&apps_smmu_2 0x0709 0x0040>,
+		       <&apps_smmu_2 0x0749 0x0040>,
+		       <&apps_smmu_2 0x0769 0x0000>;
+		qcom,iommu-dma-addr-range = <0x0 0x1000 0x2 0x0>;
+		qcom,iova-align-shift-max = <21>;
+		dma-coherent;
+	};
+
+	cdsp1_cb@a {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0xa 0x0 0x0>;
+		iommus = <&apps_smmu_2 0x070a 0x0040>,
+		       <&apps_smmu_2 0x074a 0x0040>,
+		       <&apps_smmu_2 0x076a 0x0000>;
+		qcom,iommu-dma-addr-range = <0x0 0x1000 0x2 0x0>;
+		qcom,iova-align-shift-max = <21>;
+		dma-coherent;
+	};
+
+	cdsp1_cb@b {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0xb 0x0 0x0>;
+		iommus = <&apps_smmu_2 0x070b 0x0040>,
+		       <&apps_smmu_2 0x074b 0x0040>,
+		       <&apps_smmu_2 0x076b 0x0000>;
+		qcom,iommu-dma-addr-range = <0x0 0x1000 0x2 0x0>;
+		qcom,iova-align-shift-max = <21>;
+		dma-coherent;
+	};
+
+	cdsp1_cb@c {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0xc 0x0 0x0>;
+		iommus = <&apps_smmu_2 0x070c 0x0040>,
+		       <&apps_smmu_2 0x074c 0x0040>,
+		       <&apps_smmu_2 0x076c 0x0000>;
+		qcom,iommu-dma-addr-range = <0x0 0x1000 0x2 0x0>;
+		qcom,iova-align-shift-max = <21>;
+		dma-coherent;
+	};
+
+	cdsp1_cb@d {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0xd 0x0 0x0>;
+		iommus = <&apps_smmu_2 0x070d 0x0000>,
+		       <&apps_smmu_2 0x074d 0x0020>,
+		       <&apps_smmu_2 0x076d 0x0020>;
+		qcom,iommu-dma-addr-range = <0x4 0x0 0x80 0x0>;
+		qcom,iova-align-shift-max = <21>;
+		dma-coherent;
+	};
+
 	cdsp2_cb@1 {
 		compatible = "qcom,vfio-platform";
 		reg = <0x0 0x1 0x0 0x0>;
@@ -466,6 +576,61 @@
 		dma-coherent;
 	};
 
+	cdsp2_cb@9 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x9 0x0 0x0>;
+		iommus = <&apps_smmu_2 0x0B09 0x0040>,
+		       <&apps_smmu_2 0x0B49 0x0040>,
+		       <&apps_smmu_2 0x0B69 0x0000>;
+		qcom,iommu-dma-addr-range = <0x0 0x1000 0x2 0x0>;
+		qcom,iova-align-shift-max = <21>;
+		dma-coherent;
+	};
+
+	cdsp2_cb@a {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0xa 0x0 0x0>;
+		iommus = <&apps_smmu_2 0x0B0a 0x0040>,
+		       <&apps_smmu_2 0x0B4a 0x0040>,
+		       <&apps_smmu_2 0x0B6a 0x0000>;
+		qcom,iommu-dma-addr-range = <0x0 0x1000 0x2 0x0>;
+		qcom,iova-align-shift-max = <21>;
+		dma-coherent;
+	};
+
+	cdsp2_cb@b {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0xb 0x0 0x0>;
+		iommus = <&apps_smmu_2 0x0B0b 0x0040>,
+		       <&apps_smmu_2 0x0B4b 0x0040>,
+		       <&apps_smmu_2 0x0B6b 0x0000>;
+		qcom,iommu-dma-addr-range = <0x0 0x1000 0x2 0x0>;
+		qcom,iova-align-shift-max = <21>;
+		dma-coherent;
+	};
+
+	cdsp2_cb@c {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0xc 0x0 0x0>;
+		iommus = <&apps_smmu_2 0x0B0c 0x0040>,
+		       <&apps_smmu_2 0x0B4c 0x0040>,
+		       <&apps_smmu_2 0x0B6c 0x0000>;
+		qcom,iommu-dma-addr-range = <0x0 0x1000 0x2 0x0>;
+		qcom,iova-align-shift-max = <21>;
+		dma-coherent;
+	};
+
+	cdsp2_cb@d {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0xd 0x0 0x0>;
+		iommus = <&apps_smmu_2 0x0B0d 0x0000>,
+		       <&apps_smmu_2 0x0B4d 0x0020>,
+		       <&apps_smmu_2 0x0B6d 0x0020>;
+		qcom,iommu-dma-addr-range = <0x4 0x0 0x80 0x0>;
+		qcom,iova-align-shift-max = <21>;
+		dma-coherent;
+	};
+
 	cdsp3_cb@1 {
 		compatible = "qcom,vfio-platform";
 		reg = <0x0 0x1 0x0 0x0>;
@@ -549,6 +714,61 @@
 		iommus = <&apps_smmu_2 0x0F08 0x0040>,
 		       <&apps_smmu_2 0x0F48 0x0040>,
 		       <&apps_smmu_2 0x0F68 0x0000>;
+		qcom,iommu-dma-addr-range = <0x4 0x0 0x80 0x0>;
+		qcom,iova-align-shift-max = <21>;
+		dma-coherent;
+	};
+
+	cdsp3_cb@9 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x9 0x0 0x0>;
+		iommus = <&apps_smmu_2 0x0F09 0x0040>,
+		       <&apps_smmu_2 0x0F49 0x0040>,
+		       <&apps_smmu_2 0x0F69 0x0000>;
+		qcom,iommu-dma-addr-range = <0x0 0x1000 0x2 0x0>;
+		qcom,iova-align-shift-max = <21>;
+		dma-coherent;
+	};
+
+	cdsp3_cb@a {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0xa 0x0 0x0>;
+		iommus = <&apps_smmu_2 0x0F0a 0x0040>,
+		       <&apps_smmu_2 0x0F4a 0x0040>,
+		       <&apps_smmu_2 0x0F6a 0x0000>;
+		qcom,iommu-dma-addr-range = <0x0 0x1000 0x2 0x0>;
+		qcom,iova-align-shift-max = <21>;
+		dma-coherent;
+	};
+
+	cdsp3_cb@b {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0xb 0x0 0x0>;
+		iommus = <&apps_smmu_2 0x0F0b 0x0040>,
+		       <&apps_smmu_2 0x0F4b 0x0040>,
+		       <&apps_smmu_2 0x0F6b 0x0000>;
+		qcom,iommu-dma-addr-range = <0x0 0x1000 0x2 0x0>;
+		qcom,iova-align-shift-max = <21>;
+		dma-coherent;
+	};
+
+	cdsp3_cb@c {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0xc 0x0 0x0>;
+		iommus = <&apps_smmu_2 0x0F0c 0x0040>,
+		       <&apps_smmu_2 0x0F4c 0x0040>,
+		       <&apps_smmu_2 0x0F6c 0x0000>;
+		qcom,iommu-dma-addr-range = <0x0 0x1000 0x2 0x0>;
+		qcom,iova-align-shift-max = <21>;
+		dma-coherent;
+	};
+
+	cdsp3_cb@d {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0xd 0x0 0x0>;
+		iommus = <&apps_smmu_2 0x0F0d 0x0000>,
+		       <&apps_smmu_2 0x0F4d 0x0020>,
+		       <&apps_smmu_2 0x0F6d 0x0020>;
 		qcom,iommu-dma-addr-range = <0x4 0x0 0x80 0x0>;
 		qcom,iova-align-shift-max = <21>;
 		dma-coherent;
