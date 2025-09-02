@@ -4,6 +4,7 @@
  */
 
 &soc {
+	/delete-node/ watchdog@17821000;
 
 	watchdog@17826000 {
 		compatible = "qcom,kpss-wdt";
