@@ -1295,7 +1295,9 @@
 		pinctrl-0 = <&aud_intfc4_sck_active &aud_intfc4_ws_active
 			&aud_intfc4_data0_active &aud_intfc4_data1_active
 			&aud_intfc5_sck_active &aud_intfc5_ws_active
-			&aud_intfc5_data0_active &aud_intfc5_data1_active>;
+			&aud_intfc5_data0_active &aud_intfc5_data1_active
+			&aud_intfc6_sck_active &aud_intfc6_ws_active
+			&aud_intfc6_data0_active &aud_intfc6_data1_active>;
 
 		interrupts = <GIC_SPI 88 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_0 0x0ABB 0x0>,
