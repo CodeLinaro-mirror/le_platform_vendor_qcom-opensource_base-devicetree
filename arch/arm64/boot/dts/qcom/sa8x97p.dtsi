@@ -838,11 +838,6 @@
 			reg = <0x0 0xa0100000 0x0 0x100000>;
 		};
 
-		cma_reserved: cma_region@ba200000 {
-			no-map;
-			reg = <0x0 0xba200000 0x0 0x200000>;
-		};
-
 		display_config_reserved: display_config_region@ba400000 {
 			no-map;
 			reg = <0x0 0xba400000 0x0 0xa00000>;
@@ -852,6 +847,11 @@
 			no-map;
 			reg = <0x0 0xbae00000 0x0 0x800000>;
 		};
+
+		mm_dspq: mm_dspq_region@ba200000 {
+                        no-map;
+                        reg = <0x0 0xba200000 0x0 0x200000>;
+                };
 
 		audio_config_mem: audio_config_region@bb600000 {
 			no-map;
