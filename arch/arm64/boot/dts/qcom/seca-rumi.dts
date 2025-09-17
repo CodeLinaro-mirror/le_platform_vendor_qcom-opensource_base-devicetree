@@ -1,0 +1,32 @@
+// SPDX-License-Identifier: BSD-3-Clause
+/*
+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+ */
+
+/dts-v1/;
+
+#include "seca.dtsi"
+
+/ {
+	model = "Qualcomm Technologies, Inc. SecaAU Rumi";
+	compatible = "qcom,secaau-rumi", "qcom,seca";
+	qcom,board-id = <0xf 0>;
+	aliases { };
+	chosen { };
+};
+
+&arch_timer {
+	clock-frequency = <19200000>;
+};
+
+&memtimer {
+	clock-frequency = <19200000>;
+};
+
+&sleep_clk {
+	clock-frequency = <32768>;
+};
+
+&xo_board_clk {
+	clock-frequency = <19200000>;
+};
