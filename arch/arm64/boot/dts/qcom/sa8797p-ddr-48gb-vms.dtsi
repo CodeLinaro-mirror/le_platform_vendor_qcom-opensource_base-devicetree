@@ -3,6 +3,8 @@
  * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
  */
 
+#include "oot-dt-bindings/qcom-shmem-sa8797p.h"
+
 &soc {
 	gh-secure-vm-loader@0 {
 		memory-region = <&auto_vm_0_mem_0 &auto_vm_0_mem_1 &auto_vm_0_mem_2>;
@@ -16,6 +18,9 @@
 				&vm_cp_pixel
 				&vm_cp_nonpixel
 				&vm_cp_bitstream
+				&vm_cp_b_pt_mem
+				&vm_cp_p_pt_mem
+				&vm_cp_np_pt_mem
 				&soccp_fe_vm_1>;
 	};
 };
@@ -49,15 +54,24 @@
 	vm_cp_b_pt_mem: vm_cp_b_pt_region@B1D000000 {
 		no-map;
 		reg = <0xB 0x1D000000 0x0 0x1000000>;
+		qcom,dst-vmids = <AC_VM_CP_B>;
+		qcom,dst-perms = <QCOM_PERM_RW>;
+		gunyah-label = <0x9A>;
 	};
 
 	vm_cp_p_pt_mem: vm_cp_p_pt_region@B1E000000 {
 		no-map;
 		reg = <0xB 0x1E000000 0x0 0x1000000>;
+		qcom,dst-vmids = <AC_VM_CP_P>;
+		qcom,dst-perms = <QCOM_PERM_RW>;
+		gunyah-label = <0x9B>;
 	};
 
 	vm_cp_np_pt_mem: vm_cp_np_pt_region@B1F000000 {
 		no-map;
 		reg = <0xB 0x1F000000 0x0 0x1000000>;
+		qcom,dst-vmids = <AC_VM_CP_NP>;
+		qcom,dst-perms = <QCOM_PERM_RW>;
+		gunyah-label = <0x9C>;
 	};
 };
