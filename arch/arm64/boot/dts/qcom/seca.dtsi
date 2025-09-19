@@ -568,6 +568,13 @@
 		#size-cells = <2>;
 		ranges = <0 0 0 0 0x10 0>;
 
+		dcc: dma@100ff000 {
+			compatible = "qcom,seca-dcc", "qcom,dcc-v3";
+			reg = <0x0 0x100ff000 0x0 0x1000>,
+				<0x0 0x10080000 0x0 0x6000>;
+			qcom,dcc-offset = <0>;
+		};
+
 		intc: interrupt-controller@17000000 {
 			compatible = "arm,gic-v3";
 			#address-cells = <2>;
