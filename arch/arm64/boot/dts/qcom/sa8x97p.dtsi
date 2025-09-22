@@ -3007,9 +3007,7 @@
 				qcom,client-id = <1>;
 				qcom,client-name = "gpu";
 			};
-
 		};
-
 	};
 
 	thermal_zones: thermal-zones {
@@ -5922,6 +5920,11 @@
 			snps,kbbe;
 			snps,blen = <0 0 0 0 16 0 0>;
 		};
+	};
+
+	uefi_log {
+		compatible = "qcom,nhlos-logs-mem", "qcom,nhlos-logs";
+		memory-region = <&uefi_log>;
 	};
 };
 

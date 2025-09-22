@@ -491,6 +491,11 @@
 		#clock-cells = <0x0>;
 		compatible = "fixed-clock";
 	};
+
+	uefi_log {
+		compatible = "qcom,nhlos-logs-mem", "qcom,nhlos-logs";
+		memory-region = <&uefi_log>;
+	};
 };
 
 &soc {
