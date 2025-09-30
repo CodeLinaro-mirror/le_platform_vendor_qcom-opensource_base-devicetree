@@ -14,6 +14,16 @@
 		spi16 = &spi16;
 		serial0 = &uart15;
 		serial1 = &uart4;
+		i2c20 = &ccu_i2c0;
+		i2c21 = &ccu_i2c1;
+		i2c22 = &ccu_i2c2;
+		i2c23 = &ccu_i2c3;
+		i2c24 = &ccu_i2c4;
+		i2c25 = &ccu_i2c5;
+		i2c26 = &ccu_i2c6;
+		i2c27 = &ccu_i2c7;
+		i2c28 = &ccu_i2c8;
+		i2c29 = &ccu_i2c9;
 	};
 };
 
@@ -135,3 +145,22 @@
 	status = "okay";
 };
 
+&ccu_qup {
+	status = "okay";
+};
+
+&ccu_gpi_dma0 {
+	status = "okay";
+};
+
+&ccu_gpi_dma1 {
+	status = "okay";
+};
+
+&ccu_qupv3_id_0 {
+	status = "okay";
+};
+
+&ccu_qupv3_id_1 {
+	status = "okay";
+};
