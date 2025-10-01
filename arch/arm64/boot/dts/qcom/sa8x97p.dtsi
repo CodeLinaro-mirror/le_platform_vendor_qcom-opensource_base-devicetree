@@ -1566,12 +1566,14 @@
 
 		tsc: tsc@1c80000 {
 			compatible = "qcom,tsc";
-			reg = <0x0 0x01c80000 0x0 0x2000>;
-			reg-names = "tsc";
+			reg = <0x0 0x01c80000 0x0 0x2000>,
+			      <0x0 0x01c87000 0x0 0x1000>;
+			reg-names = "tsc", "timer";
 			clocks = <&tscss_ahb_clock>, <&tscss_cntr_clock>,
 				 <&tscss_cntr_clock>;
 			clock-names = "cfg_ahb", "cntr", "etu";
 			qcom,tsc-nsec-update;
+			qcom,tsc-frame-pulse-gen;
 		};
 
 		ccu_qup: ccu-qup {
