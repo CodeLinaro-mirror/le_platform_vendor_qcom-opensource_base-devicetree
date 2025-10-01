@@ -22,6 +22,13 @@
 	chosen { };
 
 	clocks {
+		gpll5_out_main: gpll5_out_main {
+			compatible = "fixed-clock";
+			clock-frequency = <1000000000>;
+			clock-output-names = "gpll5_out_main";
+			#clock-cells = <0>;
+		};
+
 		xo_board_clk: xo-board-clk {
 			compatible = "fixed-clock";
 			clock-frequency = <19200000>;
@@ -31,6 +38,21 @@
 		sleep_clk: sleep-clk {
 			compatible = "fixed-clock";
 			clock-frequency = <32768>;
+			#clock-cells = <0>;
+		};
+
+		tscss_ahb_clock: tscss_ahb_clock {
+			compatible = "fixed-clock";
+			clock-frequency = <75000000>;
+			clock-output-names = "tscss_ahb_clock";
+			#clock-cells = <0>;
+		};
+
+		tscss_cntr_clock: tscss_cntr_clock {
+			compatible = "fixed-factor-clock";
+			clocks = <&gpll5_out_main>;
+			clock-mult = <1>;
+			clock-div = <4>;
 			#clock-cells = <0>;
 		};
 	};
@@ -1540,6 +1562,16 @@
 				power-domain-names = "power", "perf";
 				status = "disabled";
 			};
+		};
+
+		tsc: tsc@1c80000 {
+			compatible = "qcom,tsc";
+			reg = <0x0 0x01c80000 0x0 0x2000>;
+			reg-names = "tsc";
+			clocks = <&tscss_ahb_clock>, <&tscss_cntr_clock>,
+				 <&tscss_cntr_clock>;
+			clock-names = "cfg_ahb", "cntr", "etu";
+			qcom,tsc-nsec-update;
 		};
 
 		ccu_qup: ccu-qup {
