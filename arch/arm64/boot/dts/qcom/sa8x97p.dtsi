@@ -1572,6 +1572,8 @@
 			clocks = <&tscss_ahb_clock>, <&tscss_cntr_clock>,
 				 <&tscss_cntr_clock>;
 			clock-names = "cfg_ahb", "cntr", "etu";
+			interrupts = <GIC_SPI 290 IRQ_TYPE_LEVEL_HIGH>;
+			interrupt-names = "tscss_fusa_irq";
 			qcom,tsc-nsec-update;
 			qcom,tsc-frame-pulse-gen;
 		};
