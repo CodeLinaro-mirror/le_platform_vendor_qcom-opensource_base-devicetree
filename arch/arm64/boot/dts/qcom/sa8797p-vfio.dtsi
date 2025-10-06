@@ -20,7 +20,7 @@
 	};
 
 	safety-ddr@82010000 {
-		compatible = "qcom,vfio-platform";
+		compatible = "qcom,vdev-device";
 		reg = <0x0 0x82010000 0x0 0x10000>,
 			  <0x0 0x09185000 0x0 0x1000>,
 			  <0x0 0x87200000 0x0 0x1000>,
@@ -33,9 +33,7 @@
 			  <0x0 0x87ADA000 0x0 0x2000>,
 			  <0x0 0x01F97000 0x0 0x1000>,
 			  <0x0 0x87AE3000 0x0 0x2000>;
-		iommus = <&apps_smmu_0 0x16A0 0x0>;
 		interrupts-extended = <&ipcc2 IPCC_COMPUTE_L1_SAIL0 1 IRQ_TYPE_LEVEL_HIGH>;
-		dma-coherent;
 	};
 
 	apss-stl@1F97000 {
@@ -47,7 +45,7 @@
 	};
 
 	umd_nsp_drv@1f012000 {
-		compatible = "qcom,vfio-platform";
+		compatible = "qcom,vdev-device";
 		reg = <0x0 0x1F012000 0x0 0x1000>,
 				<0x0 0x1F412000 0x0 0x1000>,
 				<0x0 0x1F812000 0x0 0x1000>,
@@ -63,19 +61,15 @@
 					<GIC_SPI 943 IRQ_TYPE_LEVEL_HIGH>,
 					<GIC_SPI 505 IRQ_TYPE_LEVEL_HIGH>,
 					<GIC_SPI 160 IRQ_TYPE_LEVEL_HIGH>;
-		iommus = <&apps_smmu_1 0x16E0 0x0>;
-		dma-coherent;
 	};
 
 	umd_firmware_vm@d77d0000 {
-		compatible = "qcom,vfio-platform";
+		compatible = "qcom,vdev-device";
 		reg = <0x0 0xd77d0000 0x0 0x20000>;
-		iommus = <&apps_smmu_1 0x1300 0x0>;
-		dma-coherent;
 	};
 
 	umd_glink@9007000 {
-		compatible = "qcom,vfio-platform";
+		compatible = "qcom,vdev-device";
 		reg = <0x0 0x9007000 0x0 0x1000>,
 		    <0x0 0x89B00000 0x0 0x400000>,
 		    <0x0 0x01FD4000 0x0 0x1000>;
@@ -87,12 +81,10 @@
 			<&ipcc0 IPCC_MPROC_NSP1 0 IRQ_TYPE_LEVEL_HIGH>,
 			<&ipcc0 IPCC_MPROC_NSP2 0 IRQ_TYPE_LEVEL_HIGH>,
 			<&ipcc0 IPCC_MPROC_NSP3 0 IRQ_TYPE_LEVEL_HIGH>;
-		iommus = <&apps_smmu_0 0x01C20 0x0>;
-		dma-coherent;
 	};
 
 	umd_pil@9007000 {
-		compatible = "qcom,vfio-platform";
+		compatible = "qcom,vdev-device";
 		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 2 IRQ_TYPE_LEVEL_HIGH>,
 			<&ipcc0 IPCC_MPROC_ADSP1 2 IRQ_TYPE_LEVEL_HIGH>,
 			<&ipcc0 IPCC_MPROC_ADSP2 2 IRQ_TYPE_LEVEL_HIGH>,
@@ -134,8 +126,6 @@
 		    <0x0 0x8c900000 0x0 0x800000>,
 		    <0x0 0x14680000 0x0 0x1000>,
 		    <0x0 0xc300000 0x0 0x1000>;
-		iommus = <&apps_smmu_0 0x01000 0x0>;
-		dma-coherent;
 	};
 
 	umd_ipclite@89f00000 {
@@ -191,7 +181,7 @@
 	};
 
 	umd_llcc@20400000 {
-		compatible = "qcom,vfio-platform";
+		compatible = "qcom,vdev-device";
 		interrupts = <GIC_SPI 580 IRQ_TYPE_LEVEL_HIGH>,
 				<GIC_SPI 340 IRQ_TYPE_LEVEL_HIGH>,
 				<GIC_SPI 80 IRQ_TYPE_LEVEL_HIGH>;
@@ -201,8 +191,6 @@
 		    <0x0 0x01FD4000 0x0 0x1000>,
 		    <0x0 0x210AF000 0x0 0x400000>,
 		    <0x0 0x17F60000 0x0 0x1000>;
-		iommus = <&apps_smmu_2 0x0C20 0x0>;
-		dma-coherent;
 	};
 
 	cdsp0_cb@1 {
@@ -1809,7 +1797,7 @@
 	};
 
 	sail_mailbox: sail-mailbox@82030000 {
-	compatible = "qcom,vfio-platform";
+	compatible = "qcom,vdev-device";
 	reg = <0x0 0x82030000 0x0 0x1D0000>,
 	      <0x0 0x01F7A000 0x0 0x2000>,
 	      <0x0 0x17824000 0x0 0x1000>,
@@ -1825,38 +1813,30 @@
 				<&ipcc2 IPCC_COMPUTE_L1_SAIL0 0xA IRQ_TYPE_EDGE_RISING>,
 				<&ipcc2 IPCC_COMPUTE_L1_SAIL2 0xB IRQ_TYPE_EDGE_RISING>,
 				<&ipcc2 IPCC_COMPUTE_L1_SAIL0 0xC IRQ_TYPE_EDGE_RISING>;
-		iommus = <&apps_smmu_0 0x0120 0x00>;
-		dma-coherent;
 	};
 
 	sail_mbox_ota: sail-mailbox-ota@82200000 {
-		compatible = "qcom,vfio-platform";
+		compatible = "qcom,vdev-device";
 		reg = <0x0 0x82200000 0x0 0x5FF000>;
-		iommus = <&apps_smmu_0 0x12E0 0x00>;
-		dma-coherent;
 	};
 
 	hscnoc@2030000 {
-		compatible = "qcom,vfio-platform";
+		compatible = "qcom,vdev-device";
 		reg = <0x0 0x2030000 0x0 0xA000>,
 			<0x0 0x2240000 0x0 0x6000>,
 			<0x0 0x2930000 0x0 0x5000>,
 			<0x0 0x2A40000 0x0 0x6000>,
 			<0x0 0x100D000 0x0 0x35000>;
-		iommus = <&apps_smmu_2 0x1320 0x0000>;
-		dma-coherent;
 	};
 
 	nsp_sysmon@89b00000 {
-		compatible = "qcom,vfio-platform";
+		compatible = "qcom,vdev-device";
 		reg = <0x0 0x89b00000 0x0 0x400000>,
 			<0x0 0x01FD4000 0x0 0x1000>;
-		iommus = <&apps_smmu_1 0x16C0 0x0>;
-		dma-coherent;
 	};
 
 	qdss-service@11A05000 {
-		compatible = "qcom,vfio-platform";
+		compatible = "qcom,vdev-device";
 		reg = <0x0 0x11A05000 0x0 0x1000>,          //tmc_etf
 			<0x0 0x10048000 0x0 0x1000>,        //tmc_etr
 			<0x0 0x11A06000 0x0 0x1000>,        //swao_replicator
@@ -1984,8 +1964,6 @@
 			<0x0 0x1D2C0000 0x0 0x1000>,         //NCC2_CORE3_REP
 			<0x0 0x1D2D0000 0x0 0x1000>,         //NCC2_CORE4_REP
 			<0x0 0x1D2E0000 0x0 0x1000>;         //NCC2_CORE5_REP
-		iommus = <&apps_smmu_1 0x0140 0x0>;          //ECAT SID
-		dma-coherent;
 	};
 
 	qdss_cb {
@@ -2041,7 +2019,7 @@
 	};
 
 	subsystem_ramdump_util@89b00000 {
-		compatible = "qcom,vfio-platform";
+		compatible = "qcom,vdev-device";
 		reg = <0x0 0x89b00000 0x0 0x400000>,			//SMEM
 			<0x0 0x8d900000 0x0 0x2300000>,			//NSP0
 			<0x0 0x8fc00000 0x0 0x2300000>,			//NSP1
@@ -2052,8 +2030,6 @@
 			<0x0 0x9b500000 0x0 0x2800000>,			//HPASS2
 			<0x0 0x8bc00000 0x0 0x300000>,			//SOCCP
 			<0x0 0x01FD4000 0x0 0x1000>;			//JTAG
-		iommus = <&apps_smmu_2 0x1760 0x0>;
-		dma-coherent;
 	};
 
 	// CRYPTO0
