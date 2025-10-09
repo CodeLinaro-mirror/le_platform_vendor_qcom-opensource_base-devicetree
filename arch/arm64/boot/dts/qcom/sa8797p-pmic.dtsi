@@ -6,7 +6,7 @@
 &thermal_zones {
 	pm_kobra_thermal: pm-a-die-temp {
 		polling-delay-passive = <0>;
-		polling-delay = <500>;
+		polling-delay = <0>;
 		thermal-sensors = <&scmi23_sensor 3>;
 
 		trips {
@@ -26,7 +26,7 @@
 
 	pm_kai_0_thermal: pm-e-die-temp {
 		polling-delay-passive = <0>;
-		polling-delay = <500>;
+		polling-delay = <0>;
 		thermal-sensors = <&scmi23_sensor 4>;
 
 		trips {
@@ -46,7 +46,7 @@
 
 	pm_kai_1_thermal: pm-f-die-temp {
 		polling-delay-passive = <0>;
-		polling-delay = <500>;
+		polling-delay = <0>;
 		thermal-sensors = <&scmi23_sensor 5>;
 
 		trips {
@@ -66,7 +66,7 @@
 
 	pm_kai_2_thermal: pm-g-die-temp {
 		polling-delay-passive = <0>;
-		polling-delay = <500>;
+		polling-delay = <0>;
 		thermal-sensors = <&scmi23_sensor 6>;
 
 		trips {
@@ -86,7 +86,7 @@
 
 	pm_kai_3_thermal: pm-h-die-temp {
 		polling-delay-passive = <0>;
-		polling-delay = <500>;
+		polling-delay = <0>;
 		thermal-sensors = <&scmi23_sensor 7>;
 
 		trips {
@@ -106,7 +106,7 @@
 
 	pm_kai_4_thermal: pm-i-die-temp {
 		polling-delay-passive = <0>;
-		polling-delay = <500>;
+		polling-delay = <0>;
 		thermal-sensors = <&scmi23_sensor 8>;
 
 		trips {
@@ -126,7 +126,7 @@
 
 	pm_kai_5_thermal: pm-j-die-temp {
 		polling-delay-passive = <0>;
-		polling-delay = <500>;
+		polling-delay = <0>;
 		thermal-sensors = <&scmi23_sensor 9>;
 
 		trips {
@@ -146,7 +146,7 @@
 
 	pm_kai_6_thermal: pm-k-die-temp {
 		polling-delay-passive = <0>;
-		polling-delay = <500>;
+		polling-delay = <0>;
 		thermal-sensors = <&scmi23_sensor 10>;
 
 		trips {
@@ -166,7 +166,7 @@
 
 	pm_kai_7_thermal: pm-l-die-temp {
 		polling-delay-passive = <0>;
-		polling-delay = <500>;
+		polling-delay = <0>;
 		thermal-sensors = <&scmi23_sensor 11>;
 
 		trips {
