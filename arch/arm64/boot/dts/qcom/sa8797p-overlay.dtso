@@ -441,6 +441,7 @@
 		resets = <&scmi8_rst 0>, <&scmi8_rst 1>;
 		reset-names = "emac_reset", "serdes_reset";
 
+		qcom,no-suspend;
 		qcom,dev-name = "scmi_emac1";
 	};
 
@@ -465,7 +466,7 @@
 
 		power-domains = <&scmi32_pd 0>, <&scmi63_pd 0>;
 		power-domain-names = "power", "dummy";
-
+		qcom,no-suspend;
 		qcom,dev-name = "scmi_pcie2";
 	};
 
@@ -474,7 +475,7 @@
 
 		power-domains = <&scmi33_pd 0>, <&scmi63_pd 0>;
 		power-domain-names = "power", "dummy";
-
+		qcom,no-suspend;
 		qcom,dev-name = "scmi_pcie3";
 	};
 
