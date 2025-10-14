@@ -15,8 +15,6 @@
 	#size-cells = <2>;
 
 	aliases {
-		i2c0 = &ccu_i2c0;
-		i2c1 = &ccu_i2c5;
 		ethernet0 = &ethernet0;
 		ethernet1 = &ethernet1;
 	};
@@ -24,6 +22,13 @@
 	chosen { };
 
 	clocks {
+		gpll5_out_main: gpll5_out_main {
+			compatible = "fixed-clock";
+			clock-frequency = <1000000000>;
+			clock-output-names = "gpll5_out_main";
+			#clock-cells = <0>;
+		};
+
 		xo_board_clk: xo-board-clk {
 			compatible = "fixed-clock";
 			clock-frequency = <19200000>;
@@ -33,6 +38,21 @@
 		sleep_clk: sleep-clk {
 			compatible = "fixed-clock";
 			clock-frequency = <32768>;
+			#clock-cells = <0>;
+		};
+
+		tscss_ahb_clock: tscss_ahb_clock {
+			compatible = "fixed-clock";
+			clock-frequency = <75000000>;
+			clock-output-names = "tscss_ahb_clock";
+			#clock-cells = <0>;
+		};
+
+		tscss_cntr_clock: tscss_cntr_clock {
+			compatible = "fixed-factor-clock";
+			clocks = <&gpll5_out_main>;
+			clock-mult = <1>;
+			clock-div = <4>;
 			#clock-cells = <0>;
 		};
 	};
@@ -1544,16 +1564,32 @@
 			};
 		};
 
+		tsc: tsc@1c80000 {
+			compatible = "qcom,tsc";
+			reg = <0x0 0x01c80000 0x0 0x2000>,
+			      <0x0 0x01c87000 0x0 0x1000>;
+			reg-names = "tsc", "timer";
+			clocks = <&tscss_ahb_clock>, <&tscss_cntr_clock>,
+				 <&tscss_cntr_clock>;
+			clock-names = "cfg_ahb", "cntr", "etu";
+			interrupts = <GIC_SPI 290 IRQ_TYPE_LEVEL_HIGH>;
+			interrupt-names = "tscss_fusa_irq";
+			qcom,tsc-nsec-update;
+			qcom,tsc-frame-pulse-gen;
+		};
+
 		ccu_qup: ccu-qup {
 			compatible = "qcom,ccu-qup";
 			#address-cells = <2>;
 			#size-cells = <2>;
 			reg = <0x0 0x09b96000 0x0 0x1000>,
 			      <0x0 0x09c16000 0x0 0x1000>,
+			      <0x0 0x09c1e000 0x0 0x1000>,
 			      <0x0 0x09c1f000 0x0 0x1000>,
 			      <0x0 0x09c20000 0x0 0x1000>;
 			reg-names = "ccu_qupv3_0_common",
 				    "ccu_qupv3_1_common",
+				    "ccu_top",
 				    "ccu_qupv3_0_IRQ",
 				    "ccu_qupv3_1_IRQ";
 			qcom,common-reg-offset = <0x40000>;
@@ -3007,9 +3043,7 @@
 				qcom,client-id = <1>;
 				qcom,client-name = "gpu";
 			};
-
 		};
-
 	};
 
 	thermal_zones: thermal-zones {
@@ -5922,6 +5956,11 @@
 			snps,kbbe;
 			snps,blen = <0 0 0 0 16 0 0>;
 		};
+	};
+
+	uefi_log {
+		compatible = "qcom,nhlos-logs-mem", "qcom,nhlos-logs";
+		memory-region = <&uefi_log>;
 	};
 };
 
