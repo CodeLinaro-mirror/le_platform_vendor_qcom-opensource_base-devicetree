@@ -17,6 +17,11 @@
 	qcom,board-id = <0x01010025 1>;
 };
 
+&xpcs0 {
+	/delete-property/ interrupts;
+	/delete-property/ interrupt-names;
+};
+
 &ethernet0 {
 	phy-mode = "10gbase-r";
 
