@@ -426,8 +426,8 @@
 		power-domains = <&scmi8_pd 0>, <&scmi8_pd 1>, <&scmi8_dvfs 0>, <&scmi8_dvfs 1>;
 		power-domain-names = "emac_power", "emac_clock", "emac_perf", "perf_5g_serdes";
 
-		resets = <&scmi8_rst 0>;
-		reset-names = "emac_reset";
+		resets = <&scmi8_rst 0>, <&scmi8_rst 1>;
+		reset-names = "emac_reset", "serdes_reset";
 
 		qcom,dev-name = "scmi_emac1";
 	};
