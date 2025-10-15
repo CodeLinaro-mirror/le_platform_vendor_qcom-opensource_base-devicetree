@@ -5727,7 +5727,10 @@
 			 <&apps_smmu_2 0x1204 0x0>,
 			 <&apps_smmu_2 0x1205 0x2>,
 			 <&apps_smmu_2 0x1206 0x0>,
-			 <&apps_smmu_2 0x1207 0x2>;
+			 <&apps_smmu_2 0x1207 0x2>,
+			 <&apps_smmu_2 0x1208 0x0>,
+			 <&apps_smmu_2 0x1209 0x0>,
+			 <&apps_smmu_2 0x120a 0x0>;
 
 		power-domains = <&scmi7_pd 0>, <&scmi7_pd 1>, <&scmi7_dvfs 0>, <&scmi7_dvfs 1>;
 		power-domain-names = "power_core", "power_mdio", "perf_serdes", "perf_5g_serdes";
@@ -5753,7 +5756,7 @@
 		qcom-xpcs-handle = <&xpcs0>;
 
 		mtl_rx_setup: rx-queues-config {
-			snps,rx-queues-to-use = <7>;
+			snps,rx-queues-to-use = <10>;
 			snps,rx-sched-sp;
 
 			queue0 {
@@ -5794,10 +5797,26 @@
 				snps,dcb-algorithm;
 				snps,map-to-dma-channel = <0x6>;
 			};
+
+			queue7 {
+				snps,dcb-algorithm;
+				snps,map-to-dma-channel = <0x7>;
+			};
+
+			queue8 {
+				snps,dcb-algorithm;
+				snps,map-to-dma-channel = <0x8>;
+			};
+
+			queue9 {
+				snps,dcb-algorithm;
+				snps,map-to-dma-channel = <0x9>;
+			};
 		};
 
+
 		mtl_tx_setup: tx-queues-config {
-			snps,tx-queues-to-use = <7>;
+			snps,tx-queues-to-use = <10>;
 			snps,tx-sched-sp;
 
 			queue0 {
@@ -5825,6 +5844,18 @@
 			};
 
 			queue6 {
+				snps,dcb-algorithm;
+			};
+
+			queue7 {
+				snps,dcb-algorithm;
+			};
+
+			queue8 {
+				snps,dcb-algorithm;
+			};
+
+			queue9 {
 				snps,dcb-algorithm;
 			};
 		};
@@ -5854,7 +5885,10 @@
 			 <&apps_smmu_2 0x11c4 0x3>,
 			 <&apps_smmu_2 0x11c5 0x3>,
 			 <&apps_smmu_2 0x11c6 0x3>,
-			 <&apps_smmu_2 0x11c7 0x3>;
+			 <&apps_smmu_2 0x11c7 0x3>,
+			 <&apps_smmu_2 0x11c8 0x2>,
+			 <&apps_smmu_2 0x11c9 0x8>,
+			 <&apps_smmu_2 0x11ca 0x2>;
 
 		power-domains = <&scmi8_pd 0>, <&scmi8_pd 1>, <&scmi8_dvfs 0>, <&scmi8_dvfs 1>;
 		power-domain-names = "power_core", "power_mdio", "perf_serdes", "perf_5g_serdes";
@@ -5880,7 +5914,7 @@
 		qcom-xpcs-handle = <&xpcs1>;
 
 		mtl_rx_setup1: rx-queues-config {
-			snps,rx-queues-to-use = <7>;
+			snps,rx-queues-to-use = <10>;
 			snps,rx-sched-sp;
 
 			queue0 {
@@ -5921,10 +5955,25 @@
 				snps,dcb-algorithm;
 				snps,map-to-dma-channel = <0x6>;
 			};
+
+			queue7 {
+				snps,dcb-algorithm;
+				snps,map-to-dma-channel = <0x7>;
+			};
+
+			queue8 {
+				snps,dcb-algorithm;
+				snps,map-to-dma-channel = <0x8>;
+			};
+
+			queue9 {
+				snps,dcb-algorithm;
+				snps,map-to-dma-channel = <0x9>;
+			};
 		};
 
 		mtl_tx_setup1: tx-queues-config {
-			snps,tx-queues-to-use = <7>;
+			snps,tx-queues-to-use = <10>;
 			snps,tx-sched-sp;
 
 			queue0 {
@@ -5952,6 +6001,18 @@
 			};
 
 			queue6 {
+				snps,dcb-algorithm;
+			};
+
+			queue7 {
+				snps,dcb-algorithm;
+			};
+
+			queue8 {
+				snps,dcb-algorithm;
+			};
+
+			queue9 {
 				snps,dcb-algorithm;
 			};
 		};
