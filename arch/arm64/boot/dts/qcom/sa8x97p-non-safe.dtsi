@@ -1834,7 +1834,7 @@
 		};
 	};
 
-	pm_kai_5_thermal {
+	pm-j-die-temp {
 		cooling-maps {
 			map0 {
 				trip = <&kai_j_trip1>;
@@ -1843,7 +1843,7 @@
 		};
 	};
 
-	pm_kai_6_thermal {
+	pm-k-die-temp {
 		cooling-maps {
 			map0 {
 				trip = <&kai_k_trip1>;
@@ -1857,7 +1857,7 @@
 		};
 	};
 
-	pm_kobra_thermal {
+	pm-a-die-temp {
 		cooling-maps {
 			map0 {
 				trip = <&pm_kobra_trip1>;

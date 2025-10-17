@@ -5732,6 +5732,9 @@
 		power-domains = <&scmi7_pd 0>, <&scmi7_pd 1>, <&scmi7_dvfs 0>, <&scmi7_dvfs 1>;
 		power-domain-names = "power_core", "power_mdio", "perf_serdes", "perf_5g_serdes";
 
+		resets = <&scmi7_rst 1>;
+		reset-names = "serdes_reset";
+
 		pinctrl-0 = <&ethernet0_default>;
 		pinctrl-names = "default";
 
@@ -5855,6 +5858,9 @@
 
 		power-domains = <&scmi8_pd 0>, <&scmi8_pd 1>, <&scmi8_dvfs 0>, <&scmi8_dvfs 1>;
 		power-domain-names = "power_core", "power_mdio", "perf_serdes", "perf_5g_serdes";
+
+		resets = <&scmi8_rst 1>;
+		reset-names = "serdes_reset";
 
 		pinctrl-0 = <&ethernet1_default>;
 		pinctrl-names = "default";
