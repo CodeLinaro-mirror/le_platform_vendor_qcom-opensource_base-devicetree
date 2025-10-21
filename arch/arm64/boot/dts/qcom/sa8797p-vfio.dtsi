@@ -1339,6 +1339,7 @@
 		dma-coherent;
 	};
 
+	// CRYPTO0
 	vfio_hwkm_gpce_core_0@1dc0000 {
 		compatible = "qcom,vfio-platform";
 		interrupts = <GIC_SPI 272 IRQ_TYPE_LEVEL_HIGH>;
@@ -1361,6 +1362,16 @@
 		qcom,iommu-dma-addr-pool = <0x0 0x0 0x0 0xffffffff>;
 		qcom,iommu-vmid = <0x9>; /*VMID_CP_BITSTREAM */
 		qcom,secure-context-bank;
+		dma-coherent;
+	};
+
+	// CRYPTO1
+	vfio_hwkm_gpce_core_1@9900000 {
+		compatible = "qcom,vfio-platform";
+		interrupts = <GIC_SPI 836 IRQ_TYPE_LEVEL_HIGH>;
+		reg = <0x0 0x09900000 0x0 0x00040000>;
+		iommus = <&apps_smmu_0 0x1649 0x0>;
+		qcom,iommu-dma-addr-pool = <0x0 0x0 0x0 0xffffffff>;
 		dma-coherent;
 	};
 };

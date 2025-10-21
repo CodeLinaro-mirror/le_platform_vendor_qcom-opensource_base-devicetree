@@ -506,8 +506,8 @@
 	scmi_gpce {
 		compatible = "qcom,uscmi";
 
-		power-domains = <&scmi30_dvfs 0>;
-		power-domain-names = "gpce_clock";
+		power-domains = <&scmi30_dvfs 0>, <&scmi30_dvfs 1>;
+		power-domain-names = "gpce_core0", "gpce_core1";
 
 		qcom,dev-name = "scmi_gpce";
 	};
