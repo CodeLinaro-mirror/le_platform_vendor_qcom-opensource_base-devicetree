@@ -1344,8 +1344,7 @@
 			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
 			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
 			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
-		iommus = <&apps_smmu_0 0x09E7 0x0000>,
-		       <&apps_smmu_0 0x0A47 0x0020>,
+		iommus = <&apps_smmu_0 0x0A47 0x0020>,
 		       <&apps_smmu_0 0x0A67 0x0020>,
 		       <&apps_smmu_0 0x0A87 0x0000>;
 		qcom,iommu-dma-addr-range = <0x0 0x1000 0x2 0x0>;
@@ -1714,8 +1713,7 @@
 			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
 			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
 			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
-		iommus = <&apps_smmu_0 0x0A37 0x0000>,
-		       <&apps_smmu_0 0x0A57 0x0020>,
+		iommus = <&apps_smmu_0 0x0A57 0x0020>,
 		       <&apps_smmu_0 0x0A77 0x0020>,
 		       <&apps_smmu_0 0x0A97 0x0000>;
 		qcom,iommu-dma-addr-range = <0x0 0x1000 0x2 0x0>;
