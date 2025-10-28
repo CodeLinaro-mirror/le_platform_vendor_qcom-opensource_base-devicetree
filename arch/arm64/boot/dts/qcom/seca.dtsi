@@ -588,6 +588,33 @@
 			redistributor-stride = <0x0 0x40000>;
 		};
 
+		ipcc0: mailbox@9007000 {
+			compatible = "qcom,seca-ipcc", "qcom,ipcc";
+			reg = <0x0 0x9007000 0x0 0x1000>;
+			interrupts = <GIC_SPI 247 IRQ_TYPE_LEVEL_HIGH>;
+			interrupt-controller;
+			#interrupt-cells = <3>;
+			#mbox-cells = <2>;
+		};
+
+		ipcc1: mailbox@90c5000 {
+			compatible = "qcom,seca-ipcc", "qcom,ipcc";
+			reg = <0x0 0x90c5000 0x0 0x1000>;
+			interrupts = <GIC_SPI 230 IRQ_TYPE_LEVEL_HIGH>;
+			interrupt-controller;
+			#interrupt-cells = <3>;
+			#mbox-cells = <2>;
+		};
+
+		ipcc2: mailbox@9185000 {
+			compatible = "qcom,seca-ipcc", "qcom,ipcc";
+			reg = <0x0 0x9185000 0x0 0x1000>;
+			interrupts = <GIC_SPI 231 IRQ_TYPE_LEVEL_HIGH>;
+			interrupt-controller;
+			#interrupt-cells = <3>;
+			#mbox-cells = <2>;
+		};
+
 		tlmm: pinctrl@f000000 {
 			compatible = "qcom,seca-tlmm";
 			reg = <0x0 0x0f000000 0x0 0x1000000>;
