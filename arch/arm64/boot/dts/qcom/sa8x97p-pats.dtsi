@@ -22,3 +22,81 @@
 &usb_2 {
 	status = "okay";
 };
+
+&pcie0 {
+	power-domains = <&scmi5_pd 0>;
+	power-domain-names = "power";
+	status = "okay";
+};
+
+&pcie1 {
+	power-domains = <&scmi6_pd 0>;
+	power-domain-names = "power";
+	status = "okay";
+};
+
+&pcie2 {
+	power-domains = <&scmi32_pd 0>;
+	power-domain-names = "power";
+	status = "okay";
+};
+
+&pcie3 {
+	power-domains = <&scmi33_pd 0>;
+	power-domain-names = "power";
+	status = "okay";
+};
+
+&ethernet0 {
+	status = "okay";
+	phy-mode = "usxgmii";
+	phy-handle = <&usxsgmii_phy0>;
+
+	mdio {
+		compatible = "snps,dwmac-mdio";
+		#address-cells = <1>;
+		#size-cells = <0>;
+
+		usxsgmii_phy0: phy@0 {
+			compatible = "ethernet-phy-id31c3.1c12";
+			reg = <0x0>;
+			device_type = "ethernet-phy";
+			interrupts-extended = <&tlmm 45 IRQ_TYPE_EDGE_FALLING>;
+			resets = <&scmi7_rst 0>;
+			reset-names = "phy";
+			reset-assert-us = <100000>;
+			reset-deassert-us = <100000>;
+		};
+	};
+};
+
+&xpcs0 {
+	status = "okay";
+};
+
+&ethernet1 {
+	status = "okay";
+	phy-mode = "usxgmii";
+	phy-handle = <&usxsgmii_phy1>;
+
+	mdio {
+		compatible = "snps,dwmac-mdio";
+		#address-cells = <1>;
+		#size-cells = <0>;
+
+		usxsgmii_phy1: phy@8 {
+			compatible = "ethernet-phy-id31c3.1c12";
+			reg = <0x8>;
+			device_type = "ethernet-phy";
+			interrupts-extended = <&tlmm 46 IRQ_TYPE_EDGE_FALLING>;
+			resets = <&scmi8_rst 0>;
+			reset-names = "phy";
+			reset-assert-us = <100000>;
+			reset-deassert-us = <100000>;
+		};
+	};
+};
+
+&xpcs1 {
+	status = "okay";
+};
