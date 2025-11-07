@@ -37,6 +37,7 @@ dtb-y += arch/arm64/boot/dts/qcom/sa8797p-la-gvm-ride-sx.dtb
 dtb-y += arch/arm64/boot/dts/qcom/sa8797p-overlay.dtbo
 dtb-y += arch/arm64/boot/dts/qcom/sa8797p-qvp.dtb
 dtb-y += arch/arm64/boot/dts/qcom/sa8x97p-flex-ride-sx.dtb
+dtb-y += arch/arm64/boot/dts/qcom/sa8x97p-v2-flex-ride-sx.dts
 
 # SecaAu
 dtb-y += arch/arm64/boot/dts/qcom/seca-rumi.dtb
