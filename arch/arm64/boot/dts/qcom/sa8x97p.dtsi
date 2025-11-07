@@ -908,9 +908,9 @@
 			reg = <0x0 0xd7600000 0x0 0x40000>;
 		};
 
-		gearvm_logs_mem: gearvm_logs_region@d7640000 {
+		gearvm_logs_mem: gearvm_logs_region@d77d0000 {
 			no-map;
-			reg = <0x0 0xd7640000 0x0 0x10000>;
+			reg = <0x0 0xd77d0000 0x0 0x20000>;
 		};
 
 		gearvm_shared_mem: gearvm_shared_region@d7650000 {
