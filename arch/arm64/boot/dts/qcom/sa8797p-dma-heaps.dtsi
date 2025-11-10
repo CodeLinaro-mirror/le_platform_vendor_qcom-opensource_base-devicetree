@@ -44,5 +44,11 @@
 			qcom,dma-heap-type = <HEAP_TYPE_CARVEOUT>;
 			memory-region = <&soccp_fe_vm_2>;
 		};
+
+		qcom,synx_global {
+			qcom,dma-heap-name = "qcom,synx_global";
+			qcom,dma-heap-type = <HEAP_TYPE_CARVEOUT>;
+			memory-region = <&global_sync_mem>;
+		};
 	};
 };
