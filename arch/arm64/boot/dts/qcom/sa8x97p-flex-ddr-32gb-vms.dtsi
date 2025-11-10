@@ -1,0 +1,73 @@
+// SPDX-License-Identifier: BSD-3-Clause
+/*
+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+ */
+
+
+#include "oot-dt-bindings/qcom-shmem-sa8797p.h"
+
+&soc {
+	gh-secure-vm-loader@0 {
+		memory-region = <&auto_vm_0_mem_0 &auto_vm_0_mem_1>;
+		shared-regions = <&glink_cma_mem1
+				&glink_cma_mem2
+				&glink_cma_mem3
+				&glink_cma_mem4
+				&glink_cma_mem5
+				&glink_cma_mem6
+				&glink_cma_mem7
+				&vm_cp_pixel
+				&vm_cp_nonpixel
+				&vm_cp_bitstream
+				&vm_cp_b_pt_mem
+				&vm_cp_p_pt_mem
+				&vm_cp_np_pt_mem
+				&soccp_fe_vm_1>;
+	};
+};
+
+&{/reserved-memory} {
+
+	auto_vm_0_mem_1: auto_vm_0_mem_1@C40000000 {
+		no-map;
+		reg = <0xC 0x40000000 0x3 0x47200000>;
+	};
+
+	vm_cp_pixel: vm_cp_pixel@B03000000 {
+		no-map;
+		reg = <0xB 0x03000000 0x0 0x10000000>;
+		gunyah-label = <0xC0A>;
+		qcom,is-phantom;
+	};
+
+	vm_cp_nonpixel: vm_cp_nonpixel@B13000000 {
+		no-map;
+		reg = <0xB 0x13000000 0x0 0xA000000>;
+		gunyah-label = <0xC0B>;
+		qcom,is-phantom;
+	};
+
+	vm_cp_b_pt_mem: vm_cp_b_pt_region@B1D000000 {
+		no-map;
+		reg = <0xB 0x1D000000 0x0 0x1000000>;
+		qcom,dst-vmids = <AC_VM_CP_B>;
+		qcom,dst-perms = <QCOM_PERM_RW>;
+		gunyah-label = <0x9A>;
+	};
+
+	vm_cp_p_pt_mem: vm_cp_p_pt_region@B1E000000 {
+		no-map;
+		reg = <0xB 0x1E000000 0x0 0x1000000>;
+		qcom,dst-vmids = <AC_VM_CP_P>;
+		qcom,dst-perms = <QCOM_PERM_RW>;
+		gunyah-label = <0x9B>;
+	};
+
+	vm_cp_np_pt_mem: vm_cp_np_pt_region@B1F000000 {
+		no-map;
+		reg = <0xB 0x1F000000 0x0 0x1000000>;
+		qcom,dst-vmids = <AC_VM_CP_NP>;
+		qcom,dst-perms = <QCOM_PERM_RW>;
+		gunyah-label = <0x9C>;
+	};
+};

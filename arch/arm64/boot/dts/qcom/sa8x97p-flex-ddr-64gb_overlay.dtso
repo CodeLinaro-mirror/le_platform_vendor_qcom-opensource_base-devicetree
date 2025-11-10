@@ -6,4 +6,4 @@
 /dts-v1/;
 /plugin/;
 
-&{/reserved-memory} {};
+#include "sa8x97p-flex-ddr-64gb-vms.dtsi"
