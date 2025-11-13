@@ -3075,6 +3075,10 @@
 			gpu {
 				qcom,client-id = <1>;
 				qcom,client-name = "gpu";
+
+				part-id0 {
+					qcom,part-id = <0>;
+				};
 			};
 		};
 	};
