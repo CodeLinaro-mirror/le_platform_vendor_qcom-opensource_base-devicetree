@@ -1663,8 +1663,9 @@
 			compatible = "qcom,tsc";
 			reg = <0x0 0x01c80000 0x0 0x2000>,
 			      <0x0 0x01c87000 0x0 0x1000>,
-			      <0x0 0x01ca0000 0x0 0x20000>;
-			reg-names = "tsc", "timer", "etu";
+			      <0x0 0x01ca0000 0x0 0x20000>,
+			      <0x0 0x01f9e100 0x0 0x4>;
+			reg-names = "tsc", "timer", "etu", "tsc_src_sel";
 			clocks = <&tscss_ahb_clock>,
 				 <&tscss_cntr_clock>,
 				 <&tscss_etu_clock>;
