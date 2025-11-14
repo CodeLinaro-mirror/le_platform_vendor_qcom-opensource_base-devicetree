@@ -2372,93 +2372,111 @@
 				qcom,static-mem-dump;
 
 				c0-context {
-					qcom,dump-id = <0x0>;
 					qcom,dump-size = <0x800>;
+					qcom,dump-id = <0x0>;
+					qcom,instance = <0x0>;
 				};
 
 				c1-context {
-					qcom,dump-id = <0x1>;
 					qcom,dump-size = <0x800>;
+					qcom,dump-id = <0x0>;
+					qcom,instance = <0x1>;
 				};
 
 				c2-context {
-					qcom,dump-id = <0x2>;
 					qcom,dump-size = <0x800>;
+					qcom,dump-id = <0x0>;
+					qcom,instance = <0x2>;
 				};
 
 				c3-context {
-					qcom,dump-id = <0x3>;
 					qcom,dump-size = <0x800>;
+					qcom,dump-id = <0x0>;
+					qcom,instance = <0x3>;
 				};
 
 				c4-context {
-					qcom,dump-id = <0x4>;
 					qcom,dump-size = <0x800>;
+					qcom,dump-id = <0x0>;
+					qcom,instance = <0x4>;
 				};
 
 				c5-context {
-					qcom,dump-id = <0x5>;
 					qcom,dump-size = <0x800>;
+					qcom,dump-id = <0x0>;
+					qcom,instance = <0x5>;
 				};
 
 				c6-context {
-					qcom,dump-id = <0x6>;
 					qcom,dump-size = <0x800>;
+					qcom,dump-id = <0x0>;
+					qcom,instance = <0x6>;
 				};
 
 				c7-context {
-					qcom,dump-id = <0x7>;
 					qcom,dump-size = <0x800>;
+					qcom,dump-id = <0x0>;
+					qcom,instance = <0x7>;
 				};
 
 				c8-context {
-					qcom,dump-id = <0x8>;
 					qcom,dump-size = <0x800>;
+					qcom,dump-id = <0x0>;
+					qcom,instance = <0x8>;
 				};
 
 				c9-context {
-					qcom,dump-id = <0x9>;
 					qcom,dump-size = <0x800>;
+					qcom,dump-id = <0x0>;
+					qcom,instance = <0x9>;
 				};
 
 				c10-context {
-					qcom,dump-id = <0xA>;
 					qcom,dump-size = <0x800>;
+					qcom,dump-id = <0x0>;
+					qcom,instance = <0xa>;
 				};
 
 				c11-context {
-					qcom,dump-id = <0xB>;
 					qcom,dump-size = <0x800>;
+					qcom,dump-id = <0x0>;
+					qcom,instance = <0xb>;
 				};
 
 				c12-context {
-					qcom,dump-id = <0xC>;
 					qcom,dump-size = <0x800>;
+					qcom,dump-id = <0x0>;
+					qcom,instance = <0xc>;
 				};
 
 				c13-context {
-					qcom,dump-id = <0xD>;
 					qcom,dump-size = <0x800>;
+					qcom,dump-id = <0x0>;
+					qcom,instance = <0xd>;
 				};
 
 				c14-context {
-					qcom,dump-id = <0xE>;
 					qcom,dump-size = <0x800>;
+					qcom,dump-id = <0x0>;
+					qcom,instance = <0xe>;
 				};
 
 				c15-context {
-					qcom,dump-id = <0xF>;
 					qcom,dump-size = <0x800>;
+					qcom,dump-id = <0x0>;
+					qcom,instance = <0xf>;
 				};
 
 				c16-context {
-					qcom,dump-id = <0x10>;
 					qcom,dump-size = <0x800>;
+					qcom,dump-id = <0x0>;
+					qcom,instance = <0x10>;
 				};
 
 				c17-context {
-					qcom,dump-id = <0x11>;
 					qcom,dump-size = <0x800>;
+					qcom,dump-id = <0x0>;
+					qcom,instance = <0x11>;
 				};
 
 				pmic {
@@ -2665,91 +2683,109 @@
 					cpuss_cpu0 {
 						qcom,dump-size = <0x40000>;
 						qcom,dump-id = <0x280>;
+						qcom,instance = <0x0>;
 					};
 
 					cpuss_cpu1 {
 						qcom,dump-size = <0x40000>;
-						qcom,dump-id = <0x281>;
+						qcom,dump-id = <0x280>;
+						qcom,instance = <0x1>;
 					};
 
 					cpuss_cpu2 {
 						qcom,dump-size = <0x40000>;
-						qcom,dump-id = <0x282>;
+						qcom,dump-id = <0x280>;
+						qcom,instance = <0x2>;
 					};
 
 					cpuss_cpu3 {
 						qcom,dump-size = <0x40000>;
-						qcom,dump-id = <0x283>;
+						qcom,dump-id = <0x280>;
+						qcom,instance = <0x3>;
 					};
 
 					cpuss_cpu4 {
 						qcom,dump-size = <0x40000>;
-						qcom,dump-id = <0x284>;
+						qcom,dump-id = <0x280>;
+						qcom,instance = <0x4>;
 					};
 
 					cpuss_cpu5 {
 						qcom,dump-size = <0x40000>;
-						qcom,dump-id = <0x285>;
+						qcom,dump-id = <0x280>;
+						qcom,instance = <0x5>;
 					};
 
 					cpuss_cpu6 {
 						qcom,dump-size = <0x40000>;
-						qcom,dump-id = <0x286>;
+						qcom,dump-id = <0x280>;
+						qcom,instance = <0x6>;
 					};
 
 					cpuss_cpu7 {
 						qcom,dump-size = <0x40000>;
-						qcom,dump-id = <0x287>;
+						qcom,dump-id = <0x280>;
+						qcom,instance = <0x7>;
 					};
 
 					cpuss_cpu8 {
 						qcom,dump-size = <0x40000>;
-						qcom,dump-id = <0x288>;
+						qcom,dump-id = <0x280>;
+						qcom,instance = <0x8>;
 					};
 
 					cpuss_cpu9 {
 						qcom,dump-size = <0x40000>;
-						qcom,dump-id = <0x289>;
+						qcom,dump-id = <0x280>;
+						qcom,instance = <0x9>;
 					};
 
 					cpuss_cpu10 {
 						qcom,dump-size = <0x40000>;
-						qcom,dump-id = <0x290>;
+						qcom,dump-id = <0x280>;
+						qcom,instance = <0xa>;
 					};
 
 					cpuss_cpu11 {
 						qcom,dump-size = <0x40000>;
-						qcom,dump-id = <0x291>;
+						qcom,dump-id = <0x280>;
+						qcom,instance = <0xb>;
 					};
 
 					cpuss_cpu12 {
 						qcom,dump-size = <0x40000>;
-						qcom,dump-id = <0x292>;
+						qcom,dump-id = <0x280>;
+						qcom,instance = <0xc>;
 					};
 
 					cpuss_cpu13 {
 						qcom,dump-size = <0x40000>;
-						qcom,dump-id = <0x293>;
+						qcom,dump-id = <0x280>;
+						qcom,instance = <0xd>;
 					};
 
 					cpuss_cpu14 {
 						qcom,dump-size = <0x40000>;
-						qcom,dump-id = <0x294>;
+						qcom,dump-id = <0x280>;
+						qcom,instance = <0xe>;
 					};
 
 					cpuss_cpu15 {
 						qcom,dump-size = <0x40000>;
-						qcom,dump-id = <0x295>;
+						qcom,dump-id = <0x280>;
+						qcom,instance = <0xf>;
 					};
 
 					cpuss_cpu16 {
 						qcom,dump-size = <0x40000>;
-						qcom,dump-id = <0x296>;
+						qcom,dump-id = <0x280>;
+						qcom,instance = <0x10>;
 					};
 
 					cpuss_cpu17 {
 						qcom,dump-size = <0x40000>;
-						qcom,dump-id = <0x297>;
+						qcom,dump-id = <0x280>;
+						qcom,instance = <0x11>;
 					};
 				};
 
@@ -2757,16 +2793,19 @@
 					cpuss_cluster0 {
 						qcom,dump-size = <0x40000>;
 						qcom,dump-id = <0x270>;
+						qcom,instance = <0x0>;
 					};
 
 					cpuss_cluster1 {
 						qcom,dump-size = <0x40000>;
-						qcom,dump-id = <0x271>;
+						qcom,dump-id = <0x270>;
+						qcom,instance = <0x1>;
 					};
 
 					cpuss_cluster2 {
 						qcom,dump-size = <0x40000>;
-						qcom,dump-id = <0x272>;
+						qcom,dump-id = <0x270>;
+						qcom,instance = <0x2>;
 					};
 				};
 
