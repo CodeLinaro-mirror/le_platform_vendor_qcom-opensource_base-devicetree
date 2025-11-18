@@ -35,7 +35,7 @@ dtb-y += arch/arm64/boot/dts/qcom/sa8797p-non-safe-la-gvm-ride-sx.dtb
 dtb-y += arch/arm64/boot/dts/qcom/sa8797p-non-safe-multi-gvm-ride-sx.dtb
 dtb-y += arch/arm64/boot/dts/qcom/sa8797p-la-gvm-ride-sx.dtb
 dtb-y += arch/arm64/boot/dts/qcom/sa8x97p-flex-ride-sx.dtb
-dtb-y += arch/arm64/boot/dts/qcom/sa8x97p-v2-flex-ride-sx.dts
+dtb-y += arch/arm64/boot/dts/qcom/sa8x97p-v2-flex-ride-sx.dtb
 dtb-y += arch/arm64/boot/dts/qcom/sa8x97p-v2-adp-star-pcie-ep.dtb
 dtb-y += arch/arm64/boot/dts/qcom/sa8x97p-v2-ride-sx-pcie-ep.dtb
 
