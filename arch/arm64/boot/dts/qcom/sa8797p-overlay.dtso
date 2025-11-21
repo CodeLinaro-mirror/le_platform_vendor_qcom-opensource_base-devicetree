@@ -17,6 +17,18 @@
 	compatible = "qcom,sa8797p";
 };
 
+&{/} {
+	tz_start_count {
+		compatible = "qcom,nhlos-logs-io", "qcom,nhlos-logs";
+		memory-region = <&tz_start_count>;
+	};
+
+	tz_end_count {
+		compatible = "qcom,nhlos-logs-io", "qcom,nhlos-logs";
+		memory-region = <&tz_end_count>;
+	};
+};
+
 &{/reserved-memory} {
 	cma: linux,cma {
 		compatible = "shared-dma-pool";
@@ -50,12 +62,12 @@
 		size = <0x0 0x1400000>; /* 20M */
 	};
 
-	tz-start-count {
+	tz_start_count: tz_start_count {
 		reg = <0x0 0x146807f8 0x0 0x8>;
 		no-map;
 	};
 
-	tz-end-count {
+	tz_end_count: tz_end_count {
 		reg = <0x0 0x146807dc 0x0 0x8>;
 		no-map;
 	};
@@ -191,7 +203,7 @@
 
 	scm_user_intf_sec_device {
 		compatible = "qcom,scm-user-intf-sec";
-		memory-region = <&cma>;
+		memory-region = <&tzcom_mem>;
 		status = "ok";
 	};
 
@@ -426,8 +438,8 @@
 		power-domains = <&scmi8_pd 0>, <&scmi8_pd 1>, <&scmi8_dvfs 0>, <&scmi8_dvfs 1>;
 		power-domain-names = "emac_power", "emac_clock", "emac_perf", "perf_5g_serdes";
 
-		resets = <&scmi8_rst 0>;
-		reset-names = "emac_reset";
+		resets = <&scmi8_rst 0>, <&scmi8_rst 1>;
+		reset-names = "emac_reset", "serdes_reset";
 
 		qcom,dev-name = "scmi_emac1";
 	};
@@ -506,38 +518,10 @@
 	scmi_gpce {
 		compatible = "qcom,uscmi";
 
-		power-domains = <&scmi30_dvfs 0>;
-		power-domain-names = "gpce_clock";
+		power-domains = <&scmi30_dvfs 0>, <&scmi30_dvfs 1>;
+		power-domain-names = "gpce_core0", "gpce_core1";
 
 		qcom,dev-name = "scmi_gpce";
-	};
-
-	ddr_bwprofiler {
-		compatible = "qcom,sa8797_ddr_bwprofiler";
-		reg = <0x0 0x21800000 0x0 0x0200000>,
-		      <0x0 0x21A00000 0x0 0x0200000>,
-		      <0x0 0x21C00000 0x0 0x0200000>,
-		      <0x0 0x21E00000 0x0 0x0200000>,
-		      <0x0 0x22800000 0x0 0x0200000>,
-		      <0x0 0x22A00000 0x0 0x0200000>,
-		      <0x0 0x22C00000 0x0 0x0200000>,
-		      <0x0 0x22E00000 0x0 0x0200000>,
-		      <0x0 0x23800000 0x0 0x0200000>,
-		      <0x0 0x23A00000 0x0 0x0200000>,
-		      <0x0 0x23C00000 0x0 0x0200000>,
-		      <0x0 0x23E00000 0x0 0x0200000>,
-		      <0x0 0x24800000 0x0 0x0200000>,
-		      <0x0 0x24A00000 0x0 0x0200000>,
-		      <0x0 0x24C00000 0x0 0x0200000>,
-		      <0x0 0x24E00000 0x0 0x0200000>,
-		      <0x0 0x0232b000 0x0 0x0001000>,
-		      <0x0 0x0232c000 0x0 0x0001000>,
-		      <0x0 0x0242b000 0x0 0x0001000>,
-		      <0x0 0x0242c000 0x0 0x0001000>,
-		      <0x0 0x0252b000 0x0 0x0001000>,
-		      <0x0 0x0252c000 0x0 0x0001000>,
-		      <0x0 0x0272b000 0x0 0x0001000>,
-		      <0x0 0x0272c000 0x0 0x0001000>;
 	};
 
 	scmi_usb1 {

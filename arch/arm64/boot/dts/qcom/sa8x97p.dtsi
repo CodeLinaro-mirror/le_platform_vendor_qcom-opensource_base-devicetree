@@ -685,6 +685,11 @@
 			reg = <0x0 0x87594000 0x0 0x9000>;
 		};
 
+		resource_scheduler_mem: resource_scheduler_region@8759d000 {
+			no-map;
+			reg = <0x0 0x8759d000 0x0 0x20000>;
+		};
+
 		pdp_ns_mem: pdp_ns_mem_region@87600000 {
 			no-map;
 			reg = <0x0 0x87600000 0x0 0x200000>;
@@ -858,6 +863,11 @@
 			reg = <0x0 0xa0100000 0x0 0x100000>;
 		};
 
+		mm_dspq: mm_dspq_region@ba200000 {
+			no-map;
+			reg = <0x0 0xba200000 0x0 0x200000>;
+		};
+
 		display_config_reserved: display_config_region@ba400000 {
 			no-map;
 			reg = <0x0 0xba400000 0x0 0xa00000>;
@@ -867,11 +877,6 @@
 			no-map;
 			reg = <0x0 0xbae00000 0x0 0x800000>;
 		};
-
-		mm_dspq: mm_dspq_region@ba200000 {
-                        no-map;
-                        reg = <0x0 0xba200000 0x0 0x200000>;
-                };
 
 		audio_config_mem: audio_config_region@bb600000 {
 			no-map;
@@ -1562,6 +1567,34 @@
 				power-domain-names = "power", "perf";
 				status = "disabled";
 			};
+		};
+
+		ddr_bwprofiler: ddr_bwprofiler {
+			compatible = "qcom,sa8797_ddr_bwprofiler";
+			reg = <0x0 0x21800000 0x0 0x0200000>,
+				<0x0 0x21A00000 0x0 0x0200000>,
+				<0x0 0x21C00000 0x0 0x0200000>,
+				<0x0 0x21E00000 0x0 0x0200000>,
+				<0x0 0x22800000 0x0 0x0200000>,
+				<0x0 0x22A00000 0x0 0x0200000>,
+				<0x0 0x22C00000 0x0 0x0200000>,
+				<0x0 0x22E00000 0x0 0x0200000>,
+				<0x0 0x23800000 0x0 0x0200000>,
+				<0x0 0x23A00000 0x0 0x0200000>,
+				<0x0 0x23C00000 0x0 0x0200000>,
+				<0x0 0x23E00000 0x0 0x0200000>,
+				<0x0 0x24800000 0x0 0x0200000>,
+				<0x0 0x24A00000 0x0 0x0200000>,
+				<0x0 0x24C00000 0x0 0x0200000>,
+				<0x0 0x24E00000 0x0 0x0200000>,
+				<0x0 0x0232b000 0x0 0x0001000>,
+				<0x0 0x0232c000 0x0 0x0001000>,
+				<0x0 0x0242b000 0x0 0x0001000>,
+				<0x0 0x0242c000 0x0 0x0001000>,
+				<0x0 0x0252b000 0x0 0x0001000>,
+				<0x0 0x0252c000 0x0 0x0001000>,
+				<0x0 0x0272b000 0x0 0x0001000>,
+				<0x0 0x0272c000 0x0 0x0001000>;
 		};
 
 		tsc: tsc@1c80000 {
@@ -2339,93 +2372,111 @@
 				qcom,static-mem-dump;
 
 				c0-context {
-					qcom,dump-id = <0x0>;
 					qcom,dump-size = <0x800>;
+					qcom,dump-id = <0x0>;
+					qcom,instance = <0x0>;
 				};
 
 				c1-context {
-					qcom,dump-id = <0x1>;
 					qcom,dump-size = <0x800>;
+					qcom,dump-id = <0x0>;
+					qcom,instance = <0x1>;
 				};
 
 				c2-context {
-					qcom,dump-id = <0x2>;
 					qcom,dump-size = <0x800>;
+					qcom,dump-id = <0x0>;
+					qcom,instance = <0x2>;
 				};
 
 				c3-context {
-					qcom,dump-id = <0x3>;
 					qcom,dump-size = <0x800>;
+					qcom,dump-id = <0x0>;
+					qcom,instance = <0x3>;
 				};
 
 				c4-context {
-					qcom,dump-id = <0x4>;
 					qcom,dump-size = <0x800>;
+					qcom,dump-id = <0x0>;
+					qcom,instance = <0x4>;
 				};
 
 				c5-context {
-					qcom,dump-id = <0x5>;
 					qcom,dump-size = <0x800>;
+					qcom,dump-id = <0x0>;
+					qcom,instance = <0x5>;
 				};
 
 				c6-context {
-					qcom,dump-id = <0x6>;
 					qcom,dump-size = <0x800>;
+					qcom,dump-id = <0x0>;
+					qcom,instance = <0x6>;
 				};
 
 				c7-context {
-					qcom,dump-id = <0x7>;
 					qcom,dump-size = <0x800>;
+					qcom,dump-id = <0x0>;
+					qcom,instance = <0x7>;
 				};
 
 				c8-context {
-					qcom,dump-id = <0x8>;
 					qcom,dump-size = <0x800>;
+					qcom,dump-id = <0x0>;
+					qcom,instance = <0x8>;
 				};
 
 				c9-context {
-					qcom,dump-id = <0x9>;
 					qcom,dump-size = <0x800>;
+					qcom,dump-id = <0x0>;
+					qcom,instance = <0x9>;
 				};
 
 				c10-context {
-					qcom,dump-id = <0xA>;
 					qcom,dump-size = <0x800>;
+					qcom,dump-id = <0x0>;
+					qcom,instance = <0xa>;
 				};
 
 				c11-context {
-					qcom,dump-id = <0xB>;
 					qcom,dump-size = <0x800>;
+					qcom,dump-id = <0x0>;
+					qcom,instance = <0xb>;
 				};
 
 				c12-context {
-					qcom,dump-id = <0xC>;
 					qcom,dump-size = <0x800>;
+					qcom,dump-id = <0x0>;
+					qcom,instance = <0xc>;
 				};
 
 				c13-context {
-					qcom,dump-id = <0xD>;
 					qcom,dump-size = <0x800>;
+					qcom,dump-id = <0x0>;
+					qcom,instance = <0xd>;
 				};
 
 				c14-context {
-					qcom,dump-id = <0xE>;
 					qcom,dump-size = <0x800>;
+					qcom,dump-id = <0x0>;
+					qcom,instance = <0xe>;
 				};
 
 				c15-context {
-					qcom,dump-id = <0xF>;
 					qcom,dump-size = <0x800>;
+					qcom,dump-id = <0x0>;
+					qcom,instance = <0xf>;
 				};
 
 				c16-context {
-					qcom,dump-id = <0x10>;
 					qcom,dump-size = <0x800>;
+					qcom,dump-id = <0x0>;
+					qcom,instance = <0x10>;
 				};
 
 				c17-context {
-					qcom,dump-id = <0x11>;
 					qcom,dump-size = <0x800>;
+					qcom,dump-id = <0x0>;
+					qcom,instance = <0x11>;
 				};
 
 				pmic {
@@ -2632,91 +2683,109 @@
 					cpuss_cpu0 {
 						qcom,dump-size = <0x40000>;
 						qcom,dump-id = <0x280>;
+						qcom,instance = <0x0>;
 					};
 
 					cpuss_cpu1 {
 						qcom,dump-size = <0x40000>;
-						qcom,dump-id = <0x281>;
+						qcom,dump-id = <0x280>;
+						qcom,instance = <0x1>;
 					};
 
 					cpuss_cpu2 {
 						qcom,dump-size = <0x40000>;
-						qcom,dump-id = <0x282>;
+						qcom,dump-id = <0x280>;
+						qcom,instance = <0x2>;
 					};
 
 					cpuss_cpu3 {
 						qcom,dump-size = <0x40000>;
-						qcom,dump-id = <0x283>;
+						qcom,dump-id = <0x280>;
+						qcom,instance = <0x3>;
 					};
 
 					cpuss_cpu4 {
 						qcom,dump-size = <0x40000>;
-						qcom,dump-id = <0x284>;
+						qcom,dump-id = <0x280>;
+						qcom,instance = <0x4>;
 					};
 
 					cpuss_cpu5 {
 						qcom,dump-size = <0x40000>;
-						qcom,dump-id = <0x285>;
+						qcom,dump-id = <0x280>;
+						qcom,instance = <0x5>;
 					};
 
 					cpuss_cpu6 {
 						qcom,dump-size = <0x40000>;
-						qcom,dump-id = <0x286>;
+						qcom,dump-id = <0x280>;
+						qcom,instance = <0x6>;
 					};
 
 					cpuss_cpu7 {
 						qcom,dump-size = <0x40000>;
-						qcom,dump-id = <0x287>;
+						qcom,dump-id = <0x280>;
+						qcom,instance = <0x7>;
 					};
 
 					cpuss_cpu8 {
 						qcom,dump-size = <0x40000>;
-						qcom,dump-id = <0x288>;
+						qcom,dump-id = <0x280>;
+						qcom,instance = <0x8>;
 					};
 
 					cpuss_cpu9 {
 						qcom,dump-size = <0x40000>;
-						qcom,dump-id = <0x289>;
+						qcom,dump-id = <0x280>;
+						qcom,instance = <0x9>;
 					};
 
 					cpuss_cpu10 {
 						qcom,dump-size = <0x40000>;
-						qcom,dump-id = <0x290>;
+						qcom,dump-id = <0x280>;
+						qcom,instance = <0xa>;
 					};
 
 					cpuss_cpu11 {
 						qcom,dump-size = <0x40000>;
-						qcom,dump-id = <0x291>;
+						qcom,dump-id = <0x280>;
+						qcom,instance = <0xb>;
 					};
 
 					cpuss_cpu12 {
 						qcom,dump-size = <0x40000>;
-						qcom,dump-id = <0x292>;
+						qcom,dump-id = <0x280>;
+						qcom,instance = <0xc>;
 					};
 
 					cpuss_cpu13 {
 						qcom,dump-size = <0x40000>;
-						qcom,dump-id = <0x293>;
+						qcom,dump-id = <0x280>;
+						qcom,instance = <0xd>;
 					};
 
 					cpuss_cpu14 {
 						qcom,dump-size = <0x40000>;
-						qcom,dump-id = <0x294>;
+						qcom,dump-id = <0x280>;
+						qcom,instance = <0xe>;
 					};
 
 					cpuss_cpu15 {
 						qcom,dump-size = <0x40000>;
-						qcom,dump-id = <0x295>;
+						qcom,dump-id = <0x280>;
+						qcom,instance = <0xf>;
 					};
 
 					cpuss_cpu16 {
 						qcom,dump-size = <0x40000>;
-						qcom,dump-id = <0x296>;
+						qcom,dump-id = <0x280>;
+						qcom,instance = <0x10>;
 					};
 
 					cpuss_cpu17 {
 						qcom,dump-size = <0x40000>;
-						qcom,dump-id = <0x297>;
+						qcom,dump-id = <0x280>;
+						qcom,instance = <0x11>;
 					};
 				};
 
@@ -2724,16 +2793,19 @@
 					cpuss_cluster0 {
 						qcom,dump-size = <0x40000>;
 						qcom,dump-id = <0x270>;
+						qcom,instance = <0x0>;
 					};
 
 					cpuss_cluster1 {
 						qcom,dump-size = <0x40000>;
-						qcom,dump-id = <0x271>;
+						qcom,dump-id = <0x270>;
+						qcom,instance = <0x1>;
 					};
 
 					cpuss_cluster2 {
 						qcom,dump-size = <0x40000>;
-						qcom,dump-id = <0x272>;
+						qcom,dump-id = <0x270>;
+						qcom,instance = <0x2>;
 					};
 				};
 
@@ -2960,7 +3032,7 @@
 
 		cpu_mpam: qcom,cpu_mpam {
 			compatible = "qcom,cpu-mpam";
-			reg = <0x0 0x80580000 0x0 0x400>;
+			reg = <0x0 0x84030000 0x0 0x400>;
 			reg-names = "mon-base";
 
 			L2_0 {
@@ -2981,7 +3053,7 @@
 
 		noc_bw_mpam: qcom,noc_bw_mpam {
 			compatible = "qcom,platform-mpam";
-			reg = <0x0 0x80580400 0x0 0x400>;
+			reg = <0x0 0x84030400 0x0 0x400>;
 			reg-names = "mon-base";
 			qcom,msc-id = <3>;
 			qcom,msc-name = "noc_bw";
@@ -3042,6 +3114,10 @@
 			gpu {
 				qcom,client-id = <1>;
 				qcom,client-name = "gpu";
+
+				part-id0 {
+					qcom,part-id = <0>;
+				};
 			};
 		};
 	};
@@ -5727,7 +5803,10 @@
 			 <&apps_smmu_2 0x1204 0x0>,
 			 <&apps_smmu_2 0x1205 0x2>,
 			 <&apps_smmu_2 0x1206 0x0>,
-			 <&apps_smmu_2 0x1207 0x2>;
+			 <&apps_smmu_2 0x1207 0x2>,
+			 <&apps_smmu_2 0x1208 0x0>,
+			 <&apps_smmu_2 0x1209 0x0>,
+			 <&apps_smmu_2 0x120a 0x0>;
 
 		power-domains = <&scmi7_pd 0>, <&scmi7_pd 1>, <&scmi7_dvfs 0>, <&scmi7_dvfs 1>;
 		power-domain-names = "power_core", "power_mdio", "perf_serdes", "perf_5g_serdes";
@@ -5753,7 +5832,7 @@
 		qcom-xpcs-handle = <&xpcs0>;
 
 		mtl_rx_setup: rx-queues-config {
-			snps,rx-queues-to-use = <7>;
+			snps,rx-queues-to-use = <10>;
 			snps,rx-sched-sp;
 
 			queue0 {
@@ -5794,10 +5873,26 @@
 				snps,dcb-algorithm;
 				snps,map-to-dma-channel = <0x6>;
 			};
+
+			queue7 {
+				snps,dcb-algorithm;
+				snps,map-to-dma-channel = <0x7>;
+			};
+
+			queue8 {
+				snps,dcb-algorithm;
+				snps,map-to-dma-channel = <0x8>;
+			};
+
+			queue9 {
+				snps,dcb-algorithm;
+				snps,map-to-dma-channel = <0x9>;
+			};
 		};
 
+
 		mtl_tx_setup: tx-queues-config {
-			snps,tx-queues-to-use = <7>;
+			snps,tx-queues-to-use = <10>;
 			snps,tx-sched-sp;
 
 			queue0 {
@@ -5825,6 +5920,18 @@
 			};
 
 			queue6 {
+				snps,dcb-algorithm;
+			};
+
+			queue7 {
+				snps,dcb-algorithm;
+			};
+
+			queue8 {
+				snps,dcb-algorithm;
+			};
+
+			queue9 {
 				snps,dcb-algorithm;
 			};
 		};
@@ -5854,7 +5961,10 @@
 			 <&apps_smmu_2 0x11c4 0x3>,
 			 <&apps_smmu_2 0x11c5 0x3>,
 			 <&apps_smmu_2 0x11c6 0x3>,
-			 <&apps_smmu_2 0x11c7 0x3>;
+			 <&apps_smmu_2 0x11c7 0x3>,
+			 <&apps_smmu_2 0x11c8 0x2>,
+			 <&apps_smmu_2 0x11c9 0x8>,
+			 <&apps_smmu_2 0x11ca 0x2>;
 
 		power-domains = <&scmi8_pd 0>, <&scmi8_pd 1>, <&scmi8_dvfs 0>, <&scmi8_dvfs 1>;
 		power-domain-names = "power_core", "power_mdio", "perf_serdes", "perf_5g_serdes";
@@ -5880,7 +5990,7 @@
 		qcom-xpcs-handle = <&xpcs1>;
 
 		mtl_rx_setup1: rx-queues-config {
-			snps,rx-queues-to-use = <7>;
+			snps,rx-queues-to-use = <10>;
 			snps,rx-sched-sp;
 
 			queue0 {
@@ -5921,10 +6031,25 @@
 				snps,dcb-algorithm;
 				snps,map-to-dma-channel = <0x6>;
 			};
+
+			queue7 {
+				snps,dcb-algorithm;
+				snps,map-to-dma-channel = <0x7>;
+			};
+
+			queue8 {
+				snps,dcb-algorithm;
+				snps,map-to-dma-channel = <0x8>;
+			};
+
+			queue9 {
+				snps,dcb-algorithm;
+				snps,map-to-dma-channel = <0x9>;
+			};
 		};
 
 		mtl_tx_setup1: tx-queues-config {
-			snps,tx-queues-to-use = <7>;
+			snps,tx-queues-to-use = <10>;
 			snps,tx-sched-sp;
 
 			queue0 {
@@ -5952,6 +6077,18 @@
 			};
 
 			queue6 {
+				snps,dcb-algorithm;
+			};
+
+			queue7 {
+				snps,dcb-algorithm;
+			};
+
+			queue8 {
+				snps,dcb-algorithm;
+			};
+
+			queue9 {
 				snps,dcb-algorithm;
 			};
 		};
