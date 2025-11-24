@@ -31,3 +31,15 @@
 &xo_board_clk {
 	clock-frequency = <19200000>;
 };
+
+&scmi11 {
+	status = "okay";
+};
+
+&qupv3_id_2 {
+	status = "okay";
+};
+
+&uart15 {
+	status = "okay";
+};
