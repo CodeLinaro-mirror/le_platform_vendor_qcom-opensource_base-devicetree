@@ -67,9 +67,9 @@
 		dma-coherent;
 	};
 
-	umd_firmware_vm@d7640000 {
+	umd_firmware_vm@d77d0000 {
 		compatible = "qcom,vfio-platform";
-		reg = <0x0 0xd7640000 0x0 0x10000>;
+		reg = <0x0 0xd77d0000 0x0 0x20000>;
 		iommus = <&apps_smmu_1 0x1300 0x0>;
 		dma-coherent;
 	};
