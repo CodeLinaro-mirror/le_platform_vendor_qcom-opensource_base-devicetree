@@ -156,6 +156,10 @@
 	status = "okay";
 };
 
+&scmi43 {
+	status = "okay";
+};
+
 &scmi45 {
 	status = "okay";
 };
@@ -174,6 +178,13 @@
 
 &aop_scmi {
 	status = "okay";
+};
+
+&scmi43_pinctrl{
+	scmi43_gpio: gpio {
+		gpio-controller;
+	};
+
 };
 
 &soc {
