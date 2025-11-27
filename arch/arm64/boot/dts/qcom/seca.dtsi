@@ -4,6 +4,7 @@
  */
 
 #include <dt-bindings/interrupt-controller/arm-gic.h>
+#include <dt-bindings/gpio/gpio.h>
 
 / {
 	interrupt-parent = <&intc>;
@@ -1124,6 +1125,22 @@
 				power-domain-names = "power", "perf";
 				status = "disabled";
 			};
+		};
+
+		ufshc_mem: ufshc@1d44000 {
+			compatible = "qcom,sa8255p-ufshc", "jedec,ufs-2.0";
+			reg = <0 0x1d44000 0 0x3000>;
+			reg-names = "ufs_mem";
+			interrupts = <GIC_SPI 265 IRQ_TYPE_LEVEL_HIGH>;
+			lanes-per-direction = <1>;
+			#reset-cells = <1>;
+
+			iommus = <&apps_smmu_0 0x14C0 0x0>;
+			qcom,iommu-dma = "bypass";
+
+			reset-gpios = <&tlmm 181 GPIO_ACTIVE_LOW>;
+
+			status = "okay";
 		};
 	};
 };
