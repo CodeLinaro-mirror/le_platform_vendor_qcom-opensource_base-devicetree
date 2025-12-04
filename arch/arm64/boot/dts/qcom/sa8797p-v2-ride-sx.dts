@@ -41,13 +41,13 @@
 &pcie0 {
 	power-domains = <&scmi5_pd 0>;
 	power-domain-names = "power";
-	status = "okay";
+	status = "disabled";
 };
 
 &pcie1 {
 	power-domains = <&scmi6_pd 0>;
 	power-domain-names = "power";
-	status = "okay";
+	status = "disabled";
 };
 
 &xpcs1 {
