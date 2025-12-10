@@ -908,9 +908,9 @@
 			reg = <0x0 0xd7600000 0x0 0x40000>;
 		};
 
-		gearvm_logs_mem: gearvm_logs_region@d7640000 {
+		gearvm_logs_mem: gearvm_logs_region@d77d0000 {
 			no-map;
-			reg = <0x0 0xd7640000 0x0 0x10000>;
+			reg = <0x0 0xd77d0000 0x0 0x20000>;
 		};
 
 		gearvm_shared_mem: gearvm_shared_region@d7650000 {
@@ -1594,7 +1594,8 @@
 				<0x0 0x0252b000 0x0 0x0001000>,
 				<0x0 0x0252c000 0x0 0x0001000>,
 				<0x0 0x0272b000 0x0 0x0001000>,
-				<0x0 0x0272c000 0x0 0x0001000>;
+				<0x0 0x0272c000 0x0 0x0001000>,
+				<0x0 0x01790000 0x0 0x0050000>;
 		};
 
 		tsc: tsc@1c80000 {
@@ -2949,79 +2950,16 @@
 			};
 		};
 
-		qfprom_tcsr_softsku_0: qfprom@1f97070 {
+		qfprom_tcsr_softsku: qfprom@1f97070 {
 			compatible = "qcom,qfprom";
-			reg = <0x0 0x1f97070 0x0 0x4>;
+			reg = <0x0 0x1f97070 0x0 0x18>;
 			#address-cells = <1>;
 			#size-cells = <1>;
 		};
 
-		qfprom_tcsr_softsku_1: qfprom@1f97074 {
+		qfprom_tcsr_qtv: qfprom@1f96004 {
 			compatible = "qcom,qfprom";
-			reg = <0x0 0x1f97074 0x0 0x4>;
-			#address-cells = <1>;
-			#size-cells = <1>;
-		};
-
-		qfprom_tcsr_softsku_2: qfprom@1f97078 {
-			compatible = "qcom,qfprom";
-			reg = <0x0 0x1f97078 0x0 0x4>;
-			#address-cells = <1>;
-			#size-cells = <1>;
-		};
-
-		qfprom_tcsr_softsku_3: qfprom@1f9707c {
-			compatible = "qcom,qfprom";
-			reg = <0x0 0x1f9707c 0x0 0x4>;
-			#address-cells = <1>;
-			#size-cells = <1>;
-		};
-
-		qfprom_tcsr_softsku_4: qfprom@1f97080 {
-			compatible = "qcom,qfprom";
-			reg = <0x0 0x1f97080 0x0 0x4>;
-			#address-cells = <1>;
-			#size-cells = <1>;
-		};
-
-		qfprom_tcsr_qtv_0: qfprom@1f96004 {
-			compatible = "qcom,qfprom";
-			reg = <0x0 0x1f96004 0x0 0x4>;
-			#address-cells = <1>;
-			#size-cells = <1>;
-		};
-
-		qfprom_tcsr_qtv_1: qfprom@1f96008 {
-			compatible = "qcom,qfprom";
-			reg = <0x0 0x1f96008 0x0 0x4>;
-			#address-cells = <1>;
-			#size-cells = <1>;
-		};
-
-		qfprom_tcsr_qtv_2: qfprom@1f9600c {
-			compatible = "qcom,qfprom";
-			reg = <0x0 0x1f9600c 0x0 0x4>;
-			#address-cells = <1>;
-			#size-cells = <1>;
-		};
-
-		qfprom_tcsr_qtv_3: qfprom@1f96010 {
-			compatible = "qcom,qfprom";
-			reg = <0x0 0x1f96010 0x0 0x4>;
-			#address-cells = <1>;
-			#size-cells = <1>;
-		};
-
-		qfprom_tcsr_qtv_4: qfprom@1f96014 {
-			compatible = "qcom,qfprom";
-			reg = <0x0 0x1f96014 0x0 0x4>;
-			#address-cells = <1>;
-			#size-cells = <1>;
-		};
-
-		qfprom_tcsr_qtv_5: qfprom@1f96018 {
-			compatible = "qcom,qfprom";
-			reg = <0x0 0x1f96018 0x0 0x4>;
+			reg = <0x0 0x1f96004 0x0 0x18>;
 			#address-cells = <1>;
 			#size-cells = <1>;
 		};
@@ -5794,8 +5732,20 @@
 		reg-names = "stmmaceth", "rgmii";
 
 		interrupts = <GIC_SPI 821 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 713 IRQ_TYPE_LEVEL_HIGH>;
-		interrupt-names = "macirq", "sfty";
+			     <GIC_SPI 713 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 689 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 524 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 525 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 522 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 526 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 519 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 520 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 462 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 521 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 158 IRQ_TYPE_LEVEL_HIGH>;
+		interrupt-names = "macirq", "sfty", "dma_tx_rx0", "dma_tx_rx1", "dma_tx_rx2",
+				 "dma_tx_rx3", "dma_tx_rx4", "dma_tx_rx5", "dma_tx_rx6",
+				 "dma_tx_rx7", "dma_tx_rx8", "dma_tx_rx9";
 
 		iommus = <&apps_smmu_2 0x1201 0x2>,
 			 <&apps_smmu_2 0x1202 0x0>,
@@ -6104,6 +6054,11 @@
 	uefi_log {
 		compatible = "qcom,nhlos-logs-mem", "qcom,nhlos-logs";
 		memory-region = <&uefi_log>;
+	};
+
+	gearvm_log {
+		compatible = "qcom,nhlos-logs-mem", "qcom,nhlos-logs";
+		memory-region = <&gearvm_logs_mem>;
 	};
 };
 
