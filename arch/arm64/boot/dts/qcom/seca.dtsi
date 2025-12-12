@@ -364,8 +364,10 @@
 		};
 
 		smem_mem: smem_region@89b00000 {
+			compatible = "qcom,smem";
 			no-map;
 			reg = <0x0 0x89b00000 0x0 0x400000>;
+			hwlocks = <&tcsr_mutex 3>;
 		};
 
 		global_sync_mem: global_sync_region@89f00000 {
@@ -1012,12 +1014,17 @@
 				     <GIC_PPI 12 (GIC_CPU_MASK_SIMPLE(8) | IRQ_TYPE_LEVEL_LOW)>;
 		};
 
+		tcsr_mutex: hwlock@1f40000 {
+			compatible = "qcom,tcsr-mutex";
+			reg = <0x0 0x01f40000 0x0 0x20000>;
+			#hwlock-cells = <1>;
+		};
+
 		watchdog@17826000 {
 			compatible = "qcom,kpss-wdt";
 			reg = <0x0 0x17826000 0x0 0x1000>;
 			clocks = <&sleep_clk>;
 			interrupts = <GIC_ESPI 848 IRQ_TYPE_EDGE_RISING>;
 		};
-
 	};
 };
