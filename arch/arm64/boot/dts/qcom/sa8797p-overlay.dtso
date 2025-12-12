@@ -336,8 +336,12 @@
 	scmi_camera {
 		compatible = "qcom,uscmi";
 
-		power-domains = <&scmi21_dvfs 0>;
-		power-domain-names = "perf_camera";
+		/* Power domains for camera GPIO controls (0-4) and performance */
+		power-domains = <&scmi21_pd 0>, <&scmi21_pd 1>, <&scmi21_pd 2>,
+				<&scmi21_pd 3>, <&scmi21_pd 4>, <&scmi21_dvfs 0>;
+		power-domain-names = "power_camera_gpio_0", "power_camera_gpio_1",
+				     "power_camera_gpio_2", "power_camera_gpio_3",
+				     "power_camera_gpio_4", "perf_camera";
 
 		qcom,dev-name = "scmi_camera";
         };
