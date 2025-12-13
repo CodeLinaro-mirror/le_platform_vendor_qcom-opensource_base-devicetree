@@ -2188,7 +2188,7 @@
 			msi-parent = <&gic_its 0x14C0>;
 
 			iommus = <&apps_smmu_0 0x14C0 0x0>;
-
+			dma-coherent;
 			reset-gpios = <&tlmm 181 GPIO_ACTIVE_LOW>;
 
 			power-domains = <&scmi3_pd 0>;
