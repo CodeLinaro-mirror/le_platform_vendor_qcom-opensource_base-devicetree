@@ -16,4 +16,8 @@
 	qcom,msm-id = <690 0x20000>;
 	qcom,board-id = <0x03010025 3>;
 	qcom,sku-id = <0x100>;
+
+	aliases {
+		spi14 = &spi14;
+	};
 };
