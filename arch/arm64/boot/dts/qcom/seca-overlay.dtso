@@ -6,6 +6,8 @@
 /dts-v1/;
 /plugin/;
 
+#include "seca-dma-heaps.dtsi"
+
 / {
 	model = "Qualcomm Technologies, Inc. SecaAU Rumi";
 	compatible = "qcom,secaau-rumi", "qcom,seca";
