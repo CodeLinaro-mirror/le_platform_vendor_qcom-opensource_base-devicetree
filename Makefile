@@ -1,22 +1,5 @@
 # SPDX-License-Identifier: GPL-2.0
 
-# SA8397
-dtb-y += arch/arm64/boot/dts/qcom/sa8397p-adp-star.dtb
-dtb-y += arch/arm64/boot/dts/qcom/sa8397p-v2-adp-star.dtb
-dtb-y += arch/arm64/boot/dts/qcom/sa8397p-non-safe-ivi-adp-star.dtb
-dtb-y += arch/arm64/boot/dts/qcom/sa8397p-v2-non-safe-ivi-adp-star.dtb
-dtb-y += arch/arm64/boot/dts/qcom/sa8397p-non-safe-ivi-ride-sx.dtb
-dtb-y += arch/arm64/boot/dts/qcom/sa8397p-v2-non-safe-ivi-ride-sx.dtb
-dtb-y += arch/arm64/boot/dts/qcom/sa8397p-safe-ivi-ride-sx.dtb
-dtb-y += arch/arm64/boot/dts/qcom/sa8397p-v2-safe-ivi-ride-sx.dtb
-dtb-y += arch/arm64/boot/dts/qcom/sa8397p-ride-sx.dtb
-dtb-y += arch/arm64/boot/dts/qcom/sa8397p-v2-ride-sx.dtb
-dtb-y += arch/arm64/boot/dts/qcom/sa8397p-non-safe-la-gvm-ride-sx.dtb
-dtb-y += arch/arm64/boot/dts/qcom/sa8397p-non-safe-multi-gvm-ride-sx.dtb
-dtb-y += arch/arm64/boot/dts/qcom/sa8397p-la-gvm-ride-sx.dtb
-dtb-y += arch/arm64/boot/dts/qcom/sa8397p-multi-gvm-ride-sx.dtb
-dtb-y += arch/arm64/boot/dts/qcom/sa8397p-overlay.dtbo
-
 # SA8797
 dtb-y += arch/arm64/boot/dts/qcom/sa8797p-adp-star.dtb
 dtb-y += arch/arm64/boot/dts/qcom/sa8797p-v2-adp-star.dtb
