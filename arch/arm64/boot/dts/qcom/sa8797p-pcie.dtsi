@@ -17,7 +17,7 @@
 
 		ranges = <0x01000000 0x0 0x40000000 0x0 0x40000000 0x0 0x100000>,
 			<0x02000000 0x0 0x40100000 0x0 0x40100000 0x0 0x7000000>,
-			<0x43000000 0x50 0x10100000 0x50 0x10100000 0x0 0x100000>;
+			<0x43000000 0x50 0x10100000 0x50 0x10100000 0x8 0x00000000>;
 		bus-range = <0x00 0xff>;
 
 		linux,pci-domain = <0>;
@@ -26,6 +26,12 @@
 		interrupt-names = "global_int";
 
 		interrupt-parent = <&intc>;
+		#interrupt-cells = <1>;
+		interrupt-map-mask = <0 0 0 0x7>;
+		interrupt-map = <0 0 0 1 &intc 0 0 GIC_SPI 149 IRQ_TYPE_LEVEL_HIGH>, //INTa
+					<0 0 0 2 &intc 0 0 GIC_SPI 150 IRQ_TYPE_LEVEL_HIGH>, //INTb
+					<0 0 0 3 &intc 0 0 GIC_SPI 151 IRQ_TYPE_LEVEL_HIGH>, //INTc
+					<0 0 0 4 &intc 0 0 GIC_SPI 152 IRQ_TYPE_LEVEL_HIGH>; //INTd
 
 		rasdp-off = <0x43C>;
 		safety-supported;
@@ -43,6 +49,15 @@
 		 */
 
 		status = "disabled";
+
+		pcie0_port0: pcie@0 {
+				device_type = "pci";
+				reg = <0x0 0x0 0x0 0x0 0x0>;
+				bus-range = <0x01 0xff>;
+				#address-cells = <3>;
+				#size-cells = <2>;
+				ranges;
+		};
 	};
 
 	pcie1: pci@4800000000 {
@@ -58,7 +73,7 @@
 
 		ranges = <0x01000000 0x0 0x48000000 0x0 0x48000000 0x0 0x100000>,
 			<0x02000000 0x0 0x48100000 0x0 0x48100000 0x0 0x7000000>,
-			<0x43000000 0x48 0x10100000 0x48 0x10100000 0x0 0x100000>;
+			<0x43000000 0x48 0x10100000 0x48 0x10100000 0x4 0x00000000>;
 		bus-range = <0x00 0xff>;
 
 		linux,pci-domain = <1>;
@@ -67,6 +82,12 @@
 		interrupt-names = "global_int";
 
 		interrupt-parent = <&intc>;
+		#interrupt-cells = <1>;
+		interrupt-map-mask = <0 0 0 0x7>;
+		interrupt-map = <0 0 0 1 &intc 0 0 GIC_SPI 835 IRQ_TYPE_LEVEL_HIGH>, //INTa
+					<0 0 0 2 &intc 0 0 GIC_SPI 351 IRQ_TYPE_LEVEL_HIGH>, //INTb
+					<0 0 0 3 &intc 0 0 GIC_SPI 830 IRQ_TYPE_LEVEL_HIGH>, //INTc
+					<0 0 0 4 &intc 0 0 GIC_SPI 348 IRQ_TYPE_LEVEL_HIGH>; //INTd
 
 		rasdp-off = <0x39C>;
 		safety-supported;
@@ -84,6 +105,15 @@
 		 */
 
 		status = "disabled";
+
+		pcie1_port0: pcie@1 {
+				device_type = "pci";
+				reg = <0x0 0x0 0x0 0x0 0x0>;
+				bus-range = <0x01 0xff>;
+				#address-cells = <3>;
+				#size-cells = <2>;
+				ranges;
+		};
 	};
 
 	pcie2: pci@0x4000000000 {
@@ -97,10 +127,21 @@
 
 		ranges = <0x01000000 0x0 0x50000000 0x0 0x50000000 0x0 0x100000>,
 			<0x02000000 0x0 0x50100000 0x0 0x50100000 0x0 0x7000000>,
-			<0x43000000 0x40 0x10100000 0x40 0x10100000 0x0 0x100000>;
+			<0x43000000 0x40 0x10100000 0x40 0x10100000 0x4 0x00000000>;
 		bus-range = <0x00 0xff>;
 
 		linux,pci-domain = <2>;
+
+		interrupts = <GIC_SPI 464 IRQ_TYPE_LEVEL_HIGH>;
+		interrupt-names = "global_int";
+
+		interrupt-parent = <&intc>;
+		#interrupt-cells = <1>;
+		interrupt-map-mask = <0 0 0 0x7>;
+		interrupt-map = <0 0 0 1 &intc 0 0 GIC_SPI 263 IRQ_TYPE_LEVEL_HIGH>, //INTa
+					<0 0 0 2 &intc 0 0 GIC_SPI 154 IRQ_TYPE_LEVEL_HIGH>, //INTb
+					<0 0 0 3 &intc 0 0 GIC_SPI 110 IRQ_TYPE_LEVEL_HIGH>, //INTc
+					<0 0 0 4 &intc 0 0 GIC_SPI 258 IRQ_TYPE_LEVEL_HIGH>; //INTd
 
 
 		msi-map = <0x0 &gic_its 0xa0000 0x10000>;
@@ -116,6 +157,15 @@
 		 */
 
 		status = "disabled";
+
+		pcie2_port0: pcie@2 {
+				device_type = "pci";
+				reg = <0x0 0x0 0x0 0x0 0x0>;
+				bus-range = <0x01 0xff>;
+				#address-cells = <3>;
+				#size-cells = <2>;
+				ranges;
+		};
 	};
 
 	pcie3: pci@0x400000000 {
@@ -129,10 +179,21 @@
 
 		ranges = <0x01000000 0x0 0x58000000 0x0 0x58000000 0x0 0x100000>,
 			<0x02000000 0x0 0x58100000 0x0 0x58100000 0x0 0x7000000>,
-			<0x43000000 0x4 0x10100000 0x4 0x10100000 0x0 0x100000>;
+			<0x43000000 0x4 0x10100000 0x4 0x10100000 0x0 0x80000000>;
 		bus-range = <0x00 0xff>;
 
 		linux,pci-domain = <3>;
+
+		interrupts = <GIC_SPI 465 IRQ_TYPE_LEVEL_HIGH>;
+		interrupt-names = "global_int";
+
+		interrupt-parent = <&intc>;
+		#interrupt-cells = <1>;
+		interrupt-map-mask = <0 0 0 0x7>;
+		interrupt-map = <0 0 0 1 &intc 0 0 GIC_SPI 111 IRQ_TYPE_LEVEL_HIGH>, //INTa
+					<0 0 0 2 &intc 0 0 GIC_SPI 246 IRQ_TYPE_LEVEL_HIGH>, //INTb
+					<0 0 0 3 &intc 0 0 GIC_SPI 239 IRQ_TYPE_LEVEL_HIGH>, //INTc
+					<0 0 0 4 &intc 0 0 GIC_SPI 234 IRQ_TYPE_LEVEL_HIGH>; //INTd
 
 		msi-map = <0x0 &gic_its 0xb0000 0x10000>;
 
@@ -147,6 +208,15 @@
 		 */
 
 		status = "disabled";
+
+		pcie3_port0: pcie@3 {
+				device_type = "pci";
+				reg = <0x0 0x0 0x0 0x0 0x0>;
+				bus-range = <0x01 0xff>;
+				#address-cells = <3>;
+				#size-cells = <2>;
+				ranges;
+		};
 	};
 };
 
