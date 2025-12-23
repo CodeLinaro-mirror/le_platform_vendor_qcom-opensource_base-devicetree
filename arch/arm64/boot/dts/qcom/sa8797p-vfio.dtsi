@@ -444,7 +444,7 @@
 		       <&apps_smmu_2 0x034c 0x0040>,
 		       <&apps_smmu_2 0x036c 0x0000>;
 		qcom,iommu-dma-addr-range = <0x4 0x0 0x80 0x0>;
-		qcom,iova-align-shift-max = <21>;
+		qcom,iova-align-shift-max = <30>;
 		dma-coherent;
 	};
 
@@ -464,7 +464,7 @@
 		       <&apps_smmu_2 0x034d 0x0020>,
 		       <&apps_smmu_2 0x036d 0x0020>;
 		qcom,iommu-dma-addr-range = <0x4 0x0 0x80 0x0>;
-		qcom,iova-align-shift-max = <21>;
+		qcom,iova-align-shift-max = <30>;
 		dma-coherent;
 	};
 
@@ -704,7 +704,7 @@
 		       <&apps_smmu_2 0x074c 0x0040>,
 		       <&apps_smmu_2 0x076c 0x0000>;
 		qcom,iommu-dma-addr-range = <0x4 0x0 0x80 0x0>;
-		qcom,iova-align-shift-max = <21>;
+		qcom,iova-align-shift-max = <30>;
 		dma-coherent;
 	};
 
@@ -724,7 +724,7 @@
 		       <&apps_smmu_2 0x074d 0x0020>,
 		       <&apps_smmu_2 0x076d 0x0020>;
 		qcom,iommu-dma-addr-range = <0x4 0x0 0x80 0x0>;
-		qcom,iova-align-shift-max = <21>;
+		qcom,iova-align-shift-max = <30>;
 		dma-coherent;
 	};
 
@@ -964,7 +964,7 @@
 		       <&apps_smmu_2 0x0B4c 0x0040>,
 		       <&apps_smmu_2 0x0B6c 0x0000>;
 		qcom,iommu-dma-addr-range = <0x4 0x0 0x80 0x0>;
-		qcom,iova-align-shift-max = <21>;
+		qcom,iova-align-shift-max = <30>;
 		dma-coherent;
 	};
 
@@ -984,7 +984,7 @@
 		       <&apps_smmu_2 0x0B4d 0x0020>,
 		       <&apps_smmu_2 0x0B6d 0x0020>;
 		qcom,iommu-dma-addr-range = <0x4 0x0 0x80 0x0>;
-		qcom,iova-align-shift-max = <21>;
+		qcom,iova-align-shift-max = <30>;
 		dma-coherent;
 	};
 
@@ -1224,7 +1224,7 @@
 		       <&apps_smmu_2 0x0F4c 0x0040>,
 		       <&apps_smmu_2 0x0F6c 0x0000>;
 		qcom,iommu-dma-addr-range = <0x4 0x0 0x80 0x0>;
-		qcom,iova-align-shift-max = <21>;
+		qcom,iova-align-shift-max = <30>;
 		dma-coherent;
 	};
 
@@ -1244,7 +1244,7 @@
 		       <&apps_smmu_2 0x0F4d 0x0020>,
 		       <&apps_smmu_2 0x0F6d 0x0020>;
 		qcom,iommu-dma-addr-range = <0x4 0x0 0x80 0x0>;
-		qcom,iova-align-shift-max = <21>;
+		qcom,iova-align-shift-max = <30>;
 		dma-coherent;
 	};
 
@@ -1421,7 +1421,7 @@
 			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_0 0x0DE6 0x0000>;
 		qcom,iommu-dma-addr-range = <0x4 0x0 0x80 0x0>;
-		qcom,iova-align-shift-max = <21>;
+		qcom,iova-align-shift-max = <30>;
 		dma-coherent;
 	};
 
@@ -1439,7 +1439,7 @@
 			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_0 0x0DE7 0x0000>;
 		qcom,iommu-dma-addr-range = <0x4 0x0 0x80 0x0>;
-		qcom,iova-align-shift-max = <21>;
+		qcom,iova-align-shift-max = <30>;
 		dma-coherent;
 	};
 
@@ -1596,7 +1596,7 @@
 			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_0 0x0E0E 0x0000>;
 		qcom,iommu-dma-addr-range = <0x4 0x0 0x80 0x0>;
-		qcom,iova-align-shift-max = <21>;
+		qcom,iova-align-shift-max = <30>;
 		dma-coherent;
 	};
 
@@ -1614,7 +1614,7 @@
 			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_0 0x0E0F 0x0000>;
 		qcom,iommu-dma-addr-range = <0x4 0x0 0x80 0x0>;
-		qcom,iova-align-shift-max = <21>;
+		qcom,iova-align-shift-max = <30>;
 		dma-coherent;
 	};
 
@@ -1791,7 +1791,7 @@
 			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_0 0x0E36 0x0000>;
 		qcom,iommu-dma-addr-range = <0x4 0x0 0x80 0x0>;
-		qcom,iova-align-shift-max = <21>;
+		qcom,iova-align-shift-max = <30>;
 		dma-coherent;
 	};
 
@@ -1809,7 +1809,7 @@
 			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_0 0x0E37 0x0000>;
 		qcom,iommu-dma-addr-range = <0x4 0x0 0x80 0x0>;
-		qcom,iova-align-shift-max = <21>;
+		qcom,iova-align-shift-max = <30>;
 		dma-coherent;
 	};
 
