@@ -139,7 +139,7 @@
 	};
 
 	umd_ipclite@89f00000 {
-		compatible = "qcom,vfio-platform";
+		compatible = "qcom,vdev-device";
 		memory-region = <&global_sync_mem>;
 		reg = <0x0 0x89f00000 0x0 0x400000>,
 			<0x0 0x90c5000 0x0 0x1000>,
@@ -188,9 +188,6 @@
 			<&ipcc1 IPCC_COMPUTE_L0_ICP1 IPCC_COMPUTE_L0_SIGNAL_IPCLITE_TEST IRQ_TYPE_EDGE_RISING>,
 			<&ipcc1 IPCC_COMPUTE_L0_ICP1 IPCC_COMPUTE_L0_SIGNAL_IPCLITE_SSR IRQ_TYPE_EDGE_RISING>,
 			<&ipcc1 IPCC_COMPUTE_L0_ICP1 IPCC_COMPUTE_L0_SIGNAL_IPCLITE_DEBUG IRQ_TYPE_EDGE_RISING>;
-
-		iommus = <&apps_smmu_0 0x0440 0x0>;
-		dma-coherent;
 	};
 
 	umd_llcc@20400000 {
