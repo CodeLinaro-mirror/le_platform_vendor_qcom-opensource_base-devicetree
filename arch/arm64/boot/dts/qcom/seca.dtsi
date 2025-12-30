@@ -364,8 +364,10 @@
 		};
 
 		smem_mem: smem_region@89b00000 {
+			compatible = "qcom,smem";
 			no-map;
 			reg = <0x0 0x89b00000 0x0 0x400000>;
+			hwlocks = <&tcsr_mutex 3>;
 		};
 
 		global_sync_mem: global_sync_region@89f00000 {
@@ -908,6 +910,45 @@
 			status = "disabled";
 		};
 
+		pdp_mbox0: mailbox@19980000 {
+			compatible = "qcom,x1e80100-cpucp-mbox";
+			reg = <0x0 0x19980000 0x0 0x300>,
+				<0x0 0x17610000 0x0 0x4c08>;
+			reg-names = "tx", "rx";
+			qcom,rx-chans = <0x80b>;
+			#mbox-cells = <1>;
+			interrupts = <GIC_SPI 56 IRQ_TYPE_LEVEL_HIGH>;
+		};
+
+		pdp_mbox1: mailbox@1a980000 {
+			compatible = "qcom,x1e80100-cpucp-mbox";
+			reg = <0x0 0x1a980000 0x0 0x300>,
+				<0x0 0x17610000 0x0 0x4c08>;
+			reg-names = "tx", "rx";
+			#mbox-cells = <1>;
+			qcom,rx-chans = <0x1010>;
+			interrupts = <GIC_SPI 56 IRQ_TYPE_LEVEL_HIGH>;
+		};
+
+		pdp_mbox2: mailbox@1b980000 {
+			compatible = "qcom,x1e80100-cpucp-mbox";
+			reg = <0x0 0x1b980000 0x0 0x300>,
+				<0x0 0x17610000 0x0 0x4c08>;
+			reg-names = "tx", "rx";
+			#mbox-cells = <1>;
+			qcom,rx-chans = <0x2020>;
+			interrupts = <GIC_SPI 56 IRQ_TYPE_LEVEL_HIGH>;
+		};
+
+		cpucp_mbox: mailbox@18830000 {
+			compatible = "qcom,x1e80100-cpucp-mbox";
+			reg =   <0x0 0x18830000 0x0 0x300>,
+				<0x0 0x17620000 0x0 0x4C08>;
+			reg-names = "tx", "rx";
+			#mbox-cells = <1>;
+			interrupts = <GIC_SPI 50 IRQ_TYPE_LEVEL_HIGH>;
+		};
+
 		ipcc0: mailbox@9007000 {
 			compatible = "qcom,seca-ipcc", "qcom,ipcc";
 			reg = <0x0 0x9007000 0x0 0x1000>;
@@ -1012,12 +1053,18 @@
 				     <GIC_PPI 12 (GIC_CPU_MASK_SIMPLE(8) | IRQ_TYPE_LEVEL_LOW)>;
 		};
 
+		tcsr_mutex: hwlock@1f40000 {
+			compatible = "qcom,tcsr-mutex";
+			reg = <0x0 0x01f40000 0x0 0x20000>;
+			#hwlock-cells = <1>;
+		};
+
 		watchdog@17826000 {
 			compatible = "qcom,kpss-wdt";
 			reg = <0x0 0x17826000 0x0 0x1000>;
 			clocks = <&sleep_clk>;
 			interrupts = <GIC_ESPI 848 IRQ_TYPE_EDGE_RISING>;
 		};
-
 	};
 };
+#include "seca-scmi.dtsi"
