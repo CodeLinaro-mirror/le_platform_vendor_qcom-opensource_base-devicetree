@@ -1143,6 +1143,42 @@
 			};
 		};
 
+		qupv3_id_3: geniqup@cc0000 {
+			compatible = "qcom,sa8797p-geni-se-qup";
+			reg = <0x0 0xcc0000 0x0 0x2000>;
+			#address-cells = <2>;
+			#size-cells = <2>;
+			iommus = <&apps_smmu_0 0x1063 0x0>;
+			ranges;
+			status = "disabled";
+
+			i2c21: i2c@c80000 {
+				compatible = "qcom,sa8797p-geni-i2c";
+				reg = <0x0 0xc80000 0x0 0x4000>;
+				interrupts = <GIC_SPI 312 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi9_pd 21>;
+				status = "disabled";
+			};
+
+			spi21: spi@c80000 {
+				compatible = "qcom,sa8797p-geni-spi";
+				reg = <0x0 0xc80000 0x0 0x4000>;
+				interrupts = <GIC_SPI 312 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi10_pd 21>, <&scmi10_dvfs 21>;
+				power-domain-names = "power", "perf";
+				status = "disabled";
+			};
+
+			uart21: serial@c80000 {
+				compatible = "qcom,sa8797p-geni-uart";
+				reg = <0x0 0xc80000 0x0 0x4000>;
+				interrupts = <GIC_SPI 312 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi11_pd 21>, <&scmi11_dvfs 21>;
+				power-domain-names = "power", "perf";
+				status = "disabled";
+			};
+		};
+
 		gpi_dma0: dma-controller@900000 {
 			compatible = "qcom,sa8797-gpi-dma";
 			#dma-cells = <3>;
