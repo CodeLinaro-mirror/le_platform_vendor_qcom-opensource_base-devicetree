@@ -15,3 +15,13 @@
 	qcom,sku-id = <0x300>;
 };
 
+&ethernet0 {
+	phy-mode = "10gbase-r";
+
+	fixed-link {
+		status = "okay";
+		speed = <10000>;
+		full-duplex;
+	};
+};
+
