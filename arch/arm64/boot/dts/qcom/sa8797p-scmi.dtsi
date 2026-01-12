@@ -33,11 +33,6 @@
 			reg = <0x13>;
 			#power-domain-cells = <1>;
 		};
-
-		scmi0_rst: protocol@16 {
-			reg = <0x16>;
-			#reset-cells = <1>;
-		};
 	};
 
 	scmi1: scmi-1 {
@@ -61,11 +56,6 @@
 		scmi1_dvfs: protocol@13 {
 			reg = <0x13>;
 			#power-domain-cells = <1>;
-		};
-
-		scmi1_rst: protocol@16 {
-			reg = <0x16>;
-			#reset-cells = <1>;
 		};
 	};
 
@@ -91,11 +81,6 @@
 			reg = <0x13>;
 			#power-domain-cells = <1>;
 		};
-
-		scmi2_rst: protocol@16 {
-			reg = <0x16>;
-			#reset-cells = <1>;
-		};
 	};
 
 	scmi3: scmi-3 {
@@ -119,11 +104,6 @@
 		scmi3_dvfs: protocol@13 {
 			reg = <0x13>;
 			#power-domain-cells = <1>;
-		};
-
-		scmi3_rst: protocol@16 {
-			reg = <0x16>;
-			#reset-cells = <1>;
 		};
 	};
 
@@ -173,16 +153,6 @@
 			reg = <0x11>;
 			#power-domain-cells = <1>;
 		};
-
-		scmi5_dvfs: protocol@13 {
-			reg = <0x13>;
-			#power-domain-cells = <1>;
-		};
-
-		scmi5_rst: protocol@16 {
-			reg = <0x16>;
-			#reset-cells = <1>;
-		};
 	};
 
 	scmi6: scmi-6 {
@@ -201,16 +171,6 @@
 		scmi6_pd: protocol@11 {
 			reg = <0x11>;
 			#power-domain-cells = <1>;
-		};
-
-		scmi6_dvfs: protocol@13 {
-			reg = <0x13>;
-			#power-domain-cells = <1>;
-		};
-
-		scmi6_rst: protocol@16 {
-			reg = <0x16>;
-			#reset-cells = <1>;
 		};
 	};
 
@@ -294,11 +254,6 @@
 			reg = <0x13>;
 			#power-domain-cells = <1>;
 		};
-
-		scmi9_rst: protocol@16 {
-			reg = <0x16>;
-			#reset-cells = <1>;
-		};
 	};
 
 	scmi10: scmi-10 {
@@ -322,11 +277,6 @@
 		scmi10_dvfs: protocol@13 {
 			reg = <0x13>;
 			#power-domain-cells = <1>;
-		};
-
-		scmi10_rst: protocol@16 {
-			reg = <0x16>;
-			#reset-cells = <1>;
 		};
 	};
 
@@ -352,11 +302,6 @@
 			reg = <0x13>;
 			#power-domain-cells = <1>;
 		};
-
-		scmi11_rst: protocol@16 {
-			reg = <0x16>;
-			#reset-cells = <1>;
-		};
 	};
 
 	scmi12: scmi-12 {
@@ -380,11 +325,6 @@
 		scmi12_dvfs: protocol@13 {
 			reg = <0x13>;
 			#power-domain-cells = <1>;
-		};
-
-		scmi12_rst: protocol@16 {
-			reg = <0x16>;
-			#reset-cells = <1>;
 		};
 	};
 
@@ -410,11 +350,6 @@
 			reg = <0x13>;
 			#power-domain-cells = <1>;
 		};
-
-		scmi13_rst: protocol@16 {
-			reg = <0x16>;
-			#reset-cells = <1>;
-		};
 	};
 
 	scmi14: scmi-14 {
@@ -439,11 +374,6 @@
 			reg = <0x13>;
 			#power-domain-cells = <1>;
 		};
-
-		scmi14_rst: protocol@16 {
-			reg = <0x16>;
-			#reset-cells = <1>;
-		};
 	};
 
 	scmi15: scmi-15 {
@@ -463,16 +393,6 @@
 			reg = <0x11>;
 			#power-domain-cells = <1>;
 		};
-
-		scmi15_dvfs: protocol@13 {
-			reg = <0x13>;
-			#power-domain-cells = <1>;
-		};
-
-		scmi15_rst: protocol@16 {
-			reg = <0x16>;
-			#reset-cells = <1>;
-		};
 	};
 
 	scmi16: scmi-16 {
@@ -488,19 +408,9 @@
 
 		status = "disabled";
 
-		scmi16_pd: protocol@11 {
-			reg = <0x11>;
-			#power-domain-cells = <1>;
-		};
-
 		scmi16_dvfs: protocol@13 {
 			reg = <0x13>;
 			#power-domain-cells = <1>;
-		};
-
-		scmi16_rst: protocol@16 {
-			reg = <0x16>;
-			#reset-cells = <1>;
 		};
 	};
 
@@ -517,19 +427,9 @@
 
 		status = "disabled";
 
-		scmi17_pd: protocol@11 {
-			reg = <0x11>;
-			#power-domain-cells = <1>;
-		};
-
 		scmi17_dvfs: protocol@13 {
 			reg = <0x13>;
 			#power-domain-cells = <1>;
-		};
-
-		scmi17_rst: protocol@16 {
-			reg = <0x16>;
-			#reset-cells = <1>;
 		};
 	};
 
@@ -546,19 +446,9 @@
 
 		status = "disabled";
 
-		scmi18_pd: protocol@11 {
-			reg = <0x11>;
-			#power-domain-cells = <1>;
-		};
-
 		scmi18_dvfs: protocol@13 {
 			reg = <0x13>;
 			#power-domain-cells = <1>;
-		};
-
-		scmi18_rst: protocol@16 {
-			reg = <0x16>;
-			#reset-cells = <1>;
 		};
 	};
 
@@ -575,19 +465,9 @@
 
 		status = "disabled";
 
-		scmi19_pd: protocol@11 {
-			reg = <0x11>;
-			#power-domain-cells = <1>;
-		};
-
 		scmi19_dvfs: protocol@13 {
 			reg = <0x13>;
 			#power-domain-cells = <1>;
-		};
-
-		scmi19_rst: protocol@16 {
-			reg = <0x16>;
-			#reset-cells = <1>;
 		};
 	};
 
@@ -603,11 +483,6 @@
 		#size-cells = <0>;
 
 		status = "disabled";
-
-		scmi20_pd: protocol@11 {
-			reg = <0x11>;
-			#power-domain-cells = <1>;
-		};
 
 		scmi20_dvfs: protocol@13 {
 			reg = <0x13>;
@@ -642,11 +517,6 @@
 			reg = <0x13>;
 			#power-domain-cells = <1>;
 		};
-
-		scmi21_rst: protocol@16 {
-			reg = <0x16>;
-			#reset-cells = <1>;
-		};
 	};
 
 	scmi22: scmi-22 {
@@ -662,19 +532,9 @@
 
 		status = "disabled";
 
-		scmi22_pd: protocol@11 {
-			reg = <0x11>;
-			#power-domain-cells = <1>;
-		};
-
 		scmi22_dvfs: protocol@13 {
 			reg = <0x13>;
 			#power-domain-cells = <1>;
-		};
-
-		scmi22_rst: protocol@16 {
-			reg = <0x16>;
-			#reset-cells = <1>;
 		};
 	};
 
@@ -714,16 +574,6 @@
 			reg = <0x11>;
 			#power-domain-cells = <1>;
 		};
-
-		scmi24_dvfs: protocol@13 {
-			reg = <0x13>;
-			#power-domain-cells = <1>;
-		};
-
-		scmi24_rst: protocol@16 {
-			reg = <0x16>;
-			#reset-cells = <1>;
-		};
 	};
 
 	scmi25: scmi-25 {
@@ -742,16 +592,6 @@
 		scmi25_pd: protocol@11 {
 			reg = <0x11>;
 			#power-domain-cells = <1>;
-		};
-
-		scmi25_dvfs: protocol@13 {
-			reg = <0x13>;
-			#power-domain-cells = <1>;
-		};
-
-		scmi25_rst: protocol@16 {
-			reg = <0x16>;
-			#reset-cells = <1>;
 		};
 	};
 
@@ -797,19 +637,9 @@
 
 		status = "disabled";
 
-		scmi27_pd: protocol@11 {
-			reg = <0x11>;
-			#power-domain-cells = <1>;
-		};
-
 		scmi27_dvfs: protocol@13 {
 			reg = <0x13>;
 			#power-domain-cells = <1>;
-		};
-
-		scmi27_rst: protocol@16 {
-			reg = <0x16>;
-			#reset-cells = <1>;
 		};
 	};
 
@@ -826,19 +656,9 @@
 
 		status = "disabled";
 
-		scmi28_pd: protocol@11 {
-			reg = <0x11>;
-			#power-domain-cells = <1>;
-		};
-
 		scmi28_dvfs: protocol@13 {
 			reg = <0x13>;
 			#power-domain-cells = <1>;
-		};
-
-		scmi28_rst: protocol@16 {
-			reg = <0x16>;
-			#reset-cells = <1>;
 		};
 	};
 
@@ -855,19 +675,9 @@
 
 		status = "disabled";
 
-		scmi29_pd: protocol@11 {
-			reg = <0x11>;
-			#power-domain-cells = <1>;
-		};
-
 		scmi29_dvfs: protocol@13 {
 			reg = <0x13>;
 			#power-domain-cells = <1>;
-		};
-
-		scmi29_rst: protocol@16 {
-			reg = <0x16>;
-			#reset-cells = <1>;
 		};
 	};
 
@@ -884,19 +694,9 @@
 
 		status = "disabled";
 
-		scmi30_pd: protocol@11 {
-			reg = <0x11>;
-			#power-domain-cells = <1>;
-		};
-
 		scmi30_dvfs: protocol@13 {
 			reg = <0x13>;
 			#power-domain-cells = <1>;
-		};
-
-		scmi30_rst: protocol@16 {
-			reg = <0x16>;
-			#reset-cells = <1>;
 		};
 	};
 
@@ -946,16 +746,6 @@
 			reg = <0x11>;
 			#power-domain-cells = <1>;
 		};
-
-		scmi32_dvfs: protocol@13 {
-			reg = <0x13>;
-			#power-domain-cells = <1>;
-		};
-
-		scmi32_rst: protocol@16 {
-			reg = <0x16>;
-			#reset-cells = <1>;
-		};
 	};
 
 	scmi33: scmi-33 {
@@ -974,16 +764,6 @@
 		scmi33_pd: protocol@11 {
 			reg = <0x11>;
 			#power-domain-cells = <1>;
-		};
-
-		scmi33_dvfs: protocol@13 {
-			reg = <0x13>;
-			#power-domain-cells = <1>;
-		};
-
-		scmi33_rst: protocol@16 {
-			reg = <0x16>;
-			#reset-cells = <1>;
 		};
 	};
 
@@ -1057,16 +837,6 @@
 		#size-cells = <0>;
 
 		status = "disabled";
-
-		scmi36_pd: protocol@11 {
-			reg = <0x11>;
-			#power-domain-cells = <1>;
-		};
-
-		scmi36_dvfs: protocol@13 {
-			reg = <0x13>;
-			#power-domain-cells = <1>;
-		};
 
 		scmi36_rst: protocol@16 {
 			reg = <0x16>;
@@ -1174,19 +944,9 @@
 
 		status = "disabled";
 
-		scmi40_pd: protocol@11 {
-			reg = <0x11>;
-			#power-domain-cells = <1>;
-		};
-
 		scmi40_dvfs: protocol@13 {
 			reg = <0x13>;
 			#power-domain-cells = <1>;
-		};
-
-		scmi40_rst: protocol@16 {
-			reg = <0x16>;
-			#reset-cells = <1>;
 		};
 	};
 
@@ -1203,19 +963,9 @@
 
 		status = "disabled";
 
-		scmi41_pd: protocol@11 {
-			reg = <0x11>;
-			#power-domain-cells = <1>;
-		};
-
 		scmi41_dvfs: protocol@13 {
 			reg = <0x13>;
 			#power-domain-cells = <1>;
-		};
-
-		scmi41_rst: protocol@16 {
-			reg = <0x16>;
-			#reset-cells = <1>;
 		};
 	};
 
@@ -1323,16 +1073,6 @@
 			reg = <0x11>;
 			#power-domain-cells = <1>;
 		};
-
-		scmi45_dvfs: protocol@13 {
-			reg = <0x13>;
-			#power-domain-cells = <1>;
-		};
-
-		scmi45_rst: protocol@16 {
-			reg = <0x16>;
-			#reset-cells = <1>;
-		};
 	};
 
 	scmi46: scmi-46 {
@@ -1351,16 +1091,6 @@
 		scmi46_pd: protocol@11 {
 			reg = <0x11>;
 			#power-domain-cells = <1>;
-		};
-
-		scmi46_dvfs: protocol@13 {
-			reg = <0x13>;
-			#power-domain-cells = <1>;
-		};
-
-		scmi46_rst: protocol@16 {
-			reg = <0x16>;
-			#reset-cells = <1>;
 		};
 	};
 
