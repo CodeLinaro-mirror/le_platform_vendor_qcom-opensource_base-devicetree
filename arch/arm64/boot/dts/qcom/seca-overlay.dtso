@@ -6,7 +6,9 @@
 /dts-v1/;
 /plugin/;
 
+#include <dt-bindings/interrupt-controller/arm-gic.h>
 #include "seca-dma-heaps.dtsi"
+#include "seca-vfio.dtsi"
 
 / {
 	model = "Qualcomm Technologies, Inc. SecaAU Rumi";
@@ -255,5 +257,11 @@
 		power-domain-names = "usb_transfer", "usb_core";
 
 		qcom,dev-name = "scmi_usb1_qmp";
+	};
+
+	kiumd {
+		compatible = "qcom,kiumd";
+		qcom,dev-name = "kiumd";
+		status = "ok";
 	};
 };
