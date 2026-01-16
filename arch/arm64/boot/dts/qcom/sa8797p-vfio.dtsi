@@ -1832,7 +1832,11 @@
 	nsp_sysmon@89b00000 {
 		compatible = "qcom,vdev-device";
 		reg = <0x0 0x89b00000 0x0 0x400000>,
-			<0x0 0x01FD4000 0x0 0x1000>;
+			<0x0 0x01FD4000 0x0 0x1000>,
+			<0x0 0x100D000 0x0 0x35000>;
+		interrupts = <GIC_SPI 813 IRQ_TYPE_LEVEL_HIGH>,     // APSS0
+			     <GIC_SPI 812 IRQ_TYPE_LEVEL_HIGH>,     // APSS1
+			     <GIC_SPI 739  IRQ_TYPE_LEVEL_HIGH>;    // APSS2
 	};
 
 	qdss-service@11A05000 {
