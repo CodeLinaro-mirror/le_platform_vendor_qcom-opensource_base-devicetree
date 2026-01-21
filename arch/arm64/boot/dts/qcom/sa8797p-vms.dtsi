@@ -324,6 +324,13 @@
 		qcom,label = <0x54>;
 	};
 
+	dice_vm_0: dice-vm@0 {
+		compatible = "qcom,dice-vm";
+		memory-region = <&dice_vm_0_mem>;
+		qcom,vm-loader = <&auto_vm_0>;
+		qcom,vm = <&auto_vm>;
+	};
+
 	auto_vm_0: gh-secure-vm-loader@0 {
 		compatible = "qcom,gh-secure-vm-loader";
 		qcom,pas-id = <44>;
@@ -483,6 +490,12 @@
 		qcom,dst-vmids = <AC_VM_HPASS2_COMPUTE_Q6_ELF AC_VM_HPASS2_AUDIO_Q6_ELF>;
 		qcom,dst-perms = <QCOM_PERM_RWX QCOM_PERM_RWX>;
 		gunyah-label = <0x66>;
+	};
+
+	dice_vm_0_mem: dice_vm_0_mem@8083F000 {
+		no-map;
+		reg = <0x0 0x8083F000 0x0 0x1000>;
+		gunyah-label = <0x67>;
 	};
 
 	auto_vm_vblk0_ring: auto_vm_vblk0_ring@B00000000 {

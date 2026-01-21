@@ -22,7 +22,8 @@
 				&vm_cp_b_pt_mem
 				&vm_cp_p_pt_mem
 				&vm_cp_np_pt_mem
-				&soccp_fe_vm_1>;
+				&soccp_fe_vm_1
+				&dice_vm_0_mem>;
 	};
 };
 
