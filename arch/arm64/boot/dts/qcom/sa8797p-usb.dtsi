@@ -95,6 +95,10 @@
 			usb-role-switch;
 			role-switch-default-mode = "host";
 		};
+		dwc3_mem_region2: dwc3_mem_region2 {
+			iommu-addresses = <&usb_2_dwc3 0x0 0x0 0x0 0x90000000>,
+						<&usb_2_dwc3 0x0 0xf0000000 0xffffffff 0x10000000>;
+		};
 	};
 
 	usb_1: usb@a4f8800 {
@@ -131,6 +135,11 @@
 			usb-role-switch;
 			role-switch-default-mode = "host";
 		};
+
+		dwc3_mem_region1: dwc3_mem_region1 {
+			iommu-addresses = <&usb_1_dwc3 0x0 0x0 0x0 0x90000000>,
+						<&usb_1_dwc3 0x0 0xf0000000 0xffffffff 0x10000000>;
+		};
 	};
 
 	usb_0: usb@a6f8800 {
@@ -166,21 +175,11 @@
 			dr_mode = "otg";
 			usb-role-switch;
 		};
-	};
 
-	dwc3_mem_region0: dwc3_mem_region {
-		iommu-addresses = <&usb_0_dwc3 0x0 0x0 0x0 0x90000000>,
-					<&usb_0_dwc3 0x0 0xf0000000 0xffffffff 0x10000000>;
-	};
-
-	dwc3_mem_region1: dwc3_mem_region {
-		iommu-addresses = <&usb_1_dwc3 0x0 0x0 0x0 0x90000000>,
-					<&usb_1_dwc3 0x0 0xf0000000 0xffffffff 0x10000000>;
-	};
-
-	dwc3_mem_region2: dwc3_mem_region {
-		iommu-addresses = <&usb_2_dwc3 0x0 0x0 0x0 0x90000000>,
-					<&usb_2_dwc3 0x0 0xf0000000 0xffffffff 0x10000000>;
+		dwc3_mem_region0: dwc3_mem_region0 {
+			iommu-addresses = <&usb_0_dwc3 0x0 0x0 0x0 0x90000000>,
+						<&usb_0_dwc3 0x0 0xf0000000 0xffffffff 0x10000000>;
+		};
 	};
 
 	usb_nop_phy: usb_nop_phy {
