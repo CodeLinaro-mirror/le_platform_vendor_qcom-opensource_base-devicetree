@@ -6059,6 +6059,60 @@
 		compatible = "qcom,nhlos-logs-mem", "qcom,nhlos-logs";
 		memory-region = <&gearvm_logs_mem>;
 	};
+
+	pm_virq_0: pm-virq-0 {
+		compatible = "qcom,remote-virq";
+		interrupts = <GIC_ESPI 986 IRQ_TYPE_EDGE_RISING>;
+		thermal-zone = <&pm_kobra_thermal>;
+	};
+
+	pm_virq_1: pm-virq-1 {
+		compatible = "qcom,remote-virq";
+		interrupts = <GIC_ESPI 987 IRQ_TYPE_EDGE_RISING>;
+		thermal-zone = <&pm_kai_0_thermal>;
+	};
+
+	pm_virq_2: pm-virq-2 {
+		compatible = "qcom,remote-virq";
+		interrupts = <GIC_ESPI 988 IRQ_TYPE_EDGE_RISING>;
+		thermal-zone = <&pm_kai_1_thermal>;
+	};
+
+	pm_virq_3: pm-virq-3 {
+		compatible = "qcom,remote-virq";
+		interrupts = <GIC_ESPI 989 IRQ_TYPE_EDGE_RISING>;
+		thermal-zone = <&pm_kai_2_thermal>;
+	};
+
+	pm_virq_4: pm-virq-4 {
+		compatible = "qcom,remote-virq";
+		interrupts = <GIC_ESPI 990 IRQ_TYPE_EDGE_RISING>;
+		thermal-zone = <&pm_kai_3_thermal>;
+	};
+
+	pm_virq_5: pm-virq-5 {
+		compatible = "qcom,remote-virq";
+		interrupts = <GIC_ESPI 991 IRQ_TYPE_EDGE_RISING>;
+		thermal-zone = <&pm_kai_4_thermal>;
+	};
+
+	pm_virq_6: pm-virq-6 {
+		compatible = "qcom,remote-virq";
+		interrupts = <GIC_ESPI 992 IRQ_TYPE_EDGE_RISING>;
+		thermal-zone = <&pm_kai_5_thermal>;
+	};
+
+	pm_virq_7: pm-virq-7 {
+		compatible = "qcom,remote-virq";
+		interrupts = <GIC_ESPI 993 IRQ_TYPE_EDGE_RISING>;
+		thermal-zone = <&pm_kai_6_thermal>;
+	};
+
+	pm_virq_8: pm-virq-8 {
+		compatible = "qcom,remote-virq";
+		interrupts = <GIC_ESPI 994 IRQ_TYPE_EDGE_RISING>;
+		thermal-zone = <&pm_kai_7_thermal>;
+	};
 };
 
 #include "sa8797p-scmi.dtsi"
