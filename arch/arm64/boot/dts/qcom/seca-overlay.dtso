@@ -10,3 +10,248 @@
 	model = "Qualcomm Technologies, Inc. SecaAU Rumi";
 	compatible = "qcom,secaau-rumi", "qcom,seca";
 };
+
+&scmi1 {
+	status = "okay";
+};
+
+&scmi2 {
+	status = "okay";
+};
+
+&scmi13 {
+	status = "okay";
+};
+
+&scmi14 {
+	status = "okay";
+};
+
+&scmi16 {
+	status = "okay";
+};
+
+&scmi17 {
+	status = "okay";
+};
+
+&scmi19 {
+	status = "okay";
+};
+
+&scmi21 {
+	status = "okay";
+};
+
+&scmi27 {
+	status = "okay";
+};
+
+&scmi29 {
+	status = "okay";
+};
+
+&scmi30 {
+	status = "okay";
+};
+
+&scmi40 {
+	status = "okay";
+};
+
+&scmi41 {
+	status = "okay";
+};
+
+&scmi63 {
+	status = "okay";
+};
+
+&cpucp_scmi {
+	status = "okay";
+};
+
+&aop_scmi {
+	status = "okay";
+};
+
+&soc {
+	scmi_nsp0 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi19_dvfs 0>;
+		power-domain-names = "perf";
+
+		qcom,dev-name = "scmi_nsp0";
+	};
+
+	scmi_nsp1 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi19_dvfs 1>;
+		power-domain-names = "perf";
+
+		qcom,dev-name = "scmi_nsp1";
+	};
+
+	scmi_hpass0 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi19_dvfs 4>;
+		power-domain-names = "perf";
+
+		qcom,dev-name = "scmi_hpass0";
+	};
+
+	scmi_hpass1 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi19_dvfs 5>;
+		power-domain-names = "perf";
+
+		qcom,dev-name = "scmi_hpass1";
+	};
+
+	scmi_mdss0 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi16_dvfs 0>;
+		power-domain-names = "perf";
+
+		qcom,dev-name = "scmi_mdss0";
+	};
+
+	scmi_mdss1 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi17_dvfs 0>;
+		power-domain-names = "perf";
+
+		qcom,dev-name = "scmi_mdss1";
+	};
+
+	scmi_mdss0_secure {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi40_dvfs 0>;
+		power-domain-names = "perf";
+
+		qcom,dev-name = "scmi_mdss0_secure";
+	};
+
+	scmi_mdss1_secure {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi41_dvfs 0>;
+		power-domain-names = "perf";
+
+		qcom,dev-name = "scmi_mdss1_secure";
+	};
+
+	scmi_camera {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi21_dvfs 0>;
+		power-domain-names = "perf_camera";
+
+		qcom,dev-name = "scmi_camera";
+        };
+
+	scmi_dprx0 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi27_dvfs 0>;
+		power-domain-names = "perf";
+
+		qcom,dev-name = "scmi_dprx0";
+	};
+
+	test_scmi {
+                compatible = "qcom,uscmi";
+
+                power-domains = <&scmi63_pd 2> , <&scmi63_dvfs 2>;
+                power-domain-names = "power", "perf";
+
+                resets = <&scmi63_rst 0>;
+                reset-names = "core";
+
+                qcom,dev-name = "test_scmi";
+        };
+
+        test_scmi_perf {
+                compatible = "qcom,uscmi";
+
+                power-domains = <&scmi63_dvfs 1>;
+                power-domain-names = "perf";
+
+                qcom,dev-name = "test_scmi_perf";
+        };
+
+        test_scmi_power {
+                compatible = "qcom,uscmi";
+
+                power-domains = <&scmi63_pd 1>;
+
+                qcom,dev-name = "test_scmi_power";
+        };
+
+	scmi_usb2 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi2_pd 0>, <&scmi2_pd 1>;
+		power-domain-names = "usb_transfer", "usb_core";
+
+		qcom,dev-name = "scmi_usb2";
+	};
+
+	scmi_usb2_phy2 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi14_pd 0>, <&scmi14_pd 1>;
+		power-domain-names = "usb_transfer", "usb_core";
+
+		qcom,dev-name = "scmi_usb2_phy2";
+	};
+
+	scmi_soccp {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi29_dvfs 0>;
+		power-domain-names = "perf";
+
+		qcom,dev-name = "scmi_soccp";
+	};
+
+	scmi_gpce {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi30_dvfs 0>, <&scmi30_dvfs 1>;
+		power-domain-names = "gpce_core0", "gpce_core1";
+
+		qcom,dev-name = "scmi_gpce";
+	};
+
+	scmi_usb1 {
+		compatible = "qcom,uscmi";
+		power-domains = <&scmi1_pd 0>, <&scmi1_pd 1>;
+		power-domain-names = "usb_transfer", "usb_core";
+
+		qcom,dev-name = "scmi_usb1";
+	};
+
+	scmi_usb1_phy2 {
+		compatible = "qcom,uscmi";
+		power-domains = <&scmi13_pd 0>, <&scmi13_pd 1>;
+		power-domain-names = "usb_transfer", "usb_core";
+
+		qcom,dev-name = "scmi_usb1_phy2";
+	};
+
+	scmi_usb1_qmp {
+		compatible = "qcom,uscmi";
+		power-domains = <&scmi13_pd 2>, <&scmi13_pd 3>;
+		power-domain-names = "usb_transfer", "usb_core";
+
+		qcom,dev-name = "scmi_usb1_qmp";
+	};
+};

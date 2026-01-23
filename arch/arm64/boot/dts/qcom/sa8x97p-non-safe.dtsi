@@ -7,6 +7,8 @@
 	compatible = "qcom,sa8x97p-non-safe","qcom,non-safe";
 };
 
+#include <dt-bindings/thermal/thermal.h>
+
 &CPU0 {
 	#cooling-cells = <2>;
 };
@@ -1838,7 +1840,7 @@
 		cooling-maps {
 			map0 {
 				trip = <&kai_j_trip1>;
-				cooling-device = <&CPU0 6 6>;
+				cooling-device = <&CPU0 3 THERMAL_NO_LIMIT>;
 			};
 		};
 	};
@@ -1847,12 +1849,12 @@
 		cooling-maps {
 			map0 {
 				trip = <&kai_k_trip1>;
-				cooling-device = <&CPU6 6 6>;
+				cooling-device = <&CPU6 3 THERMAL_NO_LIMIT>;
 			};
 
 			map1 {
 				trip = <&kai_k_trip1>;
-				cooling-device = <&CPU12 6 6>;
+				cooling-device = <&CPU12 3 THERMAL_NO_LIMIT>;
 			};
 		};
 	};
@@ -1861,17 +1863,17 @@
 		cooling-maps {
 			map0 {
 				trip = <&pm_kobra_trip1>;
-				cooling-device = <&CPU0 6 6>;
+				cooling-device = <&CPU0 3 THERMAL_NO_LIMIT>;
 			};
 
 			map1 {
 				trip = <&pm_kobra_trip1>;
-				cooling-device = <&CPU6 6 6>;
+				cooling-device = <&CPU6 3 THERMAL_NO_LIMIT>;
 			};
 
 			map2 {
 				trip = <&pm_kobra_trip1>;
-				cooling-device = <&CPU12 6 6>;
+				cooling-device = <&CPU12 3 THERMAL_NO_LIMIT>;
 			};
 		};
 	};

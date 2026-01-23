@@ -4,6 +4,7 @@
  */
 
 #include <dt-bindings/interrupt-controller/arm-gic.h>
+#include <dt-bindings/gpio/gpio.h>
 
 / {
 	interrupt-parent = <&intc>;
@@ -12,6 +13,10 @@
 	#size-cells = <2>;
 
 	chosen { };
+
+	aliases {
+		serial0 = &uart15;
+	};
 
 	clocks {
 		xo_board_clk: xo-board-clk {
@@ -205,6 +210,11 @@
 	pmu {
 		compatible = "arm,armv8-pmuv3";
 		interrupts = <GIC_PPI 7 IRQ_TYPE_LEVEL_LOW>;
+	};
+
+	psci {
+		compatible = "arm,psci-1.0";
+		method = "smc";
 	};
 
 	reserved_memory: reserved-memory {
@@ -1102,6 +1112,40 @@
 			reg = <0x0 0x17826000 0x0 0x1000>;
 			clocks = <&sleep_clk>;
 			interrupts = <GIC_ESPI 848 IRQ_TYPE_EDGE_RISING>;
+		};
+
+		qupv3_id_2: geniqup@8c0000 {
+			compatible = "qcom,sa8797p-geni-se-qup", "qcom,sa8255p-geni-se-qup";
+			reg = <0x0 0x8c0000 0x0 0x2000>;
+			#address-cells = <2>;
+			#size-cells = <2>;
+			ranges;
+			status = "disabled";
+
+			uart15: serial@884000 {
+				compatible = "qcom,sa8797p-geni-debug-uart", "qcom,sa8255p-geni-debug-uart";
+				reg = <0x0 0x884000 0x0 0x4000>;
+				interrupts = <GIC_SPI 583 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi11_pd 15>, <&scmi11_dvfs 15>;
+				power-domain-names = "power", "perf";
+				status = "disabled";
+			};
+		};
+
+		ufshc_mem: ufshc@1d44000 {
+			compatible = "qcom,sa8255p-ufshc", "jedec,ufs-2.0";
+			reg = <0 0x1d44000 0 0x3000>;
+			reg-names = "ufs_mem";
+			interrupts = <GIC_SPI 265 IRQ_TYPE_LEVEL_HIGH>;
+			lanes-per-direction = <1>;
+			#reset-cells = <1>;
+
+			iommus = <&apps_smmu_0 0x14C0 0x0>;
+			qcom,iommu-dma = "bypass";
+
+			reset-gpios = <&tlmm 181 GPIO_ACTIVE_LOW>;
+
+			status = "okay";
 		};
 	};
 };

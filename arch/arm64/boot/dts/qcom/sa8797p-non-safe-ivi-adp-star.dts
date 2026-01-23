@@ -7,6 +7,7 @@
 
 #include "sa8x97p.dtsi"
 #include "sa8797p.dtsi"
+#include "sa8x97p-non-safe.dtsi"
 
 / {
 	model = "Qualcomm Technologies, Inc. SA8797P NON-SAFE IVI ADP STAR";
