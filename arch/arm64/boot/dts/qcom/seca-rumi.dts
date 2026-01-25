@@ -7,6 +7,7 @@
 
 #include "seca.dtsi"
 #include "seca-pinctrl.dtsi"
+#include "seca-usb.dtsi"
 
 / {
 	model = "Qualcomm Technologies, Inc. SecaAU Rumi";
@@ -41,5 +42,48 @@
 };
 
 &uart15 {
+	status = "okay";
+};
+
+&soc {
+
+	usb_emu_phy_0: usb_emu_phy@a784000 {
+		compatible = "qcom,usb-emu-phy";
+		reg = <0 0x0a784000 0 0x9500>;
+
+		#phy-cells = <0>;
+
+		qcom,emu-init-seq = <0xfffff 0x4
+				     0x2110010 0x34
+				     0x0110010 0x34
+				     0xffff3 0x4
+				     0xffff0 0x4
+				     0x100000 0x20
+				     0x0 0x20
+				     0x1A0 0x20
+				     0x100000 0x3c
+				     0x0 0x3c
+				     0x10060 0x3c
+				     0x0 0x4
+				     0x9 0x14>;
+	};
+};
+
+&scmi0 {
+	status = "okay";
+};
+
+&usb_0 {
+	qcom,select-utmi-as-pipe-clk;
+	status = "okay";
+};
+
+&usb_0_dwc3 {
+	phys = <&usb_emu_phy_0>;
+	phy-names = "usb2-phy";
+	maximum-speed = "high-speed";
+	dr_mode = "peripheral";
+	/delete-property/ usb-role-switch;
+
 	status = "okay";
 };
