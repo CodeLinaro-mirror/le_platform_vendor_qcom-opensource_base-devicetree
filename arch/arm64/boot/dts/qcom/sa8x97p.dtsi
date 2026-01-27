@@ -913,9 +913,14 @@
 			reg = <0x0 0xd77d0000 0x0 0x20000>;
 		};
 
+		gearvm_quantum_test_mem: gearvm_quantum_test_region@d77f0000 {
+			no-map;
+			reg = <0x0 0xd77f0000 0x0 0x10000>;
+		};
+
 		gearvm_shared_mem: gearvm_shared_region@d7650000 {
 			no-map;
-			reg = <0x0 0xd7650000 0x0 0x1b0000>;
+			reg = <0x0 0xd7650000 0x0 0x180000>;
 		};
 
 		sail_p_mem: sail_p_region@8c0000000 {
