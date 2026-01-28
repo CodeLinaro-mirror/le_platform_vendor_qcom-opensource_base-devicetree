@@ -33,6 +33,17 @@
 
 &i2c9 {
 	status = "okay";
+
+	#address-cells = <1>;
+	#size-cells = <0>;
+
+	usb0_eusb_repeater: redriver@43 {
+		compatible = "nxp,ptn3222";
+		reg = <0x43>;
+		#phy-cells = <0>;
+		nxp,override-param = < 0x7 0x2
+				0x8 0x62 >;
+	};
 };
 
 &pdp_scmi {
@@ -143,6 +154,7 @@
 
 &usb_0_eusbphy {
 	status = "okay";
+	phys = <&usb0_eusb_repeater>;
 };
 
 &usb_0_qmpphy {
