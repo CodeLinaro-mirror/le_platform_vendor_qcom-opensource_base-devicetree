@@ -1,0 +1,14 @@
+// SPDX-License-Identifier: BSD-3-Clause
+/*
+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+ */
+
+/dts-v1/;
+
+#include "seca.dtsi"
+
+/ {
+	model = "Qualcomm Technologies, Inc. SECA SAFE IVI RIDE-SX";
+	compatible = "qcom,seca-ride-sx", "qcom,safe-ivi", "qcom,seca";
+	qcom,sku-id = <0x200>;
+};
