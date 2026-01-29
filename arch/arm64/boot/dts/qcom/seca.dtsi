@@ -358,6 +358,11 @@
 			reg = <0x0 0x87594000 0x0 0x9000>;
 		};
 
+		resource_scheduler_mem: resource_scheduler_region@8759d000 {
+			no-map;
+			reg = <0x0 0x8759d000 0x0 0x20000>;
+		};
+
 		pdp_ns_mem: pdp_ns_mem_region@87600000 {
 			no-map;
 			reg = <0x0 0x87600000 0x0 0x200000>;
