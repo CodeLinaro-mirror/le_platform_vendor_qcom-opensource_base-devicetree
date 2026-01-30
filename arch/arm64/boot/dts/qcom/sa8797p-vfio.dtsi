@@ -36,12 +36,9 @@
 		interrupts-extended = <&ipcc2 IPCC_COMPUTE_L1_SAIL0 1 IRQ_TYPE_LEVEL_HIGH>;
 	};
 
-	apss-stl@1F97000 {
-		compatible = "qcom,vfio-platform";
-		reg = <0x0 0x01F97000 0x0 0x1000>,
-			  <0x0 0x17771000 0x0 0x1000>;
-		iommus = <&apps_smmu_1 0x0460 0x0000>;
-		dma-coherent;
+	apss-stl@8400000 {
+		compatible = "qcom,vdev-device";
+		reg = <0x0 0x08400000 0x0 0x1000>;
 	};
 
 	umd_nsp_drv@1f012000 {
