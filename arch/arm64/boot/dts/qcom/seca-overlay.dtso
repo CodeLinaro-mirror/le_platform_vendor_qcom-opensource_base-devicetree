@@ -202,6 +202,20 @@
 		qcom,vendor = <&vendor_cpupcp>;
 	};
 
+	scmi1_safety {
+		qcom,dev-name = "safety-profile-0";
+		compatible = "qcom,uscmi-vendor";
+		qcom,algo = <0x00 0x73616665>;
+		qcom,vendor = <&vendor_pdp>;
+	};
+
+	scmi2_safety {
+		qcom,dev-name = "safety-profile-1";
+		compatible = "qcom,uscmi-vendor";
+		qcom,algo = <0x00 0x73616665>;
+		qcom,vendor = <&vendor_pdp1>;
+	};
+
 	test_scmi {
                 compatible = "qcom,uscmi";
 
