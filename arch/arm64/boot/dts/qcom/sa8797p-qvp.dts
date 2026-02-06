@@ -8,7 +8,7 @@
 #include "sa8x97p-qvp.dtsi"
 
 / {
-	model = "Qualcomm Technologies, Inc. SA8797P Virtual Platform";
+	model = "Qualcomm Technologies, Inc. SA8x97P Virtual Platform";
 	compatible = "qcom,sa8797p", "qcom,scm-sa8797p";
 	qcom,board-id = <0x10029 0x00>;
 	qcom,msm-id = <689 0x10000>, <689 0x10001>, <690 0x10000>, <690 0x10001>;
