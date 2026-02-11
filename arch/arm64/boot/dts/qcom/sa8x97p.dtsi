@@ -19,7 +19,9 @@
 		ethernet1 = &ethernet1;
 	};
 
-	chosen { };
+	chosen {
+		bootargs = "pd_ignore_unused";
+	};
 
 	clocks {
 		gpll5_out_main: gpll5_out_main {
