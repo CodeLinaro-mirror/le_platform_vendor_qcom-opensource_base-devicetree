@@ -70,6 +70,10 @@
 	status = "okay";
 };
 
+&qupv3_id_3 {
+	status = "okay";
+};
+
 &scmi0 {
 	status = "okay";
 };
