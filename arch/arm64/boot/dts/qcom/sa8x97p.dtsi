@@ -1653,6 +1653,7 @@
 			interrupt-names = "tscss_fusa_irq";
 			qcom,tsc-nsec-update;
 			qcom,tsc-frame-pulse-gen;
+			qcom,tsc-safety;
 		};
 
 		ccu_qup: ccu-qup {
