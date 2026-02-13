@@ -4,7 +4,7 @@
  */
 
 / {
-	model = "Qualcomm Technologies, Inc. QAM8797P SIP";
+	model = "Qualcomm Technologies, Inc. QAM8x97P SIP";
 	compatible = "qcom,sa8797p-qam","qcom,sa8797p";
 	qcom,msm-id =  <689 0x10000>, <689 0x10001>, <690 0x10000>, <690 0x10001>;
 
