@@ -1836,6 +1836,60 @@
 		};
 	};
 
+	pm-e-die-temp {
+		cooling-maps {
+			map0 {
+				trip = <&kai_e_trip1>;
+				cooling-device = <&CPU0 0 0>;
+			};
+		};
+	};
+
+	pm-f-die-temp {
+		cooling-maps {
+			map0 {
+				trip = <&kai_f_trip1>;
+				cooling-device = <&CPU0 0 0>;
+			};
+		};
+	};
+
+	pm-g-die-temp {
+		cooling-maps {
+			map0 {
+				trip = <&kai_g_trip1>;
+				cooling-device = <&CPU0 0 0>;
+			};
+		};
+	};
+
+	pm-h-die-temp {
+		cooling-maps {
+			map0 {
+				trip = <&kai_h_trip1>;
+				cooling-device = <&CPU0 0 0>;
+			};
+		};
+	};
+
+	pm-i-die-temp {
+		cooling-maps {
+			map0 {
+				trip = <&kai_i_trip1>;
+				cooling-device = <&CPU0 0 0>;
+			};
+		};
+	};
+
+	pm-l-die-temp {
+		cooling-maps {
+			map0 {
+				trip = <&kai_l_trip1>;
+				cooling-device = <&CPU0 0 0>;
+			};
+		};
+	};
+
 	pm-j-die-temp {
 		cooling-maps {
 			map0 {
