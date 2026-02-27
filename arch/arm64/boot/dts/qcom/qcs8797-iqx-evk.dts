@@ -1,0 +1,61 @@
+// SPDX-License-Identifier: BSD-3-Clause
+/*
+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+ */
+
+/dts-v1/;
+
+#include "sa8x97p.dtsi"
+#include "sa8797p.dtsi"
+#include "sa8x97p-non-safe.dtsi"
+
+/ {
+	model = "Qualcomm Technologies, Inc. IQX EVK";
+	compatible = "qcom,qcs8797-iqx-evk";
+	qcom,board-id = <0x06010025 6>;
+};
+
+&xpcs0 {
+	/delete-property/ interrupts;
+	/delete-property/ interrupt-names;
+};
+
+&ethernet0 {
+	phy-mode = "10gbase-r";
+
+	/delete-property/ interrupts;
+	/delete-property/ interrupt-names;
+
+	interrupts = <GIC_SPI 821 IRQ_TYPE_LEVEL_HIGH>,
+		     <GIC_SPI 689 IRQ_TYPE_LEVEL_HIGH>,
+		     <GIC_SPI 524 IRQ_TYPE_LEVEL_HIGH>,
+		     <GIC_SPI 525 IRQ_TYPE_LEVEL_HIGH>,
+		     <GIC_SPI 522 IRQ_TYPE_LEVEL_HIGH>,
+		     <GIC_SPI 526 IRQ_TYPE_LEVEL_HIGH>,
+		     <GIC_SPI 519 IRQ_TYPE_LEVEL_HIGH>,
+		     <GIC_SPI 520 IRQ_TYPE_LEVEL_HIGH>,
+		     <GIC_SPI 462 IRQ_TYPE_LEVEL_HIGH>,
+		     <GIC_SPI 521 IRQ_TYPE_LEVEL_HIGH>,
+		     <GIC_SPI 158 IRQ_TYPE_LEVEL_HIGH>;
+	interrupt-names = "macirq", "dma_tx_rx0", "dma_tx_rx1", "dma_tx_rx2",
+			 "dma_tx_rx3", "dma_tx_rx4", "dma_tx_rx5", "dma_tx_rx6",
+			 "dma_tx_rx7", "dma_tx_rx8", "dma_tx_rx9";
+
+	fixed-link {
+		status = "okay";
+		speed = <10000>;
+		full-duplex;
+	};
+};
+
+&pcie0 {
+	power-domains = <&scmi5_pd 0>;
+	power-domain-names = "power";
+	status = "okay";
+};
+
+&pcie1 {
+	power-domains = <&scmi6_pd 0>;
+	power-domain-names = "power";
+	status = "okay";
+};

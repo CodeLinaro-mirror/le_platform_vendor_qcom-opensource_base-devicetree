@@ -58,5 +58,9 @@ dtb-y += arch/arm64/boot/dts/qcom/sa8x97p-flex-ddr-64gb_overlay.dtbo
 dtb-y += arch/arm64/boot/dts/qcom/seca-rumi.dtb
 
 
+# IQX
+dtb-y += arch/arm64/boot/dts/qcom/qcs8797-iqx-evk.dtb
+dtb-y += arch/arm64/boot/dts/qcom/qcs8797-iqx-evk-overlay.dtbo
+
 #include common target file
 include $(PWD)/Makefile.common
