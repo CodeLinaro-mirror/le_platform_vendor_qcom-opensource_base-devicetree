@@ -1,0 +1,18 @@
+// SPDX-License-Identifier: BSD-3-Clause
+/*
+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+ */
+
+#include "sa8797p-usb.dtsi"
+
+&usb_0_dwc3 {
+	iommus = <&apps_smmu_0 0x1360 0x0>;
+};
+
+&usb_1_dwc3 {
+	iommus = <&apps_smmu_0 0x11C0 0x0>;
+};
+
+&usb_2_dwc3 {
+	iommus = <&apps_smmu_0 0x1340 0x0>;
+};

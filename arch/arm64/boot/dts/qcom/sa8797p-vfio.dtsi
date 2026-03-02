@@ -36,12 +36,9 @@
 		interrupts-extended = <&ipcc2 IPCC_COMPUTE_L1_SAIL0 1 IRQ_TYPE_LEVEL_HIGH>;
 	};
 
-	apss-stl@1F97000 {
-		compatible = "qcom,vfio-platform";
-		reg = <0x0 0x01F97000 0x0 0x1000>,
-			  <0x0 0x17771000 0x0 0x1000>;
-		iommus = <&apps_smmu_1 0x0460 0x0000>;
-		dma-coherent;
+	apss-stl@8400000 {
+		compatible = "qcom,vdev-device";
+		reg = <0x0 0x08400000 0x0 0x1000>;
 	};
 
 	umd_nsp_drv@1f012000 {
@@ -1812,7 +1809,7 @@
 				<&ipcc2 IPCC_COMPUTE_L1_SAIL2 0x9 IRQ_TYPE_EDGE_RISING>,
 				<&ipcc2 IPCC_COMPUTE_L1_SAIL0 0xA IRQ_TYPE_EDGE_RISING>,
 				<&ipcc2 IPCC_COMPUTE_L1_SAIL2 0xB IRQ_TYPE_EDGE_RISING>,
-				<&ipcc2 IPCC_COMPUTE_L1_SAIL0 0xC IRQ_TYPE_EDGE_RISING>;
+				<&ipcc2 IPCC_COMPUTE_L1_SAIL2 0xC IRQ_TYPE_EDGE_RISING>;
 	};
 
 	sail_mbox_ota: sail-mailbox-ota@82200000 {
@@ -1832,7 +1829,11 @@
 	nsp_sysmon@89b00000 {
 		compatible = "qcom,vdev-device";
 		reg = <0x0 0x89b00000 0x0 0x400000>,
-			<0x0 0x01FD4000 0x0 0x1000>;
+			<0x0 0x01FD4000 0x0 0x1000>,
+			<0x0 0x100D000 0x0 0x35000>;
+		interrupts = <GIC_SPI 813 IRQ_TYPE_LEVEL_HIGH>,     // APSS0
+			     <GIC_SPI 812 IRQ_TYPE_LEVEL_HIGH>,     // APSS1
+			     <GIC_SPI 739  IRQ_TYPE_LEVEL_HIGH>;    // APSS2
 	};
 
 	qdss-service@11A05000 {
@@ -1963,7 +1964,13 @@
 			<0x0 0x1D2B0000 0x0 0x1000>,         //NCC2_CORE2_REP
 			<0x0 0x1D2C0000 0x0 0x1000>,         //NCC2_CORE3_REP
 			<0x0 0x1D2D0000 0x0 0x1000>,         //NCC2_CORE4_REP
-			<0x0 0x1D2E0000 0x0 0x1000>;         //NCC2_CORE5_REP
+			<0x0 0x1D2E0000 0x0 0x1000>,         //NCC2_CORE5_REP
+			<0x0 0x1D008000 0x0 0x1000>,         //NCC0_UNCORE_ETF
+			<0x0 0x1D108000 0x0 0x1000>,         //NCC1_UNCORE_ETF
+			<0x0 0x1D208000 0x0 0x1000>,         //NCC2_UNCORE_ETF
+			<0x0 0x1D00A000 0x0 0x1000>,         //NCC0_UNCORE_REP
+			<0x0 0x1D10A000 0x0 0x1000>,         //NCC1_UNCORE_REP
+			<0x0 0x1D20A000 0x0 0x1000>;         //NCC2_UNCORE_REP
 	};
 
 	qdss_cb {

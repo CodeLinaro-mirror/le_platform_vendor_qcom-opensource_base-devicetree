@@ -19,7 +19,9 @@
 		ethernet1 = &ethernet1;
 	};
 
-	chosen { };
+	chosen {
+		bootargs = "pd_ignore_unused";
+	};
 
 	clocks {
 		gpll5_out_main: gpll5_out_main {
@@ -913,9 +915,14 @@
 			reg = <0x0 0xd77d0000 0x0 0x20000>;
 		};
 
+		gearvm_quantum_test_mem: gearvm_quantum_test_region@d77f0000 {
+			no-map;
+			reg = <0x0 0xd77f0000 0x0 0x10000>;
+		};
+
 		gearvm_shared_mem: gearvm_shared_region@d7650000 {
 			no-map;
-			reg = <0x0 0xd7650000 0x0 0x1b0000>;
+			reg = <0x0 0xd7650000 0x0 0x180000>;
 		};
 
 		sail_p_mem: sail_p_region@8c0000000 {
@@ -1138,6 +1145,42 @@
 				dma-names = "tx",
 					    "rx";
 				power-domains = <&scmi10_pd 20>, <&scmi10_dvfs 20>;
+				power-domain-names = "power", "perf";
+				status = "disabled";
+			};
+		};
+
+		qupv3_id_3: geniqup@cc0000 {
+			compatible = "qcom,sa8797p-geni-se-qup";
+			reg = <0x0 0xcc0000 0x0 0x2000>;
+			#address-cells = <2>;
+			#size-cells = <2>;
+			iommus = <&apps_smmu_0 0x1063 0x0>;
+			ranges;
+			status = "disabled";
+
+			i2c21: i2c@c80000 {
+				compatible = "qcom,sa8797p-geni-i2c";
+				reg = <0x0 0xc80000 0x0 0x4000>;
+				interrupts = <GIC_SPI 312 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi9_pd 21>;
+				status = "disabled";
+			};
+
+			spi21: spi@c80000 {
+				compatible = "qcom,sa8797p-geni-spi";
+				reg = <0x0 0xc80000 0x0 0x4000>;
+				interrupts = <GIC_SPI 312 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi10_pd 21>, <&scmi10_dvfs 21>;
+				power-domain-names = "power", "perf";
+				status = "disabled";
+			};
+
+			uart21: serial@c80000 {
+				compatible = "qcom,sa8797p-geni-uart";
+				reg = <0x0 0xc80000 0x0 0x4000>;
+				interrupts = <GIC_SPI 312 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi11_pd 21>, <&scmi11_dvfs 21>;
 				power-domain-names = "power", "perf";
 				status = "disabled";
 			};
@@ -1610,6 +1653,7 @@
 			interrupt-names = "tscss_fusa_irq";
 			qcom,tsc-nsec-update;
 			qcom,tsc-frame-pulse-gen;
+			qcom,tsc-safety;
 		};
 
 		ccu_qup: ccu-qup {
@@ -2166,7 +2210,6 @@
 			interrupt-names = "eventq", "cmdq-sync", "gerror";
 			dma-coherent;
 			#iommu-cells = <1>;
-			status = "disabled";
 		};
 
 		rng: rng@10c3000 {
@@ -2227,7 +2270,6 @@
 				<GIC_SPI 688 IRQ_TYPE_LEVEL_HIGH>,
 				<GIC_SPI 422 IRQ_TYPE_LEVEL_HIGH>,
 				<GIC_SPI 476 IRQ_TYPE_LEVEL_HIGH>,
-				<GIC_SPI 679 IRQ_TYPE_LEVEL_HIGH>,
 				<GIC_SPI 574 IRQ_TYPE_LEVEL_HIGH>,
 				<GIC_SPI 575 IRQ_TYPE_LEVEL_HIGH>,
 				<GIC_SPI 576 IRQ_TYPE_LEVEL_HIGH>,
@@ -2239,7 +2281,7 @@
 				<GIC_SPI 667 IRQ_TYPE_LEVEL_HIGH>,
 				<GIC_SPI 669 IRQ_TYPE_LEVEL_HIGH>,
 				<GIC_SPI 670 IRQ_TYPE_LEVEL_HIGH>,
-				<GIC_SPI 670 IRQ_TYPE_LEVEL_HIGH>;
+				<GIC_SPI 700 IRQ_TYPE_LEVEL_HIGH>;
 
 			power-domains = <&scmi15_pd 0>;
 			power-domain-names = "power";
@@ -5714,6 +5756,9 @@
 		reg-names = "qxpcs";
 		interrupts = <GIC_SPI 713 IRQ_TYPE_LEVEL_HIGH>;
 		interrupt-names = "sfty";
+
+		resets = <&scmi7_rst 1>;
+		reset-names = "serdes_reset";
 	};
 
 	xpcs1: xpcs@0x1A94000 {
@@ -5723,6 +5768,9 @@
 		reg-names = "qxpcs";
 		interrupts = <GIC_SPI 361 IRQ_TYPE_LEVEL_HIGH>;
 		interrupt-names = "sfty";
+
+		resets = <&scmi8_rst 1>;
+		reset-names = "serdes_reset";
 	};
 
 	ethernet0: ethernet@0x1A00000 {
@@ -5760,9 +5808,6 @@
 
 		power-domains = <&scmi7_pd 0>, <&scmi7_pd 1>, <&scmi7_dvfs 0>, <&scmi7_dvfs 1>;
 		power-domain-names = "power_core", "power_mdio", "perf_serdes", "perf_5g_serdes";
-
-		resets = <&scmi7_rst 1>;
-		reset-names = "serdes_reset";
 
 		pinctrl-0 = <&ethernet0_default>;
 		pinctrl-names = "default";
@@ -5919,9 +5964,6 @@
 		power-domains = <&scmi8_pd 0>, <&scmi8_pd 1>, <&scmi8_dvfs 0>, <&scmi8_dvfs 1>;
 		power-domain-names = "power_core", "power_mdio", "perf_serdes", "perf_5g_serdes";
 
-		resets = <&scmi8_rst 1>;
-		reset-names = "serdes_reset";
-
 		pinctrl-0 = <&ethernet1_default>;
 		pinctrl-names = "default";
 
@@ -6059,6 +6101,60 @@
 	gearvm_log {
 		compatible = "qcom,nhlos-logs-mem", "qcom,nhlos-logs";
 		memory-region = <&gearvm_logs_mem>;
+	};
+
+	pm_virq_0: pm-virq-0 {
+		compatible = "qcom,remote-virq";
+		interrupts = <GIC_ESPI 986 IRQ_TYPE_EDGE_RISING>;
+		thermal-zone = <&pm_kobra_thermal>;
+	};
+
+	pm_virq_1: pm-virq-1 {
+		compatible = "qcom,remote-virq";
+		interrupts = <GIC_ESPI 987 IRQ_TYPE_EDGE_RISING>;
+		thermal-zone = <&pm_kai_0_thermal>;
+	};
+
+	pm_virq_2: pm-virq-2 {
+		compatible = "qcom,remote-virq";
+		interrupts = <GIC_ESPI 988 IRQ_TYPE_EDGE_RISING>;
+		thermal-zone = <&pm_kai_1_thermal>;
+	};
+
+	pm_virq_3: pm-virq-3 {
+		compatible = "qcom,remote-virq";
+		interrupts = <GIC_ESPI 989 IRQ_TYPE_EDGE_RISING>;
+		thermal-zone = <&pm_kai_2_thermal>;
+	};
+
+	pm_virq_4: pm-virq-4 {
+		compatible = "qcom,remote-virq";
+		interrupts = <GIC_ESPI 990 IRQ_TYPE_EDGE_RISING>;
+		thermal-zone = <&pm_kai_3_thermal>;
+	};
+
+	pm_virq_5: pm-virq-5 {
+		compatible = "qcom,remote-virq";
+		interrupts = <GIC_ESPI 991 IRQ_TYPE_EDGE_RISING>;
+		thermal-zone = <&pm_kai_4_thermal>;
+	};
+
+	pm_virq_6: pm-virq-6 {
+		compatible = "qcom,remote-virq";
+		interrupts = <GIC_ESPI 992 IRQ_TYPE_EDGE_RISING>;
+		thermal-zone = <&pm_kai_5_thermal>;
+	};
+
+	pm_virq_7: pm-virq-7 {
+		compatible = "qcom,remote-virq";
+		interrupts = <GIC_ESPI 993 IRQ_TYPE_EDGE_RISING>;
+		thermal-zone = <&pm_kai_6_thermal>;
+	};
+
+	pm_virq_8: pm-virq-8 {
+		compatible = "qcom,remote-virq";
+		interrupts = <GIC_ESPI 994 IRQ_TYPE_EDGE_RISING>;
+		thermal-zone = <&pm_kai_7_thermal>;
 	};
 };
 

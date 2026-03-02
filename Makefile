@@ -24,6 +24,7 @@ dtb-y += arch/arm64/boot/dts/qcom/sa8x97p-flex-ride-sx.dtb
 dtb-y += arch/arm64/boot/dts/qcom/sa8x97p-v2-flex-ride-sx.dtb
 dtb-y += arch/arm64/boot/dts/qcom/sa8x97p-v2-adp-star-pcie-ep.dtb
 dtb-y += arch/arm64/boot/dts/qcom/sa8x97p-v2-ride-sx-pcie-ep.dtb
+dtb-y += arch/arm64/boot/dts/qcom/sa8x97p-v2-flex-adp-star.dtb
 dtb-y += arch/arm64/boot/dts/qcom/sa8797p-overlay.dtbo
 dtb-y += arch/arm64/boot/dts/qcom/sa8797p-qvp.dtb
 
@@ -37,6 +38,11 @@ dtb-y += arch/arm64/boot/dts/qcom/sa8x97p-flex-ddr-64gb_overlay.dtbo
 
 # SecaAu
 dtb-y += arch/arm64/boot/dts/qcom/seca-rumi.dtb
+dtb-y += arch/arm64/boot/dts/qcom/seca-adas-ride-sx.dtb
+dtb-y += arch/arm64/boot/dts/qcom/seca-flex-ride-sx.dtb
+dtb-y += arch/arm64/boot/dts/qcom/seca-non-safe-ivi-adp-star.dtb
+dtb-y += arch/arm64/boot/dts/qcom/seca-non-safe-ivi-ride-sx.dtb
+dtb-y += arch/arm64/boot/dts/qcom/seca-safe-ivi-ride-sx.dtb
 dtb-y += arch/arm64/boot/dts/qcom/seca-overlay.dtbo
 
 

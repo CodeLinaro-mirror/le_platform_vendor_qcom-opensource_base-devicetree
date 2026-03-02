@@ -13,7 +13,7 @@
 #include "sa8797p-dma-heaps.dtsi"
 
 / {
-	model = "Qualcomm Technologies, Inc. SA8797P";
+	model = "Qualcomm Technologies, Inc. SA8x97P";
 	compatible = "qcom,sa8797p";
 };
 
@@ -362,6 +362,27 @@
 		power-domain-names = "perf";
 
 		qcom,dev-name = "scmi_dprx1";
+	};
+
+	scmi1_safety {
+		qcom,dev-name = "safety-profile-0";
+		compatible = "qcom,uscmi-vendor";
+		qcom,algo = <0x00 0x73616665>;
+		qcom,vendor = <&vendor_pdp>;
+	};
+
+	scmi2_safety {
+		qcom,dev-name = "safety-profile-1";
+		compatible = "qcom,uscmi-vendor";
+		qcom,algo = <0x00 0x73616665>;
+		qcom,vendor = <&vendor_pdp1>;
+	};
+
+	scmi3_safety {
+		qcom,dev-name = "safety-profile-2";
+		compatible = "qcom,uscmi-vendor";
+		qcom,algo = <0x00 0x73616665>;
+		qcom,vendor = <&vendor_pdp2>;
 	};
 
 	scmi_uetm {

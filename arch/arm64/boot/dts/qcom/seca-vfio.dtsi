@@ -1,0 +1,21 @@
+// SPDX-License-Identifier: BSD-3-Clause
+/*
+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+ */
+
+&soc {
+	scm_user_intf_device {
+		compatible = "qcom,scm-user-intf";
+		scm_dev = "scm";
+		status = "ok";
+	};
+
+	vfio_timer@17813000 {
+		compatible = "qcom,vfio-platform";
+		interrupts = <GIC_SPI 39 IRQ_TYPE_LEVEL_HIGH>;
+		reg = <0x00 0x17813000 0x0 0x1000>;
+		iommus = <&apps_smmu_0 0x1980 0x0>;
+		qcom,iommu-dma-addr-pool = <0x0 0x60002000 0x0 0x1FFFE000>;
+		dma-coherent;
+	};
+};

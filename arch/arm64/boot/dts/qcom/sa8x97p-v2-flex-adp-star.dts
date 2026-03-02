@@ -10,11 +10,11 @@
 #include "sa8797p.dtsi"
 
 / {
-	model = "Qualcomm Technologies, Inc. SA8x97P v2 ADP STAR";
-	compatible = "qcom,sa8797p-adp-star", "qcom,sa8797p-adp", "qcom,sa8797p";
+	model = "Qualcomm Technologies, Inc. SA8x97p V2 Flex ADP STAR";
+	compatible = "qcom,sa8797p-qam-ride-sx", "qcom,sa8797p-qam", "qcom,sa8797p";
 	qcom,msm-id = <689 0x20000>, <690 0x20000>;
 	qcom,board-id = <0x010025 0>;
-	qcom,sku-id = <0x100>;
+	qcom,sku-id = <0x300>;
 
 	aliases {
 		serial0 = &uart15;
