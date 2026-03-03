@@ -2068,4 +2068,14 @@
 		qcom,iommu-dma-addr-pool = <0x0 0x0 0x0 0xffffffff>;
 		dma-coherent;
 	};
+
+	// CRYPTO2
+	vfio_hwkm_gpce_core_2@9940000 {
+		compatible = "qcom,vfio-platform";
+		interrupts = <GIC_SPI 848 IRQ_TYPE_LEVEL_HIGH>;
+		reg = <0x0 0x9940000 0x0 0x00040000>;
+		iommus = <&apps_smmu_0 0x1669 0x0>;
+		qcom,iommu-dma-addr-pool = <0x0 0x0 0x0 0xffffffff>;
+		dma-coherent;
+	};
 };
