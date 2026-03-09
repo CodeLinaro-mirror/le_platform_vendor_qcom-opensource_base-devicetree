@@ -16,6 +16,18 @@
 	compatible = "qcom,qcs8797-iqx-evk";
 	qcom,msm-id = <689 0x20000>, <690 0x20000>;
 	qcom,board-id = <0x06010025 6>;
+
+	aliases {
+		serial3 = &uart0;
+		serial5 = &uart3;
+		serial6 = &uart10;
+		i2c7 = &i2c7;
+		i2c12 = &i2c12;
+		i2c13 = &i2c13;
+		i2c14 = &i2c14;
+		i2c19 = &i2c19;
+		i2c20 = &i2c20;
+	};
 };
 
 &xpcs0 {
@@ -62,3 +74,70 @@
 	power-domain-names = "power";
 	status = "okay";
 };
+
+&soc {
+	qupv3_id_3: geniqup@cc0000 {
+		compatible = "qcom,sa8797p-geni-se-qup";
+		reg = <0x0 0xcc0000 0x0 0x2000>;
+		#address-cells = <2>;
+		#size-cells = <2>;
+		iommus = <&apps_smmu_0 0x1063 0x0>;
+		ranges;
+		status = "okay";
+
+		spi21: spi@c80000 {
+			compatible = "qcom,sa8797p-geni-spi";
+			reg = <0x0 0xc80000 0x0 0x4000>;
+			interrupts = <GIC_SPI 312 IRQ_TYPE_LEVEL_HIGH>;
+			power-domains = <&scmi10_pd 21>, <&scmi10_dvfs 21>;
+			power-domain-names = "power", "perf";
+
+			status = "okay";
+
+		};
+	};
+};
+
+&i2c7 {
+	status = "okay";
+	rx8900@32 {
+		compatible = "epson,rx8900";
+		reg = <0x32>;
+		epson,vdet-disable;
+		trickle-diode-disable;
+		status = "okay";
+	};
+};
+
+&uart0 {
+	status = "okay";
+};
+
+&uart3 {
+	status = "okay";
+};
+
+&uart10 {
+	status = "okay";
+};
+
+&i2c12 {
+	status = "okay";
+};
+
+&i2c13 {
+	status = "okay";
+};
+
+&i2c14 {
+	status = "okay";
+};
+
+&i2c19 {
+	status = "okay";
+};
+
+&i2c20 {
+	status = "okay";
+};
+
