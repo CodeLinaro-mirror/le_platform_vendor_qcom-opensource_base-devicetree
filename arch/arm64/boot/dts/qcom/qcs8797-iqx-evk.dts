@@ -8,6 +8,7 @@
 #include "sa8x97p.dtsi"
 #include "sa8797p.dtsi"
 #include "sa8x97p-non-safe.dtsi"
+#include "qcs8797-iqx-evk-pinctrl.dtsi"
 
 / {
 	model = "Qualcomm Technologies, Inc. IQX EVK";

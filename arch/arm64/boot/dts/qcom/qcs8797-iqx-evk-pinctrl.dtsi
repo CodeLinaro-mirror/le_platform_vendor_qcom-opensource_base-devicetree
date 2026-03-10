@@ -1,0 +1,19 @@
+// SPDX-License-Identifier: BSD-3-Clause
+/*
+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+ */
+
+&tlmm {
+	soc_vbus_det_default: usb1_hub_pin_default {
+		mux {
+			pins = "gpio169";
+			function = "gpio";
+		};
+		config {
+			pins = "gpio169";
+			drive-strength = <2>;    /* 2 mA */
+			bias-pull-up;             /* PULL UP */
+			output-high;
+		};
+	};
+};
