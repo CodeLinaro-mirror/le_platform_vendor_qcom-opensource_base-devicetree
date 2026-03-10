@@ -161,15 +161,12 @@
 
 		interrupts = <GIC_SPI 140 IRQ_TYPE_LEVEL_HIGH>,
 			     <GIC_SPI 153 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 443 IRQ_TYPE_LEVEL_HIGH>,
 			     <GIC_SPI 443 IRQ_TYPE_LEVEL_HIGH>;
-		interrupt-names = "global", "doorbell", "dma0", "dma1";
+		interrupt-names = "global", "doorbell", "dma";
 
-		/*TODO: SMMU V3 is not yet enabled*/
-		/*
-		 *dma-coherent;
-		 *iommus = <&pcie_smmu 0x0000 0x7f>;
-		 */
+		dma-coherent;
+		iommus = <&pcie_smmu 0x0>,
+			  <&pcie_smmu 0x1>;
 
 		max-link-speed = <4>;
 		num-lanes = <8>;
