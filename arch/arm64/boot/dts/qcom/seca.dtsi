@@ -1157,6 +1157,16 @@
 
 			status = "okay";
 		};
+
+		uefi_log {
+			compatible = "qcom,nhlos-logs-mem", "qcom,nhlos-logs";
+			memory-region = <&uefi_log>;
+		};
+
+		gearvm_log {
+			compatible = "qcom,nhlos-logs-mem", "qcom,nhlos-logs";
+			memory-region = <&gearvm_logs_mem>;
+		};
 	};
 };
 #include "seca-scmi.dtsi"
