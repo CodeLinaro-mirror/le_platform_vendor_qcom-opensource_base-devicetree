@@ -9,7 +9,7 @@
 #include "sa8797p.dtsi"
 
 / {
-	model = "Qualcomm Technologies, Inc. SA8797P Rumi";
+	model = "Qualcomm Technologies, Inc. SA8x97P Rumi";
 	compatible = "qcom,sa8797p-rumi", "qcom,sa8797p";
 	qcom,board-id = <0xf 0>;
 

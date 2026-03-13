@@ -11,7 +11,7 @@
 #include "sa8x97p-pats.dtsi"
 
 / {
-	model = "Qualcomm Technologies, Inc. SA8797P v2 SAFE IVI QAM PATS";
+	model = "Qualcomm Technologies, Inc. SA8x97P v2 SAFE IVI QAM PATS";
 	compatible = "qcom,sa8797p-qam-ride-sx", "qcom,safe-ivi", "qcom,sa8797p-qam", "qcom,sa8797p";
 	qcom,msm-id = <690 0x20000>;
 	qcom,board-id = <0x03010025 3>;
