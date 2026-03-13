@@ -4505,6 +4505,20 @@
 				};
 			};
 		};
+
+		qfprom_tcsr_softsku: qfprom@1f97070 {
+			compatible = "qcom,qfprom";
+			reg = <0x0 0x1f97070 0x0 0x18>;
+			#address-cells = <1>;
+			#size-cells = <1>;
+		};
+
+		qfprom_tcsr_qtv: qfprom@1f96004 {
+			compatible = "qcom,qfprom";
+			reg = <0x0 0x1f96004 0x0 0x18>;
+			#address-cells = <1>;
+			#size-cells = <1>;
+		};
 	};
 };
 #include "seca-scmi.dtsi"
