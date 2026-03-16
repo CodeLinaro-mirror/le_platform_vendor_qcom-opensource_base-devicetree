@@ -2215,3 +2215,4 @@
 };
 #include "seca-scmi.dtsi"
 #include "seca-auto.dtsi"
+#include "seca-pcie.dtsi"
