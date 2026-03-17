@@ -6,10 +6,15 @@
 /dts-v1/;
 
 #include "seca.dtsi"
+#include "seca-pats.dtsi"
 
 / {
 	model = "Qualcomm Technologies, Inc. SECA SAFE-IVI QAM PATS";
 	compatible = "qcom,safe-ivi", "qcom,seca";
 	qcom,board-id = <0x2010025 2>;
 	qcom,sku-id = <0x200>;
+
+	aliases {
+		spi14 = &spi14;
+	};
 };
