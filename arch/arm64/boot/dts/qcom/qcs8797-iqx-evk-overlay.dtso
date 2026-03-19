@@ -444,14 +444,14 @@
 		qcom,dev-name = "scmi_uart14";
 	};
 
-	scmi_uart17 {
+	/*scmi_uart17 {
 		compatible = "qcom,uscmi";
 
 		power-domains = <&scmi11_pd 17>, <&scmi11_dvfs 17>;
 		power-domain-names = "power", "perf";
 
 		qcom,dev-name = "scmi_uart17";
-	};
+	};*/
 
 	scmi_emac1 {
 		compatible = "qcom,uscmi";
@@ -466,7 +466,7 @@
 		qcom,dev-name = "scmi_emac1";
 	};
 
-	scmi_bluetooth {
+	/*scmi_bluetooth {
 		compatible = "qcom,uscmi";
 
 		power-domains = <&scmi25_pd 0>, <&scmi25_pd 1>;
@@ -516,7 +516,7 @@
 		power-domain-names = "power_regulator", "power_gpio";
 
 		qcom,dev-name = "scmi_wlan1";
-	};
+	};*/
 
 	tlmm_fusa {
 		compatible = "qcom,tlmm-fusa";
