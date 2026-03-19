@@ -10,6 +10,7 @@
 #include "sa8797p.dtsi"
 #include "sa8x97p-non-safe.dtsi"
 #include "qcs8797-iqx-evk-pinctrl.dtsi"
+#include "sa8797p-cnss.dtsi"
 
 / {
 	model = "Qualcomm Technologies, Inc. IQX EVK";
@@ -18,6 +19,7 @@
 	qcom,board-id = <0x06010025 6>;
 
 	aliases {
+		serial2 = &uart17;
 		serial3 = &uart0;
 		serial5 = &uart3;
 		serial6 = &uart10;
