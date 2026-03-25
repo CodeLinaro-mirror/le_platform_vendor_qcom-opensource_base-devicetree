@@ -6,6 +6,7 @@
 /dts-v1/;
 
 #include "sa8x97p.dtsi"
+#include "sa8x97p-v2.dtsi"
 #include "sa8797p.dtsi"
 #include "sa8x97p-non-safe.dtsi"
 #include "qcs8797-iqx-evk-pinctrl.dtsi"
@@ -13,6 +14,7 @@
 / {
 	model = "Qualcomm Technologies, Inc. IQX EVK";
 	compatible = "qcom,qcs8797-iqx-evk";
+	qcom,msm-id = <689 0x20000>, <690 0x20000>;
 	qcom,board-id = <0x06010025 6>;
 };
 
