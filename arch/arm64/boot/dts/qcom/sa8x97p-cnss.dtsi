@@ -85,4 +85,9 @@
 
 &uart17 {
 	status = "disabled";
+	qcom,auto-suspend-disable;
+	bluetooth {
+		compatible = "qcom,auto-converged-bt";
+		max-speed = <3000000>;
+	};
 };
