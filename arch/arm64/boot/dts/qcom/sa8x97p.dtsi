@@ -5945,6 +5945,11 @@
 		snps,mtl-rx-config = <&mtl_rx_setup>;
 		snps,mtl-tx-config = <&mtl_tx_setup>;
 
+		qcom,tx-vdma-map = <0 0 0 0 1 2 3 4 5 6 7 7>;
+		qcom,rx-vdma-map = <0 1 2 3 4 5 6 6 6 6 7 7>;
+		qcom,tx-pdma-map = <0 1 2 3 4 5 6 6 6 6 7 7>;
+		qcom,rx-pdma-map = <0 1 2 3 4 5 6 6 6 6 7 7>;
+
 		qcom-xpcs-handle = <&xpcs0>;
 
 		mtl_rx_setup: rx-queues-config {
@@ -6099,6 +6104,11 @@
 		snps,axi-config = <&stmmac_axi_setup1>;
 		snps,mtl-rx-config = <&mtl_rx_setup1>;
 		snps,mtl-tx-config = <&mtl_tx_setup1>;
+
+		qcom,tx-vdma-map = <0 0 0 0 1 2 3 4 5 6 7 7>;
+		qcom,rx-vdma-map = <0 1 2 3 4 5 6 6 6 6 7 7>;
+		qcom,tx-pdma-map = <0 1 2 3 4 5 6 6 6 6 7 7>;
+		qcom,rx-pdma-map = <0 1 2 3 4 5 6 6 6 6 7 7>;
 
 		qcom-xpcs-handle = <&xpcs1>;
 
