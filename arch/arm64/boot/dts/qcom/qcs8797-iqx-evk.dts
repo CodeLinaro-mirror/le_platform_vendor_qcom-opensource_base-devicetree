@@ -93,6 +93,42 @@
 	status = "okay";
 };
 
+&pcie2 {
+	reg = <0x40 0x00000000 0x0 0x10000000>,
+		<0x00 0x01b90000 0x0 0x00004000>;
+	reg-names = "dbi", "parf";
+
+	interrupts = <GIC_SPI 464 IRQ_TYPE_LEVEL_HIGH>;
+	interrupt-names = "global_int";
+
+	interrupt-parent = <&intc>;
+
+	rasdp-off = <0x384>;
+	safety-supported;
+
+	power-domains = <&scmi32_pd 0>;
+	power-domain-names = "power";
+	status = "okay";
+};
+
+&pcie3 {
+	reg = <0x4 0x00000000 0x0 0x10000000>,
+		<0x00 0x01b98000 0x0 0x00004000>;
+	reg-names = "dbi", "parf";
+
+	interrupts = <GIC_SPI 465 IRQ_TYPE_LEVEL_HIGH>;
+	interrupt-names = "global_int";
+
+	interrupt-parent = <&intc>;
+
+	rasdp-off = <0x37C>;
+	safety-supported;
+
+	power-domains = <&scmi33_pd 0>;
+	power-domain-names = "power";
+	status = "okay";
+};
+
 &soc {
 	qupv3_id_3: geniqup@cc0000 {
 		compatible = "qcom,sa8797p-geni-se-qup";
