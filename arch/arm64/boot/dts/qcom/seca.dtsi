@@ -1129,14 +1129,452 @@
 			reg = <0x0 0x8c0000 0x0 0x2000>;
 			#address-cells = <2>;
 			#size-cells = <2>;
+			iommus = <&apps_smmu_0 0x12A3 0x0>;
 			ranges;
 			status = "disabled";
+
+			i2c14: i2c@880000 {
+				compatible = "qcom,sa8797p-geni-i2c", "qcom,sa8255p-geni-i2c";
+				reg = <0x0 0x880000 0x0 0x4000>;
+				interrupts = <GIC_SPI 373 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi9_pd 14>;
+				status = "disabled";
+			};
+
+			spi14: spi@880000 {
+				compatible = "qcom,sa8797p-geni-spi", "qcom,sa8255p-geni-spi";
+				reg = <0x0 0x880000 0x0 0x4000>;
+				interrupts = <GIC_SPI 373 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi10_pd 14>, <&scmi10_dvfs 14>;
+				power-domain-names = "power", "perf";
+				status = "disabled";
+			};
 
 			uart15: serial@884000 {
 				compatible = "qcom,sa8797p-geni-debug-uart", "qcom,sa8255p-geni-debug-uart";
 				reg = <0x0 0x884000 0x0 0x4000>;
 				interrupts = <GIC_SPI 583 IRQ_TYPE_LEVEL_HIGH>;
 				power-domains = <&scmi11_pd 15>, <&scmi11_dvfs 15>;
+				power-domain-names = "power", "perf";
+				status = "disabled";
+			};
+
+			i2c16: i2c@888000 {
+				compatible = "qcom,sa8797p-geni-i2c", "qcom,sa8255p-geni-i2c";
+				reg = <0x0 0x888000 0x0 0x4000>;
+				interrupts = <GIC_SPI 584 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi9_pd 16>;
+				status = "disabled";
+			};
+
+			spi16: spi@888000 {
+				compatible = "qcom,sa8797p-geni-spi", "qcom,sa8255p-geni-spi";
+				reg = <0x0 0x888000 0x0 0x4000>;
+				interrupts = <GIC_SPI 584 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi10_pd 16>, <&scmi10_dvfs 16>;
+				power-domain-names = "power", "perf";
+				status = "disabled";
+			};
+
+			i2c17: i2c@88c000 {
+				compatible = "qcom,sa8797p-geni-i2c", "qcom,sa8255p-geni-i2c";
+				reg = <0x0 0x88c000 0x0 0x4000>;
+				interrupts = <GIC_SPI 585 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi9_pd 17>;
+				status = "disabled";
+			};
+
+			spi17: spi@88c000 {
+				compatible = "qcom,sa8797p-geni-spi", "qcom,sa8255p-geni-spi";
+				reg = <0x0 0x88c000 0x0 0x4000>;
+				interrupts = <GIC_SPI 585 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi10_pd 17>, <&scmi10_dvfs 17>;
+				power-domain-names = "power", "perf";
+				status = "disabled";
+			};
+
+			uart17: serial@88c000 {
+				compatible = "qcom,sa8797p-geni-uart", "qcom,sa8255p-geni-uart";
+				reg = <0x0 0x88c000 0x0 0x4000>;
+				interrupts = <GIC_SPI 585 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi11_pd 17>, <&scmi11_dvfs 17>;
+				power-domain-names = "power", "perf";
+				qcom,wakeup-byte = <0xFD>;
+				status = "disabled";
+			};
+
+			i2c18: i2c@890000 {
+				compatible = "qcom,sa8797p-geni-i2c", "qcom,sa8255p-geni-i2c";
+				reg = <0x0 0x890000 0x0 0x4000>;
+				interrupts = <GIC_SPI 586 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi9_pd 18>;
+				status = "disabled";
+			};
+
+			spi18: spi@890000 {
+				compatible = "qcom,sa8797p-geni-spi", "qcom,sa8255p-geni-spi";
+				reg = <0x0 0x890000 0x0 0x4000>;
+				interrupts = <GIC_SPI 586 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi10_pd 18>, <&scmi10_dvfs 18>;
+				power-domain-names = "power", "perf";
+				status = "disabled";
+			};
+
+			i2c19: i2c@894000 {
+				compatible = "qcom,sa8797p-geni-i2c", "qcom,sa8255p-geni-i2c";
+				reg = <0x0 0x894000 0x0 0x4000>;
+				interrupts = <GIC_SPI 587 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi9_pd 19>;
+				status = "disabled";
+			};
+
+			spi19: spi@894000 {
+				compatible = "qcom,sa8797p-geni-spi", "qcom,sa8255p-geni-spi";
+				reg = <0x0 0x894000 0x0 0x4000>;
+				interrupts = <GIC_SPI 587 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi10_pd 19>, <&scmi10_dvfs 19>;
+				power-domain-names = "power", "perf";
+				status = "disabled";
+			};
+
+			i2c20: i2c@898000 {
+				compatible = "qcom,sa8797p-geni-i2c", "qcom,sa8255p-geni-i2c";
+				reg = <0x0 0x898000 0x0 0x4000>;
+				interrupts = <GIC_SPI 461 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi9_pd 20>;
+				status = "disabled";
+			};
+
+			spi20: spi@898000 {
+				compatible = "qcom,sa8797p-geni-spi", "qcom,sa8255p-geni-spi";
+				reg = <0x0 0x898000 0x0 0x4000>;
+				interrupts = <GIC_SPI 461 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi10_pd 20>, <&scmi10_dvfs 20>;
+				power-domain-names = "power", "perf";
+				status = "disabled";
+			};
+
+		};
+
+		qupv3_id_0: geniqup@9c0000 {
+			compatible = "qcom,sa8797p-geni-se-qup", "qcom,sa8255p-geni-se-qup";
+			reg = <0x0 0x9c0000 0x0 0x2000>;
+			#address-cells = <2>;
+			#size-cells = <2>;
+			iommus = <&apps_smmu_0 0x1403 0x0>;
+			ranges;
+			status = "disabled";
+
+			i2c0: i2c@980000 {
+				compatible = "qcom,sa8797p-geni-i2c", "qcom,sa8255p-geni-i2c";
+				reg = <0x0 0x980000 0x0 0x4000>;
+				interrupts = <GIC_SPI 314 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi9_pd 0>;
+				status = "disabled";
+			};
+
+			spi0: spi@980000 {
+				compatible = "qcom,sa8797p-geni-spi", "qcom,sa8255p-geni-spi";
+				reg = <0x0 0x980000 0x0 0x4000>;
+				interrupts = <GIC_SPI 314 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi10_pd 0>, <&scmi10_dvfs 0>;
+				power-domain-names = "power", "perf";
+				status = "disabled";
+			};
+
+			uart0: serial@980000 {
+				compatible = "qcom,sa8797p-geni-uart", "qcom,sa8255p-geni-uart";
+				reg = <0x0 0x980000 0x0 0x4000>;
+				interrupts = <GIC_SPI 314 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi11_pd 0>, <&scmi11_dvfs 0>;
+				power-domain-names = "power", "perf";
+				status = "disabled";
+			};
+
+			i2c1: i2c@984000 {
+				compatible = "qcom,sa8797p-geni-i2c", "qcom,sa8255p-geni-i2c";
+				reg = <0x0 0x984000 0x0 0x4000>;
+				interrupts = <GIC_SPI 513 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi9_pd 1>;
+				status = "disabled";
+			};
+
+			spi1: spi@984000 {
+				compatible = "qcom,sa8797p-geni-spi", "qcom,sa8255p-geni-spi";
+				reg = <0x0 0x984000 0x0 0x4000>;
+				interrupts = <GIC_SPI 513 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi10_pd 1>, <&scmi10_dvfs 1>;
+				power-domain-names = "power", "perf";
+				status = "disabled";
+			};
+
+			i2c2: i2c@988000 {
+				compatible = "qcom,sa8797p-geni-i2c", "qcom,sa8255p-geni-i2c";
+				reg = <0x0 0x988000 0x0 0x4000>;
+				interrupts = <GIC_SPI 514 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi9_pd 2>;
+				status = "disabled";
+			};
+
+			spi2: spi@988000 {
+				compatible = "qcom,sa8797p-geni-spi", "qcom,sa8255p-geni-spi";
+				reg = <0x0 0x988000 0x0 0x4000>;
+				interrupts = <GIC_SPI 514 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi10_pd 2>, <&scmi10_dvfs 2>;
+				power-domain-names = "power", "perf";
+				status = "disabled";
+			};
+
+			i2c3: i2c@98c000 {
+				compatible = "qcom,sa8797p-geni-i2c", "qcom,sa8255p-geni-i2c";
+				reg = <0x0 0x98c000 0x0 0x4000>;
+				interrupts = <GIC_SPI 515 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi9_pd 3>;
+				status = "disabled";
+			};
+
+			spi3: spi@98c000 {
+				compatible = "qcom,sa8797p-geni-spi", "qcom,sa8255p-geni-spi";
+				reg = <0x0 0x98c000 0x0 0x4000>;
+				interrupts = <GIC_SPI 515 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi10_pd 3>, <&scmi10_dvfs 3>;
+				power-domain-names = "power", "perf";
+				status = "disabled";
+			};
+
+			uart3: serial@98c000 {
+				compatible = "qcom,sa8797p-geni-uart", "qcom,sa8255p-geni-uart";
+				reg = <0x0 0x98c000 0x0 0x4000>;
+				interrupts = <GIC_SPI 515 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi11_pd 3>, <&scmi11_dvfs 3>;
+				power-domain-names = "power", "perf";
+				qcom,wakeup-byte = <0xFD>;
+				status = "disabled";
+			};
+
+			i2c4: i2c@990000 {
+				compatible = "qcom,sa8797p-geni-i2c", "qcom,sa8255p-geni-i2c";
+				reg = <0x0 0x990000 0x0 0x4000>;
+				interrupts = <GIC_SPI 516 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi9_pd 4>;
+				status = "disabled";
+			};
+
+			spi4: spi@990000 {
+				compatible = "qcom,sa8797p-geni-spi", "qcom,sa8255p-geni-spi";
+				reg = <0x0 0x990000 0x0 0x4000>;
+				interrupts = <GIC_SPI 516 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi10_pd 4>, <&scmi10_dvfs 4>;
+				power-domain-names = "power", "perf";
+				status = "disabled";
+			};
+
+			uart4: uart@990000 {
+				compatible = "qcom,sa8797p-geni-uart", "qcom,sa8255p-geni-uart";
+				reg = <0x0 0x990000 0x0 0x4000>;
+				interrupts = <GIC_SPI 516 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi11_pd 4>, <&scmi11_dvfs 4>;
+				power-domain-names = "power", "perf";
+				status = "disabled";
+			};
+
+			i2c5: i2c@994000 {
+				compatible = "qcom,sa8797p-geni-i2c", "qcom,sa8255p-geni-i2c";
+				reg = <0x0 0x994000 0x0 0x4000>;
+				interrupts = <GIC_SPI 517 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi9_pd 5>;
+				status = "disabled";
+			};
+
+			spi5: spi@994000 {
+				compatible = "qcom,sa8797p-geni-spi", "qcom,sa8255p-geni-spi";
+				reg = <0x0 0x994000 0x0 0x4000>;
+				interrupts = <GIC_SPI 517 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi10_pd 5>, <&scmi10_dvfs 5>;
+				power-domain-names = "power", "perf";
+				status = "disabled";
+			};
+
+			uart5: serial@994000 {
+				compatible = "qcom,sa8797p-geni-uart", "qcom,sa8255p-geni-uart";
+				reg = <0x0 0x994000 0x0 0x4000>;
+				interrupts = <GIC_SPI 517 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi11_pd 5>, <&scmi11_dvfs 5>;
+				power-domain-names = "power", "perf";
+				status = "disabled";
+			};
+		};
+
+		qupv3_id_1: geniqup@ac0000 {
+			compatible = "qcom,sa8797p-geni-se-qup", "qcom,sa8255p-geni-se-qup";
+			reg = <0x0 0xac0000 0x0 0x2000>;
+			#address-cells = <2>;
+			#size-cells = <2>;
+			iommus = <&apps_smmu_0 0x1443 0x0>;
+			ranges;
+			status = "disabled";
+
+			i2c7: i2c@a80000 {
+				compatible = "qcom,sa8797p-geni-i2c", "qcom,sa8255p-geni-i2c";
+				reg = <0x0 0xa80000 0x0 0x4000>;
+				interrupts = <GIC_SPI 353 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi9_pd 7>;
+				status = "disabled";
+			};
+
+			spi7: spi@a80000 {
+				compatible = "qcom,sa8797p-geni-spi", "qcom,sa8255p-geni-spi";
+				reg = <0x0 0xa80000 0x0 0x4000>;
+				interrupts = <GIC_SPI 353 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi10_pd 7>, <&scmi10_dvfs 7>;
+				power-domain-names = "power", "perf";
+				status = "disabled";
+			};
+
+			i2c8: i2c@a84000 {
+				compatible = "qcom,sa8797p-geni-i2c", "qcom,sa8255p-geni-i2c";
+				reg = <0x0 0xa84000 0x0 0x4000>;
+				interrupts = <GIC_SPI 354 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi9_pd 8>;
+				status = "disabled";
+			};
+
+			spi8: spi@a84000 {
+				compatible = "qcom,sa8797p-geni-spi", "qcom,sa8255p-geni-spi";
+				reg = <0x0 0xa84000 0x0 0x4000>;
+				interrupts = <GIC_SPI 354 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi10_pd 8>, <&scmi10_dvfs 8>;
+				power-domain-names = "power", "perf";
+				status = "disabled";
+			};
+
+			i2c9: i2c@a88000 {
+				compatible = "qcom,sa8797p-geni-i2c", "qcom,sa8255p-geni-i2c";
+				reg = <0x0 0xa88000 0x0 0x4000>;
+				interrupts = <GIC_SPI 355 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi9_pd 9>;
+				status = "disabled";
+			};
+
+			uart9: serial@a88000 {
+				compatible = "qcom,sa8797p-geni-uart", "qcom,sa8255p-geni-uart";
+				reg = <0x0 0xa88000 0x0 0x4000>;
+				interrupts = <GIC_SPI 355 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi11_pd 9>, <&scmi11_dvfs 9>;
+				power-domain-names = "power", "perf";
+				status = "disabled";
+			};
+
+			i2c10: i2c@a8c000 {
+				compatible = "qcom,sa8797p-geni-i2c", "qcom,sa8255p-geni-i2c";
+				reg = <0x0 0xa8c000 0x0 0x4000>;
+				interrupts = <GIC_SPI 356 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi9_pd 10>;
+				status = "disabled";
+			};
+
+			uart10: serial@a8c000 {
+				compatible = "qcom,sa8797p-geni-uart", "qcom,sa8255p-geni-uart";
+				reg = <0x0 0xa8c000 0x0 0x4000>;
+				interrupts = <GIC_SPI 356 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi11_pd 10>, <&scmi11_dvfs 10>;
+				power-domain-names = "power", "perf";
+				status = "disabled";
+			};
+
+			i2c11: i2c@a90000 {
+				compatible = "qcom,sa8797p-geni-i2c", "qcom,sa8255p-geni-i2c";
+				reg = <0x0 0xa90000 0x0 0x4000>;
+				interrupts = <GIC_SPI 357 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi9_pd 11>;
+				status = "disabled";
+			};
+
+			spi11: spi@a90000 {
+				compatible = "qcom,sa8797p-geni-spi", "qcom,sa8255p-geni-spi";
+				reg = <0x0 0xa90000 0x0 0x4000>;
+				interrupts = <GIC_SPI 357 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi10_pd 11>, <&scmi10_dvfs 11>;
+				power-domain-names = "power", "perf";
+				status = "disabled";
+			};
+
+			i2c12: i2c@a94000 {
+				compatible = "qcom,sa8797p-geni-i2c", "qcom,sa8255p-geni-i2c";
+				reg = <0x0 0xa94000 0x0 0x4000>;
+				interrupts = <GIC_SPI 358 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi9_pd 12>;
+				status = "disabled";
+			};
+
+			spi12: spi@a94000 {
+				compatible = "qcom,sa8797p-geni-spi", "qcom,sa8255p-geni-spi";
+				reg = <0x0 0xa94000 0x0 0x4000>;
+				interrupts = <GIC_SPI 358 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi10_pd 12>, <&scmi10_dvfs 12>;
+				power-domain-names = "power", "perf";
+				status = "disabled";
+			};
+
+			uart12: serial@a94000 {
+				compatible = "qcom,sa8797p-geni-uart", "qcom,sa8255p-geni-uart";
+				reg = <0x0 0xa94000 0x0 0x4000>;
+				interrupts = <GIC_SPI 358 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi11_pd 12>, <&scmi11_dvfs 12>;
+				power-domain-names = "power", "perf";
+				qcom,wakeup-byte = <0xFD>;
+				status = "disabled";
+			};
+
+			i2c13: i2c@a98000 {
+				compatible = "qcom,sa8797p-geni-i2c", "qcom,sa8255p-geni-i2c";
+				reg = <0x0 0xa98000 0x0 0x4000>;
+				interrupts = <GIC_SPI 363 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi9_pd 13>;
+				status = "disabled";
+			};
+
+			spi13: spi@a98000 {
+				compatible = "qcom,sa8797p-geni-spi", "qcom,sa8255p-geni-spi";
+				reg = <0x0 0xa98000 0x0 0x4000>;
+				interrupts = <GIC_SPI 363 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi10_pd 13>, <&scmi10_dvfs 13>;
+				power-domain-names = "power", "perf";
+				status = "disabled";
+			};
+		};
+
+		qupv3_id_3: geniqup@cc0000 {
+			compatible = "qcom,sa8797p-geni-se-qup", "qcom,sa8255p-geni-se-qup";
+			reg = <0x0 0xcc0000 0x0 0x2000>;
+			#address-cells = <2>;
+			#size-cells = <2>;
+			iommus = <&apps_smmu_0 0x1463 0x0>;
+			ranges;
+			status = "disabled";
+
+			i2c21: i2c@c80000 {
+				compatible = "qcom,sa8797p-geni-i2c", "qcom,sa8255p-geni-i2c";
+				reg = <0x0 0xc80000 0x0 0x4000>;
+				interrupts = <GIC_SPI 312 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi9_pd 21>;
+				status = "disabled";
+			};
+
+			spi21: spi@c80000 {
+				compatible = "qcom,sa8797p-geni-spi", "qcom,sa8255p-geni-spi";
+				reg = <0x0 0xc80000 0x0 0x4000>;
+				interrupts = <GIC_SPI 312 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi10_pd 21>, <&scmi10_dvfs 21>;
+				power-domain-names = "power", "perf";
+				status = "disabled";
+			};
+
+			uart21: serial@c80000 {
+				compatible = "qcom,sa8797p-geni-uart", "qcom,sa8255p-geni-uart";
+				reg = <0x0 0xc80000 0x0 0x4000>;
+				interrupts = <GIC_SPI 312 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi11_pd 21>, <&scmi11_dvfs 21>;
 				power-domain-names = "power", "perf";
 				status = "disabled";
 			};
