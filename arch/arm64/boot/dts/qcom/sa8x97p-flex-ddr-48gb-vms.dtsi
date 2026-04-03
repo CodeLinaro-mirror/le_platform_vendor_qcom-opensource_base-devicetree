@@ -35,7 +35,7 @@
 
 	auto_vm_0_mem_2: auto_vm_0_mem_2@8AC0000000 {
 		no-map;
-		reg = <0x8A 0xC0000000 0x8 0xAA00000>;
+		reg = <0x8A 0xC0000000 0x0 0x8AA00000>;
 	};
 
 	vm_cp_pixel: vm_cp_pixel@B03000000 {
