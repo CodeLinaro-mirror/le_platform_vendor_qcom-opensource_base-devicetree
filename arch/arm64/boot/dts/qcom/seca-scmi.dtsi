@@ -4,7 +4,7 @@
  */
 
 #include <dt-bindings/interrupt-controller/arm-gic.h>
-#include "oot-dt-bindings/qcom-ipcc-sa8797p.h"
+#include "oot-dt-bindings/qcom-ipcc-seca.h"
 
 &{/firmware} {
 	scmi0: scmi-0 {
