@@ -833,7 +833,7 @@
 	hab: qcom,hab {
 		compatible = "qcom,hab";
 		vmid = <0>;
-		virt-irq = <0x5 0x6>;
+		virt-irq = <0x4 0x5 0x6>;
 
 		mmidgrp100: mmidgrp100 {
 			grp-start-id = <100>;
