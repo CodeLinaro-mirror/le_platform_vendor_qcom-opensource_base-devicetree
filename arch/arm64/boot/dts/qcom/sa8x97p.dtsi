@@ -19,7 +19,9 @@
 		ethernet1 = &ethernet1;
 	};
 
-	chosen { };
+	chosen {
+		bootargs = "pd_ignore_unused";
+	};
 
 	clocks {
 		gpll5_out_main: gpll5_out_main {
@@ -2166,7 +2168,6 @@
 			interrupt-names = "eventq", "cmdq-sync", "gerror";
 			dma-coherent;
 			#iommu-cells = <1>;
-			status = "disabled";
 		};
 
 		rng: rng@10c3000 {
@@ -3057,6 +3058,13 @@
 					qcom,part-id = <0>;
 				};
 			};
+		};
+
+		firmware_vm_mini_dump: firmware-vm-mini-dump@0 {
+			compatible = "qcom,firmware-vm-mini-dump";
+			reg = <0x0 0xd7600000 0x0 0x00200000>,
+			      <0x0 0xd6e00000 0x0 0x00800000>;
+			  reg-names = "fvm_shared", "fvm_mem";
 		};
 	};
 
@@ -5714,6 +5722,9 @@
 		reg-names = "qxpcs";
 		interrupts = <GIC_SPI 713 IRQ_TYPE_LEVEL_HIGH>;
 		interrupt-names = "sfty";
+
+		resets = <&scmi7_rst 1>;
+		reset-names = "serdes_reset";
 	};
 
 	xpcs1: xpcs@0x1A94000 {
@@ -5723,6 +5734,9 @@
 		reg-names = "qxpcs";
 		interrupts = <GIC_SPI 361 IRQ_TYPE_LEVEL_HIGH>;
 		interrupt-names = "sfty";
+
+		resets = <&scmi8_rst 1>;
+		reset-names = "serdes_reset";
 	};
 
 	ethernet0: ethernet@0x1A00000 {
@@ -5760,9 +5774,6 @@
 
 		power-domains = <&scmi7_pd 0>, <&scmi7_pd 1>, <&scmi7_dvfs 0>, <&scmi7_dvfs 1>;
 		power-domain-names = "power_core", "power_mdio", "perf_serdes", "perf_5g_serdes";
-
-		resets = <&scmi7_rst 1>;
-		reset-names = "serdes_reset";
 
 		pinctrl-0 = <&ethernet0_default>;
 		pinctrl-names = "default";
@@ -5918,9 +5929,6 @@
 
 		power-domains = <&scmi8_pd 0>, <&scmi8_pd 1>, <&scmi8_dvfs 0>, <&scmi8_dvfs 1>;
 		power-domain-names = "power_core", "power_mdio", "perf_serdes", "perf_5g_serdes";
-
-		resets = <&scmi8_rst 1>;
-		reset-names = "serdes_reset";
 
 		pinctrl-0 = <&ethernet1_default>;
 		pinctrl-names = "default";

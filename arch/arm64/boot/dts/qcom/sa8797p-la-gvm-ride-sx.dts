@@ -10,7 +10,7 @@
 #include "sa8x97p-la-gvm.dtsi"
 
 / {
-	model = "Qualcomm Technologies, Inc. SA8797P LA GVM RIDE-SX";
+	model = "Qualcomm Technologies, Inc. SA8x97P LA GVM RIDE-SX";
 	compatible = "qcom,sa8797p";
 	qcom,board-id = <0x01010025 1>;
 	qcom,sku-id = <0x200>;

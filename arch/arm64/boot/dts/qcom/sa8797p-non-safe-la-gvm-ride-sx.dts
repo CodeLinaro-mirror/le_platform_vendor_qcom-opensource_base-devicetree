@@ -11,7 +11,7 @@
 #include "sa8x97p-non-safe.dtsi"
 
 / {
-	model = "Qualcomm Technologies, Inc. SA8797P NON-SAFE LA GVM RIDE-SX";
+	model = "Qualcomm Technologies, Inc. SA8x97P NON-SAFE LA GVM RIDE-SX";
 	compatible = "qcom,non-safe", "qcom,sa8797p";
 	qcom,board-id = <0x01010025 1>;
 };

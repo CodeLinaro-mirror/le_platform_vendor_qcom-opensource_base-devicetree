@@ -13,7 +13,7 @@
 #include "sa8797p-dma-heaps.dtsi"
 
 / {
-	model = "Qualcomm Technologies, Inc. SA8797P";
+	model = "Qualcomm Technologies, Inc. SA8x97P";
 	compatible = "qcom,sa8797p";
 };
 
@@ -149,6 +149,10 @@
 	status = "okay";
 };
 
+&scmi43 {
+	status = "okay";
+};
+
 &scmi45 {
 	status = "okay";
 };
@@ -167,6 +171,13 @@
 
 &aop_scmi {
 	status = "okay";
+};
+
+&scmi43_pinctrl{
+	scmi43_gpio: gpio {
+		gpio-controller;
+	};
+
 };
 
 &soc {
