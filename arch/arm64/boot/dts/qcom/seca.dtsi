@@ -20,6 +20,7 @@
 
 	aliases {
 		serial0 = &uart15;
+		i2c9 = &i2c9;
 	};
 
 	clocks {
