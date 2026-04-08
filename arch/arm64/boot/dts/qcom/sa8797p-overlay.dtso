@@ -157,6 +157,10 @@
 	status = "okay";
 };
 
+&scmi48 {
+	status = "okay";
+};
+
 &scmi63 {
 	status = "okay";
 };
@@ -572,5 +576,14 @@
 		power-domain-names = "usb_transfer", "usb_core";
 
 		qcom,dev-name = "scmi_usb1_qmp";
+	};
+
+	scmi_infra0 {
+		compatible = "qcom,uscmi";
+		power-domains = <&scmi48_dvfs 0>, <&scmi48_dvfs 1>,
+				<&scmi48_dvfs 2>, <&scmi48_dvfs 3>;
+		power-domain-names = "cx", "mx", "mm", "mxc";
+
+		qcom,dev-name = "scmi_infra0";
 	};
 };
