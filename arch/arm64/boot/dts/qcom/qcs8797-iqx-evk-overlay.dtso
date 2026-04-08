@@ -168,6 +168,24 @@
 	status = "okay";
 };
 
+
+
+&usb_1_qmpphy {
+        status = "okay";
+};
+
+&usb_1_eusbphy {
+        status = "okay";
+};
+
+
+&usb_1 {
+        status = "okay";
+        pinctrl-names = "default";
+        pinctrl-0 = <&soc_vbus_det_default>;
+};
+
+
 &soc {
 	kaslr_store {
 		compatible = "qcom,kaslr-off-store";
