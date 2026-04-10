@@ -69,6 +69,11 @@
 	};
 };
 &uart17 {
-    status = "okay";
+	status = "okay";
+	qcom,auto-suspend-disable;
+	bluetooth {
+		compatible = "qcom,auto-converged-bt";
+		max-speed = <3000000>;
+	};
 };
 
