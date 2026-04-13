@@ -2199,7 +2199,10 @@
 
 			reset-gpios = <&tlmm 181 GPIO_ACTIVE_LOW>;
 
-			status = "okay";
+			power-domains = <&scmi3_pd 0>;
+			power-domain-names = "power";
+
+			status = "disabled";
 		};
 
 		uefi_log {
