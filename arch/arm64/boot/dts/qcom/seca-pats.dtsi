@@ -31,3 +31,24 @@
 &usb_2 {
 	status = "okay";
 };
+
+&pcie0 {
+	power-domains = <&scmi5_pd 0>;
+	power-domain-names = "power";
+};
+
+&pcie1 {
+	power-domains = <&scmi6_pd 0>;
+	power-domain-names = "power";
+};
+
+&pcie2 {
+	power-domains = <&scmi32_pd 0>;
+	power-domain-names = "power";
+};
+
+&pcie3 {
+	power-domains = <&scmi33_pd 0>;
+	power-domain-names = "power";
+};
+
