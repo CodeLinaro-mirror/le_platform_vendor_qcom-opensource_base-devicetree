@@ -1,0 +1,206 @@
+// SPDX-License-Identifier: BSD-3-Clause
+/*
+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+ */
+
+&soc {
+	xpcs0: xpcs@0x1A14000 {
+		compatible = "qcom,xpcs";
+		reg = <0x0 0x1A14000 0x0 0x5100>;
+		reg-names = "qxpcs";
+		interrupts = <GIC_SPI 713 IRQ_TYPE_LEVEL_HIGH>;
+		interrupt-names = "sfty";
+
+		resets = <&scmi7_rst 1>;
+		reset-names = "serdes_reset";
+	};
+
+	ethernet0: ethernet@0x1A00000 {
+		compatible = "qcom,sa8787p-ethqos", "snps,dwxgmac";
+		reg = <0x0 0x1A00000 0x0 0x14000>,
+			<0x0 0x1A7E000 0x0 0x1000>,
+			<0x0 0x1A7F000 0x0 0x1000>;
+		reg-names = "stmmaceth", "macsec", "rgmii";
+
+		interrupts = <GIC_SPI 821 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 713 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 689 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 524 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 525 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 522 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 526 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 519 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 520 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 462 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 521 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 158 IRQ_TYPE_LEVEL_HIGH>;
+		interrupt-names = "macirq", "sfty", "dma_tx_rx0", "dma_tx_rx1", "dma_tx_rx2",
+				 "dma_tx_rx3", "dma_tx_rx4", "dma_tx_rx5", "dma_tx_rx6",
+				 "dma_tx_rx7", "dma_tx_rx8", "dma_tx_rx9";
+
+		iommus = <&apps_smmu_2 0x1201 0x2>,
+			<&apps_smmu_2 0x1202 0x0>,
+			<&apps_smmu_2 0x1203 0x2>,
+			<&apps_smmu_2 0x1204 0x0>,
+			<&apps_smmu_2 0x1205 0x2>,
+			<&apps_smmu_2 0x1206 0x0>,
+			<&apps_smmu_2 0x1207 0x2>,
+			<&apps_smmu_2 0x1208 0x0>,
+			<&apps_smmu_2 0x1209 0x0>,
+			<&apps_smmu_2 0x120a 0x0>;
+		qcom,iommu-dma = "bypass";
+
+		power-domains = <&scmi7_pd 0>, <&scmi7_pd 1>, <&scmi7_dvfs 0>, <&scmi7_dvfs 1>;
+		power-domain-names = "power_core", "power_mdio", "perf_serdes", "perf_5g_serdes";
+
+		snps,tso;
+		phy-mode = "usxgmii";
+		phy-handle = <&usxsgmii_phy0>;
+
+		snps,pbl = <0x10>;
+		dma-coherent;
+		pinctrl-0 = <&ethernet0_default>;
+		pinctrl-names = "default";
+		rx-fifo-depth = <98304>;
+		tx-fifo-depth = <98304>;
+
+		snps,axi-config = <&stmmac_axi_setup>;
+		snps,mtl-rx-config = <&mtl_rx_setup>;
+		snps,mtl-tx-config = <&mtl_tx_setup>;
+
+		qcom,tx-vdma-map = <0 0 0 0 1 2 3 4 5 6 7 7>;
+		qcom,rx-vdma-map = <0 1 2 3 4 5 6 6 6 6 7 7>;
+		qcom,tx-pdma-map = <0 1 2 3 4 5 6 6 6 6 7 7>;
+		qcom,rx-pdma-map = <0 1 2 3 4 5 6 6 6 6 7 7>;
+
+		qcom-xpcs-handle = <&xpcs0>;
+
+		mtl_rx_setup: rx-queues-config {
+			snps,rx-queues-to-use = <10>;
+			snps,rx-sched-sp;
+
+			queue0 {
+				snps,dcb-algorithm;
+				snps,map-to-dma-channel = <0x0>;
+				snps,route-up;
+			};
+
+			queue1 {
+				snps,dcb-algorithm;
+				snps,map-to-dma-channel = <0x1>;
+				snps,route-ptp;
+			};
+
+			queue2 {
+				snps,avb-algorithm;
+				snps,map-to-dma-channel = <0x2>;
+				snps,route-avcp;
+			};
+
+			queue3 {
+				snps,avb-algorithm;
+				snps,map-to-dma-channel = <0x3>;
+				snps,priority = <0xc>;
+			};
+
+			queue4 {
+				snps,dcb-algorithm;
+				snps,map-to-dma-channel = <0x4>;
+			};
+
+			queue5 {
+				snps,dcb-algorithm;
+				snps,map-to-dma-channel = <0x5>;
+			};
+
+			queue6 {
+				snps,dcb-algorithm;
+				snps,map-to-dma-channel = <0x6>;
+			};
+
+			queue7 {
+				snps,dcb-algorithm;
+				snps,map-to-dma-channel = <0x7>;
+			};
+
+			queue8 {
+				snps,dcb-algorithm;
+				snps,map-to-dma-channel = <0x8>;
+			};
+
+			queue9 {
+				snps,dcb-algorithm;
+				snps,map-to-dma-channel = <0x9>;
+			};
+		};
+
+		mtl_tx_setup: tx-queues-config {
+			snps,tx-queues-to-use = <10>;
+			snps,tx-sched-sp;
+
+			queue0 {
+				snps,dcb-algorithm;
+			};
+
+			queue1 {
+				snps,dcb-algorithm;
+			};
+
+			queue2 {
+				snps,dcb-algorithm;
+			};
+
+			queue3 {
+				snps,dcb-algorithm;
+			};
+
+			queue4 {
+				snps,dcb-algorithm;
+			};
+
+			queue5 {
+				snps,dcb-algorithm;
+			};
+
+			queue6 {
+				snps,dcb-algorithm;
+			};
+
+			queue7 {
+				snps,dcb-algorithm;
+			};
+
+			queue8 {
+				snps,dcb-algorithm;
+			};
+
+			queue9 {
+				snps,dcb-algorithm;
+			};
+		};
+
+		mdio {
+			compatible = "snps,dwmac-mdio";
+			#address-cells = <1>;
+			#size-cells = <0>;
+
+			usxsgmii_phy0: phy@0 {
+				compatible = "ethernet-phy-id31c3.1c12";
+				reg = <0x0>;
+				device_type = "ethernet-phy";
+				interrupts-extended = <&tlmm 45 IRQ_TYPE_EDGE_FALLING>;
+				resets = <&scmi7_rst 0>;
+				reset-names = "phy";
+				reset-assert-us = <100000>;
+				reset-deassert-us = <100000>;
+			};
+		};
+
+		stmmac_axi_setup: stmmac-axi-config {
+			snps,rd_osr_lmt = <0x10>;
+			snps,wr_osr_lmt = <0x10>;
+			snps,kbbe;
+			snps,blen = <0 0 0 0 16 0 0>;
+		};
+	};
+};
