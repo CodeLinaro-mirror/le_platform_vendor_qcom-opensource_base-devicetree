@@ -599,6 +599,11 @@
 			reg = <0x0 0x84c00000 0x0 0x800000>;
 		};
 
+		dice_mem: dice_region@87168000 {
+			no-map;
+			reg = <0x0 0x87168000 0x0 0x4000>;
+		};
+
 		deepsleep_backup_mem: deepsleep_backup_region@86a00000 {
 			no-map;
 			reg = <0x0 0x86a00000 0x0 0x200000>;
@@ -933,14 +938,19 @@
 			reg = <0x0 0xd7650000 0x0 0x180000>;
 		};
 
-		sail_p_mem: sail_p_region@8c0000000 {
+		acdb_mem: acdb_region@880000000 {
 			no-map;
-			reg = <0x8 0xc0000000 0x0 0x8000000>;
+			reg = <0x8 0x80000000 0x0 0x4400000>;
 		};
 
-		reserved_mem2: reserved_region@8c8000000 {
+		smmu_dbg_mem: smmu_dbg_region@884400000 {
 			no-map;
-			reg = <0x8 0xc8000000 0x0 0x18000000>;
+			reg = <0x8 0x84400000 0x0 0x1A00000>;
+		};
+
+		sail_p_mem: sail_p_region@8c0000000 {
+			no-map;
+			reg = <0x8 0xc0000000 0x0 0x20000000>;
 		};
 
 		dump_mem: mem-dump-region {
