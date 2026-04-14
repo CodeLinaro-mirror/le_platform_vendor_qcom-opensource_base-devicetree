@@ -444,7 +444,7 @@
 			trip-point2 {
 				temperature = <115000>;
 				hysteresis = <3000>;
-				type = "passive";
+				type = "critical";
 			};
 		};
 	};
@@ -454,7 +454,7 @@
 			trip-point2 {
 				temperature = <115000>;
 				hysteresis = <3000>;
-				type = "passive";
+				type = "critical";
 			};
 		};
 	};
@@ -464,7 +464,7 @@
 			trip-point2 {
 				temperature = <115000>;
 				hysteresis = <3000>;
-				type = "passive";
+				type = "critical";
 			};
 		};
 	};
@@ -474,7 +474,7 @@
 			trip-point2 {
 				temperature = <115000>;
 				hysteresis = <3000>;
-				type = "passive";
+				type = "critical";
 			};
 		};
 	};
@@ -594,7 +594,7 @@
 			trip-point2 {
 				temperature = <115000>;
 				hysteresis = <3000>;
-				type = "passive";
+				type = "critical";
 			};
 		};
 	};
@@ -737,7 +737,7 @@
 			trip-point2 {
 				temperature = <115000>;
 				hysteresis = <3000>;
-				type = "passive";
+				type = "critical";
 			};
 		};
 	};
@@ -747,7 +747,7 @@
 			trip-point2 {
 				temperature = <115000>;
 				hysteresis = <3000>;
-				type = "passive";
+				type = "critical";
 			};
 		};
 	};
@@ -757,7 +757,7 @@
 			trip-point2 {
 				temperature = <115000>;
 				hysteresis = <3000>;
-				type = "passive";
+				type = "critical";
 			};
 		};
 	};
@@ -899,7 +899,7 @@
 			trip-point2 {
 				temperature = <115000>;
 				hysteresis = <3000>;
-				type = "passive";
+				type = "critical";
 			};
 		};
 	};
@@ -909,7 +909,7 @@
 			trip-point2 {
 				temperature = <115000>;
 				hysteresis = <3000>;
-				type = "passive";
+				type = "critical";
 			};
 		};
 	};
@@ -919,7 +919,7 @@
 			trip-point2 {
 				temperature = <115000>;
 				hysteresis = <3000>;
-				type = "passive";
+				type = "critical";
 			};
 		};
 	};
@@ -929,7 +929,7 @@
 			trip-point2 {
 				temperature = <115000>;
 				hysteresis = <3000>;
-				type = "passive";
+				type = "critical";
 			};
 		};
 	};
@@ -939,7 +939,7 @@
 			trip-point2 {
 				temperature = <115000>;
 				hysteresis = <3000>;
-				type = "passive";
+				type = "critical";
 			};
 		};
 	};
@@ -949,7 +949,7 @@
 			trip-point2 {
 				temperature = <115000>;
 				hysteresis = <3000>;
-				type = "passive";
+				type = "critical";
 			};
 		};
 	};
@@ -959,7 +959,7 @@
 			trip-point2 {
 				temperature = <115000>;
 				hysteresis = <3000>;
-				type = "passive";
+				type = "critical";
 			};
 		};
 	};
@@ -969,7 +969,7 @@
 			trip-point2 {
 				temperature = <115000>;
 				hysteresis = <3000>;
-				type = "passive";
+				type = "critical";
 			};
 		};
 	};
@@ -979,7 +979,7 @@
 			trip-point2 {
 				temperature = <115000>;
 				hysteresis = <3000>;
-				type = "passive";
+				type = "critical";
 			};
 		};
 	};
