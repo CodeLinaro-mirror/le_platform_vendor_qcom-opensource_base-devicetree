@@ -29,6 +29,8 @@
 		i2c14 = &i2c14;
 		i2c19 = &i2c19;
 		i2c20 = &i2c20;
+		spi16 = &spi16;
+		spi21 = &spi21;
 	};
 };
 
@@ -197,3 +199,96 @@
 	status = "okay";
 };
 
+/* MD_SPI1: 3 x TCAN4551 (GPIO102~107 + INT16/25/28) */
+&spi21 {
+	status = "disabled";
+
+	#address-cells = <1>;
+	#size-cells = <0>;
+
+	tcan_md_spi1_0: can@0 {
+		compatible = "ti,tcan4x5x";
+		reg = <0>;
+		spi-max-frequency = <10000000>;
+		bosch,mram-cfg = <0x0 0 0 8 0 0 0 8>;
+
+		clocks = <&tcan_clk40m>, <&tcan_clk40m>;
+		clock-names = "hclk", "cclk";
+
+		interrupt-parent = <&tlmm>;
+		interrupts = <16 IRQ_TYPE_LEVEL_LOW>;
+		status = "disabled";
+	};
+
+	tcan_md_spi1_1: can@1 {
+		compatible = "ti,tcan4x5x";
+		reg = <1>;
+		spi-max-frequency = <10000000>;
+		bosch,mram-cfg = <0x0 0 0 8 0 0 0 8>;
+
+		clocks = <&tcan_clk40m>, <&tcan_clk40m>;
+		clock-names = "hclk", "cclk";
+
+		interrupt-parent = <&tlmm>;
+		interrupts = <25 IRQ_TYPE_LEVEL_LOW>;
+		status = "disabled";
+	};
+
+	tcan_md_spi1_2: can@2 {
+		compatible = "ti,tcan4x5x";
+		reg = <2>;
+		spi-max-frequency = <10000000>;
+		bosch,mram-cfg = <0x0 0 0 8 0 0 0 8>;
+
+		clocks = <&tcan_clk40m>, <&tcan_clk40m>;
+		clock-names = "hclk", "cclk";
+
+		interrupt-parent = <&tlmm>;
+		interrupts = <28 IRQ_TYPE_LEVEL_LOW>;
+		status = "disabled";
+	};
+};
+
+/* MD_SPI0: 2 x TCAN4551 (GPIO145~149 + INT56/38) */
+&spi16 {
+	status = "disabled";
+
+	#address-cells = <1>;
+	#size-cells = <0>;
+
+	/* Remove existing spidev instance from base dtsi to avoid conflict */
+	/delete-node/ spidev@0;
+
+	tcan_md_spi0_0: can@0 {
+		compatible = "ti,tcan4x5x";
+		reg = <0>;
+		spi-max-frequency = <10000000>;
+		bosch,mram-cfg = <0x0 0 0 8 0 0 0 8>;
+		clocks = <&tcan_clk40m>, <&tcan_clk40m>;
+		clock-names = "hclk", "cclk";
+		interrupt-parent = <&tlmm>;
+		interrupts = <56 IRQ_TYPE_LEVEL_LOW>;
+		status = "disabled";
+	};
+
+	tcan_md_spi0_1: can@1 {
+		compatible = "ti,tcan4x5x";
+		reg = <1>;
+		spi-max-frequency = <10000000>;
+		bosch,mram-cfg = <0x0 0 0 8 0 0 0 8>;
+		clocks = <&tcan_clk40m>, <&tcan_clk40m>;
+		clock-names = "hclk", "cclk";
+		interrupt-parent = <&tlmm>;
+		interrupts = <38 IRQ_TYPE_LEVEL_LOW>;
+		status = "disabled";
+	};
+};
+
+&soc {
+	tcan_clk40m: tcan-clk40m {
+		compatible = "fixed-clock";
+		#clock-cells = <0>;
+		clock-frequency = <40000000>;
+		clock-output-names = "tcan_clk40m";
+	};
+};
