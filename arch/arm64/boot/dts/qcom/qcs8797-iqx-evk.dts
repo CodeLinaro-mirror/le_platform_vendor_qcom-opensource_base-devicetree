@@ -83,6 +83,48 @@
 	};
 };
 
+&tlmm {
+	pcie3_modem_power_default: pcie3_modem_power_default {
+		mux {
+			pins = "gpio53";
+			function = "gpio";
+		};
+
+		config {
+			pins = "gpio53";
+			drive-strength = <2>;
+			output-high;
+		};
+	};
+
+
+	pcie3_modem_vph_pwr_default: pcie3_modem_vph_pwr_default {
+		mux {
+			pins = "gpio54";
+			function = "gpio";
+		};
+
+		config {
+			pins = "gpio54";
+			drive-strength = <2>;
+			output-high;
+		};
+	};
+
+	pcie3_modem_rstin_default: pcie3_modem_rstin_default {
+		mux {
+			pins = "gpio177";
+			function = "gpio";
+		};
+
+		config {
+			pins = "gpio177";
+			drive-strength = <2>;
+			output-low;
+		};
+	};
+};
+
 &pcie0 {
 	power-domains = <&scmi5_pd 0>;
 	power-domain-names = "power";
@@ -129,6 +171,10 @@
 	power-domains = <&scmi33_pd 0>;
 	power-domain-names = "power";
 	status = "okay";
+	pinctrl-names = "default";
+	pinctrl-0 = <&pcie3_modem_power_default
+			&pcie3_modem_vph_pwr_default
+			&pcie3_modem_rstin_default>;
 };
 
 &soc {
