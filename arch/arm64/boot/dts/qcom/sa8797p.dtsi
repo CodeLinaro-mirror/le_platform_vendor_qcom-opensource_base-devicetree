@@ -153,6 +153,27 @@
 	status = "okay";
 };
 
+&usb_1_eusbphy {
+	status = "okay";
+};
+
+&usb_1_qmpphy {
+	status = "okay";
+};
+
+&usb_1 {
+	status = "okay";
+};
+
+&usb_2_eusbphy {
+	status = "okay";
+};
+
+&usb_2 {
+	status = "okay";
+};
+
+
 &ccu_qup {
 	status = "okay";
 };
