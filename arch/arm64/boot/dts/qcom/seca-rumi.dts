@@ -6,7 +6,6 @@
 /dts-v1/;
 
 #include "seca.dtsi"
-#include "seca-pinctrl.dtsi"
 
 / {
 	model = "Qualcomm Technologies, Inc. SecaAU Rumi";
