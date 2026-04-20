@@ -199,6 +199,43 @@
 	status = "okay";
 };
 
+
+&i2c9 {
+	status = "okay";
+
+	i2c_switch@70 {
+		compatible = "nxp,pca9545";
+		reg = <0x70>;
+		#address-cells = <1>;
+		#size-cells = <0>;
+
+		i2c@0 {
+			reg = <0>;
+			#address-cells = <1>;
+			#size-cells = <0>;
+		};
+
+		i2c@1 {
+			reg = <1>;
+			#address-cells = <1>;
+			#size-cells = <0>;
+		};
+
+		i2c@2 {
+			reg = <2>;
+			#address-cells = <1>;
+			#size-cells = <0>;
+		};
+
+		i2c@3 {
+			reg = <3>;
+			#address-cells = <1>;
+			#size-cells = <0>;
+		};
+	};
+};
+
+
 /* MD_SPI1: 3 x TCAN4551 (GPIO102~107 + INT16/25/28) */
 &spi21 {
 	status = "disabled";
