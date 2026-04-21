@@ -71,13 +71,6 @@
 		reg = <0x0 0x146807dc 0x0 0x8>;
 		no-map;
 	};
-
-	non_ecc_heap_mem: non_ecc_heap_mem_region {
-		/* must be overridden by DDR-specific overlay */
-		reg = <0x0 0x00000000 0x0 0x00000000>;
-		no-map;
-		status = "disabled";
-	};
 };
 
 &scmi1 {
