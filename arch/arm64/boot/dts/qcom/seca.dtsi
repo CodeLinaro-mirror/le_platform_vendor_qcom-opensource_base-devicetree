@@ -4068,4 +4068,5 @@
 };
 #include "seca-scmi.dtsi"
 #include "seca-auto.dtsi"
+#include "seca-pinctrl.dtsi"
 #include "seca-pcie.dtsi"
