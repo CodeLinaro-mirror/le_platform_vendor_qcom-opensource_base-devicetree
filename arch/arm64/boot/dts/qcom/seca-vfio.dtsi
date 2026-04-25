@@ -19,6 +19,14 @@
 		dma-coherent;
 	};
 
+	hscnoc@2210000 {
+		compatible = "qcom,vdev-device";
+		reg = <0x0 0x2210000 0x0 0xD000>,
+		<0x0 0x2110000 0x0 0xB000>,
+		<0x0 0x2A10000 0x0 0xD000>,
+		<0x0 0x100D000 0x0 0x35000>;
+	};
+
 	/* GLINK Context Banks - Updated for Seca */
 	umd_glink@9007000 {
 		compatible = "qcom,vdev-device";
