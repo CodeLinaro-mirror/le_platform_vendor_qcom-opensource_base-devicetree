@@ -712,7 +712,7 @@
 		pinctrl-0 = <&modem_pin_53 &modem_pin_54
 					&modem_pin_83 &modem_pin_84
 					&modem_pin_85 &modem_pin_86
-					&modem_pin_108 &modem_pin_142
+					&modem_pin_108
 					&modem_pin_172 &modem_pin_173
 					&modem_pin_174 &modem_pin_175
 					&modem_pin_176 &modem_pin_177>;
@@ -746,7 +746,7 @@
 					&qupv3_se2_0_l0 &qupv3_se2_0_l1
 					&qupv3_se3_0_l0 &qupv3_se3_0_l1
 					&qupv3_se6_1_l0 &qupv3_se6_1_l1
-					&qupv3_se0_2_l0 &qupv3_se0_2_l1
+					&qupv3_se0_2_l1
 					&qupv3_se2_2_l0 &qupv3_se2_2_l1
 					&qupv3_se2_2_l2 &qupv3_se2_2_l3
 					&qupv3_se2_2_l4 &qupv3_se5_2_l0
