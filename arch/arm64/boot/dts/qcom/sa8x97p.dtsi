@@ -2366,6 +2366,47 @@
 			status = "okay";
 		};
 
+		sdhc_4_dma_resv: sdhc_4_dma_resv_region {
+			/*
+			 * Restrict IOVA mappings for SDHC4 buffers to the 256 MB region
+			 * from 0x40000000 - 0x4fffffff.
+			 */
+			iommu-addresses = <&sdhc_4 0x0 0x40000000>,
+			<&sdhc_4 0x50000000 0xb0000000>;
+		};
+
+		sdhc_4: sdhci@00b84000 {
+			compatible = "qcom,sa7255-sdhci";
+
+			reg = <0x00b84000 0x1000>;
+			reg-names = "hc";
+
+			interrupts = <GIC_SPI 261 IRQ_TYPE_LEVEL_HIGH>,
+			<GIC_SPI 227 IRQ_TYPE_LEVEL_HIGH>;
+			interrupt-names = "hc_irq", "pwr_irq";
+
+			bus-width = <4>;
+
+			no-sd;
+			no-mmc;
+			non-removable;
+
+			qcom,restore-after-cx-collapse;
+
+			cap-sd-highspeed;
+			no-1-8-v;
+			max-frequency = <100000000>;
+
+			memory-region = <&sdhc_4_dma_resv>;
+			iommus = <&apps_smmu_0 0x1580 0x0>;
+			qcom,iommu-dma = "fastmap";
+			dma-coherent;
+
+			power-domains = <&scmi34_pd 0>, <&scmi34_dvfs 0>;
+			power-domain-names = "power", "perf";
+			status = "disabled";
+		};
+
 		ice: crypto@1d48000 {
 			compatible = "qcom,sa8255p-inline-crypto-engine",
 				     "qcom,inline-crypto-engine";
