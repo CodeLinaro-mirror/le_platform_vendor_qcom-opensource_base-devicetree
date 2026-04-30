@@ -87,3 +87,11 @@
 &scmi6 {
 	status = "okay";
 };
+
+&scmi3 {
+	status = "okay";
+};
+
+&ufshc_mem {
+	status = "okay";
+};
