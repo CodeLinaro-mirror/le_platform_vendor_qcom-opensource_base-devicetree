@@ -6234,6 +6234,11 @@
 		};
 	};
 
+	dice_region@87168000 {
+		compatible = "google,open-dice";
+		memory-region = <&dice_mem>;
+	};
+
 	uefi_log {
 		compatible = "qcom,nhlos-logs-mem", "qcom,nhlos-logs";
 		memory-region = <&uefi_log>;
