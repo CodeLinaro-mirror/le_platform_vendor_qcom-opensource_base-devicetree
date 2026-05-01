@@ -1834,7 +1834,9 @@
 			<0x0 0x100D000 0x0 0x35000>;
 		interrupts = <GIC_SPI 813 IRQ_TYPE_LEVEL_HIGH>,     // APSS0
 			     <GIC_SPI 812 IRQ_TYPE_LEVEL_HIGH>,     // APSS1
-			     <GIC_SPI 739  IRQ_TYPE_LEVEL_HIGH>;    // APSS2
+			     <GIC_SPI 739 IRQ_TYPE_LEVEL_HIGH>,     // APSS2
+			     <GIC_SPI 814 IRQ_TYPE_LEVEL_HIGH>,     // GPU0
+			     <GIC_SPI 818 IRQ_TYPE_LEVEL_HIGH>;     // GPU1
 	};
 
 	qdss-service@11A05000 {
