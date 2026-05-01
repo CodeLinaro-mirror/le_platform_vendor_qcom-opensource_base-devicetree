@@ -216,13 +216,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x2 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-                interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x0302 0x0040>,
 		       <&apps_smmu_2 0x0342 0x0040>,
 		       <&apps_smmu_2 0x0362 0x0000>;
@@ -236,13 +229,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x3 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-                interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x0303 0x0040>,
 		       <&apps_smmu_2 0x0343 0x0040>,
 		       <&apps_smmu_2 0x0363 0x0000>;
@@ -256,13 +242,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x4 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-                interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x0304 0x0040>,
 		       <&apps_smmu_2 0x0344 0x0040>,
 		       <&apps_smmu_2 0x0364 0x0000>;
@@ -276,13 +255,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x5 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-                interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x0305 0x0000>,
 		       <&apps_smmu_2 0x0345 0x0020>,
 		       <&apps_smmu_2 0x0365 0x0020>;
@@ -296,13 +268,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x6 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-                interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x0306 0x0040>,
 		       <&apps_smmu_2 0x0346 0x0040>,
 		       <&apps_smmu_2 0x0366 0x0000>;
@@ -316,13 +281,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x7 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-                interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x0307 0x0040>,
 		       <&apps_smmu_2 0x0347 0x0040>,
 		       <&apps_smmu_2 0x0367 0x0000>;
@@ -336,13 +294,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x8 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-                interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x0308 0x0040>,
 		       <&apps_smmu_2 0x0348 0x0040>,
 		       <&apps_smmu_2 0x0368 0x0000>;
@@ -356,13 +307,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x9 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x0309 0x0040>,
 		       <&apps_smmu_2 0x0349 0x0040>,
 		       <&apps_smmu_2 0x0369 0x0000>;
@@ -376,13 +320,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0xa 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x030a 0x0040>,
 		       <&apps_smmu_2 0x034a 0x0040>,
 		       <&apps_smmu_2 0x036a 0x0000>;
@@ -396,13 +333,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0xb 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x030b 0x0040>,
 		       <&apps_smmu_2 0x034b 0x0040>,
 		       <&apps_smmu_2 0x036b 0x0000>;
@@ -416,13 +346,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0xc 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x030c 0x0040>,
 		       <&apps_smmu_2 0x034c 0x0040>,
 		       <&apps_smmu_2 0x036c 0x0000>;
@@ -436,13 +359,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0xd 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x030d 0x0000>,
 		       <&apps_smmu_2 0x034d 0x0020>,
 		       <&apps_smmu_2 0x036d 0x0020>;
@@ -456,13 +372,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x1 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-                interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x0701 0x0040>,
 		       <&apps_smmu_2 0x0741 0x0040>,
 		       <&apps_smmu_2 0x0761 0x0000>;
@@ -476,13 +385,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x2 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-                interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x0702 0x0040>,
 		       <&apps_smmu_2 0x0742 0x0040>,
 		       <&apps_smmu_2 0x0762 0x0000>;
@@ -496,13 +398,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x3 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-                interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x0703 0x0040>,
 		       <&apps_smmu_2 0x0743 0x0040>,
 		       <&apps_smmu_2 0x0763 0x0000>;
@@ -516,13 +411,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x4 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-                interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x0704 0x0040>,
 		       <&apps_smmu_2 0x0744 0x0040>,
 		       <&apps_smmu_2 0x0764 0x0000>;
@@ -536,13 +424,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x5 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-                interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x0705 0x0000>,
 		       <&apps_smmu_2 0x0745 0x0020>,
 		       <&apps_smmu_2 0x0765 0x0020>;
@@ -556,13 +437,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x6 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-                interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x0706 0x0040>,
 		       <&apps_smmu_2 0x0746 0x0040>,
 		       <&apps_smmu_2 0x0766 0x0000>;
@@ -576,13 +450,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x7 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-                interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x0707 0x0040>,
 		       <&apps_smmu_2 0x0747 0x0040>,
 		       <&apps_smmu_2 0x0767 0x0000>;
@@ -596,13 +463,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x8 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-                interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x0708 0x0040>,
 		       <&apps_smmu_2 0x0748 0x0040>,
 		       <&apps_smmu_2 0x0768 0x0000>;
@@ -616,13 +476,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x9 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x0709 0x0040>,
 		       <&apps_smmu_2 0x0749 0x0040>,
 		       <&apps_smmu_2 0x0769 0x0000>;
@@ -636,13 +489,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0xa 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x070a 0x0040>,
 		       <&apps_smmu_2 0x074a 0x0040>,
 		       <&apps_smmu_2 0x076a 0x0000>;
@@ -656,13 +502,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0xb 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x070b 0x0040>,
 		       <&apps_smmu_2 0x074b 0x0040>,
 		       <&apps_smmu_2 0x076b 0x0000>;
@@ -676,13 +515,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0xc 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x070c 0x0040>,
 		       <&apps_smmu_2 0x074c 0x0040>,
 		       <&apps_smmu_2 0x076c 0x0000>;
@@ -696,13 +528,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0xd 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x070d 0x0000>,
 		       <&apps_smmu_2 0x074d 0x0020>,
 		       <&apps_smmu_2 0x076d 0x0020>;
@@ -716,13 +541,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x1 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-                interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x0B01 0x0040>,
 		       <&apps_smmu_2 0x0B41 0x0040>,
 		       <&apps_smmu_2 0x0B61 0x0000>;
@@ -736,13 +554,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x2 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-                interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x0B02 0x0040>,
 		       <&apps_smmu_2 0x0B42 0x0040>,
 		       <&apps_smmu_2 0x0B62 0x0000>;
@@ -756,13 +567,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x3 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-                interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x0B03 0x0040>,
 		       <&apps_smmu_2 0x0B43 0x0040>,
 		       <&apps_smmu_2 0x0B63 0x0000>;
@@ -776,13 +580,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x4 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-                interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x0B04 0x0040>,
 		       <&apps_smmu_2 0x0B44 0x0040>,
 		       <&apps_smmu_2 0x0B64 0x0000>;
@@ -796,13 +593,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x5 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-                interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x0B05 0x0000>,
 		       <&apps_smmu_2 0x0B45 0x0020>,
 		       <&apps_smmu_2 0x0B65 0x0020>;
@@ -816,13 +606,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x6 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-                interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x0B06 0x0040>,
 		       <&apps_smmu_2 0x0B46 0x0040>,
 		       <&apps_smmu_2 0x0B66 0x0000>;
@@ -836,13 +619,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x7 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-                interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x0B07 0x0040>,
 		       <&apps_smmu_2 0x0B47 0x0040>,
 		       <&apps_smmu_2 0x0B67 0x0000>;
@@ -856,13 +632,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x8 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-                interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x0B08 0x0040>,
 		       <&apps_smmu_2 0x0B48 0x0040>,
 		       <&apps_smmu_2 0x0B68 0x0000>;
@@ -876,13 +645,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x9 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x0B09 0x0040>,
 		       <&apps_smmu_2 0x0B49 0x0040>,
 		       <&apps_smmu_2 0x0B69 0x0000>;
@@ -896,13 +658,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0xa 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x0B0a 0x0040>,
 		       <&apps_smmu_2 0x0B4a 0x0040>,
 		       <&apps_smmu_2 0x0B6a 0x0000>;
@@ -916,13 +671,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0xb 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x0B0b 0x0040>,
 		       <&apps_smmu_2 0x0B4b 0x0040>,
 		       <&apps_smmu_2 0x0B6b 0x0000>;
@@ -936,13 +684,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0xc 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x0B0c 0x0040>,
 		       <&apps_smmu_2 0x0B4c 0x0040>,
 		       <&apps_smmu_2 0x0B6c 0x0000>;
@@ -956,13 +697,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0xd 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x0B0d 0x0000>,
 		       <&apps_smmu_2 0x0B4d 0x0020>,
 		       <&apps_smmu_2 0x0B6d 0x0020>;
@@ -976,13 +710,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x1 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-                interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x0F01 0x0040>,
 		       <&apps_smmu_2 0x0F41 0x0040>,
 		       <&apps_smmu_2 0x0F61 0x0000>;
@@ -996,13 +723,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x2 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-                interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x0F02 0x0040>,
 		       <&apps_smmu_2 0x0F42 0x0040>,
 		       <&apps_smmu_2 0x0F62 0x0000>;
@@ -1016,13 +736,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x3 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-                interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x0F03 0x0040>,
 		       <&apps_smmu_2 0x0F43 0x0040>,
 		       <&apps_smmu_2 0x0F63 0x0000>;
@@ -1036,13 +749,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x4 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-                interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x0F04 0x0040>,
 		       <&apps_smmu_2 0x0F44 0x0040>,
 		       <&apps_smmu_2 0x0F64 0x0000>;
@@ -1056,13 +762,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x5 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-                interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x0F05 0x0000>,
 		       <&apps_smmu_2 0x0F45 0x0020>,
 		       <&apps_smmu_2 0x0F65 0x0020>;
@@ -1076,13 +775,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x6 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-                interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x0F06 0x0040>,
 		       <&apps_smmu_2 0x0F46 0x0040>,
 		       <&apps_smmu_2 0x0F66 0x0000>;
@@ -1096,13 +788,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x7 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-                interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x0F07 0x0040>,
 		       <&apps_smmu_2 0x0F47 0x0040>,
 		       <&apps_smmu_2 0x0F67 0x0000>;
@@ -1116,13 +801,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x8 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-                interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-                        <&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x0F08 0x0040>,
 		       <&apps_smmu_2 0x0F48 0x0040>,
 		       <&apps_smmu_2 0x0F68 0x0000>;
@@ -1136,13 +814,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x9 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x0F09 0x0040>,
 		       <&apps_smmu_2 0x0F49 0x0040>,
 		       <&apps_smmu_2 0x0F69 0x0000>;
@@ -1156,13 +827,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0xa 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x0F0a 0x0040>,
 		       <&apps_smmu_2 0x0F4a 0x0040>,
 		       <&apps_smmu_2 0x0F6a 0x0000>;
@@ -1176,13 +840,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0xb 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x0F0b 0x0040>,
 		       <&apps_smmu_2 0x0F4b 0x0040>,
 		       <&apps_smmu_2 0x0F6b 0x0000>;
@@ -1196,13 +853,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0xc 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x0F0c 0x0040>,
 		       <&apps_smmu_2 0x0F4c 0x0040>,
 		       <&apps_smmu_2 0x0F6c 0x0000>;
@@ -1216,13 +866,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0xd 0x0 0x0>,
 		     <0x0 0x9007000 0x0 0x1000>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_2 0x0F0d 0x0000>,
 		       <&apps_smmu_2 0x0F4d 0x0020>,
 		       <&apps_smmu_2 0x0F6d 0x0020>;
@@ -1236,13 +879,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x1 0x0 0x0>,
 			<0x0 0x9007000 0x0 0x1000>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_0 0x09E3 0x0000>,
 		       <&apps_smmu_0 0x0A43 0x0020>,
 		       <&apps_smmu_0 0x0A63 0x0020>,
@@ -1257,13 +893,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x2 0x0 0x0>,
 			<0x0 0x9007000 0x0 0x1000>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_0 0x09E4 0x0000>,
 		       <&apps_smmu_0 0x0A44 0x0020>,
 		       <&apps_smmu_0 0x0A64 0x0020>,
@@ -1278,13 +907,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x3 0x0 0x0>,
 			<0x0 0x9007000 0x0 0x1000>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_0 0x09E5 0x0000>,
 		       <&apps_smmu_0 0x0A45 0x0020>,
 		       <&apps_smmu_0 0x0A65 0x0020>,
@@ -1299,13 +921,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x4 0x0 0x0>,
 			<0x0 0x9007000 0x0 0x1000>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_0 0x09E6 0x0000>,
 		       <&apps_smmu_0 0x0A46 0x0020>,
 		       <&apps_smmu_0 0x0A66 0x0020>,
@@ -1320,13 +935,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x5 0x0 0x0>,
 			<0x0 0x9007000 0x0 0x1000>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_0 0x0A47 0x0020>,
 		       <&apps_smmu_0 0x0A67 0x0020>,
 		       <&apps_smmu_0 0x0A87 0x0000>;
@@ -1340,13 +948,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x1 0x0 0x0>,
 			<0x0 0x9007000 0x0 0x1000>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_0 0x0DE3 0x0000>;
 		qcom,iommu-dma-addr-range = <0x0 0x1000 0x2 0x0>;
 		qcom,iova-align-shift-max = <21>;
@@ -1358,13 +959,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x2 0x0 0x0>,
 			<0x0 0x9007000 0x0 0x1000>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_0 0x0DE4 0x0000>;
 		qcom,iommu-dma-addr-range = <0x0 0x1000 0x2 0x0>;
 		qcom,iova-align-shift-max = <21>;
@@ -1376,13 +970,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x3 0x0 0x0>,
 			<0x0 0x9007000 0x0 0x1000>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_0 0x0DE5 0x0000>;
 		qcom,iommu-dma-addr-range = <0x0 0x1000 0x2 0x0>;
 		qcom,iova-align-shift-max = <21>;
@@ -1394,13 +981,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x4 0x0 0x0>,
 			<0x0 0x9007000 0x0 0x1000>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_0 0x0DE6 0x0000>;
 		qcom,iommu-dma-addr-range = <0x4 0x0 0x80 0x0>;
 		qcom,iova-align-shift-max = <30>;
@@ -1412,13 +992,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x5 0x0 0x0>,
 			<0x0 0x9007000 0x0 0x1000>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_0 0x0DE7 0x0000>;
 		qcom,iommu-dma-addr-range = <0x4 0x0 0x80 0x0>;
 		qcom,iova-align-shift-max = <30>;
@@ -1430,13 +1003,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x1 0x0 0x0>,
 			<0x0 0x9007000 0x0 0x1000>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_0 0x0A0B 0x0040>,
 		       <&apps_smmu_0 0x0A4B 0x0040>,
 		       <&apps_smmu_0 0x0A6B 0x0000>,
@@ -1451,13 +1017,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x2 0x0 0x0>,
 			<0x0 0x9007000 0x0 0x1000>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_0 0x0A0C 0x0080>,
 		       <&apps_smmu_0 0x0A4C 0x0020>,
 		       <&apps_smmu_0 0x0A6C 0x0020>,
@@ -1472,13 +1031,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x3 0x0 0x0>,
 			<0x0 0x9007000 0x0 0x1000>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_0 0x0A0D 0x0080>,
 		       <&apps_smmu_0 0x0A4D 0x0020>,
 		       <&apps_smmu_0 0x0A6D 0x0020>,
@@ -1493,13 +1045,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x4 0x0 0x0>,
 			<0x0 0x9007000 0x0 0x1000>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_0 0x0A0E 0x0080>,
 		       <&apps_smmu_0 0x0A4E 0x0020>,
 		       <&apps_smmu_0 0x0A6E 0x0020>,
@@ -1515,13 +1060,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x1 0x0 0x0>,
 			<0x0 0x9007000 0x0 0x1000>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_0 0x0E0B 0x0000>;
 		qcom,iommu-dma-addr-range = <0x0 0x1000 0x2 0x0>;
 		qcom,iova-align-shift-max = <21>;
@@ -1533,13 +1071,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x2 0x0 0x0>,
 			<0x0 0x9007000 0x0 0x1000>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_0 0x0E0C 0x0000>;
 		qcom,iommu-dma-addr-range = <0x0 0x1000 0x2 0x0>;
 		qcom,iova-align-shift-max = <21>;
@@ -1551,13 +1082,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x3 0x0 0x0>,
 			<0x0 0x9007000 0x0 0x1000>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_0 0x0E0D 0x0000>;
 		qcom,iommu-dma-addr-range = <0x0 0x1000 0x2 0x0>;
 		qcom,iova-align-shift-max = <21>;
@@ -1569,13 +1093,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x4 0x0 0x0>,
 			<0x0 0x9007000 0x0 0x1000>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_0 0x0E0E 0x0000>;
 		qcom,iommu-dma-addr-range = <0x4 0x0 0x80 0x0>;
 		qcom,iova-align-shift-max = <30>;
@@ -1587,13 +1104,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x5 0x0 0x0>,
 			<0x0 0x9007000 0x0 0x1000>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_0 0x0E0F 0x0000>;
 		qcom,iommu-dma-addr-range = <0x4 0x0 0x80 0x0>;
 		qcom,iova-align-shift-max = <30>;
@@ -1605,13 +1115,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x1 0x0 0x0>,
 			<0x0 0x9007000 0x0 0x1000>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_0 0x0A33 0x0040>,
 		       <&apps_smmu_0 0x0A53 0x0000>,
 		       <&apps_smmu_0 0x0A73 0x0040>,
@@ -1626,13 +1129,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x2 0x0 0x0>,
 			<0x0 0x9007000 0x0 0x1000>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_0 0x0A34 0x0040>,
 		       <&apps_smmu_0 0x0A54 0x0000>,
 		       <&apps_smmu_0 0x0A74 0x0040>,
@@ -1647,13 +1143,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x3 0x0 0x0>,
 			<0x0 0x9007000 0x0 0x1000>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_0 0x0A35 0x0000>,
 		       <&apps_smmu_0 0x0A55 0x0020>,
 		       <&apps_smmu_0 0x0A75 0x0020>,
@@ -1668,13 +1157,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x4 0x0 0x0>,
 			<0x0 0x9007000 0x0 0x1000>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_0 0x0A36 0x0000>,
 		       <&apps_smmu_0 0x0A56 0x0020>,
 		       <&apps_smmu_0 0x0A76 0x0020>,
@@ -1689,13 +1171,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x5 0x0 0x0>,
 			<0x0 0x9007000 0x0 0x1000>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_0 0x0A57 0x0020>,
 		       <&apps_smmu_0 0x0A77 0x0020>,
 		       <&apps_smmu_0 0x0A97 0x0000>;
@@ -1709,13 +1184,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x1 0x0 0x0>,
 			<0x0 0x9007000 0x0 0x1000>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_0 0x0E33 0x0000>;
 		qcom,iommu-dma-addr-range = <0x0 0x1000 0x2 0x0>;
 		qcom,iova-align-shift-max = <21>;
@@ -1727,13 +1195,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x2 0x0 0x0>,
 			<0x0 0x9007000 0x0 0x1000>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_0 0x0E34 0x0000>;
 		qcom,iommu-dma-addr-range = <0x0 0x1000 0x2 0x0>;
 		qcom,iova-align-shift-max = <21>;
@@ -1745,13 +1206,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x3 0x0 0x0>,
 			<0x0 0x9007000 0x0 0x1000>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_0 0x0E35 0x0000>;
 		qcom,iommu-dma-addr-range = <0x0 0x1000 0x2 0x0>;
 		qcom,iova-align-shift-max = <21>;
@@ -1763,13 +1217,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x4 0x0 0x0>,
 			<0x0 0x9007000 0x0 0x1000>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_0 0x0E36 0x0000>;
 		qcom,iommu-dma-addr-range = <0x4 0x0 0x80 0x0>;
 		qcom,iova-align-shift-max = <30>;
@@ -1781,13 +1228,6 @@
 		memory-region = <&mm_dspq>;
 		reg = <0x0 0x5 0x0 0x0>,
 			<0x0 0x9007000 0x0 0x1000>;
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 3 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 3 IRQ_TYPE_LEVEL_HIGH>;
 		iommus = <&apps_smmu_0 0x0E37 0x0000>;
 		qcom,iommu-dma-addr-range = <0x4 0x0 0x80 0x0>;
 		qcom,iova-align-shift-max = <30>;
