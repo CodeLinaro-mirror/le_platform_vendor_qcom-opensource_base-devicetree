@@ -29,6 +29,14 @@
 };
 
 &{/reserved-memory} {
+	tzcom_mem: qcom,tzcom {
+		compatible = "shared-dma-pool";
+		alloc-ranges = <0x0 0x00000000 0x0 0xffffffff>;
+		reusable;
+		alignment = <0x0 0x400000>;
+		size = <0x0 0x1400000>; /* 20M */
+	};
+
 	tz_start_count: tz_start_count {
 		reg = <0x0 0x146807f8 0x0 0x8>;
 		no-map;
@@ -376,5 +384,11 @@
 		hyplog-address-offset = <0x410>;
 		hyplog-size-offset = <0x414>;
 		tmecrashdump-address-offset = <0x87000000>;
+	};
+
+	scm_user_intf_sec_device {
+		compatible = "qcom,scm-user-intf-sec";
+		memory-region = <&tzcom_mem>;
+		status = "ok";
 	};
 };
