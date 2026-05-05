@@ -9,9 +9,9 @@
 #include "seca-non-safe.dtsi"
 
 / {
-	model = "Qualcomm Technologies, Inc. SECA NON-SAFE IVI ADP STAR";
+	model = "Qualcomm Technologies, Inc. SECA NON-SAFE IVI ADP/QAM STAR";
 	compatible = "qcom,seca-adp-star", "qcom,adp", "qcom,seca";
-	qcom,board-id = <0x00010025 0>;
+	qcom,board-id = <0x00010019 0>,<0x00010025 0>;
 };
 
 &pcie0 {
