@@ -17,7 +17,9 @@
 	#address-cells = <2>;
 	#size-cells = <2>;
 
-	chosen { };
+	chosen {
+		bootargs = "pd_ignore_unused";
+	};
 
 	aliases {
 		serial0 = &uart15;
