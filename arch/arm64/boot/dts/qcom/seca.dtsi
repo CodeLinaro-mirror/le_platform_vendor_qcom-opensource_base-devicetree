@@ -968,7 +968,6 @@
 
 			power-domains = <&scmi15_pd 0>;
 			power-domain-names = "power";
-			status = "disabled";
 		};
 
 		pcie_smmu: iommu@9980000 {
