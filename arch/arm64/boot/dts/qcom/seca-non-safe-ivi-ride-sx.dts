@@ -11,4 +11,5 @@
 / {
 	model = "Qualcomm Technologies, Inc. SECA NON-SAFE IVI RIDE-SX";
 	compatible = "qcom,seca-ride-sx", "qcom,non-safe-ivi", "qcom,seca";
+	qcom,board-id = <0x01010025 1>;
 };

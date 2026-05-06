@@ -7,6 +7,10 @@
 #include <dt-bindings/gpio/gpio.h>
 
 / {
+	model = "Qualcomm Technologies, Inc. SECA";
+	compatible = "qcom,seca";
+	qcom,msm-id = <742 0x10000>;
+
 	interrupt-parent = <&intc>;
 
 	#address-cells = <2>;

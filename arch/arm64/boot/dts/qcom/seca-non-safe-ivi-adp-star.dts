@@ -11,4 +11,5 @@
 / {
 	model = "Qualcomm Technologies, Inc. SECA NON-SAFE IVI ADP STAR";
 	compatible = "qcom,seca-adp-star", "qcom,adp", "qcom,seca";
+	qcom,board-id = <0x00010025 0>;
 };
