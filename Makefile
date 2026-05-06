@@ -47,7 +47,7 @@ dtb-y += arch/arm64/boot/dts/qcom/seca-adas-pats.dtb
 dtb-y += arch/arm64/boot/dts/qcom/seca-non-safe-ivi-pats.dtb
 dtb-y += arch/arm64/boot/dts/qcom/seca-safe-ivi-pats.dtb
 dtb-y += arch/arm64/boot/dts/qcom/seca-overlay.dtbo
-
+dtb-y += arch/arm64/boot/dts/qcom/seca-ddr-48gb_overlay.dtbo
 
 #include common target file
 include $(PWD)/Makefile.common
