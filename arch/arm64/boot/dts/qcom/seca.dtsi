@@ -49,6 +49,8 @@
 			reg = <0x0 0x0>;
 			enable-method = "psci";
 			next-level-cache = <&L2_0>;
+			clocks = <&cpu_perf 0>;
+
 			L2_0: l2-cache {
 				compatible = "cache";
 				cache-level = <2>;
@@ -61,6 +63,7 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x100>;
 			enable-method = "psci";
+			clocks = <&cpu_perf 0>;
 			next-level-cache = <&L2_0>;
 		};
 
@@ -69,6 +72,7 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x200>;
 			enable-method = "psci";
+			clocks = <&cpu_perf 0>;
 			next-level-cache = <&L2_0>;
 		};
 
@@ -77,6 +81,7 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x300>;
 			enable-method = "psci";
+			clocks = <&cpu_perf 0>;
 			next-level-cache = <&L2_0>;
 		};
 
@@ -85,6 +90,7 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x400>;
 			enable-method = "psci";
+			clocks = <&cpu_perf 0>;
 			next-level-cache = <&L2_0>;
 		};
 
@@ -93,6 +99,7 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x500>;
 			enable-method = "psci";
+			clocks = <&cpu_perf 0>;
 			next-level-cache = <&L2_0>;
 		};
 
@@ -101,6 +108,7 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x10000>;
 			enable-method = "psci";
+			clocks = <&cpu_perf 1>;
 			next-level-cache = <&L2_6>;
 			L2_6: l2-cache {
 				compatible = "cache";
@@ -114,6 +122,7 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x10100>;
 			enable-method = "psci";
+			clocks = <&cpu_perf 1>;
 			next-level-cache = <&L2_6>;
 		};
 
@@ -122,6 +131,7 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x10200>;
 			enable-method = "psci";
+			clocks = <&cpu_perf 1>;
 			next-level-cache = <&L2_6>;
 		};
 
@@ -130,6 +140,7 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x10300>;
 			enable-method = "psci";
+			clocks = <&cpu_perf 1>;
 			next-level-cache = <&L2_6>;
 		};
 
@@ -138,6 +149,7 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x10400>;
 			enable-method = "psci";
+			clocks = <&cpu_perf 1>;
 			next-level-cache = <&L2_6>;
 		};
 
@@ -146,6 +158,7 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x10500>;
 			enable-method = "psci";
+			clocks = <&cpu_perf 1>;
 			next-level-cache = <&L2_6>;
 		};
 
