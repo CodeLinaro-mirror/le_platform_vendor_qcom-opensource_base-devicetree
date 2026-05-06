@@ -430,6 +430,9 @@
 		power-domains = <&scmi27_dvfs 0>;
 		power-domain-names = "perf";
 
+		resets = <&scmi27_rst 0>;
+		reset-names = "dpr0_reset";
+
 		qcom,dev-name = "scmi_dprx0";
 	};
 
@@ -438,6 +441,9 @@
 
 		power-domains = <&scmi28_dvfs 0>;
 		power-domain-names = "perf";
+
+		resets = <&scmi28_rst 0>;
+		reset-names = "dpr1_reset";
 
 		qcom,dev-name = "scmi_dprx1";
 	};
