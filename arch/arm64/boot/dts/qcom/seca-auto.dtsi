@@ -18,6 +18,10 @@
 	};
 };
 
+&i2c18 {
+	status = "okay";
+};
+
 &scmi0 {
 	status = "okay";
 };
