@@ -11,7 +11,6 @@
 #include "sa8797p-vfio.dtsi"
 #include "sa8797p-vms.dtsi"
 #include "sa8797p-dma-heaps.dtsi"
-#include "sa8797p-vms-lv.dtsi"
 
 / {
 	model = "Qualcomm Technologies, Inc. SA8x97P";
