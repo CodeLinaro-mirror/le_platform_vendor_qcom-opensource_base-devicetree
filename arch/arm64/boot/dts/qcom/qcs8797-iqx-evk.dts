@@ -284,7 +284,11 @@
 
 /* MD_SPI1: 3 x TCAN4551 (GPIO102~107 + INT16/25/28) */
 &spi21 {
-	status = "disabled";
+	status = "okay";
+	pinctrl-names = "default";
+	pinctrl-0 = <&qupv3_se0_3_l0 &qupv3_se0_3_l1
+		     &qupv3_se0_3_l2 &qupv3_se0_3_l3
+		     &qupv3_se0_3_l4 &qupv3_se0_3_l5>;
 
 	#address-cells = <1>;
 	#size-cells = <0>;
@@ -293,48 +297,58 @@
 		compatible = "ti,tcan4x5x";
 		reg = <0>;
 		spi-max-frequency = <10000000>;
-		bosch,mram-cfg = <0x0 0 0 8 0 0 0 8>;
+		bosch,mram-cfg = <0x0 0 0 8 0 0 8 8>;
+		reset-gpios = <&tlmm 22 GPIO_ACTIVE_HIGH>;
+		device-wake-gpios = <&tlmm 46 GPIO_ACTIVE_LOW>;
 
 		clocks = <&tcan_clk40m>, <&tcan_clk40m>;
 		clock-names = "hclk", "cclk";
 
 		interrupt-parent = <&tlmm>;
 		interrupts = <16 IRQ_TYPE_LEVEL_LOW>;
-		status = "disabled";
+		status = "okay";
 	};
 
 	tcan_md_spi1_1: can@1 {
 		compatible = "ti,tcan4x5x";
 		reg = <1>;
 		spi-max-frequency = <10000000>;
-		bosch,mram-cfg = <0x0 0 0 8 0 0 0 8>;
+		bosch,mram-cfg = <0x0 0 0 8 0 0 8 8>;
+		reset-gpios = <&tlmm 22 GPIO_ACTIVE_HIGH>;
+		device-wake-gpios = <&tlmm 46 GPIO_ACTIVE_LOW>;
 
 		clocks = <&tcan_clk40m>, <&tcan_clk40m>;
 		clock-names = "hclk", "cclk";
 
 		interrupt-parent = <&tlmm>;
 		interrupts = <25 IRQ_TYPE_LEVEL_LOW>;
-		status = "disabled";
+		status = "okay";
 	};
 
 	tcan_md_spi1_2: can@2 {
 		compatible = "ti,tcan4x5x";
 		reg = <2>;
 		spi-max-frequency = <10000000>;
-		bosch,mram-cfg = <0x0 0 0 8 0 0 0 8>;
+		bosch,mram-cfg = <0x0 0 0 8 0 0 8 8>;
+		reset-gpios = <&tlmm 22 GPIO_ACTIVE_HIGH>;
+		device-wake-gpios = <&tlmm 46 GPIO_ACTIVE_LOW>;
 
 		clocks = <&tcan_clk40m>, <&tcan_clk40m>;
 		clock-names = "hclk", "cclk";
 
 		interrupt-parent = <&tlmm>;
 		interrupts = <28 IRQ_TYPE_LEVEL_LOW>;
-		status = "disabled";
+		status = "okay";
 	};
 };
 
 /* MD_SPI0: 2 x TCAN4551 (GPIO145~149 + INT56/38) */
 &spi16 {
-	status = "disabled";
+	status = "okay";
+	pinctrl-names = "default";
+	pinctrl-0 = <&qupv3_se2_2_l0 &qupv3_se2_2_l1
+		     &qupv3_se2_2_l2 &qupv3_se2_2_l3
+		     &qupv3_se2_2_l4>;
 
 	#address-cells = <1>;
 	#size-cells = <0>;
@@ -346,24 +360,28 @@
 		compatible = "ti,tcan4x5x";
 		reg = <0>;
 		spi-max-frequency = <10000000>;
-		bosch,mram-cfg = <0x0 0 0 8 0 0 0 8>;
+		bosch,mram-cfg = <0x0 0 0 8 0 0 8 8>;
+		reset-gpios = <&tlmm 21 GPIO_ACTIVE_HIGH>;
+		device-wake-gpios = <&tlmm 45 GPIO_ACTIVE_LOW>;
 		clocks = <&tcan_clk40m>, <&tcan_clk40m>;
 		clock-names = "hclk", "cclk";
 		interrupt-parent = <&tlmm>;
 		interrupts = <56 IRQ_TYPE_LEVEL_LOW>;
-		status = "disabled";
+		status = "okay";
 	};
 
 	tcan_md_spi0_1: can@1 {
 		compatible = "ti,tcan4x5x";
 		reg = <1>;
 		spi-max-frequency = <10000000>;
-		bosch,mram-cfg = <0x0 0 0 8 0 0 0 8>;
+		bosch,mram-cfg = <0x0 0 0 8 0 0 8 8>;
+		reset-gpios = <&tlmm 21 GPIO_ACTIVE_HIGH>;
+		device-wake-gpios = <&tlmm 45 GPIO_ACTIVE_LOW>;
 		clocks = <&tcan_clk40m>, <&tcan_clk40m>;
 		clock-names = "hclk", "cclk";
 		interrupt-parent = <&tlmm>;
 		interrupts = <38 IRQ_TYPE_LEVEL_LOW>;
-		status = "disabled";
+		status = "okay";
 	};
 };
 
