@@ -185,6 +185,9 @@
         pinctrl-0 = <&soc_vbus_det_default>;
 };
 
+&pcie0 {
+	iommu-map = <0x0 &pcie_smmu 0x0000 0x10000>;
+};
 
 &soc {
 	kaslr_store {
