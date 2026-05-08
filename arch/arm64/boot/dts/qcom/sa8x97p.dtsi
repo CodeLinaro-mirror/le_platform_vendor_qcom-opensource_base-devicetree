@@ -632,9 +632,14 @@
 			reg = <0x0 0x87200000 0x0 0x2000>;
 		};
 
-		xbl_dtlog_mem: xbl_dtlog_region@87202000 {
+		xbl_log_mem: xbl_log_region@87202000 {
 			no-map;
-			reg = <0x0 0x87202000 0x0 0x60000>;
+			reg = <0x0 0x87202000 0x0 0xc000>;
+		};
+
+		xbl_dt_mem: xbl_dt_region@8720e000 {
+			no-map;
+			reg = <0x0 0x8720e000 0x0 0x54000>;
 		};
 
 		xbl_ramdump_mem: xbl_ramdump_region@87262000 {
@@ -6343,6 +6348,11 @@
 	gearvm_log {
 		compatible = "qcom,nhlos-logs-mem", "qcom,nhlos-logs";
 		memory-region = <&gearvm_logs_mem>;
+	};
+
+	xbl_log {
+		compatible = "qcom,nhlos-logs-mem", "qcom,nhlos-logs";
+		memory-region = <&xbl_log_mem>;
 	};
 
 	pm_virq_0: pm-virq-0 {
