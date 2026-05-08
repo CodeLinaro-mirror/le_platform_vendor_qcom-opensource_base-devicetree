@@ -512,7 +512,7 @@
 			reg = <0x0 0xa0100000 0x0 0x100000>;
 		};
 
-		cma_reserved: cma_region@ba200000 {
+		mm_dspq: mm_dspq_region@ba200000 {
 			no-map;
 			reg = <0x0 0xba200000 0x0 0x200000>;
 		};
