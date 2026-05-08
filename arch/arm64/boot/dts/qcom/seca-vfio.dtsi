@@ -18,4 +18,54 @@
 		qcom,iommu-dma-addr-pool = <0x0 0x60002000 0x0 0x1FFFE000>;
 		dma-coherent;
 	};
+
+	/* GLINK Context Banks - Updated for Seca */
+	umd_glink@9007000 {
+		compatible = "qcom,vdev-device";
+		reg = <0x0 0x9007000 0x0 0x1000>,
+		    <0x0 0x89B00000 0x0 0x400000>,
+		    <0x0 0x01FD4000 0x0 0x1000>;
+		interrupts-extended =
+			<&ipcc0 IPCC_MPROC_ADSP0 0 IRQ_TYPE_LEVEL_HIGH>,
+			<&ipcc0 IPCC_MPROC_ADSP1 0 IRQ_TYPE_LEVEL_HIGH>,
+			<&ipcc0 IPCC_MPROC_NSP0 0 IRQ_TYPE_LEVEL_HIGH>,
+			<&ipcc0 IPCC_MPROC_NSP1 0 IRQ_TYPE_LEVEL_HIGH>;
+	};
+
+	/* PIL Context Banks - Updated for Seca */
+	umd_pil@9007000 {
+		compatible = "qcom,vdev-device";
+		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 2 IRQ_TYPE_LEVEL_HIGH>,
+			<&ipcc0 IPCC_MPROC_ADSP1 2 IRQ_TYPE_LEVEL_HIGH>,
+			<&ipcc0 IPCC_MPROC_NSP0 2 IRQ_TYPE_LEVEL_HIGH>,
+			<&ipcc0 IPCC_MPROC_NSP1 2 IRQ_TYPE_LEVEL_HIGH>,
+			<&ipcc0 IPCC_MPROC_AOP  0 IRQ_TYPE_LEVEL_HIGH>,
+			<&intc GIC_SPI 159 IRQ_TYPE_EDGE_RISING>,
+			<&intc GIC_SPI 155 IRQ_TYPE_EDGE_RISING>,
+			<&intc GIC_SPI 178 IRQ_TYPE_EDGE_RISING>;
+
+		memory-region = <&pil_umd_reserved
+			&hpass_dsp0_mem
+			&hpass_dsp0_dtb_mem
+			&hpass_dsp1_mem
+			&hpass_dsp1_dtb_mem
+			&cdsp0_mem
+			&q6_cdsp0_dtb_mem
+			&cdsp1_mem
+			&q6_cdsp1_dtb_mem
+			&gpu_microcode_mem
+			&gpu_microcode_2_mem
+			&soccp_mem
+			&video_mem
+			&cvp_mem
+			&camera_icp_1_mem
+			&camera_icp_2_mem>;
+
+		reg = <0x0 0x9007000 0x0 0x1000>,
+		    <0x0 0x89B00000 0x0 0x400000>,
+		    <0x0 0x01FD4000 0x0 0x1000>,
+		    <0x0 0x8c900000 0x0 0x800000>,
+		    <0x0 0x14680000 0x0 0x1000>,
+		    <0x0 0xc300000 0x0 0x1000>;
+	};
 };
