@@ -1890,23 +1890,6 @@
 		};
 	};
 
-	pdp2_scmi: qcom,pdp2-scmi {
-		compatible = "arm,scmi";
-		mboxes = <&pdp_mbox2 0>, <&pdp_mbox2 13>;
-		mbox-names = "a2p_tx2", "a2p_rx2";
-		shmem = <&pdp2_a2p>;
-
-		#address-cells = <1>;
-		#size-cells = <0>;
-
-		status = "disabled";
-
-		vendor_pdp2: protocol@80 {
-			reg = <0x80>;
-			#clock-cells = <1>;
-		};
-	};
-
 	cpucp_scmi: qcom,cpucp-scmi {
 		compatible = "arm,scmi";
 		mboxes = <&cpucp_mbox 0>, <&cpucp_mbox 2>;
@@ -2296,16 +2279,6 @@
 		pdp1_a2p: scmi-shmem@200 {
 			compatible = "arm,scmi-shmem";
 			reg = <0x200 0x80>;
-		};
-
-		pdp2_p2a: scmi-shmem@100 {
-			compatible = "arm,scmi-shmem";
-			reg = <0x100 0x80>;
-		};
-
-		pdp2_a2p: scmi-shmem@280 {
-			compatible = "arm,scmi-shmem";
-			reg = <0x280 0x80>;
 		};
 	};
 
