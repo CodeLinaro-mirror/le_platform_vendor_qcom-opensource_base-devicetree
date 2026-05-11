@@ -6,8 +6,6 @@
 /dts-v1/;
 
 #include "seca.dtsi"
-#include "seca-pinctrl.dtsi"
-#include "seca-usb.dtsi"
 
 / {
 	model = "Qualcomm Technologies, Inc. SecaAU Rumi";
@@ -69,10 +67,6 @@
 	};
 };
 
-&scmi0 {
-	status = "okay";
-};
-
 &usb_0 {
 	qcom,select-utmi-as-pipe-clk;
 	status = "okay";
@@ -86,4 +80,32 @@
 	/delete-property/ usb-role-switch;
 
 	status = "okay";
+};
+
+&scmi1 {
+	status = "disabled";
+};
+
+&scmi2 {
+	status = "disabled";
+};
+
+&scmi12 {
+	status = "disabled";
+};
+
+&scmi13 {
+	status = "disabled";
+};
+
+&scmi14 {
+	status = "disabled";
+};
+
+&usb_0_eusbphy {
+	status = "disabled";
+};
+
+&usb_0_qmpphy {
+	status = "disabled";
 };

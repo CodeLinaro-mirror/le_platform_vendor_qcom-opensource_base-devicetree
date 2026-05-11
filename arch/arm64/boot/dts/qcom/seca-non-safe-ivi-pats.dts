@@ -1,0 +1,19 @@
+// SPDX-License-Identifier: BSD-3-Clause
+/*
+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+ */
+
+/dts-v1/;
+
+#include "seca.dtsi"
+#include "seca-pats.dtsi"
+
+/ {
+	model = "Qualcomm Technologies, Inc. SECA NON-SAFE QAM PATS";
+	compatible = "qcom,non-safe-ivi", "qcom,seca";
+	qcom,board-id = <0x2010025 2>;
+
+	aliases {
+		spi14 = &spi14;
+	};
+};

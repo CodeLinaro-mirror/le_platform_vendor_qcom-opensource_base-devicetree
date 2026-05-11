@@ -13,3 +13,13 @@
 	qcom,board-id = <0x01010025 1>;
 	qcom,sku-id = <0x300>;
 };
+
+&pcie0 {
+	power-domains = <&scmi5_pd 0>;
+	power-domain-names = "power";
+};
+
+&pcie1 {
+	power-domains = <&scmi6_pd 0>;
+	power-domain-names = "power";
+};
