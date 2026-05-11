@@ -1005,16 +1005,6 @@
 			interrupts = <GIC_SPI 56 IRQ_TYPE_LEVEL_HIGH>;
 		};
 
-		pdp_mbox2: mailbox@1b980000 {
-			compatible = "qcom,x1e80100-cpucp-mbox";
-			reg = <0x0 0x1b980000 0x0 0x300>,
-				<0x0 0x17610000 0x0 0x4c08>;
-			reg-names = "tx", "rx";
-			#mbox-cells = <1>;
-			qcom,rx-chans = <0x2020>;
-			interrupts = <GIC_SPI 56 IRQ_TYPE_LEVEL_HIGH>;
-		};
-
 		cpucp_mbox: mailbox@18830000 {
 			compatible = "qcom,x1e80100-cpucp-mbox";
 			reg =   <0x0 0x18830000 0x0 0x300>,
