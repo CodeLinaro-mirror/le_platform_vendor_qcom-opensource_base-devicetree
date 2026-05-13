@@ -55,6 +55,10 @@
 	status = "okay";
 };
 
+&scmi7 {
+	status = "okay";
+};
+
 &scmi10 {
 	status = "okay";
 };
