@@ -1511,6 +1511,20 @@
 		dma-coherent;
 	};
 
+	vfio_pcie0_hdma@40030000 {
+		compatible = "qcom,vfio-platform";
+		reg = <0x0 0x40030000 0x0 0x10000>;
+		interrupts = <GIC_SPI 492 IRQ_TYPE_LEVEL_HIGH>,
+			<GIC_SPI 87 IRQ_TYPE_LEVEL_HIGH>,
+			<GIC_SPI 189 IRQ_TYPE_LEVEL_HIGH>,
+			<GIC_SPI 200 IRQ_TYPE_LEVEL_HIGH>,
+			<GIC_SPI 330 IRQ_TYPE_LEVEL_HIGH>,
+			<GIC_SPI 331 IRQ_TYPE_LEVEL_HIGH>,
+			<GIC_SPI 332 IRQ_TYPE_LEVEL_HIGH>;
+		iommus = <&pcie_smmu 0x0>, <&pcie_smmu 0x100>;
+		dma-coherent;
+	};
+
 	// CRYPTO2
 	vfio_hwkm_gpce_core_2@9940000 {
 		compatible = "qcom,vfio-platform";
