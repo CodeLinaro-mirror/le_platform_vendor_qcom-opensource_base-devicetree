@@ -119,3 +119,11 @@
 &ufshc_mem {
 	status = "okay";
 };
+
+&pdp_scmi {
+	status = "okay";
+};
+
+&pdp1_scmi {
+	status = "okay";
+};
