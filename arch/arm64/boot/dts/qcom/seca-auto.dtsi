@@ -4,6 +4,7 @@
  */
 
 #include "seca-usb.dtsi"
+#include "seca-ethernet.dtsi"
 
 &arch_timer {
 	clock-frequency = <19200000>;
