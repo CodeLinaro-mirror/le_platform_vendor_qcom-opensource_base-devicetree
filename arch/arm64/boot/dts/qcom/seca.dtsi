@@ -1017,6 +1017,20 @@
 			interrupts = <GIC_SPI 56 IRQ_TYPE_LEVEL_HIGH>;
 		};
 
+		pdp0_log: qcom,pdp0_log@8764a000 {
+			compatible = "qcom,pdp-log";
+			reg =	<0x0 0x8764a000 0x0 0x10000>;
+			mboxes = <&pdp_mbox0 3>, <&pdp_mbox0 2>;
+			qcom,log-type = <1>;
+		};
+
+		pdp1_log: qcom,pdp1_log@8768a000 {
+			compatible = "qcom,pdp-log";
+			reg =	<0x0 0x8768a000 0x0 0x10000>;
+			mboxes = <&pdp_mbox1 4>, <&pdp_mbox1 2>;
+			qcom,log-type = <2>;
+		};
+
 		cpucp_mbox: mailbox@18830000 {
 			compatible = "qcom,x1e80100-cpucp-mbox";
 			reg =   <0x0 0x18830000 0x0 0x300>,
