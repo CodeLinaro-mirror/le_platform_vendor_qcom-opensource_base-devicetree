@@ -12,7 +12,7 @@
 
 / {
 	model = "Qualcomm Technologies, Inc. SA8x97P v2 NON-SAFE IVI RIDE-SX";
-	compatible = "qcom,sa8797p-ride-sx", "qcom,non-safe-ivi", "qcom,sa8797p";
+	compatible = "qcom,sa8x97p-ride-sx", "qcom,non-safe-ivi", "qcom,sa8797p";
 	qcom,msm-id = <689 0x20000>, <690 0x20000>;
 	qcom,board-id = <0x01010025 1>;
 };

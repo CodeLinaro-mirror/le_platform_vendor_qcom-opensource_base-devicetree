@@ -10,7 +10,7 @@
 
 / {
 	model = "Qualcomm Technologies, Inc. SA8x97p Flex RIDE-SX";
-	compatible = "qcom,sa8797p-qam-ride-sx", "qcom,sa8797p-qam", "qcom,sa8797p";
+	compatible = "qcom,sa8x97p-flex-ride-sx", "qcom,sa8x97p-qam", "qcom,sa8797p";
 	qcom,board-id = <0x01010025 1>;
 	qcom,sku-id = <0x300>;
 };
