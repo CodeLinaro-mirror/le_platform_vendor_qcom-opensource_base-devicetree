@@ -467,6 +467,8 @@
 
 		qcom,no-suspend;
 		qcom,dev-name = "scmi_emac1";
+
+		status = "disabled";
 	};
 
 	/*scmi_bluetooth {
