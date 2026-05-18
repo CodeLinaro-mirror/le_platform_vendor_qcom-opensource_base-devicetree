@@ -11,4 +11,15 @@
 / {
 	model = "Qualcomm Technologies, Inc. SECA NON-SAFE IVI ADP STAR";
 	compatible = "qcom,seca-adp-star", "qcom,adp", "qcom,seca";
+	qcom,board-id = <0x00010025 0>;
+};
+
+&pcie0 {
+	power-domains = <&scmi5_pd 0>;
+	power-domain-names = "power";
+};
+
+&pcie1 {
+	power-domains = <&scmi6_pd 0>;
+	power-domain-names = "power";
 };

@@ -8,11 +8,36 @@
 
 #include <dt-bindings/interrupt-controller/arm-gic.h>
 #include "seca-dma-heaps.dtsi"
+#include "oot-dt-bindings/qcom-ipcc-sa8797p.h"
 #include "seca-vfio.dtsi"
 
 / {
 	model = "Qualcomm Technologies, Inc. SecaAU Rumi";
 	compatible = "qcom,secaau-rumi", "qcom,seca";
+};
+
+&{/} {
+	tz_start_count {
+		compatible = "qcom,nhlos-logs-io", "qcom,nhlos-logs";
+		memory-region = <&tz_start_count>;
+	};
+
+	tz_end_count {
+		compatible = "qcom,nhlos-logs-io", "qcom,nhlos-logs";
+		memory-region = <&tz_end_count>;
+	};
+};
+
+&{/reserved-memory} {
+	tz_start_count: tz_start_count {
+		reg = <0x0 0x146807f8 0x0 0x8>;
+		no-map;
+	};
+
+	tz_end_count: tz_end_count {
+		reg = <0x0 0x146807dc 0x0 0x8>;
+		no-map;
+	};
 };
 
 &scmi1 {
@@ -168,6 +193,13 @@
 		power-domain-names = "perf";
 
 		qcom,dev-name = "scmi_dprx0";
+	};
+
+	scmi_uetm {
+		qcom,dev-name = "uetm";
+		compatible = "qcom,uscmi-vendor";
+		qcom,algo = <0x00 0x5545544d>;
+		qcom,vendor = <&vendor_cpupcp>;
 	};
 
 	test_scmi {

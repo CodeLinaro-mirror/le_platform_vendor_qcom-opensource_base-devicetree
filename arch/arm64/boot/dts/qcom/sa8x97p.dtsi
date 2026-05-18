@@ -57,6 +57,14 @@
 			clock-div = <4>;
 			#clock-cells = <0>;
 		};
+
+		tscss_etu_clock: tscss_etu_clock {
+			compatible = "fixed-factor-clock";
+			clocks = <&gpll5_out_main>;
+			clock-mult = <1>;
+			clock-div = <4>;
+			#clock-cells = <0>;
+		};
 	};
 
 	cpus {
@@ -591,6 +599,11 @@
 			reg = <0x0 0x84c00000 0x0 0x800000>;
 		};
 
+		dice_mem: dice_region@87168000 {
+			no-map;
+			reg = <0x0 0x87168000 0x0 0x4000>;
+		};
+
 		deepsleep_backup_mem: deepsleep_backup_region@86a00000 {
 			no-map;
 			reg = <0x0 0x86a00000 0x0 0x200000>;
@@ -910,6 +923,21 @@
 			reg = <0x0 0xd7600000 0x0 0x40000>;
 		};
 
+		gearvm_shared_mem: gearvm_shared_region@d7640000 {
+			no-map;
+			reg = <0x0 0xd7640000 0x0 0x16000>;
+		};
+
+		gearvm_psail_mem: gearvm_psail_region@d7656000 {
+			no-map;
+			reg = <0x0 0xd7656000 0x0 0x20000>;
+		};
+
+		gearvm_reserved_mem: gearvm_reserved_region@d7676000 {
+			no-map;
+			reg = <0x0 0xd7676000 0x0 0x15a000>;
+		};
+
 		gearvm_logs_mem: gearvm_logs_region@d77d0000 {
 			no-map;
 			reg = <0x0 0xd77d0000 0x0 0x20000>;
@@ -920,19 +948,20 @@
 			reg = <0x0 0xd77f0000 0x0 0x10000>;
 		};
 
-		gearvm_shared_mem: gearvm_shared_region@d7650000 {
+
+		acdb_mem: acdb_region@880000000 {
 			no-map;
-			reg = <0x0 0xd7650000 0x0 0x180000>;
+			reg = <0x8 0x80000000 0x0 0x4400000>;
+		};
+
+		smmu_dbg_mem: smmu_dbg_region@884400000 {
+			no-map;
+			reg = <0x8 0x84400000 0x0 0x1A00000>;
 		};
 
 		sail_p_mem: sail_p_region@8c0000000 {
 			no-map;
-			reg = <0x8 0xc0000000 0x0 0x8000000>;
-		};
-
-		reserved_mem2: reserved_region@8c8000000 {
-			no-map;
-			reg = <0x8 0xc8000000 0x0 0x18000000>;
+			reg = <0x8 0xc0000000 0x0 0x20000000>;
 		};
 
 		dump_mem: mem-dump-region {
@@ -1644,16 +1673,119 @@
 		tsc: tsc@1c80000 {
 			compatible = "qcom,tsc";
 			reg = <0x0 0x01c80000 0x0 0x2000>,
-			      <0x0 0x01c87000 0x0 0x1000>;
-			reg-names = "tsc", "timer";
-			clocks = <&tscss_ahb_clock>, <&tscss_cntr_clock>,
-				 <&tscss_cntr_clock>;
-			clock-names = "cfg_ahb", "cntr", "etu";
-			interrupts = <GIC_SPI 290 IRQ_TYPE_LEVEL_HIGH>;
-			interrupt-names = "tscss_fusa_irq";
+			      <0x0 0x01c87000 0x0 0x1000>,
+			      <0x0 0x01ca0000 0x0 0x20000>,
+			      <0x0 0x01f9e100 0x0 0x4>;
+			reg-names = "tsc", "timer", "etu", "tsc_src_sel";
+			clocks = <&tscss_ahb_clock>,
+				 <&tscss_cntr_clock>,
+				 <&tscss_etu_clock>;
+			clock-names = "cfg_ahb",
+				      "cntr",
+				      "etu";
+			interrupts = <GIC_SPI 290 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 169 IRQ_TYPE_LEVEL_HIGH>;
+			interrupt-names = "tscss_fusa_irq",
+					  "etu_summary_irq";
 			qcom,tsc-nsec-update;
 			qcom,tsc-frame-pulse-gen;
 			qcom,tsc-safety;
+
+			slice@1 {
+				qcom,etu-event-sel = <1>;
+				qcom,etu-slice = <1>;
+				qcom,etu-event-name = "timer0";
+			};
+
+			slice@2 {
+				qcom,etu-event-sel = <2>;
+				qcom,etu-slice = <2>;
+				qcom,etu-event-name = "timer1";
+			};
+
+			slice@3 {
+				qcom,etu-event-sel = <3>;
+				qcom,etu-slice = <3>;
+				qcom,etu-event-name = "timer2";
+			};
+
+			slice@4 {
+				qcom,etu-event-sel = <4>;
+				qcom,etu-slice = <4>;
+				qcom,etu-event-name = "timer3";
+			};
+
+			slice@5 {
+				qcom,etu-event-sel = <5>;
+				qcom,etu-slice = <5>;
+				qcom,etu-event-name = "timer4";
+			};
+
+			slice@6 {
+				qcom,etu-event-sel = <6>;
+				qcom,etu-slice = <6>;
+				qcom,etu-event-name = "timer5";
+			};
+
+			slice@7 {
+				qcom,etu-event-sel = <7>;
+				qcom,etu-slice = <7>;
+				qcom,etu-event-name = "timer6";
+			};
+
+			slice@8 {
+				qcom,etu-event-sel = <8>;
+				qcom,etu-slice = <8>;
+				qcom,etu-event-name = "timer7";
+			};
+
+			slice@9 {
+				qcom,etu-event-sel = <9>;
+				qcom,etu-slice = <9>;
+				qcom,etu-event-name = "timer8";
+			};
+
+			slice@10 {
+				qcom,etu-event-sel = <10>;
+				qcom,etu-slice = <10>;
+				qcom,etu-event-name = "timer9";
+			};
+
+			slice@17 {
+				qcom,etu-event-sel = <17>;
+				qcom,etu-slice = <17>;
+				qcom,etu-event-name = "timer10";
+			};
+
+			slice@18 {
+				qcom,etu-event-sel = <18>;
+				qcom,etu-slice = <18>;
+				qcom,etu-event-name = "timer11";
+			};
+
+			slice@19 {
+				qcom,etu-event-sel = <19>;
+				qcom,etu-slice = <19>;
+				qcom,etu-event-name = "timer12";
+			};
+
+			slice@20 {
+				qcom,etu-event-sel = <20>;
+				qcom,etu-slice = <20>;
+				qcom,etu-event-name = "timer13";
+			};
+
+			slice@21 {
+				qcom,etu-event-sel = <21>;
+				qcom,etu-slice = <21>;
+				qcom,etu-event-name = "timer14";
+			};
+
+			slice@22 {
+				qcom,etu-event-sel = <22>;
+				qcom,etu-slice = <22>;
+				qcom,etu-event-name = "timer15";
+			};
 		};
 
 		ccu_qup: ccu-qup {
@@ -1664,12 +1796,16 @@
 			      <0x0 0x09c16000 0x0 0x1000>,
 			      <0x0 0x09c1e000 0x0 0x1000>,
 			      <0x0 0x09c1f000 0x0 0x1000>,
-			      <0x0 0x09c20000 0x0 0x1000>;
+			      <0x0 0x09c20000 0x0 0x1000>,
+			      <0x0 0x09b98000 0x0 0x1000>,
+			      <0x0 0x09c18000 0x0 0x1000>;
 			reg-names = "ccu_qupv3_0_common",
 				    "ccu_qupv3_1_common",
 				    "ccu_top",
 				    "ccu_qupv3_0_IRQ",
-				    "ccu_qupv3_1_IRQ";
+				    "ccu_qupv3_1_IRQ",
+				    "ccu_qupv3_0_fusa_fault_aggregator",
+				    "ccu_qupv3_1_fusa_fault_aggregator";
 			qcom,common-reg-offset = <0x40000>;
 			interrupts = <GIC_ESPI 29 IRQ_TYPE_EDGE_RISING>,
 					     <GIC_ESPI 28 IRQ_TYPE_EDGE_RISING>;
@@ -3099,6 +3235,13 @@
 					qcom,part-id = <0>;
 				};
 			};
+		};
+
+		firmware_vm_mini_dump: firmware-vm-mini-dump@0 {
+			compatible = "qcom,firmware-vm-mini-dump";
+			reg = <0x0 0xd7600000 0x0 0x00200000>,
+			      <0x0 0xd6e00000 0x0 0x00800000>;
+			  reg-names = "fvm_shared", "fvm_mem";
 		};
 	};
 
@@ -5824,6 +5967,11 @@
 		snps,mtl-rx-config = <&mtl_rx_setup>;
 		snps,mtl-tx-config = <&mtl_tx_setup>;
 
+		qcom,tx-vdma-map = <0 0 0 0 1 2 3 4 5 6 7 7>;
+		qcom,rx-vdma-map = <0 1 2 3 4 5 6 6 6 6 7 7>;
+		qcom,tx-pdma-map = <0 1 2 3 4 5 6 6 6 6 7 7>;
+		qcom,rx-pdma-map = <0 1 2 3 4 5 6 6 6 6 7 7>;
+
 		qcom-xpcs-handle = <&xpcs0>;
 
 		mtl_rx_setup: rx-queues-config {
@@ -5979,6 +6127,11 @@
 		snps,mtl-rx-config = <&mtl_rx_setup1>;
 		snps,mtl-tx-config = <&mtl_tx_setup1>;
 
+		qcom,tx-vdma-map = <0 0 0 0 1 2 3 4 5 6 7 7>;
+		qcom,rx-vdma-map = <0 1 2 3 4 5 6 6 6 6 7 7>;
+		qcom,tx-pdma-map = <0 1 2 3 4 5 6 6 6 6 7 7>;
+		qcom,rx-pdma-map = <0 1 2 3 4 5 6 6 6 6 7 7>;
+
 		qcom-xpcs-handle = <&xpcs1>;
 
 		mtl_rx_setup1: rx-queues-config {
@@ -6091,6 +6244,11 @@
 			snps,kbbe;
 			snps,blen = <0 0 0 0 16 0 0>;
 		};
+	};
+
+	dice_region@87168000 {
+		compatible = "google,open-dice";
+		memory-region = <&dice_mem>;
 	};
 
 	uefi_log {

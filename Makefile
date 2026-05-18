@@ -43,6 +43,9 @@ dtb-y += arch/arm64/boot/dts/qcom/seca-flex-ride-sx.dtb
 dtb-y += arch/arm64/boot/dts/qcom/seca-non-safe-ivi-adp-star.dtb
 dtb-y += arch/arm64/boot/dts/qcom/seca-non-safe-ivi-ride-sx.dtb
 dtb-y += arch/arm64/boot/dts/qcom/seca-safe-ivi-ride-sx.dtb
+dtb-y += arch/arm64/boot/dts/qcom/seca-adas-pats.dtb
+dtb-y += arch/arm64/boot/dts/qcom/seca-non-safe-ivi-pats.dtb
+dtb-y += arch/arm64/boot/dts/qcom/seca-safe-ivi-pats.dtb
 dtb-y += arch/arm64/boot/dts/qcom/seca-overlay.dtbo
 
 
