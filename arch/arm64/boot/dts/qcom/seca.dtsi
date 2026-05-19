@@ -2657,6 +2657,20 @@
 			memory-region = <&gearvm_logs_mem>;
 		};
 
+		qfprom_tcsr_softsku: qfprom@1f97070 {
+			compatible = "qcom,qfprom";
+			reg = <0x0 0x1f97070 0x0 0x18>;
+			#address-cells = <1>;
+			#size-cells = <1>;
+		};
+
+		qfprom_tcsr_qtv: qfprom@1f96004 {
+			compatible = "qcom,qfprom";
+			reg = <0x0 0x1f96004 0x0 0x18>;
+			#address-cells = <1>;
+			#size-cells = <1>;
+		};
+
 		tsens0: thermal-sensor@c22c000 {
 			compatible = "qcom,seca-tsens", "qcom,tsens-v2";
 			reg = <0x0 0x0c22c000 0x0 0x1ff>,
@@ -4510,19 +4524,6 @@
 			};
 		};
 
-		qfprom_tcsr_softsku: qfprom@1f97070 {
-			compatible = "qcom,qfprom";
-			reg = <0x0 0x1f97070 0x0 0x18>;
-			#address-cells = <1>;
-			#size-cells = <1>;
-		};
-
-		qfprom_tcsr_qtv: qfprom@1f96004 {
-			compatible = "qcom,qfprom";
-			reg = <0x0 0x1f96004 0x0 0x18>;
-			#address-cells = <1>;
-			#size-cells = <1>;
-		};
 	};
 };
 #include "seca-scmi.dtsi"
