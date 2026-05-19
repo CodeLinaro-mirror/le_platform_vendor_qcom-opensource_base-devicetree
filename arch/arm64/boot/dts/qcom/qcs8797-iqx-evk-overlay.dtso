@@ -182,7 +182,7 @@
 &usb_1 {
         status = "okay";
         pinctrl-names = "default";
-        pinctrl-0 = <&soc_vbus_det_default>;
+        pinctrl-0 = <&soc_vbus_det_default &usb_hub_rst>;
 };
 
 &pcie0 {

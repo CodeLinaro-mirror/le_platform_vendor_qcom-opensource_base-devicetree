@@ -710,22 +710,13 @@
 		pinctrl-names = "default";
 		pinctrl-0 = <&rtc_sda &rtc_scl>;
 	};
-	modem_pin@0 {
-		compatible = "qcom,apps-pinctlr";
-		pinctrl-names = "default";
-		pinctrl-0 = <&modem_pin_53 &modem_pin_54
-					&modem_pin_83 &modem_pin_84
-					&modem_pin_85 &modem_pin_86
-					&modem_pin_108
-					&modem_pin_172 &modem_pin_173
-					&modem_pin_174 &modem_pin_175
-					&modem_pin_176 &modem_pin_177>;
-	};
+
 	io_expansion_connector@0 {
 		compatible = "qcom,apps-pinctlr";
 		pinctrl-names = "default";
 		pinctrl-0 = <&io_expansion_connector_93 &io_expansion_connector_94>;
 	};
+
 	md_spi_can@0 {
 		compatible = "qcom,apps-pinctlr";
 		pinctrl-names = "default";
@@ -734,12 +725,6 @@
 					&md_spi_can_28 &md_spi_can_38
 					&md_spi_can_45 &md_spi_can_46
 					&md_spi_can_56>;
-	};
-
-	usb_hub@0 {
-		compatible = "qcom,apps-pinctlr";
-		pinctrl-names = "default";
-		pinctrl-0 = <&usb_hub_rst>;
 	};
 
 	IQ_qupv3_pins@0 {
