@@ -4,6 +4,23 @@
  */
 
 #include "seca-usb.dtsi"
+#include "seca-ethernet.dtsi"
+
+&arch_timer {
+	clock-frequency = <19200000>;
+};
+
+&memtimer {
+	clock-frequency = <19200000>;
+};
+
+&sleep_clk {
+	clock-frequency = <32768>;
+};
+
+&xo_board_clk {
+	clock-frequency = <19200000>;
+};
 
 &i2c9 {
 	status = "okay";
@@ -16,6 +33,10 @@
 		reg = <0x43>;
 		#phy-cells = <0>;
 	};
+};
+
+&i2c18 {
+	status = "okay";
 };
 
 &scmi0 {
@@ -31,6 +52,10 @@
 };
 
 &scmi9 {
+	status = "okay";
+};
+
+&scmi7 {
 	status = "okay";
 };
 
@@ -55,6 +80,14 @@
 };
 
 &scmi15 {
+	status = "okay";
+};
+
+&qupv3_id_0 {
+	status = "okay";
+};
+
+&qupv3_id_1 {
 	status = "okay";
 };
 
@@ -85,5 +118,21 @@
 };
 
 &scmi6 {
+	status = "okay";
+};
+
+&scmi3 {
+	status = "okay";
+};
+
+&ufshc_mem {
+	status = "okay";
+};
+
+&pdp_scmi {
+	status = "okay";
+};
+
+&pdp1_scmi {
 	status = "okay";
 };

@@ -923,6 +923,21 @@
 			reg = <0x0 0xd7600000 0x0 0x40000>;
 		};
 
+		gearvm_shared_mem: gearvm_shared_region@d7640000 {
+			no-map;
+			reg = <0x0 0xd7640000 0x0 0x16000>;
+		};
+
+		gearvm_psail_mem: gearvm_psail_region@d7656000 {
+			no-map;
+			reg = <0x0 0xd7656000 0x0 0x20000>;
+		};
+
+		gearvm_reserved_mem: gearvm_reserved_region@d7676000 {
+			no-map;
+			reg = <0x0 0xd7676000 0x0 0x15a000>;
+		};
+
 		gearvm_logs_mem: gearvm_logs_region@d77d0000 {
 			no-map;
 			reg = <0x0 0xd77d0000 0x0 0x20000>;
@@ -933,10 +948,6 @@
 			reg = <0x0 0xd77f0000 0x0 0x10000>;
 		};
 
-		gearvm_shared_mem: gearvm_shared_region@d7650000 {
-			no-map;
-			reg = <0x0 0xd7650000 0x0 0x180000>;
-		};
 
 		acdb_mem: acdb_region@880000000 {
 			no-map;
@@ -1663,8 +1674,9 @@
 			compatible = "qcom,tsc";
 			reg = <0x0 0x01c80000 0x0 0x2000>,
 			      <0x0 0x01c87000 0x0 0x1000>,
-			      <0x0 0x01ca0000 0x0 0x20000>;
-			reg-names = "tsc", "timer", "etu";
+			      <0x0 0x01ca0000 0x0 0x20000>,
+			      <0x0 0x01f9e100 0x0 0x4>;
+			reg-names = "tsc", "timer", "etu", "tsc_src_sel";
 			clocks = <&tscss_ahb_clock>,
 				 <&tscss_cntr_clock>,
 				 <&tscss_etu_clock>;
@@ -6232,6 +6244,11 @@
 			snps,kbbe;
 			snps,blen = <0 0 0 0 16 0 0>;
 		};
+	};
+
+	dice_region@87168000 {
+		compatible = "google,open-dice";
+		memory-region = <&dice_mem>;
 	};
 
 	uefi_log {
