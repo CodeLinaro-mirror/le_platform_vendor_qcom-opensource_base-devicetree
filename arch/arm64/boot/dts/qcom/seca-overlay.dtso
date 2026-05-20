@@ -113,6 +113,11 @@
 		compatible = "qcom,dload-mode";
 	};
 
+	dload_type {
+		compatible = "qcom,msm-imem-dload-type";
+		reg = <0x0 0x1468001c 0x0 0x4>;
+	};
+
 	scmi_nsp0 {
 		compatible = "qcom,uscmi";
 
