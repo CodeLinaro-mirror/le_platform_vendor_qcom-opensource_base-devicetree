@@ -1544,4 +1544,10 @@
 		qcom,iommu-dma-addr-pool = <0x0 0x0 0x0 0xffffffff>;
 		dma-coherent;
 	};
+
+	umd_ipcc_err_handler@1fc0000 {
+		compatible = "qcom,vdev-device";
+		reg = <0x0 0x1fc0000 0x0 0x00040000>; /* IPCC_FUSA_ERR_BASE_ADDR */
+		interrupts = <GIC_SPI 336 IRQ_TYPE_LEVEL_HIGH>; /* IPCC_FUSA_IRQ: GIC hw ID 368 */
+	};
 };
