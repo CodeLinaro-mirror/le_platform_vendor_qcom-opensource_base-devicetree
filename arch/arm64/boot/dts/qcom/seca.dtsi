@@ -995,7 +995,6 @@
 			interrupt-names = "eventq", "cmdq-sync", "gerror";
 			dma-coherent;
 			#iommu-cells = <1>;
-			status = "disabled";
 		};
 
 		pdp_mbox0: mailbox@19980000 {
