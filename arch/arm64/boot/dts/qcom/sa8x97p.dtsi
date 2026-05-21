@@ -3142,6 +3142,34 @@
 			#size-cells = <1>;
 		};
 
+		/*
+		 * Vsense Calibration Fuse
+		 * QFPROM_CORR_CALIBRATION_ROW124_MSB @ 0x360CA5AC
+		 * Bits [28:26]:
+		 *   0x0       -> Vsense calibration not fused -> voltage monitoring must not be enabled
+		 *   0x1 - 0x7 -> Vsense calibration fused     -> voltage monitoring can be enabled
+		 */
+		qfprom_vsense: qfprom@360ca5ac {
+			compatible = "qcom,qfprom";
+			reg = <0x0 0x360ca5ac 0x0 0x4>;
+			#address-cells = <1>;
+			#size-cells = <1>;
+		};
+
+		/*
+		 * BIST / SMC Fuse
+		 * QFPROM_CORR_QC_CONFIG_ROW1_MSB @ 360D420C
+		 * Bit 22 (SMC_EN):
+		 *   0x0 -> SMC_EN not blown -> BIST capable
+		 *   0x1 -> SMC_EN blown     -> BIST not capable
+		 */
+		qfprom_bist: qfprom@360D420C {
+			compatible = "qcom,qfprom";
+			reg = <0x0 0x360D420C 0x0 0x4>;
+			#address-cells = <1>;
+			#size-cells = <1>;
+		};
+
 		qcom_mpam: qcom,mpam {
 			compatible = "qcom,mpam";
 		};
