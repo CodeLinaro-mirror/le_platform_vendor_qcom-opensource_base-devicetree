@@ -109,6 +109,10 @@
 		compatible = "qcom,minidump";
 	};
 
+	dload_mode {
+		compatible = "qcom,dload-mode";
+	};
+
 	scmi_nsp0 {
 		compatible = "qcom,uscmi";
 
