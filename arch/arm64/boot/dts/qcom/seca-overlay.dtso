@@ -105,6 +105,10 @@
 };
 
 &soc {
+	mini_dump_mode {
+		compatible = "qcom,minidump";
+	};
+
 	scmi_nsp0 {
 		compatible = "qcom,uscmi";
 
