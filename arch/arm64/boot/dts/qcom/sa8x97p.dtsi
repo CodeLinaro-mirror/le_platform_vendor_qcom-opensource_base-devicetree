@@ -6321,3 +6321,4 @@
 #include "sa8797p-usb.dtsi"
 #include "sa8797p-pcie.dtsi"
 #include "sa8797p-pmic.dtsi"
+#include "sa8797p-cnss.dtsi"
