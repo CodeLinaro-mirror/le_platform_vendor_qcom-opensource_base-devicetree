@@ -16,8 +16,14 @@
 	qcom,sku-id = <0x300>;
 };
 
+&eth_switch_monitor {
+	status = "okay";
+	qcom,dbl-label = <0x10>;
+};
+
 &ethernet0 {
 	phy-mode = "10gbase-r";
+	switch-reset-detect-source = <&switch_reset_detect>;
 
 	fixed-link {
 		status = "okay";
