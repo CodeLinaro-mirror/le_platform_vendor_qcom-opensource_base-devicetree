@@ -2640,6 +2640,7 @@
 			iommus = <&apps_smmu_0 0x14C0 0x0>;
 			qcom,iommu-dma = "bypass";
 
+			dma-coherent;
 			power-domains = <&scmi3_pd 0>;
 			power-domain-names = "power";
 
