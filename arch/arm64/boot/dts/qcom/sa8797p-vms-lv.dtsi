@@ -3,6 +3,7 @@
  * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
  */
 
+#include "oot-dt-bindings/qcom-shmem-sa8797p.h"
 
 &soc {
 	auto_vm1: qcom,auto_vm1@B63000000 {
@@ -326,6 +327,62 @@
 	#address-cells = <2>;
 	#size-cells = <2>;
 	ranges;
+
+	vm_1_glink_cma_mem_1: vm_1_glink_cma_mem_1@80840000 {
+		no-map;
+		reg = <0x0 0x80840000 0x0 0x9000>;
+		qcom,dst-vmids = <AC_VM_CDSP_Q6_ELF_00>;
+		qcom,dst-perms = <QCOM_PERM_RWX>;
+		gunyah-label = <0x150>;
+	};
+
+	vm_1_glink_cma_mem_2: vm_1_glink_cma_mem_2@80849000 {
+		no-map;
+		reg = <0x0 0x80849000 0x0 0x9000>;
+		qcom,dst-vmids = <AC_VM_CDSP_Q6_ELF_01>;
+		qcom,dst-perms = <QCOM_PERM_RWX>;
+		gunyah-label = <0x151>;
+	};
+
+	vm_1_glink_cma_mem_3: vm_1_glink_cma_mem_3@80852000 {
+		no-map;
+		reg = <0x0 0x80852000 0x0 0x9000>;
+		qcom,dst-vmids = <AC_VM_CDSP_Q6_ELF_10>;
+		qcom,dst-perms = <QCOM_PERM_RWX>;
+		gunyah-label = <0x152>;
+	};
+
+	vm_1_glink_cma_mem_4: vm_1_glink_cma_mem_4@8085b000 {
+		no-map;
+		reg = <0x0 0x8085B000 0x0 0x9000>;
+		qcom,dst-vmids = <AC_VM_CDSP_Q6_ELF_11>;
+		qcom,dst-perms = <QCOM_PERM_RWX>;
+		gunyah-label = <0x153>;
+	};
+
+	vm_1_glink_cma_mem_5: vm_1_glink_cma_mem_5@80864000 {
+		no-map;
+		reg = <0x0 0x80864000 0x0 0x9000>;
+		qcom,dst-vmids = <AC_VM_HPASS0_COMPUTE_Q6_ELF AC_VM_HPASS0_AUDIO_Q6_ELF>;
+		qcom,dst-perms = <QCOM_PERM_RWX QCOM_PERM_RWX>;
+		gunyah-label = <0x154>;
+	};
+
+	vm_1_glink_cma_mem_6: vm_1_glink_cma_mem_6@8086d000 {
+		no-map;
+		reg = <0x0 0x8086D000 0x0 0x9000>;
+		qcom,dst-vmids = <AC_VM_HPASS1_COMPUTE_Q6_ELF AC_VM_HPASS1_AUDIO_Q6_ELF>;
+		qcom,dst-perms = <QCOM_PERM_RWX QCOM_PERM_RWX>;
+		gunyah-label = <0x155>;
+	};
+
+	vm_1_glink_cma_mem_7: vm_1_glink_cma_mem_7@80876000 {
+		no-map;
+		reg = <0x0 0x80876000 0x0 0x9000>;
+		qcom,dst-vmids = <AC_VM_HPASS2_COMPUTE_Q6_ELF AC_VM_HPASS2_AUDIO_Q6_ELF>;
+		qcom,dst-perms = <QCOM_PERM_RWX QCOM_PERM_RWX>;
+		gunyah-label = <0x156>;
+	};
 
 	auto_vm1_vblk0_ring: auto_vm1_vblk0_ring@b63000000 {
 		no-map;
