@@ -11,6 +11,7 @@
 #include "sa8797p-vfio.dtsi"
 #include "sa8797p-vms.dtsi"
 #include "sa8797p-dma-heaps.dtsi"
+#include "sa8797p-vms-lv.dtsi"
 
 / {
 	model = "Qualcomm Technologies, Inc. SA8x97P";
@@ -534,6 +535,15 @@
 		qcom,dev-name = "scmi_uart17";
 	};
 
+	scmi_uart3 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi11_pd 3>, <&scmi11_dvfs 3>;
+		power-domain-names = "power", "perf";
+
+		qcom,dev-name = "scmi_uart3";
+	};
+
 	scmi_emac1 {
 		compatible = "qcom,uscmi";
 
@@ -650,4 +660,52 @@
 
 		qcom,dev-name = "scmi_usb1_qmp";
 	};
+};
+
+&mmidgrp100 {
+	remote-vmids = <2 3>;
+};
+
+&mmidgrp200 {
+	remote-vmids = <2 3>;
+};
+
+&mmidgrp300 {
+	remote-vmids = <2 3>;
+};
+
+&mmidgrp400 {
+	remote-vmids = <2 3>;
+};
+
+&mmidgrp500 {
+	remote-vmids = <2 3>;
+};
+
+&mmidgrp600 {
+	remote-vmids = <2 3>;
+};
+
+&mmidgrp1400 {
+	remote-vmids = <2 3>;
+};
+
+&mmidgrp1500 {
+	remote-vmids = <2 3>;
+};
+
+&mmidgrp1600 {
+	remote-vmids = <2 3>;
+};
+
+&mmidgrp1700 {
+	remote-vmids = <2 3>;
+};
+
+&mmidgrp1800 {
+	remote-vmids = <2 3>;
+};
+
+&mmidgrp1900 {
+	remote-vmids = <2 3>;
 };

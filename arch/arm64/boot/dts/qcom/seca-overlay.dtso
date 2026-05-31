@@ -105,6 +105,19 @@
 };
 
 &soc {
+	mini_dump_mode {
+		compatible = "qcom,minidump";
+	};
+
+	dload_mode {
+		compatible = "qcom,dload-mode";
+	};
+
+	dload_type {
+		compatible = "qcom,msm-imem-dload-type";
+		reg = <0x0 0x1468001c 0x0 0x4>;
+	};
+
 	scmi_nsp0 {
 		compatible = "qcom,uscmi";
 
@@ -245,6 +258,20 @@
 		compatible = "qcom,uscmi-vendor";
 		qcom,algo = <0x00 0x5545544d>;
 		qcom,vendor = <&vendor_cpupcp>;
+	};
+
+	scmi1_safety {
+		qcom,dev-name = "safety-profile-0";
+		compatible = "qcom,uscmi-vendor";
+		qcom,algo = <0x00 0x73616665>;
+		qcom,vendor = <&vendor_pdp>;
+	};
+
+	scmi2_safety {
+		qcom,dev-name = "safety-profile-1";
+		compatible = "qcom,uscmi-vendor";
+		qcom,algo = <0x00 0x73616665>;
+		qcom,vendor = <&vendor_pdp1>;
 	};
 
 	test_scmi {

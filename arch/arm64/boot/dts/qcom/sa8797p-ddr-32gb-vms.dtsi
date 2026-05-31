@@ -24,6 +24,10 @@
 				&soccp_fe_vm_1
 				&dice_vm_0_mem>;
 	};
+
+	gh-secure-vm-loader@1 {
+		memory-region = <&auto_vm_1_mem_0 &auto_vm_1_mem_1 &auto_vm_1_mem_2>;
+	};
 };
 
 &{/reserved-memory} {
@@ -31,5 +35,10 @@
 	auto_vm_0_mem_1: auto_vm_0_mem_1@BA9000000 {
 		no-map;
 		reg = <0xB 0xA9000000 0x2 0xE7000000>; /* 11888MB */
+	};
+
+	auto_vm_1_mem_2: auto_vm_1_mem_2@E90000000 {
+		no-map;
+		reg = <0xE 0x90000000 0x1 0x52200000>; /*5410MB*/
 	};
 };
