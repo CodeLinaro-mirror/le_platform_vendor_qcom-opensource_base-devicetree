@@ -8,7 +8,11 @@
 &soc {
 	gh-secure-vm-loader@0 {
 		memory-region = <&auto_vm_0_mem_0 &auto_vm_0_mem_1>;
-		shared-regions = <&vm_cp_pixel
+		shared-regions = <&glink_cma_mem1
+				&glink_cma_mem2
+				&glink_cma_mem5
+				&glink_cma_mem6
+				&vm_cp_pixel
 				&vm_cp_nonpixel
 				&vm_cp_bitstream
 				&vm_cp_b_pt_mem
