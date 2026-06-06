@@ -3,19 +3,6 @@
  * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
  */
 
-/dts-v1/;
-
-#include "sa8x97p.dtsi"
-#include "sa8797p.dtsi"
-#include "sa8x97p-safe.dtsi"
-
-/ {
-	model = "Qualcomm Technologies, Inc. SA8x97P SAFE IVI RIDE-SX";
-	compatible = "qcom,sa8797p-qam-ride-sx", "qcom,safe-ivi", "qcom,sa8797p-qam", "qcom,sa8797p";
-	qcom,board-id = <0x01010025 1>;
-	qcom,sku-id = <0x200>;
-};
-
 &soc {
 	adreno_smmu_fusa {
 		compatible = "qcom,qtb500-fusa";
@@ -26,7 +13,7 @@
 		qtb_0 {
 			compatible = "qcom,qtb500-fusa-test";
 			dma-coherent;
-			iommus = <&adreno_smmu_0 0x14 0x0>;
+			iommus = <&adreno_smmu_0 0xE0 0x0>;
 		};
 	};
 
@@ -171,26 +158,5 @@
 		reg = <0x0 0x99B0000 0x0 0x40>;
 		interrupts = <GIC_SPI 904 IRQ_TYPE_EDGE_RISING>;
 	};
-};
 
-&ethernet0 {
-	phy-mode = "10gbase-r";
-
-	fixed-link {
-		status = "okay";
-		speed = <10000>;
-		full-duplex;
-	};
-};
-
-&pcie0 {
-	power-domains = <&scmi5_pd 0>;
-	power-domain-names = "power";
-	status = "okay";
-};
-
-&pcie1 {
-	power-domains = <&scmi6_pd 0>;
-	power-domain-names = "power";
-	status = "okay";
 };
