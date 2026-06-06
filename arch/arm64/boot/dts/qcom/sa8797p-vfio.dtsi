@@ -1475,6 +1475,12 @@
 			<0x0 0x01FD4000 0x0 0x1000>;			//JTAG
 	};
 
+	psail_auditor@d7656000 {
+		compatible = "qcom,vdev-device";
+		memory-region = <&gearvm_psail_mem>;
+		reg = <0x0 0xd7656000 0x0 0x20000>;
+	};
+
 	// CRYPTO0
 	vfio_hwkm_gpce_core_0@1dc0000 {
 		compatible = "qcom,vfio-platform";
