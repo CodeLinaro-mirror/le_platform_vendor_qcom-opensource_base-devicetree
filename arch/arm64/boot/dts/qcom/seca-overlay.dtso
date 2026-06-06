@@ -333,6 +333,24 @@
 		qcom,dev-name = "scmi_usb2_phy2";
 	};
 
+	scmi_uart14 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi11_pd 14>, <&scmi11_dvfs 14>;
+		power-domain-names = "power", "perf";
+
+		qcom,dev-name = "scmi_uart14";
+	};
+
+	scmi_uart17 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi11_pd 17>, <&scmi11_dvfs 17>;
+		power-domain-names = "power", "perf";
+
+		qcom,dev-name = "scmi_uart17";
+	};
+
 	scmi_soccp {
 		compatible = "qcom,uscmi";
 
