@@ -109,6 +109,10 @@
 	status = "okay";
 };
 
+&scmi25 {
+	status = "okay";
+};
+
 &scmi27 {
 	status = "okay";
 };
@@ -130,6 +134,10 @@
 };
 
 &scmi43 {
+	status = "okay";
+};
+
+&scmi46 {
 	status = "okay";
 };
 
