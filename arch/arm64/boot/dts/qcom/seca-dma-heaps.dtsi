@@ -16,6 +16,12 @@
 		};
 	};
 
+	qcom,tzcom {
+			qcom,dma-heap-name = "qcom,tzcom";
+			qcom,dma-heap-type = <HEAP_TYPE_CMA>;
+			memory-region = <&tzcom_mem>;
+	};
+
 	qcom,secure-buffer {
 		compatible = "qcom,secure-buffer";
 	};

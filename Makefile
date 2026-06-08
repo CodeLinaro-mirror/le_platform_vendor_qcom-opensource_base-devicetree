@@ -49,7 +49,7 @@ dtb-y += arch/arm64/boot/dts/qcom/seca-safe-ivi-pats.dtb
 dtb-y += arch/arm64/boot/dts/qcom/seca-qam-star-pcie-ep.dtb
 dtb-y += arch/arm64/boot/dts/qcom/seca-qam-ride-sx-pcie-ep.dtb
 dtb-y += arch/arm64/boot/dts/qcom/seca-overlay.dtbo
-
+dtb-y += arch/arm64/boot/dts/qcom/seca-ddr-48gb_overlay.dtbo
 
 #include common target file
 include $(PWD)/Makefile.common
