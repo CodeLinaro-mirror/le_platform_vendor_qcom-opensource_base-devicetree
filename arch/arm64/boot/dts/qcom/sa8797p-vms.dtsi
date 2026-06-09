@@ -6,39 +6,6 @@
 #include "oot-dt-bindings/qcom-shmem-sa8797p.h"
 
 &soc {
-	gh_vm_resources {
-		compatible = "qcom,gh-vm-resources";
-
-		qcom,vm-iomem-groups = <&gh_vm_iomem_ro
-				   &gh_vm_iomem_rw>;
-	};
-
-	gh_vm_iomem_ro: gh_vm_iomem_ro@0 {
-		compatible = "qcom,gh-vm-iomem-group";
-		gunyah-label = <0x90>;
-		qcom,dst-vmids = <AC_VM_GVM_1 AC_VM_GVM_2>;
-		qcom,dst-perms = <QCOM_PERM_READ QCOM_PERM_READ>;
-
-		reg = <0x0 0xAE00000 0x0 0x180000>,
-		      <0x0 0xAF80000 0x0 0x1000>,
-		      <0x0 0xAFA4000 0x0 0x1000>,
-		      <0x0 0x8C00000 0x0 0x180000>,
-		      <0x0 0x8D80000 0x0 0x1000>,
-		      <0x0 0x8DA4000 0x0 0x1000>;
-	};
-
-	gh_vm_iomem_rw: gh_vm_iomem_rw@0 {
-		compatible = "qcom,gh-vm-iomem-group";
-		gunyah-label = <0x91>;
-		qcom,dst-vmids = <AC_VM_GVM_1 AC_VM_GVM_2>;
-		qcom,dst-perms = <QCOM_PERM_RW QCOM_PERM_RW>;
-
-		reg = <0x0 0xAF81000 0x0 0x10000>,
-		      <0x0 0xAFA5000 0x0 0x10000>,
-		      <0x0 0x8D81000 0x0 0x10000>,
-		      <0x0 0x8DA5000 0x0 0x10000>;
-	};
-
 	auto_vm: qcom,auto_vm@B60000000 {
 		reg = <0xB 0x60000000 0x0 0x3000000>; /* 48MB */
 		vm_name = "autoghgvm";

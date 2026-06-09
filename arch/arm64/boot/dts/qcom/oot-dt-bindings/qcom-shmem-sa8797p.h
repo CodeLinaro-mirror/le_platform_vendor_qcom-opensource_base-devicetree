@@ -16,7 +16,6 @@
 #define AC_VM_HPASS1_COMPUTE_Q6_ELF	0x27
 #define AC_VM_HPASS2_COMPUTE_Q6_ELF	0x4D
 #define AC_VM_GVM_1			0x34
-#define AC_VM_GVM_2			0x35
 #define AC_VM_CP_B			0x9
 #define AC_VM_CP_P			0xA
 #define AC_VM_CP_NP			0xB
