@@ -1,0 +1,14 @@
+// SPDX-License-Identifier: BSD-3-Clause
+/*
+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+ */
+
+/dts-v1/;
+
+#include "seca.dtsi"
+
+/ {
+	model = "Qualcomm Technologies, Inc. SECA QAM STAR PCIe EP";
+	compatible = "qcom,seca-qam-star", "qcom,qam", "qcom,seca";
+	qcom,board-id = <0x04010025 4>;
+};

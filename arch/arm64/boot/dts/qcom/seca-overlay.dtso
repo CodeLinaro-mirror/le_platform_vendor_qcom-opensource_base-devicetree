@@ -48,6 +48,10 @@
 	status = "okay";
 };
 
+&scmi11 {
+	status = "okay";
+};
+
 &scmi13 {
 	status = "okay";
 };
@@ -105,6 +109,19 @@
 };
 
 &soc {
+	mini_dump_mode {
+		compatible = "qcom,minidump";
+	};
+
+	dload_mode {
+		compatible = "qcom,dload-mode";
+	};
+
+	dload_type {
+		compatible = "qcom,msm-imem-dload-type";
+		reg = <0x0 0x1468001c 0x0 0x4>;
+	};
+
 	scmi_nsp0 {
 		compatible = "qcom,uscmi";
 
@@ -354,5 +371,14 @@
 		compatible = "qcom,kiumd";
 		qcom,dev-name = "kiumd";
 		status = "ok";
+	};
+
+	qcom_tzlog: tz-log@14680720 {
+		compatible = "qcom,tz-log";
+		reg = <0x0 0x14680720 0x0 0x3000>;
+		qcom,hyplog-enabled;
+		hyplog-address-offset = <0x410>;
+		hyplog-size-offset = <0x414>;
+		tmecrashdump-address-offset = <0x87000000>;
 	};
 };

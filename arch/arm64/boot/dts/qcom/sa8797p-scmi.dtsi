@@ -641,6 +641,11 @@
 			reg = <0x13>;
 			#power-domain-cells = <1>;
 		};
+
+		scmi27_rst: protocol@16 {
+			reg = <0x16>;
+			#reset-cells = <1>;
+		};
 	};
 
 	scmi28: scmi-28 {
@@ -659,6 +664,11 @@
 		scmi28_dvfs: protocol@13 {
 			reg = <0x13>;
 			#power-domain-cells = <1>;
+		};
+
+		scmi28_rst: protocol@16 {
+			reg = <0x16>;
+			#reset-cells = <1>;
 		};
 	};
 

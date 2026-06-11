@@ -995,7 +995,6 @@
 			interrupt-names = "eventq", "cmdq-sync", "gerror";
 			dma-coherent;
 			#iommu-cells = <1>;
-			status = "disabled";
 		};
 
 		pdp_mbox0: mailbox@19980000 {
@@ -2641,6 +2640,7 @@
 			iommus = <&apps_smmu_0 0x14C0 0x0>;
 			qcom,iommu-dma = "bypass";
 
+			dma-coherent;
 			power-domains = <&scmi3_pd 0>;
 			power-domain-names = "power";
 
@@ -2655,6 +2655,20 @@
 		gearvm_log {
 			compatible = "qcom,nhlos-logs-mem", "qcom,nhlos-logs";
 			memory-region = <&gearvm_logs_mem>;
+		};
+
+		qfprom_tcsr_softsku: qfprom@1f97070 {
+			compatible = "qcom,qfprom";
+			reg = <0x0 0x1f97070 0x0 0x18>;
+			#address-cells = <1>;
+			#size-cells = <1>;
+		};
+
+		qfprom_tcsr_qtv: qfprom@1f96004 {
+			compatible = "qcom,qfprom";
+			reg = <0x0 0x1f96004 0x0 0x18>;
+			#address-cells = <1>;
+			#size-cells = <1>;
 		};
 
 		tsens0: thermal-sensor@c22c000 {
@@ -4509,6 +4523,7 @@
 				};
 			};
 		};
+
 	};
 };
 #include "seca-scmi.dtsi"
