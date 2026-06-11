@@ -43,6 +43,23 @@
 	phy-mode = "usxgmii";
 	phy-handle = <&usxsgmii_phy0>;
 
+	/* remove <GIC_SPI 713 IRQ_TYPE_LEVEL_HIGH>, */
+	interrupts = <GIC_SPI 821 IRQ_TYPE_LEVEL_HIGH>,
+				<GIC_SPI 689 IRQ_TYPE_LEVEL_HIGH>,
+				<GIC_SPI 524 IRQ_TYPE_LEVEL_HIGH>,
+				<GIC_SPI 525 IRQ_TYPE_LEVEL_HIGH>,
+				<GIC_SPI 522 IRQ_TYPE_LEVEL_HIGH>,
+				<GIC_SPI 526 IRQ_TYPE_LEVEL_HIGH>,
+				<GIC_SPI 519 IRQ_TYPE_LEVEL_HIGH>,
+				<GIC_SPI 520 IRQ_TYPE_LEVEL_HIGH>,
+				<GIC_SPI 462 IRQ_TYPE_LEVEL_HIGH>,
+				<GIC_SPI 521 IRQ_TYPE_LEVEL_HIGH>,
+				<GIC_SPI 158 IRQ_TYPE_LEVEL_HIGH>;
+	/* remove "sfty" */
+	interrupt-names = "macirq", "dma_tx_rx0", "dma_tx_rx1", "dma_tx_rx2",
+                 "dma_tx_rx3", "dma_tx_rx4", "dma_tx_rx5", "dma_tx_rx6",
+                 "dma_tx_rx7", "dma_tx_rx8", "dma_tx_rx9";
+
 	mdio {
 		compatible = "snps,dwmac-mdio";
 		#address-cells = <1>;
@@ -63,6 +80,8 @@
 
 &xpcs1 {
 	status = "okay";
+	/delete-property/ interrupts;
+	/delete-property/ interrupt-names;
 };
 
 &ethernet1 {
@@ -70,6 +89,11 @@
 
 	phy-mode = "usxgmii";
 	phy-handle = <&usxsgmii_phy1>;
+
+	/* remove <GIC_SPI 361 IRQ_TYPE_LEVEL_HIGH>; */
+	interrupts = <GIC_SPI 820 IRQ_TYPE_LEVEL_HIGH>;
+	/* remove "sfty" */
+	interrupt-names = "macirq";
 
 	mdio {
 		compatible = "snps,dwmac-mdio";
