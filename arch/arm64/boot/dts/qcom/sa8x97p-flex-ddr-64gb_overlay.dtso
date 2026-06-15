@@ -9,6 +9,6 @@
 #include "sa8x97p-flex-ddr-64gb-vms.dtsi"
 
 &non_ecc_heap_mem {
-	reg = <0x88 0x00000000 0x5 0x80000000>;
+	reg = <0x8C 0x80000000 0x1 0x00000000>;
 	status = "okay";
 };
