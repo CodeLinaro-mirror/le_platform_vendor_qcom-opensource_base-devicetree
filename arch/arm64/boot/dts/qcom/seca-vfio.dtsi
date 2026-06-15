@@ -27,6 +27,20 @@
 		<0x0 0x100D000 0x0 0x35000>;
 	};
 
+	/* NSP Driver mapping  */
+	umd_nsp_drv@1f012000 {
+		compatible = "qcom,vdev-device";
+		reg = <0x0 0x1F012000 0x0 0x1000>,
+		      <0x0 0x1F412000 0x0 0x1000>,
+		      <0x0 0x05710000 0x0 0x1000>;
+
+		interrupts = <GIC_SPI 946 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 499 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 945 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 500 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 160 IRQ_TYPE_LEVEL_HIGH>;
+	};
+
 	/* GLINK Context Banks - Updated for Seca */
 	umd_glink@9007000 {
 		compatible = "qcom,vdev-device";
