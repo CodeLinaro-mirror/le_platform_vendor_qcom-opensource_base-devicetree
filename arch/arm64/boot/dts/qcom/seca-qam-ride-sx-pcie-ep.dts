@@ -12,3 +12,9 @@
 	compatible = "qcom,seca-qam-star", "qcom,qam", "qcom,seca";
 	qcom,board-id = <0x03010025 3>;
 };
+
+&pcie0_ep {
+	power-domains = <&scmi5_pd 1>;
+	power-domain-names = "power";
+	status = "okay";
+};
