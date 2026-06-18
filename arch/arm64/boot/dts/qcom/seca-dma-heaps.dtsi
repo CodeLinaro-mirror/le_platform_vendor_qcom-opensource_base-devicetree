@@ -8,12 +8,12 @@
 &soc {
 	qcom,dma-heaps {
 		compatible = "qcom,dma-heaps";
-	};
 
-	qcom,tzcom {
+		qcom,tzcom {
 			qcom,dma-heap-name = "qcom,tzcom";
 			qcom,dma-heap-type = <HEAP_TYPE_CMA>;
 			memory-region = <&tzcom_mem>;
+		};
 	};
 
 	qcom,secure-buffer {
