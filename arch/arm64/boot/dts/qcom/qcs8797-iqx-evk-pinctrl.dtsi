@@ -16,30 +16,7 @@
 			output-high;
 		};
 	};
-	rtc: rtc {
-		rtc_sda: rtc_sda {
-			mux {
-				pins = "gpio123";
-				function = "gpio";
-			};
-			config {
-				pins = "gpio123";
-				drive-strength = <2>;   /* 2 mA */
-				bias-disable;           /* External pull-ups */
-			};
-		};
-		rtc_scl: rtc_scl {
-			mux {
-				pins = "gpio124";
-				function = "gpio";
-			};
-			config {
-				pins = "gpio124";
-				drive-strength = <2>;   /* 2 mA */
-				bias-disable;           /* External pull-ups */
-			};
-		};
-	};
+
 	modem_pin: modem_pin {
 		modem_pin_53: modem_pin_53 {
 			mux {
@@ -454,6 +431,7 @@
 				bias-disable;
 			};
 		};
+
 		qupv3_se3_0_l1: qupv3_se3_0_l1 {
 			mux {
 				pins = "gpio116";
@@ -462,6 +440,32 @@
 
 			config {
 				pins = "gpio116";
+				drive-strength = <2>;
+				bias-disable;
+			};
+		};
+
+		qupv3_se0_1_l0: qupv3_se0_1_l0 {
+			mux {
+				pins = "gpio123";
+				function = "qup1_se0_l0";
+			};
+
+			config {
+				pins = "gpio123";
+				drive-strength = <2>;
+				bias-disable;
+			};
+		};
+
+		qupv3_se0_1_l1: qupv3_se0_1_l1 {
+			mux {
+				pins = "gpio124";
+				function = "qup1_se0_l1";
+			};
+
+			config {
+				pins = "gpio124";
 				drive-strength = <2>;
 				bias-disable;
 			};
@@ -479,6 +483,7 @@
 				bias-disable;
 			};
 		};
+
 		qupv3_se3_1_l1: qupv3_se3_1_l1 {
 			mux {
 				pins = "gpio130";
@@ -525,18 +530,6 @@
 
 			config {
 				pins = "gpio139";
-				drive-strength = <2>;
-				bias-disable;
-			};
-		};
-		qupv3_se0_2_l1: qupv3_se0_2_l1 {
-			mux {
-				pins = "gpio140";
-				function = "qup2_se0_l1";
-			};
-
-			config {
-				pins = "gpio140";
 				drive-strength = <2>;
 				bias-disable;
 			};
@@ -705,12 +698,6 @@
 };
 
 &soc {
-	rtc@0 {
-		compatible = "qcom,apps-pinctlr";
-		pinctrl-names = "default";
-		pinctrl-0 = <&rtc_sda &rtc_scl>;
-	};
-
 	io_expansion_connector@0 {
 		compatible = "qcom,apps-pinctlr";
 		pinctrl-names = "default";
@@ -725,23 +712,5 @@
 					&md_spi_can_28 &md_spi_can_38
 					&md_spi_can_45 &md_spi_can_46
 					&md_spi_can_56>;
-	};
-
-	IQ_qupv3_pins@0 {
-		compatible = "qcom,apps-pinctlr";
-		pinctrl-names = "default";
-		pinctrl-0 = <&qupv3_se0_0_l0 &qupv3_se0_0_l1
-					&qupv3_se0_0_l2 &qupv3_se0_0_l3
-					&qupv3_se2_0_l0 &qupv3_se2_0_l1
-					&qupv3_se3_0_l0 &qupv3_se3_0_l1
-					&qupv3_se6_1_l0 &qupv3_se6_1_l1
-					&qupv3_se0_2_l1
-					&qupv3_se2_2_l0 &qupv3_se2_2_l1
-					&qupv3_se2_2_l2 &qupv3_se2_2_l3
-					&qupv3_se2_2_l4 &qupv3_se5_2_l0
-					&qupv3_se5_2_l1 &qupv3_se0_3_l0
-					&qupv3_se0_3_l1 &qupv3_se0_3_l2
-					&qupv3_se0_3_l3 &qupv3_se0_3_l4
-					&qupv3_se0_3_l5>;
 	};
 };
