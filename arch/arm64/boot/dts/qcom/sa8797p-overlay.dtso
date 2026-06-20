@@ -378,10 +378,19 @@
 		compatible = "qcom,uscmi";
 
 		power-domains = <&scmi21_dvfs 0>;
-		power-domain-names = "perf_camera";
+		power-domain-names = "perf_camera_0";
 
 		qcom,dev-name = "scmi_camera";
-        };
+		};
+	scmi_camera_ccu_clock {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi21_dvfs 1>;
+		power-domain-names = "perf_camera_1";
+
+		qcom,dev-name = "scmi_camera_ccu_clock";
+		};
+
 	scmi_camera_pdb0 {
 		compatible = "qcom,uscmi";
 
