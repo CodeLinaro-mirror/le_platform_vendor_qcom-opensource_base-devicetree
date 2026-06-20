@@ -281,6 +281,15 @@
 		qcom,dev-name = "scmi_camera_pdb4";
 	};
 
+	scmi_camera_ipe_hw_ctrl {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi21_dvfs 7>;
+		power-domain-names = "perf_camera_7";
+
+		qcom,dev-name = "scmi_camera_ipe_hw_ctrl";
+        };
+
 	scmi_dprx0 {
 		compatible = "qcom,uscmi";
 
