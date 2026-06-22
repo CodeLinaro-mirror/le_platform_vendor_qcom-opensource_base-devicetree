@@ -35,20 +35,24 @@
 &pcie0 {
 	power-domains = <&scmi5_pd 0>;
 	power-domain-names = "power";
+	status = "okay";
 };
 
 &pcie1 {
 	power-domains = <&scmi6_pd 0>;
 	power-domain-names = "power";
+	status = "okay";
 };
 
 &pcie2 {
 	power-domains = <&scmi32_pd 0>;
 	power-domain-names = "power";
+	status = "okay";
 };
 
 &pcie3 {
 	power-domains = <&scmi33_pd 0>;
 	power-domain-names = "power";
+	status = "okay";
 };
 
