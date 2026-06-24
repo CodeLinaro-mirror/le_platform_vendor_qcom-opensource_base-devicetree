@@ -16,11 +16,3 @@
 &usb_2_dwc3 {
 	iommus = <&apps_smmu_0 0x1340 0x0>;
 };
-
-&usb_0_qmpphy {
-	default-typec-orientation-reverse;
-};
-
-&usb_1_qmpphy {
-	default-typec-orientation-reverse;
-};
