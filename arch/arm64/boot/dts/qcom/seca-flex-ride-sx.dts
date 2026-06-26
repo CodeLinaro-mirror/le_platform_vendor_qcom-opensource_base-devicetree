@@ -9,7 +9,7 @@
 
 / {
 	model = "Qualcomm Technologies, Inc. SECA Flex RIDE-SX";
-	compatible = "qcom,seca-ride-sx", "qcom,seca";
+	compatible = "qcom,seca-flex-ride-sx", "qcom,seca";
 	qcom,board-id = <0x01010025 1>;
 	qcom,sku-id = <0x300>;
 };

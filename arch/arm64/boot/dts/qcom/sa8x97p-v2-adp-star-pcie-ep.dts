@@ -11,7 +11,7 @@
 
 / {
 	model = "Qualcomm Technologies, Inc. SA8x97P v2 ADP STAR PCIe EP";
-	compatible = "qcom,sa8797p-adp-star", "qcom,sa8797p-adp", "qcom,sa8797p";
+	compatible = "qcom,sa8x97p-adp-star", "qcom,sa8x97p-adp", "qcom,sa8797p";
 	qcom,msm-id = <689 0x20000>, <690 0x20000>;
 	qcom,board-id =  <0x05010025 5>;
 
