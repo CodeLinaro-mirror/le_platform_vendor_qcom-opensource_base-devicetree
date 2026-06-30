@@ -24,3 +24,18 @@
 	power-domain-names = "power";
 	status = "okay";
 };
+
+&pcie1_ep {
+	power-domains = <&scmi6_pd 1>;
+	power-domain-names = "power";
+};
+
+&pcie2_ep {
+	power-domains = <&scmi32_pd 1>;
+	power-domain-names = "power";
+};
+
+&pcie3_ep {
+	power-domains = <&scmi33_pd 1>;
+	power-domain-names = "power";
+};
