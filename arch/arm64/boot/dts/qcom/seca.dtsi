@@ -48,6 +48,8 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x0>;
 			enable-method = "psci";
+			power-domains = <&CPU_PD0>;
+			power-domain-names = "psci";
 			next-level-cache = <&L2_0>;
 			clocks = <&cpu_perf 0>;
 
@@ -64,6 +66,8 @@
 			reg = <0x0 0x100>;
 			enable-method = "psci";
 			clocks = <&cpu_perf 0>;
+			power-domains = <&CPU_PD1>;
+			power-domain-names = "psci";
 			next-level-cache = <&L2_0>;
 		};
 
@@ -73,6 +77,8 @@
 			reg = <0x0 0x200>;
 			enable-method = "psci";
 			clocks = <&cpu_perf 0>;
+			power-domains = <&CPU_PD2>;
+			power-domain-names = "psci";
 			next-level-cache = <&L2_0>;
 		};
 
@@ -82,6 +88,8 @@
 			reg = <0x0 0x300>;
 			enable-method = "psci";
 			clocks = <&cpu_perf 0>;
+			power-domains = <&CPU_PD3>;
+			power-domain-names = "psci";
 			next-level-cache = <&L2_0>;
 		};
 
@@ -91,6 +99,8 @@
 			reg = <0x0 0x400>;
 			enable-method = "psci";
 			clocks = <&cpu_perf 0>;
+			power-domains = <&CPU_PD4>;
+			power-domain-names = "psci";
 			next-level-cache = <&L2_0>;
 		};
 
@@ -100,6 +110,8 @@
 			reg = <0x0 0x500>;
 			enable-method = "psci";
 			clocks = <&cpu_perf 0>;
+			power-domains = <&CPU_PD5>;
+			power-domain-names = "psci";
 			next-level-cache = <&L2_0>;
 		};
 
@@ -109,6 +121,8 @@
 			reg = <0x0 0x10000>;
 			enable-method = "psci";
 			clocks = <&cpu_perf 1>;
+			power-domains = <&CPU_PD6>;
+			power-domain-names = "psci";
 			next-level-cache = <&L2_6>;
 			L2_6: l2-cache {
 				compatible = "cache";
@@ -123,6 +137,8 @@
 			reg = <0x0 0x10100>;
 			enable-method = "psci";
 			clocks = <&cpu_perf 1>;
+			power-domains = <&CPU_PD7>;
+			power-domain-names = "psci";
 			next-level-cache = <&L2_6>;
 		};
 
@@ -132,6 +148,8 @@
 			reg = <0x0 0x10200>;
 			enable-method = "psci";
 			clocks = <&cpu_perf 1>;
+			power-domains = <&CPU_PD8>;
+			power-domain-names = "psci";
 			next-level-cache = <&L2_6>;
 		};
 
@@ -141,6 +159,8 @@
 			reg = <0x0 0x10300>;
 			enable-method = "psci";
 			clocks = <&cpu_perf 1>;
+			power-domains = <&CPU_PD9>;
+			power-domain-names = "psci";
 			next-level-cache = <&L2_6>;
 		};
 
@@ -150,6 +170,8 @@
 			reg = <0x0 0x10400>;
 			enable-method = "psci";
 			clocks = <&cpu_perf 1>;
+			power-domains = <&CPU_PD10>;
+			power-domain-names = "psci";
 			next-level-cache = <&L2_6>;
 		};
 
@@ -159,6 +181,8 @@
 			reg = <0x0 0x10500>;
 			enable-method = "psci";
 			clocks = <&cpu_perf 1>;
+			power-domains = <&CPU_PD11>;
+			power-domain-names = "psci";
 			next-level-cache = <&L2_6>;
 		};
 
@@ -215,11 +239,44 @@
 				};
 			};
 		};
+
+		idle-states {
+			entry-method = "psci";
+
+			CORE_OFF_C4: medium-cluster0-c4 { /* C4 */
+				compatible = "arm,idle-state";
+				idle-state-name = "ret";
+				entry-latency-us = <93>;
+				exit-latency-us = <129>;
+				min-residency-us = <560>;
+				boot-lpm-disable;
+				arm,psci-suspend-param = <0x00000003>;
+			};
+		};
+
+		domain-idle-states {
+			CLUSTER_PWR_DN: cluster-sleep-0 {
+				compatible = "domain-idle-state";
+				arm,psci-suspend-param = <0x01000053>;
+				entry-latency-us = <2150>;
+				exit-latency-us = <1983>;
+				min-residency-us = <9144>;
+			};
+
+			APSS_OFF: cluster-sleep-1 {
+				compatible = "domain-idle-state";
+				arm,psci-suspend-param = <0x0200C353>;
+				entry-latency-us = <2800>;
+				exit-latency-us = <4400>;
+				min-residency-us = <10150>;
+			};
+		};
 	};
 
 	firmware {
 		qcom_scm {
 			compatible = "qcom,scm-seca", "qcom,scm";
+			qcom,dload-mode = <&tcsr 0x79000>;
 		};
 	};
 
@@ -236,7 +293,99 @@
 
 	psci {
 		compatible = "arm,psci-1.0";
+		mode-bootloader = <0x10001 0x2>;
+		mode-edl = <0 0x1>;
 		method = "smc";
+
+		CPU_PD0: cpu-pd0 {
+			#power-domain-cells = <0>;
+			power-domains = <&CLUSTER_PD0>;
+			domain-idle-states = <&CORE_OFF_C4>;
+		};
+
+		CPU_PD1: cpu-pd1 {
+			#power-domain-cells = <0>;
+			power-domains = <&CLUSTER_PD0>;
+			domain-idle-states = <&CORE_OFF_C4>;
+		};
+
+		CPU_PD2: cpu-pd2 {
+			#power-domain-cells = <0>;
+			power-domains = <&CLUSTER_PD0>;
+			domain-idle-states = <&CORE_OFF_C4>;
+		};
+
+		CPU_PD3: cpu-pd3 {
+			#power-domain-cells = <0>;
+			power-domains = <&CLUSTER_PD0>;
+			domain-idle-states = <&CORE_OFF_C4>;
+		};
+
+		CPU_PD4: cpu-pd4 {
+			#power-domain-cells = <0>;
+			power-domains = <&CLUSTER_PD0>;
+			domain-idle-states = <&CORE_OFF_C4>;
+		};
+
+		CPU_PD5: cpu-pd5 {
+			#power-domain-cells = <0>;
+			power-domains = <&CLUSTER_PD0>;
+			domain-idle-states = <&CORE_OFF_C4>;
+		};
+
+		CPU_PD6: cpu-pd6 {
+			#power-domain-cells = <0>;
+			power-domains = <&CLUSTER_PD1>;
+			domain-idle-states = <&CORE_OFF_C4>;
+		};
+
+		CPU_PD7: cpu-pd7 {
+			#power-domain-cells = <0>;
+			power-domains = <&CLUSTER_PD1>;
+			domain-idle-states = <&CORE_OFF_C4>;
+		};
+
+		CPU_PD8: cpu-pd8 {
+			#power-domain-cells = <0>;
+			power-domains = <&CLUSTER_PD1>;
+			domain-idle-states = <&CORE_OFF_C4>;
+		};
+
+		CPU_PD9: cpu-pd9 {
+			#power-domain-cells = <0>;
+			power-domains = <&CLUSTER_PD1>;
+			domain-idle-states = <&CORE_OFF_C4>;
+		};
+
+		CPU_PD10: cpu-pd10 {
+			#power-domain-cells = <0>;
+			power-domains = <&CLUSTER_PD1>;
+			domain-idle-states = <&CORE_OFF_C4>;
+		};
+
+		CPU_PD11: cpu-pd11 {
+			#power-domain-cells = <0>;
+			power-domains = <&CLUSTER_PD1>;
+			domain-idle-states = <&CORE_OFF_C4>;
+		};
+
+		CLUSTER_PD0: cluster-pd0 {
+			#power-domain-cells = <0>;
+			power-domains = <&CLUSTER_PD3>;
+			domain-idle-states = <&CLUSTER_PWR_DN>;
+		};
+
+		CLUSTER_PD1: cluster-pd1 {
+			#power-domain-cells = <0>;
+			power-domains = <&CLUSTER_PD3>;
+			domain-idle-states = <&CLUSTER_PWR_DN>;
+		};
+
+		CLUSTER_PD3: cluster-pd3 {
+			#power-domain-cells = <0>;
+			domain-idle-states = <&APSS_OFF>;
+		};
+
 	};
 
 	reserved_memory: reserved-memory {
@@ -1506,6 +1655,11 @@
 			};
 		};
 
+		sram@c30f000 {
+			compatible = "qcom,rpmh-stats";
+			reg = <0x0 0xC30F000 0x0 0x400>;
+		};
+
 		memtimer: timer@17810000 {
 			compatible = "arm,armv7-timer-mem";
 			reg = <0x0 0x17810000 0x0 0x1000>;
@@ -1576,6 +1730,11 @@
 			compatible = "qcom,tcsr-mutex";
 			reg = <0x0 0x01f40000 0x0 0x20000>;
 			#hwlock-cells = <1>;
+		};
+
+		tcsr: syscon@1f60000 {
+			compatible = "syscon";
+			reg = <0x0 0x1f60000 0x0 0xa0000>;
 		};
 
 		watchdog@17826000 {

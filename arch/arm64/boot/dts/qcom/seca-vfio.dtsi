@@ -77,6 +77,19 @@
 		    <0x0 0xc300000 0x0 0x1000>;
 	};
 
+	umd_llcc@20400000 {
+		compatible = "qcom,vdev-device";
+		interrupts-extended = <&intc GIC_SPI 580 IRQ_TYPE_LEVEL_HIGH>,
+			<&intc GIC_SPI 340 IRQ_TYPE_LEVEL_HIGH>,
+			<&intc GIC_SPI 80 IRQ_TYPE_LEVEL_HIGH>;
+		reg = <0x0 0x20400000 0x0 0x100000>,
+		    <0x0 0x20600000 0x0 0x100000>,
+		    <0x0 0x89B00000 0x0 0x400000>,
+		    <0x0 0x01FD4000 0x0 0x1000>,
+		    <0x0 0x210AF000 0x0 0x400000>,
+		    <0x0 0x17F60000 0x0 0x1000>;
+	};
+
 	cdsp0_cb@1 {
 		compatible = "qcom,vfio-platform";
 		memory-region = <&mm_dspq>;
@@ -820,6 +833,16 @@
 			  <0x0 0x01F97000 0x0 0x1000>,
 			  <0x0 0x87AE3000 0x0 0x2000>;
 		interrupts-extended = <&ipcc2 IPCC_COMPUTE_L1_SAIL0 1 IRQ_TYPE_LEVEL_HIGH>;
+	};
+
+	nsp_sysmon@89b00000 {
+		compatible = "qcom,vdev-device";
+		reg = <0x0 0x89b00000 0x0 0x400000>,
+			  <0x0 0x01FD4000 0x0 0x1000>,
+			  <0x0 0x100D000 0x0 0x35000>;
+		interrupts = <GIC_SPI 813 IRQ_TYPE_LEVEL_HIGH>,	// APSS0
+				 <GIC_SPI 812 IRQ_TYPE_LEVEL_HIGH>,	// APSS1
+				 <GIC_SPI 814 IRQ_TYPE_LEVEL_HIGH>;	// GPU0
 	};
 
 };
