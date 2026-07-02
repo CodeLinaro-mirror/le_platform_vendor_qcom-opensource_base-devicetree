@@ -1768,6 +1768,13 @@
 				qcom,etu-slice = <22>;
 				qcom,etu-event-name = "timer15";
 			};
+
+			slice@23 {
+				/* ETU SW Event trigger. */
+				qcom,etu-event-sel = <0>;
+				qcom,etu-slice = <23>;
+				qcom,etu-event-name = "sw_trigger";
+			};
 		};
 
 		ccu_qup: ccu-qup {
