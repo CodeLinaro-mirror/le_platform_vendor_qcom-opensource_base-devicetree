@@ -260,8 +260,8 @@
 		iommus = <&apps_smmu_2 0x030c 0x0040>,
 		       <&apps_smmu_2 0x034c 0x0040>,
 		       <&apps_smmu_2 0x036c 0x0000>;
-		qcom,iommu-dma-addr-range = <0x4 0x0 0x80 0x0>;
-		qcom,iova-align-shift-max = <30>;
+		qcom,iommu-dma-addr-range = <0x0 0x1000 0x3 0xFFFFFFFF>;
+		qcom,iova-align-shift-max = <21>;
 		dma-coherent;
 	};
 
@@ -273,8 +273,8 @@
 		iommus = <&apps_smmu_2 0x030d 0x0040>,
 		       <&apps_smmu_2 0x034d 0x0040>,
 		       <&apps_smmu_2 0x036d 0x0000>;
-		qcom,iommu-dma-addr-range = <0x4 0x0 0x80 0x0>;
-		qcom,iova-align-shift-max = <30>;
+		qcom,iommu-dma-addr-range = <0x0 0x1000 0x3 0xFFFFFFFF>;
+		qcom,iova-align-shift-max = <21>;
 		dma-coherent;
 	};
 
@@ -429,8 +429,8 @@
 		iommus = <&apps_smmu_2 0x070c 0x0040>,
 		       <&apps_smmu_2 0x074c 0x0040>,
 		       <&apps_smmu_2 0x076c 0x0000>;
-		qcom,iommu-dma-addr-range = <0x4 0x0 0x80 0x0>;
-		qcom,iova-align-shift-max = <30>;
+		qcom,iommu-dma-addr-range = <0x0 0x1000 0x3 0xFFFFFFFF>;
+		qcom,iova-align-shift-max = <21>;
 		dma-coherent;
 	};
 
@@ -442,8 +442,8 @@
 		iommus = <&apps_smmu_2 0x070d 0x0040>,
 		       <&apps_smmu_2 0x074d 0x0040>,
 		       <&apps_smmu_2 0x076d 0x0000>;
-		qcom,iommu-dma-addr-range = <0x4 0x0 0x80 0x0>;
-		qcom,iova-align-shift-max = <30>;
+		qcom,iommu-dma-addr-range = <0x0 0x1000 0x3 0xFFFFFFFF>;
+		qcom,iova-align-shift-max = <21>;
 		dma-coherent;
 	};
 
@@ -555,8 +555,8 @@
 		reg = <0x0 0x4 0x0 0x0>,
 			<0x0 0x9007000 0x0 0x1000>;
 		iommus = <&apps_smmu_2 0x0DE6 0x0000>;
-		qcom,iommu-dma-addr-range = <0x4 0x0 0x80 0x0>;
-		qcom,iova-align-shift-max = <30>;
+		qcom,iommu-dma-addr-range = <0x0 0x1000 0x2 0x0>;
+		qcom,iova-align-shift-max = <21>;
 		dma-coherent;
 	};
 
@@ -566,8 +566,8 @@
 		reg = <0x0 0x5 0x0 0x0>,
 			<0x0 0x9007000 0x0 0x1000>;
 		iommus = <&apps_smmu_2 0x0DE7 0x0000>;
-		qcom,iommu-dma-addr-range = <0x4 0x0 0x80 0x0>;
-		qcom,iova-align-shift-max = <30>;
+		qcom,iommu-dma-addr-range = <0x0 0x1000 0x2 0x0>;
+		qcom,iova-align-shift-max = <21>;
 		dma-coherent;
 	};
 
@@ -667,8 +667,8 @@
 		reg = <0x0 0x4 0x0 0x0>,
 			<0x0 0x9007000 0x0 0x1000>;
 		iommus = <&apps_smmu_2 0x0E0E 0x0000>;
-		qcom,iommu-dma-addr-range = <0x4 0x0 0x80 0x0>;
-		qcom,iova-align-shift-max = <30>;
+		qcom,iommu-dma-addr-range = <0x0 0x1000 0x2 0x0>;
+		qcom,iova-align-shift-max = <21>;
 		dma-coherent;
 	};
 
@@ -678,8 +678,8 @@
 		reg = <0x0 0x5 0x0 0x0>,
 			<0x0 0x9007000 0x0 0x1000>;
 		iommus = <&apps_smmu_2 0x0E0F 0x0000>;
-		qcom,iommu-dma-addr-range = <0x4 0x0 0x80 0x0>;
-		qcom,iova-align-shift-max = <30>;
+		qcom,iommu-dma-addr-range = <0x0 0x1000 0x2 0x0>;
+		qcom,iova-align-shift-max = <21>;
 	};
 
 	qdss-service@11A05000 {
