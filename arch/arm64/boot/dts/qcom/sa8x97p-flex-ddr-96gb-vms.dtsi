@@ -4,3 +4,46 @@
  */
 
 #include "oot-dt-bindings/qcom-shmem-sa8797p.h"
+
+&soc {
+	gh-secure-vm-loader@0 {
+		memory-region = <&auto_vm_0_mem_0 &auto_vm_0_mem_1 &auto_vm_0_mem_2>;
+		shared-regions = <&glink_cma_mem1
+				&glink_cma_mem2
+				&glink_cma_mem3
+				&glink_cma_mem4
+				&glink_cma_mem5
+				&glink_cma_mem6
+				&glink_cma_mem7
+				&vm_cp_pixel
+				&vm_cp_nonpixel
+				&vm_cp_bitstream
+				&vm_cp_b_pt_mem
+				&vm_cp_p_pt_mem
+				&vm_cp_np_pt_mem
+				&soccp_fe_vm_1
+				&dice_vm_0_mem>;
+	};
+
+	gh-secure-vm-loader@1 {
+		memory-region = <&auto_vm_1_mem_0 &auto_vm_1_mem_1 &auto_vm_1_mem_2>;
+	};
+};
+
+&reserved_memory {
+	auto_vm_0_mem_1: auto_vm_0_mem_1@BA9000000 {
+		no-map;
+		reg = <0xB 0xA9000000 0x4 0x57000000>; /* 17776MB */
+	};
+
+	auto_vm_0_mem_2: auto_vm_0_mem_2@8D80000000 {
+		no-map;
+		reg = <0x8D 0x80000000 0x4 0x00000000>; /* 16384MB */
+	};
+
+	auto_vm_1_mem_2: auto_vm_1_mem_2@9180000000 {
+		no-map;
+		reg = <0x91 0x80000000 0x6 0x50600000>; /* 25862MB */
+	};
+};
+
