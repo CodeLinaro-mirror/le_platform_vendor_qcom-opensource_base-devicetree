@@ -11,7 +11,7 @@
 
 / {
 	model = "Qualcomm Technologies, Inc. SA8x97P NON-SAFE IVI ADP STAR";
-	compatible = "qcom,sa8797p-adp-star", "qcom,sa8797p-adp", "qcom,sa8797p";
+	compatible = "qcom,sa8x97p-adp-star", "qcom,sa8x97p-adp", "qcom,sa8797p";
 	qcom,board-id = <0x010025 0>;
 
 	aliases {

@@ -242,4 +242,121 @@
 
 		status = "disabled";
 	};
+
+	pcie1_ep: pcie-ep@0x50000000 {
+		compatible = "qcom,sa8797p-pcie-ep";
+		reg = <0x0 0x01b88000 0x0 0x4000>,
+		      <0x0 0x50000000 0x0 0xf20>,
+		      <0x0 0x50000f20 0x0 0xa8>,
+		      <0x0 0x50010000 0x0 0x4000>,
+		      <0x0 0x50040000 0x0 0x100000>,
+		      <0x0 0x01b8c000 0x0 0x1000>,
+		      <0x0 0x50030000 0x0 0x10000>,
+		      <0x0 0x01b19000 0x0 0x518>;
+		reg-names = "parf", "dbi", "elbi", "atu", "addr_space",
+			    "mmio", "dma", "phy_pcs";
+
+		pinctrl-names = "default";
+		pinctrl-0 = <&pcie1_ep_clkreq_default &pcie1_ep_perst_default
+				&pcie1_ep_wake_default>;
+
+		reset-gpio = <&tlmm 5 GPIO_ACTIVE_LOW>;
+		wake-gpios = <&tlmm 3 GPIO_ACTIVE_HIGH>;
+
+		#dma-cells = <1>;
+		dmas = <&pcie1_ep 0>, <&pcie1_ep 1>;
+		dma-names = "rx", "tx";
+
+		interrupts = <GIC_SPI 102 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 658 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 114 IRQ_TYPE_LEVEL_HIGH>;
+		interrupt-names = "global", "doorbell", "dma";
+
+		dma-coherent;
+		iommus = <&pcie_smmu 0x10000>,
+			  <&pcie_smmu 0x10100>;
+
+		max-link-speed = <4>;
+		num-lanes = <4>;
+
+		status = "disabled";
+	};
+
+	pcie2_ep: pcie-ep@0x60000000 {
+		compatible = "qcom,sa8797p-pcie-ep";
+		reg = <0x0 0x01b90000 0x0 0x4000>,
+		      <0x0 0x60000000 0x0 0xf20>,
+		      <0x0 0x60000f20 0x0 0xa8>,
+		      <0x0 0x60010000 0x0 0x4000>,
+		      <0x0 0x60040000 0x0 0x100000>,
+		      <0x0 0x01b94000 0x0 0x1000>,
+		      <0x0 0x60030000 0x0 0x10000>,
+		      <0x0 0x01b29000 0x0 0x518>;
+		reg-names = "parf", "dbi", "elbi", "atu", "addr_space",
+			    "mmio", "dma", "phy_pcs";
+
+		pinctrl-names = "default";
+		pinctrl-0 = <&pcie2_ep_clkreq_default &pcie2_ep_perst_default
+				&pcie2_ep_wake_default>;
+
+		reset-gpio = <&tlmm 8 GPIO_ACTIVE_LOW>;
+		wake-gpios = <&tlmm 6 GPIO_ACTIVE_HIGH>;
+
+		#dma-cells = <1>;
+		dmas = <&pcie2_ep 0>, <&pcie2_ep 1>;
+		dma-names = "rx", "tx";
+
+		interrupts = <GIC_SPI 464 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 108 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 235 IRQ_TYPE_LEVEL_HIGH>;
+		interrupt-names = "global", "doorbell", "dma";
+
+		dma-coherent;
+		iommus = <&pcie_smmu 0x20000>,
+			  <&pcie_smmu 0x20100>;
+
+		max-link-speed = <4>;
+		num-lanes = <2>;
+
+		status = "disabled";
+	};
+
+	pcie3_ep: pcie-ep@0x70000000 {
+		compatible = "qcom,sa8797p-pcie-ep";
+		reg = <0x0 0x01b98000 0x0 0x4000>,
+		      <0x0 0x70000000 0x0 0xf20>,
+		      <0x0 0x70000f20 0x0 0xa8>,
+		      <0x0 0x70010000 0x0 0x4000>,
+		      <0x0 0x70040000 0x0 0x100000>,
+		      <0x0 0x01b9c000 0x0 0x1000>,
+		      <0x0 0x70030000 0x0 0x10000>,
+		      <0x0 0x01b39000 0x0 0x518>;
+		reg-names = "parf", "dbi", "elbi", "atu", "addr_space",
+			    "mmio", "dma", "phy_pcs";
+
+		pinctrl-names = "default";
+		pinctrl-0 = <&pcie3_ep_clkreq_default &pcie3_ep_perst_default
+				&pcie3_ep_wake_default>;
+
+		reset-gpio = <&tlmm 11 GPIO_ACTIVE_LOW>;
+		wake-gpios = <&tlmm 9 GPIO_ACTIVE_HIGH>;
+
+		#dma-cells = <1>;
+		dmas = <&pcie3_ep 0>, <&pcie3_ep 1>;
+		dma-names = "rx", "tx";
+
+		interrupts = <GIC_SPI 465 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 109 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 156 IRQ_TYPE_LEVEL_HIGH>;
+		interrupt-names = "global", "doorbell", "dma";
+
+		dma-coherent;
+		iommus = <&pcie_smmu 0x30000>,
+			  <&pcie_smmu 0x30100>;
+
+		max-link-speed = <4>;
+		num-lanes = <2>;
+
+		status = "disabled";
+	};
 };

@@ -25,3 +25,28 @@
 	power-domain-names = "power";
 	status = "okay";
 };
+
+&xpcs0 {
+	/delete-property/ interrupts;
+	/delete-property/ interrupt-names;
+};
+
+&ethernet0 {
+	/delete-property/ interrupts;
+	/delete-property/ interrupt-names;
+
+	interrupts = <GIC_SPI 821 IRQ_TYPE_LEVEL_HIGH>,
+					<GIC_SPI 689 IRQ_TYPE_LEVEL_HIGH>,
+					<GIC_SPI 524 IRQ_TYPE_LEVEL_HIGH>,
+					<GIC_SPI 525 IRQ_TYPE_LEVEL_HIGH>,
+					<GIC_SPI 522 IRQ_TYPE_LEVEL_HIGH>,
+					<GIC_SPI 526 IRQ_TYPE_LEVEL_HIGH>,
+					<GIC_SPI 519 IRQ_TYPE_LEVEL_HIGH>,
+					<GIC_SPI 520 IRQ_TYPE_LEVEL_HIGH>,
+					<GIC_SPI 462 IRQ_TYPE_LEVEL_HIGH>,
+					<GIC_SPI 521 IRQ_TYPE_LEVEL_HIGH>,
+					<GIC_SPI 158 IRQ_TYPE_LEVEL_HIGH>;
+	interrupt-names = "macirq", "dma_tx_rx0", "dma_tx_rx1", "dma_tx_rx2",
+			  "dma_tx_rx3", "dma_tx_rx4", "dma_tx_rx5", "dma_tx_rx6",
+			  "dma_tx_rx7", "dma_tx_rx8", "dma_tx_rx9";
+};

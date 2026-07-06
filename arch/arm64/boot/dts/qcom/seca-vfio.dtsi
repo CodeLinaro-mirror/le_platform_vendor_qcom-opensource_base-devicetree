@@ -818,6 +818,30 @@
 		dma-coherent;
 	};
 
+	sail_mailbox: sail-mailbox@82030000 {
+		compatible = "qcom,vdev-device";
+		reg = <0x0 0x82030000 0x0 0x1D0000>,
+		<0x0 0x01F7A000 0x0 0x2000>,
+		<0x0 0x17824000 0x0 0x1000>,
+		<0x0 0x09185000 0x0 0x1000>;
+		interrupts-extended = <&ipcc2 IPCC_COMPUTE_L1_SAIL0 0x2 IRQ_TYPE_EDGE_RISING>,
+		<&ipcc2 IPCC_COMPUTE_L1_SAIL2 0x3 IRQ_TYPE_EDGE_RISING>,
+		<&ipcc2 IPCC_COMPUTE_L1_SAIL2 0x4 IRQ_TYPE_EDGE_RISING>,
+		<&ipcc2 IPCC_COMPUTE_L1_SAIL2 0x5 IRQ_TYPE_EDGE_RISING>,
+		<&ipcc2 IPCC_COMPUTE_L1_SAIL0 0x6 IRQ_TYPE_EDGE_RISING>,
+		<&ipcc2 IPCC_COMPUTE_L1_SAIL0 0x7 IRQ_TYPE_EDGE_RISING>,
+		<&ipcc2 IPCC_COMPUTE_L1_SAIL0 0x8 IRQ_TYPE_EDGE_RISING>,
+		<&ipcc2 IPCC_COMPUTE_L1_SAIL2 0x9 IRQ_TYPE_EDGE_RISING>,
+		<&ipcc2 IPCC_COMPUTE_L1_SAIL0 0xA IRQ_TYPE_EDGE_RISING>,
+		<&ipcc2 IPCC_COMPUTE_L1_SAIL2 0xB IRQ_TYPE_EDGE_RISING>,
+		<&ipcc2 IPCC_COMPUTE_L1_SAIL2 0xC IRQ_TYPE_EDGE_RISING>;
+	};
+
+	sail_mbox_ota: sail-mailbox-ota@82200000 {
+		compatible = "qcom,vdev-device";
+		reg = <0x0 0x82200000 0x0 0x5FF000>;
+	};
+
 	safety-ddr@82010000 {
 		compatible = "qcom,vdev-device";
 		reg = <0x0 0x82010000 0x0 0x10000>,
@@ -844,5 +868,4 @@
 				 <GIC_SPI 812 IRQ_TYPE_LEVEL_HIGH>,	// APSS1
 				 <GIC_SPI 814 IRQ_TYPE_LEVEL_HIGH>;	// GPU0
 	};
-
 };
