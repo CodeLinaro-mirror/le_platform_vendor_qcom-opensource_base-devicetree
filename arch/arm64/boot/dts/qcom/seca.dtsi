@@ -2904,6 +2904,91 @@
 			interrupt-names = "uplow", "critical";
 			#thermal-sensor-cells = <1>;
 		};
+
+		qcom_mpam: qcom,mpam {
+			compatible = "qcom,mpam";
+		};
+
+		cpu_mpam: qcom,cpu_mpam {
+			compatible = "qcom,cpu-mpam";
+			reg = <0x0 0x84030000 0x0 0x400>;
+			reg-names = "mon-base";
+
+			L2_0 {
+				qcom,msc-id = <0>;
+				qcom,msc-name = "L2_0";
+			};
+
+			L2_1 {
+				qcom,msc-id = <1>;
+				qcom,msc-name = "L2_1";
+			};
+		};
+
+		noc_bw_mpam: qcom,noc_bw_mpam {
+			compatible = "qcom,platform-mpam";
+			reg = <0x0 0x84030400 0x0 0x400>;
+			reg-names = "mon-base";
+			qcom,msc-id = <3>;
+			qcom,msc-name = "noc_bw";
+			qcom,gears = "low", "medium", "high", "veryhigh";
+			qcom,gear-id = <1>, <2>, <3>, <4>;
+
+			cpu_cluster0 {
+				qcom,client-id = <0x1>;
+				qcom,client-name = "cpu_cluster0";
+			};
+
+			cpu_cluster1 {
+				qcom,client-id = <0x2>;
+				qcom,client-name = "cpu_cluster1";
+			};
+		};
+
+		mpam_msc {
+			compatible = "qcom,mpam-msc";
+			ranges;
+
+			slc-mpam@84030800 {
+				compatible = "qcom,slc-mpam";
+				reg = <0x0 0x84030800 0x0 0x400>;
+				reg-names = "mon-base";
+				qcom,msc-id = <4>;
+				qcom,msc-name = "slc";
+				qcom,dev-index = <0>;
+				qcom,num-read-miss-cfg = <2>;
+				qcom,num-cap-cfg = <5>;
+				qcom,slc-clients = "APPS_CLIENT", "GPU_CLIENT";
+			};
+		};
+
+		slc_mpam: qcom,slc_mpam {
+			compatible = "qcom,mpam-slc";
+			qcom,msc-name = "slc";
+
+			apps {
+				qcom,client-id = <0>;
+				qcom,client-name = "apps";
+
+				part-id0 {
+					qcom,part-id = <0>;
+				};
+
+				part-id1 {
+					qcom,part-id = <1>;
+				};
+
+			};
+
+			gpu {
+				qcom,client-id = <1>;
+				qcom,client-name = "gpu";
+
+				part-id0 {
+					qcom,part-id = <0>;
+				};
+			};
+		};
 	};
 
 	thermal_zones: thermal-zones {
