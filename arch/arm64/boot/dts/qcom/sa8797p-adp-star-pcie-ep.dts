@@ -7,10 +7,11 @@
 
 #include "sa8x97p.dtsi"
 #include "sa8797p.dtsi"
+#include "sa8x97p-safe.dtsi"
 
 / {
 	model = "Qualcomm Technologies, Inc. SA8x97P ADP STAR  PCIe EP";
-	compatible = "qcom,sa8797p-adp-star", "qcom,sa8797p-adp", "qcom,sa8797p";
+	compatible = "qcom,sa8x97p-adp-star", "qcom,sa8x97p-adp", "qcom,sa8797p";
 	qcom,board-id =  <0x05010025 5>;
 
 	aliases {
@@ -22,4 +23,19 @@
 	power-domains = <&scmi5_pd 1>;
 	power-domain-names = "power";
 	status = "okay";
+};
+
+&pcie1_ep {
+	power-domains = <&scmi6_pd 1>;
+	power-domain-names = "power";
+};
+
+&pcie2_ep {
+	power-domains = <&scmi32_pd 1>;
+	power-domain-names = "power";
+};
+
+&pcie3_ep {
+	power-domains = <&scmi33_pd 1>;
+	power-domain-names = "power";
 };

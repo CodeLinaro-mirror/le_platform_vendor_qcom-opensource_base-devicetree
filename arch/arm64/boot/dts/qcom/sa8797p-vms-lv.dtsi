@@ -3,6 +3,7 @@
  * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
  */
 
+#include "oot-dt-bindings/qcom-shmem-sa8797p.h"
 
 &soc {
 	auto_vm1: qcom,auto_vm1@B63000000 {
@@ -46,11 +47,13 @@
 				&auto_vm1_input1_ring
 				&auto_vm1_vconsole_ring
 				&auto_vm1_i2c0_ring
+				&auto_vm1_ssr_ring
 				&auto_vm1_vscmi_ring
 				&auto_vm1_vblk20_ring
 				&auto_vm1_vblk21_ring
-				&auto_vm1_resv0_ring
-				&auto_vm1_resv1_ring
+				&auto_vm1_glink_lv_ring
+				&auto_vm1_frpc_ring
+				&auto_vm1_resv_ring
 				&auto_vm1_swiotlb>;
 	};
 
@@ -269,6 +272,16 @@
 		qcom,label = <0x12A>;
 	};
 
+	auto_vm1_be43: auto_vm1_be43@12B {
+		qcom,vm = <&auto_vm1>;
+		qcom,label = <0x12B>;
+	};
+
+	auto_vm1_be44: auto_vm1_be44@12C {
+		qcom,vm = <&auto_vm1>;
+		qcom,label = <0x12C>;
+	};
+
 	auto_vm_1: gh-secure-vm-loader@1 {
 		compatible = "qcom,gh-secure-vm-loader";
 		qcom,pas-id = <45>;
@@ -318,7 +331,9 @@
 				&auto_vm1_be39
 				&auto_vm1_be40
 				&auto_vm1_be41
-				&auto_vm1_be42>;
+				&auto_vm1_be42
+				&auto_vm1_be43
+				&auto_vm1_be44>;
 	};
 };
 
@@ -326,6 +341,62 @@
 	#address-cells = <2>;
 	#size-cells = <2>;
 	ranges;
+
+	vm_1_glink_cma_mem_1: vm_1_glink_cma_mem_1@80840000 {
+		no-map;
+		reg = <0x0 0x80840000 0x0 0x9000>;
+		qcom,dst-vmids = <AC_VM_CDSP_Q6_ELF_00>;
+		qcom,dst-perms = <QCOM_PERM_RWX>;
+		gunyah-label = <0x150>;
+	};
+
+	vm_1_glink_cma_mem_2: vm_1_glink_cma_mem_2@80849000 {
+		no-map;
+		reg = <0x0 0x80849000 0x0 0x9000>;
+		qcom,dst-vmids = <AC_VM_CDSP_Q6_ELF_01>;
+		qcom,dst-perms = <QCOM_PERM_RWX>;
+		gunyah-label = <0x151>;
+	};
+
+	vm_1_glink_cma_mem_3: vm_1_glink_cma_mem_3@80852000 {
+		no-map;
+		reg = <0x0 0x80852000 0x0 0x9000>;
+		qcom,dst-vmids = <AC_VM_CDSP_Q6_ELF_10>;
+		qcom,dst-perms = <QCOM_PERM_RWX>;
+		gunyah-label = <0x152>;
+	};
+
+	vm_1_glink_cma_mem_4: vm_1_glink_cma_mem_4@8085b000 {
+		no-map;
+		reg = <0x0 0x8085B000 0x0 0x9000>;
+		qcom,dst-vmids = <AC_VM_CDSP_Q6_ELF_11>;
+		qcom,dst-perms = <QCOM_PERM_RWX>;
+		gunyah-label = <0x153>;
+	};
+
+	vm_1_glink_cma_mem_5: vm_1_glink_cma_mem_5@80864000 {
+		no-map;
+		reg = <0x0 0x80864000 0x0 0x9000>;
+		qcom,dst-vmids = <AC_VM_HPASS0_COMPUTE_Q6_ELF AC_VM_HPASS0_AUDIO_Q6_ELF>;
+		qcom,dst-perms = <QCOM_PERM_RWX QCOM_PERM_RWX>;
+		gunyah-label = <0x154>;
+	};
+
+	vm_1_glink_cma_mem_6: vm_1_glink_cma_mem_6@8086d000 {
+		no-map;
+		reg = <0x0 0x8086D000 0x0 0x9000>;
+		qcom,dst-vmids = <AC_VM_HPASS1_COMPUTE_Q6_ELF AC_VM_HPASS1_AUDIO_Q6_ELF>;
+		qcom,dst-perms = <QCOM_PERM_RWX QCOM_PERM_RWX>;
+		gunyah-label = <0x155>;
+	};
+
+	vm_1_glink_cma_mem_7: vm_1_glink_cma_mem_7@80876000 {
+		no-map;
+		reg = <0x0 0x80876000 0x0 0x9000>;
+		qcom,dst-vmids = <AC_VM_HPASS2_COMPUTE_Q6_ELF AC_VM_HPASS2_AUDIO_Q6_ELF>;
+		qcom,dst-perms = <QCOM_PERM_RWX QCOM_PERM_RWX>;
+		gunyah-label = <0x156>;
+	};
 
 	auto_vm1_vblk0_ring: auto_vm1_vblk0_ring@b63000000 {
 		no-map;
@@ -573,16 +644,28 @@
 		gunyah-label = <0x128>;
 	};
 
-	auto_vm1_resv0_ring: auto_vm1_resv0_ring@b6326e000 {
+	auto_vm1_ssr_ring: auto_vm1_ssr_ring@b6326e000 {
 		no-map;
-		reg = <0xB 0x6326E000 0x0 0x8000>;
+		reg = <0xB 0x6326E000 0x0 0x2000>;
 		gunyah-label = <0x129>;
 	};
 
-	auto_vm1_resv1_ring: auto_vm1_resv1_ring@b63276000 {
+	auto_vm1_glink_lv_ring: auto_vm1_glink_lv_ring@b63270000 {
+		no-map;
+		reg = <0xB 0x63270000 0x0 0x2000>;
+		gunyah-label = <0x12A>;
+	};
+
+	auto_vm1_frpc_ring: auto_vm1_frpc_ring@b63272000 {
+		no-map;
+		reg = <0xB 0x63272000 0x0 0x4000>;
+		gunyah-label = <0x12B>;
+	};
+
+	auto_vm1_resv_ring: auto_vm1_resv_ring@b63276000 {
 		no-map;
 		reg = <0xB 0x63276000 0x0 0xE8A000>;
-		gunyah-label = <0x12A>;
+		gunyah-label = <0x12C>;
 	};
 
 	auto_vm1_swiotlb: auto_vm1_swiotlb@b64100000 {
