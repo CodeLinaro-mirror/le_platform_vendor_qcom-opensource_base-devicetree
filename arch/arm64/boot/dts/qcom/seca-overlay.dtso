@@ -109,6 +109,10 @@
 	status = "okay";
 };
 
+&scmi24 {
+	status = "okay";
+};
+
 &scmi27 {
 	status = "okay";
 };
@@ -119,6 +123,10 @@
 
 &scmi30 {
 	status = "okay";
+};
+
+&scmi32 {
+       status = "okay";
 };
 
 &scmi40 {
@@ -393,6 +401,15 @@
 		qcom,dev-name = "scmi_uart17";
 	};
 
+	scmi_pcie2 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi32_pd 0>, <&scmi63_pd 0>;
+		power-domain-names = "power", "dummy";
+		qcom,no-suspend;
+		qcom,dev-name = "scmi_pcie2";
+	};
+
 	scmi_bluetooth {
 		compatible = "qcom,uscmi";
 
@@ -407,6 +424,14 @@
 		power-domains = <&scmi46_pd 0>, <&scmi46_pd 1>;
 		power-domain-names = "power_regulator", "power_gpio";
 		qcom,dev-name = "scmi_bluetooth1";
+	};
+
+	scmi_wlan {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi24_pd 0>, <&scmi24_pd 1>;
+		power-domain-names = "power_regulator", "power_gpio";
+		qcom,dev-name = "scmi_wlan";
 	};
 
 	scmi_soccp {
