@@ -39,6 +39,16 @@
 	status = "okay";
 };
 
+&spi16 {
+	status = "okay";
+	spidev@0 {
+		compatible = "micron,spi-authenta";
+		reg = <0>;
+		spi-max-frequency = <50000000>;
+		spi-cpha;
+	};
+};
+
 &scmi0 {
 	status = "okay";
 };
