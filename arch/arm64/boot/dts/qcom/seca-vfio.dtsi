@@ -984,6 +984,52 @@
 				<0x0 0x01790000 0x0 0x0050000>;
 	};
 
+	// CRYPTO0
+	vfio_hwkm_gpce_core_0@1dc0000 {
+		compatible = "qcom,vfio-platform";
+		interrupts = <GIC_SPI 272 IRQ_TYPE_LEVEL_HIGH>;
+		reg = <0x0 0x01dc0000 0x0 0x00040000>;
+		iommus = <&apps_smmu_0 0x1289 0x0>;
+		qcom,iommu-dma-addr-pool = <0x0 0x0 0x0 0xffffffff>;
+		dma-coherent;
+	};
+
+	vfio_gpce_gvm_ns_tzdec_cb {
+		compatible = "qcom,vfio-platform";
+		iommus = <&apps_smmu_0 0x1281 0x0>;
+		qcom,iommu-dma-addr-pool = <0x0 0x0 0x0 0xffffffff>;
+		dma-coherent;
+	};
+
+	vfio_gpce_gvm_s_tzdec_cb {
+		compatible = "qcom,vfio-platform";
+		iommus = <&apps_smmu_0 0x1288 0x0>;
+		qcom,iommu-dma-addr-pool = <0x0 0x0 0x0 0xffffffff>;
+		qcom,iommu-vmid = <0x9>; /*VMID_CP_BITSTREAM */
+		qcom,secure-context-bank;
+		dma-coherent;
+	};
+
+	// CRYPTO1
+	vfio_hwkm_gpce_core_1@9900000 {
+		compatible = "qcom,vfio-platform";
+		interrupts = <GIC_SPI 836 IRQ_TYPE_LEVEL_HIGH>;
+		reg = <0x0 0x09900000 0x0 0x00040000>;
+		iommus = <&apps_smmu_0 0x1249 0x0>;
+		qcom,iommu-dma-addr-pool = <0x0 0x0 0x0 0xffffffff>;
+		dma-coherent;
+	};
+
+	// CRYPTO2
+	vfio_hwkm_gpce_core_2@9940000 {
+		compatible = "qcom,vfio-platform";
+		interrupts = <GIC_SPI 848 IRQ_TYPE_LEVEL_HIGH>;
+		reg = <0x0 0x9940000 0x0 0x00040000>;
+		iommus = <&apps_smmu_0 0x1269 0x0>;
+		qcom,iommu-dma-addr-pool = <0x0 0x0 0x0 0xffffffff>;
+		dma-coherent;
+	};
+
 	subsystem_ramdump_util@89b00000 {
 		compatible = "qcom,vdev-device";
 		reg = <0x0 0x89b00000 0x0 0x400000>,		//SMEM   (index 0)
