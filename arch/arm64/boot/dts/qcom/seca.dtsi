@@ -6,6 +6,7 @@
 #include <dt-bindings/interrupt-controller/arm-gic.h>
 #include <dt-bindings/dma/qcom-gpi.h>
 #include <dt-bindings/gpio/gpio.h>
+#include <dt-bindings/input/input.h>
 
 / {
 	model = "Qualcomm Technologies, Inc. SECA";
@@ -3065,6 +3066,19 @@
 		gearvm_log {
 			compatible = "qcom,nhlos-logs-mem", "qcom,nhlos-logs";
 			memory-region = <&gearvm_logs_mem>;
+		};
+
+		gpio-keys {
+			compatible = "gpio-keys";
+
+			key_power {
+				label = "power";
+				linux,code = <KEY_POWER>;
+				gpios = <&tlmm 166 GPIO_ACTIVE_HIGH>;
+				linux,input-type = <1>;
+				debounce-interval = <0>;
+				wakeup-source;
+			};
 		};
 
 		qfprom_tcsr_softsku: qfprom@1f97070 {
