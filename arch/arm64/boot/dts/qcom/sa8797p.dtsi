@@ -14,6 +14,7 @@
 		spi16 = &spi16;
 		serial0 = &uart15;
 		serial1 = &uart4;
+		serial2 = &uart17;
 		i2c20 = &ccu_i2c0;
 		i2c21 = &ccu_i2c1;
 		i2c22 = &ccu_i2c2;
@@ -135,6 +136,18 @@
 };
 
 &scmi23 {
+	status = "okay";
+};
+
+&scmi24 {
+	status = "okay";
+};
+
+&scmi25 {
+	status = "okay";
+};
+
+&scmi32 {
 	status = "okay";
 };
 
