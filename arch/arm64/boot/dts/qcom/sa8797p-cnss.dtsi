@@ -26,7 +26,6 @@
 		*/
 		power-domains = <&scmi25_pd 0>, <&scmi24_pd 1>;
 		power-domain-names = "wlan_ldo", "wlan_gpio";
-
 		chip_cfg@0 {
 			supported-ids = <0x1101>;
 			qcom,wlan-ramdump-dynamic = <0x400000>;
@@ -83,5 +82,10 @@
 };
 
 &uart17 {
-    status = "ok";
+	status = "okay";
+	qcom,auto-suspend-disable;
+	bluetooth {
+		compatible = "qcom,auto-converged-bt";
+		max-speed = <3000000>;
+	};
 };
