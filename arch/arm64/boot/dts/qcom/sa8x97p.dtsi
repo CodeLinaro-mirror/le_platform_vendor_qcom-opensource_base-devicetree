@@ -920,9 +920,9 @@
 			reg = <0x0 0xd7676000 0x0 0x15a000>;
 		};
 
-		gearvm_logs_mem: gearvm_logs_region@d77d0000 {
+		gearvm_logs_mem: gearvm_logs_region@d7770000 {
 			no-map;
-			reg = <0x0 0xd77d0000 0x0 0x20000>;
+			reg = <0x0 0xd7770000 0x0 0x80000>;
 		};
 
 		gearvm_quantum_test_mem: gearvm_quantum_test_region@d77f0000 {
