@@ -8,7 +8,7 @@
 
 &soc {
 	gh-secure-vm-loader@0 {
-		memory-region = <&auto_vm_0_mem_0 &auto_vm_0_mem_1>;
+		memory-region = <&auto_vm_0_mem_0>;
 		shared-regions = <&vm_0_glink_cma_mem_1
 				&vm_0_glink_cma_mem_2
 				&vm_0_glink_cma_mem_3
@@ -27,7 +27,7 @@
 	};
 
 	gh-secure-vm-loader@1 {
-		memory-region = <&auto_vm_1_mem_0 &auto_vm_1_mem_1 &auto_vm_1_mem_2>;
+		memory-region = <&auto_vm_1_mem_0 &auto_vm_1_mem_1 &auto_vm_1_mem_2 &auto_vm_1_mem_3>;
 		shared-regions = <&vm_1_glink_cma_mem_1
 				&vm_1_glink_cma_mem_2
 				&vm_1_glink_cma_mem_3
@@ -40,13 +40,18 @@
 
 &{/reserved-memory} {
 
-	auto_vm_0_mem_1: auto_vm_0_mem_1@BA9000000 {
-		no-map;
-		reg = <0xB 0xA9000000 0x2 0xE7000000>; /* 11888MB */
-	};
+	// auto_vm_0_mem_1: auto_vm_0_mem_1@BA9000000 {
+	// 	no-map;
+	// 	reg = <0xB 0xA9000000 0x2 0xE7000000>; /* 11888MB */
+	// };
 
 	auto_vm_1_mem_2: auto_vm_1_mem_2@E90000000 {
 		no-map;
 		reg = <0xE 0x90000000 0x1 0x52200000>; /*5410MB*/
+	};
+
+	auto_vm_1_mem_3: auto_vm_1_mem_3@BA9000000 {
+		no-map;
+		reg = <0xB 0xA9000000 0x1 0x00000000>; /*5410MB*/
 	};
 };
