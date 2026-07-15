@@ -78,6 +78,7 @@
 		interrupt-names = "pwr_event";
 
 		status = "disabled";
+		dummy-supply = <&apps_smmu_0>;
 
 		usb_2_dwc3: dwc3@a200000 {
 			compatible = "snps,dwc3";
@@ -116,6 +117,7 @@
 		interrupt-names = "pwr_event";
 
 		status = "disabled";
+		dummy-supply = <&apps_smmu_0>;
 
 		usb_1_dwc3: dwc3@a400000 {
 			compatible = "snps,dwc3";
@@ -157,6 +159,7 @@
 		power-domain-names = "transfer", "core";
 
 		status = "disabled";
+		dummy-supply = <&apps_smmu_0>;
 
 		usb_0_dwc3: dwc3@a600000 {
 			compatible = "snps,dwc3";
