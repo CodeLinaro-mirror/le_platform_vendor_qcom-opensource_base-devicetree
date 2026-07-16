@@ -11,7 +11,6 @@
 #include "oot-dt-bindings/qcom-ipcc-sa8797p.h"
 #include "seca-vfio.dtsi"
 #include "seca-vms.dtsi"
-#include "seca-ddr-48gb-vms.dtsi"
 / {
 	model = "Qualcomm Technologies, Inc. SecaAU Rumi";
 	compatible = "qcom,secaau-rumi", "qcom,seca";
