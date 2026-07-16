@@ -19,9 +19,9 @@
 		dma-coherent;
 	};
 
-	umd_firmware_vm@d77d0000 {
+	umd_firmware_vm@d7770000 {
 		compatible = "qcom,vdev-device";
-		reg = <0x0 0xd77d0000 0x0 0x20000>;
+		reg = <0x0 0xd7770000 0x0 0x80000>;
 	};
 
 	hscnoc@2210000 {
