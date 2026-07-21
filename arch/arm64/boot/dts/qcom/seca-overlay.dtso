@@ -133,6 +133,10 @@
        status = "okay";
 };
 
+&scmi33 {
+       status = "okay";
+};
+
 &scmi38 {
 	status = "okay";
 };
@@ -267,6 +271,19 @@
 		power-domain-names = "perf";
 
 		qcom,dev-name = "scmi_mdss1_secure";
+	};
+
+	scmi_emac1 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi8_pd 0>, <&scmi8_pd 1>, <&scmi8_dvfs 0>, <&scmi8_dvfs 1>;
+		power-domain-names = "emac_power", "emac_clock", "emac_perf", "perf_5g_serdes";
+
+		resets = <&scmi8_rst 0>, <&scmi8_rst 1>;
+		reset-names = "emac_reset", "serdes_reset";
+
+		qcom,no-suspend;
+		qcom,dev-name = "scmi_emac1";
 	};
 
 	scmi_camera {
@@ -442,6 +459,15 @@
 		power-domain-names = "power", "dummy";
 		qcom,no-suspend;
 		qcom,dev-name = "scmi_pcie2";
+	};
+
+	scmi_pcie3 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi33_pd 0>, <&scmi63_pd 0>;
+		power-domain-names = "power", "dummy";
+		qcom,no-suspend;
+		qcom,dev-name = "scmi_pcie3";
 	};
 
 	scmi_bluetooth {

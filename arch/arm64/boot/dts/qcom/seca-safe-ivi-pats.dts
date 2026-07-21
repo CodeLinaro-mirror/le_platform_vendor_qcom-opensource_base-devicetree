@@ -7,6 +7,7 @@
 
 #include "seca.dtsi"
 #include "seca-pats.dtsi"
+#include "seca-safe.dtsi"
 
 / {
 	model = "Qualcomm Technologies, Inc. SECA SAFE-IVI QAM PATS";
