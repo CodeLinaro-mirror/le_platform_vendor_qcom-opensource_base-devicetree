@@ -879,6 +879,11 @@
 		interrupts-extended = <&ipcc2 IPCC_COMPUTE_L1_SAIL0 1 IRQ_TYPE_LEVEL_HIGH>;
 	};
 
+	apss-stl@8400000 {
+		compatible = "qcom,vdev-device";
+		reg = <0x0 0x08400000 0x0 0x1000>;
+	};
+
 	nsp_sysmon@89b00000 {
 		compatible = "qcom,vdev-device";
 		reg = <0x0 0x89b00000 0x0 0x400000>,
