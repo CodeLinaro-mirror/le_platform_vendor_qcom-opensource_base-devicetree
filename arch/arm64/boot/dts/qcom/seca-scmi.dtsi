@@ -1255,19 +1255,8 @@
 
 		status = "disabled";
 
-		scmi43_pd: protocol@11 {
-			reg = <0x11>;
-			#power-domain-cells = <1>;
-		};
-
-		scmi43_dvfs: protocol@13 {
-			reg = <0x13>;
-			#power-domain-cells = <1>;
-		};
-
-		scmi43_rst: protocol@16 {
-			reg = <0x16>;
-			#reset-cells = <1>;
+		scmi43_pinctrl: protocol@19 {
+			reg = <0x19>;
 		};
 	};
 
