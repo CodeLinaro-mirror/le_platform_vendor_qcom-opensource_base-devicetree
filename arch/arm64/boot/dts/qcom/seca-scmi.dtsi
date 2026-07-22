@@ -6,6 +6,10 @@
 #include <dt-bindings/interrupt-controller/arm-gic.h>
 #include "oot-dt-bindings/qcom-ipcc-seca.h"
 
+&{/aliases} {
+	scmichannels = &scmichannels;
+};
+
 &{/firmware} {
 	scmi0: scmi-0 {
 		compatible = "qcom,scmi-smc";
