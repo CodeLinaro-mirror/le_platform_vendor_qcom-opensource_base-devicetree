@@ -915,9 +915,14 @@
 			reg = <0x0 0xd77d0000 0x0 0x20000>;
 		};
 
+		gearvm_quantum_test_mem: gearvm_quantum_test_region@d77f0000 {
+			no-map;
+			reg = <0x0 0xd77f0000 0x0 0x10000>;
+		};
+
 		gearvm_shared_mem: gearvm_shared_region@d7650000 {
 			no-map;
-			reg = <0x0 0xd7650000 0x0 0x1b0000>;
+			reg = <0x0 0xd7650000 0x0 0x180000>;
 		};
 
 		sail_p_mem: sail_p_region@8c0000000 {
@@ -1622,12 +1627,16 @@
 			      <0x0 0x09c16000 0x0 0x1000>,
 			      <0x0 0x09c1e000 0x0 0x1000>,
 			      <0x0 0x09c1f000 0x0 0x1000>,
-			      <0x0 0x09c20000 0x0 0x1000>;
+			      <0x0 0x09c20000 0x0 0x1000>,
+			      <0x0 0x09b98000 0x0 0x1000>,
+			      <0x0 0x09c18000 0x0 0x1000>;
 			reg-names = "ccu_qupv3_0_common",
 				    "ccu_qupv3_1_common",
 				    "ccu_top",
 				    "ccu_qupv3_0_IRQ",
-				    "ccu_qupv3_1_IRQ";
+				    "ccu_qupv3_1_IRQ",
+				    "ccu_qupv3_0_fusa_fault_aggregator",
+				    "ccu_qupv3_1_fusa_fault_aggregator";
 			qcom,common-reg-offset = <0x40000>;
 			interrupts = <GIC_ESPI 29 IRQ_TYPE_EDGE_RISING>,
 					     <GIC_ESPI 28 IRQ_TYPE_EDGE_RISING>;
@@ -5790,6 +5799,11 @@
 		snps,mtl-rx-config = <&mtl_rx_setup>;
 		snps,mtl-tx-config = <&mtl_tx_setup>;
 
+		qcom,tx-vdma-map = <0 0 0 0 1 2 3 4 5 6 7 7>;
+		qcom,rx-vdma-map = <0 1 2 3 4 5 6 6 6 6 7 7>;
+		qcom,tx-pdma-map = <0 1 2 3 4 5 6 6 6 6 7 7>;
+		qcom,rx-pdma-map = <0 1 2 3 4 5 6 6 6 6 7 7>;
+
 		qcom-xpcs-handle = <&xpcs0>;
 
 		mtl_rx_setup: rx-queues-config {
@@ -5944,6 +5958,11 @@
 		snps,axi-config = <&stmmac_axi_setup1>;
 		snps,mtl-rx-config = <&mtl_rx_setup1>;
 		snps,mtl-tx-config = <&mtl_tx_setup1>;
+
+		qcom,tx-vdma-map = <0 0 0 0 1 2 3 4 5 6 7 7>;
+		qcom,rx-vdma-map = <0 1 2 3 4 5 6 6 6 6 7 7>;
+		qcom,tx-pdma-map = <0 1 2 3 4 5 6 6 6 6 7 7>;
+		qcom,rx-pdma-map = <0 1 2 3 4 5 6 6 6 6 7 7>;
 
 		qcom-xpcs-handle = <&xpcs1>;
 
