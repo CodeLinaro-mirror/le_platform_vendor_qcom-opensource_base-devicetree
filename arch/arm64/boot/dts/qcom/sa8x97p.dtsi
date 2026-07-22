@@ -5933,6 +5933,20 @@
 		reset-names = "serdes_reset";
 	};
 
+	switch_reset_detect: qcom-switch-reset-detect {
+		interrupt-parent = <&tlmm>;
+		interrupts = <117 IRQ_TYPE_EDGE_FALLING>;
+	};
+
+	eth_switch_monitor: eth-switch-monitor {
+		status = "disabled";
+		compatible = "qcom,eth-switch-monitor";
+		switch-reset-detect-source = <&switch_reset_detect>;
+
+		/* Gunyah Doorbell label: can be overridden by board DTS */
+		qcom,dbl-label = <0xa>;
+	};
+
 	ethernet0: ethernet@0x1A00000 {
 		compatible = "qcom,sa8797p-ethqos", "snps,dwxgmac";
 		reg = <0x0 0x1A00000 0x0 0x14000>,
