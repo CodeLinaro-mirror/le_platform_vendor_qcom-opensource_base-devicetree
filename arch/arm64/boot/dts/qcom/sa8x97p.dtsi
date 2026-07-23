@@ -1775,6 +1775,18 @@
 				qcom,etu-slice = <23>;
 				qcom,etu-event-name = "sw_trigger";
 			};
+
+			slice@27 {
+				qcom,etu-event-sel = <27>;
+				qcom,etu-slice = <27>;
+				qcom,etu-event-name = "SOF_DPRX0";
+			};
+
+			slice@28 {
+				qcom,etu-event-sel = <28>;
+				qcom,etu-slice = <28>;
+				qcom,etu-event-name = "SOF_DPRX1";
+			};
 		};
 
 		ccu_qup: ccu-qup {
