@@ -1220,6 +1220,17 @@
 			interrupt-controller;
 			#interrupt-cells = <2>;
 			gpio-ranges = <&tlmm 0 0 181>;
+			wakeup-parent = <&pdc>;
+		};
+
+		pdc: interrupt-controller@b220000 {
+			compatible = "qcom,pdc";
+			reg = <0x0 0xb220000 0x0 0x30000>;
+			qcom,pdc-ranges = <0 745 43>, <67 543 31>, <98 609 32>,
+					  <130 717 12>, <142 251 5>, <147 796 16>;
+			#interrupt-cells = <2>;
+			interrupt-parent = <&intc>;
+			interrupt-controller;
 		};
 
 		qcom,msm-imem@14680000 {
