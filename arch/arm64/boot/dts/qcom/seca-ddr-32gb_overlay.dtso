@@ -6,7 +6,7 @@
 /dts-v1/;
 /plugin/;
 
-#include "seca-ddr-48gb-vms.dtsi"
+#include "seca-ddr-32gb-vms.dtsi"
 
 / {
 	compatible = "qcom,seca-ride-sx", "qcom,seca-qam-ride-sx", "qcom,seca-adp-star";
