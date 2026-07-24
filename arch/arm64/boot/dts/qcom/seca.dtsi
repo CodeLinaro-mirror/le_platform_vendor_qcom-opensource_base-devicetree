@@ -28,6 +28,13 @@
 	};
 
 	clocks {
+		gpll5_out_main: gpll5_out_main {
+			compatible = "fixed-clock";
+			clock-frequency = <1000000000>;
+			clock-output-names = "gpll5_out_main";
+			#clock-cells = <0>;
+		};
+
 		xo_board_clk: xo-board-clk {
 			compatible = "fixed-clock";
 			#clock-cells = <0>;
@@ -35,6 +42,29 @@
 
 		sleep_clk: sleep-clk {
 			compatible = "fixed-clock";
+			#clock-cells = <0>;
+		};
+
+		tscss_ahb_clock: tscss_ahb_clock {
+			compatible = "fixed-clock";
+			clock-frequency = <75000000>;
+			clock-output-names = "tscss_ahb_clock";
+			#clock-cells = <0>;
+		};
+
+		tscss_cntr_clock: tscss_cntr_clock {
+			compatible = "fixed-factor-clock";
+			clocks = <&gpll5_out_main>;
+			clock-mult = <1>;
+			clock-div = <4>;
+			#clock-cells = <0>;
+		};
+
+		tscss_etu_clock: tscss_etu_clock {
+			compatible = "fixed-factor-clock";
+			clocks = <&gpll5_out_main>;
+			clock-mult = <1>;
+			clock-div = <4>;
 			#clock-cells = <0>;
 		};
 	};
@@ -1104,6 +1134,180 @@
 					<GIC_ESPI 317 IRQ_TYPE_LEVEL_HIGH>,
 					<GIC_ESPI 318 IRQ_TYPE_LEVEL_HIGH>,
 					<GIC_ESPI 319 IRQ_TYPE_LEVEL_HIGH>;
+		};
+
+		tsc@1c80000 {
+			compatible = "qcom,tsc";
+			reg = <0x0 0x01c80000 0x0 0x2000>,
+			      <0x0 0x01c87000 0x0 0x1000>,
+			      <0x0 0x01ca0000 0x0 0x20000>,
+			      <0x0 0x01f9e100 0x0 0x4>;
+			reg-names = "tsc", "timer", "etu", "tsc_src_sel";
+			clocks = <&tscss_ahb_clock>,
+				 <&tscss_cntr_clock>,
+				 <&tscss_etu_clock>;
+			clock-names = "cfg_ahb",
+				      "cntr",
+				      "etu";
+			interrupts = <GIC_SPI 290 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 169 IRQ_TYPE_LEVEL_HIGH>;
+			interrupt-names = "tscss_fusa_irq",
+					  "etu_summary_irq";
+			qcom,tsc-nsec-update;
+			qcom,tsc-frame-pulse-gen;
+			qcom,tsc-safety;
+			qcom,tsc-pipeline-stages = <9>;
+
+			slice@1 {
+				qcom,etu-event-sel = <1>;
+				qcom,etu-slice = <1>;
+				qcom,etu-event-name = "timer0";
+			};
+
+			slice@2 {
+				qcom,etu-event-sel = <2>;
+				qcom,etu-slice = <2>;
+				qcom,etu-event-name = "timer1";
+			};
+
+			slice@3 {
+				qcom,etu-event-sel = <3>;
+				qcom,etu-slice = <3>;
+				qcom,etu-event-name = "timer2";
+			};
+
+			slice@4 {
+				qcom,etu-event-sel = <4>;
+				qcom,etu-slice = <4>;
+				qcom,etu-event-name = "timer3";
+			};
+
+			slice@5 {
+				qcom,etu-event-sel = <5>;
+				qcom,etu-slice = <5>;
+				qcom,etu-event-name = "timer4";
+			};
+
+			slice@6 {
+				qcom,etu-event-sel = <6>;
+				qcom,etu-slice = <6>;
+				qcom,etu-event-name = "timer5";
+			};
+
+			slice@7 {
+				qcom,etu-event-sel = <7>;
+				qcom,etu-slice = <7>;
+				qcom,etu-event-name = "timer6";
+			};
+
+			slice@8 {
+				qcom,etu-event-sel = <8>;
+				qcom,etu-slice = <8>;
+				qcom,etu-event-name = "timer7";
+			};
+
+			slice@9 {
+				qcom,etu-event-sel = <9>;
+				qcom,etu-slice = <9>;
+				qcom,etu-event-name = "timer8";
+			};
+
+			slice@10 {
+				qcom,etu-event-sel = <10>;
+				qcom,etu-slice = <10>;
+				qcom,etu-event-name = "timer9";
+			};
+
+			slice@11 {
+				qcom,etu-event-sel = <11>;
+				qcom,etu-slice = <11>;
+				qcom,etu-event-name = "cci_timer11";
+			};
+
+			slice@12 {
+				qcom,etu-event-sel = <12>;
+				qcom,etu-slice = <12>;
+				qcom,etu-event-name = "cci_timer12";
+			};
+
+			slice@13 {
+				qcom,etu-event-sel = <13>;
+				qcom,etu-slice = <13>;
+				qcom,etu-event-name = "cci_timer13";
+			};
+
+			slice@14 {
+				qcom,etu-event-sel = <14>;
+				qcom,etu-slice = <14>;
+				qcom,etu-event-name = "cci_timer14";
+			};
+
+			slice@15 {
+				qcom,etu-event-sel = <15>;
+				qcom,etu-slice = <15>;
+				qcom,etu-event-name = "cci_timer15";
+			};
+
+			slice@16 {
+				qcom,etu-event-sel = <16>;
+				qcom,etu-slice = <16>;
+				qcom,etu-event-name = "cci_timer16";
+			};
+
+			slice@17 {
+				qcom,etu-event-sel = <17>;
+				qcom,etu-slice = <17>;
+				qcom,etu-event-name = "timer10";
+			};
+
+			slice@18 {
+				qcom,etu-event-sel = <18>;
+				qcom,etu-slice = <18>;
+				qcom,etu-event-name = "timer11";
+			};
+
+			slice@19 {
+				qcom,etu-event-sel = <19>;
+				qcom,etu-slice = <19>;
+				qcom,etu-event-name = "timer12";
+			};
+
+			slice@20 {
+				qcom,etu-event-sel = <20>;
+				qcom,etu-slice = <20>;
+				qcom,etu-event-name = "timer13";
+			};
+
+			slice@21 {
+				qcom,etu-event-sel = <21>;
+				qcom,etu-slice = <21>;
+				qcom,etu-event-name = "timer14";
+			};
+
+			slice@22 {
+				qcom,etu-event-sel = <22>;
+				qcom,etu-slice = <22>;
+				qcom,etu-event-name = "timer15";
+			};
+
+			slice@23 {
+				/* ETU SW Event trigger. */
+				qcom,etu-event-sel = <0>;
+				qcom,etu-slice = <23>;
+				qcom,etu-event-name = "sw_trigger";
+			};
+
+			slice@27 {
+				qcom,etu-event-sel = <27>;
+				qcom,etu-slice = <27>;
+				qcom,etu-event-name = "SOF_DPRX0";
+			};
+
+			slice@28 {
+				qcom,etu-event-sel = <28>;
+				qcom,etu-slice = <28>;
+				qcom,etu-event-name = "SOF_DPRX1";
+			};
 		};
 
 		adreno_smmu_0: iommu@3da0000 {
