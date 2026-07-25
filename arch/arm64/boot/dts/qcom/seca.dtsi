@@ -3030,6 +3030,18 @@
 			power-domains = <&scmi3_pd 0>;
 			power-domain-names = "power";
 
+			qcom,ice = <&ice>;
+			status = "disabled";
+		};
+
+		ice: crypto@1d48000 {
+			compatible = "qcom,sa8255p-inline-crypto-engine",
+				     "qcom,inline-crypto-engine";
+			reg = <0x0 0x01d48000 0x0 0x10000>;
+			qcom,ice-use-hwkm;
+			qcom,ice-skip-clk;
+
+			power-domains = <&scmi26_pd 0>;
 			status = "disabled";
 		};
 

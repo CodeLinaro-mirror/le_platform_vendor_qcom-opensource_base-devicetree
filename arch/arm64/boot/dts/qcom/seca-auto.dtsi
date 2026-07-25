@@ -133,6 +133,14 @@
 	status = "okay";
 };
 
+&scmi26 {
+	status = "okay";
+};
+
+&ice {
+	status = "okay";
+};
+
 &pdp_scmi {
 	status = "okay";
 };
