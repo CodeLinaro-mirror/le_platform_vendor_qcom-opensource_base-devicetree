@@ -235,6 +235,7 @@
 		iommus = <&pcie_smmu 0x0>,
 			<&pcie_smmu 0x1>;
 
+		max-link-speed = <4>;
 		num-lanes = <8>;
 
 		status = "disabled";
