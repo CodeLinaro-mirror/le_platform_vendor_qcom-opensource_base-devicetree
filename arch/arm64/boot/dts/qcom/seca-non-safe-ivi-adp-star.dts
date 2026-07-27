@@ -32,6 +32,9 @@
 };
 
 &ethernet0 {
+	phy-mode = "usxgmii";
+	phy-handle = <&usxsgmii_phy0>;
+
 	/delete-property/ interrupts;
 	/delete-property/ interrupt-names;
 
@@ -49,4 +52,21 @@
 	interrupt-names = "macirq", "dma_tx_rx0", "dma_tx_rx1", "dma_tx_rx2",
 			  "dma_tx_rx3", "dma_tx_rx4", "dma_tx_rx5", "dma_tx_rx6",
 			  "dma_tx_rx7", "dma_tx_rx8", "dma_tx_rx9";
+
+	mdio {
+		compatible = "snps,dwmac-mdio";
+		#address-cells = <1>;
+		#size-cells = <0>;
+
+		usxsgmii_phy0: phy@0 {
+			compatible = "ethernet-phy-id31c3.1c12";
+			reg = <0x0>;
+			device_type = "ethernet-phy";
+			interrupts-extended = <&tlmm 45 IRQ_TYPE_EDGE_FALLING>;
+			resets = <&scmi7_rst 0>;
+			reset-names = "phy";
+			reset-assert-us = <100000>;
+			reset-deassert-us = <100000>;
+		};
+	};
 };
