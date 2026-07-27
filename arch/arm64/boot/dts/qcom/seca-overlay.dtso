@@ -133,6 +133,10 @@
        status = "okay";
 };
 
+&scmi33 {
+       status = "okay";
+};
+
 &scmi40 {
 	status = "okay";
 };
@@ -416,6 +420,15 @@
 		power-domain-names = "power", "dummy";
 		qcom,no-suspend;
 		qcom,dev-name = "scmi_pcie2";
+	};
+
+	scmi_pcie3 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi33_pd 0>, <&scmi63_pd 0>;
+		power-domain-names = "power", "dummy";
+		qcom,no-suspend;
+		qcom,dev-name = "scmi_pcie3";
 	};
 
 	scmi_bluetooth {
