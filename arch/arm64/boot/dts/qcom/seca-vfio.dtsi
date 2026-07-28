@@ -19,6 +19,34 @@
 		dma-coherent;
 	};
 
+	umd_firmware_vm@d7770000 {
+		compatible = "qcom,vdev-device";
+		reg = <0x0 0xd7770000 0x0 0x80000>;
+	};
+
+	hscnoc@2210000 {
+		compatible = "qcom,vdev-device";
+		reg = <0x0 0x2210000 0x0 0xD000>,
+		<0x0 0x2110000 0x0 0xB000>,
+		<0x0 0x2A10000 0x0 0xD000>,
+		<0x0 0x100D000 0x0 0x35000>;
+	};
+
+	/* NSP Driver mapping  */
+	umd_nsp_drv@1f012000 {
+		compatible = "qcom,vdev-device";
+		reg = <0x0 0x1F012000 0x0 0x1000>,
+		      <0x0 0x1F412000 0x0 0x1000>,
+		      <0x0 0x05710000 0x0 0x1000>;
+
+		interrupts-extended =
+			<&intc GIC_SPI 946 IRQ_TYPE_LEVEL_HIGH>,
+			<&intc GIC_SPI 499 IRQ_TYPE_LEVEL_HIGH>,
+			<&intc GIC_SPI 945 IRQ_TYPE_LEVEL_HIGH>,
+			<&intc GIC_SPI 500 IRQ_TYPE_LEVEL_HIGH>,
+			<&intc GIC_SPI 160 IRQ_TYPE_LEVEL_HIGH>;
+	};
+
 	/* GLINK Context Banks - Updated for Seca */
 	umd_glink@9007000 {
 		compatible = "qcom,vdev-device";
@@ -67,6 +95,19 @@
 		    <0x0 0x8c900000 0x0 0x800000>,
 		    <0x0 0x14680000 0x0 0x1000>,
 		    <0x0 0xc300000 0x0 0x1000>;
+	};
+
+	umd_llcc@20400000 {
+		compatible = "qcom,vdev-device";
+		interrupts-extended = <&intc GIC_SPI 580 IRQ_TYPE_LEVEL_HIGH>,
+			<&intc GIC_SPI 340 IRQ_TYPE_LEVEL_HIGH>,
+			<&intc GIC_SPI 80 IRQ_TYPE_LEVEL_HIGH>;
+		reg = <0x0 0x20400000 0x0 0x100000>,
+		    <0x0 0x20600000 0x0 0x100000>,
+		    <0x0 0x89B00000 0x0 0x400000>,
+		    <0x0 0x01FD4000 0x0 0x1000>,
+		    <0x0 0x210AF000 0x0 0x400000>,
+		    <0x0 0x17F60000 0x0 0x1000>;
 	};
 
 	cdsp0_cb@1 {
@@ -224,8 +265,8 @@
 		iommus = <&apps_smmu_2 0x030c 0x0040>,
 		       <&apps_smmu_2 0x034c 0x0040>,
 		       <&apps_smmu_2 0x036c 0x0000>;
-		qcom,iommu-dma-addr-range = <0x4 0x0 0x80 0x0>;
-		qcom,iova-align-shift-max = <30>;
+		qcom,iommu-dma-addr-range = <0x0 0x1000 0x3 0xFFFFFFFF>;
+		qcom,iova-align-shift-max = <21>;
 		dma-coherent;
 	};
 
@@ -237,8 +278,8 @@
 		iommus = <&apps_smmu_2 0x030d 0x0040>,
 		       <&apps_smmu_2 0x034d 0x0040>,
 		       <&apps_smmu_2 0x036d 0x0000>;
-		qcom,iommu-dma-addr-range = <0x4 0x0 0x80 0x0>;
-		qcom,iova-align-shift-max = <30>;
+		qcom,iommu-dma-addr-range = <0x0 0x1000 0x3 0xFFFFFFFF>;
+		qcom,iova-align-shift-max = <21>;
 		dma-coherent;
 	};
 
@@ -393,8 +434,8 @@
 		iommus = <&apps_smmu_2 0x070c 0x0040>,
 		       <&apps_smmu_2 0x074c 0x0040>,
 		       <&apps_smmu_2 0x076c 0x0000>;
-		qcom,iommu-dma-addr-range = <0x4 0x0 0x80 0x0>;
-		qcom,iova-align-shift-max = <30>;
+		qcom,iommu-dma-addr-range = <0x0 0x1000 0x3 0xFFFFFFFF>;
+		qcom,iova-align-shift-max = <21>;
 		dma-coherent;
 	};
 
@@ -406,8 +447,8 @@
 		iommus = <&apps_smmu_2 0x070d 0x0040>,
 		       <&apps_smmu_2 0x074d 0x0040>,
 		       <&apps_smmu_2 0x076d 0x0000>;
-		qcom,iommu-dma-addr-range = <0x4 0x0 0x80 0x0>;
-		qcom,iova-align-shift-max = <30>;
+		qcom,iommu-dma-addr-range = <0x0 0x1000 0x3 0xFFFFFFFF>;
+		qcom,iova-align-shift-max = <21>;
 		dma-coherent;
 	};
 
@@ -519,8 +560,8 @@
 		reg = <0x0 0x4 0x0 0x0>,
 			<0x0 0x9007000 0x0 0x1000>;
 		iommus = <&apps_smmu_2 0x0DE6 0x0000>;
-		qcom,iommu-dma-addr-range = <0x4 0x0 0x80 0x0>;
-		qcom,iova-align-shift-max = <30>;
+		qcom,iommu-dma-addr-range = <0x0 0x1000 0x2 0x0>;
+		qcom,iova-align-shift-max = <21>;
 		dma-coherent;
 	};
 
@@ -530,8 +571,8 @@
 		reg = <0x0 0x5 0x0 0x0>,
 			<0x0 0x9007000 0x0 0x1000>;
 		iommus = <&apps_smmu_2 0x0DE7 0x0000>;
-		qcom,iommu-dma-addr-range = <0x4 0x0 0x80 0x0>;
-		qcom,iova-align-shift-max = <30>;
+		qcom,iommu-dma-addr-range = <0x0 0x1000 0x2 0x0>;
+		qcom,iova-align-shift-max = <21>;
 		dma-coherent;
 	};
 
@@ -631,8 +672,8 @@
 		reg = <0x0 0x4 0x0 0x0>,
 			<0x0 0x9007000 0x0 0x1000>;
 		iommus = <&apps_smmu_2 0x0E0E 0x0000>;
-		qcom,iommu-dma-addr-range = <0x4 0x0 0x80 0x0>;
-		qcom,iova-align-shift-max = <30>;
+		qcom,iommu-dma-addr-range = <0x0 0x1000 0x2 0x0>;
+		qcom,iova-align-shift-max = <21>;
 		dma-coherent;
 	};
 
@@ -642,8 +683,8 @@
 		reg = <0x0 0x5 0x0 0x0>,
 			<0x0 0x9007000 0x0 0x1000>;
 		iommus = <&apps_smmu_2 0x0E0F 0x0000>;
-		qcom,iommu-dma-addr-range = <0x4 0x0 0x80 0x0>;
-		qcom,iova-align-shift-max = <30>;
+		qcom,iommu-dma-addr-range = <0x0 0x1000 0x2 0x0>;
+		qcom,iova-align-shift-max = <21>;
 	};
 
 	qdss-service@11A05000 {
@@ -797,6 +838,30 @@
 		dma-coherent;
 	};
 
+	sail_mailbox: sail-mailbox@82030000 {
+		compatible = "qcom,vdev-device";
+		reg = <0x0 0x82030000 0x0 0x1D0000>,
+		<0x0 0x01F7A000 0x0 0x2000>,
+		<0x0 0x17824000 0x0 0x1000>,
+		<0x0 0x09185000 0x0 0x1000>;
+		interrupts-extended = <&ipcc2 IPCC_COMPUTE_L1_SAIL0 0x2 IRQ_TYPE_EDGE_RISING>,
+		<&ipcc2 IPCC_COMPUTE_L1_SAIL2 0x3 IRQ_TYPE_EDGE_RISING>,
+		<&ipcc2 IPCC_COMPUTE_L1_SAIL2 0x4 IRQ_TYPE_EDGE_RISING>,
+		<&ipcc2 IPCC_COMPUTE_L1_SAIL2 0x5 IRQ_TYPE_EDGE_RISING>,
+		<&ipcc2 IPCC_COMPUTE_L1_SAIL0 0x6 IRQ_TYPE_EDGE_RISING>,
+		<&ipcc2 IPCC_COMPUTE_L1_SAIL0 0x7 IRQ_TYPE_EDGE_RISING>,
+		<&ipcc2 IPCC_COMPUTE_L1_SAIL0 0x8 IRQ_TYPE_EDGE_RISING>,
+		<&ipcc2 IPCC_COMPUTE_L1_SAIL2 0x9 IRQ_TYPE_EDGE_RISING>,
+		<&ipcc2 IPCC_COMPUTE_L1_SAIL0 0xA IRQ_TYPE_EDGE_RISING>,
+		<&ipcc2 IPCC_COMPUTE_L1_SAIL2 0xB IRQ_TYPE_EDGE_RISING>,
+		<&ipcc2 IPCC_COMPUTE_L1_SAIL2 0xC IRQ_TYPE_EDGE_RISING>;
+	};
+
+	sail_mbox_ota: sail-mailbox-ota@82200000 {
+		compatible = "qcom,vdev-device";
+		reg = <0x0 0x82200000 0x0 0x5FF000>;
+	};
+
 	safety-ddr@82010000 {
 		compatible = "qcom,vdev-device";
 		reg = <0x0 0x82010000 0x0 0x10000>,
@@ -812,6 +877,33 @@
 			  <0x0 0x01F97000 0x0 0x1000>,
 			  <0x0 0x87AE3000 0x0 0x2000>;
 		interrupts-extended = <&ipcc2 IPCC_COMPUTE_L1_SAIL0 1 IRQ_TYPE_LEVEL_HIGH>;
+	};
+
+	nsp_sysmon@89b00000 {
+		compatible = "qcom,vdev-device";
+		reg = <0x0 0x89b00000 0x0 0x400000>,
+			  <0x0 0x01FD4000 0x0 0x1000>,
+			  <0x0 0x100D000 0x0 0x35000>;
+		interrupts = <GIC_SPI 813 IRQ_TYPE_LEVEL_HIGH>,	// APSS0
+				 <GIC_SPI 812 IRQ_TYPE_LEVEL_HIGH>,	// APSS1
+				 <GIC_SPI 814 IRQ_TYPE_LEVEL_HIGH>;	// GPU0
+	};
+
+	ddr_bwprofiler: ddr_bwprofiler {
+		compatible = "qcom,seca_ddr_bwprofiler";
+		reg = <0x0 0x21800000 0x0 0x0200000>,
+				<0x0 0x21A00000 0x0 0x0200000>,
+				<0x0 0x21C00000 0x0 0x0200000>,
+				<0x0 0x21E00000 0x0 0x0200000>,
+				<0x0 0x22800000 0x0 0x0200000>,
+				<0x0 0x22A00000 0x0 0x0200000>,
+				<0x0 0x22C00000 0x0 0x0200000>,
+				<0x0 0x22E00000 0x0 0x0200000>,
+				<0x0 0x0232b000 0x0 0x0001000>,
+				<0x0 0x023ab000 0x0 0x0001000>,
+				<0x0 0x0242b000 0x0 0x0001000>,
+				<0x0 0x024ab000 0x0 0x0001000>,
+				<0x0 0x01790000 0x0 0x0050000>;
 	};
 
 };

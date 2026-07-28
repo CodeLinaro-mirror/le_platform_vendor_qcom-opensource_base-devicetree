@@ -39,9 +39,6 @@
 				<0x200 &pcie_smmu 0x0200 0x1>,
 				<0x300 &pcie_smmu 0x0300 0x1>;
 
-		rasdp-off = <0x39C>;
-		safety-supported;
-
 		msi-map = <0x0 &gic_its 0x80000 0x10000>;
 
 		status = "disabled";
@@ -85,9 +82,6 @@
 					<0 0 0 3 &intc 0 0 GIC_SPI 830 IRQ_TYPE_LEVEL_HIGH>, //INTc
 					<0 0 0 4 &intc 0 0 GIC_SPI 348 IRQ_TYPE_LEVEL_HIGH>; //INTd
 
-		rasdp-off = <0x39C>;
-		safety-supported;
-
 		msi-map = <0x0 &gic_its 0x90000 0x10000>;
 
 		dma-coherent;
@@ -110,7 +104,9 @@
 
 	pcie2: pci@0x4000000000 {
 		compatible = "qcom,pcie-ecam-rc";
-		reg = <0x40 0x00000000 0x0 0x10000000>;
+		reg = <0x40 0x00000000 0x0 0x10000000>,
+		      <0x00 0x01b90000 0x0 0x00004000>;
+		reg-names = "dbi", "parf";
 
 		device_type = "pci";
 
@@ -157,7 +153,9 @@
 
 	pcie3: pci@0x400000000 {
 		compatible = "qcom,pcie-ecam-rc";
-		reg = <0x4 0x00000000 0x0 0x10000000>;
+		reg = <0x4 0x00000000 0x0 0x10000000>,
+		      <0x00 0x01b98000 0x0 0x00004000>;
+		reg-names = "dbi", "parf";
 
 		device_type = "pci";
 
@@ -211,7 +209,7 @@
 		      <0x0 0x40000f20 0x0 0xa8>,
 		      <0x0 0x40010000 0x0 0x4000>,
 		      <0x0 0x40040000 0x0 0x100000>,
-		      <0x0 0x01b84000 0x0 0x1000>,
+		      <0x0 0x01b86000 0x0 0x1000>,
 		      <0x0 0x40030000 0x0 0x10000>,
 		      <0x0 0x01b09000 0x0 0x518>;
 		reg-names = "parf", "dbi", "elbi", "atu", "addr_space",
@@ -237,7 +235,6 @@
 		iommus = <&pcie_smmu 0x0>,
 			<&pcie_smmu 0x1>;
 
-		max-link-speed = <4>;
 		num-lanes = <8>;
 
 		status = "disabled";

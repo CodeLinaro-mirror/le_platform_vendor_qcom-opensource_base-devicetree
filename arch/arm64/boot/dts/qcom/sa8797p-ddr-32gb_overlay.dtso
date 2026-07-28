@@ -8,6 +8,10 @@
 
 #include "sa8797p-ddr-32gb-vms.dtsi"
 
+/ {
+	compatible = "qcom,sa8x97p-ride-sx", "qcom,sa8x97p-qam-ride-sx";
+};
+
 &non_ecc_heap_mem {
 	reg = <0xA 0x60000000 0x1 0x00000000>;
 	status = "okay";

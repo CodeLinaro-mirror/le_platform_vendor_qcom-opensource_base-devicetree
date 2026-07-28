@@ -7,6 +7,7 @@
 
 #include "seca.dtsi"
 #include "seca-pats.dtsi"
+#include "seca-safe.dtsi"
 
 / {
 	model = "Qualcomm Technologies, Inc. SECA SAFE-IVI QAM PATS";
@@ -16,5 +17,27 @@
 
 	aliases {
 		spi14 = &spi14;
+	};
+};
+
+&ethernet0 {
+	phy-mode = "usxgmii";
+	phy-handle = <&usxsgmii_phy0>;
+
+	mdio {
+		compatible = "snps,dwmac-mdio";
+		#address-cells = <1>;
+		#size-cells = <0>;
+
+		usxsgmii_phy0: phy@0 {
+			compatible = "ethernet-phy-id31c3.1c12";
+			reg = <0x0>;
+			device_type = "ethernet-phy";
+			interrupts-extended = <&tlmm 45 IRQ_TYPE_EDGE_FALLING>;
+			resets = <&scmi7_rst 0>;
+			reset-names = "phy";
+			reset-assert-us = <100000>;
+			reset-deassert-us = <100000>;
+		};
 	};
 };

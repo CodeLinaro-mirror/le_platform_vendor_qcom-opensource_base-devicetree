@@ -6,10 +6,11 @@
 /dts-v1/;
 
 #include "seca.dtsi"
+#include "seca-safe.dtsi"
 
 / {
 	model = "Qualcomm Technologies, Inc. SECA Flex RIDE-SX";
-	compatible = "qcom,seca-ride-sx", "qcom,seca";
+	compatible = "qcom,seca-flex-ride-sx", "qcom,seca";
 	qcom,board-id = <0x01010025 1>;
 	qcom,sku-id = <0x300>;
 };
@@ -24,4 +25,14 @@
 	power-domains = <&scmi6_pd 0>;
 	power-domain-names = "power";
 	status = "okay";
+};
+
+&ethernet0 {
+	phy-mode = "10gbase-r";
+
+	fixed-link {
+		status = "okay";
+		speed = <10000>;
+		full-duplex;
+	};
 };

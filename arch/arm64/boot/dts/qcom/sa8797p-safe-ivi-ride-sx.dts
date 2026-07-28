@@ -7,169 +7,13 @@
 
 #include "sa8x97p.dtsi"
 #include "sa8797p.dtsi"
+#include "sa8x97p-safe.dtsi"
 
 / {
 	model = "Qualcomm Technologies, Inc. SA8x97P SAFE IVI RIDE-SX";
-	compatible = "qcom,sa8797p-qam-ride-sx", "qcom,safe-ivi", "qcom,sa8797p-qam", "qcom,sa8797p";
+	compatible = "qcom,sa8x97p-qam-ride-sx", "qcom,safe-ivi", "qcom,sa8x97p-qam", "qcom,sa8797p";
 	qcom,board-id = <0x01010025 1>;
 	qcom,sku-id = <0x200>;
-};
-
-&soc {
-	adreno_smmu_fusa {
-		compatible = "qcom,qtb500-fusa";
-		qcom,num_clients = <0x1>;
-		reg = <0x0 0x3DA8000 0x0 0x20>;
-		interrupts = <GIC_SPI 447 IRQ_TYPE_EDGE_RISING>;
-
-		qtb_0 {
-			compatible = "qcom,qtb500-fusa-test";
-			dma-coherent;
-			iommus = <&adreno_smmu_0 0x14 0x0>;
-		};
-	};
-
-	apps_smmu0_fusa {
-		compatible = "qcom,qtb500-fusa";
-		qcom,num_clients = <0x8>;
-		reg = <0x0 0x15A08000 0x0 0x20>;
-		interrupts = <GIC_SPI 894 IRQ_TYPE_EDGE_RISING>;
-
-		qtb_0 {
-			compatible = "qcom,qtb500-fusa-test";
-			dma-coherent;
-			iommus = <&apps_smmu_0 0x120 0x0>;
-		};
-
-		qtb_1 {
-			compatible = "qcom,qtb500-fusa-test";
-			dma-coherent;
-			iommus = <&apps_smmu_0 0x440 0x0>;
-		};
-
-		qtb_2 {
-			compatible = "qcom,qtb500-fusa-test";
-			dma-coherent;
-			iommus = <&apps_smmu_0 0x820 0x0>;
-		};
-
-		qtb_3 {
-			compatible = "qcom,qtb500-fusa-test";
-			dma-coherent;
-			iommus = <&apps_smmu_0 0xc00 0x0>;
-		};
-
-		qtb_4 {
-			compatible = "qcom,qtb500-fusa-test";
-			dma-coherent;
-			iommus = <&apps_smmu_0 0x12e0 0x0>;
-		};
-
-		qtb_5 {
-			compatible = "qcom,qtb500-fusa-test";
-			dma-coherent;
-			iommus = <&apps_smmu_0 0x16a0 0x0>;
-		};
-
-		qtb_6 {
-			compatible = "qcom,qtb500-fusa-test";
-			dma-coherent;
-			iommus = <&apps_smmu_0 0x1980 0x0>;
-		};
-
-		qtb_7 {
-			compatible = "qcom,qtb500-fusa-test";
-			dma-coherent;
-			iommus = <&apps_smmu_0 0x1c20 0x0>;
-		};
-	};
-
-	apps_smmu1_fusa {
-		compatible = "qcom,qtb500-fusa";
-		qcom,num_clients = <0x5>;
-		reg = <0x0 0x15C08000 0x0 0x20>;
-		interrupts = <GIC_SPI 893 IRQ_TYPE_EDGE_RISING>;
-
-		qtb_0 {
-			compatible = "qcom,qtb500-fusa-test";
-			dma-coherent;
-			iommus = <&apps_smmu_1 0x140 0x0>;
-		};
-
-		qtb_1 {
-			compatible = "qcom,qtb500-fusa-test";
-			dma-coherent;
-			iommus = <&apps_smmu_1 0x460 0x0>;
-		};
-
-		qtb_2 {
-			compatible = "qcom,qtb500-fusa-test";
-			dma-coherent;
-			iommus = <&apps_smmu_1 0x880 0x0>;
-		};
-
-		qtb_3 {
-			compatible = "qcom,qtb500-fusa-test";
-			dma-coherent;
-			iommus = <&apps_smmu_1 0x1300 0x0>;
-		};
-
-		qtb_4 {
-			compatible = "qcom,qtb500-fusa-test";
-			dma-coherent;
-			iommus = <&apps_smmu_1 0x16c0 0x020>;
-		};
-	};
-
-	apps_smmu2_fusa {
-		compatible = "qcom,qtb500-fusa";
-		qcom,num_clients = <0x6>;
-		reg = <0x0 0x15E08000 0x0 0x20>;
-		interrupts = <GIC_SPI 892 IRQ_TYPE_EDGE_RISING>;
-
-		qtb_0 {
-			compatible = "qcom,qtb500-fusa-test";
-			dma-coherent;
-			iommus = <&apps_smmu_2 0x160 0x0>;
-		};
-
-		qtb_1 {
-			compatible = "qcom,qtb500-fusa-test";
-			dma-coherent;
-			iommus = <&apps_smmu_2 0x480 0x0>;
-		};
-
-		qtb_2 {
-			compatible = "qcom,qtb500-fusa-test";
-			dma-coherent;
-			iommus = <&apps_smmu_2 0x8a0 0x0>;
-		};
-
-		qtb_3 {
-			compatible = "qcom,qtb500-fusa-test";
-			dma-coherent;
-			iommus = <&apps_smmu_2 0xc20 0x0>;
-		};
-
-		qtb_4 {
-			compatible = "qcom,qtb500-fusa-test";
-			dma-coherent;
-			iommus = <&apps_smmu_2 0x1320 0x0>;
-		};
-
-		qtb_5 {
-			compatible = "qcom,qtb500-fusa-test";
-			dma-coherent;
-			iommus = <&apps_smmu_2 0x1760 0x0>;
-		};
-	};
-
-	pcie_smmu_fusa {
-		compatible = "qcom,qtb600-fusa";
-		qcom,num_clients = <0x0>;
-		reg = <0x0 0x99B0000 0x0 0x40>;
-		interrupts = <GIC_SPI 904 IRQ_TYPE_EDGE_RISING>;
-	};
 };
 
 &ethernet0 {
@@ -185,11 +29,29 @@
 &pcie0 {
 	power-domains = <&scmi5_pd 0>;
 	power-domain-names = "power";
+	rasdp-off = <0x43C>;
+	safety-supported;
 	status = "okay";
 };
 
 &pcie1 {
 	power-domains = <&scmi6_pd 0>;
 	power-domain-names = "power";
+	rasdp-off = <0x39C>;
+	safety-supported;
 	status = "okay";
+};
+
+&pcie2 {
+	power-domains = <&scmi32_pd 0>;
+	power-domain-names = "power";
+	rasdp-off = <0x384>;
+	safety-supported;
+};
+
+&pcie3 {
+	power-domains = <&scmi33_pd 0>;
+	power-domain-names = "power";
+	rasdp-off = <0x37C>;
+	safety-supported;
 };

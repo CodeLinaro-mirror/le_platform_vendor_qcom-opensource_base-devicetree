@@ -177,6 +177,10 @@
 	status = "okay";
 };
 
+&scmi48 {
+	status = "okay";
+};
+
 &scmi63 {
 	status = "okay";
 };
@@ -431,13 +435,23 @@
 
 		qcom,dev-name = "scmi_camera_pdb4";
         };
+	scmi_camera_ipe_hw_ctrl {
+		compatible = "qcom,uscmi";
 
+		power-domains = <&scmi21_dvfs 7>;
+		power-domain-names = "perf_camera_7";
+
+		qcom,dev-name = "scmi_camera_ipe_hw_ctrl";
+        };
 
 	scmi_dprx0 {
 		compatible = "qcom,uscmi";
 
 		power-domains = <&scmi27_dvfs 0>;
 		power-domain-names = "perf";
+
+		resets = <&scmi27_rst 0>;
+		reset-names = "dpr0_reset";
 
 		qcom,dev-name = "scmi_dprx0";
 	};
@@ -447,6 +461,9 @@
 
 		power-domains = <&scmi28_dvfs 0>;
 		power-domain-names = "perf";
+
+		resets = <&scmi28_rst 0>;
+		reset-names = "dpr1_reset";
 
 		qcom,dev-name = "scmi_dprx1";
 	};
@@ -659,6 +676,29 @@
 		power-domain-names = "usb_transfer", "usb_core";
 
 		qcom,dev-name = "scmi_usb1_qmp";
+	};
+
+	scmi_infra0 {
+		compatible = "qcom,uscmi";
+		power-domains = <&scmi48_dvfs 0>, <&scmi48_dvfs 1>,
+				<&scmi48_dvfs 2>, <&scmi48_dvfs 3>;
+		power-domain-names = "cx", "mx", "mm", "mxc";
+
+		qcom,dev-name = "scmi_infra0";
+	};
+};
+
+&virqgrp {
+	virq0 {
+		index = <0>;
+		label = <0x5 0x6 0x9 0xA 0xB 0xC>;
+		remote-vmids = <2>;
+	};
+
+	virq1 {
+		index = <1>;
+		label = <0xD 0xE 0xF>;
+		remote-vmids = <3>;
 	};
 };
 
