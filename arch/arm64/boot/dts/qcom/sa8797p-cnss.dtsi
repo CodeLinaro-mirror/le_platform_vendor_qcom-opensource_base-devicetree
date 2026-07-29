@@ -11,9 +11,18 @@
 		qcom,bus-type=<0>;
 		qcom,notify-modem-status;
 		firmware-managed-resources;
+		gunyah-hypervisor;
+
 		#address-cells=<1>;
 		#size-cells=<1>;
 		ranges = <0xb0000000 0xb0000000 0x10000>;
+		/*
+		* The combo chip’s WLAN and BT share LDOs controlled via PMIC GPIOs.
+		* Since GearVM does not support a voting mechanism for PMIC GPIO control,
+		* WLAN and BT must be mapped to a shared LDO power domain in the backend.
+		* This ensures the chip is not inadvertently powered off when either
+		* subsystem is turned down.
+		*/
 		power-domains = <&scmi25_pd 0>, <&scmi24_pd 1>;
 		power-domain-names = "wlan_ldo", "wlan_gpio";
 		chip_cfg@0 {
