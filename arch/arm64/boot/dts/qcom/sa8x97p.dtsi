@@ -6000,6 +6000,28 @@
 		qcom,dbl-label = <0xa>;
 	};
 
+	efuse: efuse@360d4320 {
+		compatible = "qcom,sa8797p-qfprom", "qcom,qfprom";
+		reg = <0x0 0x360d4320 0x0 0x8>;
+		#address-cells = <1>;
+		#size-cells = <1>;
+
+		nvmem-layout {
+			compatible = "qcom,sa8797p-eth-mac";
+			#address-cells = <1>;
+			#size-cells = <1>;
+
+			eth0_mac: eth0-mac@0 {
+				reg = <0x0 0x6>;
+			};
+
+			eth1_mac: eth1-mac@0 {
+				reg = <0x0 0x6>;
+				qcom,byte-fixups = <5 0x6>;
+			};
+		};
+	};
+
 	ethernet0: ethernet@0x1A00000 {
 		compatible = "qcom,sa8797p-ethqos", "snps,dwxgmac";
 		reg = <0x0 0x1A00000 0x0 0x14000>,
@@ -6043,6 +6065,9 @@
 
 		snps,pbl = <0x10>;
 		dma-coherent;
+
+		nvmem-cells = <&eth0_mac>;
+		nvmem-cell-names = "mac-address";
 
 		rx-fifo-depth = <98304>;
 		tx-fifo-depth = <98304>;
