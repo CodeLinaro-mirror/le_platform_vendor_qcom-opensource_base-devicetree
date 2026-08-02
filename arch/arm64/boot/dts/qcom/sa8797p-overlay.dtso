@@ -149,6 +149,10 @@
 	status = "okay";
 };
 
+&scmi34 {
+	status = "okay";
+};
+
 &scmi38 {
 	status = "okay";
 };
@@ -685,6 +689,28 @@
 		power-domain-names = "cx", "mx", "mm", "mxc";
 
 		qcom,dev-name = "scmi_infra0";
+	};
+
+	scmi_sdhc4 {
+		compatible = "qcom,uscmi";
+		power-domains = <&scmi34_pd 0>, <&scmi34_dvfs 0>;
+		power-domain-names = "power", "perf";
+
+		qcom,dev-name = "scmi_sdhc4";
+	};
+};
+
+&virqgrp {
+	virq0 {
+		index = <0>;
+		label = <0x5 0x6 0x9 0xA 0xB 0xC>;
+		remote-vmids = <2>;
+	};
+
+	virq1 {
+		index = <1>;
+		label = <0xD 0xE 0xF>;
+		remote-vmids = <3>;
 	};
 };
 

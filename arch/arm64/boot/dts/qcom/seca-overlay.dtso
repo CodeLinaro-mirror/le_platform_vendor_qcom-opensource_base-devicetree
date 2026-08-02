@@ -11,7 +11,6 @@
 #include "oot-dt-bindings/qcom-ipcc-sa8797p.h"
 #include "seca-vfio.dtsi"
 #include "seca-vms.dtsi"
-#include "seca-ddr-48gb-vms.dtsi"
 / {
 	model = "Qualcomm Technologies, Inc. SecaAU Rumi";
 	compatible = "qcom,secaau-rumi", "qcom,seca";
@@ -153,6 +152,10 @@
 	status = "okay";
 };
 
+&scmi43 {
+	status = "okay";
+};
+
 &scmi46 {
 	status = "okay";
 };
@@ -167,6 +170,12 @@
 
 &aop_scmi {
 	status = "okay";
+};
+
+&scmi43_pinctrl{
+	scmi43_gpio: gpio {
+		gpio-controller;
+	};
 };
 
 &soc {

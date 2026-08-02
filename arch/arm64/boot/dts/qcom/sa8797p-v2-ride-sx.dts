@@ -20,6 +20,7 @@
 
 &ethernet0 {
 	phy-mode = "10gbase-r";
+	switch-reset-detect-source = <&switch_reset_detect>;
 
 	fixed-link {
 		status = "okay";
@@ -31,6 +32,7 @@
 &ethernet1 {
 	status = "okay";
 	phy-mode = "10gbase-r";
+	switch-reset-detect-source = <&switch_reset_detect>;
 
 	fixed-link {
 		status = "okay";

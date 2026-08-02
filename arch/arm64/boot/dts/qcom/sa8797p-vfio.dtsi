@@ -32,7 +32,8 @@
 			  <0x0 0x19AA0000 0x0 0x2000>,
 			  <0x0 0x87ADA000 0x0 0x2000>,
 			  <0x0 0x01F97000 0x0 0x1000>,
-			  <0x0 0x87AE3000 0x0 0x2000>;
+			  <0x0 0x87AE3000 0x0 0x2000>,
+			  <0x0 0x17826000 0x0 0x1000>;
 		interrupts-extended = <&ipcc2 IPCC_COMPUTE_L1_SAIL0 1 IRQ_TYPE_LEVEL_HIGH>;
 	};
 
@@ -1543,5 +1544,11 @@
 		iommus = <&apps_smmu_0 0x1669 0x0>;
 		qcom,iommu-dma-addr-pool = <0x0 0x0 0x0 0xffffffff>;
 		dma-coherent;
+	};
+
+	umd_ipcc_err_handler@1fc0000 {
+		compatible = "qcom,vdev-device";
+		reg = <0x0 0x1fc0000 0x0 0x00040000>; /* IPCC_FUSA_ERR_BASE_ADDR */
+		interrupts = <GIC_SPI 336 IRQ_TYPE_LEVEL_HIGH>; /* IPCC_FUSA_IRQ: GIC hw ID 368 */
 	};
 };
