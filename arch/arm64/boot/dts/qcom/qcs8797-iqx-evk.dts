@@ -15,7 +15,7 @@
 / {
 	model = "Qualcomm Technologies, Inc. IQX EVK";
 	compatible = "qcom,qcs8797-iqx-evk";
-	qcom,msm-id = <689 0x20000>, <690 0x20000>;
+	qcom,msm-id = <689 0x20000>, <690 0x20000>, <798 0x20000>;
 	qcom,board-id = <0x06010025 6>;
 
 	aliases {
