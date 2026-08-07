@@ -427,3 +427,63 @@
 		clock-output-names = "tcan_clk40m";
 	};
 };
+
+&ccu_qup {
+	status = "disabled";
+};
+
+&ccu_gpi_dma0 {
+	status = "disabled";
+};
+
+&ccu_gpi_dma1 {
+	status = "disabled";
+};
+
+&ccu_qupv3_id_0 {
+	status = "disabled";
+};
+
+&ccu_qupv3_id_1 {
+	status = "disabled";
+};
+
+&ccu_i2c0 {
+	status = "disabled";
+};
+
+&ccu_i2c1 {
+	status = "disabled";
+};
+
+&ccu_i2c2 {
+	status = "disabled";
+};
+
+&ccu_i2c3 {
+	status = "disabled";
+};
+
+&ccu_i2c4 {
+	status = "disabled";
+};
+
+&ccu_i2c5 {
+	status = "disabled";
+};
+
+&ccu_i2c6 {
+	status = "disabled";
+};
+
+&ccu_i2c7 {
+	status = "disabled";
+};
+
+&ccu_i2c8 {
+	status = "disabled";
+};
+
+&ccu_i2c9 {
+	status = "disabled";
+};
