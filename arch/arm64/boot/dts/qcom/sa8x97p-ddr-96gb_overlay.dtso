@@ -6,13 +6,13 @@
 /dts-v1/;
 /plugin/;
 
-#include "sa8x97p-flex-ddr-32gb-vms.dtsi"
+#include "sa8x97p-ddr-96gb-vms.dtsi"
 
 / {
-	compatible = "qcom,sa8x97p-flex-ride-sx";
+	compatible = "qcom,sa8x97p-ride-sx", "qcom,sa8x97p-qam-ride-sx";
 };
 
 &non_ecc_heap_mem {
-	reg = <0xA 0x60000000 0x1 0x00000000>;
+	reg = <0x88 0x00000000 0x5 0x80000000>;
 	status = "okay";
 };

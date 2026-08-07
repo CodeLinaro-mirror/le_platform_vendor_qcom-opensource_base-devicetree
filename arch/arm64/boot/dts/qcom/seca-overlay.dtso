@@ -10,7 +10,8 @@
 #include "seca-dma-heaps.dtsi"
 #include "oot-dt-bindings/qcom-ipcc-sa8797p.h"
 #include "seca-vfio.dtsi"
-
+#include "seca-vms.dtsi"
+#include "seca-ddr-48gb-vms.dtsi"
 / {
 	model = "Qualcomm Technologies, Inc. SecaAU Rumi";
 	compatible = "qcom,secaau-rumi", "qcom,seca";
@@ -29,6 +30,38 @@
 };
 
 &{/reserved-memory} {
+	cma: linux,cma {
+		compatible = "shared-dma-pool";
+		alloc-ranges = <0x0 0x00000000 0x0 0xdfffffff>;
+		reusable;
+		alignment = <0x0 0x400000>;
+		size = <0x0 0x2000000>;
+		linux,cma-default;
+	};
+	qseecom_mem: qcom,qseecom {
+		compatible = "shared-dma-pool";
+		alloc-ranges = <0x0 0x00000000 0x0 0xffffffff>;
+		reusable;
+		alignment = <0x0 0x400000>;
+		size = <0x0 0x1400000>; /* 20M */
+	};
+
+	qseecom_ta_mem: qcom,qseecom-ta {
+		compatible = "shared-dma-pool";
+		alloc-ranges = <0x0 0x00000000 0x0 0xffffffff>;
+		reusable;
+		alignment = <0x0 0x400000>;
+		size = <0x0 0x1000000>; /* 16M */
+	};
+
+	tzcom_mem: qcom,tzcom {
+		compatible = "shared-dma-pool";
+		alloc-ranges = <0x0 0x00000000 0x0 0xffffffff>;
+		reusable;
+		alignment = <0x0 0x400000>;
+		size = <0x0 0x1400000>; /* 20M */
+	};
+
 	tz_start_count: tz_start_count {
 		reg = <0x0 0x146807f8 0x0 0x8>;
 		no-map;
@@ -45,6 +78,10 @@
 };
 
 &scmi2 {
+	status = "okay";
+};
+
+&scmi11 {
 	status = "okay";
 };
 
@@ -72,6 +109,14 @@
 	status = "okay";
 };
 
+&scmi24 {
+	status = "okay";
+};
+
+&scmi25 {
+	status = "okay";
+};
+
 &scmi27 {
 	status = "okay";
 };
@@ -84,11 +129,31 @@
 	status = "okay";
 };
 
+&scmi32 {
+       status = "okay";
+};
+
+&scmi33 {
+       status = "okay";
+};
+
+&scmi38 {
+	status = "okay";
+};
+
+&scmi39 {
+	status = "okay";
+};
+
 &scmi40 {
 	status = "okay";
 };
 
 &scmi41 {
+	status = "okay";
+};
+
+&scmi46 {
 	status = "okay";
 };
 
@@ -105,6 +170,19 @@
 };
 
 &soc {
+	mini_dump_mode {
+		compatible = "qcom,minidump";
+	};
+
+	dload_mode {
+		compatible = "qcom,dload-mode";
+	};
+
+	dload_type {
+		compatible = "qcom,msm-imem-dload-type";
+		reg = <0x0 0x1468001c 0x0 0x4>;
+	};
+
 	scmi_nsp0 {
 		compatible = "qcom,uscmi";
 
@@ -159,6 +237,24 @@
 		qcom,dev-name = "scmi_mdss1";
 	};
 
+	scmi_mdss0_safe {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi38_dvfs 0>;
+		power-domain-names = "perf";
+
+		qcom,dev-name = "scmi_mdss0_safe";
+	};
+
+	scmi_mdss1_safe {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi39_dvfs 0>;
+		power-domain-names = "perf";
+
+		qcom,dev-name = "scmi_mdss1_safe";
+	};
+
 	scmi_mdss0_secure {
 		compatible = "qcom,uscmi";
 
@@ -177,14 +273,35 @@
 		qcom,dev-name = "scmi_mdss1_secure";
 	};
 
+	scmi_emac1 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi8_pd 0>, <&scmi8_pd 1>, <&scmi8_dvfs 0>, <&scmi8_dvfs 1>;
+		power-domain-names = "emac_power", "emac_clock", "emac_perf", "perf_5g_serdes";
+
+		resets = <&scmi8_rst 0>, <&scmi8_rst 1>;
+		reset-names = "emac_reset", "serdes_reset";
+
+		qcom,no-suspend;
+		qcom,dev-name = "scmi_emac1";
+	};
+
 	scmi_camera {
 		compatible = "qcom,uscmi";
 
 		power-domains = <&scmi21_dvfs 0>;
-		power-domain-names = "perf_camera";
+        	power-domain-names = "perf_camera_0";
 
 		qcom,dev-name = "scmi_camera";
-	};
+		};
+	scmi_camera_ccu_clock {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi21_dvfs 1>;
+		power-domain-names = "perf_camera_1";
+
+		qcom,dev-name = "scmi_camera_ccu_clock";
+		};
 
 	scmi_camera_pdb0 {
 		compatible = "qcom,uscmi";
@@ -230,6 +347,15 @@
 
 		qcom,dev-name = "scmi_camera_pdb4";
 	};
+
+	scmi_camera_ipe_hw_ctrl {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi21_dvfs 7>;
+		power-domain-names = "perf_camera_7";
+
+		qcom,dev-name = "scmi_camera_ipe_hw_ctrl";
+        };
 
 	scmi_dprx0 {
 		compatible = "qcom,uscmi";
@@ -308,6 +434,66 @@
 		qcom,dev-name = "scmi_usb2_phy2";
 	};
 
+	scmi_uart14 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi11_pd 14>, <&scmi11_dvfs 14>;
+		power-domain-names = "power", "perf";
+
+		qcom,dev-name = "scmi_uart14";
+	};
+
+	scmi_uart17 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi11_pd 17>, <&scmi11_dvfs 17>;
+		power-domain-names = "power", "perf";
+
+		qcom,dev-name = "scmi_uart17";
+	};
+
+	scmi_pcie2 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi32_pd 0>, <&scmi63_pd 0>;
+		power-domain-names = "power", "dummy";
+		qcom,no-suspend;
+		qcom,dev-name = "scmi_pcie2";
+	};
+
+	scmi_pcie3 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi33_pd 0>, <&scmi63_pd 0>;
+		power-domain-names = "power", "dummy";
+		qcom,no-suspend;
+		qcom,dev-name = "scmi_pcie3";
+	};
+
+	scmi_bluetooth {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi25_pd 0>, <&scmi25_pd 1>;
+		power-domain-names = "power_regulator", "power_gpio";
+		qcom,dev-name = "scmi_bluetooth";
+	};
+
+	scmi_bluetooth1 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi46_pd 0>, <&scmi46_pd 1>;
+		power-domain-names = "power_regulator", "power_gpio";
+		qcom,dev-name = "scmi_bluetooth1";
+	};
+
+	scmi_wlan {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi24_pd 0>, <&scmi24_pd 1>;
+		power-domain-names = "power_regulator", "power_gpio";
+		qcom,dev-name = "scmi_wlan";
+	};
+
 	scmi_soccp {
 		compatible = "qcom,uscmi";
 
@@ -353,6 +539,21 @@
 	kiumd {
 		compatible = "qcom,kiumd";
 		qcom,dev-name = "kiumd";
+		status = "ok";
+	};
+
+	qcom_tzlog: tz-log@14680720 {
+		compatible = "qcom,tz-log";
+		reg = <0x0 0x14680720 0x0 0x3000>;
+		qcom,hyplog-enabled;
+		hyplog-address-offset = <0x410>;
+		hyplog-size-offset = <0x414>;
+		tmecrashdump-address-offset = <0x87000000>;
+	};
+
+	scm_user_intf_sec_device {
+		compatible = "qcom,scm-user-intf-sec";
+		memory-region = <&tzcom_mem>;
 		status = "ok";
 	};
 };

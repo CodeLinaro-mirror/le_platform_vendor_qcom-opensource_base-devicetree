@@ -54,8 +54,6 @@
 		power-domain-names = "power_core", "power_mdio", "perf_serdes", "perf_5g_serdes";
 
 		snps,tso;
-		phy-mode = "usxgmii";
-		phy-handle = <&usxsgmii_phy0>;
 
 		snps,pbl = <0x10>;
 		dma-coherent;
@@ -176,23 +174,6 @@
 
 			queue9 {
 				snps,dcb-algorithm;
-			};
-		};
-
-		mdio {
-			compatible = "snps,dwmac-mdio";
-			#address-cells = <1>;
-			#size-cells = <0>;
-
-			usxsgmii_phy0: phy@0 {
-				compatible = "ethernet-phy-id31c3.1c12";
-				reg = <0x0>;
-				device_type = "ethernet-phy";
-				interrupts-extended = <&tlmm 45 IRQ_TYPE_EDGE_FALLING>;
-				resets = <&scmi7_rst 0>;
-				reset-names = "phy";
-				reset-assert-us = <100000>;
-				reset-deassert-us = <100000>;
 			};
 		};
 
