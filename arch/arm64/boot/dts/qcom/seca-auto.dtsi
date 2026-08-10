@@ -174,7 +174,7 @@
 				type = "passive";
 			};
 
-			trip1 {
+			kai_e_trip1: trip1 {
 				temperature = <115000>;
 				hysteresis = <5000>;
 				type = "passive";
@@ -194,7 +194,7 @@
 				type = "passive";
 			};
 
-			trip1 {
+			kai_h_trip1: trip1 {
 				temperature = <115000>;
 				hysteresis = <5000>;
 				type = "passive";
@@ -214,7 +214,7 @@
 				type = "passive";
 			};
 
-			trip1 {
+			kai_i_trip1: trip1 {
 				temperature = <115000>;
 				hysteresis = <5000>;
 				type = "passive";
@@ -234,7 +234,7 @@
 				type = "passive";
 			};
 
-			trip1 {
+			kai_j_trip1: trip1 {
 				temperature = <115000>;
 				hysteresis = <5000>;
 				type = "passive";
@@ -254,7 +254,7 @@
 				type = "passive";
 			};
 
-			trip1 {
+			kai_k_trip1: trip1 {
 				temperature = <115000>;
 				hysteresis = <5000>;
 				type = "passive";
@@ -274,7 +274,7 @@
 				type = "passive";
 			};
 
-			kai_j_trip1: trip1 {
+			kai_l_trip1: trip1 {
 				temperature = <115000>;
 				hysteresis = <5000>;
 				type = "passive";
