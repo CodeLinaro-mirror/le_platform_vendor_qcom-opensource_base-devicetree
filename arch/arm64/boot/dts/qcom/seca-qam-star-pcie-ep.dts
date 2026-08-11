@@ -6,6 +6,7 @@
 /dts-v1/;
 
 #include "seca.dtsi"
+#include "seca-safe.dtsi"
 
 / {
 	model = "Qualcomm Technologies, Inc. SECA QAM STAR PCIe EP";

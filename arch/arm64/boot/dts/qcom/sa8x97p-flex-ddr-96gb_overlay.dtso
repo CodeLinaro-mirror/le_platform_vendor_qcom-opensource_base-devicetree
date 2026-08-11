@@ -9,5 +9,10 @@
 #include "sa8x97p-flex-ddr-96gb-vms.dtsi"
 
 / {
-	compatible = "qcom,sa8x97p-flex-ride-sx";
+	compatible = "qcom,sa8x97p-flex-adp-star", "qcom,sa8x97p-flex-ride-sx";
+};
+
+&non_ecc_heap_mem {
+	reg = <0x8C 0x80000000 0x1 0x00000000>;
+	status = "okay";
 };

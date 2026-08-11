@@ -6,6 +6,7 @@
 /dts-v1/;
 
 #include "seca.dtsi"
+#include "seca-safe.dtsi"
 
 / {
 	model = "Qualcomm Technologies, Inc. SECA SAFE IVI RIDE-SX";
@@ -17,12 +18,16 @@
 &pcie0 {
 	power-domains = <&scmi5_pd 0>;
 	power-domain-names = "power";
+	rasdp-off = <0x39C>;
+	safety-supported;
 	status = "okay";
 };
 
 &pcie1 {
 	power-domains = <&scmi6_pd 0>;
 	power-domain-names = "power";
+	rasdp-off = <0x384>;
+	safety-supported;
 	status = "okay";
 };
 
@@ -34,4 +39,18 @@
 		speed = <10000>;
 		full-duplex;
 	};
+};
+
+&pcie2 {
+	power-domains = <&scmi32_pd 0>;
+	power-domain-names = "power";
+	rasdp-off = <0x384>;
+	safety-supported;
+};
+
+&pcie3 {
+	power-domains = <&scmi33_pd 0>;
+	power-domain-names = "power";
+	rasdp-off = <0x384>;
+	safety-supported;
 };

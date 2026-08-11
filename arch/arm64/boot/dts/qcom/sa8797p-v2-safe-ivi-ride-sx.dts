@@ -18,8 +18,14 @@
 	qcom,sku-id = <0x200>;
 };
 
+&eth_switch_monitor {
+	status = "okay";
+	qcom,dbl-label = <0x10>;
+};
+
 &ethernet0 {
 	phy-mode = "10gbase-r";
+	switch-reset-detect-source = <&switch_reset_detect>;
 
 	fixed-link {
 		status = "okay";
@@ -31,11 +37,29 @@
 &pcie0 {
 	power-domains = <&scmi5_pd 0>;
 	power-domain-names = "power";
+	rasdp-off = <0x43C>;
+	safety-supported;
 	status = "okay";
 };
 
 &pcie1 {
 	power-domains = <&scmi6_pd 0>;
 	power-domain-names = "power";
+	rasdp-off = <0x39C>;
+	safety-supported;
 	status = "okay";
+};
+
+&pcie2 {
+	power-domains = <&scmi32_pd 0>;
+	power-domain-names = "power";
+	rasdp-off = <0x384>;
+	safety-supported;
+};
+
+&pcie3 {
+	power-domains = <&scmi33_pd 0>;
+	power-domain-names = "power";
+	rasdp-off = <0x37C>;
+	safety-supported;
 };

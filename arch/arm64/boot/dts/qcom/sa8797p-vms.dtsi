@@ -36,7 +36,8 @@
 		reg = <0x0 0xAF81000 0x0 0x10000>,
 		      <0x0 0xAFA5000 0x0 0x10000>,
 		      <0x0 0x8D81000 0x0 0x10000>,
-		      <0x0 0x8DA5000 0x0 0x10000>;
+		      <0x0 0x8DA5000 0x0 0x10000>,
+		      <0x0 0x931B000 0x0 0x2000>;
 	};
 
 	auto_vm: qcom,auto_vm@B60000000 {
@@ -875,28 +876,28 @@
 		gunyah-label = <0x50>;
 	};
 
-	vm_cp_bitstream: vm_cp_bitstream@B7D000000 {
+	vm_0_cp_bitstream: vm_0_cp_bitstream@B7D000000 {
 		no-map;
 		reg = <0xB 0x7D000000 0x0 0x8000000>;
 		gunyah-label = <0xC09>;
 		qcom,is-phantom;
 	};
 
-	vm_cp_pixel: vm_cp_pixel@B85000000 {
+	vm_0_cp_pixel: vm_0_cp_pixel@B85000000 {
 		no-map;
 		reg = <0xB 0x85000000 0x0 0x19000000>;
 		gunyah-label = <0xC0A>;
 		qcom,is-phantom;
 	};
 
-	vm_cp_nonpixel: vm_cp_nonpixel@B9E000000 {
+	vm_0_cp_nonpixel: vm_0_cp_nonpixel@B9E000000 {
 		no-map;
 		reg = <0xB 0x9E000000 0x0 0x8000000>;
 		gunyah-label = <0xC0B>;
 		qcom,is-phantom;
 	};
 
-	vm_cp_b_pt_mem: vm_cp_b_pt_region@BA6000000 {
+	vm_0_cp_b_pt_mem: vm_0_cp_b_pt_region@BA6000000 {
 		no-map;
 		reg = <0xB 0xA6000000 0x0 0x1000000>;
 		qcom,dst-vmids = <AC_VM_CP_B>;
@@ -904,7 +905,7 @@
 		gunyah-label = <0x9A>;
 	};
 
-	vm_cp_p_pt_mem: vm_cp_p_pt_region@BA7000000 {
+	vm_0_cp_p_pt_mem: vm_0_cp_p_pt_region@BA7000000 {
 		no-map;
 		reg = <0xB 0xA7000000 0x0 0x1000000>;
 		qcom,dst-vmids = <AC_VM_CP_P>;
@@ -912,7 +913,7 @@
 		gunyah-label = <0x9B>;
 	};
 
-	vm_cp_np_pt_mem: vm_cp_np_pt_region@BA8000000 {
+	vm_0_cp_np_pt_mem: vm_0_cp_np_pt_region@BA8000000 {
 		no-map;
 		reg = <0xB 0xA8000000 0x0 0x1000000>;
 		qcom,dst-vmids = <AC_VM_CP_NP>;
@@ -930,7 +931,14 @@
 	hab: qcom,hab {
 		compatible = "qcom,hab";
 		vmid = <0>;
-		virt-irq = <0x4 0x5 0x6>;
+
+		virqgrp: virqgrp {
+			virq0: virq0 {
+				index = <0>;
+				label = <0x5 0x6 0x9 0xA 0xB 0xC>;
+				remote-vmids = <2>;
+			};
+		};
 
 		mmidgrp100: mmidgrp100 {
 			grp-start-id = <100>;
