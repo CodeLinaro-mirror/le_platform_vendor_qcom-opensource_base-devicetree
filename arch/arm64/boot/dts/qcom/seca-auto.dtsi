@@ -101,6 +101,10 @@
 	status = "okay";
 };
 
+&uart4 {
+	status = "okay";
+};
+
 &qupv3_id_1 {
 	status = "okay";
 };
