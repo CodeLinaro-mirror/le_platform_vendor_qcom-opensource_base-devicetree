@@ -192,6 +192,11 @@
 		reg = <0x0 0x1468001c 0x0 0x4>;
 	};
 
+	kaslr_store {
+		compatible = "qcom,kaslr-off-store";
+		reg = <0x0 0x146d86d0 0x0 0xc>;
+	};
+
 	scmi_nsp0 {
 		compatible = "qcom,uscmi";
 
