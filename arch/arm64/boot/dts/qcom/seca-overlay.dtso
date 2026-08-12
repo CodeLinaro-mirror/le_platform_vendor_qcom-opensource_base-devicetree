@@ -372,6 +372,9 @@
 		power-domains = <&scmi27_dvfs 0>;
 		power-domain-names = "perf";
 
+		resets = <&scmi27_rst 0>;
+		reset-names = "dpr0_reset";
+
 		qcom,dev-name = "scmi_dprx0";
 	};
 
@@ -515,8 +518,8 @@
 	scmi_gpce {
 		compatible = "qcom,uscmi";
 
-		power-domains = <&scmi30_dvfs 0>, <&scmi30_dvfs 1>;
-		power-domain-names = "gpce_core0", "gpce_core1";
+		power-domains = <&scmi30_dvfs 0>, <&scmi30_dvfs 1>, <&scmi30_dvfs 2>;
+		power-domain-names = "gpce_core0", "gpce_core1", "gpce_core2";
 
 		qcom,dev-name = "scmi_gpce";
 	};
