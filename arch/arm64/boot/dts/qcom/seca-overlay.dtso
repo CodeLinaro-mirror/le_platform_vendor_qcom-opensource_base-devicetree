@@ -178,7 +178,20 @@
 	};
 };
 
+&scmi4 {
+        status = "okay";
+};
+
 &soc {
+        scmi_ufs2 {
+                compatible = "qcom,uscmi";
+
+                power-domains = <&scmi4_pd 0>;
+                power-domain-names = "power";
+
+                qcom,dev-name = "scmi_ufs2";
+        };
+
 	mini_dump_mode {
 		compatible = "qcom,minidump";
 	};
@@ -190,6 +203,11 @@
 	dload_type {
 		compatible = "qcom,msm-imem-dload-type";
 		reg = <0x0 0x1468001c 0x0 0x4>;
+	};
+
+	kaslr_store {
+		compatible = "qcom,kaslr-off-store";
+		reg = <0x0 0x146d86d0 0x0 0xc>;
 	};
 
 	scmi_nsp0 {
