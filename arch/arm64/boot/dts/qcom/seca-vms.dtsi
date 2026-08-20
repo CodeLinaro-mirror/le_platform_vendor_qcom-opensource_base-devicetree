@@ -4,6 +4,7 @@
  */
 
 #include "oot-dt-bindings/qcom-shmem-sa8797p.h"
+#include "seca-vms-uscmi.dtsi"
 
 &soc {
 	auto_vm: qcom,auto_vm@B60000000 {
