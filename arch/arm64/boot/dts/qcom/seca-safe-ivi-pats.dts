@@ -10,9 +10,9 @@
 #include "seca-safe.dtsi"
 
 / {
-	model = "Qualcomm Technologies, Inc. SECA SAFE-IVI QAM PATS";
+	model = "Qualcomm Technologies, Inc. SECA SAFE-IVI PATS";
 	compatible = "qcom,safe-ivi", "qcom,seca";
-	qcom,board-id = <0x2010025 2>;
+	qcom,board-id = <0x2010025 2>, <0x02010019 2>;
 	qcom,sku-id = <0x200>;
 
 	aliases {
