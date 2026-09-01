@@ -331,6 +331,15 @@
 		qcom,dev-name = "scmi_camera_ipe_hw_ctrl";
         };
 
+	scmi_camera_common_resource {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi21_dvfs 8>;
+		power-domain-names = "perf_camera_common_resource";
+
+		qcom,dev-name = "scmi_camera_common_resource";
+	};
+
 	scmi_dprx0 {
 		compatible = "qcom,uscmi";
 
