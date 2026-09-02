@@ -9,9 +9,9 @@
 #include "seca-pats.dtsi"
 
 / {
-	model = "Qualcomm Technologies, Inc. SECA NON-SAFE QAM PATS";
+	model = "Qualcomm Technologies, Inc. SECA NON-SAFE PATS";
 	compatible = "qcom,non-safe-ivi", "qcom,seca";
-	qcom,board-id = <0x2010025 2>;
+	qcom,board-id = <0x2010025 2>, <0x02010019 2>;
 
 	aliases {
 		spi14 = &spi14;
