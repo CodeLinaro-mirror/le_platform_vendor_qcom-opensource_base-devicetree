@@ -41,6 +41,10 @@
 	status = "okay";
 };
 
+&scmi45 {
+	status = "okay";
+};
+
 &scmi46 {
 	status = "okay";
 };
@@ -139,6 +143,14 @@
 		power-domains = <&scmi24_pd 0>, <&scmi24_pd 1>;
 		power-domain-names = "power_regulator", "power_gpio";
 		qcom,dev-name = "scmi_wlan";
+	};
+
+	scmi_wlan1 {
+		compatible = "qcom,uscmi";
+
+		power-domains = <&scmi45_pd 0>, <&scmi45_pd 1>;
+		power-domain-names = "power_regulator", "power_gpio";
+		qcom,dev-name = "scmi_wlan1";
 	};
 
 	scmi_usb1 {
