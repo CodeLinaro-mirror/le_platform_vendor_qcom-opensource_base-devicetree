@@ -28,6 +28,11 @@
 		compatible = "qcom,nhlos-logs-io", "qcom,nhlos-logs";
 		memory-region = <&tz_end_count>;
 	};
+
+	cpucp_log {
+		compatible = "qcom,nhlos-logs-mem", "qcom,nhlos-logs";
+		memory-region = <&cpucp_nlog>;
+	};
 };
 
 &{/reserved-memory} {
@@ -70,6 +75,11 @@
 
 	tz_end_count: tz_end_count {
 		reg = <0x0 0x146807dc 0x0 0x8>;
+		no-map;
+	};
+
+	cpucp_nlog: cpucp_log_buf {
+		reg = <0x0 0x84010000 0x0 0x20000>;
 		no-map;
 	};
 
