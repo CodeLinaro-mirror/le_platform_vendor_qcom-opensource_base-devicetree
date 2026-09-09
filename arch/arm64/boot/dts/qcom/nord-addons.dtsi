@@ -1,0 +1,707 @@
+// SPDX-License-Identifier: BSD-3-Clause
+/*
+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+ */
+
+#include <dt-bindings/interrupt-controller/arm-gic.h>
+#include <dt-bindings/dma/qcom-gpi.h>
+
+&soc {
+	ipcc1: mailbox@90c5000 {
+		compatible = "qcom,sa8797p-ipcc", "qcom,ipcc";
+		reg = <0x0 0x90c5000 0x0 0x1000>;
+		interrupts = <GIC_SPI 230 IRQ_TYPE_LEVEL_HIGH>;
+		interrupt-controller;
+		#interrupt-cells = <3>;
+		#mbox-cells = <2>;
+	};
+
+	ipcc2: mailbox@9185000 {
+		compatible = "qcom,sa8797p-ipcc", "qcom,ipcc";
+		reg = <0x0 0x9185000 0x0 0x1000>;
+		interrupts = <GIC_SPI 231 IRQ_TYPE_LEVEL_HIGH>;
+		interrupt-controller;
+		#interrupt-cells = <3>;
+		#mbox-cells = <2>;
+	};
+
+
+	gpi_dma2: dma-controller@800000 {
+			compatible = "qcom,sa8797-gpi-dma";
+			#dma-cells = <3>;
+			reg = <0x0 0x800000 0x0 0x60000>;
+			#address-cells = <2>;
+			#size-cells = <2>;
+			interrupts = <GIC_SPI 588 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 589 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 590 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 591 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 592 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 593 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 594 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 595 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 596 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 597 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 359 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 360 IRQ_TYPE_LEVEL_HIGH>;
+			dma-channels = <12>;
+			dma-channel-mask = <0xfff>;
+			iommus = <&apps_smmu_0 0x15b6 0x0>;
+			status = "disabled";
+		};
+
+		gpi_dma0: dma-controller@900000 {
+			compatible = "qcom,sa8797-gpi-dma";
+			#dma-cells = <3>;
+			reg = <0x0 0x900000 0x0 0x60000>;
+			#address-cells = <2>;
+			#size-cells = <2>;
+			interrupts = <GIC_SPI 116 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 205 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 121 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 207 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 119 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 219 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 220 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 222 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 223 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 117 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 118 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 120 IRQ_TYPE_LEVEL_HIGH>;
+			dma-channels = <12>;
+			dma-channel-mask = <0xfff>;
+			iommus = <&apps_smmu_2 0x1016 0x0>;
+			status = "disabled";
+		};
+
+		gpi_dma1: dma-controller@a00000 {
+			compatible = "qcom,sa8797-gpi-dma";
+			#dma-cells = <3>;
+			reg = <0x0 0xa00000 0x0 0x60000>;
+			#address-cells = <2>;
+			#size-cells = <2>;
+			interrupts = <GIC_SPI 279 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 280 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 281 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 282 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 283 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 284 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 293 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 294 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 295 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 296 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 297 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 298 IRQ_TYPE_LEVEL_HIGH>;
+			dma-channels = <12>;
+			dma-channel-mask = <0xfff>;
+			iommus = <&apps_smmu_2 0x1056 0x0>;
+			status = "disabled";
+		};
+
+			ccu_gpi_dma0: dma-controller0@9b56000 {
+				compatible = "qcom,sa8797-ccu-gpi-dma";
+				#dma-cells = <5>;
+				reg = <0x0 0x009b56000 0x0 0x30000>;
+				dma-channels = <15>;
+				dma-channel-mask = <0x7fff>;
+				static-gpii-mask = <0x7fff>;
+				iommus = <&apps_smmu_2 0x1480 0x0>;
+				dma-coherent;
+				status = "disabled";
+			};
+
+			ccu_qupv3_id_0: geniqup@9b96000 {
+				compatible = "qcom,sa8797p-geni-se-qup";
+				reg = <0x0 0x9b96000 0x0 0x1000>;
+				#address-cells = <2>;
+				#size-cells = <2>;
+				iommus = <&apps_smmu_2 0x1480 0x0>;
+				dma-coherent;
+				ranges;
+				status = "disabled";
+
+				ccu_i2c0: i2c@9b86000 {
+					compatible = "qcom,sa8797p-geni-i2c-ccu";
+					reg = <0x0 0x9b86000 0x0 0x2000>;
+					dmas = <&ccu_gpi_dma0 0 0 QCOM_GPI_I2C 1 512>,
+					       <&ccu_gpi_dma0 1 0 QCOM_GPI_I2C 1 512>,
+					       <&ccu_gpi_dma0 0 0 QCOM_GPI_I2C 2 512>,
+					       <&ccu_gpi_dma0 1 0 QCOM_GPI_I2C 2 512>,
+					       <&ccu_gpi_dma0 0 0 QCOM_GPI_I2C 3 512>,
+					       <&ccu_gpi_dma0 1 0 QCOM_GPI_I2C 3 512>;
+					dma-names = "tx",
+						    "rx",
+						    "tx1",
+						    "rx1",
+						    "tx2",
+						    "rx2";
+					power-domains = <&scmi9_pd 22>;
+					status = "disabled";
+				};
+
+				ccu_i2c1: i2c@9b88000 {
+					compatible = "qcom,sa8797p-geni-i2c-ccu";
+					reg = <0x0 0x9b88000 0x0 0x2000>;
+					dmas = <&ccu_gpi_dma0 0 1 QCOM_GPI_I2C 4 512>,
+					       <&ccu_gpi_dma0 1 1 QCOM_GPI_I2C 4 512>,
+					       <&ccu_gpi_dma0 0 1 QCOM_GPI_I2C 5 512>,
+					       <&ccu_gpi_dma0 1 1 QCOM_GPI_I2C 5 512>,
+					       <&ccu_gpi_dma0 0 1 QCOM_GPI_I2C 6 512>,
+					       <&ccu_gpi_dma0 1 1 QCOM_GPI_I2C 6 512>;
+					dma-names = "tx",
+						    "rx",
+						    "tx1",
+						    "rx1",
+						    "tx2",
+						    "rx2";
+					power-domains = <&scmi9_pd 23>;
+					status = "disabled";
+				};
+
+				ccu_i2c2: i2c@9b8a000 {
+					compatible = "qcom,sa8797p-geni-i2c-ccu";
+					reg = <0x0 0x9b8a000 0x0 0x2000>;
+					dmas = <&ccu_gpi_dma0 0 2 QCOM_GPI_I2C 7 512>,
+					       <&ccu_gpi_dma0 1 2 QCOM_GPI_I2C 7 512>,
+					       <&ccu_gpi_dma0 0 2 QCOM_GPI_I2C 8 512>,
+					       <&ccu_gpi_dma0 1 2 QCOM_GPI_I2C 8 512>,
+					       <&ccu_gpi_dma0 0 2 QCOM_GPI_I2C 9 512>,
+					       <&ccu_gpi_dma0 1 2 QCOM_GPI_I2C 9 512>;
+					dma-names = "tx",
+						    "rx",
+						    "tx1",
+						    "rx1",
+						    "tx2",
+						    "rx2";
+					power-domains = <&scmi9_pd 24>;
+					status = "disabled";
+				};
+
+				ccu_i2c3: i2c@9b8c000 {
+					compatible = "qcom,sa8797p-geni-i2c-ccu";
+					reg = <0x0 0x9b8c000 0x0 0x2000>;
+					dmas = <&ccu_gpi_dma0 0 3 QCOM_GPI_I2C 10 512>,
+					       <&ccu_gpi_dma0 1 3 QCOM_GPI_I2C 10 512>,
+					       <&ccu_gpi_dma0 0 3 QCOM_GPI_I2C 11 512>,
+					       <&ccu_gpi_dma0 1 3 QCOM_GPI_I2C 11 512>,
+					       <&ccu_gpi_dma0 0 3 QCOM_GPI_I2C 12 512>,
+					       <&ccu_gpi_dma0 1 3 QCOM_GPI_I2C 12 512>;
+					dma-names = "tx",
+						    "rx",
+						    "tx1",
+						    "rx1",
+						    "tx2",
+						    "rx2";
+					power-domains = <&scmi9_pd 25>;
+					status = "disabled";
+				};
+
+				ccu_i2c4: i2c@9b8e000 {
+					compatible = "qcom,sa8797p-geni-i2c-ccu";
+					reg = <0x0 0x9b8e000 0x0 0x2000>;
+					dmas = <&ccu_gpi_dma0 0 4 QCOM_GPI_I2C 13 512>,
+					       <&ccu_gpi_dma0 1 4 QCOM_GPI_I2C 13 512>,
+					       <&ccu_gpi_dma0 0 4 QCOM_GPI_I2C 14 512>,
+					       <&ccu_gpi_dma0 1 4 QCOM_GPI_I2C 14 512>,
+					       <&ccu_gpi_dma0 0 4 QCOM_GPI_I2C 15 512>,
+					       <&ccu_gpi_dma0 1 4 QCOM_GPI_I2C 15 512>;
+					dma-names = "tx",
+						    "rx",
+						    "tx1",
+						    "rx1",
+						    "tx2",
+						    "rx2";
+					power-domains = <&scmi9_pd 26>;
+					status = "disabled";
+				};
+			};
+
+			ccu_gpi_dma1: dma-controller1@9bd6000 {
+				compatible = "qcom,sa8797-ccu-gpi-dma";
+				#dma-cells = <5>;
+				reg = <0x0 0x009bd6000 0x0 0x30000>;
+				dma-channels = <15>;
+				dma-channel-mask = <0x7fff>;
+				static-gpii-mask = <0x7fff>;
+				iommus = <&apps_smmu_2 0x1480 0x0>;
+				dma-coherent;
+				status = "disabled";
+			};
+
+			ccu_qupv3_id_1: geniqup@9c16000 {
+				compatible = "qcom,sa8797p-geni-se-qup";
+				reg = <0x0 0x9c16000 0x0 0x1000>;
+				#address-cells = <2>;
+				#size-cells = <2>;
+				iommus = <&apps_smmu_2 0x1480 0x0>;
+				dma-coherent;
+				ranges;
+				status = "disabled";
+
+				ccu_i2c5: i2c@9c06000 {
+					compatible = "qcom,sa8797p-geni-i2c-ccu";
+					reg = <0x0 0x9c06000 0x0 0x2000>;
+					dmas = <&ccu_gpi_dma1 0 0 QCOM_GPI_I2C 1 512>,
+					       <&ccu_gpi_dma1 1 0 QCOM_GPI_I2C 1 512>,
+					       <&ccu_gpi_dma1 0 0 QCOM_GPI_I2C 2 512>,
+					       <&ccu_gpi_dma1 1 0 QCOM_GPI_I2C 2 512>,
+					       <&ccu_gpi_dma1 0 0 QCOM_GPI_I2C 3 512>,
+					       <&ccu_gpi_dma1 1 0 QCOM_GPI_I2C 3 512>;
+					dma-names = "tx",
+						    "rx",
+						    "tx1",
+						    "rx1",
+						    "tx2",
+						    "rx2";
+					power-domains = <&scmi9_pd 27>;
+					status = "disabled";
+				};
+
+				ccu_i2c6: i2c@9c08000 {
+					compatible = "qcom,sa8797p-geni-i2c-ccu";
+					reg = <0x0 0x9c08000 0x0 0x2000>;
+					dmas = <&ccu_gpi_dma1 0 1 QCOM_GPI_I2C 4 512>,
+					       <&ccu_gpi_dma1 1 1 QCOM_GPI_I2C 4 512>,
+					       <&ccu_gpi_dma1 0 1 QCOM_GPI_I2C 5 512>,
+					       <&ccu_gpi_dma1 1 1 QCOM_GPI_I2C 5 512>,
+					       <&ccu_gpi_dma1 0 1 QCOM_GPI_I2C 6 512>,
+					       <&ccu_gpi_dma1 1 1 QCOM_GPI_I2C 6 512>;
+					dma-names = "tx",
+						    "rx",
+						    "tx1",
+						    "rx1",
+						    "tx2",
+						    "rx2";
+					power-domains = <&scmi9_pd 28>;
+					status = "disabled";
+				};
+
+				ccu_i2c7: i2c@9c0a000 {
+					compatible = "qcom,sa8797p-geni-i2c-ccu";
+					reg = <0x0 0x9c0a000 0x0 0x2000>;
+					dmas = <&ccu_gpi_dma1 0 2 QCOM_GPI_I2C 7 512>,
+					       <&ccu_gpi_dma1 1 2 QCOM_GPI_I2C 7 512>,
+					       <&ccu_gpi_dma1 0 2 QCOM_GPI_I2C 8 512>,
+					       <&ccu_gpi_dma1 1 2 QCOM_GPI_I2C 8 512>,
+					       <&ccu_gpi_dma1 0 2 QCOM_GPI_I2C 9 512>,
+					       <&ccu_gpi_dma1 1 2 QCOM_GPI_I2C 9 512>;
+					dma-names = "tx",
+						    "rx",
+						    "tx1",
+						    "rx1",
+						    "tx2",
+						    "rx2";
+					power-domains = <&scmi9_pd 29>;
+					status = "disabled";
+				};
+
+				ccu_i2c8: i2c@9c0c000 {
+					compatible = "qcom,sa8797p-geni-i2c-ccu";
+					reg = <0x0 0x9c0c000 0x0 0x2000>;
+					dmas = <&ccu_gpi_dma1 0 3 QCOM_GPI_I2C 10 512>,
+					       <&ccu_gpi_dma1 1 3 QCOM_GPI_I2C 10 512>,
+					       <&ccu_gpi_dma1 0 3 QCOM_GPI_I2C 11 512>,
+					       <&ccu_gpi_dma1 1 3 QCOM_GPI_I2C 11 512>,
+					       <&ccu_gpi_dma1 0 3 QCOM_GPI_I2C 12 512>,
+					       <&ccu_gpi_dma1 1 3 QCOM_GPI_I2C 12 512>;
+					dma-names = "tx",
+						    "rx",
+						    "tx1",
+						    "rx1",
+						    "tx2",
+						    "rx2";
+					power-domains = <&scmi9_pd 30>;
+					status = "disabled";
+				};
+
+				ccu_i2c9: i2c@9c0e000 {
+					compatible = "qcom,sa8797p-geni-i2c-ccu";
+					reg = <0x0 0x9c0e000 0x0 0x2000>;
+					dmas = <&ccu_gpi_dma1 0 4 QCOM_GPI_I2C 13 512>,
+					       <&ccu_gpi_dma1 1 4 QCOM_GPI_I2C 13 512>,
+					       <&ccu_gpi_dma1 0 4 QCOM_GPI_I2C 14 512>,
+					       <&ccu_gpi_dma1 1 4 QCOM_GPI_I2C 14 512>,
+					       <&ccu_gpi_dma1 0 4 QCOM_GPI_I2C 15 512>,
+					       <&ccu_gpi_dma1 1 4 QCOM_GPI_I2C 15 512>;
+					dma-names = "tx",
+						    "rx",
+						    "tx1",
+						    "rx1",
+						    "tx2",
+						    "rx2";
+					power-domains = <&scmi9_pd 31>;
+					status = "disabled";
+				};
+			};
+
+		qupv3_id_3: geniqup@cc0000 {
+			compatible = "qcom,sa8797p-geni-se-qup";
+			reg = <0x0 0xcc0000 0x0 0x2000>;
+			#address-cells = <2>;
+			#size-cells = <2>;
+			iommus = <&apps_smmu_0 0x1063 0x0>;
+			ranges;
+			status = "disabled";
+
+			i2c21: i2c@c80000 {
+				compatible = "qcom,sa8797p-geni-i2c";
+				reg = <0x0 0xc80000 0x0 0x4000>;
+				interrupts = <GIC_SPI 312 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi9_pd 21>;
+				status = "disabled";
+			};
+
+			spi21: spi@c80000 {
+				compatible = "qcom,sa8797p-geni-spi";
+				reg = <0x0 0xc80000 0x0 0x4000>;
+				interrupts = <GIC_SPI 312 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi10_pd 21>, <&scmi10_dvfs 21>;
+				power-domain-names = "power", "perf";
+				status = "disabled";
+			};
+
+			uart21: serial@c80000 {
+				compatible = "qcom,sa8797p-geni-uart";
+				reg = <0x0 0xc80000 0x0 0x4000>;
+				interrupts = <GIC_SPI 312 IRQ_TYPE_LEVEL_HIGH>;
+				power-domains = <&scmi11_pd 21>, <&scmi11_dvfs 21>;
+				power-domain-names = "power", "perf";
+				status = "disabled";
+			};
+		};
+
+		sdhc_4: sdhci@00b84000 {
+			compatible = "qcom,sa7255-sdhci";
+
+			reg = <0x00b84000 0x1000>;
+			reg-names = "hc";
+
+			interrupts = <GIC_SPI 261 IRQ_TYPE_LEVEL_HIGH>,
+			<GIC_SPI 227 IRQ_TYPE_LEVEL_HIGH>;
+			interrupt-names = "hc_irq", "pwr_irq";
+
+			bus-width = <4>;
+
+			no-sd;
+			no-mmc;
+			non-removable;
+
+			qcom,restore-after-cx-collapse;
+
+			cap-sd-highspeed;
+			no-1-8-v;
+			max-frequency = <100000000>;
+
+			memory-region = <&sdhc_4_dma_resv>;
+			iommus = <&apps_smmu_0 0x1580 0x0>;
+			qcom,iommu-dma = "fastmap";
+			dma-coherent;
+
+			power-domains = <&scmi34_pd 0>, <&scmi34_dvfs 0>;
+			power-domain-names = "power", "perf";
+			status = "disabled";
+		};
+
+		dcc: dma@100ff000 {
+			compatible = "qcom,sa8797p-dcc", "qcom,dcc-v3";
+			#address-cells = <2>;
+			#size-cells = <2>;
+			reg = <0x0 0x100ff000 0x0 0x1000>,
+				<0x0 0x10080000 0x0 0x6000>;
+			qcom,dcc-offset = <0>;
+		};
+
+		qcom,msm-imem@14680000 {
+			compatible = "qcom,msm-imem";
+			reg = <0x0 0x14680000 0x0 0x1000>;
+			ranges = <0x0 0x0 0x14680000 0x1000>;
+			#address-cells = <1>;
+			#size-cells = <1>;
+
+			mem_dump_table@10 {
+				compatible = "qcom,msm-imem-mem-dump-table";
+				reg = <0x10 0x8>;
+			};
+		};
+
+		tsc: tsc@1c80000 {
+			compatible = "qcom,tsc";
+			reg = <0x0 0x01c80000 0x0 0x2000>,
+			      <0x0 0x01c87000 0x0 0x1000>,
+			      <0x0 0x01ca0000 0x0 0x20000>,
+			      <0x0 0x01f9e100 0x0 0x4>;
+			reg-names = "tsc", "timer", "etu", "tsc_src_sel";
+			clocks = <&tscss_ahb_clock>,
+				 <&tscss_cntr_clock>,
+				 <&tscss_etu_clock>;
+			clock-names = "cfg_ahb",
+				      "cntr",
+				      "etu";
+			interrupts = <GIC_SPI 290 IRQ_TYPE_LEVEL_HIGH>,
+				     <GIC_SPI 169 IRQ_TYPE_LEVEL_HIGH>;
+			interrupt-names = "tscss_fusa_irq",
+					  "etu_summary_irq";
+			qcom,tsc-nsec-update;
+			qcom,tsc-frame-pulse-gen;
+			qcom,tsc-safety;
+
+			slice@1 {
+				qcom,etu-event-sel = <1>;
+				qcom,etu-slice = <1>;
+				qcom,etu-event-name = "timer0";
+			};
+
+			slice@2 {
+				qcom,etu-event-sel = <2>;
+				qcom,etu-slice = <2>;
+				qcom,etu-event-name = "timer1";
+			};
+
+			slice@3 {
+				qcom,etu-event-sel = <3>;
+				qcom,etu-slice = <3>;
+				qcom,etu-event-name = "timer2";
+			};
+
+			slice@4 {
+				qcom,etu-event-sel = <4>;
+				qcom,etu-slice = <4>;
+				qcom,etu-event-name = "timer3";
+			};
+
+			slice@5 {
+				qcom,etu-event-sel = <5>;
+				qcom,etu-slice = <5>;
+				qcom,etu-event-name = "timer4";
+			};
+
+			slice@6 {
+				qcom,etu-event-sel = <6>;
+				qcom,etu-slice = <6>;
+				qcom,etu-event-name = "timer5";
+			};
+
+			slice@7 {
+				qcom,etu-event-sel = <7>;
+				qcom,etu-slice = <7>;
+				qcom,etu-event-name = "timer6";
+			};
+
+			slice@8 {
+				qcom,etu-event-sel = <8>;
+				qcom,etu-slice = <8>;
+				qcom,etu-event-name = "timer7";
+			};
+
+			slice@9 {
+				qcom,etu-event-sel = <9>;
+				qcom,etu-slice = <9>;
+				qcom,etu-event-name = "timer8";
+			};
+
+			slice@10 {
+				qcom,etu-event-sel = <10>;
+				qcom,etu-slice = <10>;
+				qcom,etu-event-name = "timer9";
+			};
+
+			slice@17 {
+				qcom,etu-event-sel = <17>;
+				qcom,etu-slice = <17>;
+				qcom,etu-event-name = "timer10";
+			};
+
+			slice@18 {
+				qcom,etu-event-sel = <18>;
+				qcom,etu-slice = <18>;
+				qcom,etu-event-name = "timer11";
+			};
+
+			slice@19 {
+				qcom,etu-event-sel = <19>;
+				qcom,etu-slice = <19>;
+				qcom,etu-event-name = "timer12";
+			};
+
+			slice@20 {
+				qcom,etu-event-sel = <20>;
+				qcom,etu-slice = <20>;
+				qcom,etu-event-name = "timer13";
+			};
+
+			slice@21 {
+				qcom,etu-event-sel = <21>;
+				qcom,etu-slice = <21>;
+				qcom,etu-event-name = "timer14";
+			};
+
+			slice@22 {
+				qcom,etu-event-sel = <22>;
+				qcom,etu-slice = <22>;
+				qcom,etu-event-name = "timer15";
+			};
+
+			slice@23 {
+
+				qcom,etu-event-sel = <0>;
+				qcom,etu-slice = <23>;
+				qcom,etu-event-name = "sw_trigger";
+			};
+
+			slice@27 {
+				qcom,etu-event-sel = <27>;
+				qcom,etu-slice = <27>;
+				qcom,etu-event-name = "SOF_DPRX0";
+			};
+
+			slice@28 {
+				qcom,etu-event-sel = <28>;
+				qcom,etu-slice = <28>;
+				qcom,etu-event-name = "SOF_DPRX1";
+			};
+		};
+
+		ice: crypto@1d48000 {
+			compatible = "qcom,sa8255p-inline-crypto-engine",
+				     "qcom,inline-crypto-engine";
+			reg = <0x0 0x01d48000 0x0 0x10000>;
+			qcom,ice-use-hwkm;
+			qcom,ice-skip-clk;
+		};
+
+		sram@c30f000 {
+			compatible = "qcom,rpmh-stats";
+			reg = <0x0 0xC30F000 0x0 0x400>;
+		};
+
+		mpam_msc {
+			compatible = "qcom,mpam-msc";
+			ranges;
+
+			slc-mpam@84030800 {
+				compatible = "qcom,slc-mpam";
+				reg = <0x0 0x84030800 0x0 0x400>;
+				reg-names = "mon-base";
+				qcom,msc-id = <4>;
+				qcom,msc-name = "slc";
+				qcom,dev-index = <0>;
+				qcom,num-read-miss-cfg = <2>;
+				qcom,num-cap-cfg = <5>;
+				qcom,slc-clients = "APPS_CLIENT", "GPU_CLIENT";
+			};
+		};
+
+	umd_ipcc_err_handler@1fc0000 {
+		compatible = "qcom,vdev-device";
+		reg = <0x0 0x1fc0000 0x0 0x00040000>;
+		interrupts = <GIC_SPI 336 IRQ_TYPE_LEVEL_HIGH>;
+	};
+
+};
+
+&{/} {
+		gpll5_out_main: gpll5_out_main {
+			compatible = "fixed-clock";
+			clock-frequency = <1000000000>;
+			clock-output-names = "gpll5_out_main";
+			#clock-cells = <0>;
+		};
+
+		tscss_ahb_clock: tscss_ahb_clock {
+			compatible = "fixed-clock";
+			clock-frequency = <75000000>;
+			clock-output-names = "tscss_ahb_clock";
+			#clock-cells = <0>;
+		};
+
+		tscss_cntr_clock: tscss_cntr_clock {
+			compatible = "fixed-factor-clock";
+			clocks = <&gpll5_out_main>;
+			clock-mult = <1>;
+			clock-div = <4>;
+			#clock-cells = <0>;
+		};
+
+		tscss_etu_clock: tscss_etu_clock {
+			compatible = "fixed-factor-clock";
+			clocks = <&gpll5_out_main>;
+			clock-mult = <1>;
+			clock-div = <4>;
+			#clock-cells = <0>;
+		};
+
+	cpucp_sram: cpucp-sram@18b3d000 {
+		#address-cells = <1>;
+		#size-cells = <1>;
+		compatible = "mmio-sram";
+		reg = <0x0 0x18b3d000 0x0 0x400>;
+		ranges = <0 0x0 0x18b3d000 0x400>;
+
+		cpucp0_tx: scmi-shmem@0 {
+			compatible = "arm,scmi-shmem";
+			reg = <0x0 0x200>;
+		};
+
+		cpucp0_rx: scmi-shmem@200 {
+			compatible = "arm,scmi-shmem";
+			reg = <0x200 0x200>;
+		};
+
+	};
+
+	aop_sram_tx: aop-sram@c319000 {
+		#address-cells = <1>;
+		#size-cells = <1>;
+		compatible = "mmio-sram";
+		reg = <0x0 0xc319000 0x0 0x400>;
+		ranges = <0 0x0 0xc319000 0x400>;
+
+		aop0_a2p: aop0-a2p@0 {
+			compatible = "arm,scmi-shmem";
+			reg = <0x0 0x400>;
+			reg-io-width = <4>;
+		};
+	};
+
+	aop_sram_rx: aop-sram@c31a000 {
+		#address-cells = <1>;
+		#size-cells = <1>;
+		compatible = "mmio-sram";
+		reg = <0x0 0xc31a000 0x0 0x400>;
+		ranges = <0 0x0 0xc31a000 0x400>;
+
+		aop0_p2a: aop0-p2a@0 {
+			compatible = "arm,scmi-shmem";
+			reg = <0x0 0x400>;
+			reg-io-width = <4>;
+		};
+	};
+
+};
+
+&{/reserved-memory} {
+		sdhc_4_dma_resv: sdhc_4_dma_resv_region {
+
+			iommu-addresses = <&sdhc_4 0x0 0x40000000>,
+			<&sdhc_4 0x50000000 0xb0000000>;
+		};
+
+		/* DICE handover carveout, filled by XBL/TME */
+		dice_mem: dice-region@87168000 {
+			reg = <0x0 0x87168000 0x0 0x4000>;
+			no-map;
+		};
+
+		gearvm_psail_mem: gearvm_psail_region@d7656000 {
+			no-map;
+			reg = <0x0 0xd7656000 0x0 0x20000>;
+		};
+};
+
+/* Exposed as /dev/open-dice0 by drivers/misc/open-dice.c */
+&{/} {
+	dice: dice-region@87168000 {
+		compatible = "google,open-dice";
+		memory-region = <&dice_mem>;
+	};
+};

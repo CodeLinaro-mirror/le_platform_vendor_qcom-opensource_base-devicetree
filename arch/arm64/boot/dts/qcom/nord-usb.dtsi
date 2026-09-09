@@ -1,0 +1,163 @@
+// SPDX-License-Identifier: BSD-3-Clause
+/*
+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+ */
+
+#include <dt-bindings/interrupt-controller/arm-gic.h>
+#include <dt-bindings/phy/phy-qcom-qmp.h>
+
+&soc {
+	usb_2_eusbphy: phy@88e0000 {
+		compatible = "qcom,sa8797p-snps-eusb2-phy-fw-managed";
+		reg = <0x0 0x088e0000 0x0 0x154>;
+		#phy-cells = <0>;
+
+		power-domains = <&scmi14_pd 0>, <&scmi14_pd 1>;
+		power-domain-names = "transfer", "core";
+
+		status = "disabled";
+	};
+
+	usb_0_qmpphy: phy@88e1000 {
+		compatible = "qcom,sa8797p-qmp-usb3-dp-phy-fw-managed";
+		reg = <0x0 0x088e1000 0x0 0x3000>;
+		#phy-cells = <1>;
+
+		power-domains = <&scmi12_pd 2>, <&scmi12_pd 3>;
+		power-domain-names = "transfer", "core";
+
+		status = "disabled";
+	};
+
+	usb_1_qmpphy: phy@88e4000 {
+		compatible = "qcom,sa8797p-qmp-usb3-dp-phy-fw-managed";
+		reg = <0x0 0x088e4000 0x0 0x3000>;
+		#phy-cells = <1>;
+
+		power-domains = <&scmi13_pd 2>, <&scmi13_pd 3>;
+		power-domain-names = "transfer", "core";
+
+		status = "disabled";
+	};
+
+	usb_0_eusbphy: phy@88ea000 {
+		compatible = "qcom,sa8797p-snps-eusb2-phy-fw-managed";
+		reg = <0x0 0x088ea000 0x0 0x154>;
+		#phy-cells = <0>;
+
+		power-domains = <&scmi12_pd 0>, <&scmi12_pd 1>;
+		power-domain-names = "transfer", "core";
+
+		qcom,enable-eud;
+
+		status = "disabled";
+	};
+
+	usb_1_eusbphy: phy@88eb000 {
+		compatible = "qcom,sa8797p-snps-eusb2-phy-fw-managed";
+		reg = <0x0 0x088eb000 0x0 0x154>;
+		#phy-cells = <0>;
+
+		power-domains = <&scmi13_pd 0>, <&scmi13_pd 1>;
+		power-domain-names = "transfer", "core";
+
+		status = "disabled";
+	};
+
+	usb_2: usb@a200000 {
+		compatible = "qcom,sa8797p-dwc3", "qcom,snps-dwc3";
+		reg = <0x0 0x0a200000 0x0 0xfc100>;
+
+		interrupts = <GIC_SPI 910 IRQ_TYPE_LEVEL_HIGH>;
+
+		power-domains = <&scmi2_pd 0>, <&scmi2_pd 1>;
+		power-domain-names = "transfer", "core";
+
+		iommus = <&apps_smmu_0 0x14e0 0x0>;
+		memory-region = <&dwc3_mem_region0>;
+
+		snps,dis_u2_susphy_quirk;
+		snps,dis_enblslpm_quirk;
+		snps,usb2-lpm-disable;
+
+		phys = <&usb_0_eusbphy>;
+		phy-names = "usb2-phy";
+
+		maximum-speed = "high-speed";
+		dr_mode = "otg";
+		usb-role-switch;
+
+		status = "disabled";
+	};
+
+	dwc3_mem_region2: dwc3_mem_region2 {
+		iommu-addresses = <&usb_2 0x0 0x0 0x0 0x90000000>,
+				   <&usb_2 0x0 0xf0000000 0xffffffff 0x10000000>;
+	};
+
+	usb_1: usb@a400000 {
+		compatible = "qcom,sa8797p-dwc3", "qcom,snps-dwc3";
+		reg = <0x0 0x0a400000 0x0 0xfc100>;
+
+		interrupts = <GIC_SPI 917 IRQ_TYPE_LEVEL_HIGH>;
+
+		power-domains = <&scmi1_pd 0>, <&scmi1_pd 1>;
+		power-domain-names = "transfer", "core";
+
+		iommus = <&apps_smmu_0 0x15c0 0x0>;
+		memory-region = <&dwc3_mem_region1>;
+
+		snps,dis_u2_susphy_quirk;
+		snps,dis_enblslpm_quirk;
+		snps,dis-u1-entry-quirk;
+		snps,dis-u2-entry-quirk;
+		snps,usb2-lpm-disable;
+
+		phys = <&usb_1_eusbphy>, <&usb_1_qmpphy QMP_USB43DP_USB3_PHY>;
+		phy-names = "usb2-phy", "usb3-phy";
+
+		maximum-speed = "super-speed-plus";
+		dr_mode = "otg";
+		usb-role-switch;
+
+		status = "disabled";
+	};
+
+	dwc3_mem_region1: dwc3_mem_region1 {
+		iommu-addresses = <&usb_1 0x0 0x0 0x0 0x90000000>,
+				   <&usb_1 0x0 0xf0000000 0xffffffff 0x10000000>;
+	};
+
+	usb_0: usb@a600000 {
+		compatible = "qcom,sa8797p-dwc3", "qcom,snps-dwc3";
+		reg = <0x0 0x0a600000 0x0 0xfc100>;
+
+		interrupts = <GIC_SPI 133 IRQ_TYPE_LEVEL_HIGH>;
+
+		power-domains = <&scmi0_pd 0>, <&scmi0_pd 1>;
+		power-domain-names = "transfer", "core";
+
+		iommus = <&apps_smmu_0 0x1500 0x0>;
+		memory-region = <&dwc3_mem_region0>;
+
+		snps,dis_u2_susphy_quirk;
+		snps,dis_enblslpm_quirk;
+		snps,dis-u1-entry-quirk;
+		snps,dis-u2-entry-quirk;
+		snps,usb2-lpm-disable;
+
+		phys = <&usb_0_eusbphy>, <&usb_0_qmpphy QMP_USB43DP_USB3_PHY>;
+		phy-names = "usb2-phy", "usb3-phy";
+
+		maximum-speed = "super-speed-plus";
+		dr_mode = "otg";
+		usb-role-switch;
+
+		status = "disabled";
+	};
+
+	dwc3_mem_region0: dwc3_mem_region0 {
+		iommu-addresses = <&usb_0 0x0 0x0 0x0 0x90000000>,
+				   <&usb_0 0x0 0xf0000000 0xffffffff 0x10000000>;
+	};
+};

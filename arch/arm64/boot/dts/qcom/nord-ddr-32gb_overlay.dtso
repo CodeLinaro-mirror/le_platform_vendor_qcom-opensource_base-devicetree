@@ -6,11 +6,11 @@
 /dts-v1/;
 /plugin/;
 
-#include "sa8797p-ddr-32gb-vms.dtsi"
-
 / {
-	compatible = "qcom,sa8x97p-adp-star", "qcom,sa8x97p-ride-sx", "qcom,sa8x97p-qam-ride-sx";
+	compatible = "qcom,nord-ride", "qcom,nord";
 };
+
+#include "nord-ddr-32gb-vms.dtsi"
 
 &non_ecc_heap_mem {
 	reg = <0xA 0x60000000 0x1 0x00000000>;

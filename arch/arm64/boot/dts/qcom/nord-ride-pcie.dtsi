@@ -1,9 +1,31 @@
 // SPDX-License-Identifier: BSD-3-Clause
 /*
  * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+ *
+ * nord-ride PCIe complex. Ported from QLI 1.0 sa8797p-pcie.dtsi, which QLI 1.0
+ * pulled into the COMMON platform base (sa8x97p.dtsi) so every board carried
+ * the PCIe controllers with pcie0_ep left status="disabled"; the pcie-ep
+ * variant board then only flipped &pcie0_ep to "okay". We mirror that layering:
+ * this file is included by the common nord-ride_overlay so all nord variants
+ * carry the (disabled) PCIe complex, and nord-ride-pcie-ep.dtso enables the EP.
+ *
+ * OVERLAY ADAPTATION: QLI 1.0 authored pcie0..3 under a bare "/ {}" root, valid
+ * because it was #included into a full .dts (single compile, real root). Here
+ * the content lives in a /plugin/ overlay, where a bare "/ {}" sets the overlay's
+ * own root and is discarded by fdtoverlay. The host-bridge block is therefore
+ * wrapped in &{/} (target-path "/") so it merges into the base root. The pcie0_ep
+ * node stays under &soc as in QLI 1.0. Content is otherwise verbatim.
+ *
+ * Deps (all resolve against the upstream base + our additions):
+ *   &pcie_smmu  - nord-addons.dtsi (iommu@9980000)
+ *   &gic_its    - base msi-controller@17040000
+ *   &intc, &tlmm, &soc - base
+ *   pcie0_ep_*_default pinctrl states - defined below under &tlmm
  */
 
-/ {
+#include <dt-bindings/gpio/gpio.h>
+
+&{/} {
 	pcie0: pci@5000000000 {
 		compatible = "qcom,pcie-ecam-rc";
 		reg = <0x50 0x00000000 0x0 0x10000000>,
@@ -356,5 +378,91 @@
 		num-lanes = <2>;
 
 		status = "disabled";
+	};
+};
+
+&tlmm {
+	pcie0_ep_clkreq_default: pcie-ep-clkreq-default-state {
+		pins = "gpio1";
+		function = "pcie0_clk_req_n";
+		drive-strength = <2>;
+		bias-disable;
+	};
+
+	pcie0_ep_perst_default: pcie-ep-perst-default-state {
+		pins = "gpio2";
+		function = "gpio";
+		drive-strength = <16>;
+		bias-pull-down;
+	};
+
+	pcie0_ep_wake_default: pcie-ep-wake-default-state {
+		pins = "gpio0";
+		function = "gpio";
+		drive-strength = <2>;
+		bias-disable;
+	};
+
+	pcie1_ep_clkreq_default: pcie1-ep-clkreq-default-state {
+		pins = "gpio4";
+		function = "pcie1_clk_req_n";
+		drive-strength = <2>;
+		bias-disable;
+	};
+
+	pcie1_ep_perst_default: pcie1-ep-perst-default-state {
+		pins = "gpio5";
+		function = "gpio";
+		drive-strength = <16>;
+		bias-pull-down;
+	};
+
+	pcie1_ep_wake_default: pcie1-ep-wake-default-state {
+		pins = "gpio3";
+		function = "gpio";
+		drive-strength = <2>;
+		bias-disable;
+	};
+
+	pcie2_ep_clkreq_default: pcie2-ep-clkreq-default-state {
+		pins = "gpio7";
+		function = "pcie2_clk_req_n";
+		drive-strength = <2>;
+		bias-disable;
+	};
+
+	pcie2_ep_perst_default: pcie2-ep-perst-default-state {
+		pins = "gpio8";
+		function = "gpio";
+		drive-strength = <16>;
+		bias-pull-down;
+	};
+
+	pcie2_ep_wake_default: pcie2-ep-wake-default-state {
+		pins = "gpio6";
+		function = "gpio";
+		drive-strength = <2>;
+		bias-disable;
+	};
+
+	pcie3_ep_clkreq_default: pcie3-ep-clkreq-default-state {
+		pins = "gpio10";
+		function = "pcie3_clk_req_n";
+		drive-strength = <2>;
+		bias-disable;
+	};
+
+	pcie3_ep_perst_default: pcie3-ep-perst-default-state {
+		pins = "gpio11";
+		function = "gpio";
+		drive-strength = <16>;
+		bias-pull-down;
+	};
+
+	pcie3_ep_wake_default: pcie3-ep-wake-default-state {
+		pins = "gpio9";
+		function = "gpio";
+		drive-strength = <2>;
+		bias-disable;
 	};
 };

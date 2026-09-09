@@ -7,15 +7,24 @@
 /plugin/;
 
 #include <dt-bindings/interrupt-controller/arm-gic.h>
+#include <dt-bindings/dma/qcom-gpi.h>
 #include "oot-dt-bindings/qcom-ipcc-sa8797p.h"
+#include "nord-addons.dtsi"
+#include "nord-ride-pcie.dtsi"
 #include "sa8797p-vfio.dtsi"
 #include "sa8797p-vms.dtsi"
 #include "sa8797p-dma-heaps.dtsi"
 #include "sa8797p-vms-lv.dtsi"
+#include "nord-usb.dtsi"
 
 / {
-	model = "Qualcomm Technologies, Inc. SA8x97P";
-	compatible = "qcom,sa8797p";
+	compatible = "qcom,nord-ride", "qcom,nord";
+};
+
+&{/} {
+	model = "Qualcomm Technologies, Inc. NORD v2 QAM RIDE-SX";
+	qcom,board-id = <0x01010025 1>;
+	qcom,msm-id = <689 0x20000>, <690 0x20000>;
 };
 
 &{/} {
@@ -89,6 +98,32 @@
 		no-map;
 		status = "disabled";
 	};
+
+	global_sync_mem: global_sync_region@89f00000 {
+		no-map;
+		reg = <0x0 0x89f00000 0x0 0x400000>;
+	};
+};
+
+
+&scmi0 {
+	status = "okay";
+};
+
+&scmi12 {
+	status = "okay";
+};
+
+&usb_0 {
+	status = "okay";
+};
+
+&usb_0_eusbphy {
+	status = "okay";
+};
+
+&usb_0_qmpphy {
+	status = "okay";
 };
 
 &scmi1 {
@@ -109,6 +144,10 @@
 
 &scmi14 {
 	status = "okay";
+};
+
+&scmi15 {
+    status = "okay";
 };
 
 &scmi16 {
@@ -199,15 +238,98 @@
 	status = "okay";
 };
 
-&cpucp_scmi {
+&scmi43 {
+	scmi43_pinctrl: protocol@19 {
+		reg = <0x19>;
+
+		scmi43_gpio: gpio {
+			gpio-controller;
+		};
+	};
+};
+
+&pdp_scmi {
+	vendor_pdp: protocol@80 {
+		reg = <0x80>;
+		#clock-cells = <1>;
+	};
+};
+
+&qupv3_1 {
+    status = "okay";
+};
+
+&i2c18 {
 	status = "okay";
 };
 
-&scmi43_pinctrl{
-	scmi43_gpio: gpio {
-		gpio-controller;
-	};
+&i2c9 {
+       compatible = "qcom,sa8797p-geni-i2c";
+       dmas = <&gpi_dma1 0 2 QCOM_GPI_I2C>,
+              <&gpi_dma1 1 2 QCOM_GPI_I2C>;
+       dma-names = "tx", "rx";
+       power-domains = <&scmi9_pd 9>;
+       power-domain-names = "power";
+       #address-cells = <1>;
+       #size-cells = <0>;
+       status = "okay";
+};
 
+&adreno_smmu_0 {
+    power-domains = <&scmi15_pd 0>;
+    power-domain-names = "power";
+    status = "okay";
+};
+
+&adreno_smmu_1 {
+    power-domains = <&scmi15_pd 1>;
+    power-domain-names = "power";
+    status = "okay";
+};
+
+&remoteproc_adsp {
+	status = "disabled";
+};
+
+&remoteproc_cdsp0 {
+	status = "disabled";
+};
+
+&remoteproc_cdsp1 {
+	status = "disabled";
+};
+
+&remoteproc_cdsp2 {
+	status = "disabled";
+};
+
+&remoteproc_cdsp3 {
+	status = "disabled";
+};
+
+
+&{/smp2p-adsp} {
+	status = "disabled";
+};
+
+&{/smp2p-cdsp0} {
+	status = "disabled";
+};
+
+&{/smp2p-cdsp1} {
+	status = "disabled";
+};
+
+&{/smp2p-cdsp2} {
+	status = "disabled";
+};
+
+&{/smp2p-cdsp3} {
+	status = "disabled";
+};
+
+&aoss_qmp {
+	status = "disabled";
 };
 
 &soc {
@@ -250,6 +372,7 @@
 
 	qtee_shmbridge {
 		compatible = "qcom,tee-shared-memory-bridge";
+		memory-region = <&tzcom_mem>;
 	};
 
 	qcom_smcinvoke {
@@ -489,27 +612,6 @@
 		qcom,vendor = <&vendor_pdp>;
 	};
 
-	scmi2_safety {
-		qcom,dev-name = "safety-profile-1";
-		compatible = "qcom,uscmi-vendor";
-		qcom,algo = <0x00 0x73616665>;
-		qcom,vendor = <&vendor_pdp1>;
-	};
-
-	scmi3_safety {
-		qcom,dev-name = "safety-profile-2";
-		compatible = "qcom,uscmi-vendor";
-		qcom,algo = <0x00 0x73616665>;
-		qcom,vendor = <&vendor_pdp2>;
-	};
-
-	scmi_uetm {
-		qcom,dev-name = "uetm";
-		compatible = "qcom,uscmi-vendor";
-		qcom,algo = <0x00 0x5545544d>;
-		qcom,vendor = <&vendor_cpupcp>;
-	};
-
 	test_scmi {
                 compatible = "qcom,uscmi";
 
@@ -692,35 +794,46 @@
 		qcom,dev-name = "scmi_usb1_qmp";
 	};
 
-	scmi_infra0 {
-		compatible = "qcom,uscmi";
-		power-domains = <&scmi48_dvfs 0>, <&scmi48_dvfs 1>,
-				<&scmi48_dvfs 2>, <&scmi48_dvfs 3>;
-		power-domain-names = "cx", "mx", "mm", "mxc";
-
-		qcom,dev-name = "scmi_infra0";
+	qfprom_tcsr_softsku: qfprom@1f97070 {
+		compatible = "qcom,qfprom";
+		reg = <0x0 0x1f97070 0x0 0x18>;
+		#address-cells = <1>;
+		#size-cells = <1>;
 	};
 
-	scmi_sdhc4 {
-		compatible = "qcom,uscmi";
-		power-domains = <&scmi34_pd 0>, <&scmi34_dvfs 0>;
-		power-domain-names = "power", "perf";
-
-		qcom,dev-name = "scmi_sdhc4";
-	};
-};
-
-&virqgrp {
-	virq0 {
-		index = <0>;
-		label = <0x5 0x6 0x9 0xA 0xB 0xC>;
-		remote-vmids = <2>;
+	qfprom_tcsr_qtv: qfprom@1f96004 {
+		compatible = "qcom,qfprom";
+		reg = <0x0 0x1f96004 0x0 0x18>;
+		#address-cells = <1>;
+		#size-cells = <1>;
 	};
 
-	virq1 {
-		index = <1>;
-		label = <0xD 0xE 0xF>;
-		remote-vmids = <3>;
+	/*
+	 * Vsense Calibration Fuse
+	 * QFPROM_CORR_CALIBRATION_ROW124_MSB @ 0x360CA5AC
+	 * Bits [28:26]:
+	 *   0x0       -> Vsense calibration not fused -> voltage monitoring must not be enabled
+	 *   0x1 - 0x7 -> Vsense calibration fused     -> voltage monitoring can be enabled
+	 */
+	qfprom_vsense: qfprom@360ca5ac {
+		compatible = "qcom,qfprom";
+		reg = <0x0 0x360ca5ac 0x0 0x4>;
+		#address-cells = <1>;
+		#size-cells = <1>;
+	};
+
+	/*
+	 * BIST / SMC Fuse
+	 * QFPROM_CORR_QC_CONFIG_ROW1_MSB @ 360D420C
+	 * Bit 22 (SMC_EN):
+	 *   0x0 -> SMC_EN not blown -> BIST capable
+	 *   0x1 -> SMC_EN blown     -> BIST not capable
+	 */
+	qfprom_bist: qfprom@360D420C {
+		compatible = "qcom,qfprom";
+		reg = <0x0 0x360D420C 0x0 0x4>;
+		#address-cells = <1>;
+		#size-cells = <1>;
 	};
 };
 
@@ -770,4 +883,35 @@
 
 &mmidgrp1900 {
 	remote-vmids = <2 3>;
+};
+
+&soc {
+	ddr_bwprofiler: ddr_bwprofiler {
+		compatible = "qcom,sa8797_ddr_bwprofiler";
+		reg = <0x0 0x21800000 0x0 0x0200000>,
+		    <0x0 0x21A00000 0x0 0x0200000>,
+		    <0x0 0x21C00000 0x0 0x0200000>,
+		    <0x0 0x21E00000 0x0 0x0200000>,
+		    <0x0 0x22800000 0x0 0x0200000>,
+		    <0x0 0x22A00000 0x0 0x0200000>,
+		    <0x0 0x22C00000 0x0 0x0200000>,
+		    <0x0 0x22E00000 0x0 0x0200000>,
+		    <0x0 0x23800000 0x0 0x0200000>,
+		    <0x0 0x23A00000 0x0 0x0200000>,
+		    <0x0 0x23C00000 0x0 0x0200000>,
+		    <0x0 0x23E00000 0x0 0x0200000>,
+		    <0x0 0x24800000 0x0 0x0200000>,
+		    <0x0 0x24A00000 0x0 0x0200000>,
+		    <0x0 0x24C00000 0x0 0x0200000>,
+		    <0x0 0x24E00000 0x0 0x0200000>,
+		    <0x0 0x0232b000 0x0 0x0001000>,
+		    <0x0 0x0232c000 0x0 0x0001000>,
+		    <0x0 0x0242b000 0x0 0x0001000>,
+		    <0x0 0x0242c000 0x0 0x0001000>,
+		    <0x0 0x0252b000 0x0 0x0001000>,
+		    <0x0 0x0252c000 0x0 0x0001000>,
+		    <0x0 0x0272b000 0x0 0x0001000>,
+		    <0x0 0x0272c000 0x0 0x0001000>,
+		    <0x0 0x01790000 0x0 0x0050000>;
+	};
 };

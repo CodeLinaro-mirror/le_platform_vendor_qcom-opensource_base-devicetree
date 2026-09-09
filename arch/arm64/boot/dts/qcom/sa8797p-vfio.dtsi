@@ -87,17 +87,32 @@
 
 	umd_pil@9007000 {
 		compatible = "qcom,vdev-device";
-		interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 2 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP1 2 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_ADSP2 2 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP0 2 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP1 2 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP2 2 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_NSP3 2 IRQ_TYPE_LEVEL_HIGH>,
-			<&ipcc0 IPCC_MPROC_AOP  0 IRQ_TYPE_LEVEL_HIGH>,
-			<&intc GIC_SPI 159 IRQ_TYPE_EDGE_RISING>,
-			<&intc GIC_SPI 155 IRQ_TYPE_EDGE_RISING>,
-			<&intc GIC_SPI 178 IRQ_TYPE_EDGE_RISING>;
+		/*
+		 * QLI 2.0's upstream in-tree base owns every ipcc0 doorbell that
+		 * QLI 1.0's downstream umd_pil used to claim directly:
+		 *   - ADSP0/1/2 + NSP0-3 signal-2  -> base smp2p-adsp / smp2p-cdsp
+		 *   - AOP client-0 signal-0        -> base power-management@c300000
+		 *                                     (qcom,nord-aoss-qmp)
+		 * all mapped EDGE_RISING. QLI 1.0 had neither of those base nodes, so
+		 * umd_pil owned the lines (LEVEL_HIGH) cleanly. On QLI 2.0 each is a
+		 * double-map of the same IPCC (client,signal) with a conflicting
+		 * trigger type, and the IPCC irqchip rejects the 2nd mapping
+		 * ("type mismatch, failed to map hwirq-N for mailbox@9007000":
+		 * hwirq-131074 for ADSP0/sig2, hwirq-0 for AOP/sig0).
+		 * Per decision the upstream base keeps all IPCC doorbells; umd_pil
+		 * retains only its own GIC SPIs.
+		 */
+       interrupts-extended = <&ipcc0 IPCC_MPROC_ADSP0 2 IRQ_TYPE_LEVEL_HIGH>,
+                       <&ipcc0 IPCC_MPROC_ADSP1 2 IRQ_TYPE_LEVEL_HIGH>,
+                       <&ipcc0 IPCC_MPROC_ADSP2 2 IRQ_TYPE_LEVEL_HIGH>,
+                       <&ipcc0 IPCC_MPROC_NSP0 2 IRQ_TYPE_LEVEL_HIGH>,
+                       <&ipcc0 IPCC_MPROC_NSP1 2 IRQ_TYPE_LEVEL_HIGH>,
+                       <&ipcc0 IPCC_MPROC_NSP2 2 IRQ_TYPE_LEVEL_HIGH>,
+                       <&ipcc0 IPCC_MPROC_NSP3 2 IRQ_TYPE_LEVEL_HIGH>,
+                       <&ipcc0 IPCC_MPROC_AOP  0 IRQ_TYPE_LEVEL_HIGH>,
+		               <&intc GIC_SPI 159 IRQ_TYPE_EDGE_RISING>,
+			           <&intc GIC_SPI 155 IRQ_TYPE_EDGE_RISING>,
+			           <&intc GIC_SPI 178 IRQ_TYPE_EDGE_RISING>;
 
 		memory-region = <&pil_umd_reserved
 			&hpass_dsp0_mem

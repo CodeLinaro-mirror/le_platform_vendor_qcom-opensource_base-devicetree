@@ -1,62 +1,16 @@
 # SPDX-License-Identifier: GPL-2.0
 
-# SA8797
-dtb-y += arch/arm64/boot/dts/qcom/sa8797p-adp-star.dtb
-dtb-y += arch/arm64/boot/dts/qcom/sa8797p-v2-adp-star.dtb
-dtb-y += arch/arm64/boot/dts/qcom/sa8797p-non-safe-ivi-adp-star.dtb
-dtb-y += arch/arm64/boot/dts/qcom/sa8797p-v2-non-safe-ivi-adp-star.dtb
-dtb-y += arch/arm64/boot/dts/qcom/sa8797p-adp-star-pcie-ep.dtb
-dtb-y += arch/arm64/boot/dts/qcom/sa8797p-qam-ride-sx-pcie-ep.dtb
-dtb-y += arch/arm64/boot/dts/qcom/sa8797p-non-safe-ivi-ride-sx.dtb
-dtb-y += arch/arm64/boot/dts/qcom/sa8797p-v2-non-safe-ivi-ride-sx.dtb
-dtb-y += arch/arm64/boot/dts/qcom/sa8797p-safe-ivi-ride-sx.dtb
-dtb-y += arch/arm64/boot/dts/qcom/sa8797p-v2-safe-ivi-ride-sx.dtb
-dtb-y += arch/arm64/boot/dts/qcom/sa8797p-ride-sx.dtb
-dtb-y += arch/arm64/boot/dts/qcom/sa8797p-v2-ride-sx.dtb
-dtb-y += arch/arm64/boot/dts/qcom/sa8797p-multi-gvm-ride-sx.dtb
-dtb-y += arch/arm64/boot/dts/qcom/sa8797p-non-safe-la-gvm-ride-sx.dtb
-dtb-y += arch/arm64/boot/dts/qcom/sa8797p-non-safe-multi-gvm-ride-sx.dtb
-dtb-y += arch/arm64/boot/dts/qcom/sa8797p-la-gvm-ride-sx.dtb
-dtb-y += arch/arm64/boot/dts/qcom/sa8x97p-qam-pats.dtb
-dtb-y += arch/arm64/boot/dts/qcom/sa8x97p-safe-ivi-qam-pats.dtb
-dtb-y += arch/arm64/boot/dts/qcom/sa8x97p-non-safe-ivi-qam-pats.dtb
-dtb-y += arch/arm64/boot/dts/qcom/sa8x97p-flex-ride-sx.dtb
-dtb-y += arch/arm64/boot/dts/qcom/sa8x97p-v2-flex-ride-sx.dtb
-dtb-y += arch/arm64/boot/dts/qcom/sa8x97p-v2-adp-star-pcie-ep.dtb
-dtb-y += arch/arm64/boot/dts/qcom/sa8x97p-v2-ride-sx-pcie-ep.dtb
-dtb-y += arch/arm64/boot/dts/qcom/sa8x97p-v2-flex-adp-star.dtb
-dtb-y += arch/arm64/boot/dts/qcom/sa8797p-overlay.dtbo
-dtb-y += arch/arm64/boot/dts/qcom/sa8797p-qvp.dtb
+dtb-y += arch/arm64/boot/dts/qcom/nord-ride_overlay.dtbo
 
-#DDR Overlay
-dtb-y += arch/arm64/boot/dts/qcom/sa8797p-ddr-32gb_overlay.dtbo
-dtb-y += arch/arm64/boot/dts/qcom/sa8797p-ddr-48gb_overlay.dtbo
-dtb-y += arch/arm64/boot/dts/qcom/sa8797p-ddr-64gb_overlay.dtbo
-dtb-y += arch/arm64/boot/dts/qcom/sa8x97p-ddr-96gb_overlay.dtbo
-dtb-y += arch/arm64/boot/dts/qcom/sa8x97p-flex-ddr-32gb_overlay.dtbo
-dtb-y += arch/arm64/boot/dts/qcom/sa8x97p-flex-ddr-48gb_overlay.dtbo
-dtb-y += arch/arm64/boot/dts/qcom/sa8x97p-flex-ddr-64gb_overlay.dtbo
-dtb-y += arch/arm64/boot/dts/qcom/sa8x97p-flex-ddr-96gb_overlay.dtbo
+# Variant overlays
+dtb-y += arch/arm64/boot/dts/qcom/nord-ride-safe.dtbo
+dtb-y += arch/arm64/boot/dts/qcom/nord-ride-non-safe-ivi.dtbo
+dtb-y += arch/arm64/boot/dts/qcom/nord-ride-pcie-ep.dtbo
 
-# SecaAu
-dtb-y += arch/arm64/boot/dts/qcom/seca-rumi.dtb
-dtb-y += arch/arm64/boot/dts/qcom/seca-adas-ride-sx.dtb
-dtb-y += arch/arm64/boot/dts/qcom/seca-flex-ride-sx.dtb
-dtb-y += arch/arm64/boot/dts/qcom/seca-non-safe-ivi-adp-star.dtb
-dtb-y += arch/arm64/boot/dts/qcom/seca-non-safe-ivi-ride-sx.dtb
-dtb-y += arch/arm64/boot/dts/qcom/seca-safe-ivi-ride-sx.dtb
-dtb-y += arch/arm64/boot/dts/qcom/seca-adas-pats.dtb
-dtb-y += arch/arm64/boot/dts/qcom/seca-non-safe-ivi-pats.dtb
-dtb-y += arch/arm64/boot/dts/qcom/seca-safe-ivi-pats.dtb
-dtb-y += arch/arm64/boot/dts/qcom/seca-qam-star-pcie-ep.dtb
-dtb-y += arch/arm64/boot/dts/qcom/seca-qam-ride-sx-pcie-ep.dtb
-dtb-y += arch/arm64/boot/dts/qcom/seca-overlay.dtbo
-dtb-y += arch/arm64/boot/dts/qcom/seca-ddr-32gb_overlay.dtbo
-dtb-y += arch/arm64/boot/dts/qcom/seca-ddr-48gb_overlay.dtbo
-dtb-y += arch/arm64/boot/dts/qcom/seca-ddr-64gb_overlay.dtbo
-dtb-y += arch/arm64/boot/dts/qcom/seca-flex-ddr-32gb_overlay.dtbo
-dtb-y += arch/arm64/boot/dts/qcom/seca-flex-ddr-48gb_overlay.dtbo
-dtb-y += arch/arm64/boot/dts/qcom/seca-flex-ddr-64gb_overlay.dtbo
+# DDR overlays
+dtb-y += arch/arm64/boot/dts/qcom/nord-ddr-32gb_overlay.dtbo
+dtb-y += arch/arm64/boot/dts/qcom/nord-ddr-48gb_overlay.dtbo
+dtb-y += arch/arm64/boot/dts/qcom/nord-ddr-64gb_overlay.dtbo
 
 #include common target file
 include $(PWD)/Makefile.common
