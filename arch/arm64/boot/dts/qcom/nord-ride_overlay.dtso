@@ -259,20 +259,35 @@
     status = "okay";
 };
 
+&{/aliases} {
+	i2c9 = "/soc@0/geniqup@ac0000/i2c@a88000";
+};
+
 &i2c18 {
 	status = "okay";
 };
 
 &i2c9 {
-       compatible = "qcom,sa8797p-geni-i2c";
+       compatible = "qcom,sa8797p-geni-i2c",
+                    "qcom,sa8255p-geni-i2c";
        dmas = <&gpi_dma1 0 2 QCOM_GPI_I2C>,
               <&gpi_dma1 1 2 QCOM_GPI_I2C>;
        dma-names = "tx", "rx";
-       power-domains = <&scmi9_pd 9>;
-       power-domain-names = "power";
+       power-domains = <&scmi9_pd 9>,
+                        <&scmi9_dvfs 9>;
+       power-domain-names = "power",
+                             "perf";
        #address-cells = <1>;
        #size-cells = <0>;
        status = "okay";
+};
+
+&gpi_dma1 {
+	status = "okay";
+};
+
+&scmi9 {
+	status = "okay";
 };
 
 &adreno_smmu_0 {
