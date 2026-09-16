@@ -31,6 +31,43 @@
 		compatible = "qcom,nhlos-logs-mem", "qcom,nhlos-logs";
 		memory-region = <&cpucp_nlog>;
 	};
+
+	/*
+	 * Named DMA-BUF registry (qcom,named-dmabuf), local-only instance.
+	 *
+	 * No memory-region: carveout validation is skipped, so any allocator
+	 * (system heap included) can be registered via NAMED_DMABUF_IOC_CREATE.
+	 * The cross-VM ioctls are unavailable on this instance --
+	 * IOC_GET_EXPORT_INFO returns -EOPNOTSUPP and IOC_IMPORT_REMOTE
+	 * returns -ENODEV.  Adding a memory-region here would enable those,
+	 * but would also make IOC_CREATE reject non-contiguous buffers
+	 * (e.g. system-heap allocations) with -EINVAL.
+	 *
+	 * Creates /dev/named_dmabuf_local/ctrl for ioctls, plus
+	 * /dev/named_dmabuf_local/<name> per registered buffer.
+	 */
+	named_dmabuf_local: named_dmabuf_local {
+		compatible = "qcom,named-dmabuf";
+		instance-name = "local";
+	};
+
+	named_dmabuf_qcipc_pvm_safe: named_dmabuf_qcipc_pvm_safe {
+		compatible = "qcom,named-dmabuf";
+		instance-name = "qcipc_pvm_safe";
+		memory-region = <&qcipc_pvm_safe_mem>;
+	};
+
+	named_dmabuf_qcipc_pvm_nonsafe: named_dmabuf_qcipc_pvm_nonsafe {
+		compatible = "qcom,named-dmabuf";
+		instance-name = "qcipc_pvm_nonsafe";
+		memory-region = <&qcipc_pvm_nonsafe_mem>;
+	};
+
+	named_dmabuf_qcipc_gvm: named_dmabuf_qcipc_gvm {
+		compatible = "qcom,named-dmabuf";
+		instance-name = "qcipc_gvm";
+		memory-region = <&qcipc_gvm_mem>;
+	};
 };
 
 &{/reserved-memory} {
@@ -64,6 +101,31 @@
 		reusable;
 		alignment = <0x0 0x400000>;
 		size = <0x0 0x1400000>; /* 20M */
+	};
+
+	qcipc_pvm_safe_mem: qcipc_pvm_safe_mem@A00000000 {
+		compatible = "shared-dma-pool";
+		reg = <0xA 0x00000000 0x0 0x03000000>;
+		no-map;
+		gunyah-label = <0x92>;
+		qcom,is-shared;
+	};
+
+	qcipc_pvm_nonsafe_mem: qcipc_pvm_nonsafe_mem {
+		compatible = "shared-dma-pool";
+		reg = <0x0 0x00000000 0x0 0x00000000>;
+		no-map;
+		gunyah-label = <0x93>;
+		qcom,is-shared;
+		status = "disabled";
+	};
+
+	qcipc_gvm_mem: qcipc_gvm_mem@B7D000000 {
+		compatible = "shared-dma-pool";
+		reg = <0xB 0x7D000000 0x0 0x02000000>;
+		no-map;
+		gunyah-label = <0x94>;
+		qcom,is-shared;
 	};
 
 	tz_start_count: tz_start_count {
@@ -715,4 +777,3 @@
 		qcom,dev-name = "scmi_sdhc4";
 	};
 };
-
