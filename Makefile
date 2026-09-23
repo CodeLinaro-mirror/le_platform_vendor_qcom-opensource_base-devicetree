@@ -11,6 +11,7 @@ dtb-y += arch/arm64/boot/dts/qcom/nord-ride-pcie-ep.dtbo
 dtb-y += arch/arm64/boot/dts/qcom/nord-ddr-32gb_overlay.dtbo
 dtb-y += arch/arm64/boot/dts/qcom/nord-ddr-48gb_overlay.dtbo
 dtb-y += arch/arm64/boot/dts/qcom/nord-ddr-64gb_overlay.dtbo
+dtb-y += arch/arm64/boot/dts/qcom/nord-ddr-96gb_overlay.dtbo
 
 #include common target file
 include $(PWD)/Makefile.common
