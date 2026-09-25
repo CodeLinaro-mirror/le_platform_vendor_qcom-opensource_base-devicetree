@@ -20,7 +20,7 @@
 	};
 
 	chosen {
-		bootargs = "pd_ignore_unused";
+		bootargs = "pd_ignore_unused cpufreq.off=1";
 	};
 
 	clocks {
