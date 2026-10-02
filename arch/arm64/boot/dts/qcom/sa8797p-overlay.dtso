@@ -63,11 +63,6 @@
 		memory-region = <&qcipc_pvm_nonsafe_mem>;
 	};
 
-	named_dmabuf_qcipc_gvm: named_dmabuf_qcipc_gvm {
-		compatible = "qcom,named-dmabuf";
-		instance-name = "qcipc_gvm";
-		memory-region = <&qcipc_gvm_mem>;
-	};
 };
 
 &{/reserved-memory} {
@@ -118,14 +113,6 @@
 		gunyah-label = <0x93>;
 		qcom,is-shared;
 		status = "disabled";
-	};
-
-	qcipc_gvm_mem: qcipc_gvm_mem@B7D000000 {
-		compatible = "shared-dma-pool";
-		reg = <0xB 0x7D000000 0x0 0x02000000>;
-		no-map;
-		gunyah-label = <0x94>;
-		qcom,is-shared;
 	};
 
 	tz_start_count: tz_start_count {
