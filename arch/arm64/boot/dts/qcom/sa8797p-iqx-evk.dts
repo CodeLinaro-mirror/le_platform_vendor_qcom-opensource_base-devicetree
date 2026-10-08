@@ -85,13 +85,23 @@
 };
 
 &xpcs1 {
-	status = "okay";
+	status = "disabled";
 	/delete-property/ interrupts;
 	/delete-property/ interrupt-names;
 };
 
+/*
+ * The following nodes are disabled for GVM compatibility.
+ * In a GVM flavor boot, these resources are passed through to GVM1
+ * (VMID 52) via hypervisor_sgvm_resource_assign_oem_v2.xml:
+ *   - ethernet1/xpcs1: EMAC1 PCIe SMMU SIDs 0x11c1-0x11ca (dev2)
+ *   - pcie2/pcie3: parf registers 0x01b90000/0x01b98000 (dev0)
+ * Linux must not initialise these devices in GVM-flavor DTB to avoid
+ * Synchronous External Abort from Hypervisor Stage-2 protection.
+ * TODO: remove when mainline GVM resource management is in place.
+ */
 &ethernet1 {
-	status = "okay";
+	status = "disabled";
 
 	phy-mode = "usxgmii";
 	phy-handle = <&usxsgmii_phy1>;
@@ -188,7 +198,7 @@
 
 	power-domains = <&scmi32_pd 0>;
 	power-domain-names = "power";
-	status = "okay";
+	status = "disabled"; /* TODO: GVM compat, see comment above */
 };
 
 &pcie3 {
@@ -206,7 +216,7 @@
 
 	power-domains = <&scmi33_pd 0>;
 	power-domain-names = "power";
-	status = "okay";
+	status = "disabled"; /* TODO: GVM compat, see comment above */
 	pinctrl-names = "default";
 	pinctrl-0 = <&pcie3_modem_power_default
 			&pcie3_modem_vph_pwr_default

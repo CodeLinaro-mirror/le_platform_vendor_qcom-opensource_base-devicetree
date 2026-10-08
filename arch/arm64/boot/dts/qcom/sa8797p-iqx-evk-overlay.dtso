@@ -189,19 +189,20 @@
 
 
 
+/* USB_1 (0xA400000) and its PHYs are passed through to GVM1 (VMID 52)
+ * via hypervisor_sgvm_resource_assign_oem_v2.xml. PVM must not
+ * initialise these devices to avoid dwc3_qcom_probe failure. */
 &usb_1_qmpphy {
-	status = "okay";
+	status = "disabled";
 };
 
 &usb_1_eusbphy {
-	status = "okay";
+	status = "disabled";
 };
 
 
 &usb_1 {
-	status = "okay";
-	pinctrl-names = "default";
-	pinctrl-0 = <&soc_vbus_det_default &usb_hub_rst>;
+	status = "disabled";
 };
 
 &pcie0 {
@@ -551,8 +552,6 @@
 
 		qcom,no-suspend;
 		qcom,dev-name = "scmi_emac1";
-
-		status = "disabled";
 	};
 
 	scmi_bluetooth {
