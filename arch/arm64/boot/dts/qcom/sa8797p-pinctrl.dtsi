@@ -478,4 +478,67 @@
 		drive-strength = <2>;
 		bias-disable;
 	};
+
+	pcie1_ep_clkreq_default: pcie-ep-clkreq-default-state {
+		pins = "gpio4";
+		function = "pcie1_clk_req_n";
+		drive-strength = <2>;
+		bias-disable;
+	};
+
+	pcie1_ep_perst_default: pcie-ep-perst-default-state {
+		pins = "gpio5";
+		function = "gpio";
+		drive-strength = <16>;
+		bias-pull-down;
+	};
+
+	pcie1_ep_wake_default: pcie-ep-wake-default-state {
+		pins = "gpio3";
+		function = "gpio";
+		drive-strength = <2>;
+		bias-disable;
+	};
+
+	pcie2_ep_clkreq_default: pcie-ep-clkreq-default-state {
+		pins = "gpio7";
+		function = "pcie2_clk_req_n";
+		drive-strength = <2>;
+		bias-disable;
+	};
+
+	pcie2_ep_perst_default: pcie-ep-perst-default-state {
+		pins = "gpio8";
+		function = "gpio";
+		drive-strength = <16>;
+		bias-pull-down;
+	};
+
+	pcie2_ep_wake_default: pcie-ep-wake-default-state {
+		pins = "gpio6";
+		function = "gpio";
+		drive-strength = <2>;
+		bias-disable;
+	};
+
+	pcie3_ep_clkreq_default: pcie-ep-clkreq-default-state {
+		pins = "gpio10";
+		function = "pcie3_clk_req_n";
+		drive-strength = <2>;
+		bias-disable;
+	};
+
+	pcie3_ep_perst_default: pcie-ep-perst-default-state {
+		pins = "gpio11";
+		function = "gpio";
+		drive-strength = <16>;
+		bias-pull-down;
+	};
+
+	pcie3_ep_wake_default: pcie-ep-wake-default-state {
+		pins = "gpio9";
+		function = "gpio";
+		drive-strength = <2>;
+		bias-disable;
+	};
 };

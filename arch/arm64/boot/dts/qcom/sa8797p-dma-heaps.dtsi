@@ -56,5 +56,17 @@
 			qcom,dma-heap-type = <HEAP_TYPE_CARVEOUT>;
 			memory-region = <&non_ecc_heap_mem>;
 		};
+
+		qcom,qcipc_pvm_safe {
+			qcom,dma-heap-name = "qcom,qcipc_pvm_safe";
+			qcom,dma-heap-type = <HEAP_TYPE_CARVEOUT>;
+			memory-region = <&qcipc_pvm_safe_mem>;
+		};
+
+		qcom,qcipc_pvm_nonsafe {
+			qcom,dma-heap-name = "qcom,qcipc_pvm_nonsafe";
+			qcom,dma-heap-type = <HEAP_TYPE_CARVEOUT>;
+			memory-region = <&qcipc_pvm_nonsafe_mem>;
+		};
 	};
 };

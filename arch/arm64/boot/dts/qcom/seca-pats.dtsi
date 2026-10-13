@@ -12,8 +12,28 @@
 	};
 };
 
+&i2c9 {
+	usb1_eusb_repeater: redriver@4f {
+		compatible = "nxp,ptn3222";
+		reg = <0x4f>;
+		#phy-cells = <0>;
+		nxp,override-param = < 0x7 0x2
+				0x8 0x62 >;
+	};
+
+	usb2_eusb_repeater: redriver@4b {
+		compatible = "nxp,ptn3222";
+		reg = <0x4b>;
+		#phy-cells = <0>;
+		nxp,override-param = < 0x7 0x2
+				0x8 0x62 >;
+	};
+
+};
+
 &usb_1_eusbphy {
 	status = "okay";
+	phys = <&usb1_eusb_repeater>;
 };
 
 &usb_1_qmpphy {
@@ -26,6 +46,7 @@
 
 &usb_2_eusbphy {
 	status = "okay";
+	phys = <&usb2_eusb_repeater>;
 };
 
 &usb_2 {
@@ -35,20 +56,24 @@
 &pcie0 {
 	power-domains = <&scmi5_pd 0>;
 	power-domain-names = "power";
+	status = "okay";
 };
 
 &pcie1 {
 	power-domains = <&scmi6_pd 0>;
 	power-domain-names = "power";
+	status = "okay";
 };
 
 &pcie2 {
 	power-domains = <&scmi32_pd 0>;
 	power-domain-names = "power";
+	status = "okay";
 };
 
 &pcie3 {
 	power-domains = <&scmi33_pd 0>;
 	power-domain-names = "power";
+	status = "okay";
 };
 

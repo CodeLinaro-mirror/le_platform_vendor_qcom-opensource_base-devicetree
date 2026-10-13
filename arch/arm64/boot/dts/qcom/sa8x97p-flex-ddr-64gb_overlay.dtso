@@ -6,9 +6,21 @@
 /dts-v1/;
 /plugin/;
 
-#include "sa8x97p-flex-ddr-64gb-vms.dtsi"
+
+/ {
+	compatible = "qcom,sa8x97p-flex-adp-star", "qcom,sa8x97p-flex-ride-sx";
+};
+
+&{/} {
+	qcom,sku-id = <0x301>;
+};
 
 &non_ecc_heap_mem {
-	reg = <0x88 0x00000000 0x5 0x80000000>;
+	reg = <0x88 0x00000000 0x5 0x7F000000>;
+	status = "okay";
+};
+
+&qcipc_pvm_nonsafe_mem {
+	reg = <0x8D 0x7F000000 0x0 0x01000000>;
 	status = "okay";
 };

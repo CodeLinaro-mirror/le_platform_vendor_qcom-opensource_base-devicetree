@@ -8,6 +8,42 @@
 &soc {
 	qcom,dma-heaps {
 		compatible = "qcom,dma-heaps";
+
+		qcom,tzcom {
+			qcom,dma-heap-name = "qcom,tzcom";
+			qcom,dma-heap-type = <HEAP_TYPE_CMA>;
+			memory-region = <&tzcom_mem>;
+		};
+
+		qcom,synx_global {
+			qcom,dma-heap-name = "qcom,synx_global";
+			qcom,dma-heap-type = <HEAP_TYPE_CARVEOUT>;
+			memory-region = <&global_sync_mem>;
+		};
+
+		qcom,soccp_fe_vm_0 {
+			qcom,dma-heap-name = "qcom,soccp_fe_vm_0";
+			qcom,dma-heap-type = <HEAP_TYPE_CARVEOUT>;
+			memory-region = <&soccp_fe_vm_0>;
+		};
+
+		qcom,soccp_fe_vm_1 {
+			qcom,dma-heap-name = "qcom,soccp_fe_vm_1";
+			qcom,dma-heap-type = <HEAP_TYPE_CARVEOUT>;
+			memory-region = <&soccp_fe_vm_1>;
+		};
+
+		qcom,soccp_fe_vm_2 {
+			qcom,dma-heap-name = "qcom,soccp_fe_vm_2";
+			qcom,dma-heap-type = <HEAP_TYPE_CARVEOUT>;
+			memory-region = <&soccp_fe_vm_2>;
+		};
+	};
+
+	qcom,tzcom {
+			qcom,dma-heap-name = "qcom,tzcom";
+			qcom,dma-heap-type = <HEAP_TYPE_CMA>;
+			memory-region = <&tzcom_mem>;
 	};
 
 	qcom,secure-buffer {

@@ -20,7 +20,7 @@
 	};
 
 	chosen {
-		bootargs = "pd_ignore_unused";
+		bootargs = "pd_ignore_unused cpufreq.off=1";
 	};
 
 	clocks {
@@ -76,10 +76,9 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x0>;
 			enable-method = "psci";
-			power-domains = <&CPU_PD0>;
-			power-domain-names = "psci";
+			power-domains = <&CPU_PD0>, <&cpu_perf 0>;
+			power-domain-names = "psci", "perf";
 			next-level-cache = <&L2_0>;
-			clocks = <&cpu_perf 0>;
 			L2_0: l2-cache {
 				compatible = "cache";
 				cache-level = <2>;
@@ -93,10 +92,9 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x100>;
 			enable-method = "psci";
-			power-domains = <&CPU_PD1>;
-			power-domain-names = "psci";
+			power-domains = <&CPU_PD1>, <&cpu_perf 0>;
+			power-domain-names = "psci", "perf";
 			next-level-cache = <&L2_0>;
-			clocks = <&cpu_perf 0>;
 		};
 
 		CPU2: cpu@200 {
@@ -104,10 +102,9 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x200>;
 			enable-method = "psci";
-			power-domains = <&CPU_PD2>;
-			power-domain-names = "psci";
+			power-domains = <&CPU_PD2>, <&cpu_perf 0>;
+			power-domain-names = "psci", "perf";
 			next-level-cache = <&L2_0>;
-			clocks = <&cpu_perf 0>;
 		};
 
 		CPU3: cpu@300 {
@@ -115,10 +112,9 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x300>;
 			enable-method = "psci";
-			power-domains = <&CPU_PD3>;
-			power-domain-names = "psci";
+			power-domains = <&CPU_PD3>, <&cpu_perf 0>;
+			power-domain-names = "psci", "perf";
 			next-level-cache = <&L2_0>;
-			clocks = <&cpu_perf 0>;
 		};
 
 		CPU4: cpu@400 {
@@ -126,10 +122,9 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x400>;
 			enable-method = "psci";
-			power-domains = <&CPU_PD4>;
-			power-domain-names = "psci";
+			power-domains = <&CPU_PD4>, <&cpu_perf 0>;
+			power-domain-names = "psci", "perf";
 			next-level-cache = <&L2_0>;
-			clocks = <&cpu_perf 0>;
 		};
 
 		CPU5: cpu@500 {
@@ -137,21 +132,19 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x500>;
 			enable-method = "psci";
-			power-domains = <&CPU_PD5>;
-			power-domain-names = "psci";
+			power-domains = <&CPU_PD5>, <&cpu_perf 0>;
+			power-domain-names = "psci", "perf";
 			next-level-cache = <&L2_0>;
-			clocks = <&cpu_perf 0>;
 		};
 
 		CPU6: cpu@10000 {
 			device_type = "cpu";
 			compatible = "arm,armv8";
 			reg = <0x0 0x10000>;
-			power-domains = <&CPU_PD6>;
-			power-domain-names = "psci";
+			power-domains = <&CPU_PD6>, <&cpu_perf 1>;
+			power-domain-names = "psci", "perf";
 			enable-method = "psci";
 			next-level-cache = <&L2_10000>;
-			clocks = <&cpu_perf 1>;
 			L2_10000: l2-cache {
 				compatible = "cache";
 				cache-level = <2>;
@@ -164,10 +157,9 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x10100>;
 			enable-method = "psci";
-			power-domains = <&CPU_PD7>;
-			power-domain-names = "psci";
+			power-domains = <&CPU_PD7>, <&cpu_perf 1>;
+			power-domain-names = "psci", "perf";
 			next-level-cache = <&L2_10000>;
-			clocks = <&cpu_perf 1>;
 		};
 
 		CPU8: cpu@10200 {
@@ -175,10 +167,9 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x10200>;
 			enable-method = "psci";
-			power-domains = <&CPU_PD8>;
-			power-domain-names = "psci";
+			power-domains = <&CPU_PD8>, <&cpu_perf 1>;
+			power-domain-names = "psci", "perf";
 			next-level-cache = <&L2_10000>;
-			clocks = <&cpu_perf 1>;
 		};
 
 		CPU9: cpu@10300 {
@@ -186,10 +177,9 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x10300>;
 			enable-method = "psci";
-			power-domains = <&CPU_PD9>;
-			power-domain-names = "psci";
+			power-domains = <&CPU_PD9>, <&cpu_perf 1>;
+			power-domain-names = "psci", "perf";
 			next-level-cache = <&L2_10000>;
-			clocks = <&cpu_perf 1>;
 		};
 
 		CPU10: cpu@10400 {
@@ -197,10 +187,9 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x10400>;
 			enable-method = "psci";
-			power-domains = <&CPU_PD10>;
-			power-domain-names = "psci";
+			power-domains = <&CPU_PD10>, <&cpu_perf 1>;
+			power-domain-names = "psci", "perf";
 			next-level-cache = <&L2_10000>;
-			clocks = <&cpu_perf 1>;
 		};
 
 		CPU11: cpu@10500 {
@@ -208,10 +197,9 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x10500>;
 			enable-method = "psci";
-			power-domains = <&CPU_PD11>;
-			power-domain-names = "psci";
+			power-domains = <&CPU_PD11>, <&cpu_perf 1>;
+			power-domain-names = "psci", "perf";
 			next-level-cache = <&L2_10000>;
-			clocks = <&cpu_perf 1>;
 		};
 
 		CPU12: cpu@20000 {
@@ -219,10 +207,9 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x20000>;
 			enable-method = "psci";
-			power-domains = <&CPU_PD12>;
-			power-domain-names = "psci";
+			power-domains = <&CPU_PD12>, <&cpu_perf 2>;
+			power-domain-names = "psci", "perf";
 			next-level-cache = <&L2_20000>;
-			clocks = <&cpu_perf 2>;
 			L2_20000: l2-cache {
 				compatible = "cache";
 				cache-level = <2>;
@@ -235,10 +222,9 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x20100>;
 			enable-method = "psci";
-			power-domains = <&CPU_PD13>;
-			power-domain-names = "psci";
+			power-domains = <&CPU_PD13>, <&cpu_perf 2>;
+			power-domain-names = "psci", "perf";
 			next-level-cache = <&L2_20000>;
-			clocks = <&cpu_perf 2>;
 		};
 
 		CPU14: cpu@20200 {
@@ -246,10 +232,9 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x20200>;
 			enable-method = "psci";
-			power-domains = <&CPU_PD14>;
-			power-domain-names = "psci";
+			power-domains = <&CPU_PD14>, <&cpu_perf 2>;
+			power-domain-names = "psci", "perf";
 			next-level-cache = <&L2_20000>;
-			clocks = <&cpu_perf 2>;
 		};
 
 		CPU15: cpu@20300 {
@@ -257,10 +242,9 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x20300>;
 			enable-method = "psci";
-			power-domains = <&CPU_PD15>;
-			power-domain-names = "psci";
+			power-domains = <&CPU_PD15>, <&cpu_perf 2>;
+			power-domain-names = "psci", "perf";
 			next-level-cache = <&L2_20000>;
-			clocks = <&cpu_perf 2>;
 		};
 
 		CPU16: cpu@20400 {
@@ -268,10 +252,9 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x20400>;
 			enable-method = "psci";
-			power-domains = <&CPU_PD16>;
-			power-domain-names = "psci";
+			power-domains = <&CPU_PD16>, <&cpu_perf 2>;
+			power-domain-names = "psci", "perf";
 			next-level-cache = <&L2_20000>;
-			clocks = <&cpu_perf 2>;
 		};
 
 		CPU17: cpu@20500 {
@@ -279,10 +262,9 @@
 			compatible = "arm,armv8";
 			reg = <0x0 0x20500>;
 			enable-method = "psci";
-			power-domains = <&CPU_PD17>;
-			power-domain-names = "psci";
+			power-domains = <&CPU_PD17>, <&cpu_perf 2>;
+			power-domain-names = "psci", "perf";
 			next-level-cache = <&L2_20000>;
-			clocks = <&cpu_perf 2>;
 		};
 
 		cpu-map {
@@ -650,9 +632,14 @@
 			reg = <0x0 0x87200000 0x0 0x2000>;
 		};
 
-		xbl_dtlog_mem: xbl_dtlog_region@87202000 {
+		xbl_log_mem: xbl_log_region@87202000 {
 			no-map;
-			reg = <0x0 0x87202000 0x0 0x60000>;
+			reg = <0x0 0x87202000 0x0 0xc000>;
+		};
+
+		xbl_dt_mem: xbl_dt_region@8720e000 {
+			no-map;
+			reg = <0x0 0x8720e000 0x0 0x54000>;
 		};
 
 		xbl_ramdump_mem: xbl_ramdump_region@87262000 {
@@ -938,9 +925,9 @@
 			reg = <0x0 0xd7676000 0x0 0x15a000>;
 		};
 
-		gearvm_logs_mem: gearvm_logs_region@d77d0000 {
+		gearvm_logs_mem: gearvm_logs_region@d7770000 {
 			no-map;
-			reg = <0x0 0xd77d0000 0x0 0x20000>;
+			reg = <0x0 0xd7770000 0x0 0x80000>;
 		};
 
 		gearvm_quantum_test_mem: gearvm_quantum_test_region@d77f0000 {
@@ -962,6 +949,11 @@
 		sail_p_mem: sail_p_region@8c0000000 {
 			no-map;
 			reg = <0x8 0xc0000000 0x0 0x20000000>;
+		};
+
+		tzffi_heap_mem: tzffi_heap_region@95f000000 {
+			no-map;
+			reg = <0x9 0x5f000000 0x0 0x100000>;
 		};
 
 		dump_mem: mem-dump-region {
@@ -1786,6 +1778,25 @@
 				qcom,etu-slice = <22>;
 				qcom,etu-event-name = "timer15";
 			};
+
+			slice@23 {
+				/* ETU SW Event trigger. */
+				qcom,etu-event-sel = <0>;
+				qcom,etu-slice = <23>;
+				qcom,etu-event-name = "sw_trigger";
+			};
+
+			slice@27 {
+				qcom,etu-event-sel = <27>;
+				qcom,etu-slice = <27>;
+				qcom,etu-event-name = "SOF_DPRX0";
+			};
+
+			slice@28 {
+				qcom,etu-event-sel = <28>;
+				qcom,etu-slice = <28>;
+				qcom,etu-event-name = "SOF_DPRX1";
+			};
 		};
 
 		ccu_qup: ccu-qup {
@@ -2375,6 +2386,47 @@
 
 			qcom,ice = <&ice>;
 			status = "okay";
+		};
+
+		sdhc_4_dma_resv: sdhc_4_dma_resv_region {
+			/*
+			 * Restrict IOVA mappings for SDHC4 buffers to the 256 MB region
+			 * from 0x40000000 - 0x4fffffff.
+			 */
+			iommu-addresses = <&sdhc_4 0x0 0x40000000>,
+			<&sdhc_4 0x50000000 0xb0000000>;
+		};
+
+		sdhc_4: sdhci@00b84000 {
+			compatible = "qcom,sa7255-sdhci";
+
+			reg = <0x00b84000 0x1000>;
+			reg-names = "hc";
+
+			interrupts = <GIC_SPI 261 IRQ_TYPE_LEVEL_HIGH>,
+			<GIC_SPI 227 IRQ_TYPE_LEVEL_HIGH>;
+			interrupt-names = "hc_irq", "pwr_irq";
+
+			bus-width = <4>;
+
+			no-sd;
+			no-mmc;
+			non-removable;
+
+			qcom,restore-after-cx-collapse;
+
+			cap-sd-highspeed;
+			no-1-8-v;
+			max-frequency = <100000000>;
+
+			memory-region = <&sdhc_4_dma_resv>;
+			iommus = <&apps_smmu_0 0x1580 0x0>;
+			qcom,iommu-dma = "fastmap";
+			dma-coherent;
+
+			power-domains = <&scmi34_pd 0>, <&scmi34_dvfs 0>;
+			power-domain-names = "power", "perf";
+			status = "disabled";
 		};
 
 		ice: crypto@1d48000 {
@@ -5944,6 +5996,42 @@
 		reset-names = "serdes_reset";
 	};
 
+	switch_reset_detect: qcom-switch-reset-detect {
+		interrupt-parent = <&tlmm>;
+		interrupts = <117 IRQ_TYPE_EDGE_FALLING>;
+	};
+
+	eth_switch_monitor: eth-switch-monitor {
+		status = "disabled";
+		compatible = "qcom,eth-switch-monitor";
+		switch-reset-detect-source = <&switch_reset_detect>;
+
+		/* Gunyah Doorbell label: can be overridden by board DTS */
+		qcom,dbl-label = <0xa>;
+	};
+
+	efuse: efuse@360d4320 {
+		compatible = "qcom,sa8797p-qfprom", "qcom,qfprom";
+		reg = <0x0 0x360d4320 0x0 0x8>;
+		#address-cells = <1>;
+		#size-cells = <1>;
+
+		nvmem-layout {
+			compatible = "qcom,sa8797p-eth-mac";
+			#address-cells = <1>;
+			#size-cells = <1>;
+
+			eth0_mac: eth0-mac@0 {
+				reg = <0x0 0x6>;
+			};
+
+			eth1_mac: eth1-mac@0 {
+				reg = <0x0 0x6>;
+				qcom,byte-fixups = <5 0x6>;
+			};
+		};
+	};
+
 	ethernet0: ethernet@0x1A00000 {
 		compatible = "qcom,sa8797p-ethqos", "snps,dwxgmac";
 		reg = <0x0 0x1A00000 0x0 0x14000>,
@@ -5987,6 +6075,9 @@
 
 		snps,pbl = <0x10>;
 		dma-coherent;
+
+		nvmem-cells = <&eth0_mac>;
+		nvmem-cell-names = "mac-address";
 
 		rx-fifo-depth = <98304>;
 		tx-fifo-depth = <98304>;
@@ -6123,8 +6214,20 @@
 		reg-names = "stmmaceth", "rgmii";
 
 		interrupts = <GIC_SPI 820 IRQ_TYPE_LEVEL_HIGH>,
-			     <GIC_SPI 361 IRQ_TYPE_LEVEL_HIGH>;
-		interrupt-names = "macirq", "sfty";
+			     <GIC_SPI 361 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 743 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 744 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 729 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 730 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 731 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 732 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 733 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 734 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 735 IRQ_TYPE_LEVEL_HIGH>,
+			     <GIC_SPI 736 IRQ_TYPE_LEVEL_HIGH>;
+		interrupt-names = "macirq", "sfty", "dma_tx_rx0", "dma_tx_rx1", "dma_tx_rx2",
+				 "dma_tx_rx3", "dma_tx_rx4", "dma_tx_rx5", "dma_tx_rx6",
+				 "dma_tx_rx7", "dma_tx_rx8", "dma_tx_rx9";
 
 		iommus = <&apps_smmu_2 0x11c1 0x8>,
 			 <&apps_smmu_2 0x11c2 0x1>,
@@ -6289,6 +6392,11 @@
 		memory-region = <&gearvm_logs_mem>;
 	};
 
+	xbl_log {
+		compatible = "qcom,nhlos-logs-mem", "qcom,nhlos-logs";
+		memory-region = <&xbl_log_mem>;
+	};
+
 	pm_virq_0: pm-virq-0 {
 		compatible = "qcom,remote-virq";
 		interrupts = <GIC_ESPI 986 IRQ_TYPE_EDGE_RISING>;
@@ -6349,3 +6457,4 @@
 #include "sa8797p-usb.dtsi"
 #include "sa8797p-pcie.dtsi"
 #include "sa8797p-pmic.dtsi"
+#include "sa8x97p-cnss.dtsi"
