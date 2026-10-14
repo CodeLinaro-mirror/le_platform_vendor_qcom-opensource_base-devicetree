@@ -809,6 +809,15 @@
 		qcom,dev-name = "scmi_usb1_qmp";
 	};
 
+	scmi_infra0 {
+		compatible = "qcom,uscmi";
+		power-domains = <&scmi48_dvfs 0>, <&scmi48_dvfs 1>,
+				<&scmi48_dvfs 2>, <&scmi48_dvfs 3>;
+		power-domain-names = "cx", "mx", "mm", "mxc";
+
+		qcom,dev-name = "scmi_infra0";
+	};
+
 	qfprom_tcsr_softsku: qfprom@1f97070 {
 		compatible = "qcom,qfprom";
 		reg = <0x0 0x1f97070 0x0 0x18>;
