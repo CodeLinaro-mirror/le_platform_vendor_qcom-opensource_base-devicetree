@@ -1,0 +1,429 @@
+// SPDX-License-Identifier: BSD-3-Clause
+/*
+ * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+ */
+
+/dts-v1/;
+
+#include "sa8x97p.dtsi"
+#include "sa8x97p-v2.dtsi"
+#include "sa8797p.dtsi"
+#include "sa8x97p-non-safe.dtsi"
+#include "sa8797p-iqx-evk-pinctrl.dtsi"
+/*#include "sa8797p-cnss.dtsi"*/
+
+/ {
+	model = "Qualcomm Technologies, Inc. IQX EVK";
+	compatible = "qcom,sa8797p-iqx-evk";
+	qcom,msm-id = <689 0x20000>, <690 0x20000>, <798 0x20000>;
+	qcom,board-id = <0x06010025 6>;
+
+	aliases {
+		serial2 = &uart17;
+		serial3 = &uart0;
+		serial5 = &uart3;
+		serial6 = &uart10;
+		i2c7 = &i2c7;
+		i2c12 = &i2c12;
+		i2c13 = &i2c13;
+		i2c14 = &i2c14;
+		i2c19 = &i2c19;
+		spi16 = &spi16;
+		spi21 = &spi21;
+	};
+};
+
+&xpcs0 {
+	/delete-property/ interrupts;
+	/delete-property/ interrupt-names;
+};
+
+&ethernet0 {
+	phy-mode = "usxgmii";
+	phy-handle = <&usxsgmii_phy0>;
+
+	/* remove <GIC_SPI 713 IRQ_TYPE_LEVEL_HIGH>, */
+	interrupts = <GIC_SPI 821 IRQ_TYPE_LEVEL_HIGH>,
+				<GIC_SPI 689 IRQ_TYPE_LEVEL_HIGH>,
+				<GIC_SPI 524 IRQ_TYPE_LEVEL_HIGH>,
+				<GIC_SPI 525 IRQ_TYPE_LEVEL_HIGH>,
+				<GIC_SPI 522 IRQ_TYPE_LEVEL_HIGH>,
+				<GIC_SPI 526 IRQ_TYPE_LEVEL_HIGH>,
+				<GIC_SPI 519 IRQ_TYPE_LEVEL_HIGH>,
+				<GIC_SPI 520 IRQ_TYPE_LEVEL_HIGH>,
+				<GIC_SPI 462 IRQ_TYPE_LEVEL_HIGH>,
+				<GIC_SPI 521 IRQ_TYPE_LEVEL_HIGH>,
+				<GIC_SPI 158 IRQ_TYPE_LEVEL_HIGH>;
+	/* remove "sfty" */
+	interrupt-names = "macirq", "dma_tx_rx0", "dma_tx_rx1", "dma_tx_rx2",
+				"dma_tx_rx3", "dma_tx_rx4", "dma_tx_rx5", "dma_tx_rx6",
+				"dma_tx_rx7", "dma_tx_rx8", "dma_tx_rx9";
+
+	mdio {
+		compatible = "snps,dwmac-mdio";
+		#address-cells = <1>;
+		#size-cells = <0>;
+
+		usxsgmii_phy0: phy@0 {
+			compatible = "ethernet-phy-id31c3.1c12";
+			reg = <0x0>;
+			device_type = "ethernet-phy";
+			interrupts-extended = <&tlmm 141 IRQ_TYPE_EDGE_FALLING>;
+			resets = <&scmi7_rst 0>;
+			reset-names = "phy";
+			reset-assert-us = <100000>;
+			reset-deassert-us = <100000>;
+		};
+	};
+};
+
+&ethernet0_default {
+	/delete-node/ ethernet0-pps-o-0-pins;
+	/delete-node/ ethernet0-pps-o-1-pins;
+	/delete-node/ ethernet0-pps-o-2-pins;
+	/delete-node/ ethernet0-pps-o-3-pins;
+};
+
+&xpcs1 {
+	status = "okay";
+	/delete-property/ interrupts;
+	/delete-property/ interrupt-names;
+};
+
+&ethernet1 {
+	status = "okay";
+
+	phy-mode = "usxgmii";
+	phy-handle = <&usxsgmii_phy1>;
+
+	/* remove <GIC_SPI 361 IRQ_TYPE_LEVEL_HIGH>; */
+	interrupts = <GIC_SPI 820 IRQ_TYPE_LEVEL_HIGH>;
+	/* remove "sfty" */
+	interrupt-names = "macirq";
+
+	mdio {
+		compatible = "snps,dwmac-mdio";
+		#address-cells = <1>;
+		#size-cells = <0>;
+
+		usxsgmii_phy1: phy@8 {
+			compatible = "ethernet-phy-id31c3.1c12";
+			reg = <0x8>;
+			device_type = "ethernet-phy";
+			interrupts-extended = <&tlmm 55 IRQ_TYPE_EDGE_FALLING>;
+			resets = <&scmi8_rst 0>;
+			reset-names = "phy";
+			reset-assert-us = <100000>;
+			reset-deassert-us = <100000>;
+		};
+	};
+};
+
+&tlmm {
+	pcie3_modem_power_default: pcie3_modem_power_default {
+		mux {
+			pins = "gpio53";
+			function = "gpio";
+		};
+
+		config {
+			pins = "gpio53";
+			drive-strength = <2>;
+			output-high;
+		};
+	};
+
+
+	pcie3_modem_vph_pwr_default: pcie3_modem_vph_pwr_default {
+		mux {
+			pins = "gpio54";
+			function = "gpio";
+		};
+
+		config {
+			pins = "gpio54";
+			drive-strength = <2>;
+			output-high;
+		};
+	};
+
+	pcie3_modem_rstin_default: pcie3_modem_rstin_default {
+		mux {
+			pins = "gpio177";
+			function = "gpio";
+		};
+
+		config {
+			pins = "gpio177";
+			drive-strength = <2>;
+			output-low;
+		};
+	};
+};
+
+&pcie0 {
+	power-domains = <&scmi5_pd 0>;
+	power-domain-names = "power";
+	status = "okay";
+};
+
+&pcie1 {
+	power-domains = <&scmi6_pd 0>;
+	power-domain-names = "power";
+	status = "okay";
+};
+
+&pcie2 {
+	reg = <0x40 0x00000000 0x0 0x10000000>,
+		<0x00 0x01b90000 0x0 0x00004000>;
+	reg-names = "dbi", "parf";
+
+	interrupts = <GIC_SPI 464 IRQ_TYPE_LEVEL_HIGH>;
+	interrupt-names = "global_int";
+
+	interrupt-parent = <&intc>;
+
+	rasdp-off = <0x384>;
+	safety-supported;
+
+	power-domains = <&scmi32_pd 0>;
+	power-domain-names = "power";
+	status = "okay";
+};
+
+&pcie3 {
+	reg = <0x4 0x00000000 0x0 0x10000000>,
+		<0x00 0x01b98000 0x0 0x00004000>;
+	reg-names = "dbi", "parf";
+
+	interrupts = <GIC_SPI 465 IRQ_TYPE_LEVEL_HIGH>;
+	interrupt-names = "global_int";
+
+	interrupt-parent = <&intc>;
+
+	rasdp-off = <0x37C>;
+	safety-supported;
+
+	power-domains = <&scmi33_pd 0>;
+	power-domain-names = "power";
+	status = "okay";
+	pinctrl-names = "default";
+	pinctrl-0 = <&pcie3_modem_power_default
+			&pcie3_modem_vph_pwr_default
+			&pcie3_modem_rstin_default>;
+};
+
+&soc {
+	qupv3_id_3: geniqup@cc0000 {
+		compatible = "qcom,sa8797p-geni-se-qup";
+		reg = <0x0 0xcc0000 0x0 0x2000>;
+		#address-cells = <2>;
+		#size-cells = <2>;
+		iommus = <&apps_smmu_0 0x1063 0x0>;
+		ranges;
+		status = "okay";
+
+		spi21: spi@c80000 {
+			compatible = "qcom,sa8797p-geni-spi";
+			reg = <0x0 0xc80000 0x0 0x4000>;
+			interrupts = <GIC_SPI 312 IRQ_TYPE_LEVEL_HIGH>;
+			power-domains = <&scmi10_pd 21>, <&scmi10_dvfs 21>;
+			power-domain-names = "power", "perf";
+
+			status = "okay";
+
+		};
+	};
+};
+
+&i2c7 {
+	status = "okay";
+	rx8900@32 {
+		compatible = "epson,rx8900";
+		reg = <0x32>;
+		epson,vdet-disable;
+		trickle-diode-disable;
+		status = "okay";
+	};
+};
+
+&uart0 {
+	status = "okay";
+};
+
+&uart3 {
+	status = "okay";
+};
+
+&uart10 {
+	status = "okay";
+};
+
+&i2c12 {
+	status = "okay";
+};
+
+&i2c13 {
+	status = "okay";
+};
+
+&i2c14 {
+	status = "okay";
+};
+
+&i2c19 {
+	status = "okay";
+};
+
+&i2c20 {
+	status = "okay";
+};
+
+
+&i2c9 {
+	status = "okay";
+
+	i2c_switch@70 {
+		compatible = "nxp,pca9545";
+		reg = <0x70>;
+		#address-cells = <1>;
+		#size-cells = <0>;
+
+		i2c@0 {
+			reg = <0>;
+			#address-cells = <1>;
+			#size-cells = <0>;
+		};
+
+		i2c@1 {
+			reg = <1>;
+			#address-cells = <1>;
+			#size-cells = <0>;
+		};
+
+		i2c@2 {
+			reg = <2>;
+			#address-cells = <1>;
+			#size-cells = <0>;
+		};
+
+		i2c@3 {
+			reg = <3>;
+			#address-cells = <1>;
+			#size-cells = <0>;
+		};
+	};
+};
+
+
+/* MD_SPI1: 3 x TCAN4551 (GPIO102~107 + INT16/25/28) */
+&spi21 {
+	status = "okay";
+	pinctrl-names = "default";
+	pinctrl-0 = <&qupv3_se0_3_l0 &qupv3_se0_3_l1
+		     &qupv3_se0_3_l2 &qupv3_se0_3_l3
+		     &qupv3_se0_3_l4 &qupv3_se0_3_l5>;
+
+	#address-cells = <1>;
+	#size-cells = <0>;
+
+	tcan_md_spi1_0: can@0 {
+		compatible = "ti,tcan4x5x";
+		reg = <0>;
+		spi-max-frequency = <10000000>;
+		bosch,mram-cfg = <0x0 0 0 8 0 0 8 8>;
+		reset-gpios = <&tlmm 22 GPIO_ACTIVE_HIGH>;
+		device-wake-gpios = <&tlmm 46 GPIO_ACTIVE_LOW>;
+
+		clocks = <&tcan_clk40m>, <&tcan_clk40m>;
+		clock-names = "hclk", "cclk";
+
+		interrupt-parent = <&tlmm>;
+		interrupts = <16 IRQ_TYPE_LEVEL_LOW>;
+		status = "okay";
+	};
+
+	tcan_md_spi1_1: can@1 {
+		compatible = "ti,tcan4x5x";
+		reg = <1>;
+		spi-max-frequency = <10000000>;
+		bosch,mram-cfg = <0x0 0 0 8 0 0 8 8>;
+		reset-gpios = <&tlmm 22 GPIO_ACTIVE_HIGH>;
+		device-wake-gpios = <&tlmm 46 GPIO_ACTIVE_LOW>;
+
+		clocks = <&tcan_clk40m>, <&tcan_clk40m>;
+		clock-names = "hclk", "cclk";
+
+		interrupt-parent = <&tlmm>;
+		interrupts = <25 IRQ_TYPE_LEVEL_LOW>;
+		status = "okay";
+	};
+
+	tcan_md_spi1_2: can@2 {
+		compatible = "ti,tcan4x5x";
+		reg = <2>;
+		spi-max-frequency = <10000000>;
+		bosch,mram-cfg = <0x0 0 0 8 0 0 8 8>;
+		reset-gpios = <&tlmm 22 GPIO_ACTIVE_HIGH>;
+		device-wake-gpios = <&tlmm 46 GPIO_ACTIVE_LOW>;
+
+		clocks = <&tcan_clk40m>, <&tcan_clk40m>;
+		clock-names = "hclk", "cclk";
+
+		interrupt-parent = <&tlmm>;
+		interrupts = <28 IRQ_TYPE_LEVEL_LOW>;
+		status = "okay";
+	};
+};
+
+/* MD_SPI0: 2 x TCAN4551 (GPIO145~149 + INT56/38) */
+&spi16 {
+	status = "okay";
+	pinctrl-names = "default";
+	pinctrl-0 = <&qupv3_se2_2_l0 &qupv3_se2_2_l1
+		     &qupv3_se2_2_l2 &qupv3_se2_2_l3
+		     &qupv3_se2_2_l4>;
+
+	#address-cells = <1>;
+	#size-cells = <0>;
+
+	/* Remove existing spidev instance from base dtsi to avoid conflict */
+	/delete-node/ spidev@0;
+
+	tcan_md_spi0_0: can@0 {
+		compatible = "ti,tcan4x5x";
+		reg = <0>;
+		spi-max-frequency = <10000000>;
+		bosch,mram-cfg = <0x0 0 0 8 0 0 8 8>;
+		reset-gpios = <&tlmm 21 GPIO_ACTIVE_HIGH>;
+		device-wake-gpios = <&tlmm 45 GPIO_ACTIVE_LOW>;
+		clocks = <&tcan_clk40m>, <&tcan_clk40m>;
+		clock-names = "hclk", "cclk";
+		interrupt-parent = <&tlmm>;
+		interrupts = <56 IRQ_TYPE_LEVEL_LOW>;
+		status = "okay";
+	};
+
+	tcan_md_spi0_1: can@1 {
+		compatible = "ti,tcan4x5x";
+		reg = <1>;
+		spi-max-frequency = <10000000>;
+		bosch,mram-cfg = <0x0 0 0 8 0 0 8 8>;
+		reset-gpios = <&tlmm 21 GPIO_ACTIVE_HIGH>;
+		device-wake-gpios = <&tlmm 45 GPIO_ACTIVE_LOW>;
+		clocks = <&tcan_clk40m>, <&tcan_clk40m>;
+		clock-names = "hclk", "cclk";
+		interrupt-parent = <&tlmm>;
+		interrupts = <38 IRQ_TYPE_LEVEL_LOW>;
+		status = "okay";
+	};
+};
+
+&soc {
+	tcan_clk40m: tcan-clk40m {
+		compatible = "fixed-clock";
+		#clock-cells = <0>;
+		clock-frequency = <40000000>;
+		clock-output-names = "tcan_clk40m";
+	};
+};

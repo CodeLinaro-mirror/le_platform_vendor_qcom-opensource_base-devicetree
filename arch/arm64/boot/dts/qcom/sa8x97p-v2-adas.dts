@@ -6,18 +6,31 @@
 /dts-v1/;
 
 #include "sa8x97p.dtsi"
+#include "sa8x97p-v2.dtsi"
 #include "sa8797p.dtsi"
-#include "sa8x97p-la-gvm.dtsi"
 #include "sa8x97p-safe.dtsi"
 
 / {
-	model = "Qualcomm Technologies, Inc. SA8x97P LA GVM RIDE-SX";
-	compatible = "qcom,sa8x97p-ride-sx", "qcom,sa8797p";
+	model = "Qualcomm Technologies, Inc. SA8x97P v2 QAM ADAS";
+	compatible = "qcom,sa8x97p-qam-adas", "qcom,sa8x97p-qam", "qcom,sa8797p";
+	qcom,msm-id = <689 0x20000>, <690 0x20000>;
 	qcom,board-id = <0x01010025 1>;
-	qcom,sku-id = <0x200>;
+	qcom,sku-id = <0x101>;
 };
 
 &ethernet0 {
+	phy-mode = "10gbase-r";
+	switch-reset-detect-source = <&switch_reset_detect>;
+
+	fixed-link {
+		status = "okay";
+		speed = <10000>;
+		full-duplex;
+	};
+};
+
+&ethernet1 {
+	status = "okay";
 	phy-mode = "10gbase-r";
 	switch-reset-detect-source = <&switch_reset_detect>;
 
@@ -37,5 +50,9 @@
 &pcie1 {
 	power-domains = <&scmi6_pd 0>;
 	power-domain-names = "power";
+	status = "okay";
+};
+
+&xpcs1 {
 	status = "okay";
 };

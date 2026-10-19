@@ -24,6 +24,7 @@
 
 	aliases {
 		serial0 = &uart15;
+		serial1 = &uart4;
 		i2c9 = &i2c9;
 		i2c18 = &i2c18;
 		spi16 = &spi16;
@@ -3244,6 +3245,13 @@
 					qcom,part-id = <0>;
 				};
 			};
+		};
+
+		firmware_vm_mini_dump: firmware-vm-mini-dump@0 {
+			compatible = "qcom,firmware-vm-mini-dump";
+			reg = <0x0 0xd7600000 0x0 0x00200000>,
+					<0x0 0xd6e00000 0x0 0x00800000>;
+			reg-names = "fvm_shared", "fvm_mem";
 		};
 	};
 

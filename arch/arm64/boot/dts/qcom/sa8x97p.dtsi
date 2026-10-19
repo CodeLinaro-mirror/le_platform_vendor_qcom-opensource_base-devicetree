@@ -632,9 +632,14 @@
 			reg = <0x0 0x87200000 0x0 0x2000>;
 		};
 
-		xbl_dtlog_mem: xbl_dtlog_region@87202000 {
+		xbl_log_mem: xbl_log_region@87202000 {
 			no-map;
-			reg = <0x0 0x87202000 0x0 0x60000>;
+			reg = <0x0 0x87202000 0x0 0xc000>;
+		};
+
+		xbl_dt_mem: xbl_dt_region@8720e000 {
+			no-map;
+			reg = <0x0 0x8720e000 0x0 0x54000>;
 		};
 
 		xbl_ramdump_mem: xbl_ramdump_region@87262000 {
@@ -944,6 +949,11 @@
 		sail_p_mem: sail_p_region@8c0000000 {
 			no-map;
 			reg = <0x8 0xc0000000 0x0 0x20000000>;
+		};
+
+		tzffi_heap_mem: tzffi_heap_region@95f000000 {
+			no-map;
+			reg = <0x9 0x5f000000 0x0 0x100000>;
 		};
 
 		dump_mem: mem-dump-region {
@@ -6000,6 +6010,28 @@
 		qcom,dbl-label = <0xa>;
 	};
 
+	efuse: efuse@360d4320 {
+		compatible = "qcom,sa8797p-qfprom", "qcom,qfprom";
+		reg = <0x0 0x360d4320 0x0 0x8>;
+		#address-cells = <1>;
+		#size-cells = <1>;
+
+		nvmem-layout {
+			compatible = "qcom,sa8797p-eth-mac";
+			#address-cells = <1>;
+			#size-cells = <1>;
+
+			eth0_mac: eth0-mac@0 {
+				reg = <0x0 0x6>;
+			};
+
+			eth1_mac: eth1-mac@0 {
+				reg = <0x0 0x6>;
+				qcom,byte-fixups = <5 0x6>;
+			};
+		};
+	};
+
 	ethernet0: ethernet@0x1A00000 {
 		compatible = "qcom,sa8797p-ethqos", "snps,dwxgmac";
 		reg = <0x0 0x1A00000 0x0 0x14000>,
@@ -6043,6 +6075,9 @@
 
 		snps,pbl = <0x10>;
 		dma-coherent;
+
+		nvmem-cells = <&eth0_mac>;
+		nvmem-cell-names = "mac-address";
 
 		rx-fifo-depth = <98304>;
 		tx-fifo-depth = <98304>;
@@ -6345,6 +6380,11 @@
 		memory-region = <&gearvm_logs_mem>;
 	};
 
+	xbl_log {
+		compatible = "qcom,nhlos-logs-mem", "qcom,nhlos-logs";
+		memory-region = <&xbl_log_mem>;
+	};
+
 	pm_virq_0: pm-virq-0 {
 		compatible = "qcom,remote-virq";
 		interrupts = <GIC_ESPI 986 IRQ_TYPE_EDGE_RISING>;
@@ -6405,3 +6445,4 @@
 #include "sa8797p-usb.dtsi"
 #include "sa8797p-pcie.dtsi"
 #include "sa8797p-pmic.dtsi"
+#include "sa8x97p-cnss.dtsi"
