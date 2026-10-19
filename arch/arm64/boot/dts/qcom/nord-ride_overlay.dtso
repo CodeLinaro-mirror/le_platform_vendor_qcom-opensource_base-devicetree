@@ -255,6 +255,19 @@
 	};
 };
 
+&pdp0_mbox {
+	qcom,rx-chans = <0x80b>;
+};
+
+
+&{/psci} {
+    reboot-mode {
+        mode-bootloader = <0x80010001 0x2>;
+        mode-edl = <0x80000000 0x1>;
+    };
+
+};
+
 &qupv3_1 {
     status = "okay";
 };
@@ -587,6 +600,7 @@
 
 		qcom,dev-name = "scmi_camera_pdb4";
         };
+
 	scmi_camera_ipe_hw_ctrl {
 		compatible = "qcom,uscmi";
 
@@ -618,13 +632,6 @@
 		reset-names = "dpr1_reset";
 
 		qcom,dev-name = "scmi_dprx1";
-	};
-
-	scmi1_safety {
-		qcom,dev-name = "safety-profile-0";
-		compatible = "qcom,uscmi-vendor";
-		qcom,algo = <0x00 0x73616665>;
-		qcom,vendor = <&vendor_pdp>;
 	};
 
 	test_scmi {
