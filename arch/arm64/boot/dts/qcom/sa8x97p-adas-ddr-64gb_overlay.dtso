@@ -3,6 +3,11 @@
  * Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
  */
 
+/dts-v1/;
+/plugin/;
+
+
 / {
-	compatible = "qcom,sa8x97p-la-gvm", "qcom,la-gvm";
+	compatible = "qcom,sa8x97p-qam-adas";
 };
+
