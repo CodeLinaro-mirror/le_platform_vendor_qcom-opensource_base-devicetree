@@ -8,7 +8,7 @@
 
 
 / {
-	compatible = "qcom,sa8x97p-ride-sx", "qcom,sa8x97p-qam-ride-sx";
+	compatible = "qcom,sa8x97p-adp-star", "qcom,sa8x97p-ride-sx", "qcom,sa8x97p-qam-ride-sx";
 };
 
 &{/} {
