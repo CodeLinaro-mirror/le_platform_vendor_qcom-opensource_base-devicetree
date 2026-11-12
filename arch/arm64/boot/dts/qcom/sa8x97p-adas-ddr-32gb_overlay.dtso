@@ -10,8 +10,3 @@
 / {
 	compatible = "qcom,sa8x97p-qam-adas";
 };
-
-&non_ecc_heap_mem {
-	reg = <0xA 0x60000000 0x1 0x00000000>;
-	status = "okay";
-};
